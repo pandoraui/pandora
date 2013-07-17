@@ -1,0 +1,23 @@
+
+/*!
+ * module v1.0
+ * Adapted from  https://github.com/webcoding/cnBootstrap
+ */
+
+/* alice要实现每个组件都不依赖基础样式，这样有必要么，
+ * 在做测试的时候
+.module * { 
+    margin:0;
+    padding:0;
+}
+*/
+
+
+
+
+
+
+/* 
+ === 样式测试 ===
+ javascript:(function(){var a=document,b=a.body,c=a.createElement("link");c.setAttribute("rel","stylesheet");c.setAttribute("href","http://10.3.1.41/cnBootstrap/WF/assets/css/reset.css");a.querySelector("head").appendChild(c);b.style.backgroundColor="white";b.className+=" typo"})()
+============================================================ */

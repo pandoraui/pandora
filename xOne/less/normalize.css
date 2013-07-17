@@ -1,0 +1,506 @@
+/* ------------------------------------------------------------
+  normalize.css v0.9
+  Project: Pandora - 实现无差异化的标签默认属性
+  Adapted from  http://necolas.github.io/normalize.css/ 
+                http://typo.sofish.de/
+------------------------------------------------------------ */
+
+
+
+/* ==========================================================================
+   HTML5 显示定义
+   ========================================================================== */
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, 
+aside, 
+details, 
+embed, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup,
+menu, 
+nav, 
+section, 
+summary {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img inline-block 属性保持一致 */
+audio, 
+canvas, 
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+command, 
+datalist, 
+keygen, 
+mark, 
+meter, 
+progress, 
+rp, 
+rt, 
+ruby, 
+time, 
+wbr {
+    display: inline;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. 防止用户自定义背景颜色对网页的影响 改为设置到body上适应性更好 ?
+ * 2. 设置默认字体Tahoma
+ * 3. 防止 iOS 设备方向变化且没有禁用缩放功能时，文字会发生大小变化
+ */
+
+html {
+    color: #000; /* 1 */
+    background: #fff; /* 1 */
+    font-family: Tahoma,Arial,\5b8b\4f53,sans-serif; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+    -ms-text-size-adjust: 100%; /* 3 */
+}
+
+body {
+    margin: 0;
+}
+
+/**
+ * Remove default margin.
+
+
+body {
+    margin: 0;
+    background: #fff;
+}
+ */
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */ 
+
+/* Firefox 以外，元素没有下划线，需添加 */
+abbr, 
+acronym {
+    border-bottom: 1px dotted;
+    font-variant: normal;
+}
+
+/**
+ * 添加鼠标问号，进一步确保应用的语义是正确的
+ *（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌）
+ */
+
+abbr {
+    cursor: help;
+}
+
+address, 
+caption, 
+cite, 
+code, 
+dfn, 
+i, 
+th, 
+var {
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* 文本斜体使用 em */
+em {
+    font-style: italic;
+}
+
+/* 统一加粗样式 */
+b, 
+strong {
+    font-weight: bold;
+}  
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+/** 
+ * 专名号：虽然 u 已经重回 html5 Draft，但在所有浏览器中都是可以使用的，
+ * 要做到更好，向后兼容的话，添加 class="typo-u" 来显示专名号
+ * 关于 <u> 标签：http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-u-element
+ * 被放弃的是 4，之前一直搞错 http://www.w3.org/TR/html401/appendix/changes.html#idx-deprecated
+ * 一篇关于 <u> 标签的很好文章：http://html5doctor.com/u-element/ 
+ */
+
+u {
+    text-decoration: underline;
+}
+
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/* 一致化 horizonal rule
+hr {
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 10px;
+    *color: pink;
+    *filter: chroma(color=pink);
+    height: 10px;
+    *margin: -7px 0 2px;
+}
+ */
+
+/**
+ * Address styling not present in IE 8/9.
+ * 标记，类似于手写的荧光笔的作用
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/* 统一代码片断默认字体 && 块/段落引用 */
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-family: "Courier New", Courier, monospace, serif;
+    font-size: 1em;
+}
+
+/* 提高预格式化文本的可读性 */
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Set consistent quote types. */
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/* 一致的非强调文本、底部印刷体、版本等标记效果 */
+small {
+    font-size: 80%;
+    color: #888;
+    font-weight: normal;
+}
+
+/* 统一上标和下标 */
+sub, 
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/* 去除IE下 a 标签内产生的意外边框 */
+img {
+    border: 0;
+}
+
+/* 去除 figure 在 IE 8/9 and Safari 5 中的外边距 */
+figure {
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration: none;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a:hover { 
+    text-decoration: underline;
+}
+
+
+/* webkit内核浏览器会默认给:focus状态的元素加上outline的样式 
+ * 不建议去除浏览器默认的outline属性，为使用户体验更好
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+
+
+:focus {
+    outline:0;
+}
+
+下面是normalize的方法
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+ */
+
+
+
+/* ==========================================================================
+   Forms input button ...
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. 表单元素并不继承父级 font 的字体，这里设置默认字体，并不让其继承父级字体
+ * 2. 表单元素并不继承父级 font 的大小
+ * 3. 统一外边距 in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-family: Tahoma,Arial,\5b8b\4f53,sans-serif; /* 1 */
+    font-size: 100%; /* 2 */
+    line-height: 1;
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+    
+    /* IE6/7 内间距宽度一致 */	
+    *overflow: visible; 
+    
+    /* 让 input 和 button 一样高
+    line-height:22px; */
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/* 去掉Tables单元格间距并让相邻边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* IE bug fixed: th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+    text-align: left;
+}
+
+
+
+/* ==========================================================================
+   Others
+   ========================================================================== */
+
+/* 解决 IE6-7 图片缩放锯齿问题 */
+img {
+    -ms-interpolation-mode: bicubic;    
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+
+
+/* ==========================================================================
+   清除浮动
+   ========================================================================== */
+
+.clearfix,
+.wrap {
+  /* for IE6 IE7 */
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after,
+.wrap:before,
+.wrap:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after,
+.wrap:after {
+  clear: both;
+}
+
+.wrap{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 空标签清除法 */
+.clear {
+    clear: both;
+    display: block;
+    height:0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+
+/* 以上为normalize.css，书写规范请参见cssREADME.md
+========================================================================== */
+

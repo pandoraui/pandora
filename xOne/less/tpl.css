@@ -1,0 +1,11 @@
+
+/*!
+ * tpl.css v1.0 
+ * 提供常用模块 html 代码
+ */
+
+.p-box * { 
+    margin:0;
+    padding:0;
+}
+

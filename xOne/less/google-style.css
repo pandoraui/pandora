@@ -1,0 +1,68 @@
+
+/*!
+ * google-style v1.0
+ * 在外层添加 .google_style 实现 google 风格的样式
+ */
+
+
+.google_style .btn {
+    
+}
+.google_style form input:not([type]),
+.google_style form input[type="text"],
+.google_style form textarea{
+	border:1px solid #ebebeb;
+	border-top-color:#dcdcdc;
+	color:#444;
+	font-family:arial,sans-serif;
+	line-height:normal;
+	padding:6px 10px;
+	width:300px;
+}
+.google_style form textarea{
+	height:150px
+}
+.google_style form input:not([type]):focus,
+.google_style form input[type="text"]:focus,
+.google_style form textarea:focus{
+	border-color:#5e94ff;
+	-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	outline:0
+}
+.google_style form input[disabled],
+.google_style form textarea[disabled],
+.google_style form label.form-disabled{
+	color:#999
+}
+.google_style form input:not([type])[disabled],
+.google_style form input[type="text"][disabled],
+.google_style form textarea[disabled]{
+	background-color:#ebebeb
+}
+
+.google_style form input[type="text"]{
+	border:1px solid #e5e5e5;
+	border-top-color:#dcdcdc;
+	color:#666;
+	display:inline-block;
+	line-height:normal;
+	margin:0 10px 0 0;
+	padding:6px 10px;
+    height:auto;
+	width:200px;
+    box-shadow:none;
+    transition:0;
+}
+[dir="rtl"].google_style input[type="text"]{
+	margin:0 0 0 10px
+}
+.google_style input[type="text"]:focus{
+	border-color:#5e94ff;
+	-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	box-shadow:inset 0 1px 2px rgba(0,0,0,.2);
+	color:#444;
+	outline:0
+}

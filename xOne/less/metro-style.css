@@ -1,0 +1,12 @@
+
+/*!
+ * metro-style v1.0
+ * 在外层添加 .metro_style 实现 metro 风格的样式
+ */
+
+
+ .metro_style .btn {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+ }

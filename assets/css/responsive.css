@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* 
+ @名称: responsive.css
+ @功能: 响应式布局样式
+ */
+
+/**
+  max 480 767 979
+      768-979
+  min 980 1200 
+@media (min-width: 768px) and (max-width: 979px) {}
+@media (min-width: 1200px) {}
+@media (min-width: 980px) {}
+@media (max-width: 480px) {}
+@media (max-width: 767px) {}
+@media (max-width: 979px) {}
+*/
+
+/*!
+ * Custom
+ */
+
+@media (min-width: 1200px) {
+    .wrap{ width: 1200px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

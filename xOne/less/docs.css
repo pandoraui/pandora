@@ -1,0 +1,409 @@
+
+/*!
+ * Pandora's documentation styles
+ * Special styles for presenting Pandora's documentation and examples
+ */
+
+body {
+  font: 14px/1.5 Tahoma,Arial,\5b8b\4f53,sans-serif; 
+  color:#333;
+  background: #fcfcfc;
+  /* 
+  background:url(../../xOne/images/bg.jpg) #fff center -8px no-repeat; */
+}
+
+/* 三种字体的对比
+ * 宋体表示英文实在太差,既锐利有不好看
+ * Tahoma 表示英文字母间还是太紧凑以至于链接起来了 
+   如: cillum 中 ci TI 等字母都连在一起,可读性变差,
+   但经过测试奇数字号表现良好,以下可用于测试
+ * Arial 表示英文比Tahoma锐利清晰,字母之间独立不互联,但表示中文不若 Tahoma 
+ *
+ * 结论,可针对实现英文区域使用 Arial字体样式.en或使用 Tahoma奇数字号
+   对 tag标签使用 Arial字体,垂直居中表现很好
+   
+   突然发现 Verdana不错,缺点是现实英文占用更多空间,字母稍大间隙稍大
+ */
+body{font-family: \5b8b\4f53,sans-serif;}
+body{font-family: Arial,sans-serif;}
+body{font-family: Tahoma,Arial,sans-serif;}
+body{font-family: Verdana,Tahoma,Arial,sans-serif;}
+body .en{font-family:Arial,sans-serif;}
+
+a { 
+    color: #245DC1;
+    text-decoration: none;
+}
+a:visited {
+    color: #7759AE;
+    _color: inherit;
+}
+
+.warning-bar {
+    -webkit-box-shadow: inset 0 0 4px #777;
+    -moz-box-shadow: inset 0 0 4px #777;
+    box-shadow: inset 0 0 4px #777;
+    background-color: #dd4b39;
+    color: #fff;
+    padding: 6px 0;
+    text-align: center;
+}
+.warning-bar a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.wrap { width: 990px;}
+.topbar {
+    background: #F5F5F5;
+    background-image: -moz-linear-gradient(top,#F7F7F7,#F5F5F5);
+    background-image: -webkit-linear-gradient(top,#F7F7F7,#F5F5F5);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#F7F7F7),color-stop(1,#F5F5F5));
+    background-image: linear-gradient(top,#F7F7F7,#F5F5F5);
+    border-bottom: 1px solid #EEE;
+    position: relative;
+    z-index: 2;
+    height: 28px; 
+    line-height: 28px;
+    font-size: 12px;
+}
+.header {
+    background: #F5F5F5;
+    background: -moz-linear-gradient(top,#FAFAFA,#F5F5F5);
+    background: -webkit-linear-gradient(top,#FAFAFA,#F5F5F5);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FAFAFA),color-stop(1,#F5F5F5));
+    background: linear-gradient(top,#FAFAFA,#F5F5F5);
+    border-bottom: 1px solid #EEE;
+    color: #444;
+    min-height: 44px;
+    padding: 14px 15px 13px;
+}
+.brand:hover { text-decoration: none; cursor: pointer;}
+.header h1 {
+    margin: 0;
+    float: left;
+    padding-top: 3px;
+}
+.header h1 small{
+    vertical-align: middle;
+}
+.header h1 small:before {
+    border: solid #E5E5E5;
+    border-width: 0 0 0 1px;
+    content: "";
+    float: left;
+    height: 26px;
+    margin: 0 12px 0 14px;
+}
+.search-util{
+    float: right;
+    padding-top: 10px;
+}
+.search-util form {
+    margin: 0;
+}
+
+/*
+.google_style .searchbox input {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    font-size: 13px;
+    height: 28px;
+    margin: 0;
+    outline: none;
+    padding: 5px 2px;
+    width: 100%;
+}
+.google_style .searchbox {
+    position: absolute;
+    left: 0px;
+    right: 81px;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    height: 28px;
+    padding-left: 4px;
+}
+.google_style .searchbox:hover {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px inset;
+       -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 2px inset;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px inset;
+    border: 1px solid #4D90FE;
+}
+*/
+.search-icon {
+    display:inline-block;
+    /* text-indent: -9999px; 
+    针对inline-block元素使用此属性会导致IE6/7下该元素不显示 */
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.google_style .navbar {
+    background: #325DA7;
+    background: -moz-linear-gradient(top, #4E78C2, #325DA7);
+    background: -webkit-linear-gradient(top, #4E78C2, #325DA7);
+    background: -webkit-gradient(linear, left top, left bottom, from(0,#4E78C2), to(1,#325DA7));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e78c2', endColorstr='#325da7');
+    background: linear-gradient(top,#4E78C2,#325DA7);
+    color: #fff;
+    padding: 0 15px;
+    *zoom: 1;
+}
+
+.nav a {
+  display: block;
+}
+.nav i {
+    font-style: normal;
+}
+.main-nav {
+    margin:0;
+}
+.main-nav li {
+  display: inline;
+  float:left;
+}
+.main-nav a{
+    /* 仅仅使用padding在IE6/7下效果不好,结合height与line-height控制更为精准 */
+    /* padding: 10px 15px; */
+    display: inline-block;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    
+    /* color: #ddd; */
+}
+.main-nav a { 
+    color:#e1e5f2;
+}
+.main-nav a:hover { 
+    color:#fff;
+}
+.main-nav .active a { 
+    color:#fff;
+    font-weight: bold;
+}
+.global {
+    background: #F6F9FF;
+    border: 1px solid #EFF2F9;
+    border-radius: 2px;
+    margin: 20px -16px;
+    padding-top: 20px;
+}
+
+#pa-signature{
+	clear:both;
+	margin:100px auto 0;
+	max-width:978px;
+	min-height:4px
+}
+#pa-signature:after,#pa-signature:before{
+	content:"";
+	float:right;
+	height:4px
+}
+[dir=rtl]#pa-signature:after,[dir=rtl]#pa-signature:before{
+	float:left
+}
+#pa-signature:after,[dir="rtl"]#pa-signature:before{
+	border-left:34px solid #0089fa;
+	border-right:35px solid #ff002b
+}
+#pa-signature:before,[dir="rtl"]#pa-signature:after{
+	border-left:35px solid #ffa900;
+	border-right:34px solid #00a753
+}
+.footer{ 
+    clear: both;
+    background: #F5F5F5;
+}
+.footer ul,
+.footer p {
+    margin: 0;
+}
+
+.footer-local,
+.footer-global {
+    padding: 10px 15px;
+}
+
+.footer-local {
+    background: #F9F9F9;
+    border-top: 1px solid #F5F5F5;
+    min-height: 24px;
+}
+.footer-global {  
+    border-top: 1px solid #eee;
+}
+
+.sidebar {
+    margin-top:20px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+         -o-border-radius: 5px;
+            border-radius: 5px;
+    background-color: #F9F9F9;
+}
+.sidebar {
+  width: 210px;
+  float: left;
+  display: inline;
+  margin-right: 20px;
+  line-height: 2;
+  background: #f5f5f5;
+}
+
+.sidebar ul { padding: 10px 10px;}
+.sidebar li {
+    position: relative;
+    *zoom:1;
+}
+
+.sidebar small { 
+    position: absolute;
+    right: 11px;
+    font-size: 12px;
+}
+.main {
+  overflow:hidden;
+  padding: 0 20px 30px;
+  *zoom:1;
+}
+.main section{
+  padding: 1px 0;
+}
+.modules{
+    margin-right: -10px;
+    
+}
+.modules a { 
+    display: inline-block;
+    *zoom: 1;
+    width: 165px;
+    border: 1px solid #eee\9;   /* all-IE */
+    border: none\9\0;           /* IE9 */ 
+    /* 
+    background: #fff1ff;
+    */
+    background: #eee;
+    
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.55);
+    margin: 0 5px 10px 0;
+    padding: 3px 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-left: 4px solid #ddd;
+    position: relative;
+}
+.modules a:hover { 
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    color: #6C97C2;
+    text-decoration: none;
+}
+.modules a.todo  { border-left: 4px solid #ccc; background: #eee; cursor: default; }
+.modules a.doing { border-left: 4px solid #f80; background: #FDF1DC; }
+.modules a.done  { border-left: 4px solid #0b0; background: #DDFDCD; }
+
+span.label { margin-left:5px; }
+span.todo  {  }
+span.doing { background: #f80; }
+span.done  { background: #0b0; }
+
+.demolist dd a {
+    display: inline-block;
+    width: 100px;
+}
+/* code examples
+-------------------------------------------------- */
+
+/* Base class */
+.docs-example {
+  position: relative;
+  margin: 15px 0;
+  padding: 39px 19px 14px;
+  *padding-top: 19px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+/* Echo out a label for the example */
+.docs-example:after {
+  content: "Example";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #9da0a4;
+  -webkit-border-radius: 4px 0 4px 0;
+     -moz-border-radius: 4px 0 4px 0;
+          border-radius: 4px 0 4px 0;
+}
+
+/* Remove spacing between an example and it's code */
+.docs-example + pre,
+.docs-example + .prettyprint {
+  margin-top: -20px;
+  padding-top: 15px;
+}
+
+/* Tweak examples
+------------------------- */
+.docs-example > p:last-child {
+  margin-bottom: 0;
+}
+.docs-example .table,
+.docs-example .progress,
+.docs-example .well,
+.docs-example .alert,
+.docs-example .hero-unit,
+.docs-example .pagination,
+.docs-example .navbar,
+.docs-example > .nav,
+.docs-example blockquote {
+  margin-bottom: 5px;
+}
+.bs-docs-example .pagination {
+  margin-top: 0;
+}
+
+ 
+.docs-example > h1:first-child,
+.docs-example > h2:first-child,
+.docs-example > h3:first-child,
+.docs-example > h4:first-child,
+.docs-example > p:first-child {
+    margin-top: 0;
+}
+
+
+
+.google-style code{ color: green;}
+
+
+
+/* module test */
+.ui-tiptext,
+.ui-tiptext-container{ margin-bottom:10px;}
+.ui-tiptext-container .ui-tiptext{ margin-bottom:0;}
+.ui-tipbox,
+.ui-poptip{ 
+    margin-bottom:10px;
+}
+

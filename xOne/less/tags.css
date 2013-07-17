@@ -1,0 +1,311 @@
+
+/*!
+ * tags.css v1.0
+ * Author Pandora
+ */
+
+/* tagcc,tagback */
+
+/* 新的tags标签 tags.css: tagcc,tagback */
+.tagscc,
+.tagsback,
+.tagsgift {
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-indent:0;
+    cursor: default;
+}
+
+.tagscc {
+    padding: 0 4px;
+    background: #ff9614;
+    color: #fff;
+    height: 16px;
+    line-height: 16px;
+}
+
+.tagsback,
+.tagsgift {
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    text-decoration: none;
+}
+
+.tagscc:empty,
+.tagsback:empty {
+    display: none;
+}
+
+.tagsback {
+    border: 1px solid #ff9614;
+    color: #ff9614;
+}
+
+.tagsback:hover {
+    text-decoration: none;
+    color: #ff9614;
+}
+
+.tagsback em,
+.tagsback i,
+.tagsgift em,
+.tagsgift i { 
+    font-size: 12px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal !important;
+    overflow: hidden;
+    height: 100%;
+}
+
+.tagsback em,
+.tagsgift em {
+    display: inline-block;
+    padding: 0 2px;
+    *float: left;
+    height: 100%;
+}
+
+.tagsback em {
+    background: #ff9614;
+    color: #fff;
+}
+
+.tagsback i,
+.tagsgift i {
+    padding: 0 3px;
+    min-width: 30px;
+    _width: 30px;
+    text-align: center;
+    color: #ff9614;
+}
+
+.tagsgift,
+.tagblue { 
+    border: 1px solid #ccddee;
+    color: #17afe3;
+}
+
+.tagsgift:hover,
+.tagblue:hover { 
+    text-decoration: none;
+    color: #17afe3;
+}
+
+.tagsgift em,
+.tagblue em { 
+    background: #f0f5fc;
+    color: #17afe3;
+}
+
+.tagsgift i,
+.tagblue i { 
+    color: #17afe3;
+}
+
+/* tags101 纯色标签 101橙色  102粉红  103红色  104绿色 105玫红  */
+.tags101,
+.tags102,
+.tags103,
+.tags104,
+.tags105,
+.tags106,
+.tags107,
+.tags108,
+.tags109 {
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal !important;
+    text-indent:0;
+    cursor: default;
+    
+    padding: 0 4px;
+    background: #ff9614;
+    color: #fff;
+    height: 16px;
+    line-height: 16px;
+}
+.tags101{ background: #ff8800;} /* 橙色 */
+.tags102{ background: #fa65b0;} /* 粉红 */
+.tags103{ background: #ff4444;} /* 红色 */
+.tags104{ background: #6bbd00;} /* 绿色 */
+.tags105{ background: #dd1177;} /* 玫红 */
+.tags106{ background: ;} /*  */
+.tags107{ background: ;} /*  */
+.tags108{ background: ;} /*  */
+.tags109{ background: ;} /*  */
+
+/* tags背景 */
+.tags201,
+.tags301,
+.tags302 {
+    background: url(http://pic.lvmama.com/img/new_v/ob_search/combo.gif) no-repeat; 
+    display: inline-block;
+    *display: inline;
+    *zoom: 1; 
+    font-family: Tahoma,Arial,\5b8b\4f53;
+    text-indent: 0;
+}
+
+/* tags201	促销大ICON-橙色 */
+.tags201 { 
+    width: 72px; 
+    height: 26px;
+    line-height: 26px; 
+    margin: 0 0 8px 0;
+    padding: 0 0 9px 0;
+    overflow: hidden; 
+    white-space: nowrap;
+    background-position: -32px -136px;
+    font-size: 12px;
+    color: #ee6600;
+    text-align: center;
+    text-indent: 0;
+}
+
+/* tags301	项目tags 301超级自由行 302开心驴行 */
+.tags301,
+.tags302 {
+    display:inline-block; 
+    margin:0 2px; 
+    height: 17px;
+    line-height: 17px;
+    width: 76px; 
+    overflow: hidden;
+    font-size: 12px;
+    text-indent: -9999px;
+}
+
+.tags301{ background-position: -190px 0; width: 88px;}
+.tags302{ background-position: -190px -17px; width: 76px;}
+
+
+
+/* .tag 标签内使用 arial 字体垂直居中表现很好
+ * author: linjianfeng@baixing.com
+ */
+.tag {
+    font-family: Arial,sans-serif;
+    display: inline-block;
+    padding: 0 3px;
+    padding: 1px 3px 0\9;
+    background: #eee;
+    margin: 0 3px;
+    border-radius: 2px;
+    color: #888 !important;
+}
+.tag-blue, 
+.tag-green, 
+.tag-red, 
+a.tag:hover {
+    color: #fff !important;
+}
+.tag-blue { background: #08c; }
+.tag-green { background: #5ba533; }
+.tag-red { background: #f36; }
+a.tag:hover { 
+    background: #888;
+    text-decoration: none;
+    color: #fff !important;
+}
+
+
+/* 与文本的垂直对齐问题 */
+[class^="tags"],
+[class*=" tags"],
+.tagscc,
+.tagsback,
+.tagsgift,
+.tags101,
+.tags102,
+.tags103,
+.tags104,
+.tags105,
+.tags106,
+.tags107,
+.tags108,
+.tags109,
+.tags301,
+.tags302 {
+    vertical-align: middle ;
+    /*
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    *top: 1px; */
+}
+
+
+
+/* tags测试 */
+.testtags {
+    display: inline-block;
+    margin: 0 2px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-indent:0;
+    cursor: default;
+    zoom: 1;
+    vertical-align:middle;
+}
+
+.testtags {
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    text-decoration: none;
+}
+
+
+.testtags {
+    border: 1px solid #ff9614;
+    color: #ff9614;
+    *zoom:1;
+    overflow:hidden;
+}
+.testtags{ display:inline-block; font-weight:normal; font-style:normal; height:30px; line-height:30px;}
+.testtags em,
+.testtags i{
+    font-size: 12px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal !important;
+    overflow: hidden;
+    height: 100%;
+    *zoom:1;
+}
+
+
+
+.testtags em {
+    display: inline-block;
+    padding: 0 2px;
+    *vertical-align: top;
+}
+
+.testtags em {
+    background: #ff9614;
+    color: #fff;
+}
+
+.testtags i {
+    padding: 0 3px;
+    min-width: 30px;
+    _width: 30px;
+    text-align: center;
+    color: #ff9614;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,130 @@
+
+/*!
+ * pager v1.0
+ * 分页组件
+ */
+
+.pages {
+    text-align: right;
+}
+.pages a,
+.pages span {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 3px 9px;
+    line-height: 18px;
+}
+.pages a { 
+    border: 1px solid #ddd;
+    color: #333;
+    background: #fff;
+}
+.pages .PageSel,
+.rosestyle .PageSel {
+    font-weight: bold;
+    border: 1px solid #df1a7a;
+    color: #fff;
+    background: #df1a7a;
+}
+.pages a:hover, 
+.rosestyle a:hover { 
+    border-color: #df1a7a;
+    color: #df1a7a; 
+    text-decoration: none;
+}
+.orangestyle .PageSel {
+    font-weight: bold;
+    border: 1px solid #f80;
+    color: #fff;
+    background: #f80;
+}
+.orangestyle a:hover { 
+    border-color: #f80;
+    color: #f80; 
+    text-decoration: none;
+}
+
+/* Pages页码控制 默认橙色 */
+.pages { 
+    text-align: right;
+}
+.Pages a, .Pages span {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 9px; 
+    height: 25px; 
+    line-height: 25px;
+}
+.Pages a {
+    border: 1px solid #ddd;
+    color: #333; 
+    color: #07c;
+    background: #fff;
+}
+.Pages .PageSel, 
+.orangestyle .PageSel {
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #f80;
+    background: #f80;
+}
+.Pages a:hover, 
+.orangestyle a:hover { 
+    text-decoration: none;
+    border-color: #f80;
+    color: #f80;
+}
+
+.Pages .PrevPage,
+.Pages .NextPage { 
+    width: 55px; 
+    padding: 0; 
+    height: 25px;
+    /* color: #07c;*/ 
+    line-height: 24px; 
+    background: url(http://pic.lvmama.com/img/new_v/newBtn_bg.gif) 1000px 1000px no-repeat;
+}
+.Pages .PrevPage { 
+    background-position: 0 -1817px; 
+    text-align: right; 
+    padding-right: 10px;
+}
+.Pages .NextPage { 
+    background-position: -144px -1817px; 
+    text-align: left; 
+    padding-left: 10px;
+}
+.Pages span.PrevPage,
+.Pages span.NextPage {
+    color: #ccc;
+    border: 1px solid #ddd;
+}
+.Pages span.PrevPage { 
+    background-position: 0 -1776px;
+}
+.Pages span.NextPage { 
+    background-position: -144px -1776px;
+}
+/* 玫红色 */
+.rosestyle .PageSel {
+    border: 1px solid #df1a7a;
+    background: #df1a7a;
+}
+.rosestyle a:hover { 
+    border-color: #df1a7a;
+    color: #df1a7a;
+}
+/* 橙黄色 */
+.orangestyle .PageSel {
+    border: 1px solid #f80;
+    background: #f80;
+}
+.orangestyle a:hover { 
+    border-color: #f80;
+    color: #f80;
+}
+
+
+
+

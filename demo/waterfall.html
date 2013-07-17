@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>瀑布广告</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../xOne/less/pandora.css">
+<link rel="stylesheet" href="../xOne/less/docs.css">
+<style>
+
+</style>
+</head>
+<body id="xhindex">
+<div class="topbar">
+    <div class="wrap">topbar</div>
+</div>
+
+<div class="wrap">
+    <h1>瀑布广告</h1>
+	<p>简单瀑布广告代码</p>
+<pre class="prettyprint">
+&lt;script&gt;
+$(function(){
+    // html代码
+    var _activebox = '&lt;div id="indexSilde" style="width:980px;margin:0 auto;position:relative;overflow:hidden;height:0;"&gt;'
+            + '&lt;div id="xslide1" style="position:absolute;z-index:11;top:0;display:none;"&gt;'
+            + '&lt;a target="_blank" href="http://zhounianqing.lvmama.com/?losc=019677"&gt;'
+            + '&lt;img src="http://pic.lvmama.com/img/v3/coupon.jpg" width="980" height="80"&gt;'
+            + '&lt;/a&gt;&lt;/div&gt;'
+            + '&lt;div id="xslide2" style="position:relative;top:0;z-index:10;"&gt;'
+            + '&lt;a target="_blank"  href="http://zhounianqing.lvmama.com/?losc=019677"&gt;'
+            + '&lt;img src="http://pic.lvmama.com/img/v3/couponbig.jpg" width="980" height="500"&gt;'
+            + '&lt;/a&gt;&lt;/div&gt;'
+            + '&lt;/div&gt;';
+    
+    $('.hh_shortcut_box').after(_activebox);
+    
+    // 瀑布广告
+    var _indexSilde = $('#indexSilde');
+	var _xslide1 = $('#xslide1');
+	function _shouqi(){ 
+		_indexSilde.animate({'height':80},1000,function(){
+			_xslide1.fadeIn(500).siblings().fadeOut(500,function(){
+				if($.browser.msie && parseInt($.browser.version)&lt;=8){ 
+					//$.fx.off = true; 
+				}
+			});
+		});
+	};
+	
+	function _showslide(){
+		_indexSilde.animate({'height':500},1000,function(){
+			setTimeout(_shouqi,4000);
+		});
+	}
+	//$.fx.off = false;
+	setTimeout(_showslide,1000);
+})
+&lt;/script&gt;
+</pre>
+
+
+</div>
+
+<script src="http://pic.lvmama.com/js/jquery-1.7.js"></script>
+<script>
+$(function(){
+    // html代码
+    var _activebox = '<div id="indexSilde" style="width:980px;margin:0 auto;position:relative;overflow:hidden;height:0;">'
+             + '<div id="xslide1" style="position:absolute;z-index:11;top:0;display:none;"><a target="_blank" href="http://zhounianqing.lvmama.com/?losc=019677"><img src="http://pic.lvmama.com/img/v3/coupon.jpg" width="980" height="80" style="vertical-align:middle"></a></div>'
+             
+             + '<div id="xslide2" style="position:relative;top:0;z-index:10;"><a target="_blank"  href="http://zhounianqing.lvmama.com/?losc=019677"><img src="http://pic.lvmama.com/img/v3/couponbig.jpg" width="980" height="500" style="vertical-align:middle"></a></div></div>';
+    var _activeboxsmall = '<div id="coupon" style="width:980px;margin:0 auto;"><a target="_blank" href="http://zhounianqing.lvmama.com/?losc=019677"><img src="http://pic.lvmama.com/img/v3/coupon.jpg" width="980" height="80" style="vertical-align:middle"></a></div>'
+    
+    $('body:not("#xhindex")').find('.topbar').after(_activeboxsmall);
+    $('#xhindex .topbar').after(_activebox);
+    
+    // 瀑布广告
+    var _indexSilde = $('#indexSilde');
+	var _xslide1 = $('#xslide1');
+	function _shouqi(){ 
+		_indexSilde.animate({'height':80},1000,function(){
+			_xslide1.fadeIn(500).siblings().fadeOut(500,function(){
+				if($.browser.msie && parseInt($.browser.version)<=8){ 
+					// 开启低版本浏览器的动画效果
+                    // $.fx.off = true; 
+				}
+			});
+		});
+	};
+	
+	function _showslide(){
+		_indexSilde.animate({'height':500},1000,function(){
+			setTimeout(_shouqi,4000);
+		});
+	}
+	//$.fx.off = false;
+	setTimeout(_showslide,1000);
+})
+</script>
+</body>
+</html>

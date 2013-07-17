@@ -1,0 +1,313 @@
+
+/* ------------------------------------------------------------
+  form.css v1.0
+  Adapted from  Bootstrap forms.css
+  对于不支持 input[type="text"] 属性选择符的IE6，由样式input-text控制
+  使用 IE7.js 修复效果很不好
+------------------------------------------------------------ */
+
+/* reset中已包含 
+button,
+input {
+    line-height: normal;
+    /* IE6/7 内间距宽度一致 
+    *overflow: visible; 
+}
+
+*/
+ 
+ 
+i.req {
+    padding-right: 3px;
+    font-style: normal;
+    font-weight: normal;
+    color: red;
+}
+
+/* 表单控件 */
+
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select,
+textarea,
+.input-text,
+.input-password,
+.input-date,
+.input-number,
+.uneditable-input {
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  vertical-align: middle;
+}
+
+.input-radius {
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px; 
+}
+
+input,
+textarea,
+.uneditable-input {
+  width: 156px;
+}
+
+textarea {
+  height: auto;
+}
+
+textarea,
+.input-text,
+.input-password,
+.input-date,
+.input-number,
+.uneditable-input {
+  background-color: #ffffff;
+  border: 1px solid #aabbcc;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+          /* 载入页面刷新时出现黑框
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+          */
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.textarea-focus,
+.input-focus,
+.input-text-focus,
+.input-password-focus,
+.input-date-focus,
+.input-number-focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input[type="radio"],
+input[type="checkbox"],
+.input-radio,
+.input-checkbox {
+  margin: 3px 0 0;
+  margin-top: 2px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"],
+.input-file,
+.input-image,
+.input-submit,
+.input-reset,
+.input-button,
+.input-radio,
+.input-checkbox {
+  width: auto;
+}
+
+select,
+input[type="file"],
+.input-file {
+  height: 26px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+}
+
+select {
+  width: 170px;
+  background-color: #ffffff;
+  border: 1px solid #aabbcc;
+}
+
+select[multiple],
+select[size],
+.selects,
+.select-multiple,
+.select-size {
+  height: auto;
+}
+
+
+
+.radio,
+.checkbox {
+  min-height: 20px;
+  margin-right: 10px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"],
+.radio .input-radio,
+.checkbox .input-checkbox {
+  /* float: left;*/
+  margin-right: 3px;
+  vertical-align: text-top;
+}
+
+
+label.inline,
+label.inline {
+  display: inline-block;
+  padding-top: 5px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.help-block,
+.help-inline {
+  color: #595959;
+}
+
+.help-block {
+  display: block;
+  margin:0 0 10px;
+}
+
+.help-inline {
+  display: inline-block;
+  *display: inline;
+  padding-left: 5px;
+  vertical-align: middle;
+  *zoom: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.control-group {
+  margin-bottom: 10px;
+}
+
+legend + .control-group {
+  margin-top: 20px;
+  -webkit-margin-top-collapse: separate;
+}
+
+.form-horizontal .control-group {
+  margin-bottom: 20px;
+  *zoom: 1;
+}
+
+.form-horizontal .control-group:before,
+.form-horizontal .control-group:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.form-horizontal .control-group:after {
+  clear: both;
+}
+
+.form-horizontal .control-label {
+  float: left;
+  width: 160px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.form-horizontal .controls {
+  *display: inline-block;
+  *padding-left: 20px;
+  margin-left: 180px;
+  *margin-left: 0;
+}
+
+.form-horizontal .controls:first-child {
+  *padding-left: 180px;
+}
+
+.form-horizontal .help-block {
+  margin-bottom: 0;
+}
+
+
+
+
+
+/* IE6 */
+input.input-radio,
+input.input-checkbox {
+    width: 16px;
+	height: 16px;
+}
+label.inline { *display:inline;}

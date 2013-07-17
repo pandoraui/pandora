@@ -1,0 +1,86 @@
+
+/*!
+ * WebFrame v1.0
+ * Adapted from https://github.com/webcoding/cnBootstrap
+ */
+
+/*
+ * 在32个"style"方法(style, link, @import)后浏览器会忽略后面的样式(IE6/7/8)
+ */
+
+/* Core variables and mixins */
+/* Modify this for custom colors, font-sizes, etc
+@import "variables.css"; 
+@import "mixins.css";
+ */
+
+/* CSS Reset */
+@import "iconfont.css";
+@import "normalize.css";
+@import "typo-dev.css";
+@import "combo.css";
+
+/* Grid system and page structure
+@import "scaffolding.css";
+@import "grid.css";
+@import "layouts.css";
+ */
+/* Base CSS */
+@import "code.css";
+@import "buttons.css";
+@import "button-groups.css";
+@import "form.css";
+@import "tables.css";
+
+/* Components: common 
+@import "module.css";
+@import "sprites.css";
+@import "dropdowns.css";
+@import "wells.css";
+@import "component-animations.css";
+@import "close.css";
+*/
+/* Components: Buttons & Alerts */
+@import "tips.css";
+
+@import "alerts.css"; /* Note: alerts share common CSS with buttons and thus have styles in buttons.css */
+
+
+/* Components: Nav
+@import "navs.css";
+@import "navbar.css"; */
+@import "breadcrumbs.css";
+@import "pagination.css";
+@import "pager.css";
+@import "poptip.css";
+
+/* Components: Popovers */
+@import "modals.css";
+@import "tooltip.css";
+@import "popovers.css";
+
+/* Components: Misc */
+@import "thumbnails.css";
+@import "media.css";
+@import "tags.css";
+@import "labels-badges.css";
+/*
+@import "progress-bars.css";
+@import "accordion.css";
+@import "carousel.css";
+@import "hero-unit.css";
+*/
+/* Utility classes 
+@import "utilities.css"; /* Has to be last to override when necessary */
+
+/* Plugin classes
+@import "plugin.css";
+ */
+
+/* Other Style */
+@import "metro-style.css";
+@import "google-style.css";
+
+/* 书写规范请参见README.md
+============================================================ */
+

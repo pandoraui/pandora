@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>IE6 的 fixed 解决方案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../xOne/less/pandora.css">
+<link rel="stylesheet" href="../xOne/less/docs.css">
+<style>
+/*Make position:fixed work in IE6!*/
+ 
+.fixed-top    /* position fixed Top    */{position:fixed;bottom:auto;top:0;}
+.fixed-bottom /* position fixed Bottom */{position:fixed;bottom:0;top:auto;}
+.fixed-left   /* position fixed Left   */{position:fixed;right:auto;left:0;}
+.fixed-right  /* position fixed right  */{position:fixed;right:0;left:auto;}
+
+* html,* html body   /* IE6 Fixed Position Jitter Fix */{background-image:url(about:blank);background-attachment:fixed;}
+* html .fixed-top    /* IE6 position fixed Top        */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop));}
+* html .fixed-right  /* IE6 position fixed right      */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));}
+* html .fixed-bottom /* IE6 position fixed Bottom     */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+* html .fixed-left   /* IE6 position fixed Left       */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));}
+
+/* 左右方向控制 */
+.fixed-left,
+.fixed-right{top:0;}
+
+.test-top,
+.test-bottom{left:50%;}
+.test-top{margin-left:-540px;top:100px;}
+.test-bottom{margin-left:500px;bottom:100px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>IE6 的 fixed 解决方案</h1>
+	<p>下面的是我最喜欢的办法了，代码精简css就能解决问题，虽然用了css表达式，但是毕竟IE6用户越来越少了。</p>
+	
+    <div class="docs-example">
+        <p>修正IE6不支持position:fixed的bug，摘自：<a href="https://gist.github.com/subtleGradient/158243">position-fixed.css</a></p>
+        <p>用的最多的是上下位置控制，左右的方法可直接无视。</p>
+    </div>
+<pre class="prettyprint linenums">
+/*Make position:fixed work in IE6!*/
+ 
+.fixed-top    /* position fixed Top    */{position:fixed;bottom:auto;top:0;}
+.fixed-bottom /* position fixed Bottom */{position:fixed;bottom:0;top:auto;}
+.fixed-left   /* position fixed Left   */{position:fixed;right:auto;left:0;top:0;}
+.fixed-right  /* position fixed right  */{position:fixed;right:0;left:auto;top:0;}
+ 
+* html,* html body   /* IE6 Fixed Position Jitter Fix */{background-image:url(about:blank);background-attachment:fixed;}
+* html .fixed-top    /* IE6 position fixed Top        */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop));}
+* html .fixed-right  /* IE6 position fixed right      */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));}
+* html .fixed-bottom /* IE6 position fixed Bottom     */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+* html .fixed-left   /* IE6 position fixed Left       */{position:absolute;right:auto;left:expression(eval(document.documentElement.scrollLeft));}
+
+/* 左右方向控制 */
+.fixed-left,
+.fixed-right{top:0;}
+
+.test-top,
+.test-bottom{left:50%;}
+.test-top{margin-left:-540px;top:100px;}
+.test-bottom{margin-left:500px;bottom:100px;}
+
+关于上下的灵活定位，ie6下需要添加一个修改
+</pre>
+
+<div class="test" style="height:400px;">设置一个空元素，撑起页面高度</div>
+
+
+<div class="fixed-top">fixed-top</div>
+<div class="fixed-right">fixed-right</div>
+<div class="fixed-bottom">fixed-bottom</div>
+<div class="fixed-left">fixed-left</div>
+
+<div class="test-top fixed-top">定位上</div>
+<div class="test-bottom fixed-bottom">定位下</div>
+
+
+
+</div>
+
+</body>
+</html>

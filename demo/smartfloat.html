@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>跟随滚动</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../xOne/less/pandora.css">
+<link rel="stylesheet" href="../xOne/less/docs.css">
+<style>
+.float {
+    width: 60px; 
+    padding: 10px;
+    position: absolute; 
+    left: 50%; 
+    top: 30px;
+    margin-left: 400px;
+    border: 1px solid #ffecb0;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.2); 
+       -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.2); 
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    background-color: #fffee0;      
+    
+}
+</style>
+</head>
+<body>
+<div class="wrap" style="height:1500px;">
+    <h1>跟随滚动</h1>
+	<p>js页面滚动时层智能浮动定位实现</p>
+    <p>代码实现原理详情请参考： <a href="http://www.zhangxinxu.com/wordpress/?p=1242">js页面滚动时层智能浮动定位实现</a></p>
+	<div class="float" id="float" style="position: absolute; top: 131px;">
+        我是个腼腆羞涩的浮动层<img src="http://web2.qq.com/style/face/6.gif" title="含羞">，你可以轻轻地 <a href="/">点击我</a>(去首页)。
+    </div>
+<pre class="prettyprint linenums">
+&lt;script&gt;
+$.fn.smartFloat = function() {
+    var position = function(element) {
+        var top = element.position().top, pos = element.css("position");
+        $(window).scroll(function() {
+            var scrolls = $(this).scrollTop();
+            if (scrolls > top) {
+                if (window.XMLHttpRequest) {
+                    element.css({
+                        position: "fixed",
+                        top: 0
+                    });    
+                } else {
+                    element.css({
+                        top: scrolls
+                    });    
+                }
+            }else {
+                element.css({
+                    position: "absolute",
+                    top: top
+                });    
+            }
+        });
+    };
+    return $(this).each(function() {
+        position($(this));                         
+    });
+};
+
+//绑定
+$("#float").smartFloat();
+&lt;/script&gt;
+</pre>
+
+
+</div>
+
+<script src="http://pic.lvmama.com/js/jquery-1.7.js"></script>
+<script>
+$.fn.smartFloat = function() {
+    var position = function(element) {
+        var top = element.position().top, pos = element.css("position");
+        $(window).scroll(function() {
+            var scrolls = $(this).scrollTop();
+            if (scrolls > top) {
+                if (window.XMLHttpRequest) {
+                    element.css({
+                        position: "fixed",
+                        top: 0
+                    });    
+                } else {
+                    element.css({
+                        top: scrolls
+                    });    
+                }
+            }else {
+                element.css({
+                    position: "absolute",
+                    top: top
+                });    
+            }
+        });
+    };
+    return $(this).each(function() {
+        position($(this));                         
+    });
+};
+ 
+//绑定
+$("#float").smartFloat();
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+
+/*!
+ * typo.css v0.9 
+ * 依赖于 normalize.css reset.css
+ * 修改自 typo.css@sofish 实现 typo-dev 的生产线版本
+ */
+
+/*
+ * 基于 如下 body 属性
+ * body { font: 12px/1.5 Tahoma,Arial,\5b8b\4f53,sans-serif;}
+ * 生产线使用 12px 字体，可根据需求自定义修改
+ */
+
+.typo p { margin: 1em 0 0.6em;}
+.typo table p { margin-top: 0;}
+
+/* 专名号：虽然 u 已经重回 html5 Draft，但在所有浏览器中都是可以使用的，
+ * 要做到更好，向后兼容的话，添加 class="typo-u" 来显示专名号
+ * 关于 <u> 标签：http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-u-element
+ * 被放弃的是 4，之前一直搞错 http://www.w3.org/TR/html401/appendix/changes.html#idx-deprecated
+ * 一篇关于 <u> 标签的很好文章：http://html5doctor.com/u-element/ 
+ */
+u, .typo-u {
+	text-decoration: underline;
+}
+
+
+/* 保证块/段落之间的空白隔行 */
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
+.typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    
+}
+
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 
+ * 这里相对于12px/14px字体设置
+ */
+.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
+.typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6 {
+    margin: 1em 0 0.6em;
+    line-height: 1;
+    font-weight: bold;
+}
+.typo h1, .typo-h1 {
+	font-size: 2.6em;
+}
+.typo h2, .typo-h2 {
+	font-size: 2.0em;
+}
+.typo h3, .typo-h3 {
+	font-size: 1.6em;
+}
+.typo h4, .typo-h4 {
+	font-size: 1.3em;
+}
+.typo h5, .typo-h5 {
+	font-size: 1em;
+}
+.typo h6, .typo-h6 {
+	font-size: 1em;
+}
+
+/* 在文章中，还原 ul 和 ol 的样式，布局更便捷迅速 */
+
+.typo ul, 
+.typo-ul,
+.typo ol, 
+.typo-ol {
+    padding: 0;
+    margin: 10px 0 10px 25px;
+    margin: 10px 0 10px 2em;
+}
+
+.typo ul, .typo-ul {
+	list-style: disc;
+}
+.typo ol, .typo-ol {
+	list-style: decimal;
+}
+
+.typo li ul,
+.typo li ol,
+.typo-ul ul, 
+.typo-ul ol, 
+.typo-ol ul, 
+.typo-ol ol {
+    margin-bottom: 0;
+    margin-bottom: 0;
+    margin-left: 2em;
+}
+
+.typo li ul, 
+.typo-ul ul, 
+.typo-ol ul {
+    list-style: circle;
+}
+
+
+
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+ul.inline > li,
+ol.inline > li {
+  display: inline-block;
+  /* IE7 inline-block hack */
+  
+  *display: inline;
+  padding-right: 5px;
+  padding-left: 5px;
+  *zoom: 1;
+}
+
+
+/*
+ * <li>&bull; <a href=""></a></li>
+ * 字体为宋体时 &bull; 能良好的表示 ul 列表项中的点
+ */
+ul.ul, 
+ol.ol {
+    font-family: \5b8b\4f53, sans-serif;
+}
+
+/*
+ * 同 ul/ol，在文章中应具备 table 基本格式 
+ * 此处仅设置 .typo table 样式（同.table-info）
+ * 出于统一的目的，更多表格设置请参看 tables.css
+ */
+
+.typo table th, 
+.typo table td, 
+.typo-table th, 
+.typo-table td .typo table caption{
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+}
+.typo table th, 
+.typo-table th {
+    background: #fbfbfb;
+}
+.typo table thead th, 
+.typo-table thead th {
+    background: #f1f1f1;
+}
+.typo table .caption {
+    border-bottom:none;
+}
+
+/* 块/段落引用 */
+.typo blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+
+.typo blockquote p {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.typo blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+
+.typo blockquote small:before {
+  content: '\2014 \00A0';
+}
+
+/* 代码片断 请参见 code.css */
+pre, code { }
+
+/* 表单元素 请参见 forms.css */
+input { }
+
+/* 去除 webkit 中 input 和 textarea 的默认样式  */
+.typo-input, .typo-textarea{
+    -webkit-appearance:none;
+    border-radius:0;
+}
+
+/* 高亮选中 */
+::-moz-selection {background:#08c;color:#fff;}
+::selection {background:#08c;color:#fff;}
+
+/* TODO: 供着重号使用 */
+.typo-em, .typo em, legend, caption {
+	font-weight: 700;
+    font-style: normal;
+}

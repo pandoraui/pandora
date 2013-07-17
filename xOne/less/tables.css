@@ -1,0 +1,132 @@
+
+/*!
+ * tables.css v1.0
+ * Adapted from  https://github.com/webcoding/cnBootstrap
+ */
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+
+
+
+
+
+/* 表格扩展 */
+
+table th,
+table td {
+  padding:4px 5px;
+  line-height: 20px;
+}
+
+table th {
+  font-weight: bold;
+}
+table td {
+  text-align: left;
+}
+.table-full {
+  width: 100%;
+}
+
+.table-border th,
+.table-border td{
+    border:1px solid #ccc;
+}
+
+/* 信息表格 */
+.table-info th, 
+.table-info td, 
+.table-info td table caption{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+.table-info th {
+    background: #fbfbfb;
+}
+.table-info td {
+    background: #fff;
+}
+.table-info th {
+    background: #f1f1f1;
+}
+.table-info table .caption {
+    border-bottom:none;
+}
+
+table.darktable { 
+    border: 1px solid #888;
+    border-collapse: collapse;
+    margin-bottom: 1em
+}
+table.darktable pre {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: transparent;
+}
+table.darktable th,
+table.darktable td {
+    padding: 5px 10px;
+    text-align: left;
+}
+table.darktable th {
+    background-color: #ccc;
+    border: 1px solid #888;
+    vertical-align: baseline;
+}
+table.darktable td {
+    background-color: #efefef;
+    border: 1px solid #aaa;
+    vertical-align: text-top;
+}
+table.darktable p {
+    margin: 0 0 2px;
+}
+table.darktable ul,
+table.table-info li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+table.darktable td em {
+    color: #00F;
+    font-weight: normal;
+}
+table.darktable .table_value {
+    color: #0F93D2;
+}
+/*table.table-info tr:hover td{ background-color:#f5f5f5}*/
+
+/* 布局表格 */
+.table-layout{}
+.table-layout th,.table-layout td{padding: 5px 10px;text-align:left;}
+.table-layout .label,.table-layout .f_label{text-align:right;padding-right:0;}
+.f_label{background: #e2eaf4;}

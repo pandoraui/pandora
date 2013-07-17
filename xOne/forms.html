@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="less/pandora.css">
+<link rel="stylesheet" href="less/docs.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>表单布局及应用实例</h1>
+    <p>这里实现基本的四种表单布局实例，测试各种使用环境，方便调试引用等</p>
+    <h4>一些定制参数：</h4>
+    <ul>
+    	<li>表单基本单元 <small>control-group controls input-*</small></li>
+    	<li>四种布局 <small>form[-default] .form-inline .form-hor .form-search</small></li>
+    	<li>六种尺寸 <small>.input-min .input-mini .input-small .input-medium .input-large .input-xxlarge</small> </li>
+    	<li>定制 <small>.input-date .help-block .help-inline</small> </li>
+    </ul>
+    <div class="docs-example">
+        <h3>基本表单控件 <small>无论如何复杂的表单布局，都由基本表单控件组合构成</small></h3>
+        <form class="form form-hor" action="#">
+            <h4>input</h4>
+            <div class="control-group">
+                <label class="control-label" for="textinput">文本输入框</label>
+                <div class="controls">
+                    <input class="input-text" id="textinput" name="" type="text" placeholder="placeholder">
+                    <p class="help-block">例如 块级的帮助文本。</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">文本输入框</label>
+                <div class="controls">
+                    <input class="input-text input-password" id="" name="" type="password" placeholder="密码框">
+                    <p class="help-block">帮助信息</p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">文本域</label>
+                <div class="controls">
+                    <textarea class="textarea" id="textarea" name="textarea">default text</textarea>
+                </div>
+            </div>
+            
+            <h4>单/复选项</h4>
+            <div class="control-group">
+                <label class="control-label" for="">单选项</label>
+                <div class="controls">
+                    <label class="radio">
+                        <input class="input-radio" type="radio" name="radios" id="" value="" checked="checked"> 选项一
+                    </label>
+                    <label class="radio">
+                        <input class="input-radio" type="radio" name="radios" id="" value=""> 选项二
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">内联单选项</label>
+                <div class="controls">
+                    <label class="radio inline">
+                        <input class="input-radio" type="radio" name="sex" id="" value=""> 男
+                    </label>
+                    <label class="radio inline">
+                        <input class="input-radio" type="radio" name="sex" id="" value=""> 女
+                    </label>
+                    <label class="radio inline">
+                        <input class="input-radio" type="radio" name="sex" id="" value=""> 保密
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">复选项</label>
+                <div class="controls">
+                    <label class="checkbox">
+                        <input class="input-checkbox" type="checkbox" name="radios" id="" value="" checked="checked"> 选项一
+                    </label>
+                    <label class="checkbox">
+                        <input class="input-checkbox" type="checkbox" name="radios" id="" value=""> 选项二
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">内联复选项</label>
+                <div class="controls">
+                    <label class="checkbox inline">
+                        <input class="input-checkbox" type="checkbox" name="sex" id="" value=""> HTML
+                    </label>
+                    <label class="checkbox inline">
+                        <input class="input-checkbox" type="checkbox" name="sex" id="" value=""> CSS
+                    </label>
+                    <label class="checkbox inline">
+                        <input class="input-checkbox" type="checkbox" name="sex" id="" value=""> JS
+                    </label>
+                </div>
+            </div>
+            
+            
+            <h4>下拉框/菜单</h4>
+            <div class="control-group">
+                <label class="control-label" for="select">单选菜单</label>
+                <div class="controls">
+                    <select class="select" id="select-basic" name="select-basic">
+                        <option>选项一</option>
+                        <option>选项二</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="selects">多选菜单</label>
+                <div class="controls">
+                    <select class="selects" id="select-multiple" name="selectmultiple" multiple="multiple">
+                        <option>选项一</option>
+                        <option>选项二</option>
+                    </select>
+                </div>
+            </div>
+            
+            <h4>按钮</h4>
+            <div class="control-group">
+                <label class="control-label" for="filebutton">上传文件</label>
+                <div class="controls">
+                    <input class="input-file" id="filebutton" name="filebutton" type="file">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="singlebutton">按钮</label>
+                <div class="controls">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-success">按钮</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="">按钮</label>
+                <div class="controls">
+                    <button id="" name="button1id" class="btn btn-inverse disabled" disabled>不可用状态</button>
+                    <button id="" name="button2id" class="btn btn-orange">可用状态</button>
+                    <p class="help-block">关于disabled状态的按钮，需要再设置一种表现形式 btn-disabled，暂定灰色，不可点击状态(低版本IE 会添加文字投影)</p>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+        </form>
+        
+        
+        
+        <h3>内联布局 <small>同一行</small></h3>
+        
+        
+        
+        <div class="form-inline">
+            
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="docs-example">
+    
+    
+<table>
+	<tr>
+		<td class="form-small">
+	<h3>垂直表单(默认)</h3>
+	<form class="">
+    	<fieldset>
+    		<legend>表单标题</legend>
+    		<label>标签名称</label>
+    		<input type="text" placeholder="输入提醒">
+    		<span class="help-block">例如 块级的帮助文本。</span>
+    		<label class="checkbox">
+    			<input type="checkbox"> 选项
+    		</label>
+    		<button type="submit" class="btn btn-small">提交</button>
+    	</fieldset>
+    </form>
+	<hr>
+	
+	<h3>搜索表单</h3>
+	<form class="form-search">
+        <input type="text" class="input-medium search-query">
+        <button type="submit" class="btn btn-small">搜索</button>
+    </form>
+	<hr>
+	
+	<h3>内联表单</h3>
+	<form class="form-inline">
+		<input type="text" class="input-small" placeholder="邮箱">
+		<input type="password" class="input-small" placeholder="密码">
+		<label class="checkbox">
+			<input type="checkbox"> 记住帐号 
+			</label>
+		<button type="submit" class="btn btn-small">登录</button>
+	</form>
+	<hr>
+	
+	<h3>水平表单</h3>
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">邮箱</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" placeholder="Email">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">密码</label>
+			<div class="controls">
+				<input type="password" id="inputPassword" placeholder="Password">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox">
+					<input type="checkbox"> 记住帐号 
+				</label>
+				<button type="submit" class="btn btn-small">登录</button>
+			</div>
+		</div>
+	</form>
+	
+	<hr>
+	
+	<h3>组合框 <small>按钮紧邻输入框</small></h3>
+	<div class="input-append">
+        <input class="span2" id="appendedInputButton" type="text">
+		<button class="btn btn-small" type="button">搜索</button>
+    </div>
+	
+		</td>
+		<td>
+		
+	<h3>垂直表单(默认)</h3>
+    <form class="">
+    	<fieldset>
+    		<legend>表单标题</legend>
+    		<label>标签名称</label>
+    		<input type="text" placeholder="输入提醒">
+    		<span class="help-block">例如 块级的帮助文本。</span>
+    		<label class="checkbox">
+    			<input type="checkbox"> 选项
+    		</label>
+    		<button type="submit" class="btn">提交</button>
+    	</fieldset>
+    </form>
+	<hr>
+	
+	<h3>搜索表单</h3>
+    <form class="form-search">
+        <input type="text" class="input-medium search-query">
+        <button type="submit" class="btn">搜索</button>
+    </form>
+	<hr>
+	
+	<h3>内联表单</h3>
+	<form class="form-inline">
+		<input type="text" class="input-small" placeholder="邮箱">
+		<input type="password" class="input-small" placeholder="密码">
+		<label class="checkbox">
+			<input type="checkbox"> 记住帐号 
+			</label>
+		<button type="submit" class="btn">登录</button>
+	</form>
+	<hr>
+	
+	<h3>水平表单</h3>
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">邮箱</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" placeholder="Email">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">密码</label>
+			<div class="controls">
+				<input type="password" id="inputPassword" placeholder="Password">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox">
+					<input type="checkbox"> 记住帐号 
+				</label>
+				<button type="submit" class="btn">登录</button>
+			</div>
+		</div>
+	</form>
+	
+	<hr>
+	
+	<h3>组合框 <small>按钮紧邻输入框</small></h3>
+    <div class="input-append">
+        <input class="span2" id="appendedInputButton" type="text">
+		<button class="btn" type="button">搜索</button>
+    </div>
+	
+		</td>
+	</tr>
+</table>
+	
+        </div>
+        
+        
+	    <div class="docs-example">
+        
+        <h2>综合应用</h2>
+        <p>实现常见的较为复杂的表单布局，可以使用表格、dl横向排列、或者扩展布局</p>
+		
+        <h5>常见的一些布局元素</h5>
+        <p class="form-small">
+            <label class="radio inline"><input class="input-radio" name="type-order" type="radio">在线预订较多</label>
+            <label class="radio inline"><input class="input-radio" name="type-order" type="radio">电话预订较多</label>
+            <label class="radio inline"><input class="input-radio" name="type-order" type="radio">在线预订和电话预订二者相当</label>
+            <label class="radio inline"><input class="input-radio" name="type-order" type="radio">没预订过</label>
+        </p>
+        
+        <p class="form-inline form-small">
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">打折门票</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">周边跟团游</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">长途跟团游</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">自由行( 门票+酒店 )</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">自由行( 机票+酒店 )</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">出境游</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">酒店</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">我的驴妈妈</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">手机客户端</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">点评</label>
+            <label class="checkbox inline"><input class="input-checkbox" type="checkbox">其他</label>
+        </p>
+        
+        <h5>使用表格 <small>使用了 table 但适应性最强</small></h5>
+        <table class="form-table form-inline">
+            <tr>
+                <td class="f_label">驴妈妈用户名：</td>
+                <td><input class="input-text" type="text"></td>
+            </tr>
+            <tr>
+                <td class="f_label"><i class="req">*</i>真实姓名：</td>
+                <td><input class="input-text" id="xh_name" type="text"></td>
+            </tr>
+            <tr>
+                <td class="f_label"><i class="req">*</i>性别：</td>
+                <td>
+                    <span id="select_sex"><label class="radio inline"><input class="input-radio" name="sex" type="radio">男</label>
+                    <label class="radio inline"><input class="input-radio" name="sex" type="radio">女</label></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="f_label"><i class="req">*</i>年龄：</td>
+                <td><span id="select_age">
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">20岁以下</label>
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">21-30岁</label>
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">31-40岁</label>
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">41-50岁</label>
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">51-60岁</label>
+                    <label class="radio inline"><input class="input-radio" name="age" type="radio">60岁以上</label></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="f_label"><i class="req">*</i>手机号：</td>
+                <td><input class="input-text" id="xh_mobile" type="text"></td>
+            </tr>
+            <tr>
+                <td class="f_label">职业：</td>
+                <td><input class="input-text" type="text"></td>
+            </tr>
+            <tr>
+                <td class="f_label">月收入：</td>
+                <td><select>
+                <option value="">请选择</option>
+                <option value="">5000</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="f_label">Email：</td>
+                <td><input class="input-text" type="text"></td>
+            </tr>
+            <tr>
+                <td class="f_label">留言：</td>
+                <td><textarea class="textarea"></textarea></td>
+            </tr>
+            <tr>
+                <td class="f_label">验证码：</td>
+                <td class="vmimg"><input class="input-text" type="text" style="width:50px;"> <img data-src="holder.js/80x30"> <a href="#">换一张</a></td>
+            </tr>
+        </table>
+        
+        
+	
+	
+        </div>	
+	
+	
+	
+	
+</div>
+
+
+
+</body>
+</html>

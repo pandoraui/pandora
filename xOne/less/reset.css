@@ -1,0 +1,137 @@
+
+/* ------------------------------------------------------------
+  reset.css v0.9
+  Project: Pandora 
+  Adapted from normalize.css
+------------------------------------------------------------ */
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG)，css 中设置block属性 */
+article, 
+aside, 
+details, 
+embed, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup,
+main, 
+menu, 
+nav, 
+section, 
+summary {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img inline-block 属性保持一致 */
+audio, 
+canvas, 
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+command, 
+datalist, 
+keygen, 
+mark, 
+meter, 
+progress, 
+rp, 
+rt, 
+ruby, 
+time, 
+wbr {
+    display: inline;
+}
+
+/* 移除内外边距（内外边距通常导致各个浏览器样式的表现位置不同，数目众多可按组划分） */
+body, div, 
+dl, dt, dd, ol, ul, li, 
+h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, code, 
+tr, th, td, 
+hr, 
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+/* 移除表单元素的reset，在form.css中统一设置 */
+fieldset, figure, legend,
+form, input, button, textarea {}
+
+/* 语义化的标签的样式默认的margin,padding都为0，不必reset
+article, 
+aside, 
+details, 
+figcaption, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section {}
+ */
+
+/* 
+  大范围的去除列表项并不好，不若使用.none样式，由于习惯限制等问题，使用推荐如下：
+  - 研究类项目使用无差异样式 normalize.css 即可
+  - 生产线上需使用传统的 reset.css 样式
+ */
+ol, 
+ul {
+    list-style-type: none;
+}
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+	list-style: none;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+    border: 0;
+}
+
+/* 去除 IE6 input/button 多余的空白 */
+button, input {
+    *width: auto;
+    *overflow: visible;
+
+    /* 让 input 和 button 一样高 */
+    line-height:22px;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration: none;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a:hover { text-decoration: underline;}
+
+img { border: 0;}
+
+/* 
+ 修复火狐下图片和文字之间的间隙
+ 添加img{vertical-align:top;}、img{vertical-align:middle;}或img{display:block}属性即可解决
+ 推荐前者，不要再reset中设置，建议使用时再处理
+
+img {
+    vertical-align: middle;
+}
+ */
+
+/* 这条分割线以上为reset.css，书写规范请参见cssREADME.md
+============================================================ */
+

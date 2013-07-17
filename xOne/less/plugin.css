@@ -1,0 +1,340 @@
+
+/* 
+ @名称: plugin.css
+ @功能: 组件样式
+ */
+
+/* 
+ * @name      : mini-tips ===tips alert msg-
+ * @explain   : 操作提示
+ * @type      : 基类 .tips .alert
+ * @expand    : 扩展 -info -success -error -warning -help -stop -wait === message danger
+ * @dependent : Oricode
+ * @author    : Cloudyan
+ * @version   : 1.0
+ * @html      :
+<!--
+<span class="mtips tips-ico-info"></span>
+
+<div class="tips tips-info">
+	<span class="tips-ico"></span>
+	安全提醒：自行编辑，非系统消息
+</div>
+
+<div class="alert alert-info">
+	<span class="alert-ico"></span>
+	<h3>Binggo！操作状态提醒！</h3>
+	<p>您现在可以去畅游网络了。</p>
+</div>
+
+<div class="alert alert-warning">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	<span class="alert-ico">图标</span>
+	<div class="alert-content">
+		<div class="alert-title">提示标题</div>
+		<div class="alert-line">提示描述</div>
+		<div class="alert-buttons">
+			<a class="btn-white" href="#"><span>按钮</span></a>
+			<a href="#">链接</a>
+		</div>
+	</div>
+</div>
+
+-->
+ */
+.mtips,.tips-ico,span.tips,.alert-ico{display:inline-block;*display:inline;*zoom:1;}
+.mtips,.tips-ico,.alert-ico{ background:url(../../../../cnBootstrap/cnDocs/solutions/img/icon-alert.png) -1000px -1000px no-repeat; }
+
+/* tips */
+.mtips,.tips .tips-ico{ width:14px; height:14px; margin-right:5px; background-position:0 -34px}
+.tips .tips-ico {float:left;}
+.tips{ margin:0; background:#f9f9f9;border:1px solid #d4d4d4;padding:8px 10px; line-height:14px;}
+.tips-info .tips-ico,.tips-ico-info{ background-position:0 -34px}
+.tips-warning .tips-ico,.tips-ico-warning{ background-position:-14px -34px}
+.tips-error .tips-ico,.tips-ico-error{background-position:-28px -34px}
+.tips-success .tips-ico,.tips-ico-success{ background-position:-42px -34px}
+.tips-help .tips-ico,.tips-ico-help{ background-position:-56px -34px}
+.tips-stop .tips-ico,.tips-ico-stop{ background-position:-70px -34px}
+.tips-wait .tips-ico,.tips-ico-wait{ background-position:-84px -34px}
+
+.tips-info{background:#e5f5ff;border:1px solid #c9d5e2}
+.tips-warning{background:#ffffe0;border:1px solid #ff8801}
+.tips-error{background:#fff2f2;border:1px solid #f44}
+.tips-success{background:#f1ffe2;border:1px solid #7dc25e}
+.tips-help{background:#e5f5ff;border:1px solid #c9d5e2}
+.tips-stop{background:#fceee8;border:1px solid #f6c8b5}
+.tips-wait{background:#e5f5ff;border:1px solid #c9d5e2}
+
+.tips-arrowup{display:inline-block;height:10px;left:40px;margin-left:-8px;position:absolute;text-indent:-9999em;width:16px;z-index:1;top:-9px;_top:-8px}
+.tips-arrowup-message{background-position:-194px -39px}
+.tips-arrowup-warning{background-position:-211px -39px}
+
+/* mini-tips */
+.mtips{ border:none;width:14px; height:14px;}
+
+/* alert */
+.alert .alert-ico{ width:32px; height:32px; float:left; margin:0 0 0 -45px; background-position:0 -34px}
+.alert{ background:#f9f9f9;border:1px solid #d4d4d4; padding:20px 30px 20px 65px;}
+.alert .alert-title{ font-size:14px; font-weight:bold;}
+.alert .alert-title,.alert .alert-line,.alert p{ margin:0}
+.alert-info .alert-ico{ background-position:0 0}
+.alert-warning .alert-ico{ background-position:-32px 0}
+.alert-error .alert-ico{background-position:-64px 0}
+.alert-success .alert-ico{ background-position:-96px 0}
+.alert-help .alert-ico{ background-position:-128px 0}
+.alert-stop .alert-ico{ background-position:-160px 0}
+.alert-wait .alert-ico{ background-position:-192px 0}
+
+.alert-info{background:#e5f5ff;border:1px solid #c9d5e2}
+.alert-warning{background:#ffffe0;border:1px solid #ff8801}
+.alert-error{background:#fff2f2;border:1px solid #f44}
+.alert-success{background:#f1ffe2;border:1px solid #7dc25e}
+.alert-help{background:#e5f5ff;border:1px solid #c9d5e2}
+.alert-stop{background:#fceee8;border:1px solid #f6c8b5}
+.alert-wait{background:#e5f5ff;border:1px solid #c9d5e2}
+
+.alert-title{ font-size:14px; font-weight:bold}
+.alert-line{ font-size:12px; line-height:22px;}
+
+button.close {padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;}
+.alert .close{position:relative; width:24px; height:24px;top:-18px;right:-28px;line-height:22px;}
+
+ 
+
+
+
+
+
+
+/* pages页码小组件
+ * 样式默认玫红色（可缺省rosestyle）
+ * 可组合样式orangestyle橙色
+ * @html
+<!-- <div id="lv_page"><div class="Pages">可缺省此两级嵌套 -->
+<!--
+<div class="pages orangestyle">
+	<span class="PageSel">1</span>
+	<a href="#">2</a>
+	<a href="#">3</a>
+	<span class="more">...</span>
+	<a href="#">下一页</a>
+</div>
+-->
+
+<!-- // 升级版
+<div class="Pages">
+	<a class="PrevPage" href="#">上一页</a>
+	<a href="#">1</a>
+	<span class="PageSel">2</span>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<a href="#">5</a>
+	<a href="#">6</a>
+	<span class="PageMore">...</span>
+	<a href="#">16</a>
+	<a class="NextPage" href="#">下一页</a>
+</div>
+-->
+ */
+.pages{text-align:right;}
+.pages a,.pages span{font-size:12px;display:inline-block;zoom:1;*display:inline;margin-left:5px;padding:3px 9px; line-height:18px;}
+.pages a{border:1px solid #ddd;color:#333;background:#fff;}
+.pages .PageSel,.rosestyle .PageSel{font-weight:bold;border:1px solid #df1a7a;color:#fff;background:#df1a7a;}
+.pages a:hover,.rosestyle a:hover{ border-color:#df1a7a;color:#df1a7a; text-decoration:none}
+.orangestyle .PageSel{font-weight:bold;border:1px solid #f80;color:#fff;background:#f80;}
+.orangestyle a:hover{ border-color:#f80;color:#f80; text-decoration:none}
+
+/* Pages页码控制 默认橙色 */
+.pages{text-align:right;}
+.Pages a,.Pages span{display:inline-block;zoom:1;*display:inline;margin-left:5px;padding:0 9px; height:25px; line-height:25px;}
+.Pages a{border:1px solid #ddd;color:#333; color:#07c;background:#fff;}
+.Pages .PageSel,.orangestyle .PageSel{font-weight:bold;color:#fff;border:1px solid #f80;background:#f80;}
+.Pages a:hover,.orangestyle a:hover{ text-decoration:none;border-color:#f80;color:#f80;}
+
+.Pages .PrevPage,.Pages .NextPage{ width:55px; padding:0; height:25px;/* color:#07c;*/ line-height:24px; background:url(http://pic.lvmama.com/img/new_v/newBtn_bg.gif) 1000px 1000px no-repeat}
+.Pages .PrevPage{ background-position:0 -1817px; text-align:right; padding-right:10px;}
+.Pages .NextPage{ background-position:-144px -1817px; text-align:left; padding-left:10px;}
+.Pages span.PrevPage,.Pages span.NextPage{color:#ccc;border:1px solid #ddd;}
+.Pages span.PrevPage{ background-position:0 -1776px;}
+.Pages span.NextPage{ background-position:-144px -1776px;}
+.rosestyle .PageSel{border:1px solid #df1a7a;background:#df1a7a;}
+.rosestyle a:hover{ border-color:#df1a7a;color:#df1a7a;}
+.orangestyle .PageSel{border:1px solid #f80;background:#f80;}
+.orangestyle a:hover{ border-color:#f80;color:#f80;}
+
+
+
+
+
+/* 
+ * @name      : table
+ * @explain   : 表格
+ * @type      : 基类 .table table-line table-border table-full table-striped table-hover
+ * @expand    ：扩展 table-info table-layout ptable ui-table xtable .***-table
+ * @dependent : 无
+ * @author    : Cloudyan
+ * @version   : 1.0
+ * @html      :
+
+ */
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  margin-bottom: 20px;
+}
+.table-full {
+  width: 100%;
+}
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+
+.table-bordered {
+  border: 1px solid #dddddd;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  border-left: 0;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-left: 1px solid #dddddd;
+}
+
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #f5f5f5;
+}
+
+.table tbody tr.success td {
+  background-color: #dff0d8;
+}
+
+.table tbody tr.error td {
+  background-color: #f2dede;
+}
+
+.table tbody tr.warning td {
+  background-color: #fcf8e3;
+}
+
+.table tbody tr.info td {
+  background-color: #d9edf7;
+}
+
+.table-hover tbody tr.success:hover td {
+  background-color: #d0e9c6;
+}
+
+.table-hover tbody tr.error:hover td {
+  background-color: #ebcccc;
+}
+
+.table-hover tbody tr.warning:hover td {
+  background-color: #faf2cc;
+}
+
+.table-hover tbody tr.info:hover td {
+  background-color: #c4e3f3;
+}
+
+
+/* 表格扩展 */
+
+table th,
+table td {
+  padding:4px 5px;
+  line-height: 20px;
+}
+
+table th {
+  font-weight: bold;
+}
+table td {
+  text-align: left;
+}
+.table-full {
+  width: 100%;
+}
+
+.table-border th,
+.table-border td{
+    border:1px solid #ccc;
+}
+
+/* 布局表格 */
+.table-layout th,.table-layout td{padding: 5px 10px;text-align:left;}
+.table-layout .label,.table-layout .f_label{text-align:right;padding-right:0;}
+.f_label{background: #e2eaf4;}
+/* 信息表格 */
+table.table-info{border:1px solid #888;border-collapse:collapse;margin-bottom:1em}
+table.table-info pre{background-color:transparent;margin:0;padding:0;width:auto;}
+table.table-info th,table.table-info td{padding:5px 15px 5px 10px;text-align:left;}
+table.table-info th{background-color:#ccc;border: 1px solid #888;vertical-align: baseline;}
+table.table-info td{background-color:#efefef;border:1px solid #aaa;vertical-align:text-top;}
+table.table-info p{margin:0 0 2px;}
+table.table-info ul,table.table-info li{list-style-type:none;margin:0;padding:0;}
+table.table-info td em{color:#00F;font-weight:normal;}
+table.table-info .table_value{color: #0F93D2;}
+/*table.table-info tr:hover td{ background-color:#f5f5f5}*/
+
+
+
+

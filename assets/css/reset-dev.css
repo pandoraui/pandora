@@ -1,0 +1,462 @@
+@charset "utf-8";
+/* 
+ @名称: reset.css
+ @功能: 重设浏览器默认样式(综合自aliceui,yahoo,normalize)
+ */
+
+/* ==============================
+   HTML5 显示定义
+   ============================== */
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, 
+aside, 
+details, 
+embed, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section, 
+summary {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img inline-block属性保持一致 */
+audio, 
+canvas, 
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+command, 
+datalist, 
+keygen, 
+mark, 
+meter, 
+progress, 
+rp, 
+rt, 
+ruby, 
+time, 
+wbr {
+    display: inline;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==============================
+   Base
+   ============================== */
+
+/*
+ * 1. 防止用户自定义背景颜色对网页的影响 这是改为设置到body上
+ * 2. 设置默认字体Tahoma
+ * 3. 防止 iOS 设备方向变化且没有禁用缩放功能时，文字会发生大小变化
+ */
+html {
+    color: #000; /* 1 */
+    /* background: #fff; 1 */
+    font-family: Tahoma,Arial,\5b8b\4f53;; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+    -ms-text-size-adjust: 100%; /* 3 */
+}
+body { background: #fff; }
+/* 移除内外边距（内外边距通常让各个浏览器样式的表现位置不同，数目众多可按组划分） */
+body, div, 
+dl, dt, dd, ol, ul, li, 
+h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, code, 
+tr, th, td, 
+hr, 
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+/* 移除表单元素的reset，在form.css中统一设置 */
+fieldset, figure, legend,
+form, input, button, textarea {}
+
+/* 语义化的标签的样式默认的margin,padding都为0，不必reset */
+article, 
+aside, 
+details, 
+figcaption, 
+footer, 
+header, 
+hgroup, 
+menu, 
+nav, 
+section {}
+
+/* 
+  大范围的去除列表项并不好，不若使用.none样式，由于习惯限制等问题，使用推荐如下：
+  - 生产线网站项目使用传统reset样式
+  - 前端研究项目使用noreset.css样式(参考normalize并使用.none样式完成此reset功能)
+ */
+ol, 
+ul {
+    list-style-type: none;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote, 
+pre {
+    /* white-space: pre-wrap; 
+       去除此项，避免空格等产生页面布局上的空行
+    */
+    word-wrap: break-word;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/* 统一上标和下标 */
+sub, 
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* ==============================
+   Embedded content
+   ============================== */
+
+/*
+ * 移除IE下a标签内img的边框
+ */
+img {
+    border: 0;
+}
+
+
+/* ==============================
+   Links
+   ============================== */
+
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration: none;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a:hover { text-decoration: underline;}
+
+/* webkit内核浏览器会默认给:focus状态的元素加上outline的样式 
+ * 不建议去除浏览器默认的outline属性，为使用户体验更好
+
+:focus {
+    outline:0;
+}
+
+下面是normalize的方法
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+ */
+
+
+/* ==============================
+   Forms input button ...
+   ============================== */
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Correct color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * 1. 表单元素并不继承父级 font 的字体，这里设置默认字体，并不让其继承父级字体
+ * 2. 表单元素并不继承父级 font 的大小
+ * 3. 统一外边距 in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-family: Tahoma,Arial,\5b8b\4f53; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/*
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+	
+    /* IE6/7 内间距宽度一致 */	
+    *overflow: visible; 
+}
+
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled], 
+html input[disabled] {
+    cursor: default;
+}
+
+/*
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"], 
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/*
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+
+/* ==============================
+   Tables
+   ============================== */
+
+/* 去掉Tables单元格间距并让相邻边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* IE bug fixed: th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+
+
+/* ==============================
+   Others
+   ============================== */
+   
+/* 去除默认边框 */
+fieldset, 
+img{
+    border: 0;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, 
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+address, 
+caption, 
+cite, 
+dfn, 
+em, 
+i, 
+var {
+    /* 这个reset用不到文本斜体 */
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, 
+th {
+    text-align: left;
+}
+
+
+/* 
+ 修复火狐下图片和文字之间的间隙
+ 添加img{vertical-align:top;}、img{vertical-align:middle;}或img{display:block}属性即可解决
+ 推荐前者，不要再reset中设置，建议使用时再处理
+
+img {
+    vertical-align: middle;
+}
+ */
+ 
+/* 清除浮动 */
+.clearfix:after, 
+.wrap:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.clearfix, 
+.wrap {
+    *zoom:1
+}/* for IE6 IE7 */
+
+/* 空标签清除法 */
+.clear {
+    clear: both;
+    display: block;
+    height:0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.wrap, 
+.bc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 这条分割线以上为reset.css，书写规范请参见README.md
+============================================================ */
+
+/* 
+ === 样式测试 ===
+ javascript:(function(){var a=document,b=a.body,c=a.createElement("link");c.setAttribute("rel","stylesheet");c.setAttribute("href","http://10.3.1.41/cnBootstrap/WF/assets/css/reset.css");a.querySelector("head").appendChild(c);b.style.backgroundColor="white";b.className+=" typo"})()
+============================================================ */

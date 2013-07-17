@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>倒计时</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="less/pandora.css">
+<link rel="stylesheet" href="less/docs.css">
+<style>
+.effect i{ 
+    display: inline-block;
+    background: #e38;
+    color: #fff;
+    padding:0 3px;
+    margin:0 3px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>倒计时插件</h1>
+	<p>实现可定制的倒计时</p>
+    <p>依赖：http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
+	
+    <div class="docs-example">
+        <h4>默认传入倒计时间的 UNIX 时间戳 即可</h4>
+        <dl class="dl-horizontal">
+            <dt>默认效果：</dt>
+            <dd><span class="time">2531275871</span></dd>
+            
+            <dt>调整时间差：</dt>
+            <dd><span class="timediff">2531275871</span></dd>
+            
+            <dt>自定义效果：</dt>
+            <dd><span class="countdown effect">2531275871</span></dd>
+            
+            <dt>自定义时间格式：</dt>
+            <dd><span class="time_format">2531275871</span></dd>
+            
+            <dt>自定义结束提醒：</dt>
+            <dd><span class="time_tips">5000</span></dd>
+            
+        </dl>
+    </div>
+<pre class="prettyprint linenums">
+&lt;span class="time"&gt;5000&lt;/span&gt;  标签内为倒计时间
+
+&lt;script&gt;
+$(function(){
+    // 默认调用倒计时 
+    $("span.time").ui("countdown");
+    
+    // 自定义参数说明
+    $("span.countdown").ui("countdown",{
+        format: "dd:hh:mm:ss",  // 自定义倒计时类型 现支持 dd:hh:mm:ss(默认) hh:mm:ss dd:hh:mm mm:ss 四种格式
+        prezero: true,  // 设置前导零
+        effect : false,  // 自定义样式效果
+        overtips : "已结束",  // 自定义结束提醒
+        timediff : 0  // 调整时间差，单位毫秒
+    });
+});
+&lt;/script&gt;
+</pre>
+
+
+</div>
+<script src="http://pic.lvmama.com/js/new_v/jquery-1.7.2.min.js"></script>
+<script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>
+<script>
+$(function(){
+    // 调用倒计时
+    $("span.time").ui("countdown");
+    
+    // 调整时间差
+	$("span.timediff").ui("countdown",{
+        timediff: -86400000
+    });
+    
+    // 调用自定义标签
+	$("span.countdown").ui("countdown",{
+        prezero: true,
+        effect: true
+    });
+    
+    // 自定义时间格式
+	$("span.time_format").ui("countdown",{
+        format: "dd:hh:mm"
+    });
+    
+    // 自定义结束提醒
+	$("span.time_tips").ui("countdown",{
+        format: "mm:ss",
+        overtips: "2012世界末日没来？钱用光了？傻了吧！！！"
+    });
+    
+    
+});
+
+</script>
+</body>
+</html>

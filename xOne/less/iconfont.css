@@ -1,0 +1,32 @@
+
+/*!
+ * iconfont.css v1.0
+ * Adapted from  http://aliceui.org/docs/framework.html#rei-iconfont
+ * 此处暂时使用支付宝图标字体集
+ */
+
+@font-face {
+  font-family: 'Actor';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Actor Regular'), local('Actor-Regular'), url(Actor.woff) format('woff');
+}
+
+/* alipay iconfont */
+@font-face {  
+    font-family: "rei";
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130419"); /* IE9 */
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130419#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://i.alipayobjects.com/common/fonts/rei.woff?20130419") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.ttf?20130419")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20130419#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"rei";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #4d4d4d;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
