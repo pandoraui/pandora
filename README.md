@@ -9,7 +9,7 @@ Pandora
 
 Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。深入的考究了 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
 
-Pandora 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容想解决方案，WF已经具备大量的解决方案实例。现仍在进一步完善中...
+cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
 
 
 ## 开发规划
