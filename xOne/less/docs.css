@@ -53,8 +53,8 @@ a:visited {
     text-decoration: underline;
 }
 
+.wrap { width: 1000px;}
 
-.wrap { width: 990px;}
 .topbar {
     background: #F5F5F5;
     background-image: -moz-linear-gradient(top,#F7F7F7,#F5F5F5);
@@ -256,7 +256,7 @@ a:visited {
   width: 210px;
   float: left;
   display: inline;
-  margin-right: 20px;
+  /*margin-right: 20px;*/
   line-height: 2;
   background: #f5f5f5;
 }
@@ -407,3 +407,19 @@ span.done  { background: #0b0; }
     margin-bottom:10px;
 }
 
+/**
+  max 480 767 979
+      768-979
+  min 980 1200 
+  @media (min-width: 768px) and (max-width: 979px) {}
+  @media (min-width: 1200px) {}
+  @media (min-width: 980px) {}
+  @media (max-width: 480px) {}
+  @media (max-width: 767px) {}
+  @media (max-width: 979px) {}
+*/
+
+@media (min-width: 1240px) {
+    .wrap { width: 1200px;}
+    
+}

@@ -220,6 +220,19 @@ console.log(html);
             <h1>响应式设计</h1>
             <p>如果考虑响应式则暂时只考虑两种分辨率，1200px和980/990px，并以大分辨率为基准，小分辨率适当隐藏一部分内容，而针对移动设备可以另加考虑480px和760px。</p>
             <p><strong>注：</strong> 以上结论适用于电商的复杂布局，简单布局可以使用响应式的栅格系统实现。</p>
+<pre class="prettyprint linenums">
+/** 响应式布局分割线
+  max 480 767 979
+      768-979
+  min 980 1200 
+  @media (min-width: 768px) and (max-width: 979px) {}
+  @media (min-width: 1200px) {}
+  @media (min-width: 980px) {}
+  @media (max-width: 480px) {}
+  @media (max-width: 767px) {}
+  @media (max-width: 979px) {}
+*/
+</pre>
         </section>
         
         
