@@ -7,20 +7,20 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#devtools">开发工具</a></li>
-			<li><a href="#markdown">Markdown</a></li>
-			<li><a href="#minify">Minify</a></li>
-			<li><a href="#less">Less</a></li>
-			<li><a href="#git">Git</a></li>
-			<li><a href="#nodejs">Nodejs</a></li>
-			<li><a href="#csslint">CSS Lint</a></li>
-			<li><a href="#modernizr">Modernizr</a></li>
-			<li><a href="#htmlchar">HTML特殊符号对照表</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#devtools">开发工具</a></li>
+            <li><a href="#markdown">Markdown</a></li>
+            <li><a href="#minify">Minify</a></li>
+            <li><a href="#less">Less</a></li>
+            <li><a href="#git">Git</a></li>
+            <li><a href="#nodejs">Nodejs</a></li>
+            <li><a href="#csslint">CSS Lint</a></li>
+            <li><a href="#modernizr">Modernizr</a></li>
+            <li><a href="#htmlchar">HTML特殊符号对照表</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
         <section id="overview">
             <h1>造好的轮子</h1>
             <p>这里收集<strong>那些造好的轮子</strong>，具备良好的设计与实现，并方便我们进行快速开发使用的工具</p>
@@ -34,9 +34,9 @@
             <h1>开发工具</h1>
             <p>这里收集那些<strong>优良的前端开发工具</strong>，具备良好使用便捷。</p>
             <ul>
-            	<li><a href="http://notepad-plus-plus.org/">Notepad++</a></li>
-            	<li><a href="http://www.sublimetext.com/2">Sublime Text2</a></li>
-            	<li><a href="https://code.google.com/p/zen-coding/">Zen-Coding 插件</a></li>
+                <li><a href="http://notepad-plus-plus.org/">Notepad++</a></li>
+                <li><a href="http://www.sublimetext.com/2">Sublime Text2</a></li>
+                <li><a href="https://code.google.com/p/zen-coding/">Zen-Coding 插件</a></li>
             </ul>
             <p><strong>注：</strong>如果你也知道一些好的开发工具，也可以给大家推荐一下!</p>
         </section>
@@ -80,7 +80,7 @@
             <h1>Nodejs</h1>
             <p>更多请参考：</p>
             <ul>
-            	<li><a href="https://github.com/webcoding/nodejs">nodejs 入门学习</a></li>
+                <li><a href="https://github.com/webcoding/nodejs">nodejs 入门学习</a></li>
             </ul>
         </section>
         
@@ -118,7 +118,7 @@
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 <?php include("common/footer.html");?>

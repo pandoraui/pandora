@@ -7,7 +7,7 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
+    <div class="sidebar">
         <ul class="nav none">
             <li><a href="#tpl">tpl <small>布局模板</small></a></li>
             <li><a href="#box">box <small>区块盒子</small></a></li>
@@ -17,8 +17,8 @@
             <li><a href="#dropdown">dropdown <small>下拉菜单</small></a></li>
             
             <li><a href="#table">table <small>表格</small></a></li>
-			<li><a href="#btn">btn <small>按钮</small></a></li>
-			<li><a href="#btn-group">btn-group <small>按钮组</small></a></li>
+            <li><a href="#btn">btn <small>按钮</small></a></li>
+            <li><a href="#btn-group">btn-group <small>按钮组</small></a></li>
             <li><a href="#btn-dropdown">btn-dropdown <small>按钮菜单</small></a></li>
             <li><a href="#form">form <small>表单</small></a></li>
             
@@ -31,12 +31,12 @@
             <li><a href="#tipbox">tipbox <small>提示框</small></a></li>
             <li><a href="#progress">progress <small>进度条</small></a></li>
             <li><a href="#media">media <small>媒体对象</small></a></li>
-			<li><a href="#step">step <small>步骤</small></a></li>
-			<li><a href="#misc">misc <small>杂项</small></a></li>
+            <li><a href="#step">step <small>步骤</small></a></li>
+            <li><a href="#misc">misc <small>杂项</small></a></li>
         </ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
-		<section id="tpl">
+    </div> <!-- // div.sidebar -->
+    <div class="main">
+        <section id="tpl">
             <h1>布局模板</h1>
             <p>最常用的布局结构堪称经典，可以作为布局模板使用——内容盒子，列表，图文混排，图片滚动，下拉菜单等</p>
             <p>经典布局不是指单一的某一种布局，针对不同的风格设计，都有优良的布局经典，敏捷开发无处不在，这里仅就某一类设计浅谈布局实现(@此处实例多是修改BT项目实例或引用lvmama的项目或针对未来需求的预设实现)。</p>
@@ -47,14 +47,14 @@
             <h2 id="box">区块 box</h2>
             <p>实现布局块，保证良好的扩展性</p>
             
-            <div class="docs-example">
-                <div class="p-box border">
-                    <div class="p-box-head">
-                        <a class="link-more fr" href="">更多 &raquo;</a>
+            <div class="docs-example notypo">
+                <div class="pbox border">
+                    <div class="pbox-head">
+                        <a class="link-more fr" href="#">更多 &raquo;</a>
                         <h4>标题 <small>一些说明</small></h4>
                     </div>
-                    <div class="p-box-content">
-                        <p>box-content 有默认内边距</p>
+                    <div class="pbox-content">
+                        <p>box-content 上设置内边距等</p>
                     </div>
                 </div>
             </div>
@@ -86,26 +86,11 @@
         
         <section id="btn">
             <h1>按钮</h1>
+            <p>关于按钮，BT项目中已经做了大量的研究，也比较完美了，唯一的缺憾是不支持IE6以及在Firefox及IE7中表现的并不一致。</p>
+            <p>这里专门针对网页中的按钮做了进一步的测试研究与实践，提供了兼容的解决方案能完全满足你的需求，并能与网站的其他组件友好的组合使用。(由于之前已经做过一部分<a href="/cnbootstrap/cnDocs/solutions/button.html" title="主要侧重外形大小的控制">CSS通用按钮</a>测试，此处继续前面的测试进行组件开发，这里主要侧重于应用级。)</p>
             <p>集合五种尺寸的按钮，3中类型，四种标签，N*4种风格(默认+metro_style+google_stylr+lv_style)，更可以与图标/字体集组合，能满足大部分的按钮需求。</p>
-            <p>详情参看： <a href="xOne/buttons.html">buttons</a></p>
+            <p>详情参看：<a href="xOne/buttons.html">buttons</a></p>
         </section>
-        
-        
-        
-        <section id="btn-group">
-            <h1>按钮组</h1>
-            <p>实现一组功能相关的按钮，如单选按钮组等</p>
-            <p>详情参看： <a href="xOne/buttons.html">buttons</a></p>
-        </section>
-        
-        
-        
-        <section id="btn-dropdown">
-            <h1>按钮菜单</h1>
-            <p>由按钮组合实现的下拉菜单</p>
-            <p>详情参看： <a href="xOne/buttons.html">buttons</a></p>
-        </section>
-        
         
         
         <section id="form">
@@ -325,11 +310,11 @@
                 "Then why you didn't take it back?" <br>
                 "I also thought that you do not write the address and the addressee, is for does not want to let me know that you do send the letter to who!" 
                 </p>
-
+    
                 <p>之乎者也，<a href="###" class="tag tag-blue">如果</a>用的是中文呢？来点<a href="###" class="tag tag-green">English</a>混排一下。</p>
                 
                 <p class="f12"><span class="tag tag-blue">来个</span>小字体版的：之乎者也，<a href="###" class="tag">如果</a>用的是中文呢？来点<a href="###" class="tag tag-red">English</a>混排一下。</p>
-        	</div>
+            </div>
             
             
             <h3>lvmama标签统一 <small>促销、返现、提示</small></h3>
@@ -397,7 +382,28 @@
                 
                 <p><span class="tagsback tagblue" tip-title="提示标题" tip-content="提示内容"><em>送</em><i>积分100分</i></span></p>
                 
-                <p>关于 tooltip ，参看 <a target="_blank" href="xOne/tooltip.html">tooltip 工具提醒</a></p>
+                <p>关于 tooltip ，详情参看 <a target="_blank" href="xOne/tooltip.html">tooltip 工具提醒</a></p>
+                <h4>简单激活tooltip：</h4>
+                <p>依赖：http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
+                
+<pre>
+$(function(){
+    // 通用调用写法
+    $('span[class^="tags"]').ui('lvtip',{
+        place: 'bottom'
+    })
+    
+    // 调用2
+    $('.calendar').ui('lvtip',{
+        templete : 2,  // 提示模板2
+        place: 'bottom-left',  //支持八个方位
+        offsetX: 0,
+        offsetY: 0,
+        events : "live"  //live方法有问题，后添加元素ui不被调用
+    });
+    
+});
+</pre>
                 
                 <p>复杂标签测试： <span class="testtags" tip-title="提示标题" tip-content="提示内容"><em>折扣返现</em><i>20元</i></span></p>
             </div>
@@ -412,7 +418,7 @@
         
         <section id="poptip">
             <h1>poptip <small>提示层</small></h1>
-        	
+            
             <div class="docs-example">
                 <div class="ui-box">
                     Little Robert asked his mother for two cents. "What did you do with the money I gave you yesterday?" <br>
@@ -583,8 +589,15 @@
         
         <section id="tiptext">
             <h1>提示文本</h1>
-            <p>老版本 ICON 使用的图片，请参考 <a href="../cndocs/solutions/alerts.html">信息提示框</a></p>
-            <p><strong>提醒：</strong> 字体图标集虽已全兼容，但字体加载仍有延迟，有时会出现闪动，另外针对信息提示框的显示，表示字体图标不够精致，可设置两个方案，精致版的图标集，简单方便扩展的文字图标集。</p>
+            <p>老版本 ICON 使用的图片，请参考 <a href="/cnbootstrap/cndocs/solutions/alerts.html">信息提示框</a></p>
+            <p><strong>提醒：</strong> 字体图标集虽已全兼容，但字体加载仍有延迟（特别是老旧浏览器），有时会出现闪动，另外针对信息提示框的显示，表示字体图标不够精致，可设置两个方案，精致版的图标集 VS 简单且方便扩展的文字图标集。</p>
+            
+            <h2>精致图标集提示框</h2>
+            <div class="docs-example">
+            
+            </div>
+            
+            <h2>文字图标集提示框</h2>
             <p>带各类图标的提示文案，可带有提示箭头。以下摘自 AliceUI：</p>
             <div class="docs-example">
                 <p class="ui-tiptext ui-tiptext-error">
@@ -835,7 +848,7 @@
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 <?php include("common/footer.html");?>

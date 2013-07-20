@@ -24,93 +24,93 @@
 <body>
 <div class="wrap">
     <h1>网页中的按钮</h1>
-	<p>关于按钮，BT项目中已经做了大量的研究，也比较完美了，唯一的缺憾是不支持IE6以及在Firefox及IE7中表现的并不一致。</p>
+    <p>关于按钮，BT项目中已经做了大量的研究，也比较完美了，唯一的缺憾是不支持IE6以及在Firefox及IE7中表现的并不一致。</p>
     <p>这里专门针对网页中的按钮做了进一步的测试研究与实践，提供了兼容的解决方案能完全满足你的需求，并能与网站的其他组件友好的组合使用。(由于之前已经做过一部分<a href="../../cnDocs/solutions/button.html" title="主要侧重外形大小的控制">CSS通用按钮</a>测试，此处继续前面的测试进行组件开发，这里主要侧重于应用级。)</p>
-	
+    
     <div class="docs-example">
-        <h1><a href="../../WF/xOne/less/buttons.css">buttons.css</a></h1>
-<h3>按钮尺寸5种、类别3+种、样式N种、风格3+种 <small>可任意组合</small></h3>
-<p>风格包含默认的BT，还有metro_style、google_style</p>
+        <h2><a href="xOne/less/buttons.css">buttons.css</a></h2>
+        <h3>按钮尺寸5种、类别3+种、样式N种、风格3+种 <small>可任意组合</small></h3>
+        <p>风格包含默认的BT，还有metro_style、google_style</p>
 
-<button class="btn btn-mini">迷你按钮</button>
-<button class="btn btn-small">小按钮</button>
-<button class="btn">默认按钮</button>
-<button class="btn btn-big">大按钮</button>
-<button class="btn btn-large">超大按钮</button>
-<br></br>
+        <button class="btn btn-mini">迷你按钮</button>
+        <button class="btn btn-small">小按钮</button>
+        <button class="btn">默认按钮</button>
+        <button class="btn btn-big">大按钮</button>
+        <button class="btn btn-large">超大按钮</button>
+        
+        <br></br>
+        
+        <button class="btn btn-primary">主按钮</button>
+        <button class="btn btn-info">次按钮</button>
+        <button class="btn btn-success">成功</button>
+        <button class="btn btn-warning">警告</button>
+        <button class="btn btn-danger">危险</button>
+        <button class="btn btn-inverse">反色</button>
+        <button class="btn btn-link">链接</button>
+        
+        <!-- 新增按钮样式 -->
+        <button class="btn btn-buff">浅黄</button>
+        <button class="btn btn-orange">橙色</button>
+        <button class="btn btn-pink">玫红</button>
+        <button class="btn btn-white">白色</button>
+        <button class="btn btn-dark">暗灰色</button>
 
-<button class="btn btn-primary">主按钮</button>
-<button class="btn btn-info">次按钮</button>
-<button class="btn btn-success">成功</button>
-<button class="btn btn-warning">警告</button>
-<button class="btn btn-danger">危险</button>
-<button class="btn btn-inverse">反色</button>
-<button class="btn btn-link">链接</button>
+        <h3>按钮禁用样式</h3>
+        <button class="btn btn-mini disabled">迷你按钮</button>
+        <button class="btn btn-small disabled">小按钮</button>
+        <button class="btn disabled">默认按钮</button>
+        <button class="btn btn-big disabled">大按钮</button>
+        <button class="btn btn-large disabled">超大按钮</button>
 
-<!-- 新增按钮样式 -->
-<button class="btn btn-buff">浅黄</button>
-<button class="btn btn-orange">橙色</button>
-<button class="btn btn-pink">玫红</button>
-<button class="btn btn-white">白色</button>
-<button class="btn btn-dark">暗灰色</button>
+        <br><br>
 
-<h3>按钮禁用样式</h3>
-<button class="btn btn-mini disabled">迷你按钮</button>
-<button class="btn btn-small disabled">小按钮</button>
-<button class="btn disabled">默认按钮</button>
-<button class="btn btn-big disabled">大按钮</button>
-<button class="btn btn-large disabled">超大按钮</button>
+        <button class="btn btn-primary disabled">主按钮</button>
+        <button class="btn btn-info disabled">次按钮</button>
+        <button class="btn btn-success disabled">成功</button>
+        <button class="btn btn-warning disabled">警告</button>
+        <button class="btn btn-danger disabled">危险</button>
+        <button class="btn btn-inverse disabled">反色</button>
+        <button class="btn btn-link disabled">链接</button>
+        
+        <!-- 新增按钮样式 -->
+        <button class="btn btn-buff disabled">浅黄</button>
+        <button class="btn btn-orange disabled">橙色</button>
+        <button class="btn btn-pink disabled">玫红</button>
+        <button class="btn btn-white disabled">白色</button>
+        <button class="btn btn-dark disabled">暗灰色</button>
+        <br><br>
+        
+        <button class="btn btn-large btn-block">块级按钮</button>
+        
+        <br><br>
+        
+        <button class="btn disabled">禁用按钮</button>
+        <button class="btn"><i class="icon-user"></i> 组合按钮</button>
+        <span class="btn">普通按钮</span> 
+        
+        <p>关于按钮与图标的组合，此处暂未定稿，初步规划 icon 尺寸3种(14px,18px,24px)，而与字体集组合则全兼容没有问题。</p>
+        
+        <p>big:icon-18px/font-16px/margin-top:-1px;<br> large:icon-24px/font-20px/margin-top:0;</p>
+        
+        <div class="test">
+            <button class="btn btn-mini">迷你按钮</button>
+            <button class="btn btn-small">小按钮</button>
+            <button class="btn"><i class="icon"></i> 默认按钮</button>
+            <button class="btn btn-big"><i class="icon"></i> 大按钮</button>
+            <button class="btn btn-large"><i class="icon"></i> 超大按钮</button>
+        </div>
+        
+        <p>若使用字体集，则 ICON 统一使用 <code>.iconfont</code> 样式</p>
+        <div class="test">
+            <button class="btn btn-mini">迷你按钮</button>
+            <button class="btn btn-small">小按钮</button>
+            <button class="btn"><i class="iconfont">返</i> 默认按钮</button>
+            <button class="btn btn-big"><i class="iconfont">优</i> 大按钮</button>
+            <button class="btn btn-large"><i class="iconfont">惠</i> 超大按钮</button>
 
-<br><br>
-
-<button class="btn btn-primary disabled">主按钮</button>
-<button class="btn btn-info disabled">次按钮</button>
-<button class="btn btn-success disabled">成功</button>
-<button class="btn btn-warning disabled">警告</button>
-<button class="btn btn-danger disabled">危险</button>
-<button class="btn btn-inverse disabled">反色</button>
-<button class="btn btn-link disabled">链接</button>
-
-<!-- 新增按钮样式 -->
-<button class="btn btn-buff disabled">浅黄</button>
-<button class="btn btn-orange disabled">橙色</button>
-<button class="btn btn-pink disabled">玫红</button>
-<button class="btn btn-white disabled">白色</button>
-<button class="btn btn-dark disabled">暗灰色</button>
-<br><br>
-
-<button class="btn btn-large btn-block">块级按钮</button>
-
-<br><br>
-
-<button class="btn disabled">禁用按钮</button>
-<button class="btn"><i class="icon-user"></i> 组合按钮</button>
-<span class="btn">普通按钮</span> 
-
-<p>关于按钮与图标的组合，此处暂未定稿，初步规划 icon 尺寸3种(14px,18px,24px)，而与字体集组合则全兼容没有问题。</p>  
-<p>big:icon-18px/font-16px/margin-top:-1px;<br> large:icon-24px/font-20px/margin-top:0;</p>
-
-<div class="test">
-<button class="btn btn-mini">迷你按钮</button>
-<button class="btn btn-small">小按钮</button>
-<button class="btn"><i class="icon"></i> 默认按钮</button>
-<button class="btn btn-big"><i class="icon"></i> 大按钮</button>
-<button class="btn btn-large"><i class="icon"></i> 超大按钮</button>
-</div>
-
-<p>若使用字体集，则 ICON 统一使用 <code>.iconfont</code> 样式</p>
-
-<div class="test">
-<button class="btn btn-mini">迷你按钮</button>
-<button class="btn btn-small">小按钮</button>
-<button class="btn"><i class="iconfont">返</i> 默认按钮</button>
-<button class="btn btn-big"><i class="iconfont">优</i> 大按钮</button>
-<button class="btn btn-large"><i class="iconfont">惠</i> 超大按钮</button>
-
-<p>如果按钮不满足想要的宽度，可使用&amp;nbsp;占空白符位，如下： <small>不要使用全角空格，低版本IE下出现按钮中文本不局中现象</small></p>
-<button class="btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认按钮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-</div>
-
+            <p>如果按钮不满足想要的宽度，可使用&amp;nbsp;占空白符位，如下： <small>不要使用全角空格，低版本IE下出现按钮中文本不局中现象</small></p>
+            <button class="btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认按钮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>   
     </div>
 <pre class="prettyprint linenums">
 &lt;button class="btn btn-mini"&gt;迷你按钮&lt;/button&gt;
@@ -140,189 +140,189 @@
     <h3>问题及注意事项：</h3>
     <p>按钮使用中的注意事项，请参考 <a href="../../cnDocs/solutions/button.html">按钮兼容最佳方案</a></p>
     
-	<h2>按钮组</h2>
-	<div class="docs-example">
-		<div class="btn-toolbar">
-          <div class="btn-group">
+    <h2>按钮组</h2>
+    <div class="docs-example">
+        <div class="btn-toolbar">
+        <div class="btn-group">
             <button class="btn dropdown-toggle" data-toggle="dropdown">动作 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">动作 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">危险 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">警告 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">成功 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">信息 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
+        </div><!-- /btn-group -->
+        <div class="btn-group">
             <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">逆操作 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
+                <li><a href="#">动作</a></li>
+                <li><a href="#">另一个动作</a></li>
+                <li><a href="#">其他</a></li>
+                <li class="divider"></li>
+                <li><a href="#">被间隔的链接</a></li>
             </ul>
-          </div><!-- /btn-group -->
+        </div><!-- /btn-group -->
         </div>
-	</div>
+    </div>
 <pre class="prettyprint linenums">
 &lt;div class="btn-group"&gt;
-  &lt;a class="btn dropdown-toggle" data-toggle="dropdown" href="#"&gt;
-    Action
+    &lt;a class="btn dropdown-toggle" data-toggle="dropdown" href="#"&gt;
+        Action
     &lt;span class="caret"&gt;&lt;/span&gt;
-  &lt;/a&gt;
-  &lt;ul class="dropdown-menu"&gt;
-    &lt;!-- dropdown menu links --&gt;
-  &lt;/ul&gt;
+    &lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;!-- dropdown menu links --&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
 
-	<h2>按钮菜单</h2>
-	<div class="docs-example">
-		<div class="btn-toolbar">
-          <div class="btn-group">
-            <button class="btn">动作</button>
-            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-primary">动作</button>
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-danger">危险</button>
-            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-warning">警告</button>
-            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-success">成功</button>
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-info">信息</button>
-            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-inverse">逆操作</button>
-            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">动作</a></li>
-              <li><a href="#">另一个动作</a></li>
-              <li><a href="#">其他</a></li>
-              <li class="divider"></li>
-              <li><a href="#">被间隔的链接</a></li>
-            </ul>
-          </div><!-- /btn-group -->
+    <h2>按钮菜单</h2>
+    <div class="docs-example">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button class="btn">动作</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-primary">动作</button>
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-danger">危险</button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-warning">警告</button>
+                <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-success">成功</button>
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-info">信息</button>
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <div class="btn-group">
+                <button class="btn btn-inverse">逆操作</button>
+                <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">动作</a></li>
+                    <li><a href="#">另一个动作</a></li>
+                    <li><a href="#">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">被间隔的链接</a></li>
+                </ul>
+            </div><!-- /btn-group -->
         </div>
-	</div>
+    </div>
 <pre class="prettyprint linenums">
 &lt;div class="btn-group"&gt;
-  &lt;button class="btn"&gt;Action&lt;/button&gt;
-  &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
-    &lt;span class="caret"&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;ul class="dropdown-menu"&gt;
-    &lt;!-- dropdown menu links --&gt;
-    &lt;li&gt;&lt;a href="#"&gt;动作&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;另一个动作&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="divider"&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;被间隔的链接&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
+    &lt;button class="btn"&gt;Action&lt;/button&gt;
+    &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;
+        &lt;span class="caret"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;!-- dropdown menu links --&gt;
+        &lt;li&gt;&lt;a href="#"&gt;动作&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;另一个动作&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;其他&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="divider"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;被间隔的链接&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
 </div>

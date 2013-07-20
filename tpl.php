@@ -15,8 +15,8 @@
             <li><a href="#imglist">imglist <small class="iconfont">图片列表</small></a></li>
             <li><a href="#imgtext">imgtext <small class="iconfont">图文混排</small></a></li>
         </ul>
-	</div> <!-- // div.sidebar -->
-	
+    </div> <!-- // div.sidebar -->
+    
     <div class="main">
         <section id="tpl">
             <h1>前端布局模板</h1>
@@ -65,8 +65,8 @@
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
-
+    </div> <!-- // div.main -->
+    
 </div>
 
 <?php include("common/footer.html");?>

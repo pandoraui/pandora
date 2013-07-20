@@ -5,26 +5,50 @@ Pandora
 
 潘多拉（Pandora，也译作潘朵拉），希腊神话中火神赫淮斯托斯用粘土做成的地上的第一个女人，作为对普罗米修斯盗火的惩罚送给人类的第一个女人。众神亦加入使她拥有更诱人的魅力。
 
+根据神话，潘多拉出于好奇打开一个「魔盒」（应作坛子，希腊文原作πίθος，πίθοι，英语：pandora's box）释放出人世间的所有邪恶——贪婪、虚无、诽谤、嫉妒、痛苦等等，当她再盖上盒子时，**只剩下希望在里面**。Pandora 放出了邪恶，却把最大的希望留在了盒子里，如今她为我们所承受的困苦要做一个解决方案，把希望带给大家，并取名 Pandora 项目。
+            
+Pandora 项目第一站——**前端解决方案**，接下来就让我们看看 **Pandora** 的表现吧！
+
+## 前言
+
 > 经验告诉我们，不要重复发明轮子
 
-Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。深入的考究了 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
+Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。考究借鉴 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
 
-cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
+其中 cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
 
 
 ## 开发规划
 
 #### 仓库目录结构：
 
-	html
-  	|---- assets/              css/img/js
-	|---- docs/                WF 文档
-	|---- less/                The less for WF
-	|---- solutions/           浏览器兼容解决方案（支持 Less CSS)
-	|---- labs/                前端实验室
-	|---- w3c/                 HTML5/CSS3 标准文档
-	|---- plugins/             WF快捷开发对应的编辑器插件 (规划中)
-	|---- readme.md
+	pandora
+  	|- assets/              css/img/js 静态资源
+	|- docs/                Pandora 项目文档
+    |   |- *.php (现放在根目录下)
+    |   |- examples/
+    |   |- templates/
+    |   |- modules/     模块组件
+    |
+	|- less/                The less for Pandora 
+	|- solutions/           浏览器兼容解决方案（支持 Less CSS)
+	|- labs/                前端实验室，用于pandora项目实践
+    |- test/                测试目录
+    |- release/             稳定版本（css/js/icon/modules等）
+	|- w3c/                 HTML5/CSS3 标准文档 (详见原AliceUI)
+	|- plugins/             Pandora 快捷开发对应的编辑器插件 (规划中)
+	|- README.md
+
+### 临时使用目录
+
+	pandora
+  	|- assets/              css/img/js 静态资源
+	|- common/              公共文件 (header/footer)
+    |- *.php (现放在根目录下)
+	|- demo/                部分模块示例，如瀑布广告
+    |- test/                测试目录
+	|- labs/                应用实践，参见labs项目
+	|- README.md
 
 #### 文档结构
 

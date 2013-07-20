@@ -7,16 +7,16 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#overview">概述</a></li>
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#overview">概述</a></li>
             <li><a href="#todo">项目规划</a></li>
-			<li><a href="#example">一个简单的例子</a></li>
-			<li><a href="#start">开始使用</a></li>
-			<li><a href="#about">关于 Pandora</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
+            <li><a href="#example">一个简单的例子</a></li>
+            <li><a href="#start">开始使用</a></li>
+            <li><a href="#about">关于 Pandora</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
         <section id="overview">
             <h1>Pandora 项目</h1>
             <blockquote>
@@ -124,11 +124,11 @@
             <h3>主要项目案例 DEMO <small>内网访问</small></h3>
             <div class="demolist">
                 <dl class="dl-hor">
-                	<dt>驴妈妈</dt>
+                    <dt>驴妈妈</dt>
                     <dd>
                         <a target="_blank" href="http://10.3.1.41/v3/index.php">index</a>
                     </dd>
-                	<dt>定制游</dt>
+                    <dt>定制游</dt>
                     <dd>
                         <a target="_blank" href="http://10.3.1.41/v3/custom.php">custom</a>
                         <a target="_blank" href="http://10.3.1.41/v3/custom-page.php">custom-page</a>
@@ -157,9 +157,9 @@
                 <li><a href="http://msysgit.github.io/">Git - 版本控制</a></li>
                 <li><a href="xOne/markdown.html">Markdown - 书写文档</a></li>
                 <li><a href="http://nodejs.org/">Nodejs</a> - 二期使用的平台</li>
-            	<!-- 二期开发
+                <!-- 二期开发
                 <li>Spm - 包管理 <small>[二期]</small></li>
-            	<li>Nico - 调试&文档 <small>[二期]</small></li>
+                <li>Nico - 调试&文档 <small>[二期]</small></li>
                 <li>Peaches - 雪碧图 <small>[二期]</small></li>
                 <li>Stylus - 预编译 <small>[二期]</small></li>
                 <li>Stylib - 样式库搭建工具 <small>[二期]</small></li>
@@ -224,7 +224,7 @@ buttons.css |
             <p> 这项目一路艰辛，借鉴Bootstrap的思想并结合自己的工作想整合一个适合自己当前工作的前端框架，到底被什么绊住了呢，看着日子一天天过，真是揪心啊，AliceUI 还是比较给力，这么快新版就出来了，还好之前已经整理过部分 <a href="../cnDocs/solution.php">前端解决方案</a>，这里可以直接使用了，曾经的努力虽然少，但还是有些许价值。</p>
             
             <p>看到人家的项目都有卡通形象，着实比较可爱，我也用一个，咱的就叫做 潘多拉 - Pandora 吧</p>
-
+    
             <p><b>潘多拉（Pandora，也作潘朵拉）</b>，古希腊神话人物。在古希腊语中，潘是所有的意思，多拉则是礼物，意为“被授予一切优点的人”。</p>
             
             <p>根据神话，潘多拉出于好奇打开一个「魔盒」（应作坛子，希腊文原作πίθος，πίθοι，英语：pandora's box）释放出人世间的所有邪恶——贪婪、虚无、诽谤、嫉妒、痛苦等等，当她再盖上盒子时，<b>只剩下希望在里面</b>。Pandora 放出了邪恶，却把最大的希望留在了盒子里，如今她为我们所承受的困苦要做一个解决方案，把希望带给大家，并取名 Pandora 项目。</p>
@@ -234,7 +234,7 @@ buttons.css |
         </section>
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 
