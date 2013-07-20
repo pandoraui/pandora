@@ -7,17 +7,17 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#git">Git - 版本控制</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
-		
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#git">Git - 版本控制</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
+        
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 

@@ -7,7 +7,7 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
+    <div class="sidebar">
         <ul class="nav none">
             <li><a href="#tpl">tpl <small>布局模板</small></a></li>
             <li><a href="#box">box <small>区块盒子</small></a></li>
@@ -17,8 +17,8 @@
             <li><a href="#dropdown">dropdown <small>下拉菜单</small></a></li>
             
             <li><a href="#table">table <small>表格</small></a></li>
-			<li><a href="#btn">btn <small>按钮</small></a></li>
-			<li><a href="#btn-group">btn-group <small>按钮组</small></a></li>
+            <li><a href="#btn">btn <small>按钮</small></a></li>
+            <li><a href="#btn-group">btn-group <small>按钮组</small></a></li>
             <li><a href="#btn-dropdown">btn-dropdown <small>按钮菜单</small></a></li>
             <li><a href="#form">form <small>表单</small></a></li>
             
@@ -31,12 +31,12 @@
             <li><a href="#tipbox">tipbox <small>提示框</small></a></li>
             <li><a href="#progress">progress <small>进度条</small></a></li>
             <li><a href="#media">media <small>媒体对象</small></a></li>
-			<li><a href="#step">step <small>步骤</small></a></li>
-			<li><a href="#misc">misc <small>杂项</small></a></li>
+            <li><a href="#step">step <small>步骤</small></a></li>
+            <li><a href="#misc">misc <small>杂项</small></a></li>
         </ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
-		<section id="tpl">
+    </div> <!-- // div.sidebar -->
+    <div class="main">
+        <section id="tpl">
             <h1>布局模板</h1>
             <p>最常用的布局结构堪称经典，可以作为布局模板使用——内容盒子，列表，图文混排，图片滚动，下拉菜单等</p>
             <p>经典布局不是指单一的某一种布局，针对不同的风格设计，都有优良的布局经典，敏捷开发无处不在，这里仅就某一类设计浅谈布局实现(@此处实例多是修改BT项目实例或引用lvmama的项目或针对未来需求的预设实现)。</p>
@@ -325,11 +325,11 @@
                 "Then why you didn't take it back?" <br>
                 "I also thought that you do not write the address and the addressee, is for does not want to let me know that you do send the letter to who!" 
                 </p>
-
+    
                 <p>之乎者也，<a href="###" class="tag tag-blue">如果</a>用的是中文呢？来点<a href="###" class="tag tag-green">English</a>混排一下。</p>
                 
                 <p class="f12"><span class="tag tag-blue">来个</span>小字体版的：之乎者也，<a href="###" class="tag">如果</a>用的是中文呢？来点<a href="###" class="tag tag-red">English</a>混排一下。</p>
-        	</div>
+            </div>
             
             
             <h3>lvmama标签统一 <small>促销、返现、提示</small></h3>
@@ -412,7 +412,7 @@
         
         <section id="poptip">
             <h1>poptip <small>提示层</small></h1>
-        	
+            
             <div class="docs-example">
                 <div class="ui-box">
                     Little Robert asked his mother for two cents. "What did you do with the money I gave you yesterday?" <br>
@@ -835,7 +835,7 @@
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 <?php include("common/footer.html");?>

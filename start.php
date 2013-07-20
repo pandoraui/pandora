@@ -7,19 +7,19 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#examples">一个简单的例子</a></li>
-			<li><a href="#download">下载</a></li>
-			<li><a href="extend.php">扩展</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#examples">一个简单的例子</a></li>
+            <li><a href="#download">下载</a></li>
+            <li><a href="extend.php">扩展</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
         
         
         
-		<?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+        <?php include("common/comment.html");?>
+    </div> <!-- // div.main -->
 </div>
 
 
