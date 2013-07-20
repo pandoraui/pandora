@@ -9,26 +9,44 @@ Pandora
             
 Pandora 项目第一站——**前端解决方案**，接下来就让我们看看 **Pandora** 的表现吧！
 
+## 前言
+
 > 经验告诉我们，不要重复发明轮子
 
-Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。深入的考究了 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
+Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。考究借鉴 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
 
-cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
+其中 cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
 
 
 ## 开发规划
 
 #### 仓库目录结构：
 
-	html
-  	|---- assets/              css/img/js
-	|---- docs/                WF 文档
-	|---- less/                The less for WF
-	|---- solutions/           浏览器兼容解决方案（支持 Less CSS)
-	|---- labs/                前端实验室
-	|---- w3c/                 HTML5/CSS3 标准文档
-	|---- plugins/             WF快捷开发对应的编辑器插件 (规划中)
-	|---- readme.md
+	pandora
+  	|- assets/              css/img/js 静态资源
+	|- docs/                Pandora 项目文档
+    |   |- *.php (现放在根目录下)
+    |   |- examples/
+    |   |- templates/
+	|- less/                The less for Pandora 
+	|- solutions/           浏览器兼容解决方案（支持 Less CSS)
+	|- labs/                前端实验室
+    |- test/                测试目录
+    |- release/             稳定版本
+	|- w3c/                 HTML5/CSS3 标准文档 (详见原AliceUI)
+	|- plugins/             Pandora 快捷开发对应的编辑器插件 (规划中)
+	|- README.md
+
+### 临时使用目录
+
+	pandora
+  	|- assets/              css/img/js 静态资源
+	|- common/              公共文件 (header/footer)
+    |- *.php (现放在根目录下)
+	|- demo/                部分模块示例
+    |- test/                测试目录
+	|- labs/                应用实践，参见labs项目
+	|- README.md
 
 #### 文档结构
 
