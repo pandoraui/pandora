@@ -398,6 +398,355 @@ span { ... }
         
         <section id="javascript">
             <h1>JavaScript 编码风格</h1>
+            <h3>1.1 缩进层级</h3>
+          <p>每一行的层级由4个空格组成，避免使用制表符（Tab）进行缩进</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+if (true) {
+doSomething();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+if (true) {
+    doSomething();
+}
+</pre>
+          <h3>1.2 行的长度</h3>
+          <p>每行长度不应该超过80个字符。如果一行多于80个字符，应当在一个运算符（逗号，加号等）后换行。下一行应当增加两级缩进（8个字符）</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+doSomething(argument1, argument2, argument3, argument4,
+    argument5);
+
+doSomething(argument1, argument2, argument3, argument4
+        ,argument5);
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+doSomething(argument1, argument2, argument3, argument4,
+        argument5);
+</pre>
+          <h3>1.3 原始值</h3>
+          <p>字符串应当始终使用双引号（避免使用单引号）且保持一行。避免在字符串中使用斜线另起一行。（如果一行放不下请用+连接）。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法：单引号
+var name = 'John.Chen';
+
+//不好的写法：字符串结束之前换行
+var longString = "Here's the story, of a man\
+named Brady";
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var name = "John.Chen";
+
+var longString = "Here's the story, of a man"+
+                 "named Brady";
+</pre>
+          <p>数字应当使用十进制整数，科学计数法标示整数，十六进制整数，或者十进制浮点小数，小数点前后应当至少保留一位数字。避免使用八进制直接量。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法：十进制数字以小数点结尾
+var price = 10.;
+
+//不好的写法：十进制数字以小数点开头
+var price = .1;
+
+//不好的写法：八进制（base 8）写法已废弃
+var num = 010;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var count = 10;
+
+var price = 10.0;
+var price = 10.00;
+
+var num = 0xA2;
+
+var num = le23;
+</pre>
+          <p>特殊值 null 除了下述情况下应当避免使用</p>
+          <ul>
+            <li>用来初始化一个变量，这个变量可能被赋值为一个对象。</li>
+            <li>用来和一个已经初始化的变量比较，这个变量可以是也可以不是一个对象。</li>
+            <li>当函数的参数期望是对象时，被用作参数传入。</li>
+            <li>当函数的返回值期望是对象时，被用作返回值传出</li>
+          </ul>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法：和一个未被初始化的变量比较
+var person;
+if(person != null){
+    doSomenthing();
+}
+
+//不好的写法：通过测试判断某个参数是否被传递
+function doSomething(arg1, arg2, arg3, arg4){
+    if (arg4 != null) {
+        doSomethingElse();
+    }
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var person = null;
+
+function getPerson(){
+    if (condition) {
+        return new Person("John.Chen");
+    }else{
+        return null;
+    }
+}
+
+var person = getPerson();
+if (person !== null) {
+    doSomething();
+}
+</pre>
+          <p>避免使用特殊值 undefined。判断一个变量是否定义应当使用 typeof 操作符。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法： 使用了undefined直接量
+if (variable == undefined){
+    doSomething();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+if (typeof variable === "undefined"){
+    doSomething();
+}
+</pre>
+          <h3>1.4 运算符间距</h3>
+          <p>二元运算符前后必须使用一个空格来保持表达式的整洁。操作符包括赋值运算符合逻辑运算符。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法： 丢失了空格
+var found =(values[i]===item);
+
+if (found&&(count>10)){
+    doSomething();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var found = (values[i] === item);
+
+if (found && (count > 10)){
+    doSomething();
+}
+</pre>
+          <h3>1.5 括号间距</h3>
+          <p>当使用括号时，紧接左括号之后和紧接右括号之前不应该有空格</p>
+          <h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+var found = ( values[i] === item );
+
+if ( found && ( count > 10 ) ){
+    doSomething();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var found = (values[i] === item);
+
+if (found && (count > 10)){
+    doSomething();
+}
+</pre>
+          <h3>1.6 对象直接量</h3>
+          <p>对象直接应当使用如下格式</p>
+          <ul>
+              <li>起始做花括号应当同表达式保持一行</li>
+              <li>每个属性的名值对应当保持一个缩进，第一个属性应当在做花括号后另起一行。</li>
+              <li>每个属性的名值对应当使用不含引号的属性名，其后紧跟一个冒号（之前不好空格），而后是值。</li>
+              <li>倘若属性值是函数类型，函数体应当在属性名之下另起一行，而且其后均应保留一个空行。</li>
+              <li>一组相关的属性前后可以插入空行提升代码的可读性</li>
+              <li>结束的右花括号应当独占一行</li>
+          </ul>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法：不恰当的缩进
+var object = {
+                key1:value1,
+                key2:value2
+}
+
+//不好的写法：函数体周围缺少空行
+var object ={
+    key1: value1,
+    key2: value2,
+    func: function() {
+        doSomething()
+    },
+    key3:value3
+};
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var object = {
+    
+    key1: value1,
+    key2: value2,
+    
+    func: function() {
+        doSomething();
+    },
+    
+    key3: value3
+};
+</pre>
+            <p>当对象字面量作为函数参数时，如果值是变量，起始花括号应当同函数名在同一行。所有其余先前列出的规则同样适用。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+//不好的写法：所有代码在一行上
+doSomething({ key1: value1, key2: value2});
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+doSomething({
+    key1: value1,
+    key2: value2
+});
+</pre>
+            <h3>1.7 注释</h3>
+            <p>频繁地使用注释有助于他人理解你的代码。如下情况应当使用注释。</p>
+            <ul>
+                <li>代码晦涩难懂。</li>
+                <li>可能被误认认为错误的代码。</li>
+                <li>必要但并不明显的针对特定浏览器的代码。</li>
+                <li>对于对象、方法或者属性，生成文档是必要的（使用恰当的文档注释）。</li>
+            </ul>
+            <h4>1.7.1 单行注释</h4>
+            <p>单行注释应当用来说明一行代码或者一组相关的代码。单行注释可能有三种使用方式。</p>
+            <ul>
+                <li>独占一行的注释，用来解释下一行代码。</li>
+                <li>在代码行的尾部的注释，用来解释它之前的代码。</li>
+                <li>多行，用来注释掉一个代码块。</li>
+            </ul>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：注释之前没有空行
+if (true) {
+    // 如果代码执行到这里，则表明通过了所以的安全性检查
+    allowed();
+}
+
+// 不好的写法：错误的缩进
+if (true) {
+
+// 如果代码执行到这里，则表明通过了所以的安全性检查
+    allowed();
+}
+
+// 不好的写法：这里应当用多行注释
+//。。。
+//。。。。
+//。。。
+if (true) {
+    // 如果代码执行到这里，则表明通过了所以的安全性检查
+    allowed();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+if (true) {
+    
+    // 如果代码执行到这里，则表明通过了所以的安全性检查
+    allowed();
+}
+
+
+</pre>
+            <h4>1.7.11 语句</h4>
+            <h6>简单语句</h6>
+            <p>没一行最多只包含一条语句。所有简单的语句都应该以分号（;）结束。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法： 多个表达式写在一行
+count++; a = b;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+count++;
+a = b;
+</pre>
+            <h6>返回语句</h6>
+            <p>返回语句当返回一个值的时候不应当使用圆括号包裹，除非在某些情况下这么做可以让返回值更容易理解。</p>
+<pre class="prettyprint linenums">
+return;
+
+return collection.size();
+
+return (size > 0 ? size : defaultSize);
+</pre>
+            <h6>复合语句</h6>
+            <p>复合语句是大括号括起来的语句列表。</p>
+            <ul>
+                <li>括起来的语句应当较复合语句多缩进一个层次。</li>
+                <li>开始的大括号应当在复合语句所在行的末尾；结束的大括号应当独占一行且同复合语句的开始保持同样的缩进。</li>
+                <li>当语句是控制结构的一部分时，诸如if或者for语句，所有语句都需要大括号起来，也包括单个语句。这个约定使得我们更方便地添加语句而不用担心忘记加括号而引起bug。</li>
+                <li>想if一样的语句开始的关键词，其后应该紧跟一个空格，起始大括号应当在空格之后。</li>
+            </ul>
+            <h6>if 语句</h6>
+            <p>if语句应当是下面的格式</p>
+<pre class="prettyprint linenums">
+if (true) {
+    doSomething();
+}
+
+if (true) {
+    doSomething();
+} else {
+    doSomething();
+}
+
+if (true) {
+    doSomething();
+} else if (true) {
+    doSomething();
+} else {
+    doSomething();
+}
+</pre>
+            <p>绝不允许在if语句省略花括号。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法： 不恰当的空格
+if()
+</pre>
+            
+            <h4>1.7.12 留白</h4>
+            <p>在逻辑相关的代码块之间添加空行可以提高代码的可读性。</p>
+            <p>两行空行仅限在如下情况中使用。</p>
+            <ul>
+                <li>在不同的源代码文件之间。</li>
+                <li>在类和接口定义之间。</li>
+            </ul>
+            <p>单行空行仅限在如下情况中使用。</p>
+            <ul>
+                <li>方法之间。</li>
+                <li>方法中局部变量和第一行语句之间。</li>
+                <li>多行或者单行注释之前。</li>
+                <li>方法中逻辑代码块之间以提升代码的可读性。</li>
+            </ul>
+            <p>空格应当在如果下情况中使用。</p>
+            <ul>
+                <li>关键词后跟括号的情况应当使用空格隔开。</li>
+                <li>参数列表中逗号之后应当保留一个空格。</li>
+                <li>所有的除了点（.）之外的二元运算符，其操作数都应当用空格隔开。单目运算符的操作数之间不应该用空白隔开，诸如一元减号，递增(++),递减（--）.</li>
+                <li>for 语句中的表达式之间应当用空格隔开。</li>
+            </ul>
+            <h4>1.7.13 需要避免的</h4>
+            <ul>
+                <li>切勿使用string一类的原始包装类型创建新的对象。</li>
+                <li>避免使用eval()。</li>
+                <li>避免使用with语句，该语句在严格模式中不复存在，可能在未来的ECMAScript标准中也将去除。</li>
+            </ul>
         </section>
         
         
