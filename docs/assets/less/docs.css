@@ -420,6 +420,6 @@ span.done  { background: #0b0; }
 */
 
 @media (min-width: 1240px) {
-    .wrap { width: 1200px;}
+    .wrap { }
     
 }
