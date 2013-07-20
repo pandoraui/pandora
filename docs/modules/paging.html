@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.pages { margin: 10px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>分页组件</h1>
+	<p>此处实例时驴妈妈网站的页码结构，下面将此基础上修改并实现以下结构。</p>
+    <p><strong>TODO：</strong>全信息的组合展示、全页码的展现形式、JS实现分页</p>
+	
+    <div class="docs-example">
+
+        <h3>分页组件</h3>
+        <p>此分页组件在驴妈妈已开发页码代码基础上优化，实现了两种需求的样式，默认为玫红色</p>
+
+
+        <!-- 分页组件 -->
+        <div class="pages rosestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
+
+        <div class="pages orangestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
+
+        <div class="pages orangestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
+
+        <h3>升级版</h3>
+        <p>此设置默认为橙色，且页码右对齐(不是右浮动，即可设置左对齐/居中)</p>
+        <div class="pages orangestyle">
+            <div class="Pages"> <span class="PrevPage">上一页</span><span class="PageSel">1</span><span class="NextPage">下一页</span> </div>
+        </div>
+
+        <div class="pages orangestyle">
+            <div class="Pages"> <a class="PrevPage" href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><span class="PageMore">...</span><a href="#">20</a><a class="NextPage" href="#">下一页</a> </div>
+        </div>
+
+
+        <div class="pages rosestyle">
+            <div class="Pages"> <span class="PrevPage">上一页</span><span class="PageSel">1</span><span class="NextPage">下一页</span> </div>
+        </div>
+
+        <div class="pages rosestyle">
+            <div class="Pages"> <a class="PrevPage" href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><span class="PageMore">...</span><a href="#">20</a><a class="NextPage" href="#">下一页</a> </div>
+        </div>
+
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="pages rosestyle"&gt;
+    &lt;div class="Pages"&gt;
+        &lt;span class="PrevPage"&gt;上一页&lt;/span&gt;
+        &lt;span class="PageSel"&gt;1&lt;/span&gt;
+        &lt;span class="NextPage"&gt;下一页&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="pages orangestyle"&gt;
+    &lt;div class="Pages"&gt;
+        &lt;a class="PrevPage" href="#"&gt;上一页&lt;/a&gt;
+        &lt;a href="#"&gt;1&lt;/agt;&lt;span class="PageSel"&gt;2&lt;/span&gt;
+        &lt;a href="#"&gt;3&lt;/a&gt;
+        &lt;a href="#"&gt;4&lt;/a&gt;
+        &lt;a href="#"&gt;5&lt;/a&gt;
+        &lt;a href="#"&gt;6&lt;/a&gt;
+        &lt;span class="PageMore"&gt;...&lt;/span&gt;
+        &lt;a href="#"&gt;20&lt;/a&gt;
+        &lt;a class="NextPage" href="#"&gt;下一页&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="docs-example">
+    <h4>全信息的组合展示</h4>
+    <p>包含总页数，跳转到第几页等信息</p>
+    
+    
+    <h4>全页码的展现形式</h4>
+    <p>页码全部展示，页码过多显示省略号，但是鼠标经过将展示隐藏的页码。</p>
+    
+    
+    <h4>JS实现分页</h4>
+    <p>使用JS分页组件实现前端分页，支持分页的多维数据排序。</p>
+</div>
+
+
+
+
+
+
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/paging.js"></script> 
+
+</body>
+</html>

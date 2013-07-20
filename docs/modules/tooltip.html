@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>工具提醒</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.tagscc {
+    font-style: normal;
+    display: inline-block;
+    padding:0 4px;
+    height: 16px;
+    line-height:16px;
+    background: #FF9614;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>工具提醒</h1>
+	<p>提供一种悬浮提醒的效果，支持两个模板、八个方位，以及对触发事件进行自定义调用。对于延迟加载或Ajax加载的内容，需要加载后再调用一次 tooltip 事件。这是由于UI的不完备限制导致的。</p>
+	<p>依赖：http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
+    <div class="docs-example">
+        <div class="calendar" tip-content='今天预订11.03日产品，可同时享受以下优惠：<br>早订早惠：成人价，每份最大优惠50元。<br>多订多惠：成人价，预订满N份（含）以上，每份最大优惠50元。'>日历优惠活动提醒</div>
+		
+		<br>
+	
+		<span class="tagsback" tip-title="nihao " tip-content='奖金只支持前台下单支付，可最多抵扣20元，奖金在付款页面使用'><em>奖金折扣</em><i>101元</i></span>
+		
+		<span class="tagscc" tip-content='1.早定早惠价格可与优惠活动重复使用<br>2.订购时间越早将享受优惠越多'>早订优惠</span>
+		
+		<i class="tagscc" tip-content='订购份数越多将享受优惠越多'>多订优惠</i>
+        
+        <i id="clonethis" class="tagcc" tip-content='500积分抵扣5元（不与优惠券叠加使用）'>积分抵扣</i>
+        
+        <br><br>
+        
+        <button id="clonebtn" class="btn" type="button">再添加一个标签</button>
+        
+        <br><br>
+        
+        <div id="test">
+            
+        
+        </div>
+        
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="calendar" tip-content='今天预订11.03日产品，可同时享受以下优惠：&lt;br&gt;早订早惠：成人价，每份最大优惠50元。&lt;br>多订多惠：成人价，预订满N份（含）以上，每份最大优惠50元。'&gt;日历&lt;/div&gt;
+	
+&lt;span class="tagsback" tip-title="提醒标题" tip-content='提醒内容'&gt;&lt;em&gt;奖金折扣&lt;/em&gt;&lt;/i&gt;101元&lt;/i&gt;&lt;/a&gt;
+&lt;span class="tagscc" tip-content='提醒内容'&gt;早订优惠&lt;/span&gt;
+&lt;i class="tagscc" tip-content='提醒内容'&gt;多订优惠&lt;/i&gt;
+&lt;i class="tagscc" tip-content='提醒内容'&gt;积分抵扣&lt;/i&gt;
+
+&lt;script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js"&gt;&lt;/script&gt;
+$(function(){
+    $('.calendar').ui('lvtip',{
+        templete : 2,
+        place: 'bottom-left',
+        offsetX: 0,
+        events : "live"  //live方法有问题，后添加元素ui不被调用
+    });
+    $('span[class=tagsback]').ui('lvtip',{
+        place: 'bottom'
+    });
+    $('.tagscc').ui('lvtip',{
+        place: 'bottom',
+        events : "live"
+    });
+});
+</pre>
+
+
+</div>
+<script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js"></script>
+<script>
+$(function(){
+    $('.calendar').ui('lvtip',{
+        templete : 2,
+        place: 'bottom-left',
+        offsetX: 0,
+        events : "live"
+    });
+    $('span[class=tagsback]').ui('lvtip',{
+        place: 'bottom'
+    });
+    $('.tagscc').ui('lvtip',{
+        place: 'bottom'
+    });
+    
+    $('#clonebtn').click(function(){
+        $("span.tagscc").clone().appendTo("#test");
+        $("#test").append('<span class="tagsback" tip-content="订购份数越多将享受优惠越多">多订优惠</span>');
+        $(this).unbind();
+        
+        //live方法有问题，后添加元素ui不被调用 暂时可以如下解决
+        $('.tagscc').ui('lvtip',{
+            place: 'bottom'
+        });
+    })
+    
+});
+</script>
+</body>
+</html>
