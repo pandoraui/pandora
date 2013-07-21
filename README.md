@@ -9,6 +9,7 @@ Pandora
             
 Pandora 项目第一站——**前端解决方案**，接下来就让我们看看 **Pandora** 的表现吧！
 
+
 ## 前言
 
 > 经验告诉我们，不要重复发明轮子
@@ -41,7 +42,7 @@ Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://gi
 
 #### 文档结构
 
-使用HTML5布局标签及CSS3效果，并普及精简模式(如：http://缩写为// 省略type="text/css"等)
+使用HTML5布局标签及CSS3效果，并普及精简模式(如：http://缩写为// 省略type="text/css" type="text/javascript"等)
 
 #### 阅读 HTML5/CSS3 标准文档
 
@@ -51,6 +52,6 @@ Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://gi
 
 本项目使用Git管理，如果您对Git的使用不甚熟悉，可以参考[useGit使用指南](https://github.com/pandoraui/useGit)项目，包含详细的Git教程讲解以及Git常用命令。
 
-## 版权和许可
+## 版权和许可 
 
 基于 [MIT License](http://en.wikipedia.org/wiki/MIT_License "WikiPedia 中关于 MIT License 的描述") 开源。
