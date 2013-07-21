@@ -46,32 +46,33 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 ul.unstyled,
 ol.unstyled {
-  margin-left: 0;
-  list-style: none;
+    margin-left: 0;
+    list-style: none;
 }
 
 ul.inline,
 ol.inline {
-  margin-left: 0;
-  list-style: none;
+    margin-left: 0;
+    list-style: none;
 }
 
 ul.inline > li,
 ol.inline > li {
-  display: inline-block;
-  /* IE7 inline-block hack */
+    display: inline-block;
+    /* IE7 inline-block hack */
   
-  *display: inline;
-  padding-right: 5px;
-  padding-left: 5px;
-  *zoom: 1;
+    *display: inline;
+    padding-right: 5px;
+    padding-left: 5px;
+    *zoom: 1;
 }
+
 
 /*
  * <li>&bull; <a href=""></a></li>
@@ -111,91 +112,91 @@ ol.ol {
 
 dt,
 dd {
-  line-height: 20px;
+    line-height: 20px;
 }
 
 dt {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 dd {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 .dl-hor,
 .dl-horizontal {
-  *zoom: 1;
+    *zoom: 1;
 }
 .dl-hor:before,
 .dl-hor:after,
 .dl-horizontal:before,
 .dl-horizontal:after {
-  display: table;
-  line-height: 0;
-  content: "";
+    display: table;
+    line-height: 0;
+    content: "";
 }
 .dl-hor:after,
 .dl-horizontal:after {
-  clear: both;
+    clear: both;
 }
 .dl-hor dt,
 .dl-horizontal dt {
-  float: left;
-  width: 160px;
-  overflow: hidden;
-  clear: left;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .dl-horizontal dd {
-  margin-left: 180px;
+    margin-left: 180px;
 }
 .dl-hor dt {
     width: 100px;
     font-weight: normal;
 }
 .dl-hor dd {
-  margin-left: 120px;
+    margin-left: 120px;
 }
 hr {
-  margin: 20px 0;
-  border: 0;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #ffffff;
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #ffffff;
 }
 
 abbr[title],
 abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #999999;
+    cursor: help;
+    border-bottom: 1px dotted #999999;
 }
 
 abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
+    font-size: 90%;
+    text-transform: uppercase;
 }
 
 blockquote {
-  padding: 0 15px;
-  margin: 15px 0;
-  border-left: 5px solid #ddd;
-  color: #555;
+    padding: 0 15px;
+    margin: 15px 0;
+    border-left: 5px solid #ddd;
+    color: #555;
 }
 
 blockquote p {
-  margin: 0.6em 0 0.4em;
-  line-height: 1.5;
+    margin: 0.6em 0 0.4em;
+    line-height: 1.5;
 }
 
 blockquote small {
-  display: block;
-  line-height: 20px;
-  color: #999;
+    display: block;
+    line-height: 20px;
+    color: #999;
 }
 
 blockquote small:before {
-  content: '\2014 \00A0';
+    content: '\2014 \00A0';
 }
 blockquote em {
     margin-left: 1em;
@@ -207,25 +208,25 @@ blockquote blockquote {
 }
 
 blockquote.pull-right {
-  float: right;
-  float: none;
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #ddd;
-  border-left: 0;
+    float: right;
+    float: none;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid #ddd;
+    border-left: 0;
 }
 
 blockquote.pull-right p,
 blockquote.pull-right small {
-  text-align: right;
+    text-align: right;
 }
 
 blockquote.pull-right small:before {
-  content: '';
+    content: '';
 }
 
 blockquote.pull-right small:after {
-  content: '\00A0 \2014';
+    content: '\00A0 \2014';
 }
 
 q:before,
@@ -236,10 +237,10 @@ blockquote:after {
 }
 
 address {
-  display: block;
-  margin-bottom: 20px;
-  font-style: normal;
-  line-height: 20px;
+    display: block;
+    margin-bottom: 20px;
+    font-style: normal;
+    line-height: 20px;
 }
 
 p { 
@@ -248,9 +249,9 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 10px 0;
-  font-weight: bold;
-  line-height: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+    line-height: 22px;
 }
 
 h1 { font-size: 36px;}
@@ -290,8 +291,14 @@ h4 small { font-size: 14px;}
 h5 small,
 h6 small { font-size: 12px;}
 
+
+/* 重设无样式状态 */
+.typo .none li {
+    list-style-type: none !immportant;
+}
 .notypo * { 
     margin: 0;
     padding: 0;
     list-style: none;
 }
+

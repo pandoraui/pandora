@@ -74,11 +74,12 @@ h1, h2, h3, h4, h5, h6{
     margin: 10px 0 10px 2em;
 }
 
-.typo ul, .typo-ul {
-	list-style: disc;
+.typo ul, 
+.typo-ul {
+    list-style: disc;
 }
 .typo ol, .typo-ol {
-	list-style: decimal;
+    list-style: decimal;
 }
 
 .typo li ul,
@@ -98,29 +99,27 @@ h1, h2, h3, h4, h5, h6{
     list-style: circle;
 }
 
-
-
 ul.unstyled,
 ol.unstyled {
-  margin-left: 0;
-  list-style: none;
+    margin-left: 0;
+    list-style: none;
 }
 
 ul.inline,
 ol.inline {
-  margin-left: 0;
-  list-style: none;
+    margin-left: 0;
+    list-style: none;
 }
 
 ul.inline > li,
 ol.inline > li {
-  display: inline-block;
-  /* IE7 inline-block hack */
+    display: inline-block;
+    /* IE7 inline-block hack */
   
-  *display: inline;
-  padding-right: 5px;
-  padding-left: 5px;
-  *zoom: 1;
+    *display: inline;
+    padding-right: 5px;
+    padding-left: 5px;
+    *zoom: 1;
 }
 
 
@@ -132,6 +131,7 @@ ul.ul,
 ol.ol {
     font-family: \5b8b\4f53, sans-serif;
 }
+
 
 /*
  * 同 ul/ol，在文章中应具备 table 基本格式 
@@ -160,26 +160,26 @@ ol.ol {
 
 /* 块/段落引用 */
 .typo blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 20px;
-  border-left: 5px solid #eeeeee;
+    padding: 0 0 0 15px;
+    margin: 0 0 20px;
+    border-left: 5px solid #eeeeee;
 }
 
 .typo blockquote p {
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .typo blockquote small {
-  display: block;
-  line-height: 20px;
-  color: #999999;
+    display: block;
+    line-height: 20px;
+    color: #999;
 }
 
 .typo blockquote small:before {
-  content: '\2014 \00A0';
+    content: '\2014 \00A0';
 }
 
 /* 代码片断 请参见 code.css */
@@ -202,4 +202,14 @@ input { }
 .typo-em, .typo em, legend, caption {
 	font-weight: 700;
     font-style: normal;
+}
+
+/* 重设无样式状态 */
+.typo .none li {
+    list-style-type: none !immportant;
+}
+.notypo * { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

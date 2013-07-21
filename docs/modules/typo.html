@@ -16,6 +16,9 @@
 <link rel="stylesheet" href="../assets/less/docs.css" >
 <style>
 .wrap{ margin-bottom:30px;}
+/*
+body { font: 12px/1.5 Tahoma,Arial,\5b8b\4f53,sans-serif; }
+*/
 </style>
 </head>
 <body class="typo">
@@ -56,12 +59,15 @@ html {
 body,button,input,select,textarea {
     font:12px/1.5 Tahoma,Arial,\5b8b\4f53,sans-serif;
 }
+在我们的生产线页面中，我们使用的是12px/22px，而在阅读模式，我们使用的是14px/26px。
 </pre>
 
 <h5>扩展阅读</h5>
 <ul>
 	<li><a href="http://www.woshipm.com/ucd/25682.html">跨平台字体效果浅析</a></li>
 </ul>
+<p>针对字体选择，上面文章分析了一些，字体各有利弊，我们布局采用的Tahoma,Arial首选，阅读采用\5b8b\4f53首选（更好的中文标点符号的展现），mac下也可以增加备用选择字体Verdana，待定...</p>
+
 <h3>段落强调 .lead</h3>
 <p>通过添加 <code>.lead</code> 实现段落强调。</p>
 <div class="docs-example">
