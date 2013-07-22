@@ -644,9 +644,11 @@ if (true) {
 }
 
 // 不好的写法：这里应当用多行注释
-//。。。
-//。。。。
-//。。。
+// 接下来的这段代码非常难，那么，让我详细解释下
+// 这段代码的作用是首先判断条件是否为真
+// 只有为真时才会执行。这里的条件是通过
+// 多个函数计算出来的，在整个会话生命周期内
+// 这个值是可以被修改的
 if (true) {
     // 如果代码执行到这里，则表明通过了所以的安全性检查
     allowed();
@@ -659,9 +661,410 @@ if (true) {
     // 如果代码执行到这里，则表明通过了所以的安全性检查
     allowed();
 }
-
-
 </pre>
+            <p>对于代码行尾单行注释的情况，应确保代码结尾同注释之间至少一个缩进。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：代码和注释间没有足够的空格
+var result = something + somethingElse;// somethingElse will never be null;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var result = something + somethingElse; // somethingElse will never be null;
+</pre>
+            <p>注释一个代码块时在连续多行使用单行注释是唯一可以接受的情况。多行注释不应当在这种情况下使用。</p>
+<pre class="prettyprint linenums">
+// if (true) {
+//     doSomething();
+// }
+</pre>
+            <h4>1.7.2 多行注释</h4>
+            <p>多行注释应当在代码需要更多文字去解释的时候使用。每个多行注释都至少有如下三行</p>
+            <ul>
+                <li>首行仅仅包括/*注释开始。该行不应当有其他文字。</li>
+                <li>接下来的行以*开头并保持左对齐。这些行可以有文字描述。</li>
+                <li>最后一行以*/开头并同先前行保持对齐。也不应当有其他文字。</li>
+            </ul>
+            <p>多行注释的首行应当保持同其它描述代码的相同层次的缩进。后续的每行应当有同样层次的缩进并附加一个空格（为了适当保持*字符的对齐）。每一个
+            多行代码之前应当预留一个空行。
+            </p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：注释之前无空行
+if (true) {
+    /*
+     * 如果代码执行到这里
+     * 说明通过了所有的安全性检测
+     */
+     allowed();
+}
+
+// 不好的写法：星号后没有空格
+if (true) {
+
+    /*
+     *如果代码执行到这里
+     *说明通过了所有的安全性检测
+     */
+     allowed();
+}
+
+// 不好的写法：错误的缩进
+if (true) {
+
+/*
+ * 如果代码执行到这里
+ * 说明通过了所有的安全性检测
+ */
+     allowed();
+}
+
+// 不好的写法：代码尾部注释不要用多行注释格式
+var result = something + somethingElse; /* somethingElse will never be null */;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+if (true) {
+
+    /*
+     * 如果代码执行到这里
+     * 说明通过了所有的安全性检测
+     */
+     allowed();
+}
+</pre>
+            <h4>1.7.3 注释声明</h4>
+            <p>注释有时候也可以用来给一段代码声明额外的信息。这些声明的格式以单个单词打头并紧跟一个冒号。可使用的声明如下</p>
+            <h6>TODO</h6>
+            <p>说明代码还未完成。应当包含下一步要做的事情。</p>
+            <h6>HACK</h6>
+            <p>表示代码实现走了一个捷径。应当包含为何使用 hack 的原因。这也可能表明该问题可能会有更好的解决方法。</p>
+            <h6>XXX</h6>
+            <p>说明代码是有问题的并应当尽快修复。</p>
+            <h6>FIXME</h6>
+            <p>说明代码是有问题的并应当尽快修复。重要性略次于 XXX。</p>
+            <h6>REVIEW</h6>
+            <p>说明代码任何可能的改动都需要评审。</p>
+            <p>注：这些声明可能在一行或多行注释中使用，并且应当遵循同一般注释类型相同的格式规则。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：注释声明空格不正确
+// TODO： 我希望找到一种更快的方式
+doSomething();
+
+//不好的写法：代码和注释应当保持同样的缩进
+    // REVIEW：有更好的方法吗？
+if (document.all) {
+    doSomething();
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+// TODO：我希望找到一种更快的方式
+doSomething();
+
+/*
+ * HACK：不得不针对 IE 做的特殊处理。我计划后续有时间
+ * 重写这部分。这些代码可能需要在 v1.2 版本之前替换掉
+ */
+if (document.all) {
+    doSomething();
+}
+
+// REVIEW：有更好的方法吗？
+if (document.all) {
+    doSomething();
+}
+</pre>
+            
+            <h4>1.7.4 变量声明</h4>
+            <p>所有的变量在使用前都应当事先定义。变量定义应当放在函数开头，使用一个var表达式每行一个变量。除了首行，所有行都应当多一次缩进以使变量名能够垂直
+               方向对齐。变量定义时应当初始化，并且赋值操作符应当保持一致的缩进。初始化的变量应当在未初始化变量之前。
+            </p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：不恰当的初始化赋值
+var count = 10,
+   name= "John.Chen",
+    empty;
+    
+// 不好的写法：错误的缩进
+var count = 10,
+name= "John.Chen",
+empty;
+
+// 不好的写法：多个定义写在一行
+var count = 10, name= "John.Chen",
+    empty;
+    
+// 不好的写法：未初始化的变量放在最前面
+var empty,
+    count = 10,
+    name= "John.Chen";
+    
+// 不好的写法：多个var表达式
+var count = 10,
+    name= "John.Chen";
+var empty;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var count = 10,
+    name = "John.Chen",
+    empty;
+</pre>
+
+            <h4>1.7.5 函数声明</h4>
+            <p>函数应当在使用提前定义。一个不是作为方法的函数（也就是说没有作为一个对象的属性）应当使用函数定义的格式（不是函数表达式和 Function 构造器格式）。
+               函数名和圆括号之间不应当有空格。结束的圆括号和右边的花括号之间应该留一个空格。右侧的花括号应同 function 关键字保持同一行。开水喝结束括号之间不应该有空格
+               。参数名之间应当在逗号之保留一个空格。函数体应当保持一级缩进。
+            </p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：第一行不恰当的空格
+function doSomething (arg1, arg2) {
+    return arg1 + arg2;
+}
+
+// 不好的写法：函数表达式
+var doSomething = function(arg1, arg2) {
+    return arg1 + arg2;
+}
+
+// 不好的写法： 左侧的花括号位置不对
+function doSomething(arg1, arg2)
+{
+    return arg1 + arg2;
+}
+
+//错误的写法：使用了 Function 构造器
+var doSomething = new Function("arg1", "arg2", "return arg1 + arg2;");
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+function doSomething(arg1, arg2) {
+    return arg1 + arg2;
+}
+</pre>
+            <p>其他函数内部定义的函数应当在 var 语句后立即定义。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：inner 函数的定义先于变量
+function outer() {
+    function inner() {
+        //code
+    }
+    var count = 10,
+        name = "John.Chen";
+    //调用 inner() 代码
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+function outer() {
+    var count = 10,
+        name = "John.Chen";
+    function inner() {
+        //code
+    }
+    //调用 inner() 代码
+}
+</pre>
+            <p>匿名函数可能作为方法赋值给对象，或者作为其他函数的参数。function 关键字同开始括号之间不应有空格。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：不正确的空格
+object.method = function () {
+    //  code
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+object.method = function() {
+    //  code
+}
+</pre>
+            <p>立即被调用的函数应当在函数调用的外层圆括号包裹。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：函数调用外层没有用圆括号包裹
+var value = function() {
+    //function body
+    
+    return {
+        message: "Hi"
+    };
+}
+
+// 不好的写法：圆括号位置不当
+var value = (function() {
+    //function body
+    
+    return {
+        message: "Hi"
+    };
+})();
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var value = (function() {
+    //function body
+    
+    return {
+        message: "Hi"
+    };
+}());
+</pre>
+            
+            <h4>1.7.6 命名</h4>
+            <p>变量和函数在命名时应当小心。命名应仅限于数字字母字符，某些情况下也可以使用下划线。最好不要在任何命名中使用美元符号（$）或者反斜杠（\）。</p>
+            <p>变量命名应当采用驼峰命名格式，首字母小写，每个单词首字母大写。变量名的第一个单词应当是一个名词（而非动词）以避免同函数混淆。不要在变量命名中使用下划线。</p>
+            <h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：大写字母开头
+var AccountNumber = "8401-1";
+
+//不好的写法：动词开头
+var getAccountNumber = "8401-1";
+
+//不好的写法：使用下划线
+var account_number = "8401-1";
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var accountNumber = "8401-1";
+</pre>
+            <p>函数命名也应当采用驼峰命名格式。函数名的第一个单词应当是动词（而非名词）来避免同变量混淆。函数名中最好不要使用下划线。</p>
+<pre class="prettyprint linenums">
+// 不好的写法：大写字母开头
+function DoSomething() {
+    //code
+}
+
+// 不好的写法：名词开头
+function car() {
+    //code
+}
+
+// 不好的写法：使用下划线
+function do_something() {
+    //code
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+function doSomething() {
+    //code
+}
+</pre>
+            <p>构造函数——通过 new 运算符创建新对象的函数——也应当以驼峰格式命名并且首字符大写。构造函数名词应当以非动词开头，因为 new 代表着创建一个对象实例的操作。</p>
+<pre class="prettyprint linenums">
+// 不好的写法：小写字母开头
+function myObject() {
+    //code
+}
+
+// 不好的写法：使用下划线
+function My_Object() {
+    //code
+}
+
+// 不好的写法： 动词开头
+function getMyObject() {
+    //code
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+function MyObject() {
+    //code
+}
+</pre>
+            <p>常量（值不会被改变的变量）的命名应当是所有字母大写，不同单词之间用单个下划线隔开。</p>
+<pre class="prettyprint linenums">
+// 不好的写法：驼峰形式
+var totalCount = 10;
+
+// 不好的写法：混合形式
+var total_COUNT = 10;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var TOTAL_COUNT = 10;
+</pre>
+            <p>对象的属性同变量的命名规则相同。对象的方法同函数的命名规则相同。如果属性或者方法是私有的，应当在之前加一个下划线。</p>
+<pre class="prettyprint linenums">
+var object = {
+    _count: 10,
+    
+    _getCount: function() {
+        return this._count;
+    }
+}
+</pre>
+            <h4>1.7.7 严格模式</h4>
+            <p>严格模式应当仅限在函数内部使用，千万不要在全局使用。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：全局使用严格模式
+"use strict"
+
+function doSomething() {
+    //code
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+function doSomething() {
+    "use strict"
+    
+    //code
+}
+</pre>
+            <p>如果你期望在多个函数中使用严格模式而不需要多次声明 "use strict" ，可以使用立即被调用的函数。</p>
+<pre class="prettyprint linenums">
+(function() {
+    "use strict"
+    
+    function doSomething(){
+        //code
+    }
+}());
+</pre>
+            <h4>1.7.8 赋值</h4>
+            <p>当给变量赋值时，如果右侧是含有比较语句的表达式，需要用圆括号包裹。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：遗漏圆括号
+var same = i < count;
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var same = (i < count);
+</pre>
+            <h4>1.7.9 符号运算符</h4>
+            <p>使用 === （严格相等） 和 ！== （严格不相等）代替 == （相等）和 ！= （不等）来避免弱类型转换错误。</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：使用 == 
+var same = (a == b);
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var same = (a === b);
+</pre>
+            <h4>1.7.10 三元操作符</h4>
+            <p>三元运算符应当仅仅用在条件赋值语句中， 而不要作为 if 语句的替代品</p>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：没有赋值，应当使用 if 表达式
+condition ? doSomething() : doSomethingElse();
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var value = condition ? value1 : value2;
+</pre>
+            
             <h4>1.7.11 语句</h4>
             <h6>简单语句</h6>
             <p>没一行最多只包含一条语句。所有简单的语句都应该以分号（;）结束。</p>
@@ -717,9 +1120,134 @@ if (true) {
 <h4>Bad example:</h4>
 <pre class="prettyprint linenums">
 // 不好的写法： 不恰当的空格
-if()
+if(true){
+    doSomething();
+}
+
+// 不好的写法：遗漏花括号
+if (true)
+    doSomething();
+    
+// 不好的写法：所有代码写在一行
+if (true) { doSomething(); }
+
+// 不好的写法：所有代码卸载一行且没有花括号
+if (true) doSomething(); 
 </pre>
-            
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+if (true) {
+    doSomething(); 
+}
+</pre>
+            <h6>for 语句</h6>
+            <p>for 类型的语句应当是下面的格式</p>
+<pre class="prettyprint linenums">
+for (initialization; condition; update) {
+    statements;
+}
+
+for (variable in object) {
+    statements;
+}
+</pre>
+            <P>for 语句的初始化不应当有变量声明</P>
+<h4>Bad example:</h4>
+<pre class="prettyprint linenums">
+// 不好的写法：初始化时候声明变量
+for (var i = 0, len = 10; i < len; i++) {
+    //code    
+}
+
+// 不好的写法：初始化时候声明变量
+for (var prop in object) {
+    //code
+}
+</pre>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+var i,
+    len;
+for (i = 0, len = 10; i < len; i++) {
+    //code
+}
+</pre>
+            <p>注：当使用 for-in 语句时，记得使用 hasOwnProperty() 进行双重检查来过滤出对象的成员</p>
+            <h6>while 语句</h6>
+            <p>while 类的语句应当是下面的格式。</p>
+<pre class="prettyprint linenums">
+while (true) {
+    //code
+}
+</pre>
+            <h6>do 语句</h6>
+            <p>do 类的语句应当是下面的格式。</p>
+<pre class="prettyprint linenums">
+do {
+    //code
+} while (true)
+</pre>
+            <h6>switch 语句</h6>
+            <p>switch 类的语句应当是如下格式。</p>
+<pre class="prettyprint linenums">
+switch (expression) {
+    case expression:
+        //code
+    default:
+        //code
+}
+</pre>
+            <p>注：switch 下的每一个 case 都应当保持一个缩进。除第一个之外包括 default 在内的每一个 case 都应当在之前保持一个空行。每一组语句（除了 default）都应当以 break、return、throw 结尾，或者用一行注释表示跳过、</p>
+<h4>Good example:</h4>
+<pre class="prettyprint linenums">
+switch (value) {
+    case 1:
+        /* falls through */
+    
+    case 2:
+        doSomething();
+        break;
+    
+    case 3:
+        return true;
+        
+    default:
+        throw new Error("This shouldn't happen.");
+}
+</pre>
+            <p>如果一个 switch 语句不包含 default 情况， 应当用一行注释代替。</p>
+<pre class="prettyprint linenums">
+switch (value) {
+    case 1:
+        /* falls through */
+    
+    case 2:
+        doSomething();
+        break;
+    
+    case 3:
+        return true;
+        
+    //没有 default
+}
+</pre>
+            <h6>try 语句</h6>
+            <p>try 类的语句应当格式如下。</p>
+<pre class="prettyprint linenums">
+try {
+    //code
+} catch (variable) {
+    //code
+}
+
+try {
+    //code
+} catch (variable) {
+    //code
+} finally {
+    //code
+}
+</pre>
             <h4>1.7.12 留白</h4>
             <p>在逻辑相关的代码块之间添加空行可以提高代码的可读性。</p>
             <p>两行空行仅限在如下情况中使用。</p>
