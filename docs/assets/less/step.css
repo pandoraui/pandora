@@ -36,7 +36,7 @@
     
 }
 
-.ui-step .ui-step-icon {
+.ui-step .ui-step-arrow {
     height: 100%;
     position: absolute;
     top: 0;
@@ -48,8 +48,8 @@
     overflow: hidden;
     *zoom:1;
 }
-.ui-step .ui-step-icon .arrow_r1,
-.ui-step .ui-step-icon .arrow_r2 {
+.ui-step .ui-step-arrow .arrow_r1,
+.ui-step .ui-step-arrow .arrow_r2 {
     width: 0;
     height: 0;
     border-width: 20px;
@@ -63,18 +63,18 @@
     line-height: 1;
     font-size:40px;
 }
-.ui-step .ui-step-icon .arrow_r2 {
+.ui-step .ui-step-arrow .arrow_r2 {
     right: 3px;
     border-color: transparent transparent transparent #eee;
     border-style: dashed dashed dashed solid;
 }
-.ui-step .ui-step-active .ui-step-icon .arrow_r2 {
+.ui-step .ui-step-active .ui-step-arrow .arrow_r2 {
     right: 3px;
     border-color: transparent transparent transparent #d17;
     border-style: dashed dashed dashed solid;
 }
 
-.ui-step li.ui-step-end .ui-step-icon {
+.ui-step li.ui-step-end .ui-step-arrow {
     display: none;
 }
 
@@ -120,11 +120,3 @@
     color: #fff;
     font-weight: bold;
 }
-
-.ui-step-blue .ui-step-active {
-    color: #3b7cb8;
-}
-.ui-step-blue .ui-step-done .ui-step-line {
-    background: #418cd6;
-}
-
