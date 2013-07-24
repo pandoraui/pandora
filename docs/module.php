@@ -836,6 +836,7 @@ $(function(){
         <section id="step">
             <h1>步骤</h1>
             <p>操作步骤的常用布局实现</p>
+            <p>详情参考：<a href="modules/step.html">step</a></p>
         </section>
         
         

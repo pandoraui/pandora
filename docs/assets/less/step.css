@@ -1,0 +1,130 @@
+
+/* 
+ @名称: step.css
+ @功能: 标准步骤条 Adapted from alice.step
+ */
+
+.ui-step {
+    margin: 20px auto;
+    font-size: 12px;
+    list-style: none;
+    *zoom: 1;
+    position: relative;
+    color: #888;
+    overflow: hidden;
+}
+
+.ui-step:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.ui-step li {
+    float: left;
+    height: 26px;
+    line-height:26px;
+    margin: 0;
+    width: 50%;
+    position: relative;
+    z-index: 5;
+    background: #eee;
+    text-align: center;
+    
+}
+
+.ui-step .ui-step-icon {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    text-align: center;
+    right: -34px;
+    z-index: 20;
+    heigth: 26px;
+    overflow: hidden;
+    *zoom:1;
+}
+.ui-step .ui-step-icon .arrow_r1,
+.ui-step .ui-step-icon .arrow_r2 {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-color: transparent transparent transparent #fff;
+    border-style: dashed dashed dashed solid;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    text-indent: -100px;
+    overflow: hidden;
+    line-height: 1;
+    font-size:40px;
+}
+.ui-step .ui-step-icon .arrow_r2 {
+    right: 3px;
+    border-color: transparent transparent transparent #eee;
+    border-style: dashed dashed dashed solid;
+}
+.ui-step .ui-step-active .ui-step-icon .arrow_r2 {
+    right: 3px;
+    border-color: transparent transparent transparent #d17;
+    border-style: dashed dashed dashed solid;
+}
+
+.ui-step li.ui-step-end .ui-step-icon {
+    display: none;
+}
+
+
+/* 步骤长度 */
+.ui-step-2 li {
+    width: 50%;
+}
+
+.ui-step-3 li {
+    width: 33.33%;
+}
+
+.ui-step-4 li {
+    width: 25%;
+}
+
+.ui-step-5 li {
+    width: 20%;
+}
+
+.ui-step-6 li {
+    width: 16.66%;
+}
+
+/* 修正IE6/7下的层级关系 */
+.ui-step li.ui-step1 { z-index: 19;}
+.ui-step li.ui-step2 { z-index: 18;}
+.ui-step li.ui-step3 { z-index: 17;}
+.ui-step li.ui-step4 { z-index: 16;}
+.ui-step li.ui-step5 { z-index: 15;}
+.ui-step li.ui-step6 { z-index: 14;}
+
+
+/* 修改颜色 */
+
+.ui-step .ui-step-active {
+    color: #000;
+}
+
+.ui-step .ui-step-active {
+    background: #d17;
+    color: #fff;
+    font-weight: bold;
+}
+
+.ui-step-blue .ui-step-active {
+    color: #3b7cb8;
+}
+.ui-step-blue .ui-step-done .ui-step-line {
+    background: #418cd6;
+}
+
