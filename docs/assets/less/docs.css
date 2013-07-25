@@ -26,19 +26,20 @@ body {
  */
 body{font-family: \5b8b\4f53,sans-serif;}
 body{font-family: Arial,sans-serif;}
-body{font-family: Tahoma,Arial,sans-serif;}
 body{font-family: Verdana,Tahoma,Arial,sans-serif;}
+body{font-family: Tahoma,Arial,\5b8b\4f53,sans-serif;}
 body .en{font-family:Arial,sans-serif;}
 
 a { 
     color: #245DC1;
     text-decoration: none;
 }
+/*
 a:visited {
     color: #7759AE;
     _color: inherit;
 }
-
+*/
 .warning-bar {
     -webkit-box-shadow: inset 0 0 4px #777;
     -moz-box-shadow: inset 0 0 4px #777;

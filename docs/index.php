@@ -84,7 +84,7 @@
                 <a class="doing" href="modules/forms.html">form <small>表单</small></a>
                 <a class="todo" href="###">search <small>搜索框</small></a>
                 
-                <a class="todo" href="###">modal <small>弹出对话框</small></a>
+                <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
                 <a class="todo" href="###">progress <small>进度条</small></a>
                 <a class="todo" href="###">media <small>媒体对象</small></a>
                 <a class="done" href="modules/step.html">step <small>步骤/流程</small></a>

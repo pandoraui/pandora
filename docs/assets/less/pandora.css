@@ -56,7 +56,7 @@
 @import "poptip.css";
 
 /* Components: Popovers */
-@import "modals.css";
+@import "dialog.css";
 @import "tooltip.css";
 @import "popovers.css";
 
