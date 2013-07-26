@@ -29,22 +29,27 @@
     line-height:26px;
     margin: 0;
     width: 50%;
+    /*
     position: relative;
     z-index: 5;
+    */
     background: #eee;
     text-align: center;
-    
 }
 
 .ui-step .ui-step-arrow {
     height: 100%;
+    /*
     position: absolute;
     top: 0;
-    width: 40px;
-    text-align: center;
     right: -34px;
+    */
+    position: relative;
+    float: right;
+    display: inline;
+    width: 16px;
+    margin-right:-15px;
     z-index: 20;
-    heigth: 26px;
     overflow: hidden;
     *zoom:1;
 }
@@ -56,7 +61,7 @@
     border-color: transparent transparent transparent #fff;
     border-style: dashed dashed dashed solid;
     position: absolute;
-    right: 0;
+    left: -5px;
     top: -7px;
     text-indent: -100px;
     overflow: hidden;
@@ -64,16 +69,21 @@
     font-size:40px;
 }
 .ui-step .ui-step-arrow .arrow_r2 {
-    right: 3px;
+    left: -8px;
     border-color: transparent transparent transparent #eee;
     border-style: dashed dashed dashed solid;
 }
 .ui-step .ui-step-active .ui-step-arrow .arrow_r2 {
-    right: 3px;
+    right: 0;
     border-color: transparent transparent transparent #d17;
     border-style: dashed dashed dashed solid;
 }
-
+.ui-step .ui-step-text {
+    padding-left: 12px;
+    margin-right: -4px;
+    word-wrap:break-word;
+    word-break:break-all;
+}
 .ui-step li.ui-step-end .ui-step-arrow {
     display: none;
 }
@@ -100,21 +110,16 @@
     width: 16.66%;
 }
 
-/* 修正IE6/7下的层级关系 */
-.ui-step li.ui-step1 { z-index: 19;}
-.ui-step li.ui-step2 { z-index: 18;}
-.ui-step li.ui-step3 { z-index: 17;}
-.ui-step li.ui-step4 { z-index: 16;}
-.ui-step li.ui-step5 { z-index: 15;}
-.ui-step li.ui-step6 { z-index: 14;}
-
 
 /* 修改颜色 */
 
 .ui-step .ui-step-active {
     color: #000;
 }
-
+.ui-step .ui-step-done {
+    color: #d17;
+    font-weight: bold;
+}
 .ui-step .ui-step-active {
     background: #d17;
     color: #fff;
