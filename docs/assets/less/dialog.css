@@ -29,7 +29,7 @@
     border: 0;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.4);
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
 }
 
 .dialog .dialog-close {
@@ -42,7 +42,7 @@
     width: 36px;
     height: 32px;
     overflow: hidden;
-    line-height: 32px;
+    line-height: 30px;
     text-align: center;
     font-family: Tahoma,Arial,sans-serif;
     font-size: 20px;
@@ -56,6 +56,7 @@
     opacity: 0.8;
     filter: alpha(opacity=80);
     text-decoration: none;
+    color: #f00;
 }
 
 .dialog-inner {
@@ -73,7 +74,13 @@
     line-height: 32px;
     background: #eee;
     font-size: 16px;
+    background:-webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#f1f1f1));
+    background:-moz-linear-gradient(top,#fcfcfc,#f1f1f1);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f1f1f1');
+    background:-o-linear-gradient(top,#fcfcfc,#f1f1f1);
+    background:linear-gradient(top,#fcfcfc,#f1f1f1);
 }
+
 .dialog-header:empty {
     display: none;
 }
