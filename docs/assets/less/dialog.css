@@ -23,9 +23,8 @@
     position: fixed;
     _position: absolute;
     z-index: 5000;
-    left: 50%;
-    top: 200px;
-    margin-left: -200px;
+    left: 0;
+    top: 0;
     width: 400px;
     border: 0;
     padding: 5px;
@@ -33,7 +32,7 @@
     filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
 }
 
-.dialog .close {
+.dialog .dialog-close {
     position: absolute;
     z-index: 10;
     top: 0;
@@ -53,7 +52,7 @@
     opacity: 0.4;
     filter: alpha(opacity=40);
 }
-.dialog .close:hover {
+.dialog .dialog-close:hover {
     opacity: 0.8;
     filter: alpha(opacity=80);
     text-decoration: none;
@@ -68,17 +67,15 @@
 }
 
 .dialog-header {
-    height: 32px;
-    line-height: 32px;
-
-    background: #eee;
-}
-
-.dialog-header h3 {
     margin: 0;
     padding: 0 10px;
-    font-size: 16px;
+    height: 32px;
     line-height: 32px;
+    background: #eee;
+    font-size: 16px;
+}
+.dialog-header:empty {
+    display: none;
 }
 
 .dialog-body {
@@ -105,27 +102,27 @@
 }
 
 /* 尺寸 */
-.dialog-mini {
-    width: 300px;
-    margin-left: -150px;
-}
 .dialog-mini .dialog-header {
     display: none;
 }
 .dialog-mini .dialog-body {
     padding-top: 35px;
 }
+
+.dialog-mini {
+    width: 300px;
+}
+.dialog-small {
+    width: 400px;
+}
 .dialog-middle {
     width: 600px;
-    margin-left: -300px;
 }
 .dialog-big {
     width: 800px;
-    margin-left: -400px;
 }
 .dialog-large {
     width: 990px;
-    margin-left: -500px;
 }
 
 /* 皮肤 */

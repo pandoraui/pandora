@@ -11,11 +11,39 @@
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
-
+.overlay {
+    display: block;
+}
+.dialog {
+    left: 50%;
+    position:absolute;
+    margin-left:-200px;
+}
+.dialog-mini {
+    width: 300px;
+    margin-left:-150px;
+}
+.dialog-small {
+    width: 400px;
+    margin-left:-200px;
+}
+.dialog-middle {
+    width: 600px;
+    margin-left:-300px;
+}
+.dialog-big {
+    width: 800px;
+    margin-left:-400px;
+}
+.dialog-large {
+    width: 990px;
+    margin-left:-500px;
+}
 </style>
 </head>
 <body>
 <div class="wrap">
+    <div style="height:150px;"></div>
     <h1>模态窗口-弹出对话框</h1>
 	<p>描述</p>
     <p><strong>TODO：</strong></p>
@@ -26,12 +54,12 @@
         <p>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</p>
     
 
-        
+        <div style="height:1000px;"></div>
     </div>
 <pre class="prettyprint linenums">
 
 </pre>
-<div style="height:1000px;"></div>
+
 </div>
 
 
@@ -39,12 +67,10 @@
 
 <div class="overlay"></div>
 
-<div class="dialog dialog-">
+<div class="dialog" style="top:0;">
     <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="close">&times;</a>
-        <div class="dialog-header">
-            <h3>提醒标题</h3>
-        </div>
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">默认提示框 即dialog-small 宽度400px</div>
         <div class="dialog-body">
             <div class="dialog-content clearfix">
                 <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
@@ -52,13 +78,102 @@
         </div>
         <div class="dialog-footer">
             <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-role="cancel" href="#" class="btn">关闭</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
         </div>
     </div>
 </div> <!-- //.dialog -->
 
+<div class="dialog dialog-mini" style="top:200px;">
+    <div class="dialog-inner clearfix">
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">提醒标题 dialog-mini</div>
+        <div class="dialog-body">
+            <div class="dialog-content clearfix">
+                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
+        </div>
+    </div>
+</div> <!-- //.dialog -->
 
+<div class="dialog dialog-small" style="top:450px;">
+    <div class="dialog-inner clearfix">
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">提醒标题 dialog-small</div>
+        <div class="dialog-body">
+            <div class="dialog-content clearfix">
+                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
+        </div>
+    </div>
+</div> <!-- //.dialog -->
 
+<div class="dialog dialog-middle" style="top:650px;">
+    <div class="dialog-inner clearfix">
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">提醒标题 dialog-middle</div>
+        <div class="dialog-body">
+            <div class="dialog-content clearfix">
+                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
+        </div>
+    </div>
+</div> <!-- //.dialog -->
 
+<div class="dialog dialog-big" style="top:850px;">
+    <div class="dialog-inner clearfix">
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">提醒标题 dialog-big</div>
+        <div class="dialog-body">
+            <div class="dialog-content clearfix">
+                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
+        </div>
+    </div>
+</div> <!-- //.dialog -->
+
+<div class="dialog dialog-large" style="top:1050px;">
+    <div class="dialog-inner clearfix">
+        <a data-dismiss="dialog" class="dialog-close">&times;</a>
+        <div class="dialog-header">提醒标题 dialog-large</div>
+        <div class="dialog-body">
+            <div class="dialog-content clearfix">
+                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+            </div>
+        </div>
+        <div class="dialog-footer">
+            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
+            <a data-dismiss="dialog" class="btn">关闭</a>
+        </div>
+    </div>
+</div> <!-- //.dialog -->
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery.js"><\/script>')</script>
+<script>
+$(function(){
+    var dismiss = '[data-dismiss="dialog"]';
+    
+    $(dismiss).on('click',function(){
+        $(this).parents(".dialog").hide();
+    });
+});
+
+</script>
 </body>
 </html>
