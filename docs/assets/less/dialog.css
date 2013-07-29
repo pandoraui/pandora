@@ -81,11 +81,11 @@
     background: #eee;
     font-size: 14px;
     font-weight: bold;
-    background:-webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#f1f1f1));
-    background:-moz-linear-gradient(top,#fcfcfc,#f1f1f1);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f1f1f1');
-    background:-o-linear-gradient(top,#fcfcfc,#f1f1f1);
-    background:linear-gradient(top,#fcfcfc,#f1f1f1);
+    background: -webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#f1f1f1));
+    background: -moz-linear-gradient(top,#fcfcfc,#f1f1f1);
+    background:   -o-linear-gradient(top,#fcfcfc,#f1f1f1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f1f1f1');
+    background: linear-gradient(top,#fcfcfc,#f1f1f1);
 }
 
 .dialog-header small {
