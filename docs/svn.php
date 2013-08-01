@@ -42,8 +42,8 @@
             <dd>E:\SVN_work\focus\pet\pet_search\src\main\webapp\WEB-INF\ftl</dd>
             <dt>登陆注册</dt>
             <dd>E:\SVN_work\focus\pet\pet_sso\src\main\webapp\login.jsp</dd>
-            <dt></dt>
-            <dd></dd>
+            <dt>景点详情页</dt>
+            <dd>/focus/pet/pet_dest/src/main/webapp/WEB-INF/pages/scenicDetail/scenicDetail.ftl</dd>
         </dl>
         
         <h4>头部文件修改：<small>包含以下文件夹路径</small></h4>
