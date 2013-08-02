@@ -13,7 +13,7 @@
         isArray = function (obj) {
 
             // ECMAScript5 isArray 方法 兼容不支持的浏览器
-            if (typeof Array.isArray === "undeifned") {
+            if (typeof Array.isArray === "undefined") {
                 return Object.prototype.toString.call(obj) === "[object Array]";
             }
 
