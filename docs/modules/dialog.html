@@ -10,40 +10,9 @@
 <![endif]-->
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
-<style>
-.overlay {
-    display: block;
-}
-.dialog {
-    left: 50%;
-    position:absolute;
-    margin-left:-200px;
-}
-.dialog-mini {
-    width: 300px;
-    margin-left:-150px;
-}
-.dialog-small {
-    width: 400px;
-    margin-left:-200px;
-}
-.dialog-middle {
-    width: 600px;
-    margin-left:-300px;
-}
-.dialog-big {
-    width: 800px;
-    margin-left:-400px;
-}
-.dialog-large {
-    width: 990px;
-    margin-left:-500px;
-}
-</style>
 </head>
 <body>
 <div class="wrap">
-    <div style="height:150px;"></div>
     <h1>模态窗口-弹出对话框</h1>
 	<p>描述</p>
     <p><strong>TODO：</strong></p>
@@ -52,128 +21,365 @@
         <h3>当前款式</h3>
         <p>现支持五种宽度尺寸，默认dialog(400px) dialog-mini(300px无标题) dialog-middle(600px) dialog-big(800px)  dialog-large(1000px)</p>
         <p>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</p>
-    
-
-        <div style="height:1000px;"></div>
+        <p>使用方式：引入 dialog.css 和 pandora-dialog.js 文件即可</p>
     </div>
 <pre class="prettyprint linenums">
-
+&lt;div class="dialog" &gt;
+    &lt;div class="dialog-inner clearfix"&gt;
+        &lt;a data-dismiss="dialog" class="dialog-close"&gt;&times;&lt;/a&gt;
+        &lt;div class="dialog-header"&gt;默认提示框 &lt;small&gt;即dialog-small 宽度400px&lt;/small&gt;&lt;/div&gt;
+        &lt;div class="dialog-body"&gt;
+            &lt;div class="dialog-content clearfix"&gt;
+                &lt;p&gt;提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="dialog-footer"&gt;
+            &lt;a data-role="confirm" href="#" class="btn btn-pink"&gt;保存修改&lt;/a&gt;
+            &lt;a data-dismiss="dialog" class="btn"&gt;关闭&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
+    <p>pandora.dialog 有两种调用方式，第一种是简单的直接传入参数形式；第二种拥有更多的可选项。</p>
+    <p>1. pandora.dialog(contgent, [ok], [cancel])</p>
+<pre class="prettyprint linenums">
+pandora.dialog("Hello Word", function () { alert("Thank you!")});
+</pre>
+    <button id="demo0">运行</button>
+    <p>2. pandora.dialog(options)</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    title: "提示信息",
+    content: "Hello Word！",
+    ok: function () {
+        this
+        .title("警告")
+        .content("在回调函数使用return false 不会关闭当前弹出框");
+        return false;
+    }
+});
+</pre>
+    <button id="demo1">运行</button>
+    <p>配置参数</p>
+<pre class="prettyprint linenums">
+pandora.dialog.defaults = {
+    templateNmae: "template-dialog", //模板名称
+    templateType: "default",  //模板类型
+    templateUrl: "/pandora/docs/assets/js/modules/template.html", //模板路径
+
+    button: null, // 按钮数组 参数{value, className, callback} 按钮名称 样式名 回调函数
+    fixed: true, // 跟随
+    mask: true, // 遮罩
+    drag: false, // 拖动 
+
+    initialize: null, // 对话框初始化后执行的函数
+    beforeunload: null, // 对话框关闭前执行的函数
+
+    ok: null,   // 确定按钮回调函数
+    cancel: null, // 取消按钮回调函数
+    okValue: "确定", // 确定按钮文本
+    cancelValue: "取消", // 取消按钮文本
+
+    content: "", // 内容信息
+    title: "message", // 标题信息
+
+    width: "400px", // 默认宽度
+    height: "auto", // 默认高度
+
+    skin: "",   // 皮肤
+    wrapClass: "", // dialog 规格 通过className 名 控制
+    maskClass: "overlay", // 遮罩样式
+    zIndex: 4000 // 层级
+};
+</pre>
+    <p>title （标题信息）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    title: "Hello Word"
+});
+</pre>
+    <button id="demo2">运行</button>
+    <p>content （内容信息）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    content: "Hello pandora"
+});
+</pre>
+    <button id="demo3">运行</button>
+    <p>ok （确定按钮）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    ok: function () {
+        this.title("Hi")
+        .content("Hello pandora");
+        return false;
+    }
+});
+</pre>
+    <button id="demo4">运行</button>
+    <p>cancel （取消按钮）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    cancel: function () {
+        alert('关闭');
+    }
+});
+</pre>
+    <button id="demo5">运行</button>
+    <p>okValue (确定按钮文本)</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    okValue:"pandora",
+    ok: function () {
+        this.title("Hi")
+        .content("Hello pandora");
+    }
+});
+</pre>
+    <button id="demo6">运行</button>
+    <p>cancelValue (取消按钮文本)</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    cancelValue: "pandora",
+    cancel: function () {
+        alert("关闭");
+    }
+});
+</pre>
+    <button id="demo7">运行</button>
+    <p>button (自定义按钮组)</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    button: [{
+        value: "取消",
+        className: "btn-pink",
+        callback: function () {
+            alert("点击了取消");
+            return false;
+        }
+    },
+    {
+        value: '不同意',
+        callback: function () {
+            alert('你不同意')
+        }
+    }
+    ],
+    okValue: "确定",
+    ok: function () {
+        alert("同意");
+    }
+});
+</pre>
+    <button id="demo8">运行</button>
+    <p>initialize （对话框初始化完成后执行的函数）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    initialize: function () {
+        this.content('对话框初始化完成');
+    }
+});
+</pre>
+    <button id="demo9">运行</button>
+    <p>beforeunload （对话框关闭前执行的函数）</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    beforeunload: function () {
+        return confirm('确定关闭对话框吗');
+    }
+});
+</pre>
+    <button id="demo10">运行</button>
+    <p>pandora.alert(content, callback) （静态方法统一全站alert）</p>
+<pre class="prettyprint linenums">
+pandora.alert("Hello pandora");
+</pre>
+    <button id="demo11">运行</button>
+    <p>pandora.confirm(content, ok, cancel) （静态方法统一全站confirm）</p>
+<pre class="prettyprint linenums">
+pandora.confirm("你再也不相信爱情了么？", function () {
+    alert("相信");
+}, function () {
+    alert("不相信");
+});
+</pre>
+    <button id="demo12">运行</button>
+    <p>ajax 调用</p>
+<pre class="prettyprint linenums">
+pandora.dialog({
+    initialize: function () {
+        var that = this;
+        that.loading();
+        $.ajax({
+            type: "GET",
+            url: "ajax.html",
+            dataType: "html",
+            success: function (data) {
+                var timed = (new Date()).getTime();
+                var bool = true;
+                while (bool) {
+                    if (timed + 2000 < (new Date()).getTime()) {
+                        bool = false;
+                    }
+                }
+                that.content($(data).find("#data").html());
+            }
+        });
+    }
+});
+</pre>
+    <button id="demo13">运行</button>
 </div>
 
 
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-dialog.js"></script>
 
-
-<div class="overlay"></div>
-
-<div class="dialog" style="top:0;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">默认提示框 <small>即dialog-small 宽度400px</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<div class="dialog dialog-mini" style="top:200px;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">提醒标题 <small>副标题dialog-mini</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<div class="dialog dialog-small" style="top:450px;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">提醒标题 <small>副标题dialog-small</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<div class="dialog dialog-middle" style="top:650px;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">提醒标题 <small>副标题dialog-middle</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<div class="dialog dialog-big" style="top:850px;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">提醒标题 <small>副标题dialog-big</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<div class="dialog dialog-large" style="top:1050px;">
-    <div class="dialog-inner clearfix">
-        <a data-dismiss="dialog" class="dialog-close">&times;</a>
-        <div class="dialog-header">提醒标题 <small>副标题dialog-large</small></div>
-        <div class="dialog-body">
-            <div class="dialog-content clearfix">
-                <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
-            </div>
-        </div>
-        <div class="dialog-footer">
-            <a data-role="confirm" href="#" class="btn btn-pink">保存修改</a>
-            <a data-dismiss="dialog" class="btn">关闭</a>
-        </div>
-    </div>
-</div> <!-- //.dialog -->
-
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script>window.jQuery || document.write('<script src="../assets/js/jquery.js"><\/script>')</script>
-<script>
-$(function(){
-    var dismiss = '[data-dismiss="dialog"]';
-    
-    $(dismiss).on('click',function(){
-        $(this).parents(".dialog").hide();
+<script type="text/javascript">
+    $("#demo0").click(function () {
+        pandora.dialog("Hello Word", function () { alert("Thank you!") });
     });
-});
 
+    $("#demo1").click(function () {
+        pandora.dialog({
+            title: "提示信息",
+            content: "Hello Word！",
+            ok: function () {
+                this
+                .title("警告")
+                .content("在回调函数使用return false 不会关闭当前弹出框");
+                return false;
+            }
+        });
+    });
+
+    $("#demo2").click(function () {
+        pandora.dialog({
+            title: "Hello Word"
+        });
+    });
+
+    $("#demo3").click(function () {
+        pandora.dialog({
+            content: "Hello pandora"
+        });
+    });
+
+    $("#demo4").click(function () {
+        pandora.dialog({
+            ok: function () {
+                this.title("Hi")
+                .content("Hello pandora");
+                return false;
+            }
+        });
+    });
+
+    $("#demo5").click(function () {
+        pandora.dialog({
+            cancel: function () {
+                alert('关闭');
+            }
+        });
+    });
+
+    $("#demo6").click(function () {
+        pandora.dialog({
+            okValue: "pandora",
+            ok: function () {
+                this.title("Hi")
+                .content("Hello pandora");
+            }
+        });
+    });
+
+    $("#demo7").click(function () {
+        pandora.dialog({
+            cancelValue: "pandora",
+            cancel: function () {
+                alert("关闭");
+            }
+        });
+    });
+
+    $("#demo8").click(function () {
+        pandora.dialog({
+            button: [{
+                value: "取消",
+                className: "btn-pink",
+                callback: function () {
+                    alert("点击了取消");
+                    return false;
+                }
+            },
+            {
+                value: '不同意',
+                callback: function () {
+                    alert('你不同意')
+                }
+            }
+            ],
+            okValue: "确定",
+            ok: function () {
+                alert("同意");
+            }
+        });
+    });
+
+    $("#demo9").click(function () {
+        pandora.dialog({
+            initialize: function () {
+                this.content('对话框初始化完成');
+            }
+        });
+    });
+
+    $("#demo10").click(function () {
+        pandora.dialog({
+            beforeunload: function () {
+                return confirm('确定关闭对话框吗');
+            }
+        });
+    });
+
+    $("#demo11").click(function () {
+        pandora.alert("Hello pandora");
+    });
+
+    $("#demo12").click(function () {
+        pandora.confirm("你再也不相信爱情了么？", function () {
+            alert("相信");
+        }, function () {
+            alert("不相信");
+        });
+    });
+
+    $("#demo13").click(function () {
+        pandora.dialog({
+            initialize: function () {
+                var that = this;
+                that.loading();
+                $.ajax({
+                    type: "GET",
+                    url: "ajax.html",
+                    dataType: "html",
+                    success: function (data) {
+                        var timed = (new Date()).getTime();
+                        var bool = true;
+                        while (bool) {
+                            if (timed + 2000 < (new Date()).getTime()) {
+                                bool = false;
+                            }
+                        }
+                        that.content($(data).find("#data").html());
+                    }
+                });
+            }
+        });
+    });
 </script>
+
 </body>
 </html>

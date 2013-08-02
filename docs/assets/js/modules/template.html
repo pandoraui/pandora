@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>template-dialog</title>
+    <link href="buttons.css" rel="stylesheet" />
+    <link href="dialog.css" rel="stylesheet" />
+    <style type="text/css">
+        #template-dialog > div {
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<article class="template-dialog">
+    <div id="template-dialog">
+        <div data-template="default">
+            <div class="dialog">
+                <div class="dialog-inner clearfix">
+                    <a class="dialog-close" data-dismiss="dialog">&times;</a>
+                    <div class="dialog-header" data-title="title"></div>
+                    <div class="dialog-body">
+                        <div class="dialog-content clearfix" data-content="content">
+                            
+                        </div>
+                    </div>
+                    <div class="dialog-footer" data-btn="btns" >
+                        <!--<a data-role="confirm" class="btn btn-pink">保存修改</a>-->
+                        <!--<button class="btn" data-role="close">关闭</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-template="default2">
+            <div class="dialog dialog-mini">
+                <div class="dialog-inner clearfix">
+                    <a class="dialog-close" data-dismiss="close">&times;</a>
+                    <div class="dialog-header" data-title="title">
+                        提醒标题
+                    </div>
+                    <div class="dialog-body">
+                        <div class="dialog-content clearfix" data-content="content">
+                            <p>提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。</p>
+                        </div>
+                    </div>
+                    <div class="dialog-footer" data-btn="btns" >
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+</body>
+</html>
