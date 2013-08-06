@@ -10,6 +10,7 @@
     <div class="sidebar">
         <ul class="nav none">
             <li><a href="#devtools">开发工具</a></li>
+            <li><a href="#solutions">兼容解决方案</a></li>
             <li><a href="#markdown">Markdown</a></li>
             <li><a href="#minify">Minify</a></li>
             <li><a href="#less">Less</a></li>
@@ -18,6 +19,7 @@
             <li><a href="#csslint">CSS Lint</a></li>
             <li><a href="#modernizr">Modernizr</a></li>
             <li><a href="#htmlchar">HTML特殊符号对照表</a></li>
+            <li><a href="#bugs">常见Bugs列表</a></li>
         </ul>
     </div> <!-- // div.sidebar -->
     <div class="main">
@@ -40,6 +42,16 @@
             </ul>
             <p><strong>注：</strong>如果你也知道一些好的开发工具，也可以给大家推荐一下!</p>
         </section>
+        
+        
+        
+        <section id="solutions">
+            <h1>兼容解决方案 <small>头痛的问题，我们提前搞定</small></h1>
+            <p class="lead">认真思考，认真总结，不但要知其然，更要知其所以然。</p>
+            <p>solutions 界面及缩略图设计参考：<a href="http://ued.taobao.com/blog/2011/12/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E9%80%9F%E6%88%90/">界面设计速成</a></p>
+            <p><strong>详情请参看：</strong><a href="/cnbootstrap/cndocs/solution.php">兼容解决方案</a>列表</p>
+        </section>
+        
         
         
         <section id="markdown">
@@ -116,6 +128,15 @@
             <p>详情请参考：<a href="modules/htmlchar.html">HTML特殊符号对照表</a></p>
         </section>
         
+        
+        
+        <section id="bugs">
+            <h1>常见Bugs列表</h1>
+            <p>一直想系统的整理下关于浏览器兼容性的各种Bug及解决方法，但一直都很忙没有完成，没有成片的时间，于是我决定每天整理一点，毕竟网上也不少整理的了，虽然不全，但是参考着再补充我和朋友们所遇到的，那么一份齐全的浏览器兼容性bug列表及解决方案也就指日可待了！</p>
+            <p>整理Bugs方案，自然首先要处理更底层的东西，考虑到不同的结构也可能产生影响，所以优先研究css reset以及html结构基础方案，这之后在解决Bugs问题就会减少N多种的情形，如此就能保证更好更统一的解决问题！</p>
+            <p>关于浏览器的Bug解决方案(包含hack技术)，下面列举了一般常见的样式Bug，布局Bug，以及需要设计时需要规避的Bug(目前81个)</p>
+            <p>详情请参考：<a href="/cnbootstrap/cndocs/bugs-and-fixed.php">常见Bugs列表</a></p>
+        </section>
         
         <?php include("common/comment.html");?>
     </div> <!-- // div.main -->

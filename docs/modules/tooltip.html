@@ -32,13 +32,13 @@
 		
 		<br>
 	
-		<span class="tagsback" tip-title="nihao " tip-content='奖金只支持前台下单支付，可最多抵扣20元，奖金在付款页面使用'><em>奖金折扣</em><i>101元</i></span>
+		<span class="tagsback" tip-title="默认hover时消失" tip-content='奖金只支持前台下单支付，可最多抵扣20元，奖金在付款页面使用'><em>奖金折扣</em><i>101元</i></span>
 		
-		<span class="tagscc" tip-content='1.早定早惠价格可与优惠活动重复使用<br>2.订购时间越早将享受优惠越多'>早订优惠</span>
+		<span class="tagscc" tip-title='这个hover时不消失' tip-content='1.早定早惠价格可与优惠活动重复使用<br>2.订购时间越早将享受优惠越多'>早订优惠</span>
 		
-		<i class="tagscc" tip-content='订购份数越多将享受优惠越多'>多订优惠</i>
+		<i class="tagscc" tip-title='这个hover时不消失' tip-content='订购份数越多将享受优惠越多'>多订优惠</i>
         
-        <i id="clonethis" class="tagcc" tip-content='500积分抵扣5元（不与优惠券叠加使用）'>积分抵扣</i>
+        <i id="clonethis" class="tagcc" tip-title='这个hover时不消失' tip-content='500积分抵扣5元（不与优惠券叠加使用）'>积分抵扣</i>
         
         <br><br>
         
@@ -62,18 +62,30 @@
 
 &lt;script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js"&gt;&lt;/script&gt;
 $(function(){
+    // 默认参数列表
+    $('.tagsdemo').ui('lvtip',{
+        templete : 1, 
+        place : "bottom", 
+        offsetX : 0, 
+        offsetY : 0, 
+        trigger : "mouseenter",  // other is "click"
+        event : "bind",  // other is "live" live方法有问题，后添加元素ui不被调用，暂忽略此参数
+        hovershow : undefined  //time is 200 设置200使hover时提示信息不消失
+    });
+    
     $('.calendar').ui('lvtip',{
         templete : 2,
         place: 'bottom-left',
         offsetX: 0,
         events : "live"  //live方法有问题，后添加元素ui不被调用
     });
-    $('span[class=tagsback]').ui('lvtip',{
-        place: 'bottom'
-    });
+    
+    // 默认即下方显示
+    $('span[class=tagsback]').ui('lvtip'); 
+    
+    //鼠标hover时，提示信息不消失
     $('.tagscc').ui('lvtip',{
-        place: 'bottom',
-        events : "live"
+        hovershow: 200
     });
 });
 </pre>
@@ -83,17 +95,30 @@ $(function(){
 <script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js"></script>
 <script>
 $(function(){
+    // 默认参数列表
+    $('.tagsdemo').ui('lvtip',{
+        templete : 1, 
+        place : "bottom", 
+        offsetX : 0, 
+        offsetY : 0, 
+        trigger : "mouseenter",  // other is "click"
+        event : "bind",  // other is "live" live方法有问题，后添加元素ui不被调用，暂忽略此参数
+        hovershow : undefined  //time is 200
+    });
+    
     $('.calendar').ui('lvtip',{
         templete : 2,
         place: 'bottom-left',
         offsetX: 0,
         events : "live"
     });
-    $('span[class=tagsback]').ui('lvtip',{
-        place: 'bottom'
-    });
+    
+    // 默认即下方显示
+    $('span[class=tagsback]').ui('lvtip'); 
+    
+    //鼠标hover时，提示信息不消失
     $('.tagscc').ui('lvtip',{
-        place: 'bottom'
+        hovershow: 200
     });
     
     $('#clonebtn').click(function(){
