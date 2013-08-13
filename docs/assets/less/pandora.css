@@ -31,6 +31,7 @@
 @import "button-groups.css";
 @import "form.css";
 @import "tables.css";
+@import "arrow.css";
 
 /* Components: common 
 @import "module.css";
@@ -42,7 +43,7 @@
 */
 /* Components: Buttons & Alerts */
 @import "tips.css";
-
+@import "tip.css";
 @import "alerts.css"; /* Note: alerts share common CSS with buttons and thus have styles in buttons.css */
 
 

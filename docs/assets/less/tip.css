@@ -1,0 +1,143 @@
+
+/*!
+ * tipbox.css v1.0 提示ICON/信息提示层/提示文本/提示框
+ * Adapted from aliceui
+ * 组件添加 ui- 前缀
+**/
+
+/** @name      : tip信息提示
+  * @explain   : 包含 提示ICON/信息提示层/提示文本/提示框
+  * @type      : 基类 .ui-tip .tip-icon .poptip .tiptext tipbox 保留类 .message .alert 等
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @other     : 状态标识有图标集tip-icon 或字体集 tip*>iconfont形式
+                tip-arrow 提示框箭头，采用点钟方向标记，默认10点，默认为通用三角，提示层为尖锐三角
+***/
+
+
+/* ui-close */ 
+
+
+/* tip-arrow */
+
+
+/* tip-icon */
+
+
+
+/** @name      : poptip 
+  * @explain   : 提示层，不包含close及icon，且为尖锐角
+  * @type      : 基类 .ui-tip .tip-icon
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @html      :
+
+***/
+.poptip {
+
+}
+
+/** @name      : tiptext 
+  * @explain   : 提示文本
+  * @type      : 基类 .ui-tip .tip-icon
+  * @expand    : 扩展 -info -success -error -warning -help -stop -wait
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @html      :
+
+***/
+.tiptext * {
+    margin: 0;
+    padding: 0;
+}
+.tiptext {
+    margin: 10px 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+span.tiptext {
+    display: inline-block;
+}
+
+/** @name      : tipbox 
+  * @explain   : 提示框
+  * @type      : 基类 .ui-tip .tip-icon
+  * @expand    : 扩展 -info -success -error -warning -help -stop -wait
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @html      :
+
+***/
+.tipbox * {
+    margin: 0;
+    padding: 0;
+}
+.tipbox {
+    padding: 20px 30px 20px 75px;
+    margin: 10px 0;
+    background: #f9f9f9;
+    border: 1px solid #d4d4d4; 
+    font-size: 12px;
+}
+.tipbox .tip-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.tipbox {
+    
+}
+
+
+
+
+
+/** @name      : tip-border 如：tip-info
+  * @explain   : tip框框
+  * @type      : 基类 .ui-tip .tip-icon
+  * @expand    : 扩展 -info -success -error -warning -help -stop -wait === message danger
+  * @html      ：
+
+***/
+.tip-border,
+.tip-default {
+    background: #f9f9f9;
+    border: 1px solid #d4d4d4; 
+}
+.tip-info {
+    background: #e5f5ff;
+    border: 1px solid #c9d5e2;
+}
+.tip-warning {
+    background: #ffffe0;
+    border: 1px solid #ff8801;
+}
+.tip-error {
+    background: #fff2f2;
+    border: 1px solid #f44;
+}
+.tip-success {
+    background: #f1ffe2;
+    border: 1px solid #7dc25e;
+}
+.tip-help {
+    background: #e5f5ff;
+    border: 1px solid #c9d5e2;
+}
+.tip-stop {
+    background: #fceee8;
+    border: 1px solid #f6c8b5;
+}
+.tip-wait {
+    background: #e5f5ff;
+    border: 1px solid #c9d5e2;
+}
+
+
+
+

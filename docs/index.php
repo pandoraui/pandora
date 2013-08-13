@@ -69,6 +69,8 @@
                 <a class="done" href="module.php#label">label/tags <small>标签标记</small></a>
                 <a class="todo" href="###">filter <small>类目过滤</small></a>
                 <a class="todo" href="###">icons <small>小图标</small></a>
+                <a class="doing" href="modules/arrow.html">arrow <small>css 箭头</small></a>
+                <a class="doing" href="modules/tip.html">tip <small>提示文本/提示框</small></a>
                 <a class="doing" href="module.php#poptip">poptip <small>提示层</small></a>
                 <a class="doing" href="module.php#tiptext">tiptext <small>提示文本</small></a>
                 <a class="doing" href="module.php#tipbox">tipbox <small>提示框</small></a>
@@ -84,7 +86,6 @@
                 <a class="doing" href="modules/forms.html">form <small>表单</small></a>
                 <a class="todo" href="###">search <small>搜索框</small></a>
                 
-                <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
                 <a class="todo" href="###">progress <small>进度条</small></a>
                 <a class="todo" href="###">media <small>媒体对象</small></a>
                 <a class="done" href="modules/step.html">step <small>步骤/流程</small></a>
@@ -94,6 +95,7 @@
             
             <h3>JavaScript 组件</h3>
             <div class="modules">
+                <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
                 <a class="doing" href="###">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
                 <a class="doing" href="###">lazyload <small>延迟加载</small></a>
@@ -105,7 +107,7 @@
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
                 <a class="doing" href="###">tab <small>标签切换</small></a>
                 <a class="doing" href="###">sort <small>多维排序</small></a>
-                <a class="todo" href="###">pading <small>分页</small></a>
+                <a class="todo" href="###">paging <small>分页</small></a>
                 <a class="todo" href="###">modal <small>弹出对话框</small></a>
                 <a class="todo" href="###">stars <small>星星打分</small></a>
                 <a class="todo" href="###">wordcount <small>字数检测</small></a>
