@@ -136,9 +136,9 @@ input[type="radio"],
 input[type="checkbox"],
 .input-radio,
 .input-checkbox {
-  margin: 3px 0 0;
+  margin: 1px 0 0;
   margin-top: 2px \9;
-  *margin-top: 0;
+  *margin-top: -2px;
   line-height: normal;
   cursor: pointer;
 }
@@ -199,30 +199,61 @@ select[size],
 .radio .input-radio,
 .checkbox .input-checkbox {
   /* float: left;*/
-  margin-right: 3px;
+  margin-right: 5px;
   vertical-align: text-top;
 }
-
+input.input-radio,
+input.input-checkbox {
+    width: 16px;
+    height: 16px;
+}
 
 label.inline,
 label.inline {
   display: inline-block;
+  *display:inline;
   padding-top: 5px;
   margin-bottom: 0;
+  _height: 22px;
+  _line-height: 22px;
+}
+
+label.inline .input-text,
+label.inline .input-password {
+  margin-bottom: 0;
+}
+
+label.vmiddle {
   vertical-align: middle;
 }
 
 
+.input-min {
+  width: 42px;
+}
+.input-mini {
+  width: 60px;
+}
 
+.input-small {
+  width: 80px;
+}
 
+.input-medium {
+  width: 150px;
+}
 
+.input-large {
+  width: 210px;
+}
 
+.input-xlarge {
+  width: 270px;
+}
 
-
-
-
-
-
+.input-xxlarge {
+  width: 530px;
+}
 
 .help-block,
 .help-inline {
@@ -261,6 +292,67 @@ legend + .control-group {
   margin-top: 20px;
   -webkit-margin-top-collapse: separate;
 }
+
+.form-hor .control-group {
+  margin-bottom: 10px;
+  *zoom: 1;
+}
+
+.form-hor .control-group:before,
+.form-hor .control-group:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.form-hor .control-group:after {
+  clear: both;
+}
+
+.form-hor .control-label {
+  float: left;
+  display: inline;
+  width: 100px;
+  text-align: right;
+  margin-bottom: 0;
+  line-height: 2;
+  line-height: 26px;
+}
+
+.form-hor .controls {
+  *display: inline-block;
+  margin-left: 100px;
+  *margin-left: 0;
+  *zoom:1;
+  _height:24px;
+}
+
+.form-hor label.inline{
+    padding-top:0;
+}
+.form-hor input,
+.form-hor select{
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.form-hor .help-block {
+  margin-bottom: 0;
+}
+
+
+/* div模拟 input文本框 */
+.dinput{
+    width: 168px;
+    position: relative;
+}
+.dinput .input-date{position:relative;z-index:4;width:164px;}
+.dinput .date-info{position:absolute;display:inline-block;*display:inline;*zoom:1;*width:66px;top:5px;right:5px;padding:0 0 0 3px;height:20px;line-height:20px;font-size:12px;text-align: right;cursor: pointer;z-index:5;}
+.dinput .icon-date{float:right;display:inline;}
+.dinput .text-info{padding:0 3px 0 0;color:#888;}
+
+
 
 .form-horizontal .control-group {
   margin-bottom: 20px;
@@ -302,12 +394,8 @@ legend + .control-group {
 
 
 
+/* 较小格式的表单 */
+.form-small .input-text{ height:16px;line-height:16px; }
 
 
-/* IE6 */
-input.input-radio,
-input.input-checkbox {
-    width: 16px;
-	height: 16px;
-}
-label.inline { *display:inline;}
+

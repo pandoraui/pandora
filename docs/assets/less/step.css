@@ -1,7 +1,7 @@
 
 /* 
  @名称: step.css
- @功能: 标准步骤条 Adapted from alice.step
+ @功能: 步骤/流程进度条
  */
 
 .ui-step {
@@ -29,21 +29,12 @@
     line-height:26px;
     margin: 0;
     width: 50%;
-    /*
-    position: relative;
-    z-index: 5;
-    */
     background: #eee;
     text-align: center;
 }
 
 .ui-step .ui-step-arrow {
     height: 100%;
-    /*
-    position: absolute;
-    top: 0;
-    right: -34px;
-    */
     position: relative;
     float: right;
     display: inline;
