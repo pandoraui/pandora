@@ -14,6 +14,7 @@
 .relative{position:relative;border-bottom:1px dashed #888;cursor:default;color:#245DC1;}
 .tiptext,
 .tipbox{margin:10px 0;}
+.poptip-mini{margin-right:10px;}
 .relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
 </style>
 </head>
@@ -59,7 +60,10 @@
     <p>poptip 内包含一种poptip-mini类（带有尖锐的箭头，内容较少），实现浮动式的提醒提示。</p>
     <div class="docs-example">
         <h4>poptip-mini类 实现着重小提醒</h4>
-        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-up"></div>立减10元</span>
+        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-top"></div>立减10元</span>
+        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span>
+        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-left"></div>立减10元</span>
+        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-right"></div>立减10元</span>
         
         <h4>简单的提示层展示 <small>这个实际类似tooltip</small></h4>
         <p>之后处理此提醒样式，此中tip-arrow 提示框箭头，采用点钟方向标记，默认10点钟方向。</p>
@@ -67,7 +71,7 @@
         
         
         <h4>综合展示</h4>
-        <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-up"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
+        <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
     </div>
 <pre class="prettyprint linenums">
 
@@ -136,13 +140,115 @@
             </div>
             <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
         </span>
-        <div class="tiptext tip-warning">
+        
+        <h4>关于点钟方向</h4>
+        <!-- 点钟方向\\ -->
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-1">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-2">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-3">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-4">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-5">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-6">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
             <div class="tip-arrow tip-arrow-7">
                 <em>◆</em>
                 <i>◆</i>
             </div>
             <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
         </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-8">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-9">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-10">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-11">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-12">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <!-- //点钟方向 -->
+        
+        
+        
+        
+        
+        
+        
+        
+        <h4>大段文本的展示</h4>
+        <span class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-top">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p>测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890</p>
+        </span>
+        
+        
+        
+        
     </div>
 <pre class="prettyprint linenums">
 

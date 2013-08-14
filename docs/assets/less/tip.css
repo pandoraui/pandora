@@ -50,7 +50,7 @@
 .tip-arrow {
     position: absolute;
     width: 16px;
-    height: 16px;
+    height: 14px;
 }
 .tip-arrow i,
 .tip-arrow em {
@@ -90,7 +90,6 @@
 .tip-arrow-right i {
     left: -1px;
 }
-
 
 
 /* tip-icon */
@@ -173,14 +172,36 @@
     font-size: 0;
     overflow: hidden;
 }
-.tip-sharp-up {
-    left: 10px;
-    bottom: -8px;
+.tip-sharp-top,
+.tip-sharp-bottom {
     border-style: dashed dashed dashed solid;
     border-color: transparent transparent transparent #f80;
+}
+.tip-sharp-left,
+.tip-sharp-right {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent #f80 transparent;
+}
+.tip-sharp-top {
+    top: -8px;
+    left: 10px;
+    border-width: 10px 0 0 10px;
+}
+.tip-sharp-bottom {
+    bottom: -8px;
+    left: 10px;
     border-width: 0 0 10px 10px;
 }
-
+.tip-sharp-left {
+    top: 8px;
+    left: -8px;
+    border-width: 0 0 10px 10px;
+}
+.tip-sharp-right {
+    top: 8px;
+    right: -8px;
+    border-width: 0 10px 10px 0;
+}
 
 
 /** @name      : tiptext 
@@ -200,9 +221,13 @@
 .tiptext {
     position: relative;
     z-index: 10;
-    padding: 6px 12px;
-    line-height: 16px;
+    padding: 3px 12px;
+    line-height: 22px;
     font-size: 12px;
+    
+    /* 控制长词内容折断 */
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .tiptext .ui-close {
     top: -1px;
@@ -287,6 +312,14 @@ span.tiptext {
     background: #ffffe0;
     border: 1px solid #ff8801;
 }
+.tip-warning .tip-arrow em {
+    color: #ff8801;
+}
+.tip-warning .tip-arrow i {
+    color: #ffffe0;
+}
+
+
 .tip-error {
     background: #fff2f2;
     border: 1px solid #f44;
@@ -309,6 +342,49 @@ span.tiptext {
 }
 
 
+/* 点钟方向标记 */
+.tip-arrow-11,
+.tip-arrow-12,
+.tip-arrow-0,
+.tip-arrow-1 {    top: -8px; }
+.tip-arrow-2,                
+.tip-arrow-3,                
+.tip-arrow-4 {  right: -10px; }
+.tip-arrow-5,                
+.tip-arrow-6,                
+.tip-arrow-7 { bottom: -8px; }
+.tip-arrow-8,                
+.tip-arrow-9,                
+.tip-arrow-10 {  left: -8px; }
+
+.tip-arrow-10,
+.tip-arrow-2  {    top: 2px; }
+.tip-arrow-8,
+.tip-arrow-4  { bottom: 2px; }
+.tip-arrow-1,
+.tip-arrow-5  {  right: 30px; }
+.tip-arrow-7,
+.tip-arrow-11 {   left: 30px; }
+
+.tip-arrow-9,
+.tip-arrow-3  {    top: 50%; margin-top:  -8px; }
+.tip-arrow-12,
+.tip-arrow-0,
+.tip-arrow-6  {   left: 50%; margin-left: -8px; }
+
+.tip-arrow-11 i,
+.tip-arrow-12 i,
+.tip-arrow-0 i,
+.tip-arrow-1 i {   top:  1px; }
+.tip-arrow-2 i,                
+.tip-arrow-3 i,                
+.tip-arrow-4 i {  left: -1px; }
+.tip-arrow-5 i,                
+.tip-arrow-6 i,                
+.tip-arrow-7 i {   top: -1px; }
+.tip-arrow-8 i,                
+.tip-arrow-9 i,                
+.tip-arrow-10 i { left:  1px; }
 
 /* 表单模式 */
 .form-inline .tiptext {
@@ -316,13 +392,13 @@ span.tiptext {
     margin-bottom: 0;
 }
 .form .tiptext {
-    padding: 0 10px;
-    height: 28px;
-    line-height: 28px;
+    padding: 3px 10px;
+    height: 22px;
+    line-height: 22px;
 }
 .form-small .tiptext {
-    padding: 0 10px;
-    height: 24px;
-    line-height: 24px;
+    padding: 1px 10px;
+    height: 22px;
+    line-height: 22px;
 }
 
