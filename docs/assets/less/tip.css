@@ -12,17 +12,128 @@
   * @author    : CloudYan
   * @version   : 1.0
   * @other     : 状态标识有图标集tip-icon 或字体集 tip*>iconfont形式
-                tip-arrow 提示框箭头，采用点钟方向标记，默认10点，默认为通用三角，提示层为尖锐三角
+                tip-arrow 提示框箭头，采用点钟方向标记，默认10点，且默认为通用三角，提示层为尖锐三角
 ***/
 
+/* 一些公共设置 */
 
-/* ui-close */ 
 
+/* ui-close 关闭 */ 
+.ui-close {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    text-align: center;
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+.ui-close:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    text-decoration: none;
+    color: #f00;
+}
 
 /* tip-arrow */
+.tip-arrow {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+}
+.tip-arrow i,
+.tip-arrow em {
+    position: absolute;
+    font-size: 14px;
+    font-family: SimSun,Tahoma,Arial,\5b8b\4f53,sans-serif;
+    line-height: 1;
+    font-style: normal;
+    font-weight: normal;
+}
+.tip-arrow-top {
+    left: 30px;
+    top: -7px;
+}
+.tip-arrow-top em {
+    top: -1px;
+}
+
+.tip-arrow-bottom {
+    left: 30px;
+    bottom: -10px;
+}
+.tip-arrow-bottom i {
+    top: -1px;
+}
+.tip-arrow-left {
+    top: 8px;
+    left: -7px;
+}
+.tip-arrow-left i {
+    left: 1px;
+}
+.tip-arrow-right {
+    top: 8px;
+    right: -10px;
+}
+.tip-arrow-right i {
+    left: -1px;
+}
+
 
 
 /* tip-icon */
+.tip-icon,
+.tip-icon-big {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/tip-icon.png) -9999px -9999px no-repeat;
+}
+.tip-icon,
+.tip-icon-big {
+    *margin-right: 4px;
+}
+.tip-icon-default,
+.tip-icon-info     { background-position:     0 -34px; }
+.tip-icon-warning  { background-position: -15px -34px; }
+.tip-icon-error    { background-position: -30px -34px; }
+.tip-icon-success  { background-position: -45px -34px; }
+.tip-icon-help     { background-position: -60px -34px; }
+.tip-icon-stop     { background-position: -75px -34px; }
+.tip-icon-wait     { background-position: -90px -34px; }
+
+.tip-icon-big,
+.tip-icon-big-default,
+.tip-icon-big-info,
+.tip-icon-big-warning,
+.tip-icon-big-error, 
+.tip-icon-big-success,
+.tip-icon-big-help,
+.tip-icon-big-stop,
+.tip-icon-big-wait {
+    width: 32px;
+    height: 32px;
+}
+.tip-icon-big-default,
+.tip-icon-big-info     { background-position:      0 0; }
+.tip-icon-big-warning  { background-position:  -33px 0; }
+.tip-icon-big-error    { background-position:  -66px 0; }
+.tip-icon-big-success  { background-position:  -99px 0; }
+.tip-icon-big-help     { background-position: -132px 0; }
+.tip-icon-big-stop     { background-position: -165px 0; }
+.tip-icon-big-wait     { background-position: -198px 0; }
 
 
 
@@ -36,8 +147,41 @@
 
 ***/
 .poptip {
-
+    font-size: 12px;
 }
+/* poptip-mini类，配合尖锐sharp角 实现小提醒 */
+.poptip-mini {
+    position: relative;
+    display: inline-block;
+    
+    /* 修复定位时遇到父容器边界导致中文换行显示不正常 */
+    white-space: nowrap;
+    font-size: 12px;
+    padding:0 5px;
+    height: 22px;
+    line-height: 20px;
+}
+.poptip-mini-warning {
+    background: #f80;
+    color: #fff;
+}
+.tip-sharp {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+.tip-sharp-up {
+    left: 10px;
+    bottom: -8px;
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent #f80;
+    border-width: 0 0 10px 10px;
+}
+
+
 
 /** @name      : tiptext 
   * @explain   : 提示文本
@@ -54,13 +198,26 @@
     padding: 0;
 }
 .tiptext {
-    margin: 10px 0;
-    padding: 5px 10px;
+    position: relative;
+    z-index: 10;
+    padding: 6px 12px;
+    line-height: 16px;
     font-size: 12px;
-    line-height: 1.8;
+}
+.tiptext .ui-close {
+    top: -1px;
+}
+.tiptext .tip-icon {
+    position: relative;
+    top: 3px;
+    *top: 1px;
+    margin-right: 5px;
 }
 span.tiptext {
     display: inline-block;
+    padding-right: 30px;
+    vertical-align: middle;
+    margin-top: 0;
 }
 
 /** @name      : tipbox 
@@ -78,27 +235,32 @@ span.tiptext {
     padding: 0;
 }
 .tipbox {
-    padding: 20px 30px 20px 75px;
-    margin: 10px 0;
+    position: relative;
+    padding: 20px 30px 10px 86px;
     background: #f9f9f9;
     border: 1px solid #d4d4d4; 
     font-size: 12px;
+    z-index: 10;
 }
 .tipbox .tip-title {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-.tipbox {
-    
+.tipbox .tip-icon-big {
+    position: absolute;
+    top: 18px;
+    left: 40px;
+}
+.tipbox .tip-explain {
+    margin-bottom: 10px;
 }
 
 
 
 
-
 /** @name      : tip-border 如：tip-info
-  * @explain   : tip框框
+  * @explain   : tip框框，用于组合
   * @type      : 基类 .ui-tip .tip-icon
   * @expand    : 扩展 -info -success -error -warning -help -stop -wait === message danger
   * @html      ：
@@ -107,12 +269,20 @@ span.tiptext {
 .tip-border,
 .tip-default {
     background: #f9f9f9;
-    border: 1px solid #d4d4d4; 
+    border: 1px solid #d9d9d9; 
 }
+
 .tip-info {
     background: #e5f5ff;
     border: 1px solid #c9d5e2;
 }
+.tip-info .tip-arrow em {
+    color: #c9d5e2;
+}
+.tip-info .tip-arrow i {
+    color: #e5f5ff;
+}
+
 .tip-warning {
     background: #ffffe0;
     border: 1px solid #ff8801;
@@ -140,4 +310,19 @@ span.tiptext {
 
 
 
+/* 表单模式 */
+.form-inline .tiptext {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.form .tiptext {
+    padding: 0 10px;
+    height: 28px;
+    line-height: 28px;
+}
+.form-small .tiptext {
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+}
 

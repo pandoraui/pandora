@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
 .relative{position:relative;border-bottom:1px dashed #888;cursor:default;color:#245DC1;}
+.tiptext,
+.tipbox{margin:10px 0;}
+.relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -20,19 +23,32 @@
 	<p>提供浮动提示层.poptip，提示文本.tiptext以及提示框tipbox</p>
     <p>各种类型的信息提示框（排列顺序为：缺省/默认 信息/消息，警告，错误/危险，成功，帮助，停止，等待，正在进行……）</p>
     <p>对应如下：default info warning error success help stop wait loading</p>
+    
+    <p><strong class="tags">注意事项：</strong>这里的行内提醒可能会存在于表单input之后，现定规格input有30px和26px;默认30px;</p>
 		
     <h3>tip-icon 提示信息状态标识ICON</h3>
     <div class="docs-example">
-        <h4>提供一般的icon状态标识</h4>
-        <span class="tip-icon"></span>
-        <span class="tip-icon tip-icon-default"></span>
-        <span class="tip-icon tip-icon-info"></span>
-        <span class="tip-icon tip-icon-warning"></span>
-        <span class="tip-icon tip-icon-error"></span>
-        <span class="tip-icon tip-icon-success"></span>
-        <span class="tip-icon tip-icon-help"></span>
-        <span class="tip-icon tip-icon-stop"></span>
-        <span class="tip-icon tip-icon-wait"></span>
+        <h4>提供一般的icon状态标识 <small>可单独引用</small></h4>
+        <p>
+            <span class="tip-icon tip-icon-default"></span>
+            <span class="tip-icon tip-icon-info"></span>
+            <span class="tip-icon tip-icon-warning"></span>
+            <span class="tip-icon tip-icon-error"></span>
+            <span class="tip-icon tip-icon-success"></span>
+            <span class="tip-icon tip-icon-help"></span>
+            <span class="tip-icon tip-icon-stop"></span>
+            <span class="tip-icon tip-icon-wait"></span>
+        </p>
+        <p>
+            <span class="tip-icon-big tip-icon-big-default"></span>
+            <span class="tip-icon-big tip-icon-big-info"></span>
+            <span class="tip-icon-big tip-icon-big-warning"></span>
+            <span class="tip-icon-big tip-icon-big-error"></span>
+            <span class="tip-icon-big tip-icon-big-success"></span>
+            <span class="tip-icon-big tip-icon-big-help"></span>
+            <span class="tip-icon-big tip-icon-big-stop"></span>
+            <span class="tip-icon-big tip-icon-big-wait"></span>
+        </p>
     </div>
 <pre class="prettyprint linenums">
 
@@ -42,11 +58,16 @@
     <h3>poptip 浮动提示层</h3>
     <p>poptip 内包含一种poptip-mini类（带有尖锐的箭头，内容较少），实现浮动式的提醒提示。</p>
     <div class="docs-example">
-        <h4>简单的提示层展示</h4>
-        <div class="poptip "><div class="tip-arrow tip-arrow-7"></div>立减10元</div>
+        <h4>poptip-mini类 实现着重小提醒</h4>
+        <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-up"></div>立减10元</span>
+        
+        <h4>简单的提示层展示 <small>这个实际类似tooltip</small></h4>
+        <p>之后处理此提醒样式，此中tip-arrow 提示框箭头，采用点钟方向标记，默认10点钟方向。</p>
+        <div class="poptip "><div class="tip-arrow tip-sharp-7"></div></div>
+        
         
         <h4>综合展示</h4>
-        <div>这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip">立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
+        <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-up"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
     </div>
 <pre class="prettyprint linenums">
 
@@ -56,17 +77,72 @@
     
     <h3>tiptext 提示文本</h3>
     <div class="docs-example">
-        <div class="tiptext">缺省消息提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-warning">警告提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-error">错误提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-success">成功提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-help">帮助提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-stop">停止提醒：自行编辑，非系统消息</div>
-        <div class="tiptext tip-wait">等待提醒：自行编辑，非系统消息</div>
+        <div class="tiptext"><span class="tip-icon tip-icon-default"></span>缺省消息提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-info"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-error"><span class="tip-icon tip-icon-error"></span>错误提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-success"><span class="tip-icon tip-icon-success"></span>成功提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-help"><span class="tip-icon tip-icon-help"></span>帮助提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-stop"><span class="tip-icon tip-icon-stop"></span>停止提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-wait"><span class="tip-icon tip-icon-wait"></span>等待提醒：自行编辑，非系统消息</div>
+       
         
-        <h4>内联行内提醒</h4>
-        <span class="tiptext tip-warning">消息提醒：自行编辑，非系统消息</span>
         
+        <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
+        <div class="form">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-default"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        </div>
+        <div class="form-small">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
+        </div>
+        
+        <h4>下面是带三角指示的框框</h4>
+        <div class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-top">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-bottom">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-left">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <div class="tiptext tip-info">
+            <div class="tip-arrow tip-arrow-right">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        <span class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-top">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </span>
+        <div class="tiptext tip-warning">
+            <div class="tip-arrow tip-arrow-7">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
     </div>
 <pre class="prettyprint linenums">
 
@@ -76,48 +152,72 @@
     
     <h3>tipbox 提示框</h3>
     <div class="docs-example">
-        <div class="tipbox tipbox-info">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">Binggo！操作状态提醒！</h3>
-            <p>您现在可以去畅游网络了。</p>
+        <div class="tipbox tip-info">
+            <span class="ui-close">&times;</span>
+            <span class="tip-icon-big tip-icon-big-info"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">Binggo！操作状态提醒！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-warning">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-warning"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-error">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">对不起！操作有误！</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-error"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">对不起！操作有误！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-success">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">恭喜！操作成功！</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-success"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">恭喜！操作成功！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-help">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">有疑问？您可以参考以下内容！</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-help"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">有疑问？您可以参考以下内容！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-stop">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">警告！此删除操作后数据将不可恢复！</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-stop"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">警告！此删除操作后数据将不可恢复！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         <div class="tipbox tip-wait">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">驴妈妈正在努力的为您查找，请稍后&hellip;</h3>
-            <p>您现在可以去畅游网络了。</p>
+            <span class="tip-icon-big tip-icon-big-wait"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">驴妈妈正在努力的为您查找，请稍后&hellip;</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
         
-        <h4>包含按钮链接的提醒</h4>
+        <h4>更复杂的提示框</h4>
         <div class="tipbox tip-warning">
-            <span class="tip-ico"></span>
-            <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
-            <p>您现在可以去畅游网络了。</p>
-            <p class="tip-link"><a href="###">链接</a> <a href="###">链接</a></p>
+            <span class="tip-icon-big tip-icon-big-warning"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
         </div>
     </div>
 <pre class="prettyprint linenums">
