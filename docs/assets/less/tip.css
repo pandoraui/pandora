@@ -177,9 +177,11 @@
 .tiptext {
     position: relative;
     z-index: 10;
-    padding: 5px 12px;
+    margin: 5px 0 10px;
+    padding: 3px 10px;
     line-height: 22px;
     font-size: 12px;
+    color: #666;
     
     /* 控制长词内容折断 */
     word-wrap: break-word;
@@ -197,7 +199,6 @@
 }
 span.tiptext {
     display: inline-block;
-    padding-right: 30px;
     vertical-align: middle;
     margin-top: 0;
 }
@@ -218,6 +219,7 @@ span.tiptext {
 }
 .tipbox {
     position: relative;
+    margin: 10px 0;
     padding: 10px 30px 10px 10px;
     background: #f9f9f9;
     border: 1px solid #d4d4d4; 
@@ -435,8 +437,10 @@ span.tiptext {
 
 
 /* .tip-line 用于单行的tiptext文本提醒，常和表单混用 */
-.tip-line {
-    padding: 3px 12px;
+.tip-line,
+span.tip-line {
+    margin-top: 0;
+    padding: 3px 10px;
     height: 22px;
     line-height: 22px;
     white-space: nowrap;
