@@ -19,7 +19,8 @@
 
 
 /* ui-close 关闭 */ 
-.ui-close {
+.ui-close,
+.tip-close {
     position: absolute;
     z-index: 10;
     top: 0;
@@ -39,58 +40,13 @@
     opacity: 0.4;
     filter: alpha(opacity=40);
 }
-.ui-close:hover {
+.ui-close:hover,
+.tip-close:hover {
     opacity: 0.8;
     filter: alpha(opacity=80);
     text-decoration: none;
     color: #f00;
 }
-
-/* tip-arrow */
-.tip-arrow {
-    position: absolute;
-    width: 16px;
-    height: 14px;
-}
-.tip-arrow i,
-.tip-arrow em {
-    position: absolute;
-    font-size: 14px;
-    font-family: SimSun,Tahoma,Arial,\5b8b\4f53,sans-serif;
-    line-height: 1;
-    font-style: normal;
-    font-weight: normal;
-}
-.tip-arrow-top {
-    left: 30px;
-    top: -7px;
-}
-.tip-arrow-top em {
-    top: -1px;
-}
-
-.tip-arrow-bottom {
-    left: 30px;
-    bottom: -10px;
-}
-.tip-arrow-bottom i {
-    top: -1px;
-}
-.tip-arrow-left {
-    top: 8px;
-    left: -7px;
-}
-.tip-arrow-left i {
-    left: 1px;
-}
-.tip-arrow-right {
-    top: 8px;
-    right: -10px;
-}
-.tip-arrow-right i {
-    left: -1px;
-}
-
 
 /* tip-icon */
 .tip-icon,
@@ -221,7 +177,7 @@
 .tiptext {
     position: relative;
     z-index: 10;
-    padding: 3px 12px;
+    padding: 5px 12px;
     line-height: 22px;
     font-size: 12px;
     
@@ -229,6 +185,7 @@
     word-wrap: break-word;
     word-break: break-all;
 }
+
 .tiptext .ui-close {
     top: -1px;
 }
@@ -261,12 +218,21 @@ span.tiptext {
 }
 .tipbox {
     position: relative;
-    padding: 20px 30px 10px 86px;
+    padding: 10px 30px 10px 10px;
     background: #f9f9f9;
     border: 1px solid #d4d4d4; 
     font-size: 12px;
+    line-height: 22px;
     z-index: 10;
+    
+    /* 控制长词内容折断 */
+    word-wrap: break-word;
+    word-break: break-all;
 }
+.tip-content {
+    padding: 10px 10px 5px 76px;
+}
+
 .tipbox .tip-title {
     font-size: 14px;
     font-weight: bold;
@@ -278,7 +244,7 @@ span.tiptext {
     left: 40px;
 }
 .tipbox .tip-explain {
-    margin-bottom: 10px;
+    color: gray;
 }
 
 
@@ -342,61 +308,108 @@ span.tiptext {
 }
 
 
-/* 点钟方向标记 */
+/** @name      : tip-arrow 如：tip-arrow-1
+  * @explain   : 点钟方向标记，用于组合显示箭头位置
+  * @type      : 基类 .tip-arrow
+  * @expand    : 扩展 .tip-arrow-1 ～ .tip-arrow-12
+  * @other     ：值方位与点钟的对应，仅用于单行提醒
+    top    -- 11
+    bottom --  7
+    right  --  3
+    left   --  9
+
+***/
+.tip-arrow {
+    position: absolute;
+    width: 16px;
+    height: 14px;
+}
+.tip-arrow i,
+.tip-arrow em {
+    position: absolute;
+    font-size: 14px;
+    font-family: SimSun,Tahoma,Arial,\5b8b\4f53,sans-serif;
+    line-height: 1;
+    font-style: normal;
+    font-weight: normal;
+}
+
 .tip-arrow-11,
+.tip-arrow-top,
 .tip-arrow-12,
 .tip-arrow-0,
-.tip-arrow-1 {    top: -8px; }
+.tip-arrow-1      {    top:  -8px; }
 .tip-arrow-2,                
-.tip-arrow-3,                
-.tip-arrow-4 {  right: -10px; }
+.tip-arrow-3, 
+.tip-arrow-right,
+.tip-arrow-4      {  right: -10px; }
 .tip-arrow-5,                
 .tip-arrow-6,                
-.tip-arrow-7 { bottom: -8px; }
+.tip-arrow-7,
+.tip-arrow-bottom { bottom:  -8px; }
 .tip-arrow-8,                
-.tip-arrow-9,                
-.tip-arrow-10 {  left: -8px; }
+.tip-arrow-9,
+.tip-arrow-left,
+.tip-arrow-10     {   left:  -8px; }
 
 .tip-arrow-10,
-.tip-arrow-2  {    top: 2px; }
+.tip-arrow-2  {    top:  5px; }
 .tip-arrow-8,
-.tip-arrow-4  { bottom: 2px; }
+.tip-arrow-4  { bottom:  5px; }
 .tip-arrow-1,
 .tip-arrow-5  {  right: 30px; }
 .tip-arrow-7,
-.tip-arrow-11 {   left: 30px; }
+.tip-arrow-11,
+.tip-arrow-top {  left: 30px; }
 
 .tip-arrow-9,
-.tip-arrow-3  {    top: 50%; margin-top:  -8px; }
+.tip-arrow-left,
+.tip-arrow-3,
+.tip-arrow-right { top: 50%; margin-top:  -7px; }
+
 .tip-arrow-12,
 .tip-arrow-0,
 .tip-arrow-6  {   left: 50%; margin-left: -8px; }
 
 .tip-arrow-11 i,
+.tip-arrow-top i,
 .tip-arrow-12 i,
 .tip-arrow-0 i,
 .tip-arrow-1 i {   top:  1px; }
+
 .tip-arrow-2 i,                
-.tip-arrow-3 i,                
+.tip-arrow-3 i,
+.tip-arrow-right i,               
 .tip-arrow-4 i {  left: -1px; }
+
 .tip-arrow-5 i,                
 .tip-arrow-6 i,                
-.tip-arrow-7 i {   top: -1px; }
+.tip-arrow-7 i,
+.tip-arrow-bottom i {   top: -1px; }
+
 .tip-arrow-8 i,                
 .tip-arrow-9 i,                
+.tip-arrow-left i,                
 .tip-arrow-10 i { left:  1px; }
 
-/* 表单模式 */
-.form-inline .tiptext {
+
+/* .tip-line 用于单行的tiptext文本提醒，常和表单混用 */
+.tip-line {
+    padding: 3px 12px;
+    height: 22px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.form-inline .tip-line {
     margin-top: 0;
     margin-bottom: 0;
 }
-.form .tiptext {
+.tip-line {
     padding: 3px 10px;
-    height: 22px;
-    line-height: 22px;
+    
 }
-.form-small .tiptext {
+.form-small .tip-line {
     padding: 1px 10px;
     height: 22px;
     line-height: 22px;

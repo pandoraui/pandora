@@ -23,10 +23,10 @@
     <h1>提示文本/提示框</h1>
 	<p>提供浮动提示层.poptip，提示文本.tiptext以及提示框tipbox</p>
     <p>各种类型的信息提示框（排列顺序为：缺省/默认 信息/消息，警告，错误/危险，成功，帮助，停止，等待，正在进行……）</p>
-    <p>对应如下：default info warning error success help stop wait loading</p>
+    <p>对应如下：default info warning error success help stop wait loading，您也可以查看 老版本 使用ICON实现的 <a target="_blank" href="/cnbootstrap/cndocs/solutions/alerts.html">信息提示框</a></p>
     
-    <p><strong class="tags">注意事项：</strong>这里的行内提醒可能会存在于表单input之后，现定规格input有30px和26px;默认30px;</p>
-		
+    <p><strong class="tags">注意事项：</strong>这里的行内提醒附加tip-line实现与表单input行内混用，因现定规格input有30px和26px高度;故tiptext默认30px;</p>
+	<p><strong>TODO提醒：</strong>字体图标集虽已全兼容，但字体加载仍有延迟（特别是老旧浏览器），有时会出现闪动，另外针对信息提示框的显示，表示字体图标不够精致，可设置两个方案，精致版的图标集 VS 简单且方便扩展的文字图标集。</p>
     <h3>tip-icon 提示信息状态标识ICON</h3>
     <div class="docs-example">
         <h4>提供一般的icon状态标识 <small>可单独引用</small></h4>
@@ -54,24 +54,32 @@
 <pre class="prettyprint linenums">
 
 </pre>
-    
-    
-    <h3>poptip 浮动提示层</h3>
-    <p>poptip 内包含一种poptip-mini类（带有尖锐的箭头，内容较少），实现浮动式的提醒提示。</p>
+    <h3>poptip-mini 尖角小提示</h3>
+    <p>是poptip 类的一种，称为poptip-mini类（带有尖锐的箭头，内容一般较少且单行），实现浮动式的提醒提示。</p>
     <div class="docs-example">
-        <h4>poptip-mini类 实现着重小提醒</h4>
+        <h4>poptip-mini类 实现着重小提醒 <small>只用于单行简短小提醒</small></h4>
+        <p>此处的poptip-mini尖锐角与后面实现的点钟方向实现方法不同。</p>
         <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-top"></div>立减10元</span>
         <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span>
         <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-left"></div>立减10元</span>
         <span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-right"></div>立减10元</span>
-        
-        <h4>简单的提示层展示 <small>这个实际类似tooltip</small></h4>
-        <p>之后处理此提醒样式，此中tip-arrow 提示框箭头，采用点钟方向标记，默认10点钟方向。</p>
+        <h4>poptip-mini使用场景</h4>
+        <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>    
+    
+    
+    <h3>poptip 浮动提示层 <small>功能类似tooltip（暂延后制作）</small></h3>
+    <p>简单的提示层展示</p>
+    <div class="docs-example">
+        <h4>类似tooltip的poptip</h4>
+        <p>poptip中使用点钟方向实现箭头指示的定位，默认10点钟方向。</p>
         <div class="poptip "><div class="tip-arrow tip-sharp-7"></div></div>
         
         
-        <h4>综合展示</h4>
-        <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
+        
     </div>
 <pre class="prettyprint linenums">
 
@@ -93,57 +101,26 @@
         
         
         <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
-        <div class="form">
-            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-default"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        <p>.tip-line 用于显示单行的 .tiptext文本提醒，常和表单混用，并保持垂直对齐。</p>
+        <div>
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-default"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
         </div>
         <div class="form-small">
-            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
         </div>
         
-        <h4>下面是带三角指示的框框</h4>
-        <div class="tiptext tip-info">
-            <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-top">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
-            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
-        </div>
-        <div class="tiptext tip-info">
-            <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-bottom">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
-            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
-        </div>
-        <div class="tiptext tip-info">
-            <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-left">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
-            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
-        </div>
-        <div class="tiptext tip-info">
-            <div class="tip-arrow tip-arrow-right">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
-            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
-        </div>
-        <span class="tiptext tip-info">
-            <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-top">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
-            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
-        </span>
-        
-        <h4>关于点钟方向</h4>
+        <h4>关于点钟方向定位三角指示的位置 <small>12个方位：tip-arrow-1 ～ tip-arrow-12</small></h4>
+<pre>
+英文值方位(方便用于单行提醒)与点钟方向的对应：
+.tip-arrow-top    -- .tip-arrow-11
+.tip-arrow-bottom -- .tip-arrow-7
+.tip-arrow-right  -- .tip-arrow-3
+.tip-arrow-left   -- .tip-arrow-9
+</pre>
+        <p>使用方位定位时，请优先使用点钟方位。</p>
         <!-- 点钟方向\\ -->
         <div class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
             <div class="tip-arrow tip-arrow-1">
                 <em>◆</em>
                 <i>◆</i>
@@ -239,14 +216,21 @@
         <h4>大段文本的展示</h4>
         <span class="tiptext tip-info">
             <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-top">
+            <div class="tip-arrow tip-arrow-11">
                 <em>◆</em>
                 <i>◆</i>
             </div>
             <p>测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890</p>
         </span>
         
-        
+        <span class="tiptext tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-10">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p>测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890</p>
+        </span>
         
         
     </div>
@@ -317,12 +301,30 @@
         </div>
         
         <h4>更复杂的提示框</h4>
+        <p>此提醒框可用于展示框信息，无状态icon提醒的一般信息展示</p>
         <div class="tipbox tip-warning">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-11">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
             <span class="tip-icon-big tip-icon-big-warning"></span>
             <div class="tip-content">
                 <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
                 <p class="tip-explain">您现在可以去畅游网络了。</p>
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
+        </div>
+        
+        <h4>.tipbox与.tiptext的等价信息框</h4>
+        <p>选用规则：理论上通用，但推荐仅仅有文本时使用tiptext提醒，而结构复杂时，推荐使用tipbox</p>
+        <div class="tipbox tip-warning">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-10">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-other">测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890
             </div>
         </div>
     </div>
