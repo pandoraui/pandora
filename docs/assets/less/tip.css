@@ -262,6 +262,14 @@ span.tiptext {
     background: #f9f9f9;
     border: 1px solid #d9d9d9; 
 }
+.tip-border .tip-arrow em,
+.tip-default .tip-arrow em {
+    color: #d9d9d9;
+}
+.tip-border .tip-arrow i,
+.tip-default .tip-arrow i {
+    color: #f9f9f9;
+}
 
 .tip-info {
     background: #e5f5ff;
@@ -290,23 +298,56 @@ span.tiptext {
     background: #fff2f2;
     border: 1px solid #f44;
 }
+.tip-error .tip-arrow em {
+    color: #ff4444;
+}
+.tip-error .tip-arrow i {
+    color: #fff2f2;
+}
+
 .tip-success {
     background: #f1ffe2;
     border: 1px solid #7dc25e;
 }
+.tip-success .tip-arrow em {
+    color: #7dc25e;
+}
+.tip-success .tip-arrow i {
+    color: #f1ffe2;
+}
+
 .tip-help {
     background: #e5f5ff;
     border: 1px solid #c9d5e2;
 }
+.tip-help .tip-arrow em {
+    color: #c9d5e2;
+}
+.tip-help .tip-arrow i {
+    color: #e5f5ff;
+}
+
 .tip-stop {
     background: #fceee8;
     border: 1px solid #f6c8b5;
 }
+.tip-stop .tip-arrow em {
+    color: #f6c8b5;
+}
+.tip-stop .tip-arrow i {
+    color: #fceee8;
+}
+
 .tip-wait {
     background: #e5f5ff;
     border: 1px solid #c9d5e2;
 }
-
+.tip-wait .tip-arrow em {
+    color: #c9d5e2;
+}
+.tip-wait .tip-arrow i {
+    color: #e5f5ff;
+}
 
 /** @name      : tip-arrow 如：tip-arrow-1
   * @explain   : 点钟方向标记，用于组合显示箭头位置

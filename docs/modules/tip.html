@@ -108,7 +108,13 @@
         <div class="form-small">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
         </div>
-        
+        <div>
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> &nbsp;&nbsp;<span class="tiptext tip-line tip-default">
+            <div class="tip-arrow tip-arrow-left">
+                <em>◆</em>
+                <i>◆</i>
+            </div><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        </div>
         <h4>关于点钟方向定位三角指示的位置 <small>12个方位：tip-arrow-1 ～ tip-arrow-12</small></h4>
 <pre>
 英文值方位(方便用于单行提醒)与点钟方向的对应：
@@ -315,7 +321,15 @@
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
             </div>
         </div>
-        
+        <div class="tipbox tip-warning">
+            <span class="ui-close">&times;</span>
+            <span class="tip-icon-big tip-icon-big-loading"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
+        </div>
         <h4>.tipbox与.tiptext的等价信息框</h4>
         <p>选用规则：理论上通用，但推荐仅仅有文本时使用tiptext提醒，而结构复杂时，推荐使用tipbox</p>
         <div class="tipbox tip-warning">
