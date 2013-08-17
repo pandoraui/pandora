@@ -12,11 +12,11 @@
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
 .test{ position:relative;display:inline-block;width:30px;height:30px;border:1px solid #eee;*margin-right: 4px;}
-.test .ui-arrow{position:absolute;}
+
 .test .ui-arrow-top,
-.test .ui-arrow-bottom { top:12px;}
+.test .ui-arrow-bottom { top:12px; right: 10px; }
 .test .ui-arrow-right,
-.test .ui-arrow-left { top:8px;}
+.test .ui-arrow-left { top:10px; right: 10px;}
 </style>
 </head>
 <body>
@@ -69,6 +69,31 @@
         <span class="test"><i class="ui-arrow-bottom orange-ui-arrow-bottom"></i></span>
         <span class="test"><i class="ui-arrow-left orange-ui-arrow-left"></i></span>
         
+        <br></br>
+        <span class="test active"><i class="ui-arrow-top dark-ui-arrow-top"></i></span>
+        <span class="test active"><i class="ui-arrow-right dark-ui-arrow-right"></i></span>
+        <span class="test active"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
+        <span class="test active"><i class="ui-arrow-left dark-ui-arrow-left"></i></span>
+        
+        <span class="test active"><i class="ui-arrow-top gray-ui-arrow-top"></i></span>
+        <span class="test active"><i class="ui-arrow-right gray-ui-arrow-right"></i></span>
+        <span class="test active"><i class="ui-arrow-bottom gray-ui-arrow-bottom"></i></span>
+        <span class="test active"><i class="ui-arrow-left gray-ui-arrow-left"></i></span>
+        
+        <span class="test active"><i class="ui-arrow-top blue-ui-arrow-top"></i></span>
+        <span class="test active"><i class="ui-arrow-right blue-ui-arrow-right"></i></span>
+        <span class="test active"><i class="ui-arrow-bottom blue-ui-arrow-bottom"></i></span>
+        <span class="test active"><i class="ui-arrow-left blue-ui-arrow-left"></i></span>
+        
+        <span class="test active"><i class="ui-arrow-top pink-ui-arrow-top"></i></span>
+        <span class="test active"><i class="ui-arrow-right pink-ui-arrow-right"></i></span>
+        <span class="test active"><i class="ui-arrow-bottom pink-ui-arrow-bottom"></i></span>
+        <span class="test active"><i class="ui-arrow-left pink-ui-arrow-left"></i></span>
+        
+        <span class="test active"><i class="ui-arrow-top orange-ui-arrow-top"></i></span>
+        <span class="test active"><i class="ui-arrow-right orange-ui-arrow-right"></i></span>
+        <span class="test active"><i class="ui-arrow-bottom orange-ui-arrow-bottom"></i></span>
+        <span class="test active"><i class="ui-arrow-left orange-ui-arrow-left"></i></span>
         
         
     </div>
@@ -77,6 +102,18 @@
 </pre>
 
 </div>
-
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+    $(".test:not(.active)").hover(
+        function(){
+            $(this).addClass("active");
+        },
+        function(){
+            $(this).removeClass("active");
+        }
+    )
+});
+</script>
 </body>
 </html>

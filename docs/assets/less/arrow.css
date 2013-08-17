@@ -9,7 +9,12 @@
 .ui-arrow-top,
 .ui-arrow-right,
 .ui-arrow-bottom,
-.ui-arrow-left {
+.ui-arrow-left,
+.active .ui-arrow,
+.active .ui-arrow-top,
+.active .ui-arrow-right,
+.active .ui-arrow-bottom,
+.active .ui-arrow-left {
     position: absolute;
     width: 0;
     height: 0;
@@ -21,50 +26,51 @@
     border-width: 5px;
 }
 
-.ui-arrow-top {
+
+.ui-arrow-top,
+.active .ui-arrow-bottom {
     border-bottom-style: solid;
     border-top-width: 0;
 }
-.ui-arrow-right {
+.ui-arrow-right,
+.active .ui-arrow-left {
     border-left-style: solid;
     border-right-width: 0;
 }
-.ui-arrow-bottom {
+.ui-arrow-bottom,
+.active .ui-arrow-top {
     border-top-style: solid;
     border-bottom-width: 0;
 }
-.ui-arrow-left {
+.ui-arrow-left,
+.active .ui-arrow-right {
     border-right-style: solid;
     border-left-width: 0;
 }
 
-.dark-ui-arrow-top    { border-bottom-color: #333; }
-.dark-ui-arrow-right  { border-left-color  : #333; }
-.dark-ui-arrow-bottom { border-top-color   : #333; }
-.dark-ui-arrow-left   { border-right-color : #333; }
+.active .dark-ui-arrow-bottom, .dark-ui-arrow-top    { border-bottom-color: #333; }
+.active .dark-ui-arrow-left  , .dark-ui-arrow-right  { border-left-color  : #333; }
+.active .dark-ui-arrow-top   , .dark-ui-arrow-bottom { border-top-color   : #333; }
+.active .dark-ui-arrow-right , .dark-ui-arrow-left   { border-right-color : #333; }
 
-.gray-ui-arrow-top    { border-bottom-color: gray; }
-.gray-ui-arrow-right  { border-left-color  : gray; }
-.gray-ui-arrow-bottom { border-top-color   : gray; }
-.gray-ui-arrow-left   { border-right-color : gray; }
+.active .gray-ui-arrow-bottom, .gray-ui-arrow-top    { border-bottom-color: gray; }
+.active .gray-ui-arrow-left  , .gray-ui-arrow-right  { border-left-color  : gray; }
+.active .gray-ui-arrow-top   , .gray-ui-arrow-bottom { border-top-color   : gray; }
+.active .gray-ui-arrow-right , .gray-ui-arrow-left   { border-right-color : gray; }
 
-.blue-ui-arrow-top    { border-bottom-color: #0183b0; }
-.blue-ui-arrow-right  { border-left-color  : #0183b0; }
-.blue-ui-arrow-bottom { border-top-color   : #0183b0; }
-.blue-ui-arrow-left   { border-right-color : #0183b0; }
+.active .blue-ui-arrow-bottom, .blue-ui-arrow-top    { border-bottom-color: #0183b0; }
+.active .blue-ui-arrow-left  , .blue-ui-arrow-right  { border-left-color  : #0183b0; }
+.active .blue-ui-arrow-top   , .blue-ui-arrow-bottom { border-top-color   : #0183b0; }
+.active .blue-ui-arrow-right , .blue-ui-arrow-left   { border-right-color : #0183b0; }
 
-.pink-ui-arrow-top    { border-bottom-color: #e38; }
-.pink-ui-arrow-right  { border-left-color  : #e38; }
-.pink-ui-arrow-bottom { border-top-color   : #e38; }
-.pink-ui-arrow-left   { border-right-color : #e38; }
+.active .pink-ui-arrow-bottom, .pink-ui-arrow-top    { border-bottom-color: #e38; }
+.active .pink-ui-arrow-left  , .pink-ui-arrow-right  { border-left-color  : #e38; }
+.active .pink-ui-arrow-top   , .pink-ui-arrow-bottom { border-top-color   : #e38; }
+.active .pink-ui-arrow-right , .pink-ui-arrow-left   { border-right-color : #e38; }
 
-.orange-ui-arrow-top    { border-bottom-color: orange; }
-.orange-ui-arrow-right  { border-left-color  : orange; }
-.orange-ui-arrow-bottom { border-top-color   : orange; }
-.orange-ui-arrow-left   { border-right-color : orange; }
-
-
-
-
+.active .orange-ui-arrow-bottom, .orange-ui-arrow-top    { border-bottom-color: orange; }
+.active .orange-ui-arrow-left  , .orange-ui-arrow-right  { border-left-color  : orange; }
+.active .orange-ui-arrow-top   , .orange-ui-arrow-bottom { border-top-color   : orange; }
+.active .orange-ui-arrow-right , .orange-ui-arrow-left   { border-right-color : orange; }
 
 
