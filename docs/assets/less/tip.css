@@ -178,10 +178,14 @@
     position: relative;
     z-index: 10;
     margin: 5px 0 10px;
-    padding: 3px 10px;
+    padding: 5px 30px 5px 10px;
+    padding: 5px 10px;
     line-height: 22px;
     font-size: 12px;
     color: #666;
+    
+    /* 修复IE7 上边框不正确显示 */
+    *zoom: 1;
     
     /* 控制长词内容折断 */
     word-wrap: break-word;
@@ -227,6 +231,9 @@ span.tiptext {
     line-height: 22px;
     z-index: 10;
     
+    /* 修复IE7 下tipbox内的a标签表现为整行激活 */
+    *zoom: 1;
+    
     /* 控制长词内容折断 */
     word-wrap: break-word;
     word-break: break-all;
@@ -248,8 +255,6 @@ span.tiptext {
 .tipbox .tip-explain {
     color: gray;
 }
-
-
 
 
 /** @name      : tip-border 如：tip-info
@@ -381,7 +386,7 @@ span.tiptext {
 .tip-arrow-top,
 .tip-arrow-12,
 .tip-arrow-0,
-.tip-arrow-1      {    top:  -8px; }
+.tip-arrow-1      {    top:  -8px; _top: -7px; }
 .tip-arrow-2,                
 .tip-arrow-3, 
 .tip-arrow-right,
@@ -389,11 +394,11 @@ span.tiptext {
 .tip-arrow-5,                
 .tip-arrow-6,                
 .tip-arrow-7,
-.tip-arrow-bottom { bottom:  -8px; }
+.tip-arrow-bottom { bottom:  -8px; _bottom: -10px; }
 .tip-arrow-8,                
 .tip-arrow-9,
 .tip-arrow-left,
-.tip-arrow-10     {   left:  -8px; }
+.tip-arrow-10     {   left:  -8px; _left: -7px; }
 
 .tip-arrow-10,
 .tip-arrow-2  {    top:  5px; }
@@ -452,7 +457,6 @@ span.tip-line {
 }
 .tip-line {
     padding: 3px 10px;
-    
 }
 .form-small .tip-line {
     padding: 1px 10px;
@@ -460,3 +464,8 @@ span.tip-line {
     line-height: 22px;
 }
 
+/* 实现带换行的格式化文本 */
+.pre-wrap {
+    white-space: pre-wrap;
+    word-break: break-word;
+}

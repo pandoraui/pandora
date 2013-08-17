@@ -70,10 +70,13 @@
                 <a class="todo" href="###">filter <small>类目过滤</small></a>
                 <a class="todo" href="###">icons <small>小图标</small></a>
                 <a class="doing" href="modules/arrow.html">arrow <small>css 箭头</small></a>
-                <a class="doing" href="modules/tip.html">tip <small>提示文本/提示框</small></a>
-                <a class="doing" href="module.php#poptip">poptip <small>提示层</small></a>
-                <a class="doing" href="module.php#tiptext">tiptext <small>提示文本</small></a>
-                <a class="doing" href="module.php#tipbox">tipbox <small>提示框</small></a>
+                <a class="done" href="modules/tip.html">tip <small>提示文本/提示框</small></a>
+                
+                <span class="hide">
+                <a class="doing hide" href="module.php#poptip">poptip <small>提示层</small></a>
+                <a class="doing hide" href="module.php#tiptext">tiptext <small>提示文本</small></a>
+                <a class="doing hide" href="module.php#tipbox">tipbox <small>提示框</small></a>
+                </span>
                 
                 <a class="doing" href="modules/tables.html">table <small>表格</small></a>
                 <a class="done" href="modules/nav.html">nav <small>导航</small></a>
@@ -82,12 +85,14 @@
                 <a class="done" href="modules/paging.html">paging <small>分页</small></a>
                 
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
+                <a class="todo" href="###">media <small>媒体对象</small></a>
+                
                 <a class="done" href="modules/buttons.html">btn <small>按钮/按钮组</small></a>
+                <a class="doing" href="modules/button.html">pbtn <small>新按钮</small></a>
                 <a class="doing" href="modules/forms.html">form <small>表单</small></a>
                 <a class="todo" href="###">search <small>搜索框</small></a>
                 
                 <a class="todo" href="###">progress <small>进度条</small></a>
-                <a class="todo" href="###">media <small>媒体对象</small></a>
                 <a class="done" href="modules/step.html">step <small>步骤/流程</small></a>
                 <a class="todo" href="###">misc <small>杂项</small></a>
                 <a class="todo" href="###">unit <small>组件单元</small></a>
@@ -103,7 +108,7 @@
                 <a class="done" href="modules/tooltip.html">tooltip <small>工具提醒</small></a>
                 <a class="todo" href="###">tips <small>浮层提示</small></a>
                 <a class="todo" href="###">calendar <small>日历</small></a>
-                <a class="todo" href="###">selectbox <small>下拉选项</small></a>
+                <a class="doing" href="modules/selectbox.html">selectbox <small>下拉框</small></a>
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
                 <a class="doing" href="###">tab <small>标签切换</small></a>
                 <a class="doing" href="###">sort <small>多维排序</small></a>
