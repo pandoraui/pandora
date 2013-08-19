@@ -16,19 +16,20 @@
 .test .ui-arrow-top,
 .test .ui-arrow-bottom { top:12px; right: 10px; }
 .test .ui-arrow-right,
-.test .ui-arrow-left { top:10px; right: 10px;}
+.test .ui-arrow-left { top:10px; right: 12px;}
+.gray{background:#ccc;}
 </style>
 </head>
 <body>
 <div class="wrap">
     <h1>提醒提示等 - 包含 CSS 箭头</h1>
-	<p>组合css实现的三角箭头等实现提示提醒，css arrow 按需求进行如下划分，最常用的标准三角（朝上和朝下，颜色分白色#fff、黑色#333、蓝色#0183b0）</p>
-    <p><strong>TODO：</strong></p>
+	<p>组合css实现的三角箭头等实现提示提醒，css arrow 按需求进行如下划分，最常用的标准三角</p>
+    
 	
     <div class="docs-example">
         <h3>简单的小提示 <small>此处的箭头详情参看<a href="/pandora/docs/modules/tip.html">tip提醒框</a></small></h3>
         <span class="tiptext tip-info">
-            <div class="tip-arrow tip-arrow-10">
+            <div class="tip-arrow tip-arrow-left">
                 <em>◆</em>
                 <i>◆</i>
             </div>
@@ -41,8 +42,14 @@
 </pre>
 	
     <h3>css arrow <small>下拉、收起等指示箭头</small></h3>
-    <p></p>
+    
+    <p>实现的颜色有：白色#fff、黑色#333、灰色#gray、蓝色#0183b0、玫红#e38、橙色orange</p>
     <div class="docs-example">
+        <p>使用：在其父级添加.active样式，实现箭头方向翻转</p>
+        <span class="test gray"><i class="ui-arrow-top white-ui-arrow-top"></i></span>
+        <span class="test gray"><i class="ui-arrow-right white-ui-arrow-right"></i></span>
+        <span class="test gray"><i class="ui-arrow-bottom white-ui-arrow-bottom"></i></span>
+        <span class="test gray"><i class="ui-arrow-left white-ui-arrow-left"></i></span>
     
         <span class="test"><i class="ui-arrow-top dark-ui-arrow-top"></i></span>
         <span class="test"><i class="ui-arrow-right dark-ui-arrow-right"></i></span>
@@ -70,6 +77,12 @@
         <span class="test"><i class="ui-arrow-left orange-ui-arrow-left"></i></span>
         
         <br></br>
+        
+        <span class="test gray active"><i class="ui-arrow-top white-ui-arrow-top"></i></span>
+        <span class="test gray active"><i class="ui-arrow-right white-ui-arrow-right"></i></span>
+        <span class="test gray active"><i class="ui-arrow-bottom white-ui-arrow-bottom"></i></span>
+        <span class="test gray active"><i class="ui-arrow-left white-ui-arrow-left"></i></span>
+        
         <span class="test active"><i class="ui-arrow-top dark-ui-arrow-top"></i></span>
         <span class="test active"><i class="ui-arrow-right dark-ui-arrow-right"></i></span>
         <span class="test active"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>

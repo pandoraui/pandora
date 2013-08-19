@@ -58,6 +58,11 @@
 .active .gray-ui-arrow-top   , .gray-ui-arrow-bottom { border-top-color   : gray; }
 .active .gray-ui-arrow-right , .gray-ui-arrow-left   { border-right-color : gray; }
 
+.active .white-ui-arrow-bottom, .white-ui-arrow-top    { border-bottom-color: #fff; }
+.active .white-ui-arrow-left  , .white-ui-arrow-right  { border-left-color  : #fff; }
+.active .white-ui-arrow-top   , .white-ui-arrow-bottom { border-top-color   : #fff; }
+.active .white-ui-arrow-right , .white-ui-arrow-left   { border-right-color : #fff; }
+
 .active .blue-ui-arrow-bottom, .blue-ui-arrow-top    { border-bottom-color: #0183b0; }
 .active .blue-ui-arrow-left  , .blue-ui-arrow-right  { border-left-color  : #0183b0; }
 .active .blue-ui-arrow-top   , .blue-ui-arrow-bottom { border-top-color   : #0183b0; }

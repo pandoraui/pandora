@@ -19,6 +19,7 @@
             <li><a href="#csslint">CSS Lint</a></li>
             <li><a href="#modernizr">Modernizr</a></li>
             <li><a href="#htmlchar">HTML特殊符号对照表</a></li>
+            <li><a href="#data-image" title="将图片转化成data:image base64格式">内联图片</a></li>
             <li><a href="#bugs">常见Bugs列表</a></li>
         </ul>
     </div> <!-- // div.sidebar -->
@@ -126,6 +127,14 @@
             <h1>HTML特殊符号对照表</h1>
             <p>HTML特殊字符编码大全，建议将最常用的记住！</p>
             <p>详情请参考：<a href="modules/htmlchar.html">HTML特殊符号对照表</a></p>
+        </section>
+        
+        
+        
+        <section id="data-image">
+            <h1>内联图片 data:image base64格式</h1>
+            <p>有时，我们需要将css背景图片转化为内联图片 data:image base64格式，实现图片数据化，无需额外的HTTP请求，同时也避免了base64无法跨域缓存的缺点。</p>
+            <p>详情请参考：<a href="solutions/data-image.html">将图片转化为data:image base64格式</a></p>
         </section>
         
         
