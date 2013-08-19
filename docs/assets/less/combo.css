@@ -40,7 +40,7 @@
 /* 隐藏显示 */
 .show,
 .block { display: block; }
-body .hide { display: none; }
+html body .hide { display: none; }
 
 /* 清除默认属性 */
 body .none { 

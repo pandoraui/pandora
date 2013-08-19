@@ -61,6 +61,7 @@
             
             <h3>CSS 组件</h3>
             <div class="modules">
+                <a class="todo" href="###">layout <small>布局</small></a>
                 <a class="doing" href="module.php#box">box <small>区块盒子</small></a>
                 <a class="todo" href="module.php#list">list <small>列表</small></a>
                 <a class="todo" href="module.php#imglist">imglist <small>图片列表</small></a>
@@ -96,6 +97,15 @@
                 <a class="done" href="modules/step.html">step <small>步骤/流程</small></a>
                 <a class="todo" href="###">misc <small>杂项</small></a>
                 <a class="todo" href="###">unit <small>组件单元</small></a>
+                <a class="todo" href="###">timeline <small>时光轴</small></a>
+                <a class="todo" href="###">photowall <small>照片墙</small></a>
+                <a class="todo" href="###">calendar <small>大/小日历</small></a>
+                <a class="todo" href="###">vote <small>投票/调查统计</small></a>
+                <a class="todo" href="###">comments <small>评论/说说</small></a>
+                <a class="todo hide" href="###">avatar <small>上传/修改头像</small></a>
+                <a class="todo hide" href="###">appstore <small>应用列表</small></a>
+                
+                <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>
             </div>
             
             <h3>JavaScript 组件</h3>
@@ -113,7 +123,7 @@
                 <a class="doing" href="###">tab <small>标签切换</small></a>
                 <a class="doing" href="###">sort <small>多维排序</small></a>
                 <a class="todo" href="###">paging <small>分页</small></a>
-                <a class="todo" href="###">modal <small>弹出对话框</small></a>
+                <a class="todo hide" href="###">modal <small>弹出对话框</small></a>
                 <a class="todo" href="###">stars <small>星星打分</small></a>
                 <a class="todo" href="###">wordcount <small>字数检测</small></a>
                 <a class="todo" href="###">validator <small>表单验证</small></a>
