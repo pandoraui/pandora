@@ -69,7 +69,7 @@
                 <a class="done" href="module.php#label">label/tags <small>标签标记</small></a>
                 <a class="todo" href="###">filter <small>类目过滤</small></a>
                 <a class="todo" href="###">icons <small>小图标</small></a>
-                <a class="doing" href="modules/arrow.html">arrow <small>css 箭头</small></a>
+                <a class="done" href="modules/arrow.html">arrow <small>css 箭头</small></a>
                 <a class="done" href="modules/tip.html">tip <small>提示文本/提示框</small></a>
                 
                 <span class="hide">
