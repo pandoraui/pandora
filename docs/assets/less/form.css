@@ -48,6 +48,7 @@ form label {
   margin-bottom: 5px;
 }
 
+.like-input,
 select,
 textarea,
 .input-text,
@@ -77,10 +78,15 @@ textarea,
   width: 156px;
 }
 
+.like-input {
+    width: 148px;
+}
+
 textarea {
   height: auto;
 }
 
+.like-input,
 textarea,
 .input-text,
 .input-password,
@@ -239,7 +245,7 @@ label.vmiddle {
   width: 80px;
 }
 
-.input-medium {
+.input-middle {
   width: 150px;
 }
 
@@ -395,7 +401,11 @@ legend + .control-group {
 
 
 /* 较小格式的表单 */
-.form-small .input-text{ height:16px;line-height:16px; }
+.form-small .like-input,
+.form-small .input-text {
+    height:16px;
+    line-height:16px;
+}
 
 
 
