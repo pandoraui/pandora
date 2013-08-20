@@ -89,7 +89,9 @@
     
     <h3>tiptext 提示文本</h3>
     <div class="docs-example">
+        <p><strong>注意：</strong>图标等与文字混排时，导致IE6下line-height失效</p>
         <div class="tiptext"><span class="tip-icon tip-icon-default"></span>缺省消息提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-info">消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-info"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-error"><span class="tip-icon tip-icon-error"></span>错误提醒：自行编辑，非系统消息</div>
@@ -97,8 +99,12 @@
         <div class="tiptext tip-help"><span class="tip-icon tip-icon-help"></span>帮助提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-stop"><span class="tip-icon tip-icon-stop"></span>停止提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-wait"><span class="tip-icon tip-icon-wait"></span>等待提醒：自行编辑，非系统消息</div>
-       
-        
+        <p><strong>BUG症状：</strong>当在一个容器里文字和img、input、textarea、select、object等元素相连的时候，对这个容器设置的line-height数值会失效； 同时以上元素的行高可能×2：</p>
+        <p><strong>解决方法：</strong> 对和文字相连接的img、input、textarea、select、object等元素加以下两个属性</p>
+        <ul>
+        	<li>margin: (所属line-height-自身高度)/2px 0;</li>
+        	<li>vertical-align: middle</li>
+        </ul>
         
         <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
         <p>.tip-line 用于显示单行的 .tiptext文本提醒，常和表单混用，并保持垂直对齐。</p>

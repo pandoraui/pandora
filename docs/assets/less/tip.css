@@ -183,14 +183,13 @@
     font-size: 12px;
     color: #666;
     
-    /* 修复IE7 上边框不正确显示 */
+    /* 修复IE7 上边框显示不正确 */
     *zoom: 1;
     
     /* 控制长词内容折断 */
     word-wrap: break-word;
     word-break: break-all;
 }
-
 .tiptext .ui-close {
     top: -1px;
 }
@@ -199,6 +198,11 @@
     top: 3px;
     *top: 1px;
     margin-right: 5px;
+    
+    /* 解决IE6下line-height失效 */
+    _margin-top: 4px;
+    _margin-bottom: 4px;
+    _vertical-align: middle;
 }
 span.tiptext {
     display: inline-block;
