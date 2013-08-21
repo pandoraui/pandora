@@ -1,0 +1,143 @@
+
+/** @name      : selectbox 
+  * @explain   : select下拉框
+  * @type      : 基类 .selectbox
+  * @expand    : 基类 
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @html      :
+
+***/
+.selectbox,
+.select-group {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.selectbox {
+    position: relative;
+    z-index: 20;
+}
+.select-info {
+    position: relative;
+    margin: 0;
+}
+.select-value {
+    /* 修复此值为空时垂直对齐问题 */
+    padding-right: 5px;
+}
+.select-info .select-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 100%;
+    cursor: pointer;
+}
+.select-arrow .ui-arrow-bottom {
+    top: 12px;
+    right: 10px;
+}
+
+/* 模拟输入框
+.like-input {
+    display: inline-block;
+    height: 20px;
+    margin: 0;
+    padding: 4px 6px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    width: 148px;
+    background-color: #ffffff;
+    border: 1px solid #aabbcc;
+    -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+       -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+}
+.form-small .like-input {
+    height: 16px;
+    line-height: 16px;
+}
+ */
+
+.selectbox-drop {
+    display: none;
+    position: absolute;
+    top: 29px;
+    left: 0;
+    width: 99%;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    line-height: 26px;
+    max-height: 100px;
+    
+}
+.over-y-scroll {
+    overflow-y: scroll;
+}
+
+.selectbox-drop ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.selectbox-drop li {
+    padding-left: 6px;
+}
+
+.selectbox-drop:hover li.selected {
+    background: none;
+}
+
+.selectbox-drop li:hover,
+.selectbox-drop li.selected,
+.selectbox-drop li.selected:hover {
+    background: #eee;
+}
+
+.selectbox-active {
+    z-index: 25;
+}
+.selectbox-active .selectbox-drop {
+    display: block;
+    background: #fff;
+}
+
+/* selectbox 长度尺寸 */
+.selectbox {
+    width: 162px;
+}
+.selectbox-mini {
+    width: 62px;
+}
+.selectbox-small {
+    width: 92px;
+}
+
+.selectbox-middle {
+    width: 186px;
+}
+
+.selectbox-big,
+.selectbox-large {
+    width: 270px;
+}
+.selectbox-small .selectbox-drop { width: 98%; }
+.selectbox-big .selectbox-drop,
+.selectbox-large .selectbox-drop { width: 99.5%;}
+
+/* small尺寸 */
+.form-small .select-arrow {
+    top: -2px;
+}
+.form-small .selectbox-drop {
+    top: 25px;
+}
+
+.form-inline .selectbox {
+    vertical-align: middle;
+}
+

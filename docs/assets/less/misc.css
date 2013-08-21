@@ -1,0 +1,88 @@
+
+/*!
+ * misc.css v1.0
+ * Author Pandora
+**/
+
+/* 数字加减操作 */
+.oper-numbox * {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    *zoom: 1;
+}
+.oper-numbox {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    overflow: hidden;
+    *zoom: 1;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    
+    /* 禁止选中文字 */
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+
+.op-reduce,
+.op-increase {
+    font-style: normal;
+    width: 20px;
+    color: #666;
+    cursor: pointer;
+    font-family: \5b8b\4f53,sans-serif;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #f8f8f8;
+}
+
+.op-reduce   { border-right: 1px solid #ededed;}
+.op-increase { border-left : 1px solid #ededed;}
+.op-reduce:hover,
+.op-increase:hover {
+    background-color: #fff;
+    text-decoration: none;
+    color: #f80;
+}
+
+.op-disable-reduce,
+.op-disable-reduce:hover,
+.op-disable-increase,
+.op-disable-increase:hover {
+    cursor: default;
+    background-color: #f8f8f8;
+    color: #ccc;
+}
+
+.oper-numbox input.op-number {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    position: relative;
+    width: 40px;
+    vertical-align: top;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    *height: 20px;
+    *line-height: 20px;
+    *vertical-align: middle;
+    text-align: center;
+}
+.oper-numbox input.op-number:focus {
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+
+
+
+

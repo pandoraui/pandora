@@ -64,6 +64,7 @@
 @import "popovers.css";
 
 /* Components: Misc */
+@import "misc.css";
 @import "thumbnails.css";
 @import "media.css";
 @import "tags.css";

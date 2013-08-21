@@ -169,11 +169,12 @@
   * @version   : 1.0
   * @html      :
 
-***/
 .tiptext * {
     margin: 0;
     padding: 0;
 }
+
+***/
 .tiptext {
     position: relative;
     z-index: 10;
@@ -219,11 +220,12 @@ span.tiptext {
   * @version   : 1.0
   * @html      :
 
-***/
 .tipbox * {
     margin: 0;
     padding: 0;
 }
+
+***/
 .tipbox {
     position: relative;
     margin: 10px 0;
@@ -268,16 +270,19 @@ span.tiptext {
 
 ***/
 .tip-border,
-.tip-default {
+.tip-default,
+.tip-gray {
     background: #f9f9f9;
     border: 1px solid #d9d9d9; 
 }
 .tip-border .tip-arrow em,
-.tip-default .tip-arrow em {
+.tip-default .tip-arrow em,
+.tip-gray .tip-arrow em {
     color: #d9d9d9;
 }
 .tip-border .tip-arrow i,
-.tip-default .tip-arrow i {
+.tip-default .tip-arrow i,
+.tip-gray .tip-arrow i {
     color: #f9f9f9;
 }
 
