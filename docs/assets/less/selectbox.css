@@ -14,6 +14,7 @@
     display: inline-block;
     *display: inline;
     *zoom: 1;
+    font-size: 12px;
 }
 
 .selectbox {
@@ -23,6 +24,7 @@
 .select-info {
     position: relative;
     margin: 0;
+    font-size: 12px;
 }
 .select-value {
     /* 修复此值为空时垂直对齐问题 */
@@ -86,6 +88,7 @@
 }
 .selectbox-drop li {
     padding-left: 6px;
+    color: #333;
 }
 
 .selectbox-drop:hover li.selected {
@@ -107,6 +110,11 @@
 }
 
 /* selectbox 长度尺寸 */
+.selectbox .like-input {
+    display: block;
+    width: auto;
+}
+
 .selectbox {
     width: 162px;
 }
@@ -125,6 +133,7 @@
 .selectbox-large {
     width: 270px;
 }
+.selectbox-mini .selectbox-drop { width: 97%; }
 .selectbox-small .selectbox-drop { width: 98%; }
 .selectbox-big .selectbox-drop,
 .selectbox-large .selectbox-drop { width: 99.5%;}

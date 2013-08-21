@@ -74,7 +74,7 @@
     *height: 20px;
     *line-height: 20px;
     *vertical-align: middle;
-    text-align: center;
+    ime-mode: disabled;
 }
 .oper-numbox input.op-number:focus {
     -webkit-box-shadow: none;

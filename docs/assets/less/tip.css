@@ -113,8 +113,8 @@
     white-space: nowrap;
     font-size: 12px;
     padding:0 5px;
-    height: 22px;
-    line-height: 20px;
+    height: 20px;
+    line-height: 18px;
 }
 .poptip-mini-warning {
     background: #f80;
@@ -159,7 +159,10 @@
     border-width: 0 10px 10px 0;
 }
 
-
+.tipbox p,
+.tiptext p { 
+    margin: 0;
+}
 /** @name      : tiptext 
   * @explain   : 提示文本
   * @type      : 基类 .ui-tip .tip-icon
@@ -191,6 +194,7 @@
     word-wrap: break-word;
     word-break: break-all;
 }
+
 .tiptext .ui-close {
     top: -1px;
 }
@@ -250,7 +254,7 @@ span.tiptext {
 .tipbox .tip-title {
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0 0 5px;
 }
 .tipbox .tip-icon-big {
     position: absolute;
