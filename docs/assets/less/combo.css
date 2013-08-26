@@ -29,12 +29,12 @@
 .inline {
     display: inline;
 }
-.fl {float: left;}
-.fr {float: right;}
+.fl { float: left;}
+.fr { float: right;}
 .ib {
-    display:inline-block;
-    *display:inline;
-    *zoom:1;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 
 /* 隐藏显示 */
@@ -157,7 +157,7 @@ body .none {
 .w400 { width: 400px; }
 
 /* 字体，不要使用中文字体名 */
-.yahei { font-family:"Microsoft YaHei","\5FAE\8F6F\96C5\9ED1"; }
+.yahei { font-family: "Microsoft YaHei",\5FAE\8F6F\96C5\9ED1; }
 
 /* 使webkit支持10px以下字体 */
 .text-size {
@@ -167,24 +167,27 @@ body .none {
 
 /* 透明 */
 .opacity { 
-    filter:alpha(opacity=50);
-    opacity:.5;
+    filter: alpha(opacity=50);
+    opacity: .5;
 }
 .text-ell { 
-    display:block;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    overflow:hidden;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /* ==============================
    TPL布局样式
    ============================== */
+.relative { position: relative; }
+.absolute { position: absolute; }
 
 /* 间隔空白 */
 .hr_a, 
 .hr_b, 
-.hr_c {
+.hr_c,
+.hr_d {
     font-size: 1px;
     line-height: 1px;
     display: block;
@@ -194,34 +197,35 @@ body .none {
 .hr_a { height:10px; }
 .hr_b { height:5px; }
 .hr_c { height:20px; }
+.hr_d { height:15px; }
 
 /* 无背景a元素定位链接 */
 .disa a {
-    display:block;
-    width:100%;
-    height:100%;
-    background:url(about:blank);
-    text-indent:-9999px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(about:blank);
+    text-indent: -9999px;
 }
 
 
 /* 横向列表 */
 .hor li {
-    display:inline;
-    float:left;
-    *zoom:1;
+    display: inline;
+    float: left;
+    *zoom: 1;
 }
 .hor li a{
-    display:block;
-    float:left;
+    display: block;
+    float: left;
 }
 /* 竖向列表 */
 .ver li {
-    display:block;
-    *zoom:1;
+    display: block;
+    *zoom: 1;
 }
 .ver li a{
-    display:block;
+    display: block;
 }
 
 /* ==============================
@@ -233,7 +237,7 @@ body .none {
     position: relative;
     display: block;
     overflow: hidden;
-    *zoom:1;
+    *zoom: 1;
     text-align: center;
 }
 .text-cover img {
@@ -290,20 +294,32 @@ ol.num {
     padding:5px 10px 10px 30px;
 }
 ol.num li {
-    list-style:decimal outside;
-    text-indent:0px;
-    line-height:20px;
-    margin:5px 0；
+    list-style: decimal outside;
+    text-indent: 0px;
+    line-height: 20px;
+    margin: 5px 0；
 }
 
 /* 全站统一价格标签 */
-dfn, dfn i, .price
-samp, samp i, .price { 
-    font-family:arial,sans-serif;
+dfn, 
+dfn i, 
+dfn em,
+samp,
+samp i, 
+.price { 
+    font-family: arial,sans-serif;
     font-style: normal;
+}
+dfn,
+dfn i,
+dfn em,
+samp,
+samp i {
     color: #f60;
 }
-dfn i, samp i{ 
+dfn i,
+dfn em,
+samp i { 
     font-size: 120%;
 }
 
@@ -318,15 +334,20 @@ dfn i, samp i{
     background: -moz-linear-gradient(top,#fcfcfc,#f1f1f1);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f1f1f1');
     background: -o-linear-gradient(top,#fcfcfc,#f1f1f1);
-    background: linear-gradient(top,#fcfcfc,#f1f1f1);
+    background: linear-gradient(#fcfcfc,#f1f1f1);
 }
 
+h1, h2, h3, h4, h5,
 .B, .fb { font-weight: bold; }
 .fnb { font-weight: normal; }
+h6 {
+    font-size: 12px;
+    font-weight: normal;
+}
 
-.v-t { vertical-align: top; }
-.v-m { vertical-align: middle; }
-.v-b { vertical-align: bottom; }
+.vtop { vertical-align: top; }
+.vmiddle { vertical-align: middle; }
+.vbottom { vertical-align: bottom; }
 
 
 
@@ -339,7 +360,7 @@ dfn i, samp i{
 }
 
 
-.rose { color:#ff0080;}
+.rose { color: #ff0080;}
 .white { color: white;}
 .red { color: red;}
 .green { color: green;}
@@ -393,6 +414,15 @@ a.text-info:focus {
 a.text-success:hover,
 a.text-success:focus {
   color: #356635;
+}
+
+/* 等高布局 */
+.equalheight-box {
+    overflow: hidden;
+}
+.equalheight-box .equalheight-item {
+    margin-bottom: -9979px !important;
+    padding-bottom: 9999px !important;
 }
 
 

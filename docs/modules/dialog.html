@@ -10,59 +10,155 @@
 <![endif]-->
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-dialog.js"></script>
 </head>
 <body>
 <div class="wrap">
     <h1>模态窗口-弹出对话框</h1>
-	<p>描述</p>
-    <p><strong>TODO：</strong></p>
-	
+    <p>现支持五种宽度尺寸，两种皮肤，同时也支持自定义宽度。更多详情参看 <a href="#dialog-standard">dialog的标准模式-参数配置</a></p>
+    <ul>
+    	<li>五种宽度尺寸(使用此方式已通过css实现宽度设置，不必再传入自定义宽度)
+            <ul>
+            	<li>默认dialog(400px)</li>
+            	<li>dialog-mini(300px无标题,用于alert)</li>
+            	<li>dialog-middle(600px)</li>
+            	<li>dialog-big(800px)</li>
+            	<li>dialog-large(1000px)</li>
+            </ul>
+        </li>
+        <li>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</li>
+    </ul>
+    <p><strong>TODO：</strong> </p>
+    
+	<h3>注意事项：</h3>
+    <p><strong>依赖</strong>——使用实现模态窗口/弹出框，请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li>dialog.css</li>
+        <li>pandora-dialog.js</li>
+    </ul>
+    <p>注意，以上 js 实现基于jQuery实现。</p>
+    
     <div class="docs-example">
-        <h3>当前款式</h3>
-        <p>现支持五种宽度尺寸，默认dialog(400px) dialog-mini(300px无标题) dialog-middle(600px) dialog-big(800px)  dialog-large(1000px)</p>
-        <p>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</p>
-        <p>使用方式：引入 dialog.css 和 pandora-dialog.js 文件即可</p>
+        <h4>默认提示框，效果如下：</h4>
+        <div class="dialog" style="position:static">
+            <div class="dialog-inner clearfix">
+                <a data-dismiss="dialog" class="dialog-close">×</a>
+                <div class="dialog-header">默认标题 <small>副标题或标题说明</small></div>
+                <div class="dialog-body">
+                    <div class="dialog-content clearfix">
+                        <p>提示文本，这是弹出框的内容，一般是提示文本也可以是较为复杂的布局（样式自定）。在较小宽度的提示框中文本自动折行。</p>
+                        <p>此默认提示框宽度400px，即dialog-small尺寸。</p>
+                    </div>
+                </div>
+                <div class="dialog-footer">
+                    <a data-role="confirm" href="#" class="btn btn-small btn-pink">保存修改</a>
+                    <a data-dismiss="dialog" class="btn btn-small">关闭</a>
+                </div>
+            </div>
+        </div>
     </div>
 <pre class="prettyprint linenums">
+&lt;-- 弹框结构 --&gt;
 &lt;div class="dialog" &gt;
     &lt;div class="dialog-inner clearfix"&gt;
         &lt;a data-dismiss="dialog" class="dialog-close"&gt;&times;&lt;/a&gt;
-        &lt;div class="dialog-header"&gt;默认提示框 &lt;small&gt;即dialog-small 宽度400px&lt;/small&gt;&lt;/div&gt;
+        &lt;div class="dialog-header"&gt;默认标题 &lt;small&gt;副标题或标题说明&lt;/small&gt;&lt;/div&gt;
         &lt;div class="dialog-body"&gt;
             &lt;div class="dialog-content clearfix"&gt;
-                &lt;p&gt;提示文本，这是一大段提示文本，在较小宽度的提示框中会自动折行。&lt;/p&gt;
+                &lt;p&gt;此默认提示框宽度400px，即dialog-small尺寸。&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class="dialog-footer"&gt;
-            &lt;a data-role="confirm" href="#" class="btn btn-pink"&gt;保存修改&lt;/a&gt;
-            &lt;a data-dismiss="dialog" class="btn"&gt;关闭&lt;/a&gt;
+            &lt;a data-role="confirm" href="#" class="btn btn-small btn-pink"&gt;保存修改&lt;/a&gt;
+            &lt;a data-dismiss="dialog" class="btn btn-small"&gt;关闭&lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
+    
+    <h2>调用方式</h2>
+    <p>pandora.dialog 有两种调用方式，第一种简化模式，方便快捷；第二种标准模式，拥有更多的可选项。详情请参看示例：</p>
+    <p><strong>注意：</strong>简化模式中，pandora 可用 $ 简化替代，如 <code>$.alert(content)</code> 等效于 <code>pandora.alert(content)</code> 。</p>
+    
+    <h3>1、alert 的模态提醒 <small>$.alert</small></h3>
+    <div class="docs-example">
+        <h4>最简单的调用，静态方法实现alert的模态提醒</h4>
+        <p>参数说明 <code>$.alert(content, callback)</code> 示例如下：</p>
+        <ul>
+        	<li>content 为提醒内容</li>
+        	<li>callback 回调函数</li>
+        </ul>
+        <button class="btn" id="demo111">alert 的模态提醒</button>
+    </div>
+<pre class="prettyprint linenums">
+// 下面三种调用方式等效，推荐使用 $.alert 实现alert提醒
 
-    <p>pandora.dialog 有两种调用方式，第一种是简单的直接传入参数形式；第二种拥有更多的可选项。</p>
-    <p>1. pandora.dialog(contgent, [ok], [cancel])</p>
-<pre class="prettyprint linenums">
-pandora.dialog("Hello Word", function () { alert("Thank you!")});
+$.alert("实现一个alert的模态提醒");
+pandora.alert("实现一个alert的模态提醒"); 
+pandora.dialog({wrapClass: "dialog-mini", content:"实现一个alert的模态提醒", ok: true})
 </pre>
-    <button id="demo0">运行</button>
-    <p>2. pandora.dialog(options)</p>
+<script>
+// 示例：alert 的模态提醒
+$(function(){
+    $("#demo111").click(function () {
+        $.alert("实现一个alert的模态提醒");
+        //pandora.alert("实现一个alert的模态提醒");
+        //pandora.dialog({wrapClass: "dialog-mini", content:"实现一个alert的模态提醒", ok: true})
+    });
+})
+</script>
+    
+    
+    
+    <h3>2、confirm 的模态提醒 <small>$.confirm</small></h3>
+    <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span> 此 confirm 模态方法暂时不要使用，问题正在解决中...</div>
+    <div class="docs-example">
+        <h4>静态方法实现 confirm 的模态提醒</h4>
+        <p>参数说明 <code>$.confirm(content, ok, cancel)</code> 示例如下：</p>
+        <ul>
+        	<li>content 为提醒内容</li>
+        	<li>ok 为点击确定按钮的回调事件</li>
+            <li>cancel 为点击取消按钮的回调事件</li>
+        </ul>
+        <button class="btn" id="demo211">confirm 的模态提醒</button>
+    </div>
 <pre class="prettyprint linenums">
-pandora.dialog({
-    title: "提示信息",
-    content: "Hello Word！",
-    ok: function () {
-        this
-        .title("警告")
-        .content("在回调函数使用return false 不会关闭当前弹出框");
-        return false;
-    }
+// 示例：confirm 的模态提醒
+// 其中的参数分别：提示内容、确定按钮的回调事件、取消按钮的回调事件
+
+$.confirm("你再也不相信爱情了么？", function () {
+    $.alert("相信");
+}, function () {
+    $.alert("不相信");
 });
 </pre>
-    <button id="demo1">运行</button>
-    <p>配置参数</p>
+<script>
+// 示例：confirm 的模态提醒
+$(function(){
+    $("#demo211").click(function () {
+        $.confirm("你再也不相信爱情了么？", function () {
+            $.alert("相信");
+        }, function () {
+            $.alert("不相信");
+        });
+    });
+})
+</script>
+    
+    
+    <h3 id="dialog-standard">3、标准模式 实现通用模态弹出框 <small>pandora.dialog({N多参数})</small></h3>
+    <div class="docs-example">
+        <h4>标准模式实现通用弹出框</h4>
+        <p>参数说明 <code>pandora.dialog(options)</code> 详情如下：</p>
+        <p>options 参数较多，请直接参看下面的参数配置</p>
+        
+    </div>
 <pre class="prettyprint linenums">
+// 标准模式，默认的参数配置：
+// 调用方式 pandora.dialog({配置修改下面所提供的参数即可});
+
 pandora.dialog.defaults = {
     templateNmae: "template-dialog", //模板名称
     templateType: "default",  //模板类型
@@ -88,125 +184,284 @@ pandora.dialog.defaults = {
     height: "auto", // 默认高度
 
     skin: "",   // 皮肤
-    wrapClass: "", // dialog 规格 通过className 名 控制
+    wrapClass: "", // dialog 规格 通过className 名 控制，可选参数：dialog-mini dialog-middle dialog-big dialog-large
     maskClass: "overlay", // 遮罩样式
     zIndex: 4000 // 层级
 };
 </pre>
-    <p>title （标题信息）</p>
+
+    <h4>标准模式示例 <small>常用的标准示例</small></h4>
+    <div class="docs-example">
+        <h4>3.1 实现提醒标题和提醒内容的自定义</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <button class="btn" id="demo311">自定义弹窗的标题、内容</button>
+        
+    </div>
 <pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
 pandora.dialog({
-    title: "Hello Word"
+    title: "自定义标题",
+    content: "标准模式中，实现提醒标题和提醒内容的自定义，此默认配置不显示确定、取消的按钮。"
 });
 </pre>
-    <button id="demo2">运行</button>
-    <p>content （内容信息）</p>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo311").click(function () {
+        pandora.dialog({
+            title: "自定义标题",
+            content: "标准模式中，实现提醒标题和提醒内容的自定义，此默认配置不调用确定、取消的按钮。"
+        });
+    });
+})
+</script>
+    
+    
+    <div class="docs-example">
+        <h4>3.2 调用确定、取消按钮</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <p><button class="btn" id="demo321">显示弹窗按钮</button></p>
+        <p><button class="btn" id="demo322">显示弹窗按钮，并自定义按钮文字及事件</button></p>
+    </div>
 <pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
 pandora.dialog({
-    content: "Hello pandora"
+    pandora.dialog({
+        content: "显示弹窗按钮，不指定回调函数，点击即默认关闭弹窗。",
+        ok: true,
+        cancel: true
+    });
 });
-</pre>
-    <button id="demo3">运行</button>
-    <p>ok （确定按钮）</p>
-<pre class="prettyprint linenums">
+
 pandora.dialog({
+    content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
+    okValue: "保存修改",
     ok: function () {
-        this.title("Hi")
-        .content("Hello pandora");
+        $.alert("保存成功");
+    },
+    cancelValue: "关闭",
+    cancel: true
+});
+</pre>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo321").click(function () {
+        pandora.dialog({
+            content: "显示弹窗按钮，不指定回调函数，点击即默认关闭弹窗。",
+            ok: true,
+            cancel: true
+        });
+    });
+    
+    $("#demo322").click(function () {
+        pandora.dialog({
+            content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
+            okValue: "保存修改",
+            ok: function () {
+                $.alert("保存成功");
+            },
+            cancelValue: "关闭",
+            cancel: true
+        });
+    });
+})
+</script>
+    
+    
+    
+    <div class="docs-example">
+        <h4>3.3 弹窗按钮的回调事件</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <p><button class="btn" id="demo331">点击弹窗按钮，重写该弹窗提醒信息</button></p>
+        <p><button class="btn" id="demo332">其他回调事件</button></p>
+    </div>
+<pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
+pandora.dialog({
+    content: "点击确定，重写该弹窗提醒信息",
+    okValue: "重写提醒",
+    ok: function () {
+        this
+        .title("警告")
+        .content("在回调函数使用return false 不会关闭当前弹出框");
         return false;
     }
 });
 </pre>
-    <button id="demo4">运行</button>
-    <p>cancel （取消按钮）</p>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo331").click(function () {
+        pandora.dialog({
+            content: "点击确定，重写该弹窗提醒信息",
+            okValue: "重写提醒",
+            ok: function () {
+                this
+                .title("警告")
+                .content("在回调函数使用return false 不会关闭当前弹出框");
+                return false;
+            }
+        });
+    });
+    
+    $("#demo332").click(function () {
+        pandora.dialog({
+            content: "其他回调函数的使用，暂未制作示例",
+            okValue: "保存修改",
+            ok: function () {
+                $.alert("保存成功");
+            },
+            cancelValue: "关闭",
+            cancel: true
+        });
+    });
+})
+</script>
+    
+    
+    
+    <div class="docs-example">
+        <h4>3.4 按钮组方式调用</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <p><button class="btn" id="demo341">按钮组方式调用</button></p>
+    </div>
 <pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
 pandora.dialog({
-    cancel: function () {
-        alert('关闭');
-    }
-});
-</pre>
-    <button id="demo5">运行</button>
-    <p>okValue (确定按钮文本)</p>
-<pre class="prettyprint linenums">
-pandora.dialog({
-    okValue:"pandora",
-    ok: function () {
-        this.title("Hi")
-        .content("Hello pandora");
-    }
-});
-</pre>
-    <button id="demo6">运行</button>
-    <p>cancelValue (取消按钮文本)</p>
-<pre class="prettyprint linenums">
-pandora.dialog({
-    cancelValue: "pandora",
-    cancel: function () {
-        alert("关闭");
-    }
-});
-</pre>
-    <button id="demo7">运行</button>
-    <p>button (自定义按钮组)</p>
-<pre class="prettyprint linenums">
-pandora.dialog({
+    content: "您认同使用模态窗口好过原生弹窗吗？",
     button: [{
         value: "取消",
         className: "btn-pink",
         callback: function () {
-            alert("点击了取消");
+            $.alert("你点击了取消");
             return false;
         }
     },
     {
-        value: '不同意',
+        value: '不认同',
         callback: function () {
-            alert('你不同意')
+            $.alert('你选择了不认同')
         }
     }
     ],
-    okValue: "确定",
+    okValue: "认同",
     ok: function () {
-        alert("同意");
+        $.alert("你选择了认同");
     }
 });
 </pre>
-    <button id="demo8">运行</button>
-    <p>initialize （对话框初始化完成后执行的函数）</p>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo341").click(function () {
+        pandora.dialog({
+            content: "您认同使用模态窗口好过原生弹窗吗？",
+            button: [{
+                value: "取消",
+                className: "btn-pink",
+                callback: function () {
+                    $.alert("你点击了取消");
+                    return false;
+                }
+            },
+            {
+                value: '不认同',
+                callback: function () {
+                    $.alert('你选择了不认同')
+                }
+            }
+            ],
+            okValue: "认同",
+            ok: function () {
+                $.alert("你选择了认同");
+            }
+        });
+    });
+})
+</script>
+    
+    
+    
+    <div class="docs-example">
+        <h4>3.5 对话框初始化及其事件</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <ul>
+        	<li>initialize  对话框初始化完成后执行的函数</li>
+        </ul>
+        <p><button class="btn" id="demo351">对话框初始化及其事件</button></p>
+    </div>
 <pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
 pandora.dialog({
     initialize: function () {
-        this.content('对话框初始化完成');
+        this.content("对话框初始化完成");
     }
 });
 </pre>
-    <button id="demo9">运行</button>
-    <p>beforeunload （对话框关闭前执行的函数）</p>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo351").click(function () {
+        pandora.dialog({
+            initialize: function () {
+                this.content("对话框初始化完成");
+            }
+        });
+    });
+})
+</script>
+    
+    
+    <div class="docs-example">
+        <h4>3.6 关闭对话框前执行函数</h4>
+        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <ul>
+        	<li>beforeunload  对话框关闭前执行的函数</li>
+        </ul>
+        <p><button class="btn" id="demo361">关闭对话框前执行函数</button></p>
+    </div>
 <pre class="prettyprint linenums">
+// 示例：标准模式的使用
+
 pandora.dialog({
     beforeunload: function () {
-        return confirm('确定关闭对话框吗');
+        return $.confirm('确定关闭对话框吗');
     }
 });
 </pre>
-    <button id="demo10">运行</button>
-    <p>pandora.alert(content, callback) （静态方法统一全站alert）</p>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo361").click(function () {
+        pandora.dialog({
+            content: "关闭对话框前执行函数",
+            beforeunload: function () {
+                //$.confirm('确定关闭该对话框吗', function(){console.log("1")}, function(){return false});
+                //return $.confirm('确定关闭该对话框吗', ok, cancel);
+            }
+        });
+    });
+})
+</script>
+    
+    
+    
+    <h3>4、ajax 调用 <small></small></h3>
+    <div class="docs-example">
+        <h4>ajax 调用，建议统一使用 JSONP 格式返回数据。</h4>
+        <p>参数说明：详请参考示例：</p>
+        
+        <p><button class="btn" id="demo411">ajax 调用示例</button></p>
+    </div>
 <pre class="prettyprint linenums">
-pandora.alert("Hello pandora");
-</pre>
-    <button id="demo11">运行</button>
-    <p>pandora.confirm(content, ok, cancel) （静态方法统一全站confirm）</p>
-<pre class="prettyprint linenums">
-pandora.confirm("你再也不相信爱情了么？", function () {
-    alert("相信");
-}, function () {
-    alert("不相信");
-});
-</pre>
-    <button id="demo12">运行</button>
-    <p>ajax 调用</p>
-<pre class="prettyprint linenums">
+// 示例：ajax 调用示例
+
 pandora.dialog({
     initialize: function () {
         var that = this;
@@ -219,7 +474,7 @@ pandora.dialog({
                 var timed = (new Date()).getTime();
                 var bool = true;
                 while (bool) {
-                    if (timed + 2000 < (new Date()).getTime()) {
+                    if (timed + 2000 &lt; (new Date()).getTime()) {
                         bool = false;
                     }
                 }
@@ -229,141 +484,17 @@ pandora.dialog({
     }
 });
 </pre>
-    <button id="demo13">运行</button>
-</div>
-
-
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
-<script src="../assets/js/modules/pandora-dialog.js"></script>
-
-<script type="text/javascript">
-    $("#demo0").click(function () {
-        pandora.dialog("Hello Word", function () { alert("Thank you!") });
-    });
-
-    $("#demo1").click(function () {
-        pandora.dialog({
-            title: "提示信息",
-            content: "Hello Word！",
-            ok: function () {
-                this
-                .title("警告")
-                .content("在回调函数使用return false 不会关闭当前弹出框");
-                return false;
-            }
-        });
-    });
-
-    $("#demo2").click(function () {
-        pandora.dialog({
-            title: "Hello Word"
-        });
-    });
-
-    $("#demo3").click(function () {
-        pandora.dialog({
-            content: "Hello pandora"
-        });
-    });
-
-    $("#demo4").click(function () {
-        pandora.dialog({
-            ok: function () {
-                this.title("Hi")
-                .content("Hello pandora");
-                return false;
-            }
-        });
-    });
-
-    $("#demo5").click(function () {
-        pandora.dialog({
-            cancel: function () {
-                alert('关闭');
-            }
-        });
-    });
-
-    $("#demo6").click(function () {
-        pandora.dialog({
-            okValue: "pandora",
-            ok: function () {
-                this.title("Hi")
-                .content("Hello pandora");
-            }
-        });
-    });
-
-    $("#demo7").click(function () {
-        pandora.dialog({
-            cancelValue: "pandora",
-            cancel: function () {
-                alert("关闭");
-            }
-        });
-    });
-
-    $("#demo8").click(function () {
-        pandora.dialog({
-            button: [{
-                value: "取消",
-                className: "btn-pink",
-                callback: function () {
-                    alert("点击了取消");
-                    return false;
-                }
-            },
-            {
-                value: '不同意',
-                callback: function () {
-                    alert('你不同意')
-                }
-            }
-            ],
-            okValue: "确定",
-            ok: function () {
-                alert("同意");
-            }
-        });
-    });
-
-    $("#demo9").click(function () {
-        pandora.dialog({
-            initialize: function () {
-                this.content('对话框初始化完成');
-            }
-        });
-    });
-
-    $("#demo10").click(function () {
-        pandora.dialog({
-            beforeunload: function () {
-                return confirm('确定关闭对话框吗');
-            }
-        });
-    });
-
-    $("#demo11").click(function () {
-        pandora.alert("Hello pandora");
-    });
-
-    $("#demo12").click(function () {
-        pandora.confirm("你再也不相信爱情了么？", function () {
-            alert("相信");
-        }, function () {
-            alert("不相信");
-        });
-    });
-
-    $("#demo13").click(function () {
+<script>
+// 示例：标准模式的使用
+$(function(){
+    $("#demo411").click(function () {
         pandora.dialog({
             initialize: function () {
                 var that = this;
                 that.loading();
                 $.ajax({
                     type: "GET",
-                    url: "ajax.html",
+                    url: "/pandora/docs/assets/js/modules/ajax.html",
                     dataType: "html",
                     success: function (data) {
                         var timed = (new Date()).getTime();
@@ -379,7 +510,11 @@ pandora.dialog({
             }
         });
     });
+})
 </script>
+    
+    
+
 
 </body>
 </html>

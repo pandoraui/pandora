@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新类型按钮</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.test .icon{display:inline-block;background:#000;vertical-align: text-top;}
+.test .button .icon{width:14px;height:14px;margin-top:1px;}
+.test .pbtn-big .icon{width:18px;height:18px;margin-top:0;}
+.test .pbtn-large .icon{width:24px;height:24px;margin-top:0;}
+.test .pbtn-big{font-size:16px;}
+.test .pbtn-large{font-size:20px;}
+.test .iconfont{display:inline-block;padding:0 3px;font-style:normal;background:#ccc;}
+.test .pbtn-large .iconfont{padding:1px 2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>新类型按钮</h1>
+    <p>受到metroUI设计的扁平化风格影响，实现新式的按钮风格，纯色表现实现的代码更少，逻辑也更简单。</p>
+    <p>为保留之前的代码.btn可用，现使用.pbtn作为基类实现，本按钮实现直接用于线上项目。</p>
+    
+    <h2><a href="../assets/less/button.css">button.css</a></h2>
+    <h3>以下是按钮的尺寸、样式等类别 <small>可任意组合</small></h3>
+    
+    <dl class="dl-hor">
+    	<dt>4种尺寸：</dt>
+    	<dd>全为自适应宽度，高度特定，圆角全为2px：-mini -small -default -big</dd>
+        <dt>5种样式：</dt>
+    	<dd>-default -white -pink -orange -blue -dark</dd>
+        <dt>3中类别：</dt>
+    	<dd>-disabled -block </dd>
+    </dl>
+        
+    <div class="docs-example">
+        <p>风格包含默认的BT，还有metro_style、google_style</p>
+        <h4>4种尺寸：</h4>
+        <p>mini(h22px:pd0/6) -small(h26px:pd2/10) -default(h30px:4/12) -big(h36px:pd7/15) -large(h36px:pd11/20)</p>
+        <button class="pbtn pbtn-mini">迷你按钮</button>
+        <button class="pbtn pbtn-small">小按钮</button>
+        <button class="pbtn">默认按钮</button>
+        <button class="pbtn pbtn-big">大按钮</button>
+        
+        
+        <h4>5种样式：</h4>
+        
+        <!-- 新按钮样式 -->
+        <button class="pbtn pbtn-small pbtn-w pbtn-white">白色</button>
+        <button class="pbtn pbtn-small pbtn-w pbtn-light">浅色</button>
+        <button class="pbtn pbtn-small pbtn-w pbtn-orange">橙色</button>
+        <button class="pbtn pbtn-small pbtn-w pbtn-pink">玫红</button>
+        <button class="pbtn pbtn-small pbtn-w pbtn-blue">蓝色</button>
+        
+        <h4>3种类型：</h4>
+        <button class="pbtn pbtn-orange pbtn-w">宽按钮</button>
+        <button class="pbtn pbtn-orange disabled">橙色禁用状态</button>
+        <button class="pbtn pbtn-dark pbtn-disabled">不可用按钮</button>
+        <p></p>
+        
+        <button class="pbtn pbtn-big pbtn-pink pbtn-block">块级按钮</button>
+        
+        <h4>综合展示：</h4>
+        <p>
+            <button class="pbtn pbtn-w pbtn-pink pbtn-big">大按钮</button>
+            <button class="pbtn pbtn-w pbtn-pink">默认</button>
+            <button class="pbtn pbtn-w pbtn-pink pbtn-small">中小按钮</button>
+            <button class="pbtn pbtn-w pbtn-pink pbtn-mini">小按钮</button>
+        </p>
+        <p>
+            <button class="pbtn pbtn-w pbtn-orange pbtn-big">大按钮</button>
+            <button class="pbtn pbtn-w pbtn-orange">默认</button>
+            <button class="pbtn pbtn-w pbtn-orange pbtn-small">中小按钮</button>
+            <button class="pbtn pbtn-w pbtn-orange pbtn-mini">小按钮</button>
+        </p>
+        <p>
+            <button class="pbtn pbtn-w pbtn-light pbtn-big">大按钮</button>
+            <button class="pbtn pbtn-w pbtn-light">默认</button>
+            <button class="pbtn pbtn-w pbtn-light pbtn-small">中小按钮</button>
+            <button class="pbtn pbtn-w pbtn-light pbtn-mini">小按钮</button>
+        </p>
+        <p>
+            <button class="pbtn pbtn-w pbtn-blue pbtn-big">大按钮</button>
+            <button class="pbtn pbtn-w pbtn-blue">默认</button>
+            <button class="pbtn pbtn-w pbtn-blue pbtn-small">中小按钮</button>
+            <button class="pbtn pbtn-w pbtn-blue pbtn-mini">小按钮</button>
+        </p>
+        <p>
+            <button class="pbtn pbtn-w pbtn-disabled pbtn-big">大按钮</button>
+            <button class="pbtn pbtn-w pbtn-disabled">默认</button>
+            <button class="pbtn pbtn-w pbtn-disabled pbtn-small">中小按钮</button>
+            <button class="pbtn pbtn-w pbtn-disabled pbtn-mini">小按钮</button>
+        </p>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+        
+        <h3>icon组合按钮</h3>
+        <p>关于按钮与图标的组合，此处暂未定稿，初步规划 icon 尺寸3种(14px,18px,24px)，而与字体集组合则全兼容没有问题。</p>
+        
+    <div class="docs-example">       
+        
+        <p>big: icon-18px/font-16px/margin-top:-1px;</p>
+        <p>large: icon-24px/font-20px/margin-top:0;</p>
+        
+        <div class="test">
+            <button class="pbtn pbtn-mini">迷你按钮</button>
+            <button class="pbtn pbtn-small">小按钮</button>
+            <button class="pbtn"><i class="icon"></i> 默认按钮</button>
+            <button class="pbtn pbtn-big"><i class="icon"></i> 大按钮</button>
+            <button class="pbtn pbtn-large"><i class="icon"></i> 超大按钮</button>
+        </div>
+
+        
+
+        
+        <p>若使用字体集，则 ICON 统一使用 <code>.iconfont</code> 样式</p>
+        <div class="test">
+            <button class="pbtn pbtn-mini">迷你按钮</button>
+            <button class="pbtn pbtn-small">小按钮</button>
+            <button class="pbtn"><i class="iconfont">返</i> 默认按钮</button>
+            <button class="pbtn pbtn-big"><i class="iconfont">优</i> 大按钮</button>
+            <button class="pbtn pbtn-large"><i class="iconfont">惠</i> 超大按钮</button>
+
+            <p>如果按钮不满足想要的宽度，可使用&amp;nbsp;占空白符位，如下： <small>不要使用全角空格，低版本IE下出现按钮中文本不局中现象</small></p>
+            <button class="pbtn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;默认按钮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>   
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+    <h3>问题及注意事项：</h3>
+    <p>按钮使用中的注意事项，请参考 <a href="../../cnDocs/solutions/button.html">按钮兼容最佳方案</a></p>
+    
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/bootstrap-dropdown.js"></script> 
+<!-- <script src="../assets/js/bootstrap-button.js"></script> -->
+
+</body>
+</html>

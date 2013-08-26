@@ -302,18 +302,18 @@
             <div class="docs-example">
                 <h4>Intelligent son <small>聪明的儿子</small></h4>
                 <p>
-                One day, the father lets eight year-old son send a <a href="###" class="tag">letter</a>, the son took the letter , the father then remembered <a class="tag tag-blue" href="###">didn't</a> write the address and addressee's name on the envelope. <br>
-                After the son comes back, the father asks him: "You have <a class="tag tag-red" href="###">thrown</a> the letter in the mail box?" <br>
+                One day, the father lets eight year-old son send a <a href="###" class="tags">letter</a>, the son took the letter , the father then remembered <a class="tags tags-blue" href="###">didn't</a> write the address and addressee's name on the envelope. <br>
+                After the son comes back, the father asks him: "You have <a class="tags tags-red" href="###">thrown</a> the letter in the mail box?" <br>
                 "Certainly" <br>
                 "You have not seen on the envelope not to write the address and the addressee name?" <br>
-                "I certainly saw <span class="tag">nothing</span> written on the envelope." <br>
+                "I certainly saw <span class="tags">nothing</span> written on the envelope." <br>
                 "Then why you didn't take it back?" <br>
                 "I also thought that you do not write the address and the addressee, is for does not want to let me know that you do send the letter to who!" 
                 </p>
     
-                <p>之乎者也，<a href="###" class="tag tag-blue">如果</a>用的是中文呢？来点<a href="###" class="tag tag-green">English</a>混排一下。</p>
+                <p>之乎者也，<a href="###" class="tags tag-blue">如果</a>用的是中文呢？来点<a href="###" class="tags tags-green">English</a>混排一下。</p>
                 
-                <p class="f12"><span class="tag tag-blue">来个</span>小字体版的：之乎者也，<a href="###" class="tag">如果</a>用的是中文呢？来点<a href="###" class="tag tag-red">English</a>混排一下。</p>
+                <p class="f12"><span class="tags tags-blue">来个</span>小字体版的：之乎者也，<a href="###" class="tags">如果</a>用的是中文呢？来点<a href="###" class="tags tags-red">English</a>混排一下。</p>
             </div>
             
             

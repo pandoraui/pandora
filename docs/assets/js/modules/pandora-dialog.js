@@ -1,7 +1,7 @@
 ﻿(function (global, $, undefined) {
     "use strict" // 严格模式
 
-    if (global.pandora) {
+    if (global.pandora && global.pandora.dialog) {
         return;
     }
 
@@ -497,7 +497,7 @@
         cancelValue: "取消", // 取消按钮文本
 
         content: "",
-        title: "message",
+        title: "消息提醒",
 
         width: "400px",
         height: "auto",
@@ -511,7 +511,7 @@
     var pandora = {};
 
     // 扩展一些常用的静态方法
-    pandora.alert = function (content, callback) {
+    $.alert = pandora.alert = function (content, callback) {
         return Factory({
             fixed: true,
             mask: true,
@@ -522,16 +522,17 @@
         });
     }
 
-    pandora.confirm = function (content, ok, cancel) {
+    $.confirm = pandora.confirm = function (content, ok, cancel) {
         return Factory({
             fixed: true,
             lock: true,
             content: content,
-            ok: ok,
-            cancel: cancel
+            ok: ok ? ok : true,
+            cancel: cancel ? cancel : true
         });
     };
 
-    pandora.dialog = Factory;
+    // 调用方式采用 $("").dialog() 和 pandora.dialog() 两种方式
+    $.fn.dialog = pandora.dialog = Factory;
     global.pandora = pandora;
 }(this, jQuery));

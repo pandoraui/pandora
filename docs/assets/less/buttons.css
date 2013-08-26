@@ -1,9 +1,24 @@
 
-/* 
- @名称: buttons.css
- @功能: 按钮样式 Adapted from  Bootstrap buttons.css
- */
+/*!
+ * buttons.css 按钮样式
+ * Adapted from Bootstrap v2.3.1
+ * Copyright 2012 Twitter 
+ * http://www.apache.org/licenses/LICENSE-2.0
+**/
 
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   按钮样式
+   ============================== */
 button,
 input {
     line-height: normal;
@@ -132,6 +147,41 @@ input {
   padding: 0 6px;
   font-size: 12px;
 }
+
+.btn {
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.btn-big {
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.btn-large {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+.btn-small {
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+}
+.btn-mini {
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+}
+
+.btn-w,
+.btn-wbox .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+}
 .btn-block {
   display: block;
   width: 100%;
@@ -221,7 +271,7 @@ input[type="button"].btn-block {
   background-color: #c67605 \9;
 }
 
-/* 新增样式 浅黄色buff 橙色orange 玫红色pink 白色white 暗灰色dark */
+/* 新增样式 浅黄色buff 橙色orange 玫红色pink 白色white */
 .btn-buff {
   color: #555555;
   background-color: #fdf7ed;
@@ -306,12 +356,13 @@ input[type="button"].btn-block {
 .btn-pink:hover,
 .btn-pink:focus,
 .btn-pink:active,
+.btn-pink.hover,
 .btn-pink.active,
 .btn-pink.disabled,
 .btn-pink[disabled] {
   color: #ffffff;
   background-color: #de126f;
-  *background-color: #df8505;
+  *background-color: #d50865;
 }
 .btn-pink:active,
 .btn-pink.active {
@@ -566,31 +617,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 
-.btn {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.btn-big {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.btn-large {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.btn-small {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-.btn-mini {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
+
 
 /* 按钮文字阴影 */
 /* 暂时不使用
@@ -609,5 +636,4 @@ input[type="submit"].btn.btn-mini {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 */
-
 

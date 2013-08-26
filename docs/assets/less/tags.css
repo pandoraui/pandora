@@ -2,7 +2,7 @@
 /*!
  * tags.css v1.0
  * Author Pandora
- */
+**/
 
 /* tagcc,tagback */
 
@@ -76,7 +76,7 @@
 }
 
 .tagsback i,
-.tagsgift i {
+.tagsgift i { 
     padding: 0 3px;
     min-width: 30px;
     _width: 30px;
@@ -153,7 +153,7 @@
     text-indent: 0;
 }
 
-/* tags201	促销大ICON-橙色 */
+/* tags201 促销大ICON-橙色 */
 .tags201 { 
     width: 72px; 
     height: 26px;
@@ -167,9 +167,10 @@
     color: #ee6600;
     text-align: center;
     text-indent: 0;
+    top:0 !important;
 }
 
-/* tags301	项目tags 301超级自由行 302开心驴行 */
+/* tags301 项目tags 301超级自由行 302开心驴行 */
 .tags301,
 .tags302 {
     display:inline-block; 
@@ -187,10 +188,10 @@
 
 
 
-/* .tag 标签内使用 arial 字体垂直居中表现很好
+/* .tags 标签内使用 arial 字体垂直居中表现很好
  * author: linjianfeng@baixing.com
  */
-.tag {
+.tags {
     font-family: Arial,sans-serif;
     display: inline-block;
     padding: 0 3px;
@@ -200,16 +201,16 @@
     border-radius: 2px;
     color: #888 !important;
 }
-.tag-blue, 
-.tag-green, 
-.tag-red, 
-a.tag:hover {
+.tags-blue, 
+.tags-green, 
+.tags-red, 
+a.tags:hover {
     color: #fff !important;
 }
-.tag-blue { background: #08c; }
-.tag-green { background: #5ba533; }
-.tag-red { background: #f36; }
-a.tag:hover { 
+.tags-blue { background: #08c; }
+.tags-green { background: #5ba533; }
+.tags-red { background: #f36; }
+a.tags:hover { 
     background: #888;
     text-decoration: none;
     color: #fff !important;
