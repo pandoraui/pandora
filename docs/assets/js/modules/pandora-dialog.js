@@ -383,7 +383,7 @@
 
                 //button[expando + "callback"] = expando; 
                 $(button).attr({
-                    "class": "btn btn-small " + className + ""
+                    "class": "pbtn pbtn-small " + className + ""
                 }).html(buttonAgs.value);
 
                 $(this.wrap).find("[data-btn=btns]").append(button);
@@ -483,10 +483,10 @@
         templateType: "default",
         templateUrl: "/pandora/docs/assets/js/modules/template.html",
 
-        button: null,
-        fixed: true,
-        mask: true,
-        drag: false,
+        button: null, // 按钮数组 参数{value, className, callback} 按钮名称 样式名 回调函数 ----此具体使用请参考示例341 按钮组的调用 
+        fixed: true, // 跟随
+        mask: true, // 遮罩
+        drag: false, // 拖动 
 
         initialize: null, // 对话框初始化后执行的函数
         beforeunload: null, // 对话框关闭前执行的函数
@@ -503,7 +503,7 @@
         height: "auto",
 
         skin: "",   // 皮肤
-        wrapClass: "", // dialog 规格 通过className 名 控制
+        wrapClass: "", // dialog 规格 通过className 名 控制 可选参数：dialog-mini dialog-middle dialog-big dialog-large
         maskClass: "overlay",
         zIndex: 4000
     };
@@ -533,6 +533,6 @@
     };
 
     // 调用方式采用 $("").dialog() 和 pandora.dialog() 两种方式
-    $.fn.dialog = pandora.dialog = Factory;
+    $.dialog = $.fn.dialog = pandora.dialog = Factory;
     global.pandora = pandora;
 }(this, jQuery));

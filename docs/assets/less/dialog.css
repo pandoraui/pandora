@@ -25,8 +25,8 @@
     width: 400px;
     border: 0;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
+    background-color: rgba(0, 0, 0, 0.2);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#33000000, endColorstr=#33000000);
     font:12px/22px Tahoma,Arial,\5b8b\4f53,sans-serif;
     color: #4d4d4d;
 }
@@ -51,6 +51,7 @@
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    outline: none;
     color: #000;
     opacity: 0.4;
     filter: alpha(opacity=40);
@@ -75,14 +76,16 @@
     padding: 0 10px;
     height: 32px;
     line-height: 32px;
-    background: #eee;
     font-size: 14px;
     font-weight: bold;
+    /*
     background: -webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#f1f1f1));
     background: -moz-linear-gradient(top,#fcfcfc,#f1f1f1);
     background:   -o-linear-gradient(top,#fcfcfc,#f1f1f1);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f1f1f1');
-    background: linear-gradient(top,#fcfcfc,#f1f1f1);
+    background: linear-gradient(#fcfcfc,#f1f1f1);
+    */
+    background: #eee;
 }
 
 .dialog-header small {
@@ -107,14 +110,16 @@
     text-align: right;
 }
 
-.dialog-footer .btn {
+.dialog-footer .btn,
+.dialog-footer .pbtn {
     margin-left: 10px;
 }
 
 .dialog .tc {
     text-align: center;
 }
-.dialog .tc .btn{
+.dialog .tc .btn,
+.dialog .tc .pbtn {
     margin: 0 5px;
 }
 
