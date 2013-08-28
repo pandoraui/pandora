@@ -13,6 +13,9 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
 <script src="../assets/js/modules/pandora-dialog.js"></script>
+<style>
+h5{color:green;}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -30,7 +33,7 @@
         </li>
         <li>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</li>
     </ul>
-    <p><strong>TODO：</strong></p>
+    <p><strong>TODO：</strong>dialog实现iframe内容自适应其宽度、高度；支持定义点击遮罩层也关闭弹窗</p>
     
 	<h3>注意事项：</h3>
     <p><strong>依赖</strong>——使用实现模态窗口/弹出框，请确保页面已经引用了如下文件：</p>
@@ -91,8 +94,10 @@
         	<li>content 为提醒内容</li>
         	<li>callback 回调函数</li>
         </ul>
+        
         <h5>示例111</h5>
         <p><button class="pbtn" id="demo111">alert 的模态提醒</button></p>
+        
     </div>
 <pre class="prettyprint linenums">
 // 下面三种调用方式等效，推荐使用 $.alert 实现alert提醒
@@ -114,6 +119,35 @@ $(function(){
 })
 </script>
     
+    
+    
+    <h3>定时信息 <small>$.msg</small></h3>
+    <div class="docs-example">
+        <h4>实现操作提醒，并定时自动关闭。</h4>
+        <p>参数说明 <code>$.msg(content, time)</code> 示例如下：</p>
+        <ul>
+        	<li>content 为提醒内容</li>
+        	<li>time 数值定时器，单位为毫秒，缺省值：2000</li>
+        </ul>
+        
+        <h5>示例112</h5>
+        <p><button class="pbtn" id="demo112">点击保存</button></p>
+    </div>
+<pre class="prettyprint linenums">
+// 定时消息
+
+// 示例112
+$.msg("保存成功",2000); // 默认即两秒钟，可以缺省
+</pre>
+<script>
+// 示例：alert 的模态提醒
+$(function(){
+    // 示例112
+    $("#demo112").click(function () {
+        $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
+    });
+})
+</script>
     
     
     <h3>2、confirm 的模态提醒 <small>$.confirm</small></h3>
@@ -185,7 +219,11 @@ $(function(){
             $(that).parent().parent().remove();
         });
     });
+
+    
 })
+
+
 </script>
     
     
@@ -255,9 +293,10 @@ $(function(){
     $("#demo311").click(function () {
         pandora.dialog({
             title: "自定义标题",
-            content: "标准模式中，实现提醒标题和提醒内容的自定义，此默认配置不调用确定、取消的按钮。"
+            content: "默认的窗口：标准模式中，实现提醒标题和提醒内容的自定义，此默认配置不调用确定、取消的按钮。"
         });
     });
+    
 })
 </script>
     
@@ -267,7 +306,11 @@ $(function(){
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <h5>示例321</h5>
         <p><button class="pbtn" id="demo321">显示弹窗按钮</button></p>
+        
         <h5>示例322</h5>
+        <p><button class="pbtn" id="demo312">弹窗内容高过窗口时</button></p>
+        
+        <h5>示例323</h5>
         <p><button class="pbtn" id="demo322">显示弹窗按钮，并自定义按钮文字及事件</button></p>
     </div>
 <pre class="prettyprint linenums">
@@ -283,6 +326,14 @@ pandora.dialog({
 });
 
 // 示例322
+pandora.dialog({
+    title: "弹窗内容高过窗口时",
+    content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。N多换行后，再高的内容，我也能看到内容最下面的部分。",
+    ok: true,
+    cancel: true
+});
+
+// 示例323
 pandora.dialog({
     content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
     okValue: "保存修改",
@@ -308,6 +359,17 @@ $(function(){
     // 示例322
     $("#demo322").click(function () {
         pandora.dialog({
+            wrapClass: "dialog-big", 
+            title: "弹窗内容高过窗口时",
+            content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分<br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分。",
+            ok: true,
+            cancel: true
+        });
+    });
+    
+    // 示例323
+    $("#demo323").click(function () {
+        pandora.dialog({
             content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
             okValue: "保存修改",
             ok: function () {
@@ -328,7 +390,7 @@ $(function(){
         <h5>示例331</h5>
         <p><button class="pbtn" id="demo331">点击弹窗按钮，重写该弹窗提醒信息</button></p>
         <h5>示例332</h5>
-        <p><button class="pbtn" id="demo332">N秒后自动关闭提醒</button></p>
+        <p><button class="pbtn" id="demo332">保存成功及与后台的交互</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
@@ -417,7 +479,7 @@ pandora.dialog({
     ],
     okValue: "取消",
     ok: function () {
-        $.alert("你选择了认同");
+        $.msg("你点击了取消");
     }
 });
 </pre>
@@ -446,7 +508,7 @@ $(function(){
             ],
             okValue: "取消",
             ok: function () {
-                $.alert("你选择了认同");
+                $.msg("你点击了取消");
             }
         });
     });
@@ -594,6 +656,13 @@ $(function(){
             }
         });
     });
+    
+    
+    //$.dialog('<iframe scrolling="no" frameborder="0" src="http://www.lvmama.com/" marginheight="0" marginwidth="0"></iframe>');
+    
+    
+    
+    
 })
 </script>
     

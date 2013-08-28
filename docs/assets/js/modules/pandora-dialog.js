@@ -116,6 +116,7 @@
             that.content(config.content);
             that._zIndex();
             that._reset();
+            that.time(config.time);
             
 
             if (config.mask === true) {
@@ -236,13 +237,22 @@
         _reset: function () {
             var wrap = this.wrap,
                 wh = $(window).height(),
-                oh = wrap.height();
+                oh = wrap.height(),
+                top,
+                left;
 
             if (wh - oh >= 50) {
                 wrap.css("position", this.config.fixed ? "fixed" : "absolute");
                 this.offsets();
             } else {
-                wrap.css("position", "absolute");
+                top = $(window).scrollTop() + 10;
+                left = ($(window).width() - wrap.width()) / 2,
+                
+                wrap.css({
+                    "position": "absolute",
+                    "top": parseInt(top) + "px",
+                    "left": parseInt(left) + "px"
+                });
             }
             
         },
@@ -316,8 +326,12 @@
          * @param {String, HTMLElement} 内容 (可选)
          */
         content: function (content) {
+            
             this.wrap.find("div.dialog-content").html(content);
-
+            
+            //var contentWindow = this.wrap.find("iframe")[0].contentWindow.document;
+            //console.log($(contentWindow).html());
+            
             return this;
         },
 
@@ -413,6 +427,33 @@
 
             return this;
         },
+        
+        /** 
+         * 定时关闭 
+         * @param {Number} 单位毫秒, 无参数则停止计时器 
+         */ 
+        time: function (time) { 
+            var that = this, 
+            timer = this._timer; 
+
+            if (timer) { 
+                clearTimeout(timer); 
+            } 
+
+            if (time) { 
+
+                // 卸载所有按钮事件及清空所有按钮 
+                that._unbindEvent(); 
+                $(that.wrap).find("[data-btn=btns]").html(""); 
+
+                this._timer = setTimeout(function () { 
+                    that.close(); 
+                }, time); 
+
+            }; 
+
+            return this; 
+        },
 
         /**
          * 关闭
@@ -429,6 +470,8 @@
 
             this._unmask();
             this._unbindEvent();
+            
+            this.time();
             delete Dialog.list[config.id];
 
             if (universe !== null) {
@@ -498,6 +541,8 @@
 
         content: "",
         title: "消息提醒",
+        
+        time: null,
 
         width: "400px",
         height: "auto",
@@ -507,6 +552,19 @@
         maskClass: "overlay",
         zIndex: 4000
     };
+    
+    var template = '<div class="dialog">'
+                 + '    <div class="dialog-inner clearfix">'
+                 + '        <a class="dialog-close" data-dismiss="dialog">&times;</a>'
+                 + '        <div class="dialog-header" data-title="title"></div>'
+                 + '        <div class="dialog-body">'
+                 + '            <div class="dialog-content clearfix" data-content="content">'
+                 + '            </div>'
+                 + '        </div>'
+                 + '        <div class="dialog-footer" data-btn="btns" >'
+                 + '        </div>'
+                 + '    </div>'
+                 + '</div>';
 
     var pandora = {};
 
@@ -520,6 +578,19 @@
             ok: true,
             beforeunload: callback
         });
+    }
+    
+    // 定时信息 
+    $.msg = pandora.msg = function (content, time, callback) { 
+        return Factory({ 
+            fixed: true, 
+            mask: false, 
+            wrapClass: "dialog-msg", 
+            content: content, 
+            time: time ? time : 2000, 
+            ok: true, 
+            beforeunload: callback 
+        }); 
     }
 
     $.confirm = pandora.confirm = function (content, ok, cancel) {

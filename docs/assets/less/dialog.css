@@ -25,8 +25,8 @@
     width: 400px;
     border: 0;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#33000000, endColorstr=#33000000);
+    background-color: rgba(0, 0, 0, 0.4);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
     font:12px/22px Tahoma,Arial,\5b8b\4f53,sans-serif;
     color: #4d4d4d;
 }
@@ -129,6 +129,19 @@
 }
 .dialog-mini .dialog-body {
     padding-top: 30px;
+}
+
+
+.dialog-msg .dialog-close,
+.dialog-msg .dialog-header,
+.dialog-msg .dialog-footer {
+    display: none;
+}
+.dialog-msg {
+    width: auto;
+}
+.dialog-msg .dialog-body {
+    padding: 15px 30px;
 }
 
 .dialog-mini {

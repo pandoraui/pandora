@@ -59,11 +59,17 @@ input {
 	height: auto;
 	line-height: auto;
 }
+/*
 .pbtn:focus {
     outline: thin dotted #333;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+*/
+.pbtn:focus {
+    outline: none;
+}
+
 .pbtn:hover,
 .pbtn:focus {
 	text-decoration: none;
