@@ -542,7 +542,7 @@
         content: "",
         title: "消息提醒",
         
-        time: null,
+        time: null, //自动消失定时器
 
         width: "400px",
         height: "auto",

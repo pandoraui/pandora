@@ -376,6 +376,8 @@
                     
                     <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>5元</i></span>
                     
+                    <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>&yen;5元</i></span>
+                    
                     <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>折扣返现</em><i>20元</i></span>
                     <pre>&lt;span class="tagsback" tip-title="提示标题" tip-content="提示内容"&gt;&lt;em&gt;折扣&lt;/em&gt;&lt;i&gt;7.9折&lt;/i&gt;&lt;/span&gt;</pre>
                 </p>

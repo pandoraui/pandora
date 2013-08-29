@@ -10,6 +10,7 @@
     <div class="sidebar">
         <ul class="nav none">
             <li><a href="#devtools">开发工具</a></li>
+            <li><a href="#list">轮子列表</a></li>
             <li><a href="#solutions">兼容解决方案</a></li>
             <li><a href="#markdown">Markdown</a></li>
             <li><a href="#minify">Minify</a></li>
@@ -29,6 +30,26 @@
             <p>这里收集<strong>那些造好的轮子</strong>，具备良好的设计与实现，并方便我们进行快速开发使用的工具</p>
             <p><strong>注：</strong>如果你也知道一些好的轮子，不妨拿出来和大家分享一下!</p>
             <p><strong>TODO：</strong> 可想而知好轮子很多，所以左侧导航要按分类来整理，每个轮子的介绍中附加一些参考网址效果更好。</p>
+        </section>
+        
+        
+        
+        <section id="list">
+            <h1>轮子列表</h1>
+            <p>把好轮子列出来给大家借鉴使用：</p>
+            
+            <ul>
+                <li><a target="_blank" href="/cnbootstrap/cndocs/solution.php">兼容解决方案</a></li>
+                <li><a target="_blank" href="modules/markdown.html">Markdown</a></li>
+                <li><a target="_blank" href="solutions/data-image.html">内联图片</a></li>
+                <li><a target="_blank" href="solutions/use-img-place.html">在线占位图片</a></li>
+                <li><a target="_blank" href="https://github.com/webcoding/useGit">Git 入门</a></li>
+                <li><a target="_blank" href="https://github.com/webcoding/nodejs">nodejs 入门学习</a></li>
+                <li><a target="_blank" href="modules/htmlchar.html">HTML特殊符号对照表</a></li>
+                <li><a target="_blank" href="/cnbootstrap/cndocs/bugs-and-fixed.php">常见Bugs列表</a></li>
+                <li><a target="_blank" href="wheels/fe-online-edit-test-tools.html">前端在线编辑测试工具</a></li>
+            </ul>
+            
         </section>
         
         
