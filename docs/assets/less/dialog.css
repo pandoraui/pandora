@@ -101,6 +101,13 @@
 .dialog-body {
     padding: 20px 20px 20px;
 }
+
+.dialog-body h3,
+.dialog-body h4 {
+    margin:0 0 10px;
+}
+
+
 .dialog-body p {
     margin:0 0 10px;
 }

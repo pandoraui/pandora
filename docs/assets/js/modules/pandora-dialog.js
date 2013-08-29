@@ -114,6 +114,7 @@
 
             that.title(config.title);
             that.content(config.content);
+            that.size(config.width,config.height);
             that._zIndex();
             that._reset();
             that.time(config.time);
@@ -544,8 +545,8 @@
         
         time: null, //自动消失定时器
 
-        width: "400px",
-        height: "auto",
+        width: "",  // 默认宽度400，由css控制
+        height: "",
 
         skin: "",   // 皮肤
         wrapClass: "", // dialog 规格 通过className 名 控制 可选参数：dialog-mini dialog-middle dialog-big dialog-large

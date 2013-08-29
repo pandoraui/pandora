@@ -261,8 +261,8 @@ pandora.dialog.defaults = {
     
     time: null, //自动消失定时器
 
-    width: "400px", // 默认宽度
-    height: "auto", // 默认高度
+    width: "",  // 默认宽度400，由css控制
+    height: "",
 
     skin: "",   // 皮肤
     wrapClass: "", // dialog 规格 通过className 名 控制，可选参数：dialog-mini dialog-middle dialog-big dialog-large
@@ -310,10 +310,10 @@ $(function(){
         <p><button class="pbtn" id="demo321">显示弹窗按钮</button></p>
         
         <h5>示例322</h5>
-        <p><button class="pbtn" id="demo312">弹窗内容高过窗口时</button></p>
+        <p><button class="pbtn" id="demo322">弹窗内容高过窗口时</button></p>
         
         <h5>示例323</h5>
-        <p><button class="pbtn" id="demo322">显示弹窗按钮，并自定义按钮文字及事件</button></p>
+        <p><button class="pbtn" id="demo323">显示弹窗按钮，并自定义按钮文字及事件</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
@@ -462,7 +462,7 @@ $(function(){
 
 // 示例341
 pandora.dialog({
-    content: "您认同使用模态窗口好过原生弹窗吗？",
+    content: "&lt;h4&gt;您认同使用模态窗口好过原生弹窗吗？&lt;/h4&gt;",
     button: [{
         value: "认同",
         className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
@@ -491,7 +491,7 @@ $(function(){
     // 示例341
     $("#demo341").click(function () {
         pandora.dialog({
-            content: "您认同使用模态窗口好过原生弹窗吗？",
+            content: "<h4>您认同使用模态窗口好过原生弹窗吗？</h4><p>说明：使用模态窗口，能实现全站的弹窗统一，外观能够控制，方便修改，功能上也可定制，实在是网页设计的必备武器！</p>",
             button: [{
                 value: "认同",
                 className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
@@ -596,6 +596,9 @@ $(function(){
         <p>参数说明：详请参考示例：</p>
         <h5>示例411</h5>
         <p><button class="pbtn" id="demo411">ajax 调用示例</button></p>
+        
+        <h5>示例412</h5>
+        <p><button class="pbtn" id="demo412">ajax 保存数据</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 示例：ajax 调用示例
@@ -625,6 +628,23 @@ pandora.dialog({
             }
         });
     }
+});
+
+// 示例412
+$("#demo412").click(function () {
+    var that = this;
+    $.ajax({
+        type: "GET",
+        url: "ajax.html",
+        dataType: "html",
+        success: function (data) {
+            $.msg("保存成功");
+        },
+        error: function(){
+            $.msg("保存异常");
+        }
+    });
+    
 });
 </pre>
 <script>
@@ -659,17 +679,55 @@ $(function(){
         });
     });
     
-    
-    //$.dialog('<iframe scrolling="no" frameborder="0" src="http://www.lvmama.com/" marginheight="0" marginwidth="0"></iframe>');
-    
+    // 示例412
+    $("#demo412").click(function () {
+        var that = this;
+        $.ajax({
+            type: "GET",
+            url: "/pandora/docs/assets/js/modules/ajax.html",
+            dataType: "html",
+            success: function (data) {
+                //pandora.dialog(data);
+                
+                $.msg("保存成功");
+            },
+            error: function(){
+                $.msg("保存异常");
+            }
+        });
+        
+    });
     
     
     
 })
 </script>
     
+    <h3>5、调用 iframe 页面 <small></small></h3>
+    <div class="docs-example">
+        <h4>实现iframe页面的调用</h4>
+        <p>有时遇到页面样式冲突问题，业务逻辑上的处理问题，我们需要使用iframe的方式来调用dialog弹窗，下面给出示例：</p>
+        <h5>示例511</h5>
+        <p><button class="pbtn" id="demo511">调用 iframe 页面</button></p>
+        
+    </div>
+<pre class="prettyprint linenums">
     
-
-
+</pre>
+<script>
+// 示例：标准模式的使用
+$(function(){
+    // marginheight="0" marginwidth="0" 实现iframe内页面的body无margin值
+    $("#demo511").click(function(){
+        $.dialog({
+            title: "iframe 调用测试",
+            content: '<iframe scrolling="no" frameborder="0" src="typo.html" marginheight="0" marginwidth="0"></iframe>',
+            width: "800px"
+        });
+        
+    })
+    
+})
+</script>
 </body>
 </html>
