@@ -17,7 +17,8 @@
 
 pre .str, code .str { color: #65B042; } /* string  - green */
 pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
-pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+/* 
+pre .com, code .com { color: #AEAEAE; font-style: italic; } comment - gray */
 pre .typ, code .typ { color: #89bdff; } /* type - light blue */
 pre .lit, code .lit { color: #3387CC; } /* literal - blue */
 pre .pun, code .pun { color: ; } /* punctuation - white */
@@ -56,7 +57,9 @@ ol.linenums li {
   pre .kwd, code .kwd { color: #006; font-weight: bold; }
   pre .com, code .com { color: #600; font-style: italic; }
   pre .typ, code .typ { color: #404; font-weight: bold; }
+  /*
   pre .lit, code .lit { color: #044; }
+  */
   pre .pun, code .pun { color: #440; }
   pre .pln, code .pln { color: #000; }
   pre .tag, code .tag { color: #006; font-weight: bold; }
