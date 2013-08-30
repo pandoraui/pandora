@@ -86,7 +86,9 @@ h5{color:green;}
     <p>pandora.dialog 有两种调用方式，第一种简化模式，方便快捷；第二种标准模式，拥有更多的可选项。详情请参看示例：</p>
     <p><strong>注意：</strong>简化模式中，pandora 可用 $ 简化替代，如 <code>$.alert(content)</code> 等效于 <code>pandora.alert(content)</code> 。</p>
     
-    <h3>1、alert 的模态提醒 <small>$.alert</small></h3>
+    <h2>1、简化模式 <small>静态方法重写标准方法，调用更简单</small></h2>
+    
+    <h3>1.1、alert 的模态提醒 <small>$.alert</small></h3>
     <div class="docs-example">
         <h4>最简单的调用，静态方法实现alert的模态提醒</h4>
         <p>参数说明 <code>$.alert(content, callback)</code> 示例如下：</p>
@@ -121,7 +123,7 @@ $(function(){
     
     
     
-    <h3>定时信息 <small>$.msg</small></h3>
+    <h3>1.2、定时信息 <small>$.msg</small></h3>
     <div class="docs-example">
         <h4>实现操作提醒，并定时自动关闭。</h4>
         <p>参数说明 <code>$.msg(content, time)</code> 示例如下：</p>
@@ -130,27 +132,27 @@ $(function(){
         	<li>time 数值定时器，单位为毫秒，缺省值：2000</li>
         </ul>
         
-        <h5>示例112</h5>
-        <p><button class="pbtn" id="demo112">点击保存</button></p>
+        <h5>示例121</h5>
+        <p><button class="pbtn" id="demo121">点击保存</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 定时消息
 
-// 示例112
+// 示例121
 $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
 </pre>
 <script>
 // 示例：alert 的模态提醒
 $(function(){
-    // 示例112
-    $("#demo112").click(function () {
+    // 示例121
+    $("#demo121").click(function () {
         $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
     });
 })
 </script>
     
     
-    <h3>2、confirm 的模态提醒 <small>$.confirm</small></h3>
+    <h3>1.3、confirm 的模态提醒 <small>$.confirm</small></h3>
     <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span> 此 confirm 模态方法中，点击确定按钮请自写回调函数，可参考以下示例。</div>
     <div class="docs-example">
         <h4>静态方法实现 confirm 的模态提醒</h4>
@@ -160,19 +162,19 @@ $(function(){
         	<li>ok 为点击确定按钮的回调事件</li>
             <li>cancel 为点击取消按钮的回调事件</li>
         </ul>
-        <h5>示例211</h5>
-        <p><button class="pbtn" id="demo211">confirm 的模态提醒</button></p>
+        <h5>示例131</h5>
+        <p><button class="pbtn" id="demo131">confirm 的模态提醒</button></p>
         
-        <h5>示例212</h5>
+        <h5>示例132</h5>
         <table class="table-info" style="width:300px;">
         	<tr>
-                <td>这是一条信息-1</td><td class="tc"><button class="pbtn pbtn-small demo212">删除</button></td>
+                <td>这是一条信息-1</td><td class="tc"><button class="pbtn pbtn-small demo132">删除</button></td>
             </tr>
             <tr>
-                <td>这是一条信息-2</td><td class="tc"><button class="pbtn pbtn-small demo212">删除</button></td>
+                <td>这是一条信息-2</td><td class="tc"><button class="pbtn pbtn-small demo132">删除</button></td>
             </tr>
             <tr>
-                <td>这是一条信息-3</td><td class="tc"><button class="pbtn pbtn-small demo212">删除</button></td>
+                <td>这是一条信息-3</td><td class="tc"><button class="pbtn pbtn-small demo132">删除</button></td>
             </tr>
         </table>
         
@@ -181,8 +183,8 @@ $(function(){
 // 示例：confirm 的模态提醒
 // 其中的参数分别：提示内容、确定按钮的回调事件、取消按钮的回调事件
 
-// 示例211
-$("#demo211").click(function () {
+// 示例131
+$("#demo131").click(function () {
     $.confirm("你再也不相信爱情了么？", function () {
         $.alert("相信");
     }, function () {
@@ -190,8 +192,8 @@ $("#demo211").click(function () {
     });
 });
 
-// 示例212
-$(".demo212").click(function () {
+// 示例132
+$(".demo132").click(function () {
     var that = this;
     $.confirm("删除操作不可恢复，你确定要删除此信息？", function () {
         // 这里使用this返回当前dialog窗口，支持其链式操作
@@ -202,8 +204,8 @@ $(".demo212").click(function () {
 <script>
 // 示例：confirm 的模态提醒
 $(function(){
-    // 示例211
-    $("#demo211").click(function () {
+    // 示例131
+    $("#demo131").click(function () {
         $.confirm("你再也不相信爱情了么？", function () {
             $.alert("相信");
         }, function () {
@@ -211,8 +213,8 @@ $(function(){
         });
     });
     
-    // 示例212
-    $(".demo212").click(function () {
+    // 示例132
+    $(".demo132").click(function () {
         var that = this;
         $.confirm("删除操作不可恢复，你确定要删除此信息？", function () {
             // 这里使用this返回当前dialog窗口，支持其链式操作
@@ -227,7 +229,7 @@ $(function(){
 </script>
     
     
-    <h3 id="dialog-standard">3、标准模式 实现通用模态弹出框 <small>pandora.dialog({N多参数})</small></h3>
+    <h3 id="dialog-standard">通用模态弹出框参数列表 <small>pandora.dialog({N多参数})</small></h3>
     <div class="docs-example">
         <h4>标准模式实现通用弹出框</h4>
         <p>参数说明 <code>pandora.dialog(options)</code> 详情如下：</p>
@@ -271,7 +273,7 @@ pandora.dialog.defaults = {
 };
 </pre>
 
-    <h4>标准模式示例 <small>常用的标准示例</small></h4>
+    <h2>3、标准模式示例 <small>常用的标准示例 $.dialog(options)</small></h2>
     <div class="docs-example">
         <h4>3.1 实现提醒标题和提醒内容的自定义</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
