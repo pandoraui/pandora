@@ -66,7 +66,7 @@
 }
 .ui-step .ui-step-active .ui-step-arrow .arrow_r2 {
     right: 0;
-    border-color: transparent transparent transparent #d17;
+    border-color: transparent transparent transparent #e38;
     border-style: dashed dashed dashed solid;
 }
 .ui-step .ui-step-text {
@@ -108,11 +108,11 @@
     color: #000;
 }
 .ui-step .ui-step-done {
-    color: #d17;
+    color: #e38;
     font-weight: bold;
 }
 .ui-step .ui-step-active {
-    background: #d17;
+    background: #e38;
     color: #fff;
     font-weight: bold;
 }

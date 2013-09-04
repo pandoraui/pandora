@@ -30,17 +30,21 @@
     /* 修复此值为空时垂直对齐问题 */
     padding-right: 5px;
 }
+.selectbox .select-info {
+    margin: 0;
+}
+
 .select-info .select-arrow {
     position: absolute;
     top: 0;
     right: 0;
-    width: 26px;
+    width: 22px;
     height: 100%;
     cursor: pointer;
 }
 .select-arrow .ui-arrow-bottom {
     top: 12px;
-    right: 10px;
+    right: 6px;
 }
 
 /* 模拟输入框
@@ -74,8 +78,9 @@
     border: 1px solid #ccc;
     font-size: 12px;
     line-height: 26px;
-    max-height: 100px;
-    
+    max-height: 160px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .over-y-scroll {
     overflow-y: scroll;
@@ -118,6 +123,9 @@
 .selectbox {
     width: 162px;
 }
+.selectbox-min {
+    width: 42px;
+}
 .selectbox-mini {
     width: 62px;
 }
@@ -133,10 +141,11 @@
 .selectbox-large {
     width: 270px;
 }
+.selectbox-min .selectbox-drop { width: 96%; }
 .selectbox-mini .selectbox-drop { width: 97%; }
 .selectbox-small .selectbox-drop { width: 98%; }
 .selectbox-big .selectbox-drop,
-.selectbox-large .selectbox-drop { width: 99.5%;}
+.selectbox-large .selectbox-drop { width: 99.4%;}
 
 /* small尺寸 */
 .form-small .select-arrow {

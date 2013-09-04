@@ -21,7 +21,15 @@
     <p><strong>TODO：</strong></p>
     
     <div class="docs-example">
+        <h4>头部模板</h4>
+        <dl class="dl-horizontal">
+            <dt>标准模板</dt>
+            <dd>http://192.168.0.7/svn/focus/branches/chanpinbu/pet/lvmama_common/src/main/config/template/header.htm</dd>
+            <dt>专题js模板</dt>
+            <dd>http://www.lvmama.com/zt/web/common/header.js</dd>
+        </dl>
         <h4>super中常用项目文件夹：</h4>
+        
         <dl class="dl-horizontal">
             <dt>首页及频道：</dt>
             <dd>E:\SVN_work\super-chanpinbu\Super_front\WebContent\WEB-INF\pages\www</dd>
@@ -32,9 +40,6 @@
             <dt>积分商城：</dt>
             <dd>E:\SVN_work\super-chanpinbu\Super_front\WebContent\WEB-INF\pages\shop</dd>
             
-            <dt>境外酒店：</dt>
-            <dd>E:\SVN_work\super-chanpinbu\Super_globalhotel\WebContent\WEB-INF\pages\abroadhotel</dd>
-            
         </dl>
         <h4>focus中常用项目文件夹：</h4>
         <dl class="dl-horizontal">
@@ -44,6 +49,9 @@
             <dd>E:\SVN_work\focus\pet\pet_sso\src\main\webapp\login.jsp</dd>
             <dt>景点详情页</dt>
             <dd>/focus/pet/pet_dest/src/main/webapp/WEB-INF/pages/scenicDetail/scenicDetail.ftl</dd>
+            
+            <dt>度假酒店：</dt>
+            <dd>E:\SVN_work\focus\pet\pet_search\src\main\webapp\WEB-INF\ftl\hotel\hotel_search.ftl</dd>
         </dl>
         
         <h4>头部文件修改：<small>包含以下文件夹路径</small></h4>

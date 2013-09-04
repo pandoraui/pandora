@@ -331,14 +331,14 @@ fieldset[disabled] .pbtn-link:focus {
 
 .pbtn-white {
     color: #333;
-    border: 1px solid #cccccc;
+    border: 1px solid #ddd;
     background-color: #fff;
 }
 
 .pbtn-white:hover {
     color: #333;
-    border: 1px solid #adadad;
-    background-color: #ccc;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
 }
 .pbtn-light {
     color: #333;

@@ -10,6 +10,7 @@
 <![endif]-->
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
+<link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
 <style>
 .relative{position:relative;border-bottom:1px dashed #888;cursor:default;color:#245DC1;}
 .tiptext,
@@ -25,8 +26,15 @@
     <p>各种类型的信息提示框（排列顺序为：缺省/默认 信息/消息，警告，错误/危险，成功，帮助，停止，等待，正在进行……）</p>
     <p>对应如下：default info warning error success help stop wait loading，您也可以查看 老版本 使用ICON实现的 <a target="_blank" href="/cnbootstrap/cndocs/solutions/alerts.html">信息提示框</a></p>
     
-    <p><strong class="tags">注意事项：</strong>这里的行内提醒附加tip-line实现与表单input行内混用，因现定规格input有30px和26px高度;故tiptext默认30px;</p>
-	<p><strong>TODO提醒：</strong>字体图标集虽已全兼容，但字体加载仍有延迟（特别是老旧浏览器），有时会出现闪动，另外针对信息提示框的显示，表示字体图标不够精致，可设置两个方案，精致版的图标集 VS 简单且方便扩展的文字图标集。</p>
+    <p><strong class="tags">注意事项：</strong>这里的行内提醒附加tip-line实现与表单input行内混用，因现定规格input有30px和26px高度;故tiptext默认30px;关于26px高度的实现请在父层添加.form-small样式。</p>
+    
+	<p><strong>TODO提醒：</strong>字体图标集虽已全兼容，但字体加载仍有较大延迟（特别是老旧浏览器），有时会出现闪动，另外针对信息提示框的显示，表示字体图标不够精致，可设置两个方案，精致版的图标集 VS 简单且方便扩展的文字图标集。</p>
+    
+    <h2>方案一 <small>精致版的图标集方案（推荐使用）</small></h2>
+    <p><strong>依赖</strong>——方案一使用<b>ICON图标集</b>实现 tip 信息提醒框，使用前请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="http://pic.lvmama.com/styles/v4/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/tip.css</a> tip之ICON图标集样式</li>
+    </ul>
     <h3>tip-icon 提示信息状态标识ICON</h3>
     <div class="docs-example">
         <h4>提供一般的icon状态标识 <small>可单独引用</small></h4>
@@ -52,7 +60,23 @@
         </p>
     </div>
 <pre class="prettyprint linenums">
+&lt;span class="tip-icon tip-icon-default"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-warning"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-error"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-success"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-help"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-stop"&gt;&lt;/span&gt;
+&lt;span class="tip-icon tip-icon-wait"&gt;&lt;/span&gt;
 
+&lt;span class="tip-icon-big tip-icon-big-default"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-info"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-warning"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-error"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-success"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-help"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-stop"&gt;&lt;/span&gt;
+&lt;span class="tip-icon-big tip-icon-big-wait"&gt;&lt;/span&gt;
 </pre>
     <h3>poptip-mini 尖角小提示</h3>
     <p>是poptip 类的一种，称为poptip-mini类（带有尖锐的箭头，内容一般较少且单行），实现浮动式的提醒提示。</p>
@@ -67,7 +91,10 @@
         <div class="f12">这是一段测试，针对其中某些<span class="relative">重要部分<span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span></span>需要一些提示层来做<span class="relative">着重提醒</span>，此处用于展示几个基本的<span class="relative">提示层</span>。</div>
     </div>
 <pre class="prettyprint linenums">
-
+&lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-top"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
+&lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-bottom"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
+&lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-left"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
+&lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-right"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
 </pre>    
     
     
@@ -226,6 +253,7 @@
         
         
         <h4>大段文本的展示</h4>
+        <p>大段文本也可以附带三角箭头指示方位</p>
         <span class="tiptext tip-info">
             <span class="ui-close">&times;</span>
             <div class="tip-arrow tip-arrow-11">
@@ -254,6 +282,14 @@
     
     <h3>tipbox 提示框</h3>
     <div class="docs-example">
+        <div class="tipbox tip-success tip-nowrap">
+            <span class="tip-icon-big tip-icon-big-success"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">无边框信息提醒！！！</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
+        </div>
         <div class="tipbox tip-info">
             <span class="ui-close">&times;</span>
             <span class="tip-icon-big tip-icon-big-info"></span>
@@ -312,6 +348,8 @@
             </div>
         </div>
         
+        
+        
         <h4>更复杂的提示框</h4>
         <p>此提醒框可用于展示框信息，无状态icon提醒的一般信息展示</p>
         <div class="tipbox tip-warning">
@@ -327,7 +365,7 @@
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
             </div>
         </div>
-        <div class="tipbox tip-warning">
+        <div class="tipbox tip-loading">
             <span class="ui-close">&times;</span>
             <span class="tip-icon-big tip-icon-big-loading"></span>
             <div class="tip-content">
@@ -337,22 +375,284 @@
             </div>
         </div>
         <h4>.tipbox与.tiptext的等价信息框</h4>
-        <p>选用规则：理论上通用，但推荐仅仅有文本时使用tiptext提醒，而结构复杂时，推荐使用tipbox</p>
-        <div class="tipbox tip-warning">
+        <p>选用规则：理论上通用，但推荐仅仅有文本时使用tiptext提醒，而涉及复杂结构或复杂操作的，建议使用tipbox</p>
+        <div class="tiptext tip-info">
             <span class="ui-close">&times;</span>
             <div class="tip-arrow tip-arrow-10">
                 <em>◆</em>
                 <i>◆</i>
             </div>
-            <div class="tip-other">测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890
+            <div class="tip-other"><b>tiptext 实现：</b> 测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890
+            </div>
+        </div>
+        
+        <div class="tipbox tip-info">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-10">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-other"><b>tipbox 实现：</b> 测试文本，这是一段测试文本12px/22px，用于测试页面的一些布局特性，不属于页面展现的一部分，开发请忽略。这是一段测试文本，具有比较长的文本内容，测试通栏显示效果及行高，通常含有比较变态的文本内容，测试特殊情况下文本对布局的影响，以及如何处理，如折断换行等。qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm1234567890
             </div>
         </div>
     </div>
 <pre class="prettyprint linenums">
 
 </pre>
-
+    
+    
+    
+    
+    <h2>方案二 <small>文字图标集（推荐使用）</small></h2>
+    <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告：暂时不使用以下文字图标集方案</div>
+    <p><strong>依赖</strong>——方案二使用<b>字体图标集</b>实现 tip 信息提醒框，使用前请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="http://pic.lvmama.com/styles/v4/modules/iconfont.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/iconfont.css</a> 文字图标集</li>
+        <li><a href="http://pic.lvmama.com/styles/v4/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/tip.css</a> tip之ICON图标集样式</li>
+    </ul>
+    
+    <p>带各类图标的提示文案，可带有提示箭头。以下摘自 AliceUI：</p>
+    
+    <div class="docs-example">
+        <p class="ui-tiptext ui-tiptext-error">
+            <i class="ui-tiptext-icon iconfont" title="出错"></i>
+            错误提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-message">
+            <i class="ui-tiptext-icon iconfont" title="提示"></i>
+            消息提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-warning">
+            <i class="ui-tiptext-icon iconfont" title="警告"></i>
+            警告提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-stop">
+            <i class="ui-tiptext-icon iconfont" title="阻止"></i>
+            停止提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-success">
+            <i class="ui-tiptext-icon iconfont" title="成功"></i>
+            成功提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-question">
+            <i class="ui-tiptext-icon iconfont" title="疑问"></i>
+            帮助提醒：自行编辑，非系统消息
+        </p>
+        
+        <p class="ui-tiptext ui-tiptext-wait">
+            <i class="ui-tiptext-icon iconfont" title="等待"></i>
+            等待提醒：自行编辑，非系统消息
+        </p>
+        
+    </div>
+    
+    <div class="docs-example">
+                
+        <div class="ui-tiptext-container ui-tiptext-container-error">
+            <p class="ui-tiptext ui-tiptext-error">
+                <i class="ui-tiptext-icon iconfont" title="出错"></i>
+                错误提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-message">
+            <p class="ui-tiptext ui-tiptext-message">
+                <i class="ui-tiptext-icon iconfont" title="提示"></i>
+                消息提醒：自行编辑，非系统消息
+            </p>
+            <div class="ui-tiptext-close iconfont"></div>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-warning">
+            <p class="ui-tiptext ui-tiptext-warning">
+                <i class="ui-tiptext-icon iconfont" title="警告"></i>
+                警告提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-stop">
+            <p class="ui-tiptext ui-tiptext-stop">
+                <i class="ui-tiptext-icon iconfont" title="阻止"></i>
+                停止提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-success">
+            <p class="ui-tiptext ui-tiptext-success">
+                <i class="ui-tiptext-icon iconfont" title="成功"></i>
+                成功提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-question">
+            <p class="ui-tiptext ui-tiptext-question">
+                <i class="ui-tiptext-icon iconfont" title="疑问"></i>
+                帮助提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-wait">
+            <p class="ui-tiptext ui-tiptext-wait">
+                <i class="ui-tiptext-icon iconfont" title="等待"></i>
+                等待提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <span class="ui-tiptext-container ui-tiptext-container-message ib">
+            <span class="ui-tiptext ui-tiptext-message">
+                <i class="ui-tiptext-icon iconfont" title="提示"></i>
+                消息提醒：自行编辑，非系统消息
+            </span>
+        </span>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-message">
+            <div class="ui-tiptext-arrow ui-tiptext-arrowup">
+                <em>◆</em>
+                <span>◆</span>
+            </div>
+            <p class="ui-tiptext ui-tiptext-message">
+                <i class="ui-tiptext-icon iconfont" title="提示"></i>
+                消息提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-message">
+            <div class="ui-tiptext-arrow ui-tiptext-arrowdown">
+                <em>◆</em>
+                <span>◆</span>
+            </div>
+            <p class="ui-tiptext ui-tiptext-message">
+                <i class="ui-tiptext-icon iconfont" title="提示"></i>
+                消息提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+        <div class="ui-tiptext-container ui-tiptext-container-message">
+            <div class="ui-tiptext-arrow ui-tiptext-arrowleft">
+                <em>◆</em>
+                <span>◆</span>
+            </div>
+            <p class="ui-tiptext ui-tiptext-message">
+                <i class="ui-tiptext-icon iconfont" title="提示"></i>
+                消息提醒：自行编辑，非系统消息
+            </p>
+        </div>
+        
+    </div>
+    
+    
+    <div class="docs-example">
+        <div class="ui-tipbox ui-tipbox-error">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="出错"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">错误标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-message">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="提示"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">提示标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-warning">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="警告"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">警告标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-stop">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="阻止"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">阻止标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-success">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="成功"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">成功标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-question">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="疑问"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">疑问标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+        
+        <div class="ui-tipbox ui-tipbox-wait">
+            <div class="ui-tipbox-icon">
+                <i class="iconfont" title="等待"></i>
+            </div>
+            <div class="ui-tipbox-content">
+                <h3 class="ui-tipbox-title">等待标题</h3>
+                <p class="ui-tipbox-explain">完成操作的一些说明。</p>
+                <p class="ui-tipbox-explain"><a href="#">查看详情</a> | <a href="#">返回首页</a></p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h3>对此你有什么看法：</h3>
+    <div id="uyan_frame"></div>
 </div>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/google-code-prettify/prettify.js"></script> 
+<!-- UY BEGIN -->
+<script type="text/javascript">
+$(function(){
+    // make code pretty
+    window.prettyPrint && prettyPrint()
+})
 
+
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
 </body>
 </html>
