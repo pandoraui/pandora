@@ -85,7 +85,7 @@ h5{color:green;}
     
     <h2>调用方式</h2>
     <p>pandora.dialog 有两种调用方式，第一种简化模式，方便快捷；第二种标准模式，拥有更多的可选项。详情请参看示例：</p>
-    <p><strong>注意：</strong>简化模式中，pandora 可用 $ 简化替代，如 <code>$.alert(content)</code> 等效于 <code>pandora.alert(content)</code> 。</p>
+    <p><strong>注意：</strong>此插件调用 pandora 可用 $ 简化替代，如 <code>pandora.alert(content)</code> 等效于 <code>$.alert(content)</code>。</p>
     
     <h2>1、简化模式 <small>静态方法重写标准方法，调用更简单</small></h2>
     
@@ -189,6 +189,7 @@ $("#demo131").click(function () {
     $.confirm("你再也不相信爱情了么？", function () {
         $.alert("相信");
     }, function () {
+        // 若无指定事件，则可省略此回调函数，默认会绑定关闭事件
         $.alert("不相信");
     });
 });
@@ -198,6 +199,7 @@ $(".demo132").click(function () {
     var that = this;
     $.confirm("删除操作不可恢复，你确定要删除此信息？", function () {
         // 这里使用this返回当前dialog窗口，支持其链式操作
+        
         $(that).parent().parent().remove();
     });
 });
@@ -210,6 +212,7 @@ $(function(){
         $.confirm("你再也不相信爱情了么？", function () {
             $.alert("相信");
         }, function () {
+            // 若无取消事件，则可省略，默认会调用关闭函数
             $.alert("不相信");
         });
     });
@@ -220,6 +223,7 @@ $(function(){
         $.confirm("删除操作不可恢复，你确定要删除此信息？", function () {
             // 这里使用this返回当前dialog窗口，支持其链式操作
             $(that).parent().parent().remove();
+            $.msg("删除成功");
         });
     });
 
@@ -244,12 +248,19 @@ $(function(){
 pandora.dialog.defaults = {
     templateNmae: "template-dialog", //模板名称
     templateType: "default",  //模板类型
-    templateUrl: "/pandora/docs/assets/js/modules/template.html", //模板路径
+    templateUrl: "template.html", //模板路径 暂不可用
 
     button: null, // 按钮数组 参数{value, className, callback} 按钮名称 样式名 回调函数 ----此具体使用请参考示例341 按钮组的调用 
     fixed: true, // 跟随
     mask: true, // 遮罩
     drag: false, // 拖动 
+    
+    // 对于dialog 内容切换
+    dialogAuto: false,
+    dialogAutoTop: 60,
+
+    // iframe 默认给个初始高度300
+    initialHeight: "300px",
 
     initialize: null, // 对话框初始化后执行的函数
     beforeunload: null, // 对话框关闭前执行的函数
@@ -274,12 +285,18 @@ pandora.dialog.defaults = {
 };
 </pre>
 
-    <h2>3、标准模式示例 <small>常用的标准示例 $.dialog(options)</small></h2>
+    <h2>3、标准模式示例 <small>常用的标准示例 pandora.dialog(options) 或 $.dialog(options)</small></h2>
     <div class="docs-example">
-        <h4>3.1 实现提醒标题和提醒内容的自定义</h4>
+        <h4>3.1 基础示例 <small>自定义标题、内容</small></h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <h5>示例311</h5>
-        <p><button class="pbtn" id="demo311">自定义弹窗的标题、内容</button></p>
+        <p><button class="pbtn" id="demo311">自定义标题、内容</button></p>
+        
+        <h5>示例312</h5>
+        <p><button class="pbtn" id="demo312">显示弹窗按钮</button></p>
+        
+        <h5>示例313</h5>
+        <p><button class="pbtn" id="demo313">弹窗内容高过窗口</button></p>
         
     </div>
 <pre class="prettyprint linenums">
@@ -289,6 +306,22 @@ pandora.dialog.defaults = {
 pandora.dialog({
     title: "自定义标题",
     content: "标准模式中，实现提醒标题和提醒内容的自定义，此默认配置不显示确定、取消的按钮。"
+});
+
+// 示例312
+pandora.dialog({
+    content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
+    ok: true,
+    cancel: true
+});
+
+// 示例313
+pandora.dialog({
+    wrapClass: "dialog-big", 
+    title: "弹窗内容高过窗口时",
+    content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。N多换行后，再高的内容，我也能看到内容最下面的部分。",
+    ok: true,
+    cancel: true
 });
 </pre>
 <script>
@@ -302,49 +335,88 @@ $(function(){
         });
     });
     
+    // 示例312
+    $("#demo312").click(function () {
+        pandora.dialog({
+            content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
+            ok: true,
+            cancel: true
+        });
+    });
+    
+    // 示例313
+    $("#demo313").click(function () {
+        pandora.dialog({
+            wrapClass: "dialog-big", 
+            title: "弹窗内容高过窗口时",
+            content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分<br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分。",
+            ok: true,
+            cancel: true
+        });
+    });
 })
 </script>
     
     
     <div class="docs-example">
-        <h4>3.2 调用确定、取消按钮</h4>
+        <h4>3.2 自定义按钮（包含按钮组）及回调函数</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <h5>示例321</h5>
-        <p><button class="pbtn" id="demo321">显示弹窗按钮</button></p>
+        <p><button class="pbtn" id="demo321">更改默认按钮</button></p>
         
         <h5>示例322</h5>
-        <p><button class="pbtn" id="demo322">弹窗内容高过窗口时</button></p>
+        <p><button class="pbtn" id="demo322">重写提醒</button></p>
         
         <h5>示例323</h5>
-        <p><button class="pbtn" id="demo323">显示弹窗按钮，并自定义按钮文字及事件</button></p>
+        <p><button class="pbtn" id="demo323">实现多个按钮（按钮组）</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
 
 // 示例321
 pandora.dialog({
-    pandora.dialog({
-        content: "显示弹窗按钮，不指定回调函数，点击即默认关闭弹窗。",
-        ok: true,
-        cancel: true
-    });
+    content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
+    okValue: "保存修改",
+    ok: function () {
+        $.msg("保存成功");
+    },
+    cancelValue: "关闭",
+    cancel: true
 });
 
 // 示例322
 pandora.dialog({
-    title: "弹窗内容高过窗口时",
-    content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。N多换行后，再高的内容，我也能看到内容最下面的部分。",
-    ok: true,
+    content: '点击“重写提醒”按钮，将使用链式操作重写弹窗的提醒内容！',
+    okValue: "重写提醒",
+    ok: function () {
+        this
+        .title("警告")
+        .content("使用链式操作重写该弹窗提醒，在回调函数使用return false 不会关闭当前弹出框");
+        return false;
+    },
+    cancelValue: "关闭",
     cancel: true
 });
 
 // 示例323
 pandora.dialog({
-    content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
-    okValue: "保存修改",
-    ok: function () {
-        $.alert("保存成功");
+    content: "&lt;h4&gt;您认同使用模态窗口好过原生弹窗吗？&lt;/h4&gt;",
+    button: [{
+        value: "认同",
+        className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
+        callback: function () {
+            $.msg("你选择了认同",1000);
+            return false;
+        }
     },
+    {
+        value: '不认同',
+        className: "pbtn-orange",
+        callback: function () {
+            $.msg('你选择了不认同',1000)
+        }
+    }
+    ],
     cancelValue: "关闭",
     cancel: true
 });
@@ -355,8 +427,12 @@ $(function(){
     // 示例321
     $("#demo321").click(function () {
         pandora.dialog({
-            content: "显示弹窗按钮，不指定回调函数，点击即默认关闭弹窗。",
-            ok: true,
+            content: "更改默认按钮文字，绑定回调函数。",
+            okValue: "保存修改",
+            ok: function () {
+                $.alert("你点击了保存修改！");
+            },
+            cancelValue: "关闭",
             cancel: true
         });
     });
@@ -364,10 +440,15 @@ $(function(){
     // 示例322
     $("#demo322").click(function () {
         pandora.dialog({
-            wrapClass: "dialog-big", 
-            title: "弹窗内容高过窗口时",
-            content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分<br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分。",
-            ok: true,
+            content: '点击“重写提醒”按钮，将使用链式操作重写弹窗的提醒内容！',
+            okValue: "重写提醒",
+            ok: function () {
+                this
+                .title("警告")
+                .content("使用链式操作重写该弹窗提醒，在回调函数使用return false 不会关闭当前弹出框");
+                return false;
+            },
+            cancelValue: "关闭",
             cancel: true
         });
     });
@@ -375,45 +456,59 @@ $(function(){
     // 示例323
     $("#demo323").click(function () {
         pandora.dialog({
-            content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
-            okValue: "保存修改",
-            ok: function () {
-                $.alert("保存成功");
+            content: "<h4>您认同使用模态窗口好过原生弹窗吗？</h4><p>说明：使用模态窗口，能实现全站的弹窗统一，外观能够控制，方便修改，功能上也可定制，实在是统一网页设计弹窗的必备武器！</p>",
+            button: [{
+                value: "认同",
+                className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
+                callback: function () {
+                    $.alert("你选择了认同");
+                    //return false;
+                }
             },
+            {
+                value: '不认同',
+                className: "pbtn-orange",
+                callback: function () {
+                    $.msg('你选择了不认同',1000)
+                }
+            }
+            ],
             cancelValue: "关闭",
             cancel: true
         });
     });
+    
 })
 </script>
     
     
     
+    
     <div class="docs-example">
-        <h4>3.3 弹窗按钮的回调事件</h4>
+        <h4>3.3 弹窗高度检测</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <h5>示例331</h5>
-        <p><button class="pbtn" id="demo331">点击弹窗按钮，重写该弹窗提醒信息</button></p>
-        <h5>示例332</h5>
-        <p><button class="pbtn" id="demo332">保存成功及与后台的交互</button></p>
+        <p><button class="pbtn" id="demo331">弹窗高度检测</button></p>
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
 
 // 示例331
 pandora.dialog({
-    content: "点击确定，重写该弹窗提醒信息",
-    okValue: "重写提醒",
-    ok: function () {
-        this
-        .title("警告")
-        .content("在回调函数使用return false 不会关闭当前弹出框");
+    dialogAuto: true,   // 实现弹窗高度自检测变化
+    dialogAutoTop: 60,  // 默认固定于据页面顶部60px位置
+    content: "弹窗随内容变化自适应变化高度",
+    okValue: "修改内容",
+    ok: function(){
+        this.title("高度自适应测试").content("改变内容后，其高度发生变化，弹窗高度自适应变化");
+        return false;
+    },
+    cancelValue: "再次修改内容",
+    cancel: function(){
+        this.title("高度自适应测试").content("改变内容后，其高度发生变化，弹窗高度自适应变化——弹窗高度自适应变化");
         return false;
     }
 });
-
-// 示例332
-
 </pre>
 <script>
 // 示例：标准模式的使用
@@ -421,29 +516,21 @@ $(function(){
     // 示例331
     $("#demo331").click(function () {
         pandora.dialog({
-            content: "点击确定，重写该弹窗提醒信息",
-            okValue: "重写提醒",
-            ok: function () {
-                this
-                .title("警告")
-                .content("在回调函数使用return false 不会关闭当前弹出框");
-
+            dialogAuto: true,   // 实现弹窗高度自检测变化
+            dialogAutoTop: 60,  // 默认固定于据页面顶部60px位置
+            content: "弹窗随内容变化自适应变化高度",
+            okValue: "修改内容",
+            ok: function(){
+                this.title("高度自适应测试").content("改变内容后，其高度发生变化，弹窗高度自适应变化<br><br><br><br>弹窗高度自适应变化");
+                //this.reset();   // 重置窗口
+                return false;
+            },
+            cancelValue: "再次修改内容",
+            cancel: function(){
+                this.title("高度自适应测试").content("改变内容后，其高度发生变化，弹窗高度自适应变化<br><br><br><br>弹窗高度自适应变化<br><br><br><br>弹窗高度自适应变化");
+                //this.reset();
                 return false;
             }
-        });
-    });
-    
-    // 示例332
-    $("#demo332").click(function () {
-        pandora.dialog({
-            content: "其他回调函数的使用，暂未制作示例",
-            okValue: "保存修改",
-            ok: function () {
-                var that = this;
-                $.msg("保存成功",2000);
-            },
-            cancelValue: "关闭",
-            cancel: true
         });
     });
 })
@@ -452,67 +539,20 @@ $(function(){
     
     
     <div class="docs-example">
-        <h4>3.4 按钮组方式调用</h4>
-        <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
+        <h4>3.4 复杂交互</h4>
+        <p></p>
         <h5>示例341</h5>
-        <p><button class="pbtn" id="demo341">按钮组方式调用</button></p>
+        <p><button class="pbtn" id="demo341">暂无示例</button></p>
     </div>
 <pre class="prettyprint linenums">
-// 示例：标准模式的使用
 
-// 示例341
-pandora.dialog({
-    content: "&lt;h4&gt;您认同使用模态窗口好过原生弹窗吗？&lt;/h4&gt;",
-    button: [{
-        value: "认同",
-        className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
-        callback: function () {
-            $.alert("你选择了认同");
-            return false;
-        }
-    },
-    {
-        value: '不认同',
-        className: "pbtn-orange",
-        callback: function () {
-            $.alert('你选择了不认同')
-        }
-    }
-    ],
-    okValue: "取消",
-    ok: function () {
-        $.msg("你点击了取消");
-    }
-});
 </pre>
 <script>
 // 示例：标准模式的使用
 $(function(){
     // 示例341
     $("#demo341").click(function () {
-        pandora.dialog({
-            content: "<h4>您认同使用模态窗口好过原生弹窗吗？</h4><p>说明：使用模态窗口，能实现全站的弹窗统一，外观能够控制，方便修改，功能上也可定制，实在是网页设计的必备武器！</p>",
-            button: [{
-                value: "认同",
-                className: "pbtn-pink",      // 可选btn参数：默认白色 pbtn-pink btn-porange pbtn-blue
-                callback: function () {
-                    $.alert("你选择了认同");
-                    return false;
-                }
-            },
-            {
-                value: '不认同',
-                className: "pbtn-orange",
-                callback: function () {
-                    $.alert('你选择了不认同')
-                }
-            }
-            ],
-            okValue: "取消",
-            ok: function () {
-                $.msg("你点击了取消");
-            }
-        });
+        $.msg("暂无示例",1000)
     });
 })
 </script>
@@ -714,7 +754,7 @@ $(function(){
     
     <div class="docs-example">
         <h4>实现iframe页面的调用</h4>
-        <p>有时遇到页面样式冲突问题，业务逻辑上的处理问题，我们需要使用iframe的方式来调用dialog弹窗，下面给出示例：</p>
+        <p>有时遇到页面样式冲突问题，业务逻辑上的处理问题，我们需要使用iframe的方式来调用dialog弹窗的内容，下面给出示例：</p>
         <h5>示例511</h5>
         <p><button class="pbtn" id="demo511">调用 iframe 页面</button></p>
         
@@ -729,7 +769,7 @@ $(function(){
     $("#demo511").click(function(){
         $.dialog({
             title: "iframe 调用测试",
-            content: '<iframe scrolling="no" frameborder="0" src="typo.html" marginheight="0" marginwidth="0"></iframe>',
+            content: "/pandora/docs/modules/typo.html",
             width: "800px"
         });
         

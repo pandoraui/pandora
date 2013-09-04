@@ -332,7 +332,7 @@
 
                 wrap.css({
                     "position": "absolute",
-                    "top": this.config.dialogAutoTop + "px",
+                    "top": ($(window).scrollTop() + this.config.dialogAutoTop) + "px",
                     "left": parseInt(($(window).width() - ow) / 2, 10) + "px"
                 });
 
