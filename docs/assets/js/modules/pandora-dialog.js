@@ -681,8 +681,6 @@
         okValue: "确定", // 确定按钮文本
         cancelValue: "取消", // 取消按钮文本
 
-        time: null,
-
         content: "",
         title: "消息提醒",
         
