@@ -10,6 +10,10 @@
         expando = "dialog" + (+new Date),
         isIE6 = window.VBArray && !window.XMLHttpRequest,
 
+        // dialog 自适应大小
+        data = {},
+        timer = null,
+
         isArray = function (obj) {
 
             // ECMAScript5 isArray 方法 兼容不支持的浏览器
@@ -19,6 +23,24 @@
 
             return Array.isArray(obj);
         };
+
+    // 获取 iframe 内部的高度
+    function getIframeHeight(iframe) {
+        var iframe = $(iframe[0].contentWindow.document);
+        //if (D.body.scrollHeight && D.documentElement.scrollHeight) {
+        //    return Math.min(D.body.scrollHeight, D.documentElement.scrollHeight);
+        //} else if (D.documentElement.scrollHeight) {
+        //    return D.documentElement.scrollHeight;
+        //} else if (D.body.scrollHeight) {
+        //    return D.body.scrollHeight;
+        //}
+        var wh = {
+            w: iframe.width(),
+            h: iframe.height()
+        };
+
+        return wh;
+    }
 
     /**
      * 工厂模式 + 单体模式
@@ -111,12 +133,13 @@
             }
 
             that.button.apply(that, config.button);
-
             that.title(config.title);
             that.content(config.content);
-            that.size(config.width,config.height);
+            that.size(config.width, config.height);
+
+            // hack
             that._zIndex();
-            that._reset();
+            that.reset();
             that.time(config.time);
             
 
@@ -166,6 +189,66 @@
             });
 
             return template;
+        },
+
+        // 创建iframe
+        _createIframe: function (url) {
+            var that = this;
+            this.iframe = $('<iframe scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="100%" ></iframe>');
+
+            // 开始请求iframe
+            this.iframe.attr("src", url);
+            
+            this.iframe.one("load", function () {
+
+                // 如果 dialog 已经隐藏了，就不需要触发 onload
+                if (!that.wrap.is(":visible")) {
+                    return;
+                }
+
+                clearInterval(that._interval);
+                that._interval = setInterval(function () {
+                    that._syncWH();
+                }, 300);
+
+            });
+
+            return this.iframe;
+        },
+
+        _syncWH: function () {
+            var h,
+                w,
+                wh = {},
+                wrap = this.wrap,
+                $dialogBody = wrap.find("div.dialog-body"),
+                padding = parseInt($dialogBody.css("paddingLeft"), 10) + parseInt($dialogBody.css("paddingRight"), 10),
+                margin = parseInt($dialogBody.css("marginLeft"), 10) + parseInt($dialogBody.css("marginRight"), 10);
+
+            try {
+                this._errCount = 0;
+                wh = getIframeHeight(this.iframe);
+                h = wh.h;
+                w = wh.w;
+            } catch (err) {
+                // 页面跳转也会抛错，最多失败6次
+                this._errCount = (this._errCount || 0) + 1;
+
+                if (this._errCount >= 6) {
+                    // 获取失败则给默认高度 300px
+                    // 跨域会抛错进入这个流程
+                    h = this.config.initialHeight;
+                    clearInterval(this._interval);
+                    delete this._interval;
+                }
+
+            }
+
+            wrap.css("width", (margin + padding + w));
+            wrap.find("div.dialog-body").css({ "height": h, "width": w });
+
+            clearInterval(this._interval);
+            delete this._interval;
         },
 
         /**
@@ -234,28 +317,44 @@
 
         /**
          * 重置 dialog 位置 例如窗口发生变化的时候
+         * hack
          */
-        _reset: function () {
+        reset: function () {
             var wrap = this.wrap,
                 wh = $(window).height(),
                 oh = wrap.height(),
+                ow = wrap.width(),
                 top,
                 left;
+
+            // hack 
+            if (this.config.dialogAuto) {
+
+                wrap.css({
+                    "position": "absolute",
+                    "top": this.config.dialogAutoTop + "px",
+                    "left": parseInt(($(window).width() - ow) / 2, 10) + "px"
+                });
+
+                return;
+            }
 
             if (wh - oh >= 50) {
                 wrap.css("position", this.config.fixed ? "fixed" : "absolute");
                 this.offsets();
             } else {
                 top = $(window).scrollTop() + 10;
-                left = ($(window).width() - wrap.width()) / 2,
-                
+                left = ($(window).width() - ow) / 2,
+
                 wrap.css({
                     "position": "absolute",
-                    "top": parseInt(top) + "px",
-                    "left": parseInt(left) + "px"
+                    "top": parseInt(top, 10) + "px",
+                    "left": parseInt(left, 10) + "px"
                 });
             }
             
+            data.w = ow;
+            data.h = oh;
         },
 
         /**
@@ -289,6 +388,32 @@
                     
                 }
             });
+
+           that._loopy();
+        },
+
+        // 监听窗口大小
+        _loopy: function () {
+            var that = this;
+            
+            timer = setTimeout(function () {
+                clearTimeout(timer);
+
+                var elem = that.wrap,
+                    width = elem.width(),
+                    height = elem.height();
+
+                // hack data 全局变量 
+                if (width !== data.w || height !== data.h) {
+
+                    if (!that.config.dialogAuto) {
+                        that.reset();
+                    }
+
+                }
+
+                that._loopy();
+            }, 150);
         },
 
         /**
@@ -327,15 +452,22 @@
          * @param {String, HTMLElement} 内容 (可选)
          */
         content: function (content) {
-            
+            var rulReg = /^(https?:\/\/|\/|\.\/|\.\.\/)/;
+
+            if (rulReg.test(content)) {
+
+                // 调用创建iframe 
+                content = this._createIframe(content);
+            }
+
             this.wrap.find("div.dialog-content").html(content);
-            
-            //var contentWindow = this.wrap.find("iframe")[0].contentWindow.document;
-            //console.log($(contentWindow).html());
-            
+
             return this;
         },
 
+        /**
+         * hack
+         */
         loading: function (content) {
             var html = '<div style="text-align:center">' +
                        '<img width="46" height="46" src="http://pic.lvmama.com/img/new_v/ui_scrollLoading/loadingGIF46px.gif"' +
@@ -471,9 +603,13 @@
 
             this._unmask();
             this._unbindEvent();
-            
-            this.time();
+
+            // 清除定时器
+            this.time(); 
             delete Dialog.list[config.id];
+
+            // 清除dialog自适应大小定时器
+            clearTimeout(timer);
 
             if (universe !== null) {
                 wrap.remove();
@@ -481,10 +617,8 @@
                 universe = this;
 
                 wrap.hide();
-                wrap.css({
-                    "top": 0,
-                    "left": 0
-                });
+                wrap.attr("style","");
+                wrap.find("div.dialog-body").attr("style", "");
                 wrap.attr("class", "dialog");
                 wrap.find("[data-title=title]").html("");
                 wrap.find("[data-content=content]").html("");
@@ -518,7 +652,7 @@
     $(window).bind('resize', function () {
         var dialogs = Dialog.list;
         for (var id in dialogs) {
-            dialogs[id]._reset();
+            dialogs[id].reset();
         };
     });
 
@@ -532,6 +666,13 @@
         mask: true, // 遮罩
         drag: false, // 拖动 
 
+        // 对于dialog 内容切换
+        dialogAuto: false,
+        dialogAutoTop: 60,
+
+        // iframe 默认给个初始高度300
+        initialHeight: "300px",
+
         initialize: null, // 对话框初始化后执行的函数
         beforeunload: null, // 对话框关闭前执行的函数
 
@@ -539,6 +680,8 @@
         cancel: null, // 取消按钮回调函数
         okValue: "确定", // 确定按钮文本
         cancelValue: "取消", // 取消按钮文本
+
+        time: null,
 
         content: "",
         title: "消息提醒",
