@@ -111,6 +111,11 @@
 .dialog-body p {
     margin:0 0 10px;
 }
+.dialog-body .dialog-content {
+    width: 100%;
+    height: 100%;
+}
+
 
 .dialog-footer {
     padding: 0 20px 20px;
