@@ -316,48 +316,6 @@
         },
 
         /**
-         * 重置 dialog 位置 例如窗口发生变化的时候
-         * hack
-         */
-        reset: function () {
-            var wrap = this.wrap,
-                wh = $(window).height(),
-                oh = wrap.height(),
-                ow = wrap.width(),
-                top,
-                left;
-
-            // hack 
-            if (this.config.dialogAuto) {
-
-                wrap.css({
-                    "position": "absolute",
-                    "top": this.config.dialogAutoTop + "px",
-                    "left": parseInt(($(window).width() - ow) / 2, 10) + "px"
-                });
-
-                return;
-            }
-
-            if (wh - oh >= 50) {
-                wrap.css("position", this.config.fixed ? "fixed" : "absolute");
-                this.offsets();
-            } else {
-                top = $(window).scrollTop() + 10;
-                left = ($(window).width() - ow) / 2,
-
-                wrap.css({
-                    "position": "absolute",
-                    "top": parseInt(top, 10) + "px",
-                    "left": parseInt(left, 10) + "px"
-                });
-            }
-            
-            data.w = ow;
-            data.h = oh;
-        },
-
-        /**
          * 置顶对话框
          */
         _zIndex:function(){
@@ -406,7 +364,18 @@
                 // hack data 全局变量 
                 if (width !== data.w || height !== data.h) {
 
-                    if (!that.config.dialogAuto) {
+          
+                    if (that.config.dialogAuto) {
+
+                        that.wrap.css({
+                            "position": "absolute",
+                            "top": ($(window).scrollTop() + that.config.dialogAutoTop) + "px",
+                            "left": parseInt(($(window).width() - width) / 2, 10) + "px"
+                        });
+
+                        data.w = width;
+                        data.h = height;
+                    } else {
                         that.reset();
                     }
 
@@ -463,6 +432,36 @@
             this.wrap.find("div.dialog-content").html(content);
 
             return this;
+        },
+
+        /**
+         * 重置 dialog 位置 例如窗口发生变化的时候
+         * hack
+         */
+        reset: function () {
+            var wrap = this.wrap,
+                wh = $(window).height(),
+                oh = wrap.height(),
+                ow = wrap.width(),
+                top,
+                left;
+
+            if (wh - oh >= 50) {
+                wrap.css("position", this.config.fixed ? "fixed" : "absolute");
+                this.offsets();
+            } else {
+                top = $(window).scrollTop() + 10;
+                left = ($(window).width() - ow) / 2,
+
+                wrap.css({
+                    "position": "absolute",
+                    "top": parseInt(top, 10) + "px",
+                    "left": parseInt(left, 10) + "px"
+                });
+            }
+
+            data.w = ow;
+            data.h = oh;
         },
 
         /**
@@ -616,8 +615,8 @@
             } else {
                 universe = this;
 
+                wrap.attr("style", "");
                 wrap.hide();
-                wrap.attr("style","");
                 wrap.find("div.dialog-body").attr("style", "");
                 wrap.attr("class", "dialog");
                 wrap.find("[data-title=title]").html("");
