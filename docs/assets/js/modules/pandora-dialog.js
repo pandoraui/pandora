@@ -615,7 +615,7 @@
             } else {
                 universe = this;
 
-                wrap.attr("style", "");
+                wrap.attr("style","");
                 wrap.hide();
                 wrap.find("div.dialog-body").attr("style", "");
                 wrap.attr("class", "dialog");
