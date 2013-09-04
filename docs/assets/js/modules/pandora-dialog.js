@@ -616,8 +616,8 @@
             } else {
                 universe = this;
 
-                wrap.hide();
                 wrap.attr("style","");
+                wrap.hide();
                 wrap.find("div.dialog-body").attr("style", "");
                 wrap.attr("class", "dialog");
                 wrap.find("[data-title=title]").html("");
