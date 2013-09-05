@@ -147,7 +147,7 @@ $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
 $(function(){
     // 示例121
     $("#demo121").click(function () {
-        $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
+        $.msg("保存成功",20000); // 默认即两秒钟，可以缺省
     });
 })
 </script>
@@ -604,10 +604,28 @@ $(function(){
 // 示例：标准模式的使用
 
 // 示例361
-pandora.dialog({
-    beforeunload: function () {
-        return $.confirm('确定关闭对话框吗');
-    }
+$("#demo361").click(function () {
+    pandora.dialog({
+        title: "关闭对话框前执行函数",
+        content: "这里是一些可保存的表单数据，如果用户填写了信息但没有保存，则关闭窗口前会有提醒用户保存信息。",
+        beforeunload: function () {
+            var that = this;
+            
+            // 判断条件(关闭前提醒则为true)
+            var bool = true;
+            
+            if(bool){
+                $.confirm("关闭弹窗会导致已经填写的数据遗失，确定要关闭弹窗？", function () {
+                    delete that.config.beforeunload;
+                    that.close();
+                });
+                return false;
+            }
+        },
+        ok: true,
+        cancel: true
+        
+    });
 });
 </pre>
 <script>
@@ -616,11 +634,25 @@ $(function(){
     // 示例361
     $("#demo361").click(function () {
         pandora.dialog({
-            content: "关闭对话框前执行函数",
+            title: "关闭对话框前执行函数",
+            content: "这里是一些可保存的表单数据，如果用户填写了信息但没有保存，则关闭窗口前会有提醒用户保存信息。",
             beforeunload: function () {
-                //$.confirm('确定关闭该对话框吗', function(){console.log("1")}, function(){return false});
-                //return $.confirm('确定关闭该对话框吗', ok, cancel);
-            }
+                var that = this;
+                
+                // 判断条件(关闭前提醒则为true)
+                var bool = true;
+                
+                if(bool){
+                    $.confirm("关闭弹窗会导致已经填写的数据遗失，确定要关闭弹窗？", function () {
+                        delete that.config.beforeunload;
+                        that.close();
+                    });
+                    return false;
+                }
+            },
+            ok: true,
+            cancel: true
+            
         });
     });
 })

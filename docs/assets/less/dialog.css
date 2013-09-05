@@ -151,6 +151,8 @@
 }
 .dialog-msg {
     width: auto;
+    _width: 150px;
+    *zoom: 1;
 }
 .dialog-msg .dialog-body {
     padding: 15px 30px;

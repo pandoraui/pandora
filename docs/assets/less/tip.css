@@ -258,6 +258,7 @@ span.tiptext {
 }
 .tip-content {
     padding: 10px 10px 5px 76px;
+    min-height: 45px;
 }
 
 .tipbox .tip-title {
@@ -501,3 +502,11 @@ span.tip-line {
     white-space: pre-wrap;
     word-break: break-word;
 }
+
+
+.tipbox-outer {
+    margin: 60px auto;
+    width: 700px;
+}
+
+

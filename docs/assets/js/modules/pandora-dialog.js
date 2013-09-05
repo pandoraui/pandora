@@ -561,7 +561,11 @@
                 oh = wrap.height(),
                 left = (ww - ow) / 2,
                 top = (wh - oh) * 382 / 1000;
-
+            
+            if (isIE6){
+                top += $(window).scrollTop();
+            }
+            
             wrap.css({
                 "top": parseInt(top) + "px",
                 "left": parseInt(left) + "px"
