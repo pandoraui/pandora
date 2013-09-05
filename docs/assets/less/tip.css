@@ -258,14 +258,25 @@ span.tiptext {
 }
 .tip-content {
     padding: 10px 10px 5px 76px;
-    min-height: 45px;
+    min-height: 35px;
+}
+.tip-align {
+    padding: 0 10px 0 76px;
 }
 
 .tipbox .tip-title {
+    margin: 0 0 5px;
     font-size: 14px;
     font-weight: bold;
-    margin: 0 0 5px;
 }
+
+.tipbox .tip-color-title {
+    margin: 0 0 10px;
+    font-family: "Microsoft YaHei",\5FAE\8F6F\96C5\9ED1;
+    font-size: 24px;
+    font-weight: 400;
+}
+
 .tipbox .tip-icon-big {
     position: absolute;
     top: 18px;
@@ -346,6 +357,10 @@ span.tiptext {
 .tip-success .tip-arrow i {
     color: #f1ffe2;
 }
+.tip-success .tip-color-title {
+    color: #090;
+}
+
 
 .tip-help {
     background: #e5f5ff;
