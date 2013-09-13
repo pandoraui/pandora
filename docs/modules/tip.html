@@ -118,6 +118,7 @@
     <div class="docs-example">
         <p><strong>注意：</strong>图标等与文字混排时，导致IE6下line-height失效</p>
         <div class="tiptext"><span class="tip-icon tip-icon-default"></span>缺省消息提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-default">默认提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-info">消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-info"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</div>
@@ -158,6 +159,15 @@
 </pre>
         <p>使用方位定位时，请优先使用点钟方位。</p>
         <!-- 点钟方向\\ -->
+        <div class="tiptext tip-default">
+            <span class="ui-close">&times;</span>
+            <div class="tip-arrow tip-arrow-0">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
+        </div>
+        
         <div class="tiptext tip-info">
             <span class="ui-close">&times;</span>
             <div class="tip-arrow tip-arrow-1">
@@ -290,6 +300,16 @@
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
             </div>
         </div>
+        
+        <div class="tipbox tip-default">
+            <span class="ui-close">&times;</span>
+            <span class="tip-icon-big tip-icon-big-info"></span>
+            <div class="tip-content">
+                <h3 class="tip-title">默认的操作状态提醒！前面的ICON图标可自由组合。</h3>
+                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+            </div>
+        </div>
         <div class="tipbox tip-info">
             <span class="ui-close">&times;</span>
             <span class="tip-icon-big tip-icon-big-info"></span>
@@ -354,10 +374,6 @@
         <p>此提醒框可用于展示框信息，无状态icon提醒的一般信息展示</p>
         <div class="tipbox tip-warning">
             <span class="ui-close">&times;</span>
-            <div class="tip-arrow tip-arrow-11">
-                <em>◆</em>
-                <i>◆</i>
-            </div>
             <span class="tip-icon-big tip-icon-big-warning"></span>
             <div class="tip-content">
                 <h3 class="tip-title">注意！操作有风险，付款需谨慎！</h3>
@@ -403,8 +419,23 @@
 
 </pre>
     
-    <h4>测试案例</h4>
+    <h3>tip 扩展</h3>
     <div class="docs-example">
+        <h4>case 1</h4>
+        <div class="tipbox tip-success tip-nowrap">
+            <span class="tip-icon-big tip-icon-big-success"></span>
+            <div class="tip-content">
+                <h3 class="tip-color-title">您的订单已经支付成功。</h3>
+            </div>
+            
+            <div class="tip-other tip-align pay-backinfo">
+                其他内容信息
+            </div>  
+        </div>
+        
+        <div class="dot_line"></div>
+        
+        <h4>case 2</h4>
         <div class="tipbox-outer">
             <div class="tipbox tip-default">
                 <span class="tip-icon-big tip-icon-big-warning"></span>

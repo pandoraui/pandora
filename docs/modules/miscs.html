@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>misc 杂项 小组件</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>misc 杂项 小组件</h1>
+	<p>其他杂项小组件</p>
+    <p><strong>TODO：</strong></p>
+	
+    <div class="docs-example">
+        <h3>加减数字操作</h3>
+        <p>输入框禁止非数字输入（尽可能禁用输入法），可配置最小数值0或1，不能为负值，最大数值不能超过库存且不能超过N位数（现暂定八个9）。</p>
+        
+        <span class="oper-numbox"><a class="op-reduce op-disable-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="0" maxlength="8"><a class="op-increase J_increase">+</a></span>
+        
+        <br></br>
+        
+        <span class="oper-numbox"><a class="op-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="2" maxlength="8"><a class="op-increase J_increase">+</a></span>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+
+
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+
+$(function(){
+    $(".oper-numbox").delegate(".J_increase","click",function(){
+        //console.log($(this).prev().val());
+        var _that = $(this).prev();
+        var _number = parseInt(_that.val());
+        _number < 99999999 ? _number ++ : 99999999;
+        //console.log(_number)
+        Detect_border(_that,_number);
+        _that.val(_number);
+        
+    })
+    $(".oper-numbox").delegate(".J_reduce","click",function(){
+        //console.log($(this).next().val());
+        var _that = $(this).next();
+        var _number = parseInt(_that.val());
+        _number > 0 && _number --;
+        Detect_border(_that,_number);
+        _that.val(_number);
+    })
+    
+    
+    
+    //文本框只能输入数字，并屏蔽输入法和粘贴  
+    $.fn.numeral = function() {     
+        $(this).css("ime-mode", "disabled");
+        this.bind("keypress",function(e) { 
+        
+        //兼容火狐 IE
+        var code = (e.keyCode ? e.keyCode : e.which);  
+        
+            //火狐下不能使用退格键    
+            if(!$.browser.msie&&(e.keyCode==0x8)) {     
+                return ;     
+            }     
+            return code >= 48 && code<= 57;     
+        });     
+        this.bind("blur", function() {     
+            if (this.value.lastIndexOf(".") == (this.value.length - 1)) {     
+                this.value = this.value.substr(0, this.value.length - 1);     
+            } else if (isNaN(this.value)) {     
+                this.value = "";     
+            }     
+        });     
+        this.bind("paste", function() {     
+            var s = clipboardData.getData('text');     
+            if (!/\D/.test(s));     
+            value = s.replace(/^0*/, '');     
+            return false;     
+        });     
+        this.bind("dragenter", function() {     
+            return false;     
+        });     
+        this.bind("keyup", function() {     
+        if (/(^0+)/.test(this.value)) {     
+            this.value = this.value.replace(/^0*/, '');     
+            }     
+        });   
+
+    };
+    
+    // 屏蔽非数字字符输入 
+    $('.op-number').numeral();
+    
+    
+    
+    /* 边界检测 */
+    function Detect_border(that,num){
+        if (num < 1){
+            that.prev().addClass("op-disable-reduce");
+        } else {
+            that.prev().removeClass("op-disable-reduce");
+        }
+        if (num > 99999998){
+            that.next().addClass("op-disable-increase");
+        } else{
+            that.next().removeClass("op-disable-increase");
+        }
+    }
+    
+    
+    // 下面这个方法不够好，屏蔽了退格键而且没有屏蔽特殊符号等
+    //$('.op-number').keydown(function(e){
+    //    if(is_number(e)){
+    //        return true;
+    //    } else {
+    //        return false;
+    //    };
+    //})
+    
+    
+    
+    /* is_number() 函数 
+     * 用于屏蔽非数字字符的输入，但不能屏蔽回退键及方向移动键等
+     *
+     * //IE 中 Event 对象使用 keyCode 获得键入字符的 Unicode 编码  
+     * //DOM 中 Event 对象 使用 charCode 获得键入字符的 Unicode 编码  
+     * 
+     * //Unicode 编码中， 0~9 的编码的十进制 是 48~57 之间 ， 0为 48， 9 为57 
+     *
+    **/
+    
+    function is_number(e){
+        var char_code = e.charCode ? e.charCode : e.keyCode;
+        if(char_code<48 || char_code >57) {  
+            // alert("只允许输入数字");
+            return false;
+        } else {
+            return true;
+        }  
+    }  
+    
+    
+});
+</script>
+</body>
+</html>

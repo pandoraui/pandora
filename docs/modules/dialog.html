@@ -147,7 +147,7 @@ $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
 $(function(){
     // 示例121
     $("#demo121").click(function () {
-        $.msg("保存成功",20000); // 默认即两秒钟，可以缺省
+        $.msg("保存成功",2000); // 默认即两秒钟，可以缺省
     });
 })
 </script>
@@ -790,7 +790,12 @@ $(function(){
         
     </div>
 <pre class="prettyprint linenums">
-    
+// 示例511
+$.dialog({
+    title: "iframe 调用测试",
+    content: "/pandora/docs/modules/typo.html",
+    width: "800px"
+});
 </pre>
 <script>
 // 示例：标准模式的使用

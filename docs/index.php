@@ -102,8 +102,13 @@
                 <a class="todo" href="###">calendar <small>大/小日历</small></a>
                 <a class="todo" href="###">vote <small>投票/调查统计</small></a>
                 <a class="todo" href="###">comments <small>评论/说说</small></a>
+                <a class="done" href="modules/bank.html">bank <small>银行/支付方式</small></a>
                 <a class="todo hide" href="###">avatar <small>上传/修改头像</small></a>
+                <a class="todo hide" href="###">upload <small>多图上传</small></a>
+                <a class="todo hide" href="###">imgzoom <small>缩放及截图</small></a>
+                
                 <a class="todo hide" href="###">appstore <small>应用列表</small></a>
+                
                 
                 <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>
             </div>
