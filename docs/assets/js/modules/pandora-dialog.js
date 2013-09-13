@@ -736,16 +736,14 @@
     }
     
     // 定时信息 
-    $.msg = pandora.msg = function (content, time, callback) { 
-        return Factory({ 
-            fixed: true, 
-            mask: false, 
-            wrapClass: "dialog-msg", 
-            content: content, 
-            time: time ? time : 2000, 
-            ok: true, 
-            beforeunload: callback 
-        }); 
+    $.msg = pandora.msg = function (content, time) {
+        return Factory({
+            fixed: true,
+            mask: false,
+            wrapClass: "dialog-msg",
+            content: content,
+            time: time ? time : 2000
+        });
     }
 
     $.confirm = pandora.confirm = function (content, ok, cancel) {
