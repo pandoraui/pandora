@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>银行/支付方式 ICON</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.payment-list{padding:20px;background:#fff;border:1px solid #9bd;border-top-width:3px;}
+.bank-list li{float:left;display:inline;*zoom:1;margin:0px 4px 5px;position:relative;}
+.bank-list .bank{vertical-align:middle;}
+.pay-title h4{float:left;line-height:38px;font-size:14px;}
+.payment{position:relative;margin-top:30px;}
+.payment input{outline:none;}
+.bank-list .poptip-mini{position:absolute;top:-8px;right:0;}
+
+.bank-list li p{margin:0;font-size:12px; width:100%; text-align:center;color:green;}
+
+/* 下面列表供参考使用
+现提供以下标识对应关系：
+如不存在标识，则取其官网域名为标识，全用小写字母书写
+
+如：支付宝官网为alipay.com取alipay
+    中国工商银行 取 ICBC
+若为快捷支付，添加 -quick 后缀，如：.alipay-quick
+若为信用卡，添加 -credit 后缀，如：.abc-credit
+
+.alipay         支付宝              www.alipay.com
+.tenpay         财付通              www.tenpay.com
+.shengpay       盛付通              www.shengpay.com
+.unionpay       银联支付            cn.unionpay.com   
+.lakala         拉卡拉              www.lakala.com
+.cmpay          中国移动手机支付    cmpay.10086.cn
+.alipay-quick   支付宝快捷支付
+.tenpay-quick   财付通快捷支付
+
+.abc        中国农业银行        www.abchina.com
+.boc        中国银行            www.boc.cn
+.ccb        中国建设银行        www.ccb.com
+.icbc       中国工商银行        www.icbc.com.cn
+.psbc       中国邮政储蓄银行    www.psbc.com
+.ceb        中国光大银行        www.cebbank.com
+.cmbc       中国民生银行        www.cmbc.com.cn
+.cmb        招商银行            www.cmbchina.com
+.comm       交通银行            www.bankcomm.com
+
+.bjbank     北京银行            www.bankofbeijing.com.cn
+.shbank     上海银行            www.bankofshanghai.com
+.jsbank     江苏银行            www.jsbchina.cn
+.hzbank     杭州银行            www.hzbank.com.cn
+.nbcb       宁波银行            www.nbcb.com.cn
+.njcb       南京银行            www.njcb.com.cn
+.wzcb       温州银行            www.wzcb.com.cn 
+.gzcb       广州银行            www.gzcb.com.cn
+.bjrcb      北京农村商业银行    www.bjrcb.com 
+.srcb       上海农村商业银行    www.srcb.com
+
+.sdb        深圳发展银行        www.sdb.com.cn
+.spdb       浦发银行            www.spdb.com.cn
+.cib        兴业银行            www.cib.com.cn
+.cgb        广发银行            www.cgbchina.com.cn
+.hxb        华夏银行            www.hxb.com.cn
+.hkbea      东亚银行            www.hkbea.com.cn
+.cbhb       渤海银行            www.cbhb.com.cn
+.ecitic     中信银行            bank.ecitic.com
+.pingan     平安银行            bank.pingan.com
+.fudian     富滇银行            www.fudian-bank.com 
+
+.hsbc       汇丰银行
+.hxbank     华夏银行
+.sjbank     威京银行
+.spabank    平安银行
+.dbscn      星展银行
+.bosh       新韩银行
+.klb        昆仑银行
+
+*/
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>银行/支付方式 ICON</h1>
+	<p>对应关系参看——标识参考关系列表</p>
+    <p>基类 <code>class="bank"</code>，组合样式使用，如支付宝 <code>class="bank alipay"</code>。</p>
+    <h4>依赖：<small>银行/支付方式 ICON图标的使用 依赖以下样式</small></h4>
+    <ul>
+    	<li><a href="http://pic.lvmama.com/styles/v4/modules/bank.css">http://pic.lvmama.com/styles/v4/modules/bank.css</a> 第三方支付 ICON图标集</li>
+    </ul>
+    
+    <div class="docs-example">
+        <p><strong>使用说明：</strong>引用组合样式，bank+icon标识，如：如支付宝 <code>class="bank alipay"</code></p>
+        <h4>第三方平台</h4>
+        <ul class="bank-list clearfix">
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay  " title="支付宝"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay  " title="财付通"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank shengpay" title="盛付通"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank unionpay" title="银联支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank lakala  " title="拉卡拉"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cmpay   " title="中国移动手机支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay-quick" title="支付宝快捷支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay-quick" title="财付通快捷支付"></i></label></li>
+            
+        </ul>
+        <div class="dot_line"></div>
+        
+        <h4>中国**银行</h4>
+        <ul class="bank-list clearfix">
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank abc " title="中国农业银行    "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank boc " title="中国银行        "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank ccb " title="中国建设银行    "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank icbc" title="中国工商银行    "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank psbc" title="中国邮政储蓄银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank ceb " title="中国光大银行    "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cmbc" title="中国民生银行    "></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cmb " title="招商银行        "></i></label><span class="poptip-mini poptip-mini-warning"><div class="tip-sharp tip-sharp-bottom"></div>立减10元</span></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank comm" title="交通银行        "></i></label></li>
+            
+        </ul>
+        <div class="dot_line"></div>
+        
+        <h4>地区命名的银行</h4>
+        <ul class="bank-list clearfix">
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank bjbank" title="北京银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank shbank" title="上海银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank jsbank" title="江苏银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank hzbank" title="杭州银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank nbcb  " title="宁波银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank njcb  " title="南京银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank wzcb  " title="温州银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank gzcb  " title="广州银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank bjrcb " title="北京农村商业银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank srcb  " title="上海农村商业银行"></i></label></li>
+            
+        </ul>
+        <div class="dot_line"></div>
+        
+        <h4>非地区命名的其他银行</h4>
+        <ul class="bank-list clearfix">
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank sdb   " title="深圳发展银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank spdb  " title="浦发银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cib   " title="兴业银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cgb   " title="广发银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank hxb   " title="华夏银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank hkbea " title="东亚银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cbhb  " title="渤海银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank ecitic" title="中信银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank pingan" title="平安银行"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank fudian" title="富滇银行"></i></label></li>
+        </ul>
+        
+        
+    </div>
+<pre class="prettyprint linenums">
+标识参考关系列表：
+如下面不存在其标识，则取其官网域名为标识，全用小写字母书写，过长的名称取其简写
+
+如：支付宝官网   www.alipay.com  取 alipay
+    中国工商银行 www.icbc.com.cn 取 icbc
+    招商银行     www.cmbchina.com取 cmb （此取简写，注意别冲突了）
+若为快捷支付，添加 -quick  后缀，如：.alipay-quick
+若为信用卡，  添加 -credit 后缀，如：.abc-credit
+
+.alipay         支付宝              www.alipay.com
+.tenpay         财付通              www.tenpay.com
+.shengpay       盛付通              www.shengpay.com
+.unionpay       银联支付            cn.unionpay.com   
+.lakala         拉卡拉              www.lakala.com
+.cmpay          中国移动手机支付    cmpay.10086.cn
+.alipay-quick   支付宝快捷支付
+.tenpay-quick   财付通快捷支付
+
+.abc        中国农业银行        www.abchina.com
+.boc        中国银行            www.boc.cn
+.ccb        中国建设银行        www.ccb.com
+.icbc       中国工商银行        www.icbc.com.cn
+.psbc       中国邮政储蓄银行    www.psbc.com
+.ceb        中国光大银行        www.cebbank.com
+.cmbc       中国民生银行        www.cmbc.com.cn
+.cmb        招商银行            www.cmbchina.com
+.comm       交通银行            www.bankcomm.com
+
+.bjbank     北京银行            www.bankofbeijing.com.cn
+.shbank     上海银行            www.bankofshanghai.com
+.jsbank     江苏银行            www.jsbchina.cn
+.hzbank     杭州银行            www.hzbank.com.cn
+.nbcb       宁波银行            www.nbcb.com.cn
+.njcb       南京银行            www.njcb.com.cn
+.wzcb       温州银行            www.wzcb.com.cn 
+.gzcb       广州银行            www.gzcb.com.cn
+.bjrcb      北京农村商业银行    www.bjrcb.com 
+.srcb       上海农村商业银行    www.srcb.com
+
+.sdb        深圳发展银行        www.sdb.com.cn
+.spdb       浦发银行            www.spdb.com.cn
+.cib        兴业银行            www.cib.com.cn
+.cgb        广发银行            www.cgbchina.com.cn
+.hxb        华夏银行            www.hxb.com.cn
+.hkbea      东亚银行            www.hkbea.com.cn
+.cbhb       渤海银行            www.cbhb.com.cn
+.ecitic     中信银行            bank.ecitic.com
+.pingan     平安银行            bank.pingan.com
+.fudian     富滇银行            www.fudian-bank.com 
+</pre>
+
+
+    <h3>您有什么需要完善的么？</h3>
+    <div id="uyan_frame"></div>
+</div>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+
+<!-- UY BEGIN -->
+<script type="text/javascript">
+$(function(){
+    $(".bank-list li").each(function(){
+        $(this).append("<p>" + $(this).find("i").attr("class").split(" ")[1] + "</p>");
+    })
+})
+
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+/*!
+ * bank.css v1.0
+ * Author Pandora
+**/
+
+/** @name      : 支付ICON
+  * @explain   : 统一 银行及第三方支付 ICON
+  * @type      : 基类 .bank
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @other     : 提供下列命名列表，请参考下列建议进行命名
+                 如无对应关系，则取其官网域名为标识，全用小写字母书写，过长命名可用简写
+如：支付宝官网   www.alipay.com  取 alipay
+    中国工商银行 www.icbc.com.cn 取 icbc
+    招商银行     www.cmbchina.com取 cmb （此取简写，注意别冲突了）
+若为快捷支付，添加 -quick  后缀，如：.alipay-quick
+若为信用卡，  添加 -credit 后缀，如：.abc-credit
+
+详细参见：pandora前端项目/pandora/docs/modules/bank.html
+
+***/
+.bank { 
+    display: inline-block;
+    width: 130px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background: url(/temp/bank.png) 9999px 9999px no-repeat;
+} 
+.bank:hover { 
+    border-color:#ff9600; 
+}
+.abc            { background-position: 0 0; }           /* 1-1  中国农业银行     */
+.boc            { background-position: 0 -40px;  }      /* 1-2  中国银行         */
+.ccb            { background-position: 0 -80px;  }      /* 1-3  中国建设银行     */
+.icbc           { background-position: 0 -120px; }      /* 1-4  中国工商银行     */
+.psbc           { background-position: 0 -160px; }      /* 1-5  中国邮政储蓄银行 */
+.ceb            { background-position: 0 -200px; }      /* 1-6  中国光大银行     */
+.cmbc           { background-position: 0 -240px; }      /* 1-7  中国民生银行     */
+.cmb            { background-position: 0 -280px; }      /* 1-8  招商银行         */
+.comm           { background-position: 0 -320px; }      /* 1-9  交通银行         */
+    
+.bjbank         { background-position: -150px 0; }      /* 2-1  北京银行         */
+.shbank         { background-position: -150px -40px;  } /* 2-2  上海银行         */
+.jsbank         { background-position: -150px -80px;  } /* 2-3  江苏银行         */
+.hzbank         { background-position: -150px -120px; } /* 2-4  杭州银行         */
+.nbcb           { background-position: -150px -160px; } /* 2-5  宁波银行         */
+.njcb           { background-position: -150px -200px; } /* 2-6  南京银行         */
+.wzcb           { background-position: -150px -240px; } /* 2-7  温州银行         */
+.gzcb           { background-position: -150px -280px; } /* 2-8  广州银行         */
+.bjrcb          { background-position: -150px -320px; } /* 2-9  北京农村商业银行 */
+.srcb           { background-position: -150px -360px; } /* 2-10 上海农村商业银行 */
+    
+.sdb            { background-position: -300px 0; }      /* 3-1  深圳发展银行     */
+.spdb           { background-position: -300px -40px;  } /* 3-2  浦发银行         */
+.cib            { background-position: -300px -80px;  } /* 3-3  兴业银行         */
+.cgb            { background-position: -300px -120px; } /* 3-4  广发银行         */
+.hxb            { background-position: -300px -160px; } /* 3-5  华夏银行         */
+.hkbea          { background-position: -300px -200px; } /* 3-6  东亚银行         */
+.cbhb           { background-position: -300px -240px; } /* 3-7  渤海银行         */
+.ecitic         { background-position: -300px -280px; } /* 3-8  中信银行         */
+.pingan         { background-position: -300px -320px; } /* 3-9  平安银行         */
+.fudian         { background-position: -300px -360px; } /* 3-10 富滇银行         */
+    
+.alipay         { background-position: -450px 0; }      /* 4-1  支付宝           */
+.tenpay         { background-position: -450px -40px;  } /* 4-2  财付通           */
+.shengpay       { background-position: -450px -80px;  } /* 4-3  盛付通           */
+.unionpay       { background-position: -450px -120px; } /* 4-4  银联支付         */
+.lakala         { background-position: -450px -160px; } /* 4-5  拉卡拉           */
+.cmpay          { background-position: -450px -200px; } /* 4-6  中国移动手机支付 */
+.alipay-quick   { background-position: -450px -240px; } /* 4-7  支付宝快捷支付   */
+.tenpay-quick   { background-position: -450px -280px; } /* 4-8  财付通快捷支付   */

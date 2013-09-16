@@ -6,7 +6,7 @@
   * @dependent : pandora
   * @author    : CloudYan
   * @version   : 1.0
-  * @html      :
+  * @html      : 
 
 ***/
 
@@ -34,7 +34,8 @@ input {
     border-radius: 2px;
 	text-decoration: none;
 	vertical-align: middle;
-	
+    
+    color: #333;
 	font-size: 12px;
     line-height: 20px;
 	font-weight: normal;
@@ -43,8 +44,8 @@ input {
     cursor: pointer;
     white-space: nowrap;
     
-    background: #fff;
-    border: 1px solid #cccccc;
+    background-color: #fff;
+    border: 1px solid #ddd;
     
     /* 禁止选中文字 */
     -webkit-user-select: none;
@@ -59,15 +60,12 @@ input {
 	height: auto;
 	line-height: auto;
 }
-/*
-.pbtn:focus {
-    outline: thin dotted #333;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-*/
 .pbtn:focus {
     outline: none;
+}
+.pbtn:active {
+    position: relative;
+    top: 1px;
 }
 
 .pbtn:hover,
@@ -76,258 +74,16 @@ input {
 	background-image: none;
     text-decoration: none;
 }
-
 .pbtn:hover {
     color: #333;
-	background-color: #ccc;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
 }
-
-.pbtn {
-    color: #333;
-	border: 1px solid #e6e6e6;
-	background-color: #f8f8f8;
-}
-
-.pbtn:hover {
-    color: #333;
-	background-color: #e6e6e6;
-}
-
 
 input.pbtn-text,
 button.pbtn-text {
     *vertical-align: top;
 }
-/*
-.pbtn:active,
-.pbtn.active {
-    outline: 0;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    box-shadow:1px 1px 3px #999 inset;
-}
-*/
-
-.pbtn-default {
-    color: #333333;
-    background-color: #ffffff;
-    border-color: #cccccc;
-}
-.pbtn-default:hover,
-.pbtn-default:focus,
-.pbtn-default:active,
-.pbtn-default.active {
-    color: #333333;
-    background-color: #ebebeb;
-    border-color: #adadad;
-}
-.pbtn-default.disabled,
-.pbtn-default[disabled],
-fieldset[disabled] .pbtn-default,
-.pbtn-default.disabled:hover,
-.pbtn-default[disabled]:hover,
-fieldset[disabled] .pbtn-default:hover,
-.pbtn-default.disabled:focus,
-.pbtn-default[disabled]:focus,
-fieldset[disabled] .pbtn-default:focus,
-.pbtn-default.disabled:active,
-.pbtn-default[disabled]:active,
-fieldset[disabled] .pbtn-default:active,
-.pbtn-default.disabled.active,
-.pbtn-default[disabled].active,
-fieldset[disabled] .pbtn-default.active {
-    background-color: #ffffff;
-    border-color: #cccccc;
-}
-.pbtn-primary {
-    color: #ffffff;
-    background-color: #428bca;
-    border-color: #357ebd;
-}
-.pbtn-primary:hover,
-.pbtn-primary:focus,
-.pbtn-primary:active,
-.pbtn-primary.active {
-    color: #ffffff;
-    background-color: #3276b1;
-    border-color: #285e8e;
-}
-.pbtn-primary.disabled,
-.pbtn-primary[disabled],
-fieldset[disabled] .pbtn-primary,
-.pbtn-primary.disabled:hover,
-.pbtn-primary[disabled]:hover,
-fieldset[disabled] .pbtn-primary:hover,
-.pbtn-primary.disabled:focus,
-.pbtn-primary[disabled]:focus,
-fieldset[disabled] .pbtn-primary:focus,
-.pbtn-primary.disabled:active,
-.pbtn-primary[disabled]:active,
-fieldset[disabled] .pbtn-primary:active,
-.pbtn-primary.disabled.active,
-.pbtn-primary[disabled].active,
-fieldset[disabled] .pbtn-primary.active {
-    background-color: #428bca;
-    border-color: #357ebd;
-}
-.pbtn-warning {
-    color: #ffffff;
-    background-color: #f0ad4e;
-    border-color: #eea236;
-}
-.pbtn-warning:hover,
-.pbtn-warning:focus,
-.pbtn-warning:active,
-.pbtn-warning.active {
-    color: #ffffff;
-    background-color: #ed9c28;
-    border-color: #d58512;
-}
-.pbtn-warning.disabled,
-.pbtn-warning[disabled],
-fieldset[disabled] .pbtn-warning,
-.pbtn-warning.disabled:hover,
-.pbtn-warning[disabled]:hover,
-fieldset[disabled] .pbtn-warning:hover,
-.pbtn-warning.disabled:focus,
-.pbtn-warning[disabled]:focus,
-fieldset[disabled] .pbtn-warning:focus,
-.pbtn-warning.disabled:active,
-.pbtn-warning[disabled]:active,
-fieldset[disabled] .pbtn-warning:active,
-.pbtn-warning.disabled.active,
-.pbtn-warning[disabled].active,
-fieldset[disabled] .pbtn-warning.active {
-    background-color: #f0ad4e;
-    border-color: #eea236;
-}
-.pbtn-danger {
-    color: #ffffff;
-    background-color: #d9534f;
-    border-color: #d43f3a;
-}
-.pbtn-danger:hover,
-.pbtn-danger:focus,
-.pbtn-danger:active,
-.pbtn-danger.active {
-    color: #ffffff;
-    background-color: #d2322d;
-    border-color: #ac2925;
-}
-.pbtn-danger.disabled,
-.pbtn-danger[disabled],
-fieldset[disabled] .pbtn-danger,
-.pbtn-danger.disabled:hover,
-.pbtn-danger[disabled]:hover,
-fieldset[disabled] .pbtn-danger:hover,
-.pbtn-danger.disabled:focus,
-.pbtn-danger[disabled]:focus,
-fieldset[disabled] .pbtn-danger:focus,
-.pbtn-danger.disabled:active,
-.pbtn-danger[disabled]:active,
-fieldset[disabled] .pbtn-danger:active,
-.pbtn-danger.disabled.active,
-.pbtn-danger[disabled].active,
-fieldset[disabled] .pbtn-danger.active {
-    background-color: #d9534f;
-    border-color: #d43f3a;
-}
-.pbtn-success {
-    color: #ffffff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-.pbtn-success:hover,
-.pbtn-success:focus,
-.pbtn-success:active,
-.pbtn-success.active {
-    color: #ffffff;
-    background-color: #47a447;
-    border-color: #398439;
-}
-.pbtn-success.disabled,
-.pbtn-success[disabled],
-fieldset[disabled] .pbtn-success,
-.pbtn-success.disabled:hover,
-.pbtn-success[disabled]:hover,
-fieldset[disabled] .pbtn-success:hover,
-.pbtn-success.disabled:focus,
-.pbtn-success[disabled]:focus,
-fieldset[disabled] .pbtn-success:focus,
-.pbtn-success.disabled:active,
-.pbtn-success[disabled]:active,
-fieldset[disabled] .pbtn-success:active,
-.pbtn-success.disabled.active,
-.pbtn-success[disabled].active,
-fieldset[disabled] .pbtn-success.active {
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-.pbtn-info {
-    color: #ffffff;
-    background-color: #5bc0de;
-    border-color: #46b8da;
-}
-.pbtn-info:hover,
-.pbtn-info:focus,
-.pbtn-info:active,
-.pbtn-info.active {
-    color: #ffffff;
-    background-color: #39b3d7;
-    border-color: #269abc;
-}
-.pbtn-info.disabled,
-.pbtn-info[disabled],
-fieldset[disabled] .pbtn-info,
-.pbtn-info.disabled:hover,
-.pbtn-info[disabled]:hover,
-fieldset[disabled] .pbtn-info:hover,
-.pbtn-info.disabled:focus,
-.pbtn-info[disabled]:focus,
-fieldset[disabled] .pbtn-info:focus,
-.pbtn-info.disabled:active,
-.pbtn-info[disabled]:active,
-fieldset[disabled] .pbtn-info:active,
-.pbtn-info.disabled.active,
-.pbtn-info[disabled].active,
-fieldset[disabled] .pbtn-info.active {
-    background-color: #5bc0de;
-    border-color: #46b8da;
-}
-.pbtn-link {
-    color: #428bca;
-    font-weight: normal;
-    cursor: pointer;
-    border-radius: 0;
-}
-.pbtn-link,
-.pbtn-link:active,
-.pbtn-link[disabled],
-fieldset[disabled] .pbtn-link {
-    background-color: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-.pbtn-link,
-.pbtn-link:hover,
-.pbtn-link:focus,
-.pbtn-link:active {
-    border-color: transparent;
-}
-.pbtn-link:hover,
-.pbtn-link:focus {
-    color: #2a6496;
-    text-decoration: underline;
-    background-color: transparent;
-}
-.pbtn-link[disabled]:hover,
-fieldset[disabled] .pbtn-link:hover,
-.pbtn-link[disabled]:focus,
-fieldset[disabled] .pbtn-link:focus {
-    color: #999999;
-    text-decoration: none;
-}
-
 
 .pbtn-white {
     color: #333;
@@ -340,6 +96,7 @@ fieldset[disabled] .pbtn-link:focus {
     border: 1px solid #ccc;
     background-color: #fafafa;
 }
+
 .pbtn-light {
     color: #333;
     border: 1px solid #e6e6e6;
@@ -358,6 +115,7 @@ fieldset[disabled] .pbtn-link:focus {
 
 .pbtn-pink:hover {
     color: #fff;
+    border-color: #ee3388;
     background-color: #ee3388;
 }
 
@@ -369,6 +127,7 @@ fieldset[disabled] .pbtn-link:focus {
 
 .pbtn-buff:hover {
     color: #333;
+    border-color: #ffdfa9;
     background-color: #ffdfa9;
 }
 
@@ -380,6 +139,7 @@ fieldset[disabled] .pbtn-link:focus {
 
 .pbtn-orange:hover {
     color: #fff;
+    border-color: #f60;
     background-color: #f60;
 }
 
@@ -390,6 +150,7 @@ fieldset[disabled] .pbtn-link:focus {
 }
 .pbtn-blue:hover {
     color: #fff;
+    border-color: #0088cc;
     background-color: #0088cc;
 }
 
@@ -400,20 +161,29 @@ fieldset[disabled] .pbtn-link:focus {
 }
 .pbtn-dark:hover {
     color: #fff;
+    border: 1px solid #666;
     background-color: #999;
+    outline: none;
 }
 
+.disabled:active,
+.pbtn-dark:active,
+.pbtn-disabled:active {
+    position: static;
+    top: 0;
+}
 
 .disabled,
 .pbtn.disabled,
+.disabled .pbtn,
 .pbtn[disabled],
 fieldset[disabled] .pbtn {
     cursor: default;
-    pointer-events: none;
     opacity: 0.65;
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
+    pointer-events: none;
 }
 
 .pbtn-disabled {
@@ -424,10 +194,12 @@ fieldset[disabled] .pbtn {
 
 .pbtn-disabled:hover {
     color: #fff;
+    border-color: #666;
     background-color: #999;
     cursor: default;
-    pointer-events: none;
     box-shadow: none;
+    /* 按钮闪动 */
+    /* pointer-events: none; */
 }
 
 .pbtn {
@@ -435,6 +207,7 @@ fieldset[disabled] .pbtn {
     font-size: 14px;
     font-weight: bold;
 }
+
 .pbtn-mini {
     padding: 0 6px;
     font-size: 12px;
@@ -477,34 +250,6 @@ fieldset[disabled] .pbtn {
     padding-right: 20px;
 }
 
-
-/*
-.pbtn-large {
-    padding: 11px 20px;
-    font-size: 18px;
-    line-height: 1.33;
-    font-weight: bold;
-}
-
-.pbtn-big {
-    padding: 7px 15px;
-    font-size: 14px;
-    line-height: 1.33;
-    font-weight: bold;
-}
-.pbtn-small,
-.pbtn-mini {
-    padding: 4px 20px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-}
-
-.pbtn-mini {
-    padding: 0 6px;
-}
-*/
-
 .pbtn-block {
     display: block;
     width: 100%;
@@ -530,4 +275,17 @@ input[type="button"].pbtn-block {
     border-radius: 2px;
 }
 
+/* IE6/7 兼容性样式 */
+.pbtn { 
+    *margin-right: 4px;
+    /*border: none !important;*/
+}
+.pbtn,
+button,
+input[type=submit],
+input[type=reset],
+input[type=button]{
+  *filter:chroma(color=#000000) !imporant;
+}
 
+/* IE67的line-height解决方案 */

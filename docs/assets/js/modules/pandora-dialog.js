@@ -170,23 +170,23 @@
          * @param {Object} 获取模板的名称、类型 例如：template-dialog , default
          */
         _getTemplate: function (config) {
-            var template = "";
-
-            $.ajax({
-                type: "GET",
-                async: false,
-                url: config.templateUrl,
-                dataType: "html",
-
-                success: function (data) {
-                    template = $(data).find("#" + config.templateNmae + " > div[data-template=" + config.templateType + "]").html();
-                },
-
-                error: function (e) {
-
-                }
-
-            });
+            //var template = "";
+            //
+            //$.ajax({
+            //    type: "GET",
+            //    async: false,
+            //    url: config.templateUrl,
+            //    dataType: "html",
+            //
+            //    success: function (data) {
+            //        template = $(data).find("#" + config.templateNmae + " > div[data-template=" + config.templateType + "]").html();
+            //    },
+            //
+            //    error: function (e) {
+            //
+            //    }
+            //
+            //});
 
             return template;
         },

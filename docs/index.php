@@ -68,7 +68,7 @@
                 <a class="todo" href="module.php#imgtext">imgtext <small>图文混排</small></a>
                 
                 <a class="done" href="module.php#label">label/tags <small>标签标记</small></a>
-                <a class="todo" href="###">filter <small>类目过滤</small></a>
+                <a class="done" href="modules/bank.html">bank <small>银行/支付 ICON</small></a>
                 <a class="todo" href="###">icons <small>小图标</small></a>
                 <a class="done" href="modules/arrow.html">arrow <small>css 箭头</small></a>
                 <a class="done" href="modules/tip.html">tip <small>提示文本/提示框</small></a>
@@ -85,6 +85,7 @@
                 <a class="doing" href="module.php#breadcrumb">breadcrumb <small>面包屑</small></a>
                 <a class="done" href="modules/paging.html">paging <small>分页</small></a>
                 
+                <a class="todo" href="###">filter <small>类目过滤</small></a>
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
                 <a class="todo" href="###">media <small>媒体对象</small></a>
                 
@@ -99,10 +100,10 @@
                 <a class="todo" href="###">unit <small>组件单元</small></a>
                 <a class="todo" href="###">timeline <small>时光轴</small></a>
                 <a class="todo" href="###">photowall <small>照片墙</small></a>
-                <a class="todo" href="###">calendar <small>大/小日历</small></a>
+                <a class="doing" href="modules/calendar.html">calendar <small>大/小日历</small></a>
                 <a class="todo" href="###">vote <small>投票/调查统计</small></a>
                 <a class="todo" href="###">comments <small>评论/说说</small></a>
-                <a class="done" href="modules/bank.html">bank <small>银行/支付方式</small></a>
+                
                 <a class="todo hide" href="###">avatar <small>上传/修改头像</small></a>
                 <a class="todo hide" href="###">upload <small>多图上传</small></a>
                 <a class="todo hide" href="###">imgzoom <small>缩放及截图</small></a>

@@ -23,9 +23,22 @@
 </head>
 <body>
 <div class="wrap">
-    <h1>网页中的按钮</h1>
+    <h1>按钮兼容最佳解决方案</h1>
+    <p>鉴于按钮在网页中应用广泛，且在表单布局中兼容性问题比重较大，有必要针对按钮实现统一兼容解决方案。</p>
+	<p>首先要实现如下四种常用代码结构实现的Button表现相同（<b>宽高大小对齐方式</b>等，消除兼容性差异）</p>
+    <ul>
+	    <li>已知的Bug：<a href="/cnBootstrap/cnDocs/bugs-and-fixed.php" target="_blank">慎用A标签提交表单IE6下事件冲突</a></li>
+	    <li>为什么不用图片按钮？图片按钮虽能全兼容，但适应性扩展性都不高（所以它只能成为临时/应急解决方案），同时为了向前发展及提高效率，也必须要舍弃这种低效的做法。</li>
+	</ul>
+<pre class="prettyprint linenums">
+&lt;a class="btn" href=""&gt;Link&lt;/a&gt;
+&lt;button class="btn" type="submit"&gt;Button&lt;/button&gt;
+&lt;input class="btn" type="button" value="Input"&gt;
+&lt;input class="btn" type="submit" value="Submit"&gt;
+&lt;span class="btn" href=""&gt;Button&lt;/span&gt;
+</pre>
     <p>关于按钮，BT项目中已经做了大量的研究，也比较完美了，唯一的缺憾是不支持IE6以及在Firefox及IE7中表现的并不一致。</p>
-    <p>这里专门针对网页中的按钮做了进一步的测试研究与实践，提供了兼容的解决方案能完全满足你的需求，并能与网站的其他组件友好的组合使用。(由于之前已经做过一部分<a href="../../cnDocs/solutions/button.html" title="主要侧重外形大小的控制">CSS通用按钮</a>测试，此处继续前面的测试进行组件开发，这里主要侧重于应用级。)</p>
+    <p>这里专门针对网页中的按钮做了进一步的测试研究与实践，提供了兼容的解决方案能完全满足国内前端的需求，并能与网站的其他组件友好的组合使用。(由于之前已经做过一部分<a href="/cnBootstrap/cnDocs/solutions/button.html" title="主要侧重外形大小的控制">CSS通用按钮</a>测试，此处继续前面的测试进行组件开发，这里主要侧重于应用级。)</p>
     
     <div class="docs-example">
         <h2><a href="../assets/less/buttons.css">buttons.css</a></h2>
@@ -138,7 +151,7 @@
 &lt;span class="btn"&gt;普通按钮&lt;/span&gt;
 </pre>
     <h3>问题及注意事项：</h3>
-    <p>按钮使用中的注意事项，请参考 <a href="../../cnDocs/solutions/button.html">按钮兼容最佳方案</a></p>
+    <p>按钮使用中的注意事项，请参考 <a href="/cnBootstrap/cnDocs/solutions/button.html">按钮兼容最佳方案</a></p>
     
     <h2>按钮组</h2>
     <div class="docs-example">
