@@ -81,6 +81,42 @@
 
 */
 
+.banks {
+    width: 600px;
+    height: 480px;
+    background: url(http://pic.lvmama.com/img/v4/bank.png) no-repeat;
+    
+    /*
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    */
+}
+
+.banks-item {
+    margin: 0;
+    width: 150px;
+    float: left;
+    display: inline;
+}
+.banks-item li {
+    position: relative;
+    z-index: 10;
+    height: 39px;
+    line-height: 39px;
+    width: 149px;
+    text-indent: -9999px;
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px 0;
+}
+.banks-item li:hover {
+    z-index: 20;
+    text-indent: 10px;
+    background: rgba(255,255,255,0.9);
+    margin: -1px 0 0 -1px;
+    border: 1px solid #ff9600;
+    color: green;
+}
+
 
 </style>
 </head>
@@ -93,22 +129,78 @@
     <ul>
     	<li><a href="http://pic.lvmama.com/styles/v4/modules/bank.css">http://pic.lvmama.com/styles/v4/modules/bank.css</a> 第三方支付 ICON图标集</li>
     </ul>
-    
+    <table class="table-info">
+    	<tr>
+    		<th width="25%">中国**银行</th>
+    		<th width="25%">地区命名的银行</th>
+    		<th width="25%">非地区命名的银行</th>
+    		<th width="25%">其他第三方平台</th>
+    	</tr>
+        <tr>
+    		<td colspan="4" style="padding: 0; border-bottom: 0;">
+                <div class="banks">
+                    <ul class="banks-item">
+                        <li>abc </li>
+                        <li>boc </li>
+                        <li>ccb </li>
+                        <li>icbc</li>
+                        <li>psbc</li>
+                        <li>ceb </li>
+                        <li>cmbc</li>
+                        <li>cmb </li>
+                        <li>comm</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="banks-item row-item">
+                        <li>bjbank</li>
+                        <li>shbank</li>
+                        <li>jsbank</li>
+                        <li>hzbank</li>
+                        <li>nbcb  </li>
+                        <li>njcb  </li>
+                        <li>wzcb  </li>
+                        <li>gzcb  </li>
+                        <li>bjrcb </li>
+                        <li>srcb  </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="banks-item row-item">
+                        <li>sdb   </li>
+                        <li>spdb  </li>
+                        <li>cib   </li>
+                        <li>cgb   </li>
+                        <li>hxb   </li>
+                        <li>hkbea </li>
+                        <li>cbhb  </li>
+                        <li>ecitic</li>
+                        <li>pingan</li>
+                        <li>fudian</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="banks-item row-item">
+                        <li>alipay      </li>
+                        <li>tenpay      </li>
+                        <li>shengpay    </li>
+                        <li>unionpay    </li>
+                        <li>lakala      </li>
+                        <li>cmpay       </li>
+                        <li>alipay-quick</li>
+                        <li>tenpay-quick</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </td>
+    	</tr>
+    </table>
     <div class="docs-example">
         <p><strong>使用说明：</strong>引用组合样式，bank+icon标识，如：如支付宝 <code>class="bank alipay"</code></p>
-        <h4>第三方平台</h4>
-        <ul class="bank-list clearfix">
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay  " title="支付宝"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay  " title="财付通"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank shengpay" title="盛付通"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank unionpay" title="银联支付"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank lakala  " title="拉卡拉"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cmpay   " title="中国移动手机支付"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay-quick" title="支付宝快捷支付"></i></label></li>
-            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay-quick" title="财付通快捷支付"></i></label></li>
-            
-        </ul>
-        <div class="dot_line"></div>
         
         <h4>中国**银行</h4>
         <ul class="bank-list clearfix">
@@ -154,7 +246,20 @@
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank pingan" title="平安银行"></i></label></li>
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank fudian" title="富滇银行"></i></label></li>
         </ul>
+        <div class="dot_line"></div>
         
+        <h4>其他第三方平台</h4>
+        <ul class="bank-list clearfix">
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay  " title="支付宝"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay  " title="财付通"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank shengpay" title="盛付通"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank unionpay" title="银联支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank lakala  " title="拉卡拉"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank cmpay   " title="中国移动手机支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipay-quick" title="支付宝快捷支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay-quick" title="财付通快捷支付"></i></label></li>
+            
+        </ul>
         
     </div>
 <pre class="prettyprint linenums">
