@@ -97,6 +97,7 @@
                 <a class="todo" href="###">progress <small>进度条</small></a>
                 <a class="done" href="modules/step.html">step <small>步骤/流程</small></a>
                 <a class="doing" href="modules/misc.html">misc <small>杂项</small></a>
+                <a class="todo" href="modules/noimg.html">noimg <small>无图片化布局</small></a>
                 <a class="todo" href="###">unit <small>组件单元</small></a>
                 <a class="todo" href="###">timeline <small>时光轴</small></a>
                 <a class="todo" href="###">photowall <small>照片墙</small></a>

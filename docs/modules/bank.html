@@ -85,6 +85,7 @@
     width: 600px;
     height: 480px;
     background: url(http://pic.lvmama.com/img/v4/bank.png) no-repeat;
+    background: url(../assets/img/bank.png) no-repeat;
     
     /*
     border-top: 1px solid #ddd;
@@ -104,19 +105,33 @@
     height: 39px;
     line-height: 39px;
     width: 149px;
-    text-indent: -9999px;
+    text-indent: 200px;
     border: 1px solid #ddd;
     border-width: 0 1px 1px 0;
+    overflow: hidden;
+    
+    -webkit-transition: 1s text-indent, .5s background;
+       -moz-transition: 1s text-indent, .5s background;
+        -ms-transition: 1s text-indent, .5s background;
+            transition: 1s text-indent, .5s background;
 }
 .banks-item li:hover {
     z-index: 20;
     text-indent: 10px;
+    background: #fff;
     background: rgba(255,255,255,0.9);
     margin: -1px 0 0 -1px;
     border: 1px solid #ff9600;
     color: green;
+    
+    -webkit-transition: .4s text-indent;
+       -moz-transition: .4s text-indent;
+        -ms-transition: .4s text-indent;
+            transition: .4s text-indent;
 }
-
+caption {
+    padding: 5px 0;
+}
 
 </style>
 </head>
@@ -130,6 +145,7 @@
     	<li><a href="http://pic.lvmama.com/styles/v4/modules/bank.css">http://pic.lvmama.com/styles/v4/modules/bank.css</a> 第三方支付 ICON图标集</li>
     </ul>
     <table class="table-info">
+        <caption><strong>使用说明：</strong>引用组合样式，bank+icon标识，如：如支付宝 <code>class="bank alipay"</code></caption>  
     	<tr>
     		<th width="25%">中国**银行</th>
     		<th width="25%">地区命名的银行</th>
@@ -233,7 +249,7 @@
         </ul>
         <div class="dot_line"></div>
         
-        <h4>非地区命名的其他银行</h4>
+        <h4>非地区命名的银行</h4>
         <ul class="bank-list clearfix">
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank sdb   " title="深圳发展银行"></i></label></li>
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank spdb  " title="浦发银行"></i></label></li>

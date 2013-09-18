@@ -26,7 +26,7 @@
     width: 130px;
     height: 36px;
     border: 1px solid #ddd;
-    background: url(/temp/bank.png) 9999px 9999px no-repeat;
+    background: url(../img/bank.png) 9999px 9999px no-repeat;
 } 
 .bank:hover { 
     border-color:#ff9600; 

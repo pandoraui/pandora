@@ -98,7 +98,7 @@
             <dt>super：</dt>
             <dd>http://192.168.0.7/svn/super/trunk</dd>
             <dt>focus：</dt>
-            <dd>http://192.168.0.7/svn/focus</dd>
+            <dd>http://192.168.0.7/svn/focus/trunk</dd>
             <dt>资讯 info：</dt>
             <dd>http://192.168.0.7/svn/others/projects/info/trunk</dd>
             <dt>攻略 guide：</dt>
