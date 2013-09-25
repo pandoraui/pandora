@@ -47,6 +47,7 @@
             <span class="tip-icon tip-icon-help"></span>
             <span class="tip-icon tip-icon-stop"></span>
             <span class="tip-icon tip-icon-wait"></span>
+            <span>14px*14px</span>
         </p>
         <p>
             <span class="tip-icon-big tip-icon-big-default"></span>
@@ -57,6 +58,7 @@
             <span class="tip-icon-big tip-icon-big-help"></span>
             <span class="tip-icon-big tip-icon-big-stop"></span>
             <span class="tip-icon-big tip-icon-big-wait"></span>
+            32px*32px
         </p>
     </div>
 <pre class="prettyprint linenums">
@@ -130,10 +132,18 @@
         <p><strong>BUG症状：</strong>当在一个容器里文字和img、input、textarea、select、object等元素相连的时候，对这个容器设置的line-height数值会失效； 同时以上元素的行高可能×2：</p>
         <p><strong>解决方法：</strong> 对和文字相连接的img、input、textarea、select、object等元素加以下两个属性</p>
         <ul>
-        	<li>margin: (所属line-height-自身高度)/2px 0;</li>
-        	<li>vertical-align: middle</li>
+            <li>margin: (所属line-height-自身高度)/2px 0;</li>
+            <li>vertical-align: middle</li>
         </ul>
-        
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="tiptext"&gt;&lt;span class="tip-icon tip-icon-default"&gt;&lt;/span&gt;缺省消息提醒：自行编辑，非系统消息&lt;/div&gt;
+&lt;div class="tiptext tip-default"&gt;默认提醒：自行编辑，非系统消息&lt;/div&gt;
+&lt;div class="tiptext tip-info"&gt;消息提醒：自行编辑，非系统消息&lt;/div&gt;
+&lt;div class="tiptext tip-info"&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/div&gt;
+&lt;div class="tiptext tip-warning"&gt;&lt;span class="tip-icon tip-icon-warning"&gt;&lt;/span&gt;警告提醒：自行编辑，非系统消息&lt;/div&gt;
+</pre>
+    <div class="docs-example">
         <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
         <p>.tip-line 用于显示单行的 .tiptext文本提醒，常和表单混用，并保持垂直对齐。</p>
         <div>
@@ -149,6 +159,19 @@
                 <i>◆</i>
             </div><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
         </div>
+    </div>
+<pre class="prettyprint linenums">
+&lt;span class="tiptext tip-line tip-default"&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/span&gt;
+&lt;span class="tiptext tip-line tip-warning"&gt;&lt;span class="tip-icon tip-icon-warning"&gt;&lt;/span&gt;警告提醒：自行编辑，非系统消息&lt;/span&gt;
+
+&lt;span class="tiptext tip-line tip-default"&gt;
+    &lt;div class="tip-arrow tip-arrow-left"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/span&gt;
+</pre>
+    <div class="docs-example">
         <h4>关于点钟方向定位三角指示的位置 <small>12个方位：tip-arrow-1 ～ tip-arrow-12</small></h4>
 <pre>
 英文值方位(方便用于单行提醒)与点钟方向的对应：
@@ -254,16 +277,47 @@
             <p><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</p>
         </div>
         <!-- //点钟方向 -->
-        
-        
-        
-        
-        
-        
-        
-        
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="tiptext tip-info"&gt;
+    &lt;span class="ui-close"&gt;&times;&lt;/span&gt;
+    &lt;div class="tip-arrow tip-arrow-11"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="tiptext tip-info"&gt;
+    &lt;div class="tip-arrow tip-arrow-3"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="tiptext tip-info"&gt;
+    &lt;div class="tip-arrow tip-arrow-7"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="tiptext tip-info"&gt;
+    &lt;div class="tip-arrow tip-arrow-9"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+    
+    
+    
+    <div class="docs-example">
         <h4>大段文本的展示</h4>
-        <p>大段文本也可以附带三角箭头指示方位</p>
+        <p>显示大段文本，<code>tiptext</code> 表示毫无压力，且仍然可以附带三角箭头指示方位</p>
         <span class="tiptext tip-info">
             <span class="ui-close">&times;</span>
             <div class="tip-arrow tip-arrow-11">
@@ -367,9 +421,51 @@
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
             </div>
         </div>
-        
-        
-        
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="tipbox tip-success tip-nowrap"&gt;
+    &lt;span class="tip-icon-big tip-icon-big-success"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;无边框信息提醒！！！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="tipbox tip-default"&gt;
+    &lt;span class="ui-close"&gt;&times;&lt;/span&gt;
+    &lt;span class="tip-icon-big tip-icon-big-info"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;默认的操作状态提醒！前面的ICON图标可自由组合。&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="tipbox tip-info"&gt;
+    &lt;span class="ui-close"&gt;&times;&lt;/span&gt;
+    &lt;span class="tip-icon-big tip-icon-big-info"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;Binggo！操作状态提醒！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="tipbox tip-warning"&gt;
+    &lt;span class="tip-icon-big tip-icon-big-warning"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;注意！操作有风险，付款需谨慎！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    
+    
+    
+    
+    <div class="docs-example">
         <h4>更复杂的提示框</h4>
         <p>此提醒框可用于展示框信息，无状态icon提醒的一般信息展示</p>
         <div class="tipbox tip-warning">
@@ -393,6 +489,36 @@
                 <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
             </div>
         </div>
+    </div>
+<pre class="prettyprint linenums">
+/* 更复杂的提示框 */
+&lt;div class="tipbox tip-warning"&gt;
+    &lt;span class="ui-close"&gt;&times;&lt;/span&gt;
+    &lt;span class="tip-icon-big tip-icon-big-warning"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;注意！操作有风险，付款需谨慎！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="tip-other tip-align"&gt;
+        这里可以放置提醒框主体之外的复杂布局内容(可以不对齐)，但事实上与提醒主体内容保持对齐效果是好的，可以通过 &lt;code&gt;.tip-align&lt;/code&gt; 样式控制。
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* loading */
+&lt;div class="tipbox tip-loading"&gt;
+    &lt;span class="ui-close"&gt;&times;&lt;/span&gt;
+    &lt;span class="tip-icon-big tip-icon-big-loading"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;注意！操作有风险，付款需谨慎！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    
+    
+    <div class="docs-example">
         <h4>.tipbox与.tiptext的等价信息框</h4>
         <p>选用规则：理论上通用，但推荐仅仅有文本时使用tiptext提醒，而涉及复杂结构或复杂操作的，建议使用tipbox</p>
         <div class="tiptext tip-info">
@@ -447,7 +573,27 @@
         </div>
     </div>
 <pre class="prettyprint linenums">
+/* case 1 */
+&lt;div class="tipbox tip-success tip-nowrap"&gt;
+    &lt;span class="tip-icon-big tip-icon-big-success"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-color-title"&gt;您的订单已经支付成功。&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="tip-other tip-align pay-backinfo"&gt;
+        其他内容信息
+    &lt;/div&gt;  
+&lt;/div&gt;
 
+/* case 2 */
+&lt;div class="tipbox-outer"&gt;
+    &lt;div class="tipbox tip-default"&gt;
+        &lt;span class="tip-icon-big tip-icon-big-warning"&gt;&lt;/span&gt;
+        &lt;div class="tip-content clearfix"&gt;
+            &lt;h3 class="tip-title"&gt;抱歉，您没有权限访问该版块&lt;/h3&gt;
+            &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;[ 点击这里返回上一页 ]&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </pre>
     
     <h2>方案二 <small>文字图标集（推荐使用）</small></h2>
