@@ -32,20 +32,20 @@ input {
     padding: 2px 10px;
     border: 1px solid transparent;
     border-radius: 2px;
-	text-decoration: none;
-	vertical-align: middle;
+    text-decoration: none;
+    vertical-align: middle;
     
     color: #333;
-	font-size: 12px;
+    font-size: 12px;
     line-height: 20px;
-	font-weight: normal;
-	text-align: center;
-	background-image: none;
+    font-weight: normal;
+    text-align: center;
+    background-image: none;
     cursor: pointer;
     white-space: nowrap;
     
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border: 1px solid #e6e6e6;
     
     /* 禁止选中文字 */
     -webkit-user-select: none;
@@ -76,13 +76,46 @@ input {
 }
 .pbtn:hover {
     color: #333;
-    border: 1px solid #ccc;
-    background-color: #fafafa;
+    background-color: #e6e6e6;
 }
 
 input.pbtn-text,
 button.pbtn-text {
     *vertical-align: top;
+}
+
+.pbtn-link {
+    color: #428bca;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 0;
+}
+.pbtn-link,
+.pbtn-link:active,
+.pbtn-link[disabled],
+fieldset[disabled] .pbtn-link {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.pbtn-link,
+.pbtn-link:hover,
+.pbtn-link:focus,
+.pbtn-link:active {
+    border-color: transparent;
+}
+.pbtn-link:hover,
+.pbtn-link:focus {
+    color: #2a6496;
+    text-decoration: underline;
+    background-color: transparent;
+}
+.pbtn-link[disabled]:hover,
+fieldset[disabled] .pbtn-link:hover,
+.pbtn-link[disabled]:focus,
+fieldset[disabled] .pbtn-link:focus {
+    color: #999999;
+    text-decoration: none;
 }
 
 .pbtn-white {
@@ -207,7 +240,11 @@ fieldset[disabled] .pbtn {
     font-size: 14px;
     font-weight: bold;
 }
-
+.pbtn-middle {
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
 .pbtn-mini {
     padding: 0 6px;
     font-size: 12px;
@@ -217,11 +254,6 @@ fieldset[disabled] .pbtn {
     padding: 2px 10px;
     font-size: 12px;
     font-weight: normal;
-}
-.pbtn-middle {
-    padding: 4px 12px;
-    font-size: 14px;
-    font-weight: bold;
 }
 .pbtn-big {
     padding: 7px 15px;
@@ -265,11 +297,11 @@ input[type="button"].pbtn-block {
     width: 100%;
 }
 
-.pbtn-large,
-.pbtn-big,
 .pbtn-middle,
+.pbtn-mini,
 .pbtn-small,
-.pbtn-mini {
+.pbtn-big,
+.pbtn-large {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -288,4 +320,73 @@ input[type=button]{
   *filter:chroma(color=#000000) !imporant;
 }
 
-/* IE67的line-height解决方案 */
+/* IE6/7的line-height解决方案 */
+.pbtn,
+.pbtn:hover {
+    /* IE6 IE7下聚焦状态会有不可控的黑色边框 */
+    *border: none;
+}
+input.pbtn{
+    /* IE6下使input的按钮和a及button的按钮保持宽度一致 */
+    _width: auto;
+}
+.pbtn{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+input.pbtn       { height: 30px; }
+input.pbtn-mini  { height: 22px; }
+input.pbtn-small { height: 26px; }
+input.pbtn-big   { height: 38px; }
+input.pbtn-large { height: 44px; }
+
+a.pbtn,
+button.pbtn {
+    *padding-top: 0;
+    *padding-bottom: 0;
+    *height: 30px;
+}
+a.pbtn{ 
+    *line-height: 30px;
+}
+
+a.pbtn-mini {
+    *line-height: 22px;
+}
+a.pbtn-mini,
+button.pbtn-mini,
+input.pbtn-mini {
+    *height: 22px;
+}
+
+a.pbtn-small,
+button.pbtn-small,
+input.pbtn-small {
+    *height: 24px;
+}
+a.pbtn-small {
+    *line-height: 24px;
+}
+
+a.pbtn-small,
+button.pbtn-small {
+    _height: 26px;
+}
+
+a.pbtn-big,
+button.pbtn-big,
+input.pbtn-big { 
+    *height: 34px;
+}
+a.pbtn-big {
+    *line-height: 34px;
+    _height: 36px;
+}
+
+a.pbtn-large,
+button.pbtn-large,
+input.pbtn-large { 
+    *height: 42px;
+}
+a.pbtn-large {
+    *line-height: 42px;
+    _height: 44px;
+}
+
