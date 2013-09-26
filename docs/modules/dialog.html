@@ -23,20 +23,20 @@ h5{color:green;}
     <h1>模态窗口-弹出对话框</h1>
     <p>现支持五种宽度尺寸，两种皮肤，同时也支持自定义宽度。更多详情参看 <a href="#dialog-standard">dialog的标准模式-参数配置</a></p>
     <ul>
-    	<li>五种宽度尺寸(使用此方式已通过css实现宽度设置，不必再传入自定义宽度)
+        <li>五种宽度尺寸(使用此方式已通过css实现宽度设置，不必再传入自定义宽度)
             <ul>
-            	<li>默认dialog(400px)</li>
-            	<li>dialog-mini(300px无标题,用于alert)</li>
-            	<li>dialog-middle(600px)</li>
-            	<li>dialog-big(800px)</li>
-            	<li>dialog-large(1000px)</li>
+                <li>默认dialog(400px)</li>
+                <li>dialog-mini(300px无标题,用于alert)</li>
+                <li>dialog-middle(600px)</li>
+                <li>dialog-big(800px)</li>
+                <li>dialog-large(1000px)</li>
             </ul>
         </li>
         <li>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</li>
     </ul>
     <p><strong>TODO：</strong>dialog实现iframe内容自适应其宽度、高度；</p>
     
-	<h3>注意事项：</h3>
+    <h3>注意事项：</h3>
     <p><strong>依赖</strong>——使用实现模态窗口/弹出框，请确保页面已经引用了如下文件：</p>
     <ul>
         <li><a href="http://pic.lvmama.com/styles/v4/modules/dialog.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/dialog.css</a> 模态窗口样式</li>
@@ -88,14 +88,31 @@ h5{color:green;}
     <p><strong>注意：</strong>此插件调用 pandora 可用 $ 简化替代，如 <code>pandora.alert(content)</code> 等效于 <code>$.alert(content)</code>。</p>
     
     <h2>1、简化模式 <small>静态方法重写标准方法，调用更简单</small></h2>
+    <p><strong class="red">注意：</strong>简化模式的静态方法只适用已确定的以下三种场景，任何不确定的调用场景，请使用标准模式!!!</p>
+<pre>
+// 1.弹出一句话提醒信息。
+$.alert("这个类似原生方法 alert");
+
+// 2.提示保存成功，若干毫秒后自动关闭(2000毫秒为缺省值，可省略)
+$.msg("这个提醒会自动关闭",2000); 
+
+// 3.简单的操作确认提醒
+$("#demo131").click(function () {
+    $.confirm("你确认要删除吗？", function () {
+        // 确认操作的事件(默认可不写，为关闭操作)
+    }, function () {
+        // 取消操作的事件(默认可不写，为关闭操作)
+    });
+});
+</pre>
     
     <h3>1.1、alert 的模态提醒 <small>$.alert</small></h3>
     <div class="docs-example">
         <h4>最简单的调用，静态方法实现alert的模态提醒</h4>
         <p>参数说明 <code>$.alert(content, callback)</code> 示例如下：</p>
         <ul>
-        	<li>content 为提醒内容</li>
-        	<li>callback 回调函数</li>
+            <li>content 为提醒内容</li>
+            <li>callback 回调函数</li>
         </ul>
         
         <h5>示例111</h5>
@@ -129,8 +146,8 @@ $(function(){
         <h4>实现操作提醒，并定时自动关闭。</h4>
         <p>参数说明 <code>$.msg(content, time)</code> 示例如下：</p>
         <ul>
-        	<li>content 为提醒内容</li>
-        	<li>time 数值定时器，单位为毫秒，缺省值：2000</li>
+            <li>content 为提醒内容</li>
+            <li>time 数值定时器，单位为毫秒，缺省值：2000</li>
         </ul>
         
         <h5>示例121</h5>
@@ -159,8 +176,8 @@ $(function(){
         <h4>静态方法实现 confirm 的模态提醒</h4>
         <p>参数说明 <code>$.confirm(content, ok, cancel)</code> 示例如下：</p>
         <ul>
-        	<li>content 为提醒内容</li>
-        	<li>ok 为点击确定按钮的回调事件</li>
+            <li>content 为提醒内容</li>
+            <li>ok 为点击确定按钮的回调事件</li>
             <li>cancel 为点击取消按钮的回调事件</li>
         </ul>
         <h5>示例131</h5>
@@ -168,7 +185,7 @@ $(function(){
         
         <h5>示例132</h5>
         <table class="table-info" style="width:300px;">
-        	<tr>
+            <tr>
                 <td>这是一条信息-1</td><td class="tc"><button class="pbtn pbtn-small demo132">删除</button></td>
             </tr>
             <tr>
@@ -561,7 +578,7 @@ $(function(){
         <h4>3.5 对话框初始化及其事件</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <ul>
-        	<li>initialize  对话框初始化完成后执行的函数</li>
+            <li>initialize  对话框初始化完成后执行的函数</li>
         </ul>
         <h5>示例351</h5>
         <p><button class="pbtn" id="demo351">对话框初始化及其事件</button></p>
@@ -595,7 +612,7 @@ $(function(){
         <h4>3.6 关闭对话框前执行函数</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
         <ul>
-        	<li>beforeunload  对话框关闭前执行的函数</li>
+            <li>beforeunload  对话框关闭前执行的函数</li>
         </ul>
         <h5>示例361</h5>
         <p><button class="pbtn" id="demo361">关闭对话框前执行函数</button></p>

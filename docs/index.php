@@ -67,7 +67,7 @@
                 <a class="todo" href="module.php#imglist">imglist <small>图片列表</small></a>
                 <a class="todo" href="module.php#imgtext">imgtext <small>图文混排</small></a>
                 
-                <a class="done" href="module.php#label">label/tags <small>标签标记</small></a>
+                <a class="done" href="modules/tags.html">label/tags <small>标签标记</small></a>
                 <a class="done" href="modules/bank.html">bank <small>银行/支付 ICON</small></a>
                 <a class="todo" href="###">icons <small>小图标</small></a>
                 <a class="done" href="modules/arrow.html">arrow <small>css 箭头</small></a>

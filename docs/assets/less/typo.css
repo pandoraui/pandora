@@ -21,7 +21,7 @@
  * 一篇关于 <u> 标签的很好文章：http://html5doctor.com/u-element/ 
  */
 u, .typo-u {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -45,22 +45,22 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 .typo h1, .typo-h1 {
-	font-size: 2.6em;
+    font-size: 2.6em;
 }
 .typo h2, .typo-h2 {
-	font-size: 2.0em;
+    font-size: 2.0em;
 }
 .typo h3, .typo-h3 {
-	font-size: 1.6em;
+    font-size: 1.6em;
 }
 .typo h4, .typo-h4 {
-	font-size: 1.3em;
+    font-size: 1.3em;
 }
 .typo h5, .typo-h5 {
-	font-size: 1em;
+    font-size: 1em;
 }
 .typo h6, .typo-h6 {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 /* 在文章中，还原 ul 和 ol 的样式，布局更便捷迅速 */
@@ -200,7 +200,7 @@ input { }
 
 /* TODO: 供着重号使用 */
 .typo-em, .typo em, legend, caption {
-	font-weight: 700;
+    font-weight: 700;
     font-style: normal;
 }
 

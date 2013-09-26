@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>label/tags 标签标记</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
+<style>
+.relative{position:relative;border-bottom:1px dashed #888;cursor:default;color:#245DC1;}
+.tiptext,
+.tipbox{margin:10px 0;}
+.poptip-mini{margin-right:10px;}
+.relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>label/tags 标签标记</h1>
+    <p>实现统一的 tags 标签标记，方便统一规划及修改引用。</p>
+    
+    
+    <p><strong>依赖：</strong>使用前请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="http://pic.lvmama.com/styles/v4/modules/tags.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/tags.css</a> tags 标签样式</li>
+    </ul>
+    
+    <h3>lvmama标签统一 <small>促销、返现、提示</small></h3>
+    
+    <div class="docs-example f12">
+        <p>默认设置了margin:0 2px，保证连用标签的间距(换行会产生一个空格)，使用时注意保持统一</p>
+        <h4>纯色标签 tags10* <small></small></h4>
+        <p>&lt;span class="tags101"&gt;文字&lt;/span&gt;
+            <span class="tags101">多人多惠</span>
+            <span class="tags101">促销</span>
+        </p>
+        <p>&lt;span class="tags102"&gt;文字&lt;/span&gt;
+            <span class="tags102">元旦</span>
+            <span class="tags102">国庆</span>
+            <span class="tags102">端午</span>
+            <span class="tags102">微旅游日</span>
+            <span class="tags102">中秋</span>
+            <span class="tags102">清明</span>
+            <span class="tags102">五一</span>
+        </p>
+        <p>&lt;span class="tags103"&gt;文字&lt;/span&gt;
+            <span class="tags103">热卖</span><br>
+        </p>
+        <p>&lt;span class="tags104"&gt;文字&lt;/span&gt;
+            <span class="tags104">新品</span><br>
+        </p>
+        
+        
+        <h4>促销标签 tags20*</h4>
+        <p>
+            &lt;span class="tags201"&gt;促销&lt;/span&gt; 
+            <span class="tags201">信用卡促销</span>
+            <span class="tags201">多人促销</span>
+            <span class="tags201">早订惠</span>
+            <span class="tags201">招 行</span>
+        </p>
+        
+        
+        <h4>分类标签 tags30*</h4>
+        <p>
+            &lt;span class="tags301"&gt;超级自由行&lt;/span&gt; 
+            <span class="tags301">超级自由行</span>
+        </p>
+        <p>
+            &lt;span class="tags302"&gt;开心驴行&lt;/span&gt; 
+            <span class="tags302">开心驴行</span>
+        </p>
+        
+        
+        <h4>放到文字中看看效果：标题中 <span class="tags101">多人多惠</span><span class="tagsback"><em>折扣</em><i>7.9折</i></span><span class="tags301">超级自由行</span></h4>
+
+        <p>段落中：驴妈妈的<span class="tags101">多人多惠</span>、<span class="tags301">超级自由行</span>产品一直在<span class="tags103">热卖</span>，并且<span class="tags102">节假日</span>还时常发布<span class="tags104">新品</span>并伴随<span class="tags101">促销</span>活动<span class="tags302">开心驴行</span>，转发<span class="tags102">微博</span>还有好礼不断哦！</p>
+        
+        
+        <h4>返现类标签 <small>橙色</small></h4>
+        <p>
+            <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>折扣</em><i>7.9折</i></span>
+                
+            <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>销量</em><i>1208</i></span>
+            
+            <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>5元</i></span>
+            
+            <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>&yen;5元</i></span>
+            
+            <span class="tagsback" tip-title="提示标题" tip-content="提示内容"><em>折扣返现</em><i>20元</i></span>
+            <pre>&lt;span class="tagsback" tip-title="提示标题" tip-content="提示内容"&gt;&lt;em&gt;折扣&lt;/em&gt;&lt;i&gt;7.9折&lt;/i&gt;&lt;/span&gt;</pre>
+        </p>
+        
+        <p><span class="tagsback tagblue" tip-title="提示标题" tip-content="提示内容"><em>送</em><i>积分100分</i></span></p>
+        
+        <h3>简单激活tooltip：</h3>
+        <p><strong>注意：</strong>激活 tooltip 依赖 tooltip 的样式，关于 tooltip ，详情参看 <a target="_blank" href="tooltip.html">tooltip 工具提醒</a></p>
+        <p>依赖：</p>
+        <ul>
+            <li>http://pic.lvmama.com/styles/new_v/ob_common/ui-components.css</li>
+            <li>http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</li>
+            
+        </ul>
+<pre>
+$(function(){
+    // 通用调用写法
+    $('span[class^="tags"]').ui('lvtip',{
+        place: 'bottom'
+    })
+    
+    // 调用2
+    $('.calendar').ui('lvtip',{
+        templete : 2,  // 提示模板2
+        place: 'bottom-left',  //支持八个方位 top right bottom left top-left top-right bottom-left bottom-right
+        offsetX: 0,
+        offsetY: 0,
+        events : "live"  //live方法有问题，后添加元素ui不被调用
+    });
+    
+});
+</pre>
+        
+        <p>复杂标签测试： <span class="testtags" tip-title="提示标题" tip-content="提示内容"><em>折扣返现</em><i>20元</i></span></p>
+    </div>
+    
+    <h3>轻松实现折叠效果</h3>
+    <p>当没有任何内容时，可以很方便的将标签和徽章折叠起来（通过CSS的 <code>:empty</code>  选择器）。<small>针对低版本浏览器需要js修复支持</small></p>
+    
+    <h2>标签 <small>标签和注释文字</small></h2>
+    <table class="table-info table-full">
+        <thead>
+            <tr>
+                <th title="Labels">标签</th>
+                <th title="Markup">代码</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="label" title="Default">默认</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label"&gt;默认&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-success" title="Success">成功</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label label-success"&gt;成功&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-warning" title="Warning">警告</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label label-warning"&gt;警告&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-important" title="Important">重要</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label label-important"&gt;重要&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-info" title="Info">信息</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label label-info"&gt;信息&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-inverse" title="Inverse">相反</span>
+                </td>
+                <td>
+                    <code>&lt;span class="label label-inverse"&gt;相反&lt;/span&gt;</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3 title="Badges">标记 <small>标记信息、未完成任务、未读信息等</small></h3>
+    <p>用来显示指示信息或标识某某数量(未完成任务、未读信息等)的简洁小组件。在CRM中往往用在任务处理列表或消息提醒上。</p>
+    <table class="table-info table-full">
+        <thead>
+            <tr>
+            <th title="Name">名称</th>
+            <th title="Example">例子</th>
+            <th title="Markup">代码</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    默认
+                </td>
+                <td>
+                    <span class="badge">1</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge"&gt;1&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    成功
+                </td>
+                <td>
+                    <span class="badge badge-success">2</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge badge-success"&gt;2&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    警告
+                </td>
+                <td>
+                    <span class="badge badge-warning">4</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge badge-warning"&gt;4&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    重要
+                </td>
+                <td>
+                    <span class="badge badge-important">6</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge badge-important"&gt;6&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    信息
+                </td>
+                <td>
+                    <span class="badge badge-info">8</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge badge-info"&gt;8&lt;/span&gt;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    相反
+                </td>
+                <td>
+                    <span class="badge badge-inverse">10</span>
+                </td>
+                <td>
+                    <code>&lt;span class="badge badge-inverse"&gt;10&lt;/span&gt;</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>tags标签 <small>依赖<a  href="../assets/less/tags.css">tags.css</a></small></h2>
+    <div class="docs-example">
+        <h4>Intelligent son <small>聪明的儿子</small></h4>
+        <p>
+        One day, the father lets eight year-old son send a <a href="###" class="tags">letter</a>, the son took the letter , the father then remembered <a class="tags tags-blue" href="###">didn't</a> write the address and addressee's name on the envelope. <br>
+        After the son comes back, the father asks him: "You have <a class="tags tags-red" href="###">thrown</a> the letter in the mail box?" <br>
+        "Certainly" <br>
+        "You have not seen on the envelope not to write the address and the addressee name?" <br>
+        "I certainly saw <span class="tags">nothing</span> written on the envelope." <br>
+        "Then why you didn't take it back?" <br>
+        "I also thought that you do not write the address and the addressee, is for does not want to let me know that you do send the letter to who!" 
+        </p>
+
+        <p>之乎者也，<a href="###" class="tags tag-blue">如果</a>用的是中文呢？来点<a href="###" class="tags tags-green">English</a>混排一下。</p>
+        
+        <p class="f12"><span class="tags tags-blue">来个</span>小字体版的：之乎者也，<a href="###" class="tags">如果</a>用的是中文呢？来点<a href="###" class="tags tags-red">English</a>混排一下。</p>
+    </div>
+<pre class="prettyprint linenums">
+&lt;a href="###" class="tags"&gt;默认&lt;/a&gt;
+&lt;a href="###" class="tags tags-blue"&gt;蓝色&lt;/a&gt;
+&lt;a href="###" class="tags tags-red"&gt;红色&lt;/a&gt;
+&lt;a href="###" class="tags tags-green"&gt;绿色&lt;/a&gt;
+</pre>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <h3>对此你有什么看法：</h3>
+    <div id="uyan_frame"></div>
+</div>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/google-code-prettify/prettify.js"></script> 
+<!-- UY BEGIN -->
+<script type="text/javascript">
+$(function(){
+    // make code pretty
+    window.prettyPrint && prettyPrint()
+})
+
+
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</body>
+</html>
