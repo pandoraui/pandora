@@ -140,36 +140,42 @@
                 <a class="todo" href="###">autocomplete <small>自动补全</small></a>
             </div>
             
+            
+            <h3>兼容解决方案</h3>
+            <div class="modules">
+                <a class="doing" target="_blank" href="modules/typo.html">中文排版</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/two-layout.html">两列自适应布局</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/equal-height-layout.html">等高布局</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/center-middle.html">水平/垂直居中</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/float-center.html">float:center</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">清楚浮动</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/white-space.html">文本省略号 强制换行</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/text-align-justify.html">文本两端对齐</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">文本纵向排列</a>
+            </div>
+            
+            
             <h3>常用 JS 代码段</h3>
             <div class="modules">
                 <a class="done" href="demo/waterfall.html">waterfall <small>瀑布广告</small></a>
                 <a class="done" href="demo/smartfloat.html">smartfloat <small>滚动浮动</small></a>
             </div>
+            
+            
             <h3>主要项目案例 DEMO <small>内网访问</small></h3>
             <div class="demolist">
                 <dl class="dl-hor">
-                    <dt>驴妈妈</dt>
+                    <dt>驴妈妈V3</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/index.php">index</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v3/">channel 各大频道改版</a>
                     </dd>
-                    <dt>定制游</dt>
+                    <dt>驴妈妈V4</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/custom.php">custom</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/custom-page.php">custom-page</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v4/order/">order下单改版</a>
                     </dd>
-                    <dt>积分商城</dt>
+                    <dt>驴妈妈V5</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/points.php">points</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/points-list.php">points-list</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/points-details.php">points-details</a>
-                    </dd>
-                    <dt>频道页面</dt>
-                    <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/ticket.php">景点门票</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/freetour.php">周边游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/destroute.php">国内游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/abroad.php">出境游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/hotel.php">特色酒店</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v5/">规范应用</a>
                     </dd>
                 </dl>
             </div>
