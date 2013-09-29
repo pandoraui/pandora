@@ -9,26 +9,20 @@
 <div class="wrap">
     <div class="sidebar">
         <ul class="nav none">
-            <li><a href="#tpl">tpl <small>布局模板</small></a></li>
+            <li class="hide"><a href="#tpl">tpl <small>布局模板</small></a></li>
             <li><a href="#box">box <small>区块盒子</small></a></li>
-            <li><a href="#list">list <small>列表</small></a></li>
-            <li><a href="#imglist">imglist <small>图片列表</small></a></li>
-            <li><a href="#imgtext">imgtext <small>图文混排</small></a></li>
+            <li><a href="#list">list <small>[图/文混排]列表</small></a></li>
             <li><a href="#dropdown">dropdown <small>下拉菜单</small></a></li>
             
             <li><a href="#table">table <small>表格</small></a></li>
-            <li><a href="#btn">btn <small>按钮</small></a></li>
-            <li><a href="#btn-group">btn-group <small>按钮组</small></a></li>
-            <li><a href="#btn-dropdown">btn-dropdown <small>按钮菜单</small></a></li>
+            <li><a href="#btn">btn <small>按钮[组/菜单]</small></a></li>
             <li><a href="#form">form <small>表单</small></a></li>
             
             <li><a href="#nav">nav <small>导航</small></a></li>
             <li><a href="#breadcrumb">breadcrumb <small>面包屑</small></a></li>
             <li><a href="#paging">paging <small>分页</small></a></li>
             <li><a href="#tags">tags <small>标签标记</small></a></li>
-            <li><a href="#tip">poptip <small>提示层</small></a></li>
-            <li><a href="#tip">tiptext <small>提示文本</small></a></li>
-            <li><a href="#tip">tipbox <small>提示框</small></a></li>
+            <li><a href="#tip">tip <small>提示层/框</small></a></li>
             <li><a href="#progress">progress <small>进度条</small></a></li>
             <li><a href="#media">media <small>媒体对象</small></a></li>
             <li><a href="#step">step <small>步骤</small></a></li>
