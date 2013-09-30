@@ -55,7 +55,7 @@ combo.css 便捷组合样式表
         <section id="iconfont">
             <h1>图标/字体集</h1>
             <p>针对使用图标字体集的需求，不论市场还是技术，都已经非常成熟，推广使用大势所趋。Pandora项目暂时使用支付宝图标字体集 rei，如果不能满足您的需求，你可以使用 <a href="http://fontello.com/">fontello</a> 项目来扩展字体集或者使用ICON图标。</p>
-            <p>如此，便能对最常用图标使用字体集来表示，如 <a href="module.php#tiptext">通知提醒</a>，下面是关于 rei 的介绍：</p>
+            <p>如此，便能对最常用图标使用字体集来表示，如 <a href="module.php#tip">通知提醒</a>，下面是关于 rei 的介绍：</p>
             <p>Rei（读音为“丽”）是支付宝的 iconfont 集，是一种把图标放入自定义字体中，然后使用字体图标来替代普通图标的技术。同时，Rei 也是动漫女神。</p>
             <p><img style="border-radius:8px;" src="https://i.alipayobjects.com/e/201303/2P2JVsHeCC.jpg" alt=""></p>
             <p>字体图标具有良好的兼容性，矢量，规范，减少图片请求，适应性强等特点，大量先进的网站（包括 github 等）正在使用这种技术。 Alice 全面使用了 iconfont 技术，使得所有的通用样式模块都不会产生图片请求，并且也获得了良好的兼容性和通用性。</p>
