@@ -158,4 +158,5 @@
 .form-inline .selectbox {
     vertical-align: middle;
 }
-
+/*在鼠标移动到里li上时，li的背景色发生变化*/
+.select-results .liActive{background-color: #e1e1e1;}
