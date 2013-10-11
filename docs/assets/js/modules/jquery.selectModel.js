@@ -2,7 +2,7 @@
 ;
 (function ($, window, document, undefined) {
 
-    "use strict" // 严格模式
+    "use strict";
 
     var pluginName = "selectModel",
         defaults = {
@@ -15,7 +15,6 @@
         };
 
     function Plugin(element, options) {
-        /* Settings */
         this.element = element;
         this.options = $.extend({}, defaults, options);
         this.instance;
@@ -25,7 +24,7 @@
     Plugin.prototype = {
 
         /*
-         * selectModel init
+         * 初始化
          */
         init: function () {
             this.instance = this._createInstance();
@@ -35,7 +34,7 @@
         },
 
         /*
-         *  Generate new ID for selectbox
+         * 产生ID，及是否展开的状态
          */
         _createInstance: function () {
             return {
@@ -45,14 +44,14 @@
         },
 
         /*
-        * hide original select
+        * 隐藏原有select
          */
         _hideSelect: function () {
             $(this.element).hide();
         },
 
         /*
-         * Set events
+         * 设置点击事件
          */
         _setEvents: function () {
 
@@ -64,7 +63,7 @@
         },
 
         /*
-         * Create selectbox html structure
+         * 模拟select的html结构
          */
         _createElements: function () {
 
@@ -99,7 +98,7 @@
         },
 
         /*
-         * Set events to selectbox holder control
+         * 点击select头部的事件
          */
         _setSelectBoxEvents: function (isSelectBoxEmpty) {
 
@@ -115,7 +114,7 @@
         },
 
         /*
-         * Get options from selectbox
+         * 模拟select的option内容
          */
         _createSelectOptionWrap: function () {
 
@@ -157,7 +156,7 @@
         },
 
         /*
-         * Selectbox open-close handler
+         * 模拟select内容的展开与否
          */
         _clickSelectOption: function (stageReady) {
 
@@ -173,7 +172,7 @@
         },
 
         /*
-         * Selectbox change handler
+         * 点击模拟select中的option内容
          */
         _changeSelectValue: function (self, clickedEl) {
 
@@ -187,7 +186,7 @@
         },
 
         /*
-         * Close opened selectbox
+         * 关闭模拟select
          */
         _closeSelectBox: function (internal) {
 
@@ -217,7 +216,7 @@
         },
 
         /*
-         * Open selectbox
+         * 展开模拟select
          */
         _openSelectBox: function () {
 
@@ -247,7 +246,7 @@
         },
 
         /*
-         * Close other selectboxes
+         * 关闭其他select
          */
         _closeOthers: function () {
 
