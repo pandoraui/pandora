@@ -104,6 +104,7 @@
                 <a class="doing" href="modules/calendar.html">calendar <small>大/小日历</small></a>
                 <a class="todo" href="###">vote <small>投票/调查统计</small></a>
                 <a class="todo" href="###">comments <small>评论/说说</small></a>
+                <a class="todo" href="modules/option.html">option <small>单选/复选模拟</small></a>
                 
                 <a class="todo hide" href="###">avatar <small>上传/修改头像</small></a>
                 <a class="todo hide" href="###">upload <small>多图上传</small></a>
@@ -117,20 +118,21 @@
             
             <h3>JavaScript 组件</h3>
             <div class="modules">
+                <a class="todo" href="###">transition <small>过渡效果</small></a>
                 <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
-                <a class="doing" href="###">slides <small>图片轮播</small></a>
+                <a class="todo" href="###">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
-                <a class="doing" href="###">lazyload <small>延迟加载</small></a>
+                <a class="todo" href="###">lazyload <small>延迟加载</small></a>
                 <a class="done" href="modules/countdown.html">countdown <small>倒计时</small></a>
                 <a class="done" href="modules/tooltip.html">tooltip <small>工具提醒</small></a>
                 <a class="todo" href="###">tips <small>浮层提示</small></a>
                 <a class="todo" href="###">calendar <small>日历</small></a>
                 <a class="doing" href="modules/selectbox.html">selectbox <small>下拉框</small></a>
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
-                <a class="doing" href="###">tab <small>标签切换</small></a>
-                <a class="doing" href="###">sort <small>多维排序</small></a>
+                <a class="todo" href="###">tab <small>标签切换</small></a>
+                <a class="todo" href="###">sort <small>排序</small></a>
+                <a class="todo" href="###">filter <small>过滤筛选</small></a>
                 <a class="todo" href="###">paging <small>分页</small></a>
-                <a class="todo hide" href="###">modal <small>弹出对话框</small></a>
                 <a class="todo" href="###">stars <small>星星打分</small></a>
                 <a class="todo" href="###">wordcount <small>字数检测</small></a>
                 <a class="todo" href="###">validator <small>表单验证</small></a>
