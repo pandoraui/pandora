@@ -22,11 +22,8 @@
     position: fixed;
     _position: absolute;
     z-index: 5000;
-    width: 400px;
     border: 0;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
+    width: 400px;
     font:12px/22px Tahoma,Arial,\5b8b\4f53,sans-serif;
     color: #4d4d4d;
 }
@@ -175,6 +172,21 @@
 }
 
 /* 皮肤 */
+.dialog-default{
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
+}
+
+.dialog-bule{
+    padding: 5px;
+    background-color: #538ED7;
+}
+.dialog-bule .dialog-header{
+    background-color: #538ED7;
+}
+
+
 .dialog-pink .dialog-inner {
     border-top: 2px solid #d37;
 }

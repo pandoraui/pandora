@@ -269,6 +269,8 @@ pandora.dialog.defaults = {
     cancel: null, // 取消按钮回调函数
     okValue: "确定", // 确定按钮文本
     cancelValue: "取消", // 取消按钮文本
+    okClassName: "",
+    cancelClassName: "",
 
     content: "", // 内容信息
     title: "消息提醒", // 标题信息
@@ -278,7 +280,7 @@ pandora.dialog.defaults = {
     width: "",  // 默认宽度400，由css控制
     height: "",
 
-    skin: "",   // 皮肤
+    skin: "dialog-default",   // 皮肤
     wrapClass: "", // dialog 规格 通过className 名 控制，可选参数：dialog-mini dialog-middle dialog-big dialog-large
     maskClass: "overlay", // 遮罩样式
     zIndex: 4000 // 层级
@@ -298,6 +300,12 @@ pandora.dialog.defaults = {
         <h5>示例313</h5>
         <p><button class="pbtn" id="demo313">弹窗内容高过窗口</button></p>
         
+        <h5>示例314</h5>
+        <p><button class="pbtn" id="demo314">换肤</button></p>
+
+        <h5>示例315</h5>
+        <p><button class="pbtn" id="demo315">全局配置</button></p>
+
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
@@ -322,6 +330,23 @@ pandora.dialog({
     content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。N多换行后，再高的内容，我也能看到内容最下面的部分。",
     ok: true,
     cancel: true
+});
+
+// 示例314
+pandora.dialog({
+    skin: "dialog-bule",
+    content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
+    cancel: true
+});
+
+// 示例315
+(function (d) {
+    d["skin"] = "dialog-default";
+    d["mask"] = true;
+}(pandora.dialog.defaults));
+
+$("#demo315").click(function () {
+    $.alert("全局配置");
 });
 </pre>
 <script>
@@ -354,6 +379,25 @@ $(function(){
             cancel: true
         });
     });
+
+    $("#demo314").click(function () {
+        pandora.dialog({
+            skin: "dialog-bule",
+            content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
+            cancel: true
+        });
+    });
+
+    // 全局配置
+    (function (d) {
+        d["okClassName"] = "pbtn-orange";
+        d["skin"] = "dialog-default";
+        d["mask"] = true;
+    }(pandora.dialog.defaults));
+
+    $("#demo315").click(function () {
+        $.alert("全局配置");
+    });
 })
 </script>
     
@@ -377,6 +421,7 @@ $(function(){
 pandora.dialog({
     content: "显示弹窗按钮，实现按钮文字自定义，绑定特定按钮点击事件。",
     okValue: "保存修改",
+    okClassName:"pbtn-orange",
     ok: function () {
         $.msg("保存成功");
     },
@@ -429,6 +474,7 @@ $(function(){
         pandora.dialog({
             content: "更改默认按钮文字，绑定回调函数。",
             okValue: "保存修改",
+            okClassName: "pbtn-orange",
             ok: function () {
                 $.alert("你点击了保存修改！");
             },
