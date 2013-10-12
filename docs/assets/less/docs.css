@@ -333,7 +333,7 @@ span.done  { background: #0b0; }
 
 .demolist dd a {
     display: inline-block;
-    width: 100px;
+    margin-right: 10px;
 }
 /* code examples
 -------------------------------------------------- */

@@ -21,13 +21,23 @@
     <p><strong>TODO：</strong></p>
     
     <div class="docs-example">
-        <h4>头部模板</h4>
+        <h4>头部文件(模板)修改：<small>包含以下文件</small></h4>
         <dl class="dl-horizontal">
             <dt>标准模板</dt>
             <dd>http://192.168.0.7/svn/focus/branches/chanpinbu/pet/lvmama_common/src/main/config/template/header.htm</dd>
             <dt>专题js模板</dt>
             <dd>http://www.lvmama.com/zt/web/common/header.js</dd>
+            <dt>注意：</dt>
+            <dd>头部文件header-air.css在专题文件夹下也有一份</dd>
         </dl>
+        
+        <h4>底部文件footer修改：<small>统一为一个 copyright.js</small></h4>
+        <dl class="dl-horizontal">
+            <dt>develop</dt>
+            <dd>http://pic.lvmama.com/js/common/copyright.js</dd>
+        </dl>
+        
+        
         <h4>super中常用项目文件夹：</h4>
         
         <dl class="dl-horizontal">
@@ -54,34 +64,11 @@
             <dd>E:\SVN_work\focus\pet\pet_search\src\main\webapp\WEB-INF\ftl\hotel\hotel_search.ftl</dd>
         </dl>
         
-        <h4>头部文件修改：<small>包含以下文件夹路径</small></h4>
         <dl class="dl-horizontal">
-            <dt>super</dt>
-            <dd>super 分支、定制游的静态html文件</dd>
-            <dt>focus</dt>
-            <dd>focus 分支</dd>
-            <dt>攻略 guide</dt>
-            <dd>guide 分支</dd>
-            <dt>资讯 info</dt>
-            <dd>资讯频道</dd>
-            <dt>诚聘英才</dt>
-            <dd>php文件：yingcai</dd>
+            <dt>public路径</dt>
+            <dd>E:SVN_work\focus\pet\pet_topic\src\main\webapp\WEB-INF\pages\public</dd>
         </dl>
         
-        <h4>底部文件footer修改：<small>统一为一个 copyright.js</small></h4>
-        <dl class="dl-horizontal">
-            <dt>super</dt>
-            <dd>super 分支、定制游的静态html文件</dd>
-            <dt>focus</dt>
-            <dd>focus 分支</dd>
-            <dt>攻略 guide</dt>
-            <dd>guide 分支</dd>
-            <dt>资讯 info</dt>
-            <dd>资讯频道</dd>
-            <dt>诚聘英才</dt>
-            <dd>php文件：http://www.lvmama.com/public/jobs</dd>
-        </dl>
-    
         <h4>SVN 产品部分支</h4>
         <dl class="dl-horizontal">
             <dt>PIC：</dt>
@@ -91,6 +78,7 @@
             <dt>产品部分支-focus：</dt>
             <dd>http://192.168.0.7/svn/focus/branches/chanpinbu</dd>
         </dl>
+        
         <h4>SVN 主干</h4>
         <dl class="dl-horizontal">
             <dt>PIC：</dt>

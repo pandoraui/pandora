@@ -7,20 +7,20 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#overview">概述</a></li>
-			<li><a href="#document">文档结构</a></li>
-			<li><a href="#naming">命名规范</a></li>
-			<li><a href="#html">HTML书写规范</a></li>
-			<li><a href="#css">CSS编码规范</a></li>
-			<li><a href="#javascript">JavaScript 编码风格</a></li>
-			<li><a href="#json">JSON格式规范</a></li>
-			<li><a href="#readme">说明文档书写规范</a></li>
-			<li><a href="#edm">EDM制作规范</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#overview">概述</a></li>
+            <li><a href="#document">文档结构</a></li>
+            <li><a href="#naming">命名规范</a></li>
+            <li><a href="#html">HTML 书写规范</a></li>
+            <li><a href="#css">CSS 编码规范</a></li>
+            <li><a href="#javascript">JavaScript 编码风格</a></li>
+            <li><a href="#json">JSON 格式规范</a></li>
+            <li><a href="#readme">说明文档书写规范</a></li>
+            <li><a href="#edm">EDM 制作规范</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
         <section id="overview">
             <h1>规范说明 <small></small></h1>
             <blockquote>
@@ -35,7 +35,7 @@
         
         
         <section id="document">
-		<h1>文档结构</h1>
+        <h1>文档结构</h1>
 <pre class="prettyprint linenums">
 
 </pre>
@@ -112,7 +112,7 @@
                 <li>使用 <code>data-xxx</code> 来添加自定义数据，如：<code>&lt;input data-xxx="yyy"/&gt;</code> </li>
                 <li>避免使用 <code>style="xxx:xxx;"</code> 的内联样式表</li>
                 <li>特殊符号使用参考 <a href="http://www.w3school.com.cn/html/html_entities.asp">HTML 符号实体</a> </li>
-			</ul>
+            </ul>
             <h3>HTML 书写规范</h3>
             <ul>
                 <li>无特殊说明，编码统一为utf-8；</li>
@@ -125,7 +125,7 @@
                 <li>其他效果 <code>js</code> 及 <code>统计代码</code> 文件置于 <strong>尾部</strong> </li>
                 <li>HTML 代码尽量过一遍 <a href="http://html5.validator.nu/">HTML5 验证</a> </li>
                 <li>HTML 占位图片使用 <a href="http://temp.im/">temp.im</a> &amp; <a href="http://placehold.us/">placehold.us</a> 图片服务</li>
-			</ul>
+            </ul>
             
             <h4>书写规范</h4>
             <ul>
@@ -1307,14 +1307,14 @@ try {
                 <li>整体最佳宽度为：<code>550-600px</code> </li>
                 <li>不使用 <code>Javascript</code> </li>
                 <li>正式发送给用户之前，多次测试</li>
-			</ul>
+            </ul>
             <p>更多细节参考下面链接：<br><a href="http://www.web-ed.com.au/2011/05/coding-html-newsletters-edms-quick-guide/">12 Killer Tips and Tricks for Building HTML Email</a></p>
         </section>
         
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 <?php include("common/footer.html");?>

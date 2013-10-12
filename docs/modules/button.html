@@ -19,6 +19,84 @@
 .test .pbtn-large{font-size:20px;}
 .test .iconfont{display:inline-block;padding:0 3px;font-style:normal;background:#ccc;}
 .test .pbtn-large .iconfont{padding:1px 2px;}
+
+/*.btn {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;display: inline-block;*display: inline;*zoom: 1;*margin-left: .3em;
+  padding: 4px 12px;font-size: 14px;line-height: 20px;*line-height: 20px;}
+.btn-large { padding: 11px 19px;font-size: 17.5px;}
+.btn-small {padding: 2px 10px;font-size: 11.9px;}
+.btn-mini {padding: 1px 6px;font-size: 10.5px;}*/
+/* 修复IE6、7下表现不同 */
+/* 前面的padding可使第二三按钮保持和a一致，但input[type="submit"] 和表现又不同（高度上），可用定高来和其他的保持高度一致，下面的属性实现其保持一致 */
+/* button,input {*overflow: visible;line-height: normal;}
+ 如果没有上面这一行样式，则 IE6 IE7下button.btn,input.btn的 padding width 就也要修改，变得更小些才能一致 */
+
+/* 现在的尺寸大小高度为(含边框): 
+ * mini-22px small-26px middle-30px big-36px large-44px
+**/
+.pbtn{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+input.pbtn       { height: 30px; }
+input.pbtn-mini  { height: 22px; }
+input.pbtn-small { height: 26px; }
+input.pbtn-big   { height: 38px; }
+input.pbtn-large { height: 44px; }
+
+a.pbtn,
+button.pbtn {
+    *padding-top: 0;
+    *padding-bottom: 0;
+    *height: 30px;
+}
+a.pbtn{ 
+    *line-height: 30px;
+}
+
+a.pbtn-mini {
+    *line-height: 22px;
+}
+a.pbtn-mini,
+button.pbtn-mini,
+input.pbtn-mini {
+    *height: 22px;
+}
+
+a.pbtn-small,
+button.pbtn-small,
+input.pbtn-small {
+    *height: 24px;
+}
+a.pbtn-small {
+    *line-height: 24px;
+}
+
+a.pbtn-small,
+button.pbtn-small {
+    _height: 26px;
+}
+
+a.pbtn-big,
+button.pbtn-big,
+input.pbtn-big { 
+    *height: 34px;
+}
+a.pbtn-big {
+    *line-height: 34px;
+    _height: 36px;
+}
+
+a.pbtn-large,
+button.pbtn-large,
+input.pbtn-large { 
+    *height: 42px;
+}
+a.pbtn-large {
+    *line-height: 42px;
+    _height: 44px;
+}
+
+/* IE7下为保持一致，需要如上设置 */
+
+
+
 </style>
 </head>
 <body>
@@ -49,14 +127,21 @@
     	<dd>全为自适应宽度，高度特定，圆角全为2px：-mini -small -default -big</dd>
         <dt>5种样式：</dt>
     	<dd>-default -white -pink -orange -blue -dark</dd>
-        <dt>3中类别：</dt>
+        <dt>3种类别：</dt>
     	<dd>-disabled -block </dd>
+        <dt>5种标签实现：</dt>
+    	<dd><code>&lt;a&gt;</code> 
+            <code>&lt;button&gt;</code>
+            <code>&lt;span&gt;</code>
+            <code>&lt;input type="button"&gt;</code>
+            <code>&lt;input type="submit"&gt;</code>
+        </dd>
     </dl>
         
     <div class="docs-example">
         <p>风格包含默认的BT，还有metro_style、google_style</p>
         <h4>4种尺寸：<small>(height-padding)px</small></h4>
-        <p>mini(22-0/6) -small(26-2/10) -middle(默认30-4/12) -big(36-7/15) -large(36-11/20)</p>
+        <p>mini(22-0/6) -small(26-2/10) -middle(默认30-4/12) -big(36-7/15) -large(44-11/20)</p>
         <button class="pbtn pbtn-mini">迷你按钮</button>
         <button class="pbtn pbtn-small">小按钮</button>
         <button class="pbtn">默认按钮</button>
@@ -67,14 +152,16 @@
         
         <!-- 新按钮样式 -->
         <p>
-            <button class="pbtn pbtn-small">默认白色</button>
+            <button class="pbtn pbtn-small">默认</button>
+            <button class="pbtn pbtn-small pbtn-white">白色</button>
             <button class="pbtn pbtn-small pbtn-light">浅色</button>
             <button class="pbtn pbtn-small pbtn-orange">橙色</button>
             <button class="pbtn pbtn-small pbtn-pink">玫红</button>
             <button class="pbtn pbtn-small pbtn-blue">蓝色</button>
         </p>
         <p>
-            <button class="pbtn pbtn-small pbtn-w">默认白色</button>
+            <button class="pbtn pbtn-small pbtn-w">默认</button>
+            <button class="pbtn pbtn-small pbtn-w pbtn-white">白色</button>
             <button class="pbtn pbtn-small pbtn-w pbtn-light">浅色</button>
             <button class="pbtn pbtn-small pbtn-w pbtn-orange">橙色</button>
             <button class="pbtn pbtn-small pbtn-w pbtn-pink">玫红</button>
@@ -89,11 +176,11 @@
         
         <button class="pbtn pbtn-big pbtn-pink pbtn-block">块级按钮</button>
         <h4>5种标签实现：</h4>
-        <button class="pbtn pbtn-small">白色</button>
-        <a class="pbtn pbtn-small">白色</a>
-        <input type="button" class="pbtn pbtn-small" value="白色">
-        <input type="submit" class="pbtn pbtn-small" value="白色">
-        <span class="pbtn pbtn-small">白色</span>
+        <button class="pbtn pbtn-small">默认</button>
+        <a class="pbtn pbtn-small">默认</a>
+        <input type="button" class="pbtn pbtn-small" value="默认">
+        <input type="submit" class="pbtn pbtn-small" value="默认">
+        <span class="pbtn pbtn-small">默认</span>
         <h4>综合展示：<small>推荐使用button、a标签实现按钮</small></h4>
         
         <span class="item" style="display:inline-block;width:40%;">
