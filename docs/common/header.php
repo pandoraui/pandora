@@ -33,7 +33,7 @@
                 <li <?php if(isset($page) && $page == 'framework') echo 'class="active"' ?>><a href="framework.php">基础框架</a></li>
                 <li <?php if(isset($page) && $page == 'module') echo 'class="active"' ?>><a href="module.php">组件模块化</a></li>
                 <li <?php if(isset($page) && $page == 'javascript') echo 'class="active"' ?>><a href="javascript.php">JavaScript插件</a></li>
-                <li <?php if(isset($page) && $page == 'rule') echo 'class="active"' ?>><a href="rule.php">代码规范</a></li>
+                <li <?php if(isset($page) && $page == 'rule') echo 'class="active"' ?>><a href="rule.php">规范</a></li>
                 <li class="divider-vertical"></li>
                 <li <?php if(isset($page) && $page == 'build') echo 'class="active"' ?>><a href="build.php">管理发布</a></li>
                 <li <?php if(isset($page) && $page == 'tool') echo 'class="active"' ?>><a href="wheel.php">造好的轮子</a></li>

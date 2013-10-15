@@ -7,16 +7,16 @@
 <?php include("./common/header.php"); ?>
 
 <div class="wrap">
-	<div class="sidebar">
-		<ul class="nav none">
-			<li><a href="#solution">兼容解决方案</a></li>
-			<li><a href="#jscode">JS代码段</a></li>
-			<li><a href="#html5">HTML5探索</a></li>
-			<li><a href="#css3">CSS3研究</a></li>
-		</ul>
-	</div> <!-- // div.sidebar -->
-	<div class="main">
-		<section id="solution">
+    <div class="sidebar">
+        <ul class="nav none">
+            <li><a href="#solution">兼容解决方案</a></li>
+            <li><a href="#jscode">JS代码段</a></li>
+            <li><a href="#html5">HTML5探索</a></li>
+            <li><a href="#css3">CSS3研究</a></li>
+        </ul>
+    </div> <!-- // div.sidebar -->
+    <div class="main">
+        <section id="solution">
             <h1>兼容解决方案</h1>
             <p class="lead">头痛的问题，我们提前搞定</p>
             <p>详情参看： <a href="../cndocs/solution.php">兼容解决方案</a></p>
@@ -24,7 +24,7 @@
         
         
         
-		<section id="jscode">
+        <section id="jscode">
             <h1>JS代码段</h1>
             <p>常用的JS代码段，很有用处，值得收集！</p>
             
@@ -48,25 +48,25 @@ $(function(){
     
     // 瀑布广告
     var _indexSilde = $('#indexSilde');
-	var _xslide1 = $('#xslide1');
-	function _shouqi(){ 
-		_indexSilde.animate({'height':80},1000,function(){
-			_xslide1.fadeIn(500).siblings().fadeOut(500,function(){
-				if($.browser.msie && parseInt($.browser.version)&lt;=8){ 
-					// 开启低版本浏览器的动画效果
+    var _xslide1 = $('#xslide1');
+    function _shouqi(){ 
+        _indexSilde.animate({'height':80},1000,function(){
+            _xslide1.fadeIn(500).siblings().fadeOut(500,function(){
+                if($.browser.msie && parseInt($.browser.version)&lt;=8){ 
+                    // 开启低版本浏览器的动画效果
                     // $.fx.off = true;  
-				}
-			});
-		});
-	};
-	
-	function _showslide(){
-		_indexSilde.animate({'height':500},1000,function(){
-			setTimeout(_shouqi,4000);
-		});
-	}
-	//$.fx.off = false;
-	setTimeout(_showslide,1000);
+                }
+            });
+        });
+    };
+    
+    function _showslide(){
+        _indexSilde.animate({'height':500},1000,function(){
+            setTimeout(_shouqi,4000);
+        });
+    }
+    //$.fx.off = false;
+    setTimeout(_showslide,1000);
 })
 &lt;/script&gt;
 </pre>
@@ -115,14 +115,14 @@ $("#float").smartFloat();
         
         
         
-		<section id="html5">
+        <section id="html5">
             <h1>HTML5探索</h1>
             <p>关注HTML5文档，可参看：<a href="http://www.w3.org/html/ig/zh/wiki/HTML5">HTML5</a></p>
         </section>
         
         
         
-		<section id="css3">
+        <section id="css3">
             <h1>CSS3研究</h1>
             <p>CSS3实现的功能越发强悍了，这个必须关注！</p>
         </section>
@@ -130,7 +130,7 @@ $("#float").smartFloat();
         
         
         <?php include("common/comment.html");?>
-	</div> <!-- // div.main -->
+    </div> <!-- // div.main -->
 </div>
 
 

@@ -17,6 +17,7 @@
 .tipbox{margin:10px 0;}
 .poptip-mini{margin-right:10px;}
 .relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
+.tip-dense{ margin: -10px 0;}
 </style>
 </head>
 <body>
@@ -548,7 +549,7 @@
     
     <h3>tip 扩展</h3>
     <div class="docs-example">
-        <h4>case 1</h4>
+        <h4>case 1 <small>无边框，大标题</small></h4>
         <div class="tipbox tip-success tip-nowrap">
             <span class="tip-icon-big tip-icon-big-success"></span>
             <div class="tip-content">
@@ -562,7 +563,7 @@
         
         <div class="dot_line"></div>
         
-        <h4>case 2</h4>
+        <h4>case 2 <small>小尺寸居中提醒</small></h4>
         <div class="tipbox-outer">
             <div class="tipbox tip-default">
                 <span class="tip-icon-big tip-icon-big-warning"></span>
@@ -572,6 +573,35 @@
                 </div>
             </div>
         </div>
+        
+        <h4>case 3 <small>紧凑布局的提醒，便于显示于 dialog 等盒子中</small></h4>
+        
+        <div class="dialog dialog-default bc" style="position:static">
+            <div class="dialog-inner clearfix">
+                <a data-dismiss="dialog" class="dialog-close">×</a>
+                <div class="dialog-header">默认标题 <small>副标题或标题说明</small></div>
+                <div class="dialog-body" style="padding: 0;">
+                    <div class="dialog-content clearfix">
+                        
+                        <!-- 紧凑布局的提醒\\ -->
+                        <div class="tipbox tip-help tip-nowrap">
+                            <span class="tip-icon-big tip-icon-big-help"></span>
+                            <div class="tip-content">
+                                <h3 class="tip-title">有疑问？您可以参考以下内容！</h3>
+                                <p class="tip-explain">您现在可以去畅游网络了。</p>
+                                <p class="tip-explain"><a href="###">查看详情</a> | <a href="###">返回首页</a></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="dialog-footer">
+                    <button data-role="confirm" class="pbtn pbtn-small pbtn-orange">保存修改</button>
+                    <button data-dismiss="dialog" class="pbtn pbtn-small">取消</button>
+                </div>
+            </div>
+        </div>
+        <p>此处通过设置 dialog-body 无内间距实现。</p>
     </div>
 <pre class="prettyprint linenums">
 /* case 1 */
@@ -582,7 +612,7 @@
     &lt;/div&gt;
     &lt;div class="tip-other tip-align pay-backinfo"&gt;
         其他内容信息
-    &lt;/div&gt;  
+    &lt;/div&gt;
 &lt;/div&gt;
 
 /* case 2 */
@@ -593,6 +623,16 @@
             &lt;h3 class="tip-title"&gt;抱歉，您没有权限访问该版块&lt;/h3&gt;
             &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;[ 点击这里返回上一页 ]&lt;/a&gt;&lt;/p&gt;
         &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* case 3 紧凑布局的提醒(设置 dialog-body 无内间距即可) */
+&lt;div class="tipbox tip-help tip-nowrap tip-dense"&gt;
+    &lt;span class="tip-icon-big tip-icon-big-help"&gt;&lt;/span&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h3 class="tip-title"&gt;有疑问？您可以参考以下内容！&lt;/h3&gt;
+        &lt;p class="tip-explain"&gt;您现在可以去畅游网络了。&lt;/p&gt;
+        &lt;p class="tip-explain"&gt;&lt;a href="###"&gt;查看详情&lt;/a&gt; | &lt;a href="###"&gt;返回首页&lt;/a&gt;&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -645,7 +685,7 @@
                         <div>
                             <a href="https://app.alipay.com/xxxx" target="_blank">现在使用</a>
                         </div>
-                    </div>        
+                    </div>
                 </div>
             </div>
         </div>

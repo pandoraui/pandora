@@ -104,6 +104,7 @@
                 <a class="doing" href="modules/calendar.html">calendar <small>大/小日历</small></a>
                 <a class="todo" href="###">vote <small>投票/调查统计</small></a>
                 <a class="todo" href="###">comments <small>评论/说说</small></a>
+                <a class="todo" href="modules/option.html">option <small>单选/复选模拟</small></a>
                 
                 <a class="todo hide" href="###">avatar <small>上传/修改头像</small></a>
                 <a class="todo hide" href="###">upload <small>多图上传</small></a>
@@ -118,20 +119,21 @@
             
             <h3>JavaScript 组件</h3>
             <div class="modules">
+                <a class="todo" href="###">transition <small>过渡效果</small></a>
                 <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
-                <a class="doing" href="###">slides <small>图片轮播</small></a>
+                <a class="todo" href="###">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
-                <a class="doing" href="###">lazyload <small>延迟加载</small></a>
+                <a class="todo" href="###">lazyload <small>延迟加载</small></a>
                 <a class="done" href="modules/countdown.html">countdown <small>倒计时</small></a>
                 <a class="done" href="modules/tooltip.html">tooltip <small>工具提醒</small></a>
                 <a class="todo" href="###">tips <small>浮层提示</small></a>
                 <a class="todo" href="###">calendar <small>日历</small></a>
                 <a class="doing" href="modules/selectbox.html">selectbox <small>下拉框</small></a>
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
-                <a class="doing" href="###">tab <small>标签切换</small></a>
-                <a class="doing" href="###">sort <small>多维排序</small></a>
+                <a class="todo" href="###">tab <small>标签切换</small></a>
+                <a class="todo" href="###">sort <small>排序</small></a>
+                <a class="todo" href="###">filter <small>过滤筛选</small></a>
                 <a class="todo" href="###">paging <small>分页</small></a>
-                <a class="todo hide" href="###">modal <small>弹出对话框</small></a>
                 <a class="todo" href="###">stars <small>星星打分</small></a>
                 <a class="todo" href="###">wordcount <small>字数检测</small></a>
                 <a class="todo" href="###">validator <small>表单验证</small></a>
@@ -141,36 +143,45 @@
                 <a class="todo" href="###">autocomplete <small>自动补全</small></a>
             </div>
             
+            
+            <h3>兼容解决方案 <small>更多详见 <a target="_blank" href="http://localhost/cnbootstrap/cnDocs/solution.php">cnBootstrap</a></small></h3>
+            <div class="modules f12">
+                <a class="doing" target="_blank" href="modules/typo.html">中文排版</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/two-layout.html">两列自适应布局</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/equal-height-layout.html">等高布局</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/center-middle.html">水平/垂直居中</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/float-center.html">float:center</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">清楚浮动</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/white-space.html">文本省略号 强制换行</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/text-align-justify.html">文本两端对齐</a>
+                <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">文本纵向排列</a>
+                
+                <a class="done" target="_blank" href="solutions/button.html">button</a>
+                
+            </div>
+            
+            
             <h3>常用 JS 代码段</h3>
             <div class="modules">
                 <a class="done" href="demo/waterfall.html">waterfall <small>瀑布广告</small></a>
                 <a class="done" href="demo/smartfloat.html">smartfloat <small>滚动浮动</small></a>
             </div>
+            
+            
             <h3>主要项目案例 DEMO <small>内网访问</small></h3>
             <div class="demolist">
                 <dl class="dl-hor">
-                    <dt>驴妈妈</dt>
+                    <dt>驴妈妈V3</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/index.php">index</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v3/">channel 各大频道改版</a>
                     </dd>
-                    <dt>定制游</dt>
+                    <dt>驴妈妈V4</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/custom.php">custom</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/custom-page.php">custom-page</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v4/order/">order下单改版</a>
                     </dd>
-                    <dt>积分商城</dt>
+                    <dt>驴妈妈V5</dt>
                     <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/points.php">points</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/points-list.php">points-list</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/points-details.php">points-details</a>
-                    </dd>
-                    <dt>频道页面</dt>
-                    <dd>
-                        <a target="_blank" href="http://10.3.1.41/v3/ticket.php">景点门票</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/freetour.php">周边游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/destroute.php">国内游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/abroad.php">出境游</a>
-                        <a target="_blank" href="http://10.3.1.41/v3/hotel.php">特色酒店</a>
+                        <a target="_blank" href="http://10.3.1.41/labs/v5/">规范应用</a>
                     </dd>
                 </dl>
             </div>

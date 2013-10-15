@@ -18,14 +18,20 @@
 .test .ui-arrow-right,
 .test .ui-arrow-left { top:10px; right: 12px; }
 .dark { background: #333; }
+
+.hover-color:hover .blue-ui-arrow-top    { border-bottom-color: #e38; }
+.hover-color:hover .blue-ui-arrow-right  { border-left-color  : #e38; }
+.hover-color:hover .blue-ui-arrow-bottom { border-top-color   : #e38; }
+.hover-color:hover .blue-ui-arrow-left   { border-right-color : #e38; }
+
 </style>
 </head>
 <body>
 <div class="wrap">
     <h1>提醒提示等 - 包含 CSS 箭头</h1>
-	<p>组合css实现的三角箭头等实现提示提醒，css arrow 按需求进行如下划分，最常用的标准三角</p>
+    <p>组合css实现的三角箭头等实现提示提醒，css arrow 按需求进行如下划分，最常用的标准三角</p>
     
-	
+    
     <div class="docs-example">
         <h3>简单的小提示 <small class="red">此种箭头参看<a href="/pandora/docs/modules/tip.html">tip提醒框</a></small></h3>
         <span class="tiptext tip-info">
@@ -40,7 +46,7 @@
 <pre class="prettyprint linenums">
 
 </pre>
-	
+    
     <h3>css arrow <small>下拉、收起等指示箭头</small></h3>
     
     <p>实现的颜色有：白色#fff、黑色#333、灰色#gray、蓝色#0183b0、玫红#e38、橙色orange</p>
@@ -108,6 +114,17 @@
         <span class="test active"><i class="ui-arrow-bottom orange-ui-arrow-bottom"></i></span>
         <span class="test active"><i class="ui-arrow-left orange-ui-arrow-left"></i></span>
         
+        <h4>新需求，变色交互 <small>hover 时变成另一种颜色</small></h4>
+        <span class="test hover-color"><i class="ui-arrow-top blue-ui-arrow-top"></i></span>
+        <span class="test hover-color"><i class="ui-arrow-right blue-ui-arrow-right"></i></span>
+        <span class="test hover-color"><i class="ui-arrow-bottom blue-ui-arrow-bottom"></i></span>
+        <span class="test hover-color"><i class="ui-arrow-left blue-ui-arrow-left"></i></span>
+        
+        <h4>新增禁用状态 <small>父级拥有 .disabled 样式即可</small></h4>
+        <span class="test active disabled"><i class="ui-arrow-top pink-ui-arrow-top"></i></span>
+        <span class="test disabled"><i class="ui-arrow-right pink-ui-arrow-right"></i></span>
+        <span class="test disabled"><i class="ui-arrow-bottom pink-ui-arrow-bottom"></i></span>
+        <span class="test disabled"><i class="ui-arrow-left pink-ui-arrow-left"></i></span>
         
     </div>
 <pre class="prettyprint linenums">
@@ -118,7 +135,7 @@
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>
 $(function(){
-    $(".test:not(.active)").hover(
+    $(".test:not(.active,.hover-color)").hover(
         function(){
             $(this).addClass("active");
         },

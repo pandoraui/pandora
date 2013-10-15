@@ -23,8 +23,8 @@ Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://gi
 
 #### 仓库目录结构：
 
-	pandora
-	|- docs/                Pandora 项目文档
+    pandora
+    |- docs/                Pandora 项目文档
     |   |- *.php (现放在根目录下)
     |   |- assets/      css/img/js/less 静态资源
     |   |- modules/     模块组件
@@ -36,9 +36,9 @@ Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://gi
     |- solutions/           浏览器兼容解决方案（支持 Less CSS)
     |- release/             稳定版本（css/js/icon/modules等）
     |- labs/                前端实验室，用于pandora项目实践，如v3/v4
-	|- w3c/                 HTML5/CSS3 标准文档 (详见原AliceUI)
-	|- plugins/             Pandora 快捷开发对应的编辑器插件 (规划中)
-	|- README.md
+    |- w3c/                 HTML5/CSS3 标准文档 (详见原AliceUI)
+    |- plugins/             Pandora 快捷开发对应的编辑器插件 (规划中)
+    |- README.md
 
 #### 文档结构
 

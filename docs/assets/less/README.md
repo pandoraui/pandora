@@ -12,40 +12,40 @@ Pandora样式组规划结构参照Bootstrap项目，其对页面组件功能实�
 - combo.css     内置的便捷组合样式
 
 一些说明：
-		
-	same.css 
-	包含small,strong,em,del,b,i,a,p,blockquote,q,code,pre,sub,sup
-		
-	typo-dev.css
-	包含ul/ol/dl/h1~h6,p
-	
-	typo.css 在typo样式下起效
-	包含ul/ol/dl/h1~h6,p
+        
+    same.css 
+    包含small,strong,em,del,b,i,a,p,blockquote,q,code,pre,sub,sup
+        
+    typo-dev.css
+    包含ul/ol/dl/h1~h6,p
+    
+    typo.css 在typo样式下起效
+    包含ul/ol/dl/h1~h6,p
 
 效果可通过排版测试页面 typo.html 浏览测试。
 
 **注：**实际开发使用core样式，具备code/ul/ol/dl等统一属性，且良好一致的排版效果及大量的内置组合样式可以提高开发效率且使用灵活。
 
-	Pandora CSS架构
-	
-	normalize.css    |- core-dev.css
-	typo-dev.css     |
-	combo.css        |
+    Pandora CSS架构
+    
+    normalize.css    |- core-dev.css
+    typo-dev.css     |
+    combo.css        |
 
-	normalize.css    |- core.css
-	reset.css        |
-	typo.css         |
-	combo.css        |
-	 
-	module.css
-	plugin.css
+    normalize.css    |- core.css
+    reset.css        |
+    typo.css         |
+    combo.css        |
+     
+    module.css
+    plugin.css
 
 此处系Pandora项目保留字：
 
 > .btn
 
     以下为Bootstrap中的样式组结构（暂未做修改仅供参考）
-	/* Core variables and mixins */
+    /* Core variables and mixins */
     /* Modify this for custom colors, font-sizes, etc */
     @import "variables.css"; 
     @import "mixins.css";

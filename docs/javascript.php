@@ -15,8 +15,7 @@
             <li><a href="#dropdown">dropdown <small>下拉项</small></a></li>
             <li><a href="#scrollspy">scrollspy <small>滚动侦听</small></a></li>
             <li><a href="#tab">tab <small>标签页</small></a></li>
-            <li><a href="#tipbox">tipbox <small>提示框</small></a></li>
-            <li><a href="#tiptext">tiptext <small>提示文本</small></a></li>
+            <li><a href="#tip">tip <small>通知提醒</small></a></li>
             <li><a href="#select">select <small>下拉框</small></a></li>
             <li><a href="#collapse">collapse <small>折叠/手风琴</small></a></li>
             <li><a href="#carousel">carousel <small>轮播/跑马灯</small></a></li>

@@ -219,8 +219,7 @@ a.tags:hover {
 
 
 /* 与文本的垂直对齐问题 */
-[class^="tags"],
-[class*=" tags"],
+
 .tagscc,
 .tagsback,
 .tagsgift,

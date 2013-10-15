@@ -395,15 +395,6 @@ span.tiptext {
     color: #e5f5ff;
 }
 
-/* 设置无边框、背景 */
-.tip-nowrap {
-    border: none;
-    background: none;
-}
-.tip-nowrap .tip-arrow {
-    display: none;
-}
-
 /** @name      : tip-arrow 如：tip-arrow-1
   * @explain   : 点钟方向标记，用于组合显示箭头位置
   * @type      : 基类 .tip-arrow
@@ -518,8 +509,33 @@ span.tip-line {
     word-break: break-word;
 }
 
+/*
+ * tip 扩展
+ * 实现：无边框大标题、小尺寸提醒、紧密布局
+**/
+
+
+/* 设置无边框、背景 */
+.tip-nowrap {
+    border: none;
+    background: none;
+}
+.tip-nowrap .tip-arrow {
+    display: none;
+}
+
 .tipbox-outer {
     margin: 60px auto;
     width: 700px;
 }
 
+.tip-dense {
+    margin: -10px 0;
+}
+
+.tip-dense .tip-content {
+    padding-left: 50px;
+}
+.tip-dense .tip-icon-big {
+    left: 14px;
+}

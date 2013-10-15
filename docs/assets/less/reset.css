@@ -101,7 +101,7 @@ ul {
 
 /* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
 ul, ol {
-	list-style: none;
+    list-style: none;
 }
 
 /* 去除默认边框 */
@@ -127,6 +127,8 @@ ins,a {
 a:hover { text-decoration: underline;}
 
 img { border: 0;}
+
+
 
 /* 
  修复火狐下图片和文字之间的间隙
