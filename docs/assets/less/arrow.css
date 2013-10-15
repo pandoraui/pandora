@@ -5,12 +5,10 @@
 **/
 
 /* css 实现arrow */
-.ui-arrow,
 .ui-arrow-top,
 .ui-arrow-right,
 .ui-arrow-bottom,
 .ui-arrow-left,
-.active .ui-arrow,
 .active .ui-arrow-top,
 .active .ui-arrow-right,
 .active .ui-arrow-bottom,
@@ -78,4 +76,35 @@
 .active .orange-ui-arrow-top   , .orange-ui-arrow-bottom { border-top-color   : orange; }
 .active .orange-ui-arrow-right , .orange-ui-arrow-left   { border-right-color : orange; }
 
+/* 禁用状态 也可直接使用 gray 箭头 */
+.disabled .ui-arrow-top,
+.disabled .ui-arrow-right,
+.disabled .ui-arrow-bottom,
+.disabled .ui-arrow-left {
+    border-style: dashed;
+    border-color: transparent;
+    border-width: 5px;
+}
+
+.disabled .ui-arrow-top {
+    border-bottom-style: solid;
+    border-top-width: 0;
+}
+.disabled .ui-arrow-right {
+    border-left-style: solid;
+    border-right-width: 0;
+}
+.disabled .ui-arrow-bottom {
+    border-top-style: solid;
+    border-bottom-width: 0;
+}
+.disabled .ui-arrow-left {
+    border-right-style: solid;
+    border-left-width: 0;
+}
+
+.disabled .ui-arrow-top    { border-bottom-color: gray; }
+.disabled .ui-arrow-right  { border-left-color  : gray; }
+.disabled .ui-arrow-bottom { border-top-color   : gray; }
+.disabled .ui-arrow-left   { border-right-color : gray; }
 
