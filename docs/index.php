@@ -145,6 +145,7 @@
             
             <h3>兼容解决方案 <small>更多详见 <a target="_blank" href="http://localhost/cnbootstrap/cnDocs/solution.php">cnBootstrap</a></small></h3>
             <div class="modules f12">
+                <span class="hide">
                 <a class="doing" target="_blank" href="modules/typo.html">中文排版</a>
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/two-layout.html">两列自适应布局</a>
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/equal-height-layout.html">等高布局</a>
@@ -154,8 +155,8 @@
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/white-space.html">文本省略号 强制换行</a>
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/text-align-justify.html">文本两端对齐</a>
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">文本纵向排列</a>
-                
-                <a class="done" target="_blank" href="solutions/button.html">button</a>
+                </span>
+                <a class="doing" target="_blank" href="solutions/button.html">button</a>
                 
             </div>
             
