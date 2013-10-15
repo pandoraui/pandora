@@ -111,6 +111,7 @@
                 <a class="todo hide" href="###">imgzoom <small>缩放及截图</small></a>
                 
                 <a class="todo hide" href="###">appstore <small>应用列表</small></a>
+                <a class="done" href="modules/weather.html">weather <small>天气图标</small></a>
                 
                 
                 <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>select下拉框</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 让IE系列浏览器识别html5标签 -->
-<!--[if lt IE 9]>
-<script src="../assets/js/html5shiv.js"></script>
-<![endif]-->
-<link rel="stylesheet" href="../assets/less/pandora.css">
-<link rel="stylesheet" href="../assets/less/docs.css">
-<style>
-.selectbox{display: block;margin-bottom:10px;}
-
-</style>
+    <meta charset="utf-8">
+    <title>select下拉框</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 让IE系列浏览器识别html5标签 -->
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/less/pandora.css">
+    <link rel="stylesheet" href="../assets/less/docs.css">
+    <style>
+        .selectbox{display: block;margin-bottom:10px;}
+    </style>
 </head>
 <body>
 <div class="wrap">
     <h1>select下拉框/下拉选项</h1>
-	<p>实现select下拉框的模拟，具备单选、多选、指定值的下拉选择</p>
+    <p>实现select下拉框的模拟，具备单选、多选、指定值的下拉选择</p>
     <p><strong>TODO：</strong></p>
-	
+
     <div class="docs-example">
         <h3>原生的select标签 <small>其样式参见form.css</small></h3>
         <select name="" id="">
@@ -28,156 +27,69 @@
             <option value="">北京</option>
         </select>
         <h3>简单selectbox <small>实现最基本的select模拟，选中取值修改等</small></h3>
+        <p>data-class属性用于控制select的尺寸，在没有改属性时，默认为中等尺寸</p>
+        <select data-class="">
+            <option value="value1">V1</option>
+            <option value="value2">V2</option>
+            <option value="value3">V3</option>
+        </select>
+
+        <select  data-class="selectbox-mini">
+            <option value="value1">俩字</option>
+            <option value="value2">V22</option>
+            <option value="value3">V33</option>
+        </select>
+
+        <select  data-class="selectbox-small">
+            <option value="value1">V11</option>
+            <option value="value2">V22</option>
+            <option value="value3">V33</option>
+        </select>
+
+        <select data-class="selectbox-middle">
+            <option value="value1">V1</option>
+            <option value="value2">V2</option>
+            <option value="value3">V3</option>
+        </select>
+
+        <select  data-class="selectbox-big">
+            <option value="value1">V11</option>
+            <option value="value2">V22</option>
+            <option value="value3">V33</option>
+        </select>
         
-        
-        <div class="selectbox">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value">请选择</span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">选择项1</li>
-                    <li data-value="选择项2">选择项2</li>
-                    <li data-value="选择项3">选择项3</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="selectbox form-small">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value"></span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">选择项1</li>
-                    <li data-value="选择项2">选择项2</li>
-                    <li data-value="选择项3">选择项3</li>
-                </ul>
-            </div>
-        </div>
-        
-        
-        <div class="selectbox selectbox-mini">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value">俩字</span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">只能</li>
-                    <li data-value="选择项2">俩字</li>
-                    <li data-value="选择项3">尺寸</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="selectbox selectbox-small">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value">可以五个字</span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">身份证</li>
-                    <li data-value="选择项2">护照</li>
-                    <li data-value="选择项3">港澳通行证</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="selectbox selectbox-middle">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value">请选择</span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">选择项1</li>
-                    <li data-value="选择项2">选择项1</li>
-                    <li data-value="选择项3">这个比默认的大小宽一点</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="selectbox selectbox-big">
-            <p class="select-info like-input">
-                <span class="select-arrow"><i class="ui-arrow-bottom dark-ui-arrow-bottom"></i></span>
-                <span class="select-value">请选择</span>
-            </p>
-            <div class="selectbox-drop">
-                <ul class="select-results">
-                    <li data-value="选择项1">选项1</li>
-                    <li data-value="选择项2">选项1</li>
-                    <li data-value="选择项3">这个可以实现N多字的排版</li>
-                </ul>
-            </div>
-        </div>
-        <h3>复杂的selectbox <small>支持搜索等</small></h3>
-        
-        <div class="selectbox JS_select select-hover select-active">
-            <p class="select-info">
-                <span class="select-arrow"><i></i></span>
-                <span class="select-value">
-                    
-                </span>
-                
-                
-            </p>
-            <div class="selectbox-drop">
-                <div class="select-search">
-                    <input type="text" class="input-search"  />
-                </div>
-                <ul class="select-results">
-                    <li class="select-item">选择项1</li>
-                    <li class="select-item">选择项2</li>
-                    <li class="select-item">
-                        <div class="select-label">选择项3</div>
-                        <ul class="select-itembox">
-                        	<li class="select-item-sub"></li>
-                        </ul>
-                    </li>
-                    <li class="select-item">选择项4</li>
-                </ul>
-            </div>
-        </div>
-        
+        <p>适用于新创建的select的转换</p>
+        <div id="dd"></div>
+        <input type="button" value="增加最长select" id="btn">
     </div>
 <pre class="prettyprint linenums">
+    
+    js应用：
+        src="../assets/js/modules/jquery.selectModel.js"
+    js调用：    
+        $("select[data-class]").selectModel();
 
 </pre>
-
+    
 
 </div>
 
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="../assets/js/modules/jquery.selectModel.js"></script>
 <script>
-$(function(){
-    $("div.selectbox").click(function(e){
-		var obj = e.target || e.srcElement;
-		if(obj.className!="selectbox-drop"){
-			$(this).toggleClass("selectbox-active active");
-		}
-	}).mouseleave(function(){
-		var e = this;
-		e.timeId = setTimeout(function(){
-			$(e).removeClass("selectbox-active active");
-		},200)
-	}).mouseenter(function(){
-		clearTimeout(this.timeId)
-	})
-    
-    $("div.selectbox-drop").delegate("[data-value]","click",function(){
-        var _selectbox = $(this).parents("div.selectbox");
-        _selectbox.find("[data-value]").removeClass("selected");
-        $(this).addClass("selected")
-        _selectbox.find(".select-value").text($(this).text())
-        
-    })
-    
-    
-});
+    $(function() {
+        $("select[data-class]").selectModel();
+
+        var str ='<select data-class="selectbox-big">'
+            + '<option value="value1">V111</option>'
+            + '<option value="value2">V222</option>'
+            + '<option value="value3">V333</option>'
+            + '</select>'
+        $('#btn').bind('click', function(){
+            $('#dd').append(str);
+            $("select[data-class]").selectModel();
+        })
+    });
 </script>
 </body>
 </html>
