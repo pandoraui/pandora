@@ -48,12 +48,10 @@
         
         <button id="clonebtn" class="btn" type="button">再添加一个标签</button>
         
-        <br><br>
+        <p>动态添加的标签要支持tooltip功能，可于动态创建后调用再次调用tooltip方法解决</p>
         
-        <div id="test">
-            
+        <div id="test"></div>
         
-        </div>
         
     </div>
 <pre class="prettyprint linenums">
@@ -85,7 +83,9 @@ $(function(){
     });
     
     // 默认即下方显示
-    $('span[class=tagsback]').ui('lvtip'); 
+    $('span[class=tagsback]').ui('lvtip',{
+        events: live;
+    }); 
     
     //鼠标hover时，提示信息不消失
     $('.tagscc').ui('lvtip',{
@@ -97,6 +97,8 @@ $(function(){
 
 </div>
 <script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js"></script>
+<script src="http://pic.lvmama.com/js/ui/lvmamaUI/plugin/jquery.lvtip.js"></script>
+
 <script>
 $(function(){
     // 默认参数列表
@@ -118,7 +120,11 @@ $(function(){
     });
     
     // 默认即下方显示
-    $('span[class=tagsback]').ui('lvtip'); 
+    $('span[class=tagsback]').ui('lvtip',{
+        
+        events : "live",
+        hovershow : 200
+    }); 
     
     //鼠标hover时，提示信息不消失
     $('.tagscc').ui('lvtip',{
@@ -126,12 +132,12 @@ $(function(){
     });
     
     $('#clonebtn').click(function(){
-        $("span.tagscc").clone().appendTo("#test");
+        //$("span.tagscc").clone().appendTo("#test");
         $("#test").append('<span class="tagsback" tip-content="订购份数越多将享受优惠越多">多订优惠</span>');
-        $(this).unbind();
+        //$(this).unbind();
         
         //live方法有问题，后添加元素ui不被调用 暂时可以如下解决
-        $('.tagscc').ui('lvtip',{
+        $('span[class=tagsback]').ui('lvtip',{
             place: 'bottom'
         });
     })

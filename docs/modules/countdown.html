@@ -23,14 +23,18 @@
 <body>
 <div class="wrap">
     <h1>倒计时插件</h1>
-	<p>实现可定制的倒计时</p>
+    <p>实现可定制的倒计时</p>
     <p>依赖：http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
-	
+    
     <div class="docs-example">
         <h4>默认传入倒计时间的 UNIX 时间戳 即可</h4>
         <dl class="dl-horizontal">
             <dt>默认效果：</dt>
             <dd><span class="time">2531275871</span></dd>
+            
+            <dt>如果传入负值或文字：</dt>
+            <dd><span class="time">-100000</span></dd>
+            <dd><span class="time">传入文字会怎么样？直接return了</span></dd>
             
             <dt>调整时间差：</dt>
             <dd><span class="timediff">2531275871</span></dd>
@@ -76,23 +80,23 @@ $(function(){
     $("span.time").ui("countdown");
     
     // 调整时间差
-	$("span.timediff").ui("countdown",{
+    $("span.timediff").ui("countdown",{
         timediff: -86400000
     });
     
     // 调用自定义标签
-	$("span.countdown").ui("countdown",{
+    $("span.countdown").ui("countdown",{
         prezero: true,
         effect: true
     });
     
     // 自定义时间格式
-	$("span.time_format").ui("countdown",{
+    $("span.time_format").ui("countdown",{
         format: "dd:hh:mm"
     });
     
     // 自定义结束提醒
-	$("span.time_tips").ui("countdown",{
+    $("span.time_tips").ui("countdown",{
         format: "mm:ss",
         overtips: "2012世界末日没来？钱用光了？傻了吧！！！"
     });
