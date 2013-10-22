@@ -32,10 +32,6 @@
             <dt>默认效果：</dt>
             <dd><span class="time">2531275871</span></dd>
             
-            <dt>如果传入负值或文字：</dt>
-            <dd><span class="time">-100000</span></dd>
-            <dd><span class="time">传入文字会怎么样？直接return了</span></dd>
-            
             <dt>调整时间差：</dt>
             <dd><span class="timediff">2531275871</span></dd>
             
@@ -49,6 +45,15 @@
             <dd><span class="time_tips">5000</span></dd>
             
         </dl>
+        
+        <h4>传入参数不正规怎么办？</h4>
+        <dl class="dl-horizontal">
+            <dt>传入负值</dt>
+            <dd><span class="time">-100000</span> <strong>传入负值，转变为过期提醒</strong></dd>
+            <dt>传入文字</dt>
+            <dd><span class="time">传入了文字会怎么样？直接过滤 return了</span></dd>
+        </dl>
+        
     </div>
 <pre class="prettyprint linenums">
 &lt;span class="time"&gt;5000&lt;/span&gt;  标签内为倒计时间
