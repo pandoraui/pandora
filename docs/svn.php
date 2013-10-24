@@ -21,6 +21,13 @@
     <p><strong>TODO：</strong></p>
     
     <div class="docs-example">
+        <h4>251环境测试产品</h4>
+        <ul>
+            <li><a target="_blank" href="http://www.lvmama.com/product/67370">门票：67370</a></li>
+            <li><a target="_blank" href="http://www.lvmama.com/product/72672">线路：72672</a></li>
+            <li><a target="_blank" href="http://www.lvmama.com/product/66046">超级自由行：66046</a></li>
+            <li><a target="_blank" href="http://www.lvmama.com/product/25060">酒店：25060</a></li>
+        </ul>
         <h4>头部文件(模板)修改：<small>包含以下文件</small></h4>
         <dl class="dl-horizontal">
             <dt>标准模板</dt>
@@ -58,7 +65,7 @@
             <dt>登陆注册</dt>
             <dd>E:\SVN_work\focus\pet\pet_sso\src\main\webapp\login.jsp</dd>
             <dt>景点详情页</dt>
-            <dd>/focus/pet/pet_dest/src/main/webapp/WEB-INF/pages/scenicDetail/scenicDetail.ftl</dd>
+            <dd>E:\SVN_work\focus\pet\pet_dest\src\main\webapp\WEB-INF\pages\scenicDetail\scenicDetail.ftl</dd>
             
             <dt>度假酒店：</dt>
             <dd>E:\SVN_work\focus\pet\pet_search\src\main\webapp\WEB-INF\ftl\hotel\hotel_search.ftl</dd>
@@ -66,7 +73,7 @@
         
         <dl class="dl-horizontal">
             <dt>public路径</dt>
-            <dd>E:SVN_work\focus\pet\pet_topic\src\main\webapp\WEB-INF\pages\public</dd>
+            <dd>E:\SVN_work\focus\pet\pet_topic\src\main\webapp\WEB-INF\pages\public</dd>
         </dl>
         
         <h4>SVN 产品部分支</h4>
