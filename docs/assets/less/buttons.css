@@ -22,7 +22,7 @@
 button,
 input {
     line-height: normal;
-	
+    
     /* IE6/7 内间距宽度一致 */	
     *overflow: visible; 
 }

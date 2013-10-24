@@ -10,11 +10,13 @@
 
 ***/
 
+
+
 button,
 input {
     line-height: normal;
-	
-    /* IE6/7 内间距宽度一致 */	
+    
+    /* IE6/7 内间距宽度一致 */ 
     *overflow: visible; 
 }
 
@@ -55,10 +57,10 @@ input {
             user-select: none;
 }
 .pbtn .pbtn-text {
-	background: 0;
-	padding: 0;
-	height: auto;
-	line-height: auto;
+    background: 0;
+    padding: 0;
+    height: auto;
+    line-height: auto;
 }
 .pbtn:focus {
     outline: none;
@@ -70,8 +72,8 @@ input {
 
 .pbtn:hover,
 .pbtn:focus {
-	text-decoration: none;
-	background-image: none;
+    text-decoration: none;
+    background-image: none;
     text-decoration: none;
 }
 .pbtn:hover {
