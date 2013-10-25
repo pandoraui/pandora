@@ -178,11 +178,11 @@
     filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
 }
 
-.dialog-bule{
+.dialog-blue{
     padding: 5px;
     background-color: #538ED7;
 }
-.dialog-bule .dialog-header{
+.dialog-blue .dialog-header{
     background-color: #538ED7;
 }
 

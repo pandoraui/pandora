@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>button 按钮兼容性研究</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/dev-common.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<link rel="stylesheet" href="css/solutions.css">
+
+<style>
+.ach-box{margin: 0 0 10px 0;}
+.btnbg{ margin: 0; padding:6px 10px; background:url(img/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
+
+.linear-gradient {
+    border: 1px solid transparent;
+    color: #333333;
+    
+    /* 渐变色 */
+    background-color: #f5f5f5; /* Old browsers */
+    
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); /* IE10+ */
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6); /* W3C */
+    background-repeat: repeat-x;
+    
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0); /* IE6-9 GradientType渐变的类型 0垂直渐变(默认值) 1水平渐变 */
+    /*filter: progid:DXImageTransform.Microsoft.gradient(enabled=true);
+    
+    *background-color: #e6e6e6;
+     Darken IE7 buttons by default so they stand out more given they won't have borders */
+    
+    /* Win7下的IETester 无效没关系，真正的IE6是支持的 */
+        
+    /* filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); enabled = true 滤镜激活(默认值)不能为true时此属性写在后面 */
+}
+</style>
+<base target="_blank" />
+</head>
+<body>
+<div class="wrap">
+    <h1>button 按钮兼容性研究</h1>
+
+    <p>按钮在网页中必不可少并广泛应用，且在表单布局中面临较为复杂的兼容性问题，此处对按钮实现统一兼容解决方案。</p>
+    
+    <h3>规划：</h3>
+    
+    <ul>
+        <li>首先 (5种)<strong>不同标签</strong> 实现兼容性按钮，（<code>a</code>、<code>span</code> <code>button</code> 前期实现）（<code>input[type="button"]</code>、<code>input[type="submit"]</code> 后期制作）</li>
+        <li>之后制定 尺寸4种、样式N种、交互状态4种</li>
+        <li>新增按钮 loading 效果，交互变色应用等</li>
+        <li>扩展主题风格：经典的渐变实现(默认)、扁平化的metro风格</li>
+        <li>问题总结，buttons 使用中可能遇到的问题及解决办法</li>
+    </ul>
+    <p><strong>注意：</strong>此处只针对以上规划的全兼容性做一研究，全部实现请到模块 buttons.html 中浏览效果。</p>
+    
+    <h3>可能遇到的问题：</h3>
+    <ul>
+        <li><a href="/cnBootstrap/cnDocs/bugs-and-fixed.php">A标签 提交表单IE6下事件冲突</a></li>
+        <li>为什么不用图片按钮？图片按钮虽能全兼容，但适应性扩展性都不高</li>
+    </ul>
+    
+    <div class="docs-example">
+        <p>实现规划：为测试完整的兼容性问题，以下分步实现，首先制作 <code>a</code> 标签按钮，之后为其他标签，依次类推。</p>
+        <h4>button <small>默认 font-size: 12px; height: 30px;</small></h4>
+        <p><strong>注意：</strong>使用按钮，首推 <code>a</code> <code>span</code> 标签实现按钮，可使用 <code>span</code> <code>button</code> 标签实现，但暂不支持 input 全兼容（后期制作）。</p>
+        
+        <h4>渐变测试 <small><a href="http://pandoraui.github.io/cssbook/">linear-gradient()</a></small></h4>
+        <div class="ach-box">
+            <a class="btn linear-gradient btn-large">渐变测试</a>
+            <div class="linear-gradient" style="width: 40%;height: 200px;margin-top: 10px;">
+                渐变测试全兼容
+            </div>
+        </div>
+        
+        <h4>默认按钮 <small>三种标签的实现 <code>a</code> <code>span</code> <code>button</code></small></h4>
+        <p>
+            <a class="btn">按钮</a>
+            <span class="btn">按钮</span>
+            <button class="btn">按钮</button>
+            <span class="hide">
+            <input class="btn" type="button" value='按钮' />
+            <input class="btn" type="submit" value='按钮' />
+            <a class="btn btn-link">a Link</a>
+            </span>
+        </p>
+        
+        <h4>经典渐变实现 <small></small></h4>
+        <div class="ach-box">
+            <a class="btn">按钮</a>
+            <a class="btn btn-default">按钮</a>
+            <a class="btn btn-pink">按钮</a>
+            <a class="btn btn-orange">按钮</a>
+            <a class="btn btn-blue">按钮</a>
+            <a class="btn btn-gray">按钮</a>
+            <a class="btn btn-disabled">禁用按钮</a>
+        </div>
+        <div class="ach-box">
+            <a class="btn disabled">按钮</a>
+            <a class="btn disabled btn-default">按钮</a>
+            <a class="btn disabled btn-pink">按钮</a>
+            <a class="btn disabled btn-orange">按钮</a>
+            <a class="btn disabled btn-blue">按钮</a>
+            <a class="btn disabled btn-gray">按钮</a>
+            <a class="btn disabled btn-disabled">禁用按钮</a>
+        </div>
+        
+        
+        <h4>尺寸大小 <small>组合icon暂时 有 14px 16px 两种尺寸</small></h4>
+        <div class="ach-box btnbg">
+            <a class="btn btn-mini">小按钮</a>
+            <a class="btn btn-small">中按钮</a>
+            <a class="btn btn-middle">大按钮</a>
+            <a class="btn btn-big">超大按钮</a>
+        </div>
+        
+        <h4>组合实现</h4>
+        <div class="ach-box btnbg">
+            <a class="btn btn-default btn-mini">小按钮</a>
+            <a class="btn btn-default btn-small">中按钮</a>
+            <a class="btn btn-default btn-middle">大按钮</a>
+            <a class="btn btn-default btn-big">超大按钮</a>
+        </div>
+        <div class="ach-box btnbg">
+            <a class="btn btn-pink btn-mini">小按钮</a>
+            <a class="btn btn-pink btn-small">中按钮</a>
+            <a class="btn btn-pink btn-middle">大按钮</a>
+            <a class="btn btn-pink btn-big">超大按钮</a>
+        </div>
+        <div class="ach-box btnbg">
+            <a class="btn btn-orange btn-mini">小按钮</a>
+            <a class="btn btn-orange btn-small">中按钮</a>
+            <a class="btn btn-orange btn-middle">大按钮</a>
+            <a class="btn btn-orange btn-big">超大按钮</a>
+        </div>
+        <div class="ach-box btnbg">
+            <a class="btn btn-blue btn-mini">小按钮</a>
+            <a class="btn btn-blue btn-small">中按钮</a>
+            <a class="btn btn-blue btn-middle">大按钮</a>
+            <a class="btn btn-blue btn-big">超大按钮</a>
+        </div>
+        
+        <h4>组合 icon 使用</h4>
+        <div class="ach-box">
+            <a class="btn btn-default btn-middle"><i class="icon"></i><span class="btn-text">大按钮</span></a>
+            <a class="btn btn-default btn-big"><i class="icon"></i><span class="btn-text">超大按钮</span></a>
+        </div>
+        <div class="ach-box">
+            <a class="btn btn-pink btn-middle"><i class="icon"></i><span class="btn-text">大按钮</span></a>
+            <a class="btn btn-pink btn-big"><i class="icon"></i><span class="btn-text">超大按钮</span></a>
+        </div>
+        <div class="ach-box">
+            <a class="btn btn-orange btn-middle"><i class="icon"></i><span class="btn-text">大按钮</span></a>
+            <a class="btn btn-orange btn-big"><i class="icon"></i><span class="btn-text">超大按钮</span></a>
+        </div>
+        <div class="ach-box">
+            <a class="btn btn-blue btn-middle"><i class="icon"></i><span class="btn-text">大按钮</span></a>
+            <a class="btn btn-blue btn-big"><i class="icon"></i><span class="btn-text">超大按钮</span></a>
+        </div>
+        
+        <h4>以上实现的事项说明</h4>
+        
+        <ol>
+            <li>推荐使用 <code>a</code> 标签实现按钮</li>
+            <li>针对IE6/7，关闭了渐变的实现（避免影响性能）采用平面实现，a标签在IE6下若无href属性，hover效果失效</li>
+            <li>针对IE6，组合icon时导致btn的line-height失效，增加了btn-text标签放置文字</li>
+            <li>为增强交互效果，对边框做了视觉处理，但IE6/7的button等标签实现由于聚焦时出现不可控的黑边，设置为无边框</li>
+            <li>实现的按钮默认设置右边距6px，结合换行或空格产生的间距，总体效果表现为10px，具体应用环境可自行调整</li>
+            <li>复杂的应用场景，例如下面的示例，根据实际需求定制</li>
+        </ol>
+        
+        <h4>其他应用场景</h4>
+        <p>
+            <a class="btn btn-pink nospace-right">添加</a><a class="btn btn-standard">删除</a>
+        </p>
+        
+        <h4>其他标签实现按钮 <small><code>button</code></small></h4>
+        <h4>问题描述</h4>
+        <p>火狐下 <code>button</code> 及 <code>input</code> 标签无视 line-height，且button和input[type="button"],input[type="submit"],input[type="reset"]等input按钮，它就是border-box模型。</p>
+        <p>这里还存在这么一个问题，即便是在火狐下把按钮（非链接）声明为content-box;但是按钮依然存在左右3个像素的隐形填充，无论字体设置多大。一个解决办法是使用-moz-padding-start和-moz-padding-end来改变。</p>
+        
+        <p>button 实现</p>
+        <div class="ach-box btnbg">
+            <button class="btn btn-default btn-mini">小按钮</button>
+            <button class="btn btn-default btn-small">中按钮</button>
+            <button class="btn btn-default btn-middle">大按钮</button>
+            <button class="btn btn-default btn-big">超大按钮</button>
+        </div>
+        <div class="ach-box btnbg">
+            <button class="btn btn-pink btn-mini">小按钮</button>
+            <button class="btn btn-pink btn-small">中按钮</button>
+            <button class="btn btn-pink btn-middle">大按钮</button>
+            <button class="btn btn-pink btn-big">超大按钮</button>
+        </div>
+        <div class="ach-box btnbg">
+            <button class="btn btn-orange btn-mini">小按钮</button>
+            <button class="btn btn-orange btn-small">中按钮</button>
+            <button class="btn btn-orange btn-middle">大按钮</button>
+            <button class="btn btn-orange btn-big">超大按钮</button>
+        </div>
+        <div class="ach-box btnbg">
+            <button class="btn btn-blue btn-mini">小按钮</button>
+            <button class="btn btn-blue btn-small">中按钮</button>
+            <button class="btn btn-blue btn-middle">大按钮</button>
+            <button class="btn btn-blue btn-big">超大按钮</button>
+        </div>
+        
+        <p>&lt;input type="button"&gt; 实现</p>
+        <div class="ach-box btnbg">
+            <input type="button" class="btn btn-default btn-mini"   value="小按钮">
+            <input type="button" class="btn btn-default btn-small"  value="中按钮">
+            <input type="button" class="btn btn-default btn-middle" value="大按钮">
+            <input type="button" class="btn btn-default btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="button" class="btn btn-pink btn-mini"   value="小按钮">
+            <input type="button" class="btn btn-pink btn-small"  value="中按钮">
+            <input type="button" class="btn btn-pink btn-middle" value="大按钮">
+            <input type="button" class="btn btn-pink btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="button" class="btn btn-orange btn-mini"   value="小按钮">
+            <input type="button" class="btn btn-orange btn-small"  value="中按钮">
+            <input type="button" class="btn btn-orange btn-middle" value="大按钮">
+            <input type="button" class="btn btn-orange btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="button" class="btn btn-blue btn-mini"   value="小按钮">
+            <input type="button" class="btn btn-blue btn-small"  value="中按钮">
+            <input type="button" class="btn btn-blue btn-middle" value="大按钮">
+            <input type="button" class="btn btn-blue btn-big"    value="超大按钮">
+        </div>
+        
+        <p>&lt;input type="submit"&gt; 实现</p>
+        <div class="ach-box btnbg">
+            <input type="submit" class="btn btn-default btn-mini"   value="小按钮">
+            <input type="submit" class="btn btn-default btn-small"  value="中按钮">
+            <input type="submit" class="btn btn-default btn-middle" value="大按钮">
+            <input type="submit" class="btn btn-default btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="submit" class="btn btn-pink btn-mini"   value="小按钮">
+            <input type="submit" class="btn btn-pink btn-small"  value="中按钮">
+            <input type="submit" class="btn btn-pink btn-middle" value="大按钮">
+            <input type="submit" class="btn btn-pink btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="submit" class="btn btn-orange btn-mini"   value="小按钮">
+            <input type="submit" class="btn btn-orange btn-small"  value="中按钮">
+            <input type="submit" class="btn btn-orange btn-middle" value="大按钮">
+            <input type="submit" class="btn btn-orange btn-big"    value="超大按钮">
+        </div>
+        <div class="ach-box btnbg">
+            <input type="submit" class="btn btn-blue btn-mini"   value="小按钮">
+            <input type="submit" class="btn btn-blue btn-small"  value="中按钮">
+            <input type="submit" class="btn btn-blue btn-middle" value="大按钮">
+            <input type="submit" class="btn btn-blue btn-big"    value="超大按钮">
+        </div>
+        
+        <h4>问题</h4>
+        <ul>
+            <li>input实现的按钮，IE6/7下宽度变宽许多，原因待研究，IE9-11变得稍微窄了点，可能由字体宽度引起</li>
+            <li>高度上已经表现的想当一致，IE6/7表现的水平方向位置差了1px，有待做垂直居中时进一步研究</li>
+        </ul>
+    </div>
+<pre class="prettyprint linenums">
+    
+</pre>
+    
+    <h3>对此你有什么看法：</h3>
+    <div id="uyan_frame"></div>
+    
+
+</div>
+
+
+<!-- UY BEGIN -->
+<script type="text/javascript">
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</body> 
+</html>
