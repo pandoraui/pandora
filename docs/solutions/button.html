@@ -74,7 +74,7 @@
     <div class="docs-example">
         <p>实现规划：为测试完整的兼容性问题，以下分步实现，首先制作 <code>a</code> 标签按钮，之后为其他标签，依次类推。</p>
         <h4>button <small>默认 font-size: 12px; height: 30px;</small></h4>
-        <p><strong>注意：</strong>使用按钮，首推 <code>a</code> <code>span</code> 标签实现按钮，可使用 <code>span</code> <code>button</code> 标签实现，但暂不支持 input 全兼容（后期制作）。</p>
+        <p><strong>注意：</strong>使用按钮，首推 <code>a</code> <code>span</code> 标签实现按钮，可使用 <code>button</code> 标签实现，也支持 <code>input</code> 实现，后两者不如 a 与 span 标签更容易控制。</p>
         
         <h4>渐变测试 <small><a href="http://pandoraui.github.io/cssbook/">linear-gradient()</a></small></h4>
         <div class="ach-box">
@@ -270,7 +270,7 @@
         
         <h4>问题</h4>
         <ul>
-            <li>input实现的按钮，IE6/7下宽度变宽许多，原因待研究，IE9-11变得稍微窄了点，可能由字体宽度引起</li>
+            <li>input实现的按钮，IE6/7下宽度变宽许多，原因待研究，IE9-11变得稍微窄了点(&lt;5px数量级)，可能由字体宽度引起</li>
             <li>高度上已经表现的想当一致，IE6/7表现的水平方向位置差了1px，有待做垂直居中时进一步研究</li>
         </ul>
     </div>
