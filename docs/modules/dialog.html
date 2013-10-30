@@ -319,13 +319,29 @@ pandora.dialog.defaults = {
         
         <h5>示例314</h5>
         <p><button class="pbtn" id="demo314">换肤</button></p>
-
+        
         <h5>示例315</h5>
         <p><button class="pbtn" id="demo315">全局配置</button></p>
         
         <h5>示例316</h5>
-        <p><button class="pbtn" id="demo316">element对象</button></p>
-
+        <p><button class="pbtn" id="demo316">显示element对象内容</button></p>
+        
+<!-- 
+    测试页面元素及其原绑定事件
+    事件不能写在将要显示在弹层的内容中
+ -->
+<div id="elemBack" class="hide">
+    <p>根据传入element对象（这里是#elemBack）显示其内容，同时保存其原有事件</p>
+    <p><strong>注意：</strong>原事件不能以script标签包含在 #elemBack 盒子内，否则会重复绑定</p>
+    <button class="btn">点此测试事件</button>
+</div>
+<script>
+    $("#elemBack .btn").click(function () {
+        pandora.alert("您点击激活了原绑定事件");
+    });
+</script>
+        
+        
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
@@ -371,13 +387,14 @@ $("#demo315").click(function () {
 
 // 示例316
 pandora.dialog({
-    title: "自定义标题",
-    content:$("#elemBack")  //document.getElementById("elemBack")
+    title: "显示对应页面内容到弹窗",
+    content:$("#elemBack")  //或使用 document.getElementById("elemBack")
 });
 </pre>
-<div id="elemBack" style="display:none">
-    <p>根据传入element对象同时保存其事件</p>
-</div>
+
+
+
+
 <script>
 // 示例：标准模式的使用
 $(function(){
@@ -408,7 +425,8 @@ $(function(){
             cancel: true
         });
     });
-
+    
+    // 示例314
     $("#demo314").click(function () {
         pandora.dialog({
             skin: "dialog-bule",
@@ -417,10 +435,10 @@ $(function(){
         });
     });
 
-    // 全局配置
+    // 示例315
     (function (d) {
-        d["okClassName"] = "pbtn-orange";
         d["skin"] = "dialog-default";
+        d["okClassName"] = "pbtn-orange";
         d["mask"] = true;
     }(pandora.dialog.defaults));
 
@@ -428,18 +446,17 @@ $(function(){
         $.alert("全局配置");
     });
 
-    $("#elemBack").click(function () {
-        alert("根据传入element对象同时保存其事件");
-    });
-
+    // 示例316
     $("#demo316").click(function () {
         pandora.dialog({
-            title: "自定义标题",
-            content: $("#elemBack")  //document.getElementById("elemBack")
+            title: "显示对应页面内容到弹窗",
+            content: $("#elemBack")  //或使用 document.getElementById("elemBack")
         });
     });
 })
 </script>
+
+
     
     
     <div class="docs-example">

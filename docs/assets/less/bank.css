@@ -71,3 +71,5 @@
 .cmpay          { background-position: -450px -200px; } /* 4-6  中国移动手机支付 */
 .alipay-quick   { background-position: -450px -240px; } /* 4-7  支付宝快捷支付   */
 .tenpay-quick   { background-position: -450px -280px; } /* 4-8  财付通快捷支付   */
+.unionpay-quick { background-position: -450px -320px; } /* 4-9  银联快捷支付     */
+.unionpay2      { background-position: -450px -360px; } /* 4-10 银联支付         */
