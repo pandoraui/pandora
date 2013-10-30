@@ -322,6 +322,9 @@ pandora.dialog.defaults = {
 
         <h5>示例315</h5>
         <p><button class="pbtn" id="demo315">全局配置</button></p>
+        
+        <h5>示例316</h5>
+        <p><button class="pbtn" id="demo316">element对象</button></p>
 
     </div>
 <pre class="prettyprint linenums">
@@ -365,7 +368,16 @@ pandora.dialog({
 $("#demo315").click(function () {
     $.alert("全局配置");
 });
+
+// 示例316
+pandora.dialog({
+    title: "自定义标题",
+    content:$("#elemBack")  //document.getElementById("elemBack")
+});
 </pre>
+<div id="elemBack" style="display:none">
+    <p>根据传入element对象同时保存其事件</p>
+</div>
 <script>
 // 示例：标准模式的使用
 $(function(){
@@ -414,6 +426,17 @@ $(function(){
 
     $("#demo315").click(function () {
         $.alert("全局配置");
+    });
+
+    $("#elemBack").click(function () {
+        alert("根据传入element对象同时保存其事件");
+    });
+
+    $("#demo316").click(function () {
+        pandora.dialog({
+            title: "自定义标题",
+            content: $("#elemBack")  //document.getElementById("elemBack")
+        });
     });
 })
 </script>
@@ -882,6 +905,7 @@ $(function(){
 
 
 </div>
+
 <script src="../assets/js/google-code-prettify/prettify.js"></script> 
 <!-- UY BEGIN -->
 <script type="text/javascript">

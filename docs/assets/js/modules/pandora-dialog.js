@@ -152,7 +152,7 @@
             that._bindEvent(config);
 
             if (config.drag === true) {
-                that.drag();
+                that._drag();
             }
 
             // 模态窗口 弹出子的模态窗口
@@ -313,7 +313,44 @@
          * 
          */
         _drag: function () {
+            //var x = 0,
+            //    y = 0,
+            //    that = this;
+                
+            //this.wrap.find("div[data-title=title]").mousedown(function (e) {
+            //    var target = $(e.target);
 
+            //    x = target.clientX - this.offsetLeft;
+            //    y = target.clientY - this.offsetTop;
+
+            //    document.onmousemove = function (e) {
+            //        var target = $(e.target),
+            //            left = target.clientX - x,
+            //            top = target.clientY - y;
+
+            //        if (left > document.documentElement.clientWidth - that.wrap[0].offsetWidth) {
+            //            left = document.documentElement.clientWidth - that.wrap[0].offsetWidth;
+            //        }
+
+            //        if (top > document.documentElement.clientHeight - that.wrap[0].offsetHeight) {
+            //            top = document.documentElement.clientHeight - that.wrap[0].offsetHeight;
+            //        }
+
+            //        that.wrap.css({
+            //            left: left,
+            //            top: top
+            //        });
+
+                    
+            //    }
+
+            //    document.onmouseup = function () {
+            //        document.onmousemove = null;
+            //        document.onmouseup = null;
+            //    };
+
+            //    return false;
+            //});
         },
 
         /**
@@ -422,12 +459,41 @@
          * @param {String, HTMLElement} 内容 (可选)
          */
         content: function (content) {
-            var rulReg = /^(https?:\/\/|\/|\.\/|\.\.\/)/;
+            var rulReg = /^(https?:\/\/|\/|\.\/|\.\.\/)/,
+                that = this,
+                prev, next, parent, display;
 
             if (rulReg.test(content)) {
 
                 // 调用创建iframe 
                 content = this._createIframe(content);
+            }
+
+            if (typeof content !== "string") {
+                
+                if ($(content)[0].nodeType === 1) {
+                    content = $(content)[0];
+                    display = content.style.display;
+                    prev = content.previousSibling;
+                    next = content.nextSibling;
+                    parent = content.parentNode;
+
+                    this._elemBack = function () {
+
+                        if (prev && prev.parentNode) {
+                            prev.parentNode.insertBefore(content, prev.nextSibling);
+                        } else if (next && next.parentNode) {
+                            next.parentNode.insertBefore(content, next);
+                        } else if (parent) {
+                            parent.appendChild(content);
+                        };
+
+                        content.style.display = display;
+                        that._elemBack = null;
+                    };
+
+                    $(content).show();
+                }
             }
 
             this.wrap.find("div.dialog-content").html(content);
@@ -625,6 +691,10 @@
             // 清除dialog自适应大小定时器
             clearTimeout(timer);
 
+            if (this._elemBack) {
+                this._elemBack();
+            };
+
             if (universe !== null) {
                 wrap.remove();
             } else {
@@ -678,7 +748,7 @@
         button: null, // 按钮数组 参数{value, className, callback} 按钮名称 样式名 回调函数 ----此具体使用请参考示例341 按钮组的调用 
         fixed: true, // 跟随
         mask: true, // 遮罩
-        drag: false, // 拖动 
+        drag: true, // 拖动 
 
         // 对于dialog 内容切换
         dialogAuto: false,
