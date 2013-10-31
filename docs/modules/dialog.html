@@ -89,8 +89,8 @@ h5{color:green;}
     
     <h2>1、简化模式 <small>静态方法重写标准方法，调用更简单</small></h2>
     <p><strong class="red">注意：</strong>简化模式的静态方法只适用已确定的以下三种场景，任何不确定的调用场景，请使用标准模式!!!</p>
-<pre>
-// 1.弹出一句话提醒信息。
+<pre class="prettyprint linenums">
+// 1.模拟原生的 alert() 方法：向用户显示一条消息并等待用户关闭对话框。
 $.alert("这个类似原生方法 alert");
 
 // 2.提示保存成功，若干毫秒后自动关闭(2000毫秒为缺省值，可省略)
@@ -106,7 +106,7 @@ $("#demo131").click(function () {
 });
 </pre>
     
-    <h3>1.1、alert 的模态提醒 <small>$.alert</small></h3>
+    <h3>1.1、模拟 alert() 的消息提醒 <small>$.alert</small></h3>
     <div class="docs-example">
         <h4>最简单的调用，静态方法实现alert的模态提醒</h4>
         <p>参数说明 <code>$.alert(content, callback)</code> 示例如下：</p>
@@ -120,6 +120,7 @@ $("#demo131").click(function () {
         
     </div>
 <pre class="prettyprint linenums">
+// 模拟原生的 alert() 方法：向用户显示一条消息并等待用户关闭对话框。
 // 下面三种调用方式等效，推荐使用 $.alert 实现alert提醒
 
 // 示例111
@@ -319,13 +320,30 @@ pandora.dialog.defaults = {
         
         <h5>示例314</h5>
         <p><button class="pbtn" id="demo314">换肤</button></p>
-
+        
         <h5>示例315</h5>
         <p><button class="pbtn" id="demo315">全局配置</button></p>
         
         <h5>示例316</h5>
-        <p><button class="pbtn" id="demo316">element对象</button></p>
-
+        <p><button class="pbtn" id="demo316">指定对象将其代码显示到弹窗</button></p>
+        
+<!-- 
+    测试页面元素及其原绑定事件
+    事件不能写在将要显示在弹层的内容中
+ -->
+<div id="elemBack" class="hide">
+    <p>传入指定element对象（这里传入 $("#elemBack") 显示其内容(含其本身盒子)，同时保存其原有事件</p>
+    <p><strong>注意：</strong>原事件不能以 <code>&lt;script&gt;</code> 标签包含在 #elemBack 盒子内，否则事件会重复绑定</p>
+    <button id="testbtn" class="btn">点此测试事件</button>
+</div>
+<script>
+    // 此事件不能放到 $("#elemBack") 盒子中，否则事件重复绑定
+    $("#testbtn").click(function () {
+        pandora.alert("您点击激活了原绑定事件");
+    });
+</script>
+        
+        
     </div>
 <pre class="prettyprint linenums">
 // 示例：标准模式的使用
@@ -371,13 +389,10 @@ $("#demo315").click(function () {
 
 // 示例316
 pandora.dialog({
-    title: "自定义标题",
-    content:$("#elemBack")  //document.getElementById("elemBack")
+    title: "显示对应页面内容到弹窗",
+    content:$("#elemBack")  //或使用 document.getElementById("elemBack")
 });
 </pre>
-<div id="elemBack" style="display:none">
-    <p>根据传入element对象同时保存其事件</p>
-</div>
 <script>
 // 示例：标准模式的使用
 $(function(){
@@ -408,7 +423,8 @@ $(function(){
             cancel: true
         });
     });
-
+    
+    // 示例314
     $("#demo314").click(function () {
         pandora.dialog({
             skin: "dialog-bule",
@@ -417,10 +433,10 @@ $(function(){
         });
     });
 
-    // 全局配置
+    // 示例315
     (function (d) {
-        d["okClassName"] = "pbtn-orange";
         d["skin"] = "dialog-default";
+        d["okClassName"] = "pbtn-orange";
         d["mask"] = true;
     }(pandora.dialog.defaults));
 
@@ -428,18 +444,16 @@ $(function(){
         $.alert("全局配置");
     });
 
-    $("#elemBack").click(function () {
-        alert("根据传入element对象同时保存其事件");
-    });
-
+    // 示例316
     $("#demo316").click(function () {
         pandora.dialog({
-            title: "自定义标题",
-            content: $("#elemBack")  //document.getElementById("elemBack")
+            title: "显示对应页面内容到弹窗",
+            content: $("#elemBack")  //或使用 document.getElementById("elemBack")
         });
     });
 })
 </script>
+    
     
     
     <div class="docs-example">
@@ -569,7 +583,6 @@ $(function(){
     
     
     
-    
     <div class="docs-example">
         <h4>3.3 弹窗高度检测</h4>
         <p>参数说明： <code>pandora.dialog(options)</code> 请参考示例实现代码注释：</p>
@@ -675,6 +688,7 @@ $(function(){
     });
 })
 </script>
+    
     
     
     <div class="docs-example">
@@ -890,8 +904,8 @@ $(function(){
     $("#demo511").click(function(){
         $.dialog({
             title: "iframe 调用测试",
-            content: "/pandora/docs/modules/typo.html",
-            width: "800px"
+            content: "/pandora/docs/assets/js/modules/iframe.html"
+            
         });
         
     })
