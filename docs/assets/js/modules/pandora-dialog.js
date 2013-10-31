@@ -132,7 +132,7 @@
 
             /* 皮肤 */
             wrap.addClass(config.skin);
-
+            
             that.button.apply(that, config.button);
             that.title(config.title);
             that.content(config.content);
@@ -142,12 +142,12 @@
             that._zIndex();
             that.reset();
             that.time(config.time);
-
+            
 
             if (config.mask === true) {
                 that._mask(config);
             }
-
+            
             that.wrap.show();
             that._bindEvent(config);
 
@@ -199,7 +199,7 @@
 
             // 开始请求iframe
             this.iframe.attr("src", url);
-
+            
             this.iframe.one("load", function () {
 
                 // 如果 dialog 已经隐藏了，就不需要触发 onload
@@ -253,6 +253,39 @@
         },
 
         /**
+         * 用于计算当dialog高度固定值的时候内容自适应
+         */
+        _bodyWH: function () {
+            var h,
+                wrap = this.wrap,
+                $dialogBody = wrap.find("div.dialog-body"),
+                $dialogHeader = wrap.find("div.dialog-header"),
+                $dialogFooter = wrap.find("div.dialog-footer"),
+                bpm = this._gaugeValue($dialogBody).y,
+                hh = $dialogHeader.height() + this._gaugeValue($dialogHeader).y,
+                fh = $dialogFooter.height() + this._gaugeValue($dialogFooter).y;
+
+            h = parseInt(this.config.height, 10) - bpm - hh - fh;
+            wrap.find("div.dialog-body").css({ "height": h, "overflow": "auto" });
+        },
+
+        /**
+         * 计算边距值
+         * param {$} jQuery 对象
+         */
+        _gaugeValue: function (obj) {
+            var val = {};
+
+            val.y = parseInt(obj.css("paddingTop"), 10) + parseInt(obj.css("paddingBottom"), 10) +
+                    parseInt(obj.css("marginTop"), 10) + parseInt(obj.css("marginBottom"), 10);
+
+            val.x = parseInt(obj.css("paddingLeft"), 10) + parseInt(obj.css("paddingRight"), 10) +
+                    parseInt(obj.css("marginLeft"), 10) + parseInt(obj.css("marginRight"), 10);
+
+            return val;
+        },
+
+        /**
          * 遮罩层
          */
         _mask: function (config) {
@@ -260,7 +293,7 @@
             this._mask = function () {
                 $("[data-mask=overlay]").show();
             }
-
+            
             // 有待完善 HACK
             if ($("[data-mask=overlay]").size() === 0) {
                 var div = document.createElement('div');
@@ -291,10 +324,10 @@
                 count = 0;
 
             for (var i in list) {
-
+                
                 if (list.hasOwnProperty(i)) {
-
-                    if (list[i]._ismask === true) {
+                    
+                    if(list[i]._ismask === true){
                         count++;
                     }
 
@@ -313,50 +346,60 @@
          * 
          */
         _drag: function () {
-            //var x = 0,
-            //    y = 0,
-            //    that = this;
-                
-            //this.wrap.find("div[data-title=title]").mousedown(function (e) {
-            //    var target = $(e.target);
+            var disX = 0,
+                disY = 0,
+                wrap = this.wrap[0],
+                handle = this.wrap.find("div.dialog-header")[0];
 
-            //    x = target.clientX - this.offsetLeft;
-            //    y = target.clientY - this.offsetTop;
+            handle.style.cursor = "move";
+            handle.onmousedown = function (event) {
+                var event = event || window.event;
+                disX = event.clientX - wrap.offsetLeft;
+                disY = event.clientY - wrap.offsetTop;
 
-            //    document.onmousemove = function (e) {
-            //        var target = $(e.target),
-            //            left = target.clientX - x,
-            //            top = target.clientY - y;
+                document.onmousemove = function (event) {
+                    var event = event || window.event,
+                        iL = event.clientX - disX,
+                        iT = event.clientY - disY,
+                        maxL = document.documentElement.clientWidth - wrap.offsetWidth,
+                        maxT = document.documentElement.clientHeight - wrap.offsetHeight;
 
-            //        if (left > document.documentElement.clientWidth - that.wrap[0].offsetWidth) {
-            //            left = document.documentElement.clientWidth - that.wrap[0].offsetWidth;
-            //        }
+                    iL <= 0 && (iL = 0);
+                    iT <= 0 && (iT = 0);
+                    iL >= maxL && (iL = maxL);
+                    iT >= maxT && (iT = maxT);
 
-            //        if (top > document.documentElement.clientHeight - that.wrap[0].offsetHeight) {
-            //            top = document.documentElement.clientHeight - that.wrap[0].offsetHeight;
-            //        }
+                    wrap.style.left = iL + "px";
+                    wrap.style.top = iT + "px";
 
-            //        that.wrap.css({
-            //            left: left,
-            //            top: top
-            //        });
+                    return false
+                };
 
-                    
-            //    }
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
 
-            //    document.onmouseup = function () {
-            //        document.onmousemove = null;
-            //        document.onmouseup = null;
-            //    };
+                    //http://baike.baidu.com/link?url=aNx0f9xGYhqWVXmOIBPSN54rVDlw7xj-YQLKcgpjQ01v6xCYWYmd7SJMwxvpkwgitEG6sP4z1j6FzZh5Ebr7Wq
+                    //该函数从当前线程中的窗口释放鼠标捕获，并恢复通常的鼠标输入处理
+                    if (this.releaseCapture) {
+                        this.releaseCapture();
+                    }
+                };
 
-            //    return false;
-            //});
+                //http://baike.baidu.com/link?url=-soUC66QKQKfSk7yEPTiEEI7tYgDaKgOEY0t7QvkDvSX6_YdccDpFNXa5Q8eE_8vkiYtk42RmXaY4QMROT50iK
+                //该函数在属于当前线程的指定窗口里设置鼠标捕获
+                if (this.setCapture) {
+                    this.setCapture();
+                }
+
+                return false
+            };
         },
 
         /**
          * 置顶对话框
          */
-        _zIndex: function () {
+        _zIndex:function(){
             var index = Factory.defaults.zIndex++;
             this.wrap.css("zIndex", index);
         },
@@ -381,17 +424,17 @@
                         index = target.index();
                         that._execCallback(index);
                     }
-
+                    
                 }
             });
 
-            that._loopy();
+           that._loopy();
         },
 
         // 监听窗口大小
         _loopy: function () {
             var that = this;
-
+            
             timer = setTimeout(function () {
                 clearTimeout(timer);
 
@@ -402,7 +445,7 @@
                 // hack data 全局变量 
                 if (width !== data.w || height !== data.h) {
 
-
+          
                     if (that.config.dialogAuto) {
 
                         that.wrap.css({
@@ -470,7 +513,7 @@
             }
 
             if (typeof content !== "string") {
-                
+
                 if ($(content)[0].nodeType === 1) {
                     content = $(content)[0];
                     display = content.style.display;
@@ -512,15 +555,19 @@
                 ow = wrap.width(),
                 top,
                 left;
-
+                
             if (this.config.dialogAuto) {
                 wrap.css({
                     "position": "absolute",
                     "top": ($(window).scrollTop() + this.config.dialogAutoTop) + "px",
                     "left": parseInt(($(window).width() - ow) / 2, 10) + "px"
                 });
+                
+                return ;
+            }
 
-                return;
+            if (this.config.height !== "" && this.config.height !== "auto") {
+                this._bodyWH();
             }
 
             if (wh - oh >= 50) {
@@ -628,11 +675,11 @@
                 oh = wrap.height(),
                 left = (ww - ow) / 2,
                 top = (wh - oh) * 382 / 1000;
-
-            if (isIE6) {
+            
+            if (isIE6){
                 top += $(window).scrollTop();
             }
-
+            
             wrap.css({
                 "top": parseInt(top) + "px",
                 "left": parseInt(left) + "px"
@@ -640,32 +687,32 @@
 
             return this;
         },
-
+        
         /** 
          * 定时关闭 
          * @param {Number} 单位毫秒, 无参数则停止计时器 
-         */
-        time: function (time) {
-            var that = this,
-            timer = this._timer;
+         */ 
+        time: function (time) { 
+            var that = this, 
+            timer = this._timer; 
 
-            if (timer) {
-                clearTimeout(timer);
-            }
+            if (timer) { 
+                clearTimeout(timer); 
+            } 
 
-            if (time) {
+            if (time) { 
 
                 // 卸载所有按钮事件及清空所有按钮 
-                that._unbindEvent();
-                $(that.wrap).find("[data-btn=btns]").html("");
+                that._unbindEvent(); 
+                $(that.wrap).find("[data-btn=btns]").html(""); 
 
-                this._timer = setTimeout(function () {
-                    that.close();
-                }, time);
+                this._timer = setTimeout(function () { 
+                    that.close(); 
+                }, time); 
 
-            };
+            }; 
 
-            return this;
+            return this; 
         },
 
         /**
@@ -685,22 +732,18 @@
             this._unbindEvent();
 
             // 清除定时器
-            this.time();
+            this.time(); 
             delete Dialog.list[config.id];
 
             // 清除dialog自适应大小定时器
             clearTimeout(timer);
-
-            if (this._elemBack) {
-                this._elemBack();
-            };
 
             if (universe !== null) {
                 wrap.remove();
             } else {
                 universe = this;
 
-                wrap.attr("style", "");
+                wrap.attr("style","");
                 wrap.hide();
                 wrap.find("div.dialog-body").attr("style", "");
                 wrap.attr("class", "dialog");
@@ -708,7 +751,7 @@
                 wrap.find("[data-content=content]").html("");
                 wrap.find("[data-btn=btns]").html("");
             }
-
+            
             return this;
         },
 
@@ -748,7 +791,7 @@
         button: null, // 按钮数组 参数{value, className, callback} 按钮名称 样式名 回调函数 ----此具体使用请参考示例341 按钮组的调用 
         fixed: true, // 跟随
         mask: true, // 遮罩
-        drag: true, // 拖动 
+        drag: false, // 拖动 
 
         // 对于dialog 内容切换
         dialogAuto: false,
@@ -769,7 +812,7 @@
 
         content: "",
         title: "消息提醒",
-
+        
         time: null, //自动消失定时器
 
         width: "",  // 默认宽度400，由css控制
@@ -780,7 +823,7 @@
         maskClass: "overlay",
         zIndex: 4000
     };
-
+    
     var template = '<div class="dialog">'
                  + '    <div class="dialog-inner clearfix">'
                  + '        <a class="dialog-close" data-dismiss="dialog">&times;</a>'
@@ -807,7 +850,7 @@
             beforeunload: callback
         });
     }
-
+    
     // 定时信息 
     $.msg = pandora.msg = function (content, time) {
         return Factory({
