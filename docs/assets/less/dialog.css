@@ -28,10 +28,6 @@
     color: #4d4d4d;
 }
 
-.dialog .btn {
-    
-}
-
 .dialog .dialog-close {
     position: absolute;
     z-index: 10;
@@ -39,10 +35,10 @@
     right: 0;
     margin: 0;
     padding: 0;
-    width: 36px;
-    height: 32px;
-    overflow: hidden;
+    width: 34px;
+    height: 33px;
     line-height: 30px;
+    overflow: hidden;
     text-align: center;
     font-family: Tahoma,Arial,sans-serif;
     font-size: 20px;
@@ -172,17 +168,38 @@
 }
 
 /* 皮肤 */
-.dialog-default{
+.dialog-default {
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.4);
     filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
 }
+.dialog-default .dialog-close {
+    width: 34px;
+    height: 33px;
+    line-height: 30px;
+    -webkit-transition: -webkit-transform .5s .3s;
+       -moz-transition:    -moz-transform .5s .3s;
+            transition:         transform .5s .3s;
+}
+.dialog-default .dialog-close:hover {
+    color: #f00;
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+     -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+             transform: rotateZ(360deg);
+    -webkit-transition: -webkit-transform .8s;
+       -moz-transition:    -moz-transform .8s;
+            transition:         transform .8s;
+}
 
-.dialog-blue{
+
+.dialog-blue {
     padding: 5px;
     background-color: #538ED7;
 }
-.dialog-blue .dialog-header{
+.dialog-blue .dialog-header {
     background-color: #538ED7;
 }
 
@@ -190,6 +207,6 @@
 .dialog-pink .dialog-inner {
     border-top: 2px solid #d37;
 }
-.dialog-orange .dialog-inner{
+.dialog-orange .dialog-inner {
     border-top: 2px solid #f60;
 }

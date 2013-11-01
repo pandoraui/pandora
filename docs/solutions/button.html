@@ -15,7 +15,7 @@
 
 <style>
 .ach-box{margin: 0 0 10px 0;}
-.btnbg{ margin: 0; padding:6px 10px; background:url(img/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
+.btnbg{ margin: 0; padding:6px 10px 6px 20px; background:url(img/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
 
 .linear-gradient {
     border: 1px solid transparent;
@@ -69,6 +69,8 @@
     <ul>
         <li><a href="/cnBootstrap/cnDocs/bugs-and-fixed.php">A标签 提交表单IE6下事件冲突</a></li>
         <li>为什么不用图片按钮？图片按钮虽能全兼容，但适应性扩展性都不高</li>
+        <li>此处实现的按钮哪里会用到？用于较独立的位置，区别于弹窗上附带的按钮，但仍让可以组合使用<br>理论上引用组件css的顺序是：小组件先引用如button.css，大组件后引用如dialog.css</li>
+        <li>实验测试dev版本 <a href="button-dev.html">button-dev.html</a></li>
     </ul>
     
     <div class="docs-example">
@@ -84,17 +86,19 @@
             </div>
         </div>
         
-        <h4>默认按钮 <small>三种标签的实现 <code>a</code> <code>span</code> <code>button</code></small></h4>
+        
+        
+        <h4>默认按钮 <small>五种标签的实现 <code>a</code> <code>span</code> <code>button</code></small></h4>
         <p>
             <a class="btn">按钮</a>
             <span class="btn">按钮</span>
             <button class="btn">按钮</button>
-            <span class="hide">
             <input class="btn" type="button" value='按钮' />
             <input class="btn" type="submit" value='按钮' />
             <a class="btn btn-link">a Link</a>
-            </span>
         </p>
+        
+        
         
         <h4>经典渐变实现 <small></small></h4>
         <div class="ach-box">
