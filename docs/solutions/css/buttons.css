@@ -105,7 +105,7 @@ input.btn {
     background-image: none;
 }
 a.btn:hover {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 /* 默认效果 */
@@ -188,14 +188,15 @@ a.btn:hover {
 
 /* 有待完善的规范 */
 .btn        { padding: 0 20px; font-size: 12px; }
-.btn-mini   { padding: 0 15px; }
+.btn-mini   { padding: 0 10px; }
 .btn-small  { padding: 0 15px; }
 .btn-middle { padding: 0 20px; font-size: 14px; }
 .btn-big    { padding: 0 20px; font-size: 16px; }
 .btn-large  { padding: 0 30px; font-size: 18px; }
 
+/* 修复ie7 */
 button.btn,input.btn               { *height: 30px; *padding: 1px 21px; }
-button.btn-mini,input.btn-mini     { *height: 22px; *padding: 1px 16px; }
+button.btn-mini,input.btn-mini     { *height: 22px; *padding: 1px 11px; }
 button.btn-small,input.btn-small   { *height: 26px; *padding: 1px 16px; }
 button.btn-middle,input.btn-middle { *height: 30px; *padding: 1px 21px; }
 button.btn-big,input.btn-big       { *height: 36px; *padding: 1px 21px; }
