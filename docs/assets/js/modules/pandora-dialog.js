@@ -738,6 +738,10 @@
             // 清除dialog自适应大小定时器
             clearTimeout(timer);
 
+            if (this._elemBack) {
+                this._elemBack();
+            };
+
             if (universe !== null) {
                 wrap.remove();
             } else {
