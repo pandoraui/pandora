@@ -407,5 +407,9 @@ legend + .control-group {
     line-height:16px;
 }
 
-
+.form-inline input {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
 

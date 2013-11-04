@@ -273,10 +273,13 @@ fieldset[disabled] .pbtn {
     padding-right: 20px;
 }
 
-.pbtn-small,
-.pbtn-mini {
+.pbtn-small {
     padding-left: 15px;
     padding-right: 15px;
+}
+.pbtn-mini {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .pbtn-w,
 .pbtn-wbox .pbtn {
