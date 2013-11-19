@@ -152,7 +152,13 @@
         <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
         <p>.tip-line 用于显示单行的 .tiptext文本提醒，常和表单混用，并保持垂直对齐。</p>
         <div class="form-inline">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        </div>
+        <div class="form-inline">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-default"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        </div>
+        <div class="form-inline form-small">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
         </div>
         <div class="form-inline form-small">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
@@ -185,7 +191,20 @@
         <p></p>
         <div class="form-inline">
             <input type="text" class="input-text" placeholder="请输入手机校验码" />
-            <p><a href="javascript:;" class="btn btn-small">免费获取校验码</a></p>
+            
+            <p>
+                <a id="send-verifycode" class="btn btn-small">免费获取校验码</a>
+                <span id="JS_countdown" class="hide">
+                    <span class="tiptext tip-success tip-line">
+                        <span class="tip-icon tip-icon-success"></span>校验码已发送成功，请查看手机
+                    </span>
+                    <span class="tiptext tip-default tip-line">60秒内没有收到短信? <a href="javascript:;" class="btn btn-small disabled">(<span class="J_num">60</span>)秒后再次发送</a>
+                    </span>
+                </span>
+            </p>
+            
+            <h4>各种交互效果如下：</h4>
+            <p><a class="btn btn-small sendcode">免费获取校验码</a></p>
             <p>
                 <span class="tiptext tip-success tip-line">
                     <span class="tip-icon tip-icon-success"></span>校验码已发送成功，请查看手机</span>
@@ -1089,12 +1108,50 @@
 <script src="../assets/js/google-code-prettify/prettify.js"></script> 
 <!-- UY BEGIN -->
 <script type="text/javascript">
+
+$(function(){
+    function JS_countdown(_cdbox){
+        var _InterValObj;   //timer变量，控制时间
+        var _count = 6;    //间隔函数，1秒执行
+        var _curCount;      //当前剩余秒数
+        
+        sendMessage(_count);
+        
+        function sendMessage(_count){
+            _curCount = _count;
+            $(_cdbox).html(_curCount);
+            _InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        }
+        
+        //timer处理函数
+        function SetRemainTime() {
+            if (_curCount == 0) {
+                window.clearInterval(_InterValObj);     //停止计时器
+                var expr = _cdbox.indexOf("-old")>0?"-old":"";
+                $("#JS_countdown"+expr).children(".tip-success").html('<span class="tip-icon tip-icon-success"></span>校验码已发送成功，以最近发送的验证码为准').end().hide();
+                $("#send-verifycode"+expr).html("重新发送验证码").show();
+                $(".sendcodeinfo").hide();
+                $(".sendcode").html("重新发送验证码").show();
+            } else {
+                _curCount--;
+                $(_cdbox).html(_curCount);
+                //alert("aaa");
+            }
+        }
+    }
+    
+    $("#send-verifycode").click(function(){
+        $(this).hide();
+        $("#JS_countdown").show();
+        JS_countdown("#JS_countdown span.J_num");
+        //return false;
+    })
+});
+
 $(function(){
     // make code pretty
     window.prettyPrint && prettyPrint()
 })
-
-
 var uyan_config = {
     'title':'前端开发框架 #pandora#', 
     'du':'pandoraui.com'

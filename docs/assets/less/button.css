@@ -188,7 +188,8 @@ fieldset[disabled] .pbtn-link:focus {
     border-color: #0088cc;
     background-color: #0088cc;
 }
-
+.pbtn-gray            { color: #999999; background-color: #efefef; border-color: #cccccc; }
+.pbtn-gray:hover      { color: #999999; background-color: #efefef; border-color: #cccccc; cursor:default; }
 .pbtn-dark {
     color: #fff;
     border: 1px solid #666;
@@ -218,7 +219,7 @@ fieldset[disabled] .pbtn {
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .pbtn-disabled {

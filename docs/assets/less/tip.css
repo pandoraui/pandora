@@ -505,6 +505,8 @@ span.tip-line {
 .tip-line .btn {
     position: relative;
     top: -1px;
+    *top: 1px;
+    _top: 2px;
 }
 
 

@@ -162,6 +162,8 @@ a.btn:hover {
     -webkit-box-shadow: none;
        -moz-box-shadow: none;
             box-shadow: none;
+    /* IE8按钮内的元素继承了pointer-events导致事件失效，要注意
+    pointer-events: none;*/
 }
 .btn-gray,
 .btn-disabled,

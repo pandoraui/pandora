@@ -48,6 +48,12 @@
     border-width: 20px 20px 30px 30px;
     border-style: dashed solid dashed solid;
 }
+#cube { height: 6.5em; width: 7em; margin-right: 15px; }
+#cube div { width: 0; height: 0; border-style: solid; overflow: hidden; }
+#cube .c1 { border-color: transparent transparent blue transparent; border-width: 0 3em 1.5em 3em; }
+#cube .c2 { border-color: blue lime blue red; border-width: 1.5em 3em 0 3em; height: 2em; }
+#cube .c3 { border-color: transparent red transparent transparent; border-width: 0 3em 1.5em 0; float: left; }
+#cube .c4 { border-color: transparent transparent transparent lime; border-width: 0 0 1.5em 3em; float: left; }
 
 </style>
 </head>
@@ -157,7 +163,14 @@
 </pre>
     
     <div class="docs-example">
-        <h4>注意事项：<small>css arrow 实现原理(第一个盒子)</small></h4>
+        <h4>注意事项：<small>css border 实现 arrow 原理(第一个盒子)</small></h4>
+        <div id="cube">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+        </div>
+        <p>通过css border可以实现如上图形，通过不同的宽度等设置，可以实现需要的三角箭头形状(结合最新的CSS3效果，圆角、渐变色以及旋转，可以实现更为强大的需求)，下面是兼容性浅研究</p>
         <div class="box">
         <img style="float:right;" src="img/css-border.png" alt="css border" />
         <p>
@@ -169,11 +182,26 @@
         <p class="css-border big-css-border border-transparent"></p>
         <p>以前实现的时候针对 color为 transparent 的边使用了 <code>border-style:dashed</code>，导致部分电脑的火狐下出现问题，原因是那部分电脑的火狐在解析border时，结果如右图，填充设置颜色透明时，实现css箭头时导致相邻边填充为直线了(而非斜线)，最明显的表现如右二（此问题和火狐在不同电脑上的解析模式可能有所不同导致）</p>
         <p><strong>解决办法：</strong>使用 <code>solid</code> + <code>transparent</code> 组合即可。</p>
+        <p><strong>注意：</strong>之前实现使用 <code>dashed</code> + <code>transparent</code> 方案是因为IE6，所以解决办法是使用solid但是IE6使用dashed(应用transparent的边)</p>
         </div>
     </div>
 <pre class="prettyprint linenums">
 
 </pre>
+    <h3>最新实现</h3>
+    <p>通过使用 <strong title="">属性选择符</strong> 和 <strong>多类选择符</strong> 能够非常简洁的实现上面的组合实现效果</p>
+    <div class="docs-example">
+        <p>我们采用下面几个class名字，并组合一个标识符取ui，由于实现使用的css(添加css标志?)，暂作记录，稍后制作</p>
+<pre>
+uarr
+rarr
+darr
+larr
+</pre>
+    </div>
+    
+    
+    
 </div>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>

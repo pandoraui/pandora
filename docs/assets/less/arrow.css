@@ -23,24 +23,29 @@
     
     /* 边框类型必须使用solid + transparent，否则部分电脑firefox下会有问题 */
     border-style: solid;
+    _border-style: dashed;
     border-color: transparent;
 }
 
 
 .ui-arrow-top,
 .active .ui-arrow-bottom {
+    _border-bottom-style: solid;
     border-top-width: 0;
 }
 .ui-arrow-right,
 .active .ui-arrow-left {
+    _border-left-style: solid;
     border-right-width: 0;
 }
 .ui-arrow-bottom,
 .active .ui-arrow-top {
+    _border-top-style: solid;
     border-bottom-width: 0;
 }
 .ui-arrow-left,
 .active .ui-arrow-right {
+    _border-right-style: solid;
     border-left-width: 0;
 }
 
@@ -80,20 +85,25 @@
 .disabled .ui-arrow-bottom,
 .disabled .ui-arrow-left {
     border-style: solid;
+    _border-style: dashed;
     border-color: transparent;
     border-width: 5px;
 }
 
 .disabled .ui-arrow-top {
+    _border-bottom-style: solid;
     border-top-width: 0;
 }
 .disabled .ui-arrow-right {
+    _border-left-style: solid;
     border-right-width: 0;
 }
 .disabled .ui-arrow-bottom {
+    _border-top-style: solid;
     border-bottom-width: 0;
 }
 .disabled .ui-arrow-left {
+    _border-right-style: solid;
     border-left-width: 0;
 }
 

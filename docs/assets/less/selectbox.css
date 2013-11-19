@@ -81,6 +81,7 @@
     max-height: 160px;
     overflow-x: hidden;
     overflow-y: auto;
+    vertical-align:top;
 }
 .over-y-scroll {
     overflow-y: scroll;
