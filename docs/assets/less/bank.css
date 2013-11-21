@@ -73,3 +73,5 @@
 .tenpay-quick   { background-position: -450px -280px; } /* 4-8  财付通快捷支付   */
 .unionpay-quick { background-position: -450px -320px; } /* 4-9  银联快捷支付     */
 .unionpay2      { background-position: -450px -360px; } /* 4-10 银联支付         */
+.alipayCode     { background-position: -450px -400px; } /* 4-11 支付宝扫码支付   */
+
