@@ -9,6 +9,8 @@
 (function (global, $, pandora, undefined) {
     "use strict" // 严格模式
 
+    var count = 1;
+    
     if (pandora.selectModel) {
         return;
     }
@@ -40,10 +42,10 @@
         /*
          * 产生ID，及是否展开的状态
          */
-        _createInstance: function () {
+       _createInstance: function () {
+            console.log(count++);
             return {
-                //selectId: +new Date() + this.count++,
-				selectId: parseInt(Math.random()*99999999),
+                selectId: parseInt(+new Date())+ count++,
                 state: false
             };
         },
@@ -104,7 +106,7 @@
             //如果自适应宽度，设置select的宽度，select的值为第一项的值
             if (self.options.autoWidth) {
                 var maxW = selectModelEl.outerWidth() + self.options.selectAddWidth,
-                    selectVal = isSelectBoxEmpty ? self.options.emptyMessage : $(self.element).children().eq(0).text();
+                    selectVal = isSelectBoxEmpty ? self.options.emptyMessage : $(self.element).children("option:selected").text();
                 selectModelEl.css('width', maxW + 'px');
                 selectValueEl.text(selectVal)
             }
@@ -211,11 +213,12 @@
 
             var selectValueEl = $("#selectbox_" + this.instance.selectId).find(".select-value");
             selectValueEl.text($(clickedEl).text());
+            selectValueEl.attr("rel", $(clickedEl).attr("rel"));
             this._closeSelectBox(true);
 
             $(clickedEl).addClass(this.options.activeLi).siblings().removeClass(this.options.activeLi);
-
             $(this.element).val($(clickedEl).attr('rel'));
+            $(this.element).change();
         },
 
         /*
