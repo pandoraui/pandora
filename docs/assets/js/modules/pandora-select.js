@@ -43,7 +43,6 @@
          * 产生ID，及是否展开的状态
          */
        _createInstance: function () {
-            console.log(count++);
             return {
                 selectId: parseInt(+new Date())+ count++,
                 state: false
