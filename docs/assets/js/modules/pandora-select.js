@@ -10,7 +10,6 @@
     "use strict" // 严格模式
 
     var count = 1;
-    
     if (pandora.selectModel) {
         return;
     }
@@ -19,7 +18,7 @@
         var _options = $.extend({}, Factory.defaults, options);
         _options.selectElement.each(function () {
             if (!$.data(this, 'selectModel')) {
-                $.data(this, 'selectModel' , new Select(this, _options));
+                $.data(this, 'selectModel', new Select(this, _options));
             }
         })
     }
@@ -38,11 +37,13 @@
             this._createElements();
             this._hideSelect();
             this._setEvents();
+            this._changeVal();
         },
+
         /*
          * 产生ID，及是否展开的状态
          */
-       _createInstance: function () {
+        _createInstance: function () {
             return {
                 selectId: parseInt(+new Date())+ count++,
                 state: false
@@ -218,6 +219,24 @@
             $(clickedEl).addClass(this.options.activeLi).siblings().removeClass(this.options.activeLi);
             $(this.element).val($(clickedEl).attr('rel'));
             $(this.element).change();
+            if (typeof self.options.selectCallback === "function") {
+                self.options.selectCallback($(clickedEl).text());
+            }
+        },
+        
+        /*
+        * 当隐藏的原select发生改变时，美化的select内容会跟着发生变化
+         */
+        _changeVal: function () {
+            var self = this
+            $(this.element).bind('change', function () {
+                var index = this.selectedIndex;
+                var selectModelEl = $("div#selectbox_" + self.instance.selectId);
+                var rel = selectModelEl.find('.select-results').find('li').eq(index).attr('rel');
+                var val = selectModelEl.find('.select-results').find('li').eq(index).text();
+                selectModelEl.find('.select-value').text(val).attr('rel', rel);
+                selectModelEl.find('.select-results').find('li').eq(index).addClass('liActive').siblings('li').removeClass('liActive');
+            })
         },
 
         /*
@@ -311,7 +330,8 @@
         activeLi: 'liActive',
         autoWidth: false,
         selectAddWidth: 20,
-        selectElement:$('.selectModel')
+        selectElement: $('.selectModel'),
+        selectCallback: null
     }
 
     pandora.selectModel = Factory;
