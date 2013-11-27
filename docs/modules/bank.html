@@ -40,6 +40,7 @@
 .tenpay-quick   财付通快捷支付
 .unionpay-quick 银联快捷支付
 .unionpay2      银联
+.alipayCode     支付宝扫码支付
 
 .abc        中国农业银行        www.abchina.com
 .boc        中国银行            www.boc.cn
@@ -86,8 +87,8 @@
 .banks {
     width: 600px;
     height: 480px;
-    background: url(http://pic.lvmama.com/img/v4/bank.png) no-repeat;
-    background: url(../assets/img/bank.png) no-repeat;
+    background: url(http://pic.lvmama.com/img/v4/bank.png) 0 1px no-repeat;
+    background: url(../assets/img/bank.png) 0 1px no-repeat;
     
     /*
     border-top: 1px solid #ddd;
@@ -101,15 +102,16 @@
     float: left;
     display: inline;
 }
-.banks-item li {
+.table-info .banks-item li {
     position: relative;
     z-index: 10;
-    height: 39px;
-    line-height: 39px;
-    width: 149px;
+    height: 36px;
+    line-height: 36px;
+    width: 130px;
+    margin: 0 20px 2px -1px;
     text-indent: 200px;
     border: 1px solid #ddd;
-    border-width: 0 1px 1px 0;
+    border-width: 1px;
     overflow: hidden;
     
     -webkit-transition: 1s text-indent, .5s background;
@@ -117,12 +119,11 @@
         -ms-transition: 1s text-indent, .5s background;
             transition: 1s text-indent, .5s background;
 }
-.banks-item li:hover {
+.table-info .banks-item li:hover {
     z-index: 20;
     text-indent: 10px;
     background: #fff;
     background: rgba(255,255,255,0.9);
-    margin: -1px 0 0 -1px;
     border: 1px solid #ff9600;
     color: green;
     
@@ -210,7 +211,7 @@ caption {
                         <li>tenpay-quick</li>
                         <li>unionpay-quick</li>
                         <li>unionpay2</li>
-                        <li></li>
+                        <li>alipayCode</li>
                         <li></li>
                     </ul>
                 </div>
@@ -278,6 +279,7 @@ caption {
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank tenpay-quick" title="财付通快捷支付"></i></label></li>
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank unionpay-quick" title="银联快捷支付"></i></label></li>
             <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank unionpay2" title="银联支付"></i></label></li>
+            <li><label class="radio inline"><input class="input-radio" name="bankpay" type="radio"><i class="bank alipayCode" title="支付宝扫码支付"></i></label></li>
             
         </ul>
         
