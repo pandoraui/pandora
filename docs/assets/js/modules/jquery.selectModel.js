@@ -3,7 +3,7 @@
 (function ($, window, document, undefined) {
 
     "use strict";
-
+    var count = 1;
     var pluginName = "selectModel",
         defaults = {
             effect: {
@@ -38,7 +38,7 @@
          */
         _createInstance: function () {
             return {
-                selectId: +new Date(),
+                selectId: parseInt(+new Date())+ count++,
                 state: false
             };
         },
