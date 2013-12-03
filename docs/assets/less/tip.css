@@ -397,9 +397,9 @@ span.tiptext {
 
 /** @name      : tip-arrow 如：tip-arrow-1
   * @explain   : 点钟方向标记，用于组合显示箭头位置
-  * @type      : 基类 .tip-arrow
+  * @type      : 基类 .tip-arrow(可独立引用箭头方位)
   * @expand    : 扩展 .tip-arrow-1 ～ .tip-arrow-12
-  * @other     ：值方位与点钟的对应，仅用于单行提醒
+  * @other     ：英文值方位与点钟的对应，仅用于单行提醒
     top    -- 11
     bottom --  7
     right  --  3
@@ -420,6 +420,13 @@ span.tiptext {
     font-style: normal;
     font-weight: normal;
 }
+.tip-arrow em {
+    color: #d9d9d9;
+}
+.tip-arrow i {
+    color: #f9f9f9;
+}
+
 
 .tip-arrow-11,
 .tip-arrow-top,
