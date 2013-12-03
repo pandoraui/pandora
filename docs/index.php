@@ -56,6 +56,7 @@
                 <a class="doing" href="modules/typo.html">typo.css <small>排版样式</small></a>
                 <a class="doing" href="assets/less/combo.css">combo.css <small>组合样式</small></a>
                 <a class="doing" href="framework.php#iconfont">icon/iconfont <small>图标/字体集</small></a>
+                <a class="doing" href="modules/color.html">color <small>配色系统</small></a>
                 <a class="todo" href="###">grid <small>栅格系统</small></a>
             </div>
             

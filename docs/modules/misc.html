@@ -11,24 +11,53 @@
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
+.ex-box{}
+.posbox{position:relative;min-height:20px;width:50%;}
+.prev,
+.next {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #538ed7;
+    text-align: center;
+    font-size: 24px;
+    line-height: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+.prev { left:  0;}
+.next { right: 0;}
 
 </style>
 </head>
 <body>
 <div class="wrap">
     <h1>misc 杂项 小组件</h1>
-	<p>其他杂项小组件</p>
+    <p>其他杂项小组件</p>
     <p><strong>TODO：</strong></p>
-	
+    
     <div class="docs-example">
         <h3>加减数字操作</h3>
         <p>输入框禁止非数字输入（尽可能禁用输入法），可配置最小数值0或1，不能为负值，最大数值不能超过库存且不能超过N位数（现暂定八个9）。</p>
         
-        <span class="oper-numbox"><a class="op-reduce op-disable-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="0" maxlength="8"><a class="op-increase J_increase">+</a></span>
+        <div class="ex-box">
+            <span class="oper-numbox"><a class="op-reduce op-disable-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="0" maxlength="8"><a class="op-increase J_increase">+</a></span>
+            
+            <br></br>
+            
+            <span class="oper-numbox"><a class="op-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="2" maxlength="8"><a class="op-increase J_increase">+</a></span>
         
-        <br></br>
+        </div>
         
-        <span class="oper-numbox"><a class="op-reduce J_reduce">-</a><input type="text" data-type="inputNumber" class="op-number" value="2" maxlength="8"><a class="op-increase J_increase">+</a></span>
+        <h4>文字左右 <small>&amp;lsaquo; &amp;rsaquo;</small></h4>
+        <div class="ex-box posbox">
+            <span class="prev">&lsaquo;</span>
+            <span class="next">&rsaquo;</span>
+        </div>
+        
+        
     </div>
 <pre class="prettyprint linenums">
 
