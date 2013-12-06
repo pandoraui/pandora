@@ -326,6 +326,9 @@ pandora.dialog.defaults = {
         
         <h5>示例316</h5>
         <p><button class="pbtn" id="demo316">指定对象将其代码显示到弹窗</button></p>
+
+        <h5>示例317</h5>
+        <p><button class="pbtn" id="demo317">dialog高度固定值的时候内容自适应(不适用iframe)</button></p>
         
 <!-- 
     测试页面元素及其原绑定事件
@@ -449,6 +452,18 @@ $(function(){
         pandora.dialog({
             title: "显示对应页面内容到弹窗",
             content: $("#elemBack")  //或使用 document.getElementById("elemBack")
+        });
+    });
+
+    // 示例317
+    $("#demo317").click(function () {
+        pandora.dialog({
+            wrapClass: "dialog-big",
+            title: "弹窗内容高过窗口时",
+            height:400,
+            content: "弹窗内容过高，超过浏览器窗口高度时，弹窗变化为跟随滚动条滚动。<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分<br><br><br><br><br><br><br><br><br><br><br><br>再高的内容，我也能看到内容最下面的部分。",
+            ok: true,
+            cancel: true
         });
     });
 })
