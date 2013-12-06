@@ -348,7 +348,6 @@ h1, h2, h3, h4, h5,
 .fnb { font-weight: normal; }
 h6 {
     font-size: 12px;
-    font-weight: normal;
 }
 
 .vtop { vertical-align: top; }

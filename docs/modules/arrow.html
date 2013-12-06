@@ -24,6 +24,37 @@
 .hover-color:hover .blue-ui-arrow-bottom { border-top-color   : #e38; }
 .hover-color:hover .blue-ui-arrow-left   { border-right-color : #e38; }
 
+/* css border测试 */
+.css-border {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right:
+    10px;
+    border-width: 40px 50px 80px 70px;
+    border-style: solid;
+    border-color: black blue green #d17;
+}
+.css-border-bug {
+    border-style: dashed solid dashed solid;
+}
+.border-transparent {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+.big-css-border{ 
+    width: 340px;
+    height: 80px;
+    border-width: 20px 20px 30px 30px;
+    border-style: dashed solid dashed solid;
+}
+#cube { height: 6.5em; width: 7em; margin-right: 15px; }
+#cube div { width: 0; height: 0; border-style: solid; overflow: hidden; }
+#cube .c1 { border-color: transparent transparent blue transparent; border-width: 0 3em 1.5em 3em; }
+#cube .c2 { border-color: blue lime blue red; border-width: 1.5em 3em 0 3em; height: 2em; }
+#cube .c3 { border-color: transparent red transparent transparent; border-width: 0 3em 1.5em 0; float: left; }
+#cube .c4 { border-color: transparent transparent transparent lime; border-width: 0 0 1.5em 3em; float: left; }
+
 </style>
 </head>
 <body>
@@ -40,12 +71,12 @@
                 <i>◆</i>
             </div>
             <p>提示信息</p>
-        </span>        
-        
+        </span>
     </div>
 <pre class="prettyprint linenums">
 
 </pre>
+    
     
     <h3>css arrow <small>下拉、收起等指示箭头</small></h3>
     
@@ -130,7 +161,57 @@
 <pre class="prettyprint linenums">
 
 </pre>
+    
+    <div class="docs-example">
+        <h4>注意事项：<small>css border 实现 arrow 原理(第一个盒子)</small></h4>
+        <div id="cube">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+        </div>
+        <p>通过css border可以实现如上图形，通过不同的宽度等设置，可以实现需要的三角箭头形状(结合最新的CSS3效果，圆角、渐变色以及旋转，可以实现更为强大的需求)，下面是兼容性浅研究</p>
+        <div class="box">
+        <img style="float:right;" src="img/css-border.png" alt="css border" />
+        <p>
+            <span class="css-border" title="这种实现没有问题"></span>
+            <span class="css-border css-border-bug" title="这种实现是有问题的"></span>
+            <span class="css-border css-border-bug border-transparent" title="设置颜色透明后"></span>
+        </p>
+        <p class="css-border big-css-border"></p>
+        <p class="css-border big-css-border border-transparent"></p>
+        <p>以前实现的时候针对 color为 transparent 的边使用了 <code>border-style:dashed</code>，导致部分电脑的火狐下出现问题，原因是那部分电脑的火狐在解析border时，结果如右图，填充设置颜色透明时，实现css箭头时导致相邻边填充为直线了(而非斜线)，最明显的表现如右二（此问题和火狐在不同电脑上的解析模式可能有所不同导致）</p>
+        <p><strong>解决办法：</strong>使用 <code>solid</code> + <code>transparent</code> 组合即可。</p>
+        <p><strong>注意：</strong>之前实现使用 <code>dashed</code> + <code>transparent</code> 方案是因为IE6，所以解决办法是使用solid但是IE6使用dashed(应用transparent的边)</p>
+        </div>
+    </div>
+<pre class="prettyprint linenums">
 
+</pre>
+    <h3>最新实现 <small>命名改动</small></h3>
+    <p>通过使用 <strong title="">属性选择符</strong> 和 <strong>多类选择符</strong> 能够非常简洁的实现上面的组合实现效果</p>
+    <div class="docs-example">
+        <p>我们采用下面几个class名字，并组合一个标识符取ui，由于实现使用的css(添加css标志?)，暂作记录，稍后制作</p>
+<pre>
+uarr
+rarr
+darr
+larr
+</pre>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+    <h3>其他类型的边框应用 <small>扩展实现</small></h3>
+    <p>通过变换以及组合css3样式，实现更多种的效果</p>
+    <div class="docs-example">
+        <p><span class="css-border" title="这种实现没有问题"></span></p>
+        
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+    
 </div>
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script>

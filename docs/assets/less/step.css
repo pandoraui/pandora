@@ -50,7 +50,8 @@
     height: 0;
     border-width: 20px;
     border-color: transparent transparent transparent #fff;
-    border-style: dashed dashed dashed solid;
+    border-style: solid;
+    _border-style: dashed dashed dashed solid;
     position: absolute;
     left: -5px;
     top: -7px;
@@ -62,18 +63,20 @@
 .ui-step .ui-step-arrow .arrow_r2 {
     left: -8px;
     border-color: transparent transparent transparent #eee;
-    border-style: dashed dashed dashed solid;
+    border-style: solid;
+    _border-style: dashed dashed dashed solid;
 }
 .ui-step .ui-step-active .ui-step-arrow .arrow_r2 {
     right: 0;
     border-color: transparent transparent transparent #e38;
-    border-style: dashed dashed dashed solid;
+    border-style: solid;
+    _border-style: dashed dashed dashed solid;
 }
 .ui-step .ui-step-text {
     padding-left: 12px;
     margin-right: -4px;
-    word-wrap:break-word;
-    word-break:break-all;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .ui-step li.ui-step-end .ui-step-arrow {
     display: none;

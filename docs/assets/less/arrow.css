@@ -19,30 +19,33 @@
     line-height: 0;
     font-size: 0;
     overflow: hidden;
-    border-style: dashed;
-    border-color: transparent;
     border-width: 5px;
+    
+    /* 边框类型必须使用solid + transparent，否则部分电脑firefox下会有问题 */
+    border-style: solid;
+    _border-style: dashed;
+    border-color: transparent;
 }
 
 
 .ui-arrow-top,
 .active .ui-arrow-bottom {
-    border-bottom-style: solid;
+    _border-bottom-style: solid;
     border-top-width: 0;
 }
 .ui-arrow-right,
 .active .ui-arrow-left {
-    border-left-style: solid;
+    _border-left-style: solid;
     border-right-width: 0;
 }
 .ui-arrow-bottom,
 .active .ui-arrow-top {
-    border-top-style: solid;
+    _border-top-style: solid;
     border-bottom-width: 0;
 }
 .ui-arrow-left,
 .active .ui-arrow-right {
-    border-right-style: solid;
+    _border-right-style: solid;
     border-left-width: 0;
 }
 
@@ -81,25 +84,26 @@
 .disabled .ui-arrow-right,
 .disabled .ui-arrow-bottom,
 .disabled .ui-arrow-left {
-    border-style: dashed;
+    border-style: solid;
+    _border-style: dashed;
     border-color: transparent;
     border-width: 5px;
 }
 
 .disabled .ui-arrow-top {
-    border-bottom-style: solid;
+    _border-bottom-style: solid;
     border-top-width: 0;
 }
 .disabled .ui-arrow-right {
-    border-left-style: solid;
+    _border-left-style: solid;
     border-right-width: 0;
 }
 .disabled .ui-arrow-bottom {
-    border-top-style: solid;
+    _border-top-style: solid;
     border-bottom-width: 0;
 }
 .disabled .ui-arrow-left {
-    border-right-style: solid;
+    _border-right-style: solid;
     border-left-width: 0;
 }
 

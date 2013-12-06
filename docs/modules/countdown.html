@@ -39,11 +39,13 @@
             <dd><span class="countdown effect">2531275871</span></dd>
             
             <dt>自定义时间格式：</dt>
-            <dd><span class="time_format">2531275871</span></dd>
+            <dd><span class="time_format">3608000</span></dd>
+            
+            <dt>时间格式自适应：</dt>
+            <dd><span class="time_auto">3608000</span></dd>
             
             <dt>自定义结束提醒：</dt>
             <dd><span class="time_tips">5000</span></dd>
-            
         </dl>
         
         <h4>传入参数不正规怎么办？</h4>
@@ -65,11 +67,12 @@ $(function(){
     
     // 自定义参数说明
     $("span.countdown").ui("countdown",{
-        format: "dd:hh:mm:ss",  // 自定义倒计时类型 现支持 dd:hh:mm:ss(默认) hh:mm:ss dd:hh:mm mm:ss 四种格式
-        prezero: true,  // 设置前导零
-        effect : false,  // 自定义样式效果
+        format : "dd:hh:mm:ss",   // 时间格式 自定义倒计时类型 现支持 dd:hh:mm:ss(默认) hh:mm:ss dd:hh:mm mm:ss 四种格式
+        prezero : true,  // 前导零
+        effect : false,  // 支持自定义格式
         overtips : "已结束",  // 自定义结束提醒
-        timediff : 0  // 调整时间差，单位毫秒
+        timeauto : false,   // 默认不自适应格式
+        timediff : 0   // 调整时间差，单位毫秒
     });
 });
 &lt;/script&gt;
@@ -97,7 +100,13 @@ $(function(){
     
     // 自定义时间格式
     $("span.time_format").ui("countdown",{
-        format: "dd:hh:mm"
+        format: "dd:hh:mm:ss"
+    });
+    
+    // 自适应时间格式
+    $("span.time_auto").ui("countdown",{
+        timeauto: true,
+        format: "dd:hh:mm:ss"
     });
     
     // 自定义结束提醒

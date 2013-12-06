@@ -18,6 +18,7 @@
 .poptip-mini{margin-right:10px;}
 .relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
 .tip-dense{ margin: -10px 0;}
+.form-inline{margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -144,16 +145,25 @@
 &lt;div class="tiptext tip-info"&gt;&lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息&lt;/div&gt;
 &lt;div class="tiptext tip-warning"&gt;&lt;span class="tip-icon tip-icon-warning"&gt;&lt;/span&gt;警告提醒：自行编辑，非系统消息&lt;/div&gt;
 </pre>
+
+
+
     <div class="docs-example">
         <h4>内联行内提醒，常用于表单排版行内垂直对齐</h4>
         <p>.tip-line 用于显示单行的 .tiptext文本提醒，常和表单混用，并保持垂直对齐。</p>
-        <div>
+        <div class="form-inline">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
+        </div>
+        <div class="form-inline">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-default"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</span>
         </div>
-        <div class="form-small">
+        <div class="form-inline form-small">
+            <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
+        </div>
+        <div class="form-inline form-small">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> <span class="tiptext tip-line tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</span>
         </div>
-        <div>
+        <div class="form-inline">
             <input type="text" class="input-text" placeholder="行内提醒垂直对齐" /> &nbsp;&nbsp;<span class="tiptext tip-line tip-default">
             <div class="tip-arrow tip-arrow-left">
                 <em>◆</em>
@@ -173,6 +183,57 @@
     &lt;span class="tip-icon tip-icon-info"&gt;&lt;/span&gt;消息提醒：自行编辑，非系统消息
 &lt;/span&gt;
 </pre>
+
+
+
+    <div class="docs-example">
+        <h4>手机验证码 <small>简单的组合应用</small></h4>
+        <p></p>
+        <div class="form-inline">
+            <input type="text" class="input-text" placeholder="请输入手机校验码" />
+            
+            <p>
+                <a id="send-verifycode" class="btn btn-small">免费获取校验码</a>
+                <span id="JS_countdown" class="hide">
+                    <span class="tiptext tip-success tip-line">
+                        <span class="tip-icon tip-icon-success"></span>校验码已发送成功，请查看手机
+                    </span>
+                    <span class="tiptext tip-default tip-line">60秒内没有收到短信? <a href="javascript:;" class="btn btn-small disabled">(<span class="J_num">60</span>)秒后再次发送</a>
+                    </span>
+                </span>
+            </p>
+            
+            <h4>各种交互效果如下：</h4>
+            <p><a class="btn btn-small sendcode">免费获取校验码</a></p>
+            <p>
+                <span class="tiptext tip-success tip-line">
+                    <span class="tip-icon tip-icon-success"></span>校验码已发送成功，请查看手机</span>
+                    <span class="tiptext tip-default tip-line">60秒内没有收到短信? <a href="javascript:;" class="btn btn-small disabled">(<span class="J_num">60</span>)秒后再次发送</a>
+                </span>
+            </p>
+            <p><a href="javascript:;" class="btn btn-small">重新发送校验码</a></p>
+            <p>
+                <span class="tiptext tip-success tip-line"><span class="tip-icon tip-icon-success"></span>校验码已发送成功，以最近发送的验证码为准</span>
+                <span class="tiptext tip-default tip-line">60秒内没有收到短信? <a href="javascript:;" class="btn btn-small disabled">(<span class="J_num">60</span>)秒后再次发送</a></span>
+            </p>
+            <p><span class="tiptext tip-error tip-line"><span class="tip-icon tip-icon-error"></span>已超过每日发送上限，请于次日再试</span></p>
+            <p><span class="tiptext tip-warning tip-line"><span class="tip-icon tip-icon-warning"></span>当前IP发送频率过快，请稍候重试</span></p>
+            <p><span class="tiptext tip-warning tip-line"><span class="tip-icon tip-icon-warning"></span>发送频率过快，请稍候重试</span></p>
+        </div>
+        <p>此实现代码可能会变更，以上引用的按钮实现为老版本CSS...</p>
+    </div>
+<pre class="prettyprint linenums">
+&lt;span class="tiptext tip-success tip-line"&gt;
+    &lt;span class="tip-icon tip-icon-success"&gt;&lt;/span&gt;校验码已发送成功，请查看手机&lt;/span&gt;
+    &lt;span class="tiptext tip-default tip-line"&gt;60秒内没有收到短信? &lt;a href="javascript:;" class="btn btn-small disabled"&gt;(&lt;span class="J_num"&gt;60&lt;/span&gt;)秒后再次发送&lt;/a&gt;
+&lt;/span&gt;
+
+&lt;span class="tiptext tip-error tip-line"&gt;&lt;span class="tip-icon tip-icon-error"&gt;&lt;/span&gt;已超过每日发送上限，请于次日再试&lt;/span&gt;
+&lt;span class="tiptext tip-warning tip-line"&gt;&lt;span class="tip-icon tip-icon-warning"&gt;&lt;/span&gt;当前IP发送频率过快，请稍候重试&lt;/span&gt;
+</pre>
+
+
+
     <div class="docs-example">
         <h4>关于点钟方向定位三角指示的位置 <small>12个方位：tip-arrow-1 ～ tip-arrow-12</small></h4>
 <pre>
@@ -1047,12 +1108,50 @@
 <script src="../assets/js/google-code-prettify/prettify.js"></script> 
 <!-- UY BEGIN -->
 <script type="text/javascript">
+
+$(function(){
+    function JS_countdown(_cdbox){
+        var _InterValObj;   //timer变量，控制时间
+        var _count = 6;    //间隔函数，1秒执行
+        var _curCount;      //当前剩余秒数
+        
+        sendMessage(_count);
+        
+        function sendMessage(_count){
+            _curCount = _count;
+            $(_cdbox).html(_curCount);
+            _InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        }
+        
+        //timer处理函数
+        function SetRemainTime() {
+            if (_curCount == 0) {
+                window.clearInterval(_InterValObj);     //停止计时器
+                var expr = _cdbox.indexOf("-old")>0?"-old":"";
+                $("#JS_countdown"+expr).children(".tip-success").html('<span class="tip-icon tip-icon-success"></span>校验码已发送成功，以最近发送的验证码为准').end().hide();
+                $("#send-verifycode"+expr).html("重新发送验证码").show();
+                $(".sendcodeinfo").hide();
+                $(".sendcode").html("重新发送验证码").show();
+            } else {
+                _curCount--;
+                $(_cdbox).html(_curCount);
+                //alert("aaa");
+            }
+        }
+    }
+    
+    $("#send-verifycode").click(function(){
+        $(this).hide();
+        $("#JS_countdown").show();
+        JS_countdown("#JS_countdown span.J_num");
+        //return false;
+    })
+});
+
 $(function(){
     // make code pretty
     window.prettyPrint && prettyPrint()
 })
-
-
 var uyan_config = {
     'title':'前端开发框架 #pandora#', 
     'du':'pandoraui.com'

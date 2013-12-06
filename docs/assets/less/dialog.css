@@ -125,6 +125,9 @@
 .dialog .tc {
     text-align: center;
 }
+.dialog .tl {
+    text-align: left;
+}
 .dialog .tc .btn,
 .dialog .tc .pbtn {
     margin: 0 5px;

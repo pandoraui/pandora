@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../assets/less/pandora.css">
     <link rel="stylesheet" href="../assets/less/docs.css">
     <style>
-        .selectbox{display: block;margin-bottom:10px;}
+        .selectbox{margin-bottom:10px;}
+        .ib{display:inline-block;*display:inline;*zoom:1;}
     </style>
 </head>
 <body>
@@ -26,70 +27,154 @@
             <option value="">上海</option>
             <option value="">北京</option>
         </select>
+        
+        <h3>美化一下</h3>
+        <div class="selectbox">
+            <p class="selected">
+                <span class="css-arrow"><i class="cssdarr pink-cssdarr"></i></span>
+                <span class="select-value">-请选择拍摄点-</span>
+            </p>
+            <div class="selectlist">
+                <ul>
+                    <li><a href="javascript:;">第一天 天目湖</a></li>
+                    <li><a href="javascript:;">&#12288;&#12288;&#12288; 剁椒鱼头</a></li>
+                    <li><a href="javascript:;">第二天 千岛湖</a></li>
+                    <li><a href="javascript:;">&#12288;&#12288;&#12288; 划船船</a></li>
+                    <li><a href="javascript:;">&#12288;&#12288;&#12288; 爬山</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
         <h3>简单selectbox <small>实现最基本的select模拟，选中取值修改等</small></h3>
         <p>data-class属性用于控制select的尺寸，在没有改属性时，默认为中等尺寸</p>
-        <select data-class="">
-            <option value="value1">V1</option>
-            <option value="value2">V2</option>
-            <option value="value3">V3</option>
-        </select>
-
-        <select  data-class="selectbox-mini">
-            <option value="value1">俩字</option>
-            <option value="value2">V22</option>
-            <option value="value3">V33</option>
-        </select>
-
-        <select  data-class="selectbox-small">
-            <option value="value1">V11</option>
-            <option value="value2">V22</option>
-            <option value="value3">V33</option>
-        </select>
-
-        <select data-class="selectbox-middle">
-            <option value="value1">V1</option>
-            <option value="value2">V2</option>
-            <option value="value3">V3</option>
-        </select>
-
-        <select  data-class="selectbox-big">
-            <option value="value1">V11</option>
-            <option value="value2">V22</option>
-            <option value="value3">V33</option>
-        </select>
         
-        <p>适用于新创建的select的转换</p>
-        <div id="dd"></div>
-        <input type="button" value="增加最长select" id="btn">
+        <h3>下面5个select为自适应宽度的情况</h3>
+        <p>调用方式：pandora.selectModel({'autoWidth':true, 'selectElement': $('.selectModel')});</p>
+        <select data-class="" class="selectModel">
+            <option value="value1">下拉框1</option>
+            <option value="value2">一二三四五六七八九十一二三四五六七八九十</option>
+            <option value="value3" selected >选中第三项</option>
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-mini" class="selectModel">
+            <option value="value1">下拉框2</option>
+            <option value="value2">一二三四五六七八九十</option>
+            <option value="value3">一</option>
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-small" class="selectModel">
+            <option value="value1">下拉框3</option>
+            <option value="value2">一二三四五六</option>
+            <option value="value3">一二</option>
+        </select>
+        <br/>
+        <br/>
+        <select data-class="selectbox-middle" class="selectModel">
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-big" class="selectModel">
+            <option value="value1">下拉框5</option>
+            <option value="value2">一二三</option>
+            <option value="value3">一</option>
+        </select>
+        <br/>
+        <br/>
+
+        <h3>下面5个select为定宽的情况</h3>
+        <p>调用方式：pandora.selectModel({'autoWidth':false, 'selectElement': $('.selectFixWidth')});</p>
+        <select data-class="selectbox-middle" class="selectFixWidth">
+            <option value="value1">下拉框1</option>
+            <option value="value2">一二三四五六七八九十一二三</option>
+            <option value="value3">一二三</option>
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-mini" class="selectFixWidth">
+            <option value="value1">下拉框2</option>
+            <option value="value2">一二三</option>
+            <option value="value3">一</option>
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-small" class="selectFixWidth">
+            <option value="value1">下拉框3</option>
+            <option value="value2">一二三四五</option>
+            <option value="value3">一二</option>
+        </select>
+        <br/>
+        <br/>
+        <select data-class="selectbox-middle" class="selectFixWidth">
+        </select>
+        <br/>
+        <br/>
+        <select  data-class="selectbox-big" class="selectFixWidth">
+            <option value="value1">下拉框5</option>
+            <option value="value2">一二三四五六七八九十一二三四五六七八九十</option>
+            <option value="value3">一</option>
+        </select>
+        <br/>
+        <br/>
+        
+        <p>内联排布</p>
+        <select data-class="selectbox-middle" class="selectFixWidth ib">
+            <option value="value1">下拉框1</option>
+            <option value="value2">一二三四五六七八九十一二三</option>
+            <option value="value3">一二三</option>
+        </select>
+        <select  data-class="selectbox-mini" class="selectFixWidth ib">
+            <option value="value1">下拉框2</option>
+            <option value="value2">一二三</option>
+            <option value="value3">一</option>
+        </select>
+
+        <h3>点击下面的按钮生产一个自适应宽度的select</h3>
+        <div id="selectWrap"></div>
+        <input type="button" value="生成selet" id="addSelect">
     </div>
 <pre class="prettyprint linenums">
+    参数'autoWidth'，用于判断select的宽度是否为自适应；
+    
+    当'autoWidth'是false时，表示定宽，现在有4种样式，可以根据需要增加新的样式；
+    现有的4中样式宽度为：62，92，186，270
+    
+    当'autoWidth'是true时，表示宽度会根据option中的内容自动调节；
     
     js应用：
         src="http://pic.lvmama.com/js/v4/modules/jquery.selectModel.js"
     js调用：    
-        $("select[data-class]").selectModel();
-
+        pandora.selectModel({'autoWidth':true});
 </pre>
-    
+
 
 </div>
 
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="../assets/js/modules/jquery.selectModel.js"></script>
+<script src="../assets/js/modules/pandora-select.js"></script>
 <script>
-    $(function() {
-        $("select[data-class]").selectModel();
+    $(document).ready(function() {
+        pandora.selectModel({'autoWidth':true, 'selectElement': $('.selectModel')});
+        pandora.selectModel({'autoWidth':false, 'selectElement': $('.selectFixWidth')});
 
-        var str ='<select data-class="selectbox-big">'
-            + '<option value="value1">V111</option>'
-            + '<option value="value2">V222</option>'
-            + '<option value="value3">V333</option>'
-            + '</select>'
-        $('#btn').bind('click', function(){
-            $('#dd').append(str);
-            $("select[data-class]").selectModel();
+        var str ='<select data-class="selectbox-big" class="newSelect">'
+                + '<option value="value1">option1</option>'
+                + '<option value="value2">option2</option>'
+                + '<option value="value3">option3</option>'
+                + '</select>'
+        $('#addSelect').bind('click', function(){
+            $('#selectWrap').append(str);
+            pandora.selectModel({'autoWidth':true, selectElement : $('.newSelect')});
         })
     });
+
+
 </script>
 </body>
 </html>

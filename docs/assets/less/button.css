@@ -188,7 +188,8 @@ fieldset[disabled] .pbtn-link:focus {
     border-color: #0088cc;
     background-color: #0088cc;
 }
-
+.pbtn-gray            { color: #999999; background-color: #efefef; border-color: #cccccc; }
+.pbtn-gray:hover      { color: #999999; background-color: #efefef; border-color: #cccccc; cursor:default; }
 .pbtn-dark {
     color: #fff;
     border: 1px solid #666;
@@ -218,7 +219,7 @@ fieldset[disabled] .pbtn {
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .pbtn-disabled {
@@ -273,10 +274,13 @@ fieldset[disabled] .pbtn {
     padding-right: 20px;
 }
 
-.pbtn-small,
-.pbtn-mini {
+.pbtn-small {
     padding-left: 15px;
     padding-right: 15px;
+}
+.pbtn-mini {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .pbtn-w,
 .pbtn-wbox .pbtn {
