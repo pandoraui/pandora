@@ -3,7 +3,7 @@
   form.css v1.0
   Adapted from  Bootstrap forms.css
   对于不支持 input[type="text"] 属性选择符的IE6，由样式input-text控制
-  使用 IE7.js 修复效果很不好
+  注：使用 IE7.js 修复效果很不好
 ------------------------------------------------------------ */
 
 /* reset中已包含 
@@ -31,22 +31,29 @@ input,
 button,
 select,
 textarea {
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
 }
 
 input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-form label {
-  display: block;
-  margin-bottom: 5px;
+.form label {
+    display: block;
+    margin-bottom: 5px;
 }
+
+.form-inline label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* 模拟输入框 like-input */
 
 .like-input,
 select,
@@ -56,34 +63,36 @@ textarea,
 .input-date,
 .input-number,
 .uneditable-input {
-  display: inline-block;
-  height: 20px;
-  padding: 4px 6px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #555555;
-  vertical-align: middle;
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
 }
 
 .input-radius {
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px; 
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px; 
 }
 
+.like-input,
 input,
 textarea,
 .uneditable-input {
-  width: 156px;
-}
-
-.like-input {
+    width: 156px;
     width: 148px;
+    margin-right: 6px;
 }
-
+.like-input {
+    display: block;
+    width: auto;
+}
 textarea {
-  height: auto;
+    height: auto;
 }
 
 .like-input,
@@ -93,16 +102,16 @@ textarea,
 .input-date,
 .input-number,
 .uneditable-input {
-  background-color: #ffffff;
-  border: 1px solid #aabbcc;
-  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
-     -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
-          box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
-          /* 载入页面刷新时出现黑框
-  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-          transition: border linear 0.2s, box-shadow linear 0.2s;
+    background-color: #ffffff;
+    border: 1px solid #aabbcc;
+    -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+       -moz-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.075);
+            /* 载入页面刷新时出现黑框
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+         -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+            transition: border linear 0.2s, box-shadow linear 0.2s;
           */
 }
 
@@ -128,26 +137,27 @@ input[type="color"]:focus,
 .input-date-focus,
 .input-number-focus,
 .uneditable-input:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  outline: 0;
-  outline: thin dotted \9;
-  /* IE6-9 */
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 
 input[type="radio"],
 input[type="checkbox"],
 .input-radio,
 .input-checkbox {
-  margin: 1px 0 0;
-  margin-top: 2px \9;
-  *margin-top: -2px;
-  line-height: normal;
-  cursor: pointer;
+    margin: 1px 0 0;
+    margin-top: 0 \9;
+    *margin-top: -2px;
+    line-height: normal;
+    cursor: pointer;
 }
+
 
 input[type="file"],
 input[type="image"],
@@ -163,25 +173,27 @@ input[type="checkbox"],
 .input-button,
 .input-radio,
 .input-checkbox {
-  width: auto;
+    width: auto;
 }
 
 select,
 input[type="file"],
 .input-file {
-  height: 26px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-
-  *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
-
-  line-height: 30px;
+    height: 26px;
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
+    
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+    
+    line-height: 30px;
 }
 
 select {
-  width: 170px;
-  background-color: #ffffff;
-  border: 1px solid #aabbcc;
+    margin-right: 6px;
+    width: 170px;
+    width: 162px;
+    background-color: #ffffff;
+    border: 1px solid #aabbcc;
 }
 
 select[multiple],
@@ -189,24 +201,95 @@ select[size],
 .selects,
 .select-multiple,
 .select-size {
-  height: auto;
+    height: auto;
 }
 
+/* 展示input不可编辑信息 */
+.input-info {
+    display: inline-block;
+    margin-right: 6px;
+    padding:0 6px;
+    width: 148px;
+    height: 26px;
+    line-height: 24px;
+    border: 1px solid transparent;
+}
+
+/* 制定尺寸 右边距6px以及至少一个空格(4px)共10px
+ * 注意：要保留一个验证icon的空白区域，增强扩展性，以下设置还有待优化
+ * 
+ * 6个字符（验证码fn16）    |
+ * 5个汉字（名字等）        |- input-62px select-76px
+ * 11-13 个数字（电话号码等）input-92px select-96px
+ * 默认input框 148px 两倍于mini刚好对齐
+ * 中号框middle input-186px select-200px
+ * 大号框big/large(地址等) input-270px
+ * 更号框xlarge input-316px select-330px
+ * 超大号框xxlarge input-530px select-544px
+ */
 
 
+.input-min {
+    width: 42px;
+}
+.input-mini {
+    width: 62px;
+}
+
+.input-small {
+    width: 92px;
+}
+
+.input-middle {
+    width: 186px;
+}
+
+.input-big,
+.input-large {
+    width: 270px;
+}
+
+.input-xlarge {
+    width: 316px;
+}
+
+.input-xxlarge {
+    width: 530px;
+}
+
+.help-block,
+.help-inline {
+    color: #999;
+}
+
+.help-block,
+.help-mblock {
+    display: block;
+}
+.help-mblock {
+    margin:0 0 10px;
+}
+
+.help-inline {
+    display: inline-block;
+    *display: inline;
+    /*padding-left: 5px;*/
+    vertical-align: middle;
+    *zoom: 1;
+}
 .radio,
 .checkbox {
-  min-height: 20px;
-  margin-right: 10px;
+    min-height: 20px;
+    margin-right: 10px;
 }
 
 .radio input[type="radio"],
 .checkbox input[type="checkbox"],
 .radio .input-radio,
 .checkbox .input-checkbox {
-  /* float: left;*/
-  margin-right: 5px;
-  vertical-align: text-top;
+    /* float: left;*/
+    margin-right: 5px;
+    vertical-align: text-top;
 }
 input.input-radio,
 input.input-checkbox {
@@ -214,23 +297,22 @@ input.input-checkbox {
     height: 16px;
 }
 
-label.inline,
 label.inline {
-  display: inline-block;
-  *display:inline;
-  padding-top: 5px;
-  margin-bottom: 0;
-  _height: 22px;
-  _line-height: 22px;
+    display: inline-block;
+    *display:inline;
+    padding-top: 5px;
+    margin-bottom: 0;
+    _height: 22px;
+    _line-height: 22px;
 }
 
 label.inline .input-text,
 label.inline .input-password {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 label.vmiddle {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 
@@ -279,58 +361,48 @@ label.vmiddle {
   *zoom: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .control-group {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 legend + .control-group {
-  margin-top: 20px;
-  -webkit-margin-top-collapse: separate;
+    margin-top: 20px;
+    -webkit-margin-top-collapse: separate;
 }
 
+
 .form-hor .control-group {
-  margin-bottom: 10px;
-  *zoom: 1;
+    margin-bottom: 10px;
+    *zoom: 1;
 }
 
 .form-hor .control-group:before,
 .form-hor .control-group:after {
-  display: table;
-  line-height: 0;
-  content: "";
+    display: table;
+    line-height: 0;
+    content: "";
 }
 
 .form-hor .control-group:after {
-  clear: both;
+    clear: both;
 }
 
 .form-hor .control-label {
-  float: left;
-  display: inline;
-  width: 100px;
-  text-align: right;
-  margin-bottom: 0;
-  line-height: 2;
-  line-height: 26px;
+    float: left;
+    display: inline;
+    width: 100px;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 2;
+    line-height: 26px;
 }
 
 .form-hor .controls {
-  *display: inline-block;
-  margin-left: 100px;
-  *margin-left: 0;
-  *zoom:1;
-  _height:24px;
+    *display: inline-block;
+    margin-left: 100px;
+    *margin-left: 0;
+    *zoom:1;
+    _height:24px;
 }
 
 .form-hor label.inline{
@@ -344,52 +416,76 @@ legend + .control-group {
 }
 
 .form-hor .help-block {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
+.form-w .control-label {
+    width: 180px;
+}
+
+.form-w .controls {
+    margin-left: 180px;
+    *margin-left: 0;
+}
 
 /* div模拟 input文本框 */
 .dinput{
     width: 168px;
     position: relative;
 }
-.dinput .input-date{position:relative;z-index:4;width:164px;}
-.dinput .date-info{position:absolute;display:inline-block;*display:inline;*zoom:1;*width:66px;top:5px;right:5px;padding:0 0 0 3px;height:20px;line-height:20px;font-size:12px;text-align: right;cursor: pointer;z-index:5;}
-.dinput .icon-date{float:right;display:inline;}
-.dinput .text-info{padding:0 3px 0 0;color:#888;}
-
-
-
-.form-horizontal .control-group {
-  margin-bottom: 20px;
-  *zoom: 1;
+.dinput .input-date {
+    position: relative;
+    z-index: 4;
+    width: 164px;
+}
+.dinput .date-info {
+    position:absolute;
+    z-index:5;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    *width:62px;
+    top:5px;
+    right:5px;
+    _right:10px;
+    padding:0 0 0 3px;
+    height:20px;
+    line-height:20px;
+    font-size:12px;
+    text-align: right;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.dinput .icon-date {
+    float:right;
+    display:inline;
+}
+.dinput .text-info {
+    padding:0 3px 0 0;
+    color:#888;
 }
 
-.form-horizontal .control-group:before,
-.form-horizontal .control-group:after {
-  display: table;
-  line-height: 0;
-  content: "";
-}
 
-.form-horizontal .control-group:after {
-  clear: both;
+.xicon {
+    background:url(http://pic.lvmama.com/img/v3/combo.png) no-repeat;
+    _background:url(http://pic.lvmama.com/img/v3/combo8.png) no-repeat;
+    display:inline-block;
+    width:16px;
+    height:16px;
 }
-
-.form-horizontal .control-label {
-  float: left;
-  width: 160px;
-  padding-top: 5px;
-  text-align: right;
+.dinput .icon-date {
+    float:right;
+    display:inline;
+    width:21px;
+    height:20px;
+    background-position:-180px 1px;
 }
-
-.form-horizontal .controls {
-  *display: inline-block;
-  *padding-left: 20px;
-  margin-left: 180px;
-  *margin-left: 0;
+.dinput .text-info{
+    padding:0 3px 0 0;
+    color:#888;
+    float:left;
+    white-space: nowrap;
 }
-
 .form-horizontal .controls:first-child {
   *padding-left: 180px;
 }
@@ -402,7 +498,7 @@ legend + .control-group {
 
 /* 较小格式的表单 */
 .form-small .like-input,
-.form-small .input-text {
+.form-small .input-text { 
     height:16px;
     line-height:16px;
 }

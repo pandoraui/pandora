@@ -1,0 +1,464 @@
+
+/*!
+ * buttons.css 按钮样式
+ * Author Pandora
+**/
+
+/** @name      : 按钮样式研究
+  * @explain   : 统一实现全兼容按钮样式
+  * @type      : 基类 .btn
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @other     : 针对按钮实现做如下规划：
+
+  支持五种常用标签的实现  a span button input[type="button"] input[type="submit"]
+  按钮尺寸4种、样式N种（按需制定）、交互状态3+种
+  新增有 loading 状态变化，交互变色等
+  扩展主题风格：经典的渐变实现(默认)、扁平化的metro风格
+  
+  尺寸：默认高度30px mini/22 small/26 middle/30 big large
+  样式：.btn btn-default primary info success warning danger link disabled
+  交互：.btn :hover :active 
+  loading：btn-loading btn-wait 
+  theme：classic-style(btn) metro-style(mbtn) google-style(gbtn)
+  
+  为避免刚开始制作时考虑的全兼容性过于复杂，从 a 标签一一做起
+  
+详细参见：pandora前端项目/pandora/docs/modules/buttons.html
+
+***/
+
+
+/* ==============================
+   按钮样式
+   ============================== */
+button,
+input {
+    line-height: normal;
+
+    /* IE6/7 内间距宽度一致 */
+    *overflow: visible; 
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    
+    /* IE6/7 inline-block hack */
+    *display: inline;
+    *zoom: 1;
+    *overflow: visible; /* 设置这个属性IE6/7下input,button 的 padding才会生效 */
+    white-space:nowrap; /* 解决ie6折行的问题 */
+    
+    margin-right: 6px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+            border-radius: 2px;
+    text-decoration: none;
+    vertical-align: middle;
+    
+    /* 使用如下字体，文本垂直居中表现很好 */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-image: none;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: 0px;
+    
+    /* 禁止选中文字 */
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+    
+}
+
+.btn .btn-text {
+    background: 0;
+    padding: 0;
+    height: auto;
+}
+button.btn,
+input.btn {
+    *margin-right: 10px;
+    *border: 0;
+    
+    /* 调整button标签为标准模式下的盒模型 */
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+        -ms-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+/* 规划测试案例：经典渐变取cbtn前缀，扁平化metro风格取mbtn前缀，此样式为经典渐变实现 */
+.btn.hover,
+.btn:hover {
+    color: #333;
+    text-decoration: none;
+    background-image: none;
+}
+a.btn:hover {
+    text-decoration: none;
+}
+
+/* 默认效果 */
+.btn {
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #333333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+}
+.btn:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn.active,
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: inset 0 2px 5px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+
+
+/* 默认hover */
+.btn:hover,
+.btn:focus {
+    color: #333333;
+    /*border: 1px solid #ccc;*/
+    background-color: #fafafa;
+}
+/*
+.btn:active {
+    top: 1px;
+}
+*/
+
+/* 禁用效果 */
+.disabled,
+.btn[disabled] {
+    background: #fafafa;
+    background-image: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    /* IE8按钮内的元素继承了pointer-events导致事件失效，要注意
+    pointer-events: none;*/
+}
+.btn-gray,
+.btn-disabled,
+.btn-gray:active,
+.btn-disabled:active,
+.btn.disabled,
+.btn[disabled] {
+    top: inherit;
+    cursor: default;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+
+/* 按钮尺寸 */
+.btn        { /*padding: 4px 10px;*/ height: 28px; line-height: 28px; font-size: 14px; }
+.btn-mini   { /*padding:   0  6px;*/ height: 20px; line-height: 20px; font-weight: normal;}
+.btn-small  { /*padding: 2px 10px;*/ height: 24px; line-height: 24px; font-weight: normal;}
+.btn-middle { /*padding: 4px 12px;*/ height: 28px; line-height: 28px; font-weight: bold;}
+.btn-big    { /*padding: 7px 15px;*/ height: 34px; line-height: 34px; font-weight: bold;}
+.btn-large  { /*padding: 2px 20px;*/ height: 42px; line-height: 42px; font-weight: bold;}
+.btn-mini,
+.btn-small { font-size: 12px;}
+
+/* 实现紧凑 */
+.btn        { padding: 0 10px; }
+.btn-mini   { padding: 0  6px; }
+.btn-small  { padding: 0 10px; }
+.btn-middle { padding: 0 12px; font-size: 14px; }
+.btn-big    { padding: 0 15px; font-size: 16px; }
+.btn-large  { padding: 0 20px; font-size: 18px; }
+.btn-w { padding: 0 20px; }
+
+/* 修复ie7 */
+button.btn,input.btn               { *height: 30px; *padding: 1px 11px; }
+button.btn-mini,input.btn-mini     { *height: 22px; *padding: 1px  7px; }
+button.btn-small,input.btn-small   { *height: 26px; *padding: 1px 11px; }
+button.btn-middle,input.btn-middle { *height: 30px; *padding: 1px 13px; }
+button.btn-big,input.btn-big       { *height: 36px; *padding: 1px 16px; }
+button.btn-large,input.btn-large   { *height: 44px; *padding: 1px 21px; }
+button.btn-w,input.btn-w { padding: 1px 21px; }
+
+/* 有待完善的规范
+.btn        { padding: 0 20px; }
+.btn-mini   { padding: 0 10px; }
+.btn-small  { padding: 0 15px; }
+.btn-middle { padding: 0 20px; font-size: 14px; }
+.btn-big    { padding: 0 20px; font-size: 16px; }
+.btn-large  { padding: 0 30px; font-size: 18px; }
+ */
+
+/* 扁平化样式 */
+.btn                { color: #333333; background-color: #ffffff; border-color: #cccccc; }
+.btn:hover          { color: #333333; background-color: #ebebeb; }
+/* 因为渐变色border较复杂，所以取消默认btn:hover时变化减少复杂度 */
+.btn-orange { color: #ffffff; background-color: #ff8300; border-color: #ff6600; }
+.btn-pink   { color: #ffffff; background-color: #fa3f94; border-color: #ee3388; }
+.btn-blue   { color: #ffffff; background-color: #4ca6ea; border-color: #3399dd; }
+
+.btn-orange:hover,.btn-orange:focus { color: #ffffff; background-color: #f86600; border-color: #ee6600; }
+.btn-pink:hover  ,.btn-pink:focus   { color: #ffffff; background-color: #e73381; border-color: #d61260; }
+.btn-blue:hover  ,.btn-blue:focus   { color: #ffffff; background-color: #2293d7; border-color: #0088cc; }
+
+/* 经典渐变样式 */
+.btn {
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.cbtn-default {
+    color: #333333;
+    
+    /* 渐变色 */
+    background-color: #f5f5f5; /* Old browsers */
+    
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); /* IE10+ */
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6); /* W3C */
+    background-repeat: repeat-x;
+    
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
+    *background-color: #e6e6e6;
+    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0); /* IE6-9 GradientType渐变的类型 0垂直渐变(默认值) 1水平渐变 */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.cbtn-default:hover,
+.cbtn-default:focus,
+.cbtn-default:active,
+.cbtn-default.active,
+.cbtn-default.disabled,
+.cbtn-default[disabled] {
+    color: #333333;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+}
+
+.cbtn-default:active,
+.cbtn-default.active {
+    background-color: #cccccc \9;
+}
+
+.cbtn-pink {
+    color: #ffffff;
+    
+    /* 渐变色 */
+    background-color: #fe4398; /* Old browsers */
+    background-image: -moz-linear-gradient(top, #fe4398, #ef3489); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fe4398), to(#ef3489)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #fe4398, #ef3489); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #fe4398, #ef3489); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #fe4398, #ef3489); /* IE10+ */
+    background-image: linear-gradient(to bottom, #fe4398, #ef3489); /* W3C */
+    background-repeat: repeat-x;
+    
+    border-color: #fe4398 #fe4398 #ef3489;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
+    *background-color: #ef3489;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffe4398', endColorstr='#ffef3489', GradientType=0); /* IE6-9 GradientType渐变的类型 0垂直渐变(默认值) 1水平渐变 */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.cbtn-pink:hover,
+.cbtn-pink:focus,
+.cbtn-pink:active,
+.cbtn-pink.hover,
+.cbtn-pink.active,
+.cbtn-pink.disabled,
+.cbtn-pink[disabled] {
+    color: #ffffff;
+    background-color: #ef3489;
+    *background-color: #d50865;
+    /* 注意，a标签无 href IE6中 hover效果失效 */
+}
+.cbtn-pink:active,
+.cbtn-pink.active {
+    background-color: #ef3489 \9;
+}
+
+.cbtn-orange  {
+    color: #ffffff;
+    
+    /* 渐变色 */
+    background-color: #ff8700; /* Old browsers */
+    background-image: -moz-linear-gradient(top, #ff8700, #ff6800); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff6800), to(#ff6800)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #ff8700, #ff6800); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #ff8700, #ff6800); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #ff8700, #ff6800); /* IE10+ */
+    background-image: linear-gradient(to bottom, #ff8700, #ff6800); /* W3C */
+    background-repeat: repeat-x;
+    
+    border-color: #ff6800 #ff6800 #ff6600;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
+    *background-color: #ff8700;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff8700', endColorstr='#ffff6800', GradientType=0); 
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.cbtn-orange:hover,
+.cbtn-orange:focus,
+.cbtn-orange:active,
+.cbtn-orange.active,
+.cbtn-orange.disabled,
+.cbtn-orange[disabled] {
+  color: #ffffff;
+  background-color: #ff6800;
+  *background-color: #ff6600;
+}
+.cbtn-orange:active,
+.cbtn-orange.active {
+  background-color: #ff6800 \9;
+}
+.cbtn-blue  {
+    color: #ffffff;
+    
+    /* 渐变色 */
+    background-color: #54aaee; /* Old browsers */
+    background-image: -moz-linear-gradient(top, #54aaee, #359ade); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#359ade), to(#359ade)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #54aaee, #359ade); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #54aaee, #359ade); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #54aaee, #359ade); /* IE10+ */
+    background-image: linear-gradient(to bottom, #54aaee, #359ade); /* W3C */
+    background-repeat: repeat-x;
+    
+    border-color: #359ade #359ade #1F90DD;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
+    *background-color: #54aaee;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff54aaee', endColorstr='#ff359ade', GradientType=0); 
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.cbtn-blue:hover,
+.cbtn-blue:focus,
+.cbtn-blue:active,
+.cbtn-blue.hover,
+.cbtn-blue.active,
+.cbtn-blue.disabled,
+.cbtn-blue[disabled] {
+  color: #ffffff;
+  background-color: #359ade;
+  *background-color: #1F90DD;
+}
+.cbtn-blue:active,
+.cbtn-blue.active {
+  background-color: #359ade \9;
+}
+/*
+.btn-default{ *background-color: #f5f5f5; *border-color: #cccccc; }
+.btn-orange { *background-color: #ff8300; *border-color: #ff6600; }
+.btn-pink   { *background-color: #fa3f94; *border-color: #ee3388; }
+.btn-blue   { *background-color: #4ca6ea; *border-color: #3399dd; }
+
+.btn-default:hover{ *background-color: #e6e6e6; *border-color: #aaaaaa; }
+.btn-orange:hover { *background-color: #f86600; *border-color: #ee6600; }
+.btn-pink:hover   { *background-color: #e73381; *border-color: #d61260; }
+.btn-blue:hover   { *background-color: #2293d7; *border-color: #0088cc; }
+*/
+.btn-gray            { color: #999999; background-color: #efefef; border-color: #cccccc; }
+.btn-gray:hover      { color: #999999; background-color: #efefef; border-color: #cccccc; }
+.btn-disabled        { color: #ffffff; background-color: #999999; border-color: #666666; }
+.btn-disabled:hover  { color: #ffffff; background-color: #999999; border-color: #666666; }
+
+
+
+/* 按钮扩展 */
+.btn-loading {}
+.btn-wait {}
+
+
+/* 按钮类型 */
+.btn-block {}
+.btn-disabled {}
+
+
+
+/* 按钮主题 */
+
+
+/* 按钮组合ICON */
+.btn .btn-text { 
+    /* 解决IE6 中 line-height失效问题 */
+    _display:inline-block;
+}
+.btn .icon {
+    display: inline-block;
+    margin: 1px 10px 0 0;
+    width: 14px;
+    height: 14px;
+    background: #000;
+    vertical-align: text-top;
+    _margin-top: 0;
+}
+
+.btn-big .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* 紧邻的按钮 */
+.nospace-right {
+    margin-right: -1px;
+}
+
+
+/*
+set firefox default css
+button, input[type="reset"], input[type="button"], input[type="submit"] {
+    line-height:normal !important;
+}
+
+
+
+ 火狐的私有属性
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner{
+border:none;padding:0;
+}
+
+
+*/
+
+
