@@ -35,8 +35,8 @@
         //    return D.body.scrollHeight;
         //}
         var wh = {
-            w: iframe.width(),
-            h: iframe.height()
+            w: iframe.outerHeight(true),
+            h: iframe.outerHeight(true)
         };
 
         return wh;
@@ -140,7 +140,7 @@
 
             // hack
             that._zIndex();
-            that.reset();
+            //that.reset();
             that.time(config.time);
             
 
@@ -149,6 +149,7 @@
             }
             
             that.wrap.show();
+            that.reset(); // 解决对象有内容而没添加到页面而 height() 为 0 bug
             that._bindEvent(config);
 
             if (config.drag === true) {
@@ -223,8 +224,11 @@
                 wh = {},
                 wrap = this.wrap,
                 $dialogBody = wrap.find("div.dialog-body"),
-                padding = parseInt($dialogBody.css("paddingLeft"), 10) + parseInt($dialogBody.css("paddingRight"), 10),
-                margin = parseInt($dialogBody.css("marginLeft"), 10) + parseInt($dialogBody.css("marginRight"), 10);
+                $dialogHeader = wrap.find("div.dialog-header"),
+                $dialogFooter = wrap.find("div.dialog-footer"),
+                warpWH = this._gaugeValue($dialogBody);
+                //padding = parseInt($dialogBody.css("paddingLeft"), 10) + parseInt($dialogBody.css("paddingRight"), 10),
+                //margin = parseInt($dialogBody.css("marginLeft"), 10) + parseInt($dialogBody.css("marginRight"), 10);
 
             try {
                 this._errCount = 0;
@@ -244,9 +248,12 @@
                 }
 
             }
-
-            wrap.css("width", (margin + padding + w));
-            wrap.find("div.dialog-body").css({ "height": h, "width": w });
+            wrap.css({
+                "height": ($dialogHeader.outerHeight(true) + $dialogFooter.outerHeight(true) + warpWH.y + h)
+            });
+            //wrap.css("width", (margin + padding + w));
+            //wrap.find("div.dialog-body").css({ "height": h, "width": w });
+            //wrap.find("div.dialog-content").css({ "height": h, "width": w});
 
             clearInterval(this._interval);
             delete this._interval;
@@ -566,9 +573,10 @@
                 return ;
             }
 
-            if (this.config.height !== "" && this.config.height !== "auto") {
-                this._bodyWH();
-            }
+            // dialog 给了固定值
+            //if (this.config.height !== "" && this.config.height !== "auto") {
+            //    this._bodyWH();
+            //}
 
             if (wh - oh >= 50) {
                 wrap.css("position", this.config.fixed ? "fixed" : "absolute");

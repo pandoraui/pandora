@@ -916,14 +916,14 @@ $.dialog({
 // 示例：标准模式的使用
 $(function(){
     // marginheight="0" marginwidth="0" 实现iframe内页面的body无margin值
-    $("#demo511").click(function(){
+    $("#demo511").click(function () {
         $.dialog({
             title: "iframe 调用测试",
-            content: "/pandora/docs/assets/js/modules/iframe.html"
-            
+            content: "/pandora/docs/assets/js/modules/iframe.html",
+            height:200
         });
-        
-    })
+
+    });
     
 })
 </script>
@@ -938,6 +938,7 @@ $(function(){
 <script src="../assets/js/google-code-prettify/prettify.js"></script> 
 <!-- UY BEGIN -->
 <script type="text/javascript">
+
 $(function(){
     // make code pretty
     window.prettyPrint && prettyPrint()
