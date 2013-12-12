@@ -53,10 +53,6 @@ input {
     
     margin-right: 6px;
     border: 1px solid transparent;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-            border-radius: 2px;
     text-decoration: none;
     vertical-align: middle;
     
@@ -223,11 +219,11 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
 /* 因为渐变色border较复杂，所以取消默认btn:hover时变化减少复杂度 */
 .btn-orange { color: #ffffff; background-color: #ff8300; border-color: #ff6600; }
 .btn-pink   { color: #ffffff; background-color: #fa3f94; border-color: #ee3388; }
-.btn-blue   { color: #ffffff; background-color: #4ca6ea; border-color: #3399dd; }
+.btn-blue   { color: #ffffff; background-color: #4d90fe; border-color: #3f87fe; }
 
 .btn-orange:hover,.btn-orange:focus { color: #ffffff; background-color: #f86600; border-color: #ee6600; }
 .btn-pink:hover  ,.btn-pink:focus   { color: #ffffff; background-color: #e73381; border-color: #d61260; }
-.btn-blue:hover  ,.btn-blue:focus   { color: #ffffff; background-color: #2293d7; border-color: #0088cc; }
+.btn-blue:hover  ,.btn-blue:focus   { color: #ffffff; background-color: #2979fe; border-color: #166dfe; }
 
 /* 经典渐变样式 */
 .btn {
@@ -235,7 +231,12 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
-
+*[class*="cbtn"] {
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+            border-radius: 2px;
+}
 
 
 .cbtn-default {
@@ -395,9 +396,12 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
 .btn-pink:hover   { *background-color: #e73381; *border-color: #d61260; }
 .btn-blue:hover   { *background-color: #2293d7; *border-color: #0088cc; }
 */
-.btn-gray            { color: #999999; background-color: #efefef; border-color: #cccccc; }
-.btn-gray:hover      { color: #999999; background-color: #efefef; border-color: #cccccc; }
-.btn-disabled        { color: #ffffff; background-color: #999999; border-color: #666666; }
+
+.btn-gray { color: #333333; background-color: #f3f3f3; border-color: #cccccc; font-weight: normal; }
+.btn-gray:focus,
+.btn-gray:hover { color: #333333; background-color: #e3e3e3; border-color: #bbbbbb; }
+.btn-disabled,
+.btn-disabled:focus,
 .btn-disabled:hover  { color: #ffffff; background-color: #999999; border-color: #666666; }
 
 
