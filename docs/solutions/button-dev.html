@@ -91,25 +91,25 @@
         
         <p><strong>注意：</strong>最新实现采用 <code>.btn</code> 默认实现扁平化 metro 风格设计，叠加 <code>.cbtn-</code> 前缀可实现经典渐变色。</p>
         <ul>
-            <li>灰色按钮和禁用按钮并没有渐变实现</li>
+            <li>灰色按钮和禁用按钮并没有渐变，但可以有圆角</li>
         </ul>
         <div class="compare">
             <div class="ach-box">
-                <a class="btn btn-gray">按钮</a>
+                <a class="btn btn-dis">按钮</a>
                 <a class="btn btn-disabled">禁用按钮</a>
             </div>
             <div class="ach-box">
-                <a class="btn disabled btn-gray">按钮</a>
+                <a class="btn disabled btn-dis">按钮</a>
                 <a class="btn disabled btn-disabled">禁用按钮</a>
             </div>
         </div>
         <div class="compare">
             <div class="ach-box">
-                <a class="btn cbtn btn-gray">按钮</a>
+                <a class="btn cbtn btn-dis">按钮</a>
                 <a class="btn cbtn btn-disabled">禁用按钮</a>
             </div>
             <div class="ach-box">
-                <a class="btn cbtn disabled btn-gray">按钮</a>
+                <a class="btn cbtn disabled btn-dis">按钮</a>
                 <a class="btn cbtn disabled btn-disabled">禁用按钮</a>
             </div>
         </div>
@@ -135,31 +135,31 @@
         </div>
         
         <h3>示例</h3>
-        <div class="compare red">扁平化实现 .btn </div>
-        <div class="compare red">经典渐变实现 .cbtn </div>
+        <div class="compare red">扁平化实现 .btn 如: .btn-blue</div>
+        <div class="compare red">经典渐变实现 .cbtn- 如: .cbtn-blue</div>
         
         <h4>基类 <small>参考类，<span class="f12">针对普通按钮的禁用状态，按需实现</span></small></h4>
         <div class="compare">
             <div class="ach-box">
                 <a class="btn btn">按钮</a>
-                <a class="btn btn-default">按钮</a>
+                <a class="btn btn-gray">按钮</a>
                 <a class="btn btn-pink   ">按钮</a>
                 <a class="btn btn-orange ">按钮</a>
                 <a class="btn btn-blue   ">按钮</a>
             </div>
             <div class="ach-box">
                 <a class="btn disabled btn">按钮</a>
-                <a class="btn disabled btn-default">按钮</a>
-                <a class="btn disabled btn-pink   ">按钮</a>
-                <a class="btn disabled btn-orange ">按钮</a>
-                <a class="btn disabled btn-blue   ">按钮</a>
+                <a class="btn disabled btn-gray  ">按钮</a>
+                <a class="btn disabled btn-pink  ">按钮</a>
+                <a class="btn disabled btn-orange">按钮</a>
+                <a class="btn disabled btn-blue  ">按钮</a>
             </div>
             <div class="ach-box">
                 <a class="btn btn-w btn">按钮</a>
-                <a class="btn btn-w btn-default">按钮</a>
-                <a class="btn btn-w btn-pink   ">按钮</a>
-                <a class="btn btn-w btn-orange ">按钮</a>
-                <a class="btn btn-w btn-blue   ">按钮</a>
+                <a class="btn btn-w btn-gray  ">按钮</a>
+                <a class="btn btn-w btn-pink  ">按钮</a>
+                <a class="btn btn-w btn-orange">按钮</a>
+                <a class="btn btn-w btn-blue  ">按钮</a>
             </div>
         </div>
         <div class="compare">
@@ -182,13 +182,6 @@
                 <a class="btn btn-w cbtn-blue">按钮</a>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -275,59 +268,6 @@
             </div>
         </div>
         
-        <h4>两个字的按钮效果</h4>
-        <div class="compare">
-            <div class="ach-box btnbg">
-                <a class="btn btn-default btn-mini  ">按钮</a>
-                <a class="btn btn-default btn-small ">按钮</a>
-                <a class="btn btn-default btn-middle">按钮</a>
-                <a class="btn btn-default btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn btn-pink btn-mini  ">按钮</a>
-                <a class="btn btn-pink btn-small ">按钮</a>
-                <a class="btn btn-pink btn-middle">按钮</a>
-                <a class="btn btn-pink btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn btn-orange btn-mini  ">按钮</a>
-                <a class="btn btn-orange btn-small ">按钮</a>
-                <a class="btn btn-orange btn-middle">按钮</a>
-                <a class="btn btn-orange btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn btn-blue btn-mini  ">按钮</a>
-                <a class="btn btn-blue btn-small ">按钮</a>
-                <a class="btn btn-blue btn-middle">按钮</a>
-                <a class="btn btn-blue btn-big   ">按钮</a>
-            </div>
-        </div>
-        <div class="compare">
-            <div class="ach-box btnbg">
-                <a class="btn cbtn-default btn-mini  ">按钮</a>
-                <a class="btn cbtn-default btn-small ">按钮</a>
-                <a class="btn cbtn-default btn-middle">按钮</a>
-                <a class="btn cbtn-default btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn cbtn-pink btn-mini  ">按钮</a>
-                <a class="btn cbtn-pink btn-small ">按钮</a>
-                <a class="btn cbtn-pink btn-middle">按钮</a>
-                <a class="btn cbtn-pink btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn cbtn-orange btn-mini  ">按钮</a>
-                <a class="btn cbtn-orange btn-small ">按钮</a>
-                <a class="btn cbtn-orange btn-middle">按钮</a>
-                <a class="btn cbtn-orange btn-big   ">按钮</a>
-            </div>
-            <div class="ach-box btnbg">
-                <a class="btn cbtn-blue btn-mini  ">按钮</a>
-                <a class="btn cbtn-blue btn-small ">按钮</a>
-                <a class="btn cbtn-blue btn-middle">按钮</a>
-                <a class="btn cbtn-blue btn-big   ">按钮</a>
-            </div>
-        </div>
         
         <h4>组合 icon 实现 <small>组合icon 现只有 14px 16px 两种尺寸的icon可组合</small></h4>
         <div class="compare">

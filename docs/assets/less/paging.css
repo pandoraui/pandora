@@ -1,0 +1,212 @@
+
+/*!
+ * paging.css 分页样式
+ * Author Pandora
+**/
+
+/** @name      : 分页样式
+  * @explain   : 实现页码
+  * @type      : 基类 .paging .pagebox
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @other     : 针对按钮实现做如下规划：
+  
+详细参见：pandora前端项目/pandora/docs/modules/paging.html
+
+***/
+.paging {
+    clear: both;
+    margin: 10px 0;
+    height: 26px;
+    overflow: hidden;
+    text-align: right;
+    line-height: 26px;
+    font-size: 12px;
+}
+.gopage {
+    float: right;
+    display: inline;
+    padding-left: 6px;
+}
+.paging .input-text{
+    width: 22px;
+    margin: 0 3px;
+    padding: 2px 3px;
+}
+.gopage .input-text,
+.gopage .btn {
+    vertical-align: top;
+}
+/* 页码部分 */
+.pagebox .num {
+    color: #f90;
+}
+.pagebox {
+    text-align: right;
+}
+.pagebox a,
+.pagebox span {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 9px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+.pagebox a:hover {
+    text-decoration: none;
+}
+.pagebox .pageinfo,
+.pagebox .pagemore {
+    border: none;
+}
+.pagebox .prevpage,
+.pagebox .nextpage { 
+    position: relative;
+    width: 55px; 
+    padding: 0;
+}
+.pagebox .prevpage { 
+    text-align: right; 
+    padding-right: 10px;
+}
+.pagebox .nextpage { 
+    text-align: left; 
+    padding-left: 10px;
+}
+.pagebox span.prevpage,
+.pagebox span.nextpage {
+    color: #ccc;
+    border: 1px solid #ddd;
+    cursor: default;
+}
+
+.pagebox .prevpage .larr,
+.pagebox .nextpage .rarr {
+    position: absolute;
+    top: 7px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: 5px;
+    border-style: solid;
+    _border-style: dashed;
+    border-color: transparent;
+}
+.pagebox .prevpage .larr {
+    left: 7px;
+    _border-right-style: solid;
+    border-left-width: 0;
+    border-right-color: #538ed7;
+}
+.pagebox .nextpage .rarr {
+    right: 7px;
+    _border-left-style: solid;
+    border-right-width: 0;
+    border-left-color: #538ed7;
+}
+.pagebox span.prevpage .larr {
+    border-right-color: #cccccc;
+}
+.pagebox span.nextpage .rarr {
+    border-left-color: #cccccc;
+}
+
+/* 尺寸 */
+.paging-big {
+    height: 30px;
+    line-height: 30px;
+}
+.paging-big .input-text{
+    width: 24px;
+    margin: 0 2px;
+    padding: 4px 6px;
+}
+.paging-big a,
+.paging-big span {
+    padding: 0 12px;
+    height: 28px;
+    line-height: 28px;
+}
+.paging-big .prevpage .larr,
+.paging-big .nextpage .rarr {
+    top: 10px;
+}
+
+/* 灰色主题 */
+.graystyle .pageinfo,
+.graystyle .pagemore {
+    padding:0 4px;
+}
+.graystyle a {
+    border: 1px solid #ddd;
+    color: #538ed7;
+    background: #fff;
+}
+.graystyle a:hover {
+    
+}
+.graystyle .pagesel {
+    border: none;
+    padding: 0 4px;
+    font-weight: bold;
+    color: #333;
+    background: none;
+}
+.graystyle span.prevpage,
+.graystyle span.nextpage {
+    color: #cccccc;
+    border-color: #d6d6d6;
+}
+.graystyle a:hover {
+    border-color: #bbbbbb;
+    background: #e3e3e3;
+    color: #000;
+}
+.graystyle a:hover .larr {
+    border-right-color: #333333;
+}
+.graystyle a:hover .rarr {
+    border-left-color: #333333;
+}
+
+
+/* 橙黄色  */
+.orangestyle .pagesel {
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #f80;
+    background: #f80;
+}
+.orangestyle a:hover { 
+    border-color: #f80;
+    color: #f80;
+}
+.orangestyle a:hover .larr {
+    border-right-color: #f80;
+}
+.orangestyle a:hover .rarr {
+    border-left-color: #f80;
+}
+
+/* 玫红色 */
+.pinkstyle .pagesel {
+    font-weight: bold;
+    border: 1px solid #df1a7a;
+    color: #fff;
+    background: #df1a7a;
+}
+.pinkstyle a:hover { 
+    border-color: #df1a7a;
+    color: #df1a7a;
+}
+.pinkstyle a:hover .larr {
+    border-right-color: #DF1A7A;
+}
+.pinkstyle a:hover .rarr {
+    border-left-color: #DF1A7A;
+}

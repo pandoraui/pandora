@@ -149,33 +149,6 @@ a.btn:hover {
 }
 */
 
-/* 禁用效果 */
-.disabled,
-.btn[disabled] {
-    background: #fafafa;
-    background-image: none;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
-    -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-            box-shadow: none;
-    /* IE8按钮内的元素继承了pointer-events导致事件失效，要注意
-    pointer-events: none;*/
-}
-.btn-gray,
-.btn-disabled,
-.btn-gray:active,
-.btn-disabled:active,
-.btn.disabled,
-.btn[disabled] {
-    top: inherit;
-    cursor: default;
-    -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-            box-shadow: none;
-}
-
-
 /* 按钮尺寸 */
 .btn        { /*padding: 4px 10px;*/ height: 28px; line-height: 28px; font-size: 14px; }
 .btn-mini   { /*padding:   0  6px;*/ height: 20px; line-height: 20px; font-weight: normal;}
@@ -194,6 +167,7 @@ a.btn:hover {
 .btn-big    { padding: 0 15px; font-size: 16px; }
 .btn-large  { padding: 0 20px; font-size: 18px; }
 .btn-w { padding: 0 20px; }
+.btn-mini.btn-w { padding: 0 10px; }
 
 /* 修复ie7 */
 button.btn,input.btn               { *height: 30px; *padding: 1px 11px; }
@@ -400,11 +374,38 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
 .btn-gray { color: #333333; background-color: #f3f3f3; border-color: #cccccc; font-weight: normal; }
 .btn-gray:focus,
 .btn-gray:hover { color: #333333; background-color: #e3e3e3; border-color: #bbbbbb; }
+.btn-dis,
+.btn-dis:focus,
+.btn-dis:hover { color: #333333; background-color: #f3f3f3; border-color: #cccccc; font-weight: normal;}
 .btn-disabled,
 .btn-disabled:focus,
 .btn-disabled:hover  { color: #ffffff; background-color: #999999; border-color: #666666; }
 
 
+/* 禁用效果 */
+.btn-dis,
+.disabled,
+.btn[disabled] {
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    /* IE8按钮内的元素继承了pointer-events导致事件失效，要注意
+    pointer-events: none;*/
+}
+.btn-dis,
+.btn-disabled,
+.btn-dis:active,
+.btn-disabled:active,
+.btn.disabled,
+.btn[disabled] {
+    top: inherit;
+    cursor: default;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
 
 /* 按钮扩展 */
 .btn-loading {}
