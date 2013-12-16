@@ -46,12 +46,9 @@
     cursor: pointer;
     outline: none;
     color: #000;
-    opacity: 0.4;
-    filter: alpha(opacity=40);
+
 }
 .dialog .dialog-close:hover {
-    opacity: 0.8;
-    filter: alpha(opacity=80);
     text-decoration: none;
     color: #f00;
 }
@@ -182,12 +179,17 @@
     width: 34px;
     height: 33px;
     line-height: 30px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
     -webkit-transition: -webkit-transform .5s .3s;
        -moz-transition:    -moz-transform .5s .3s;
             transition:         transform .5s .3s;
 }
+
 .dialog-default .dialog-close:hover {
     color: #f00;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
     -webkit-transform-style: preserve-3d;
        -moz-transform-style: preserve-3d;
             transform-style: preserve-3d;
@@ -199,19 +201,53 @@
             transition:         transform .8s;
 }
 
+/* 功能主题
+ * .dialog-info 仅用于在弹窗中展示信息，很紧凑且没有dailog-footer
+**/
 
+.dialog-info .dialog-footer {
+    display: none;
+}
+.dialog-info .dialog-body {
+    padding: 10px;
+}
+
+/* 颜色主题 */
 .dialog-blue {
-    padding: 5px;
+    padding: 2px;
+    width: 400px;
     background-color: #538ED7;
 }
 .dialog-blue .dialog-header {
+    height: 36px;
+    line-height: 34px;
     background-color: #538ED7;
+    color: #fff;
 }
 
-
-.dialog-pink .dialog-inner {
-    border-top: 2px solid #d37;
+.dialog-blue .dialog-close {
+    width: 28px;
+    height: 30px;
+    color: #fff;
 }
-.dialog-orange .dialog-inner {
-    border-top: 2px solid #f60;
+.dialog-blue .dialog-close:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    text-decoration: none;
+    background: #cc3300;
+    border: 1px solid #cc0000;
+    color: #fff;
+}
+.dialog-blue .btn-ok {
+    color: #fff;
+    background: #4D90FE;
+    border: 1px solid #3F87FE;
+}
+.dialog-blue .btn-ok:hover {
+    background: #166DFE;
+    border: 1px solid #2979FE;
+}
+.dialog-blue .btn-cancel {
+    background: #F5F5F5;
+    border: 1px solid #CCC;
 }

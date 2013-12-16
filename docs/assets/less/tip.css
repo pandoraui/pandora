@@ -269,8 +269,12 @@ span.tiptext {
     font-size: 14px;
     font-weight: bold;
 }
-
 .tipbox .tip-color-title {
+    margin: 7px 0 0 0;
+    font-size: 16px;
+    line-height: 1;
+}
+.tipbox h3.tip-color-title {
     margin: 0 0 10px;
     font-family: "Microsoft YaHei",\5FAE\8F6F\96C5\9ED1;
     font-size: 24px;
@@ -527,7 +531,11 @@ span.tip-line {
  * tip 扩展
  * 实现：无边框大标题、小尺寸提醒、紧密布局
 **/
-
+/* 居中 */
+.tipcenter {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* 设置无边框、背景 */
 .tip-nowrap {
