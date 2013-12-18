@@ -22,9 +22,9 @@
 <body>
 <div class="wrap typo">
     <h1>导航</h1>
-	<p>经常用到的有顶部导航，边栏导航及浮动导航等，除此外还经常用到topbar及底部导航</p>
+    <p>经常用到的有顶部导航，边栏导航及浮动导航等，除此外还经常用到topbar及底部导航</p>
     <p><strong>注意：</strong> 一层导航使用精简布局即可，多层级导航，建议使用经典布局</p>
-	
+    
 <pre class="prettyprint linenums">
 
 </pre>
@@ -147,6 +147,7 @@
     color: #fff;
     font-weight: bold;
 }
+.ui-nav-item-hover a,
 .ui-nav-item a:hover {
     text-decoration: none;
     background: #ff339a;
@@ -182,12 +183,19 @@
 }
 .ui-nav-submain a {
     display: block;
+    height: 32px;
+    line-height: 32px;
+    font-weight: normal;
+    font-size: 14px;
+    background: #fff;
+    color: #e38;
 }
 .ui-nav-subitem a:hover {
     text-decoration: none;
-    background: #ff339a;
+    background: #FD93C9;
     color: #fff;
 }
+.ui-nav-item-hover .ui-nav-submain,
 .ui-nav-item-current .ui-nav-submain {
     display: block;
 }
@@ -203,10 +211,10 @@
             <li class="ui-nav-item"><a href="###">国内游</a></li>
             <li class="ui-nav-item"><a href="###">出境游</a></li>
             <li class="ui-nav-item"><a href="###">特色酒店</a></li>
-            <li class="ui-nav-item ui-nav-item-current"><a href="###">定制游</a>
+            <li class="ui-nav-item"><a href="###">定制游</a>
                 <ul class="ui-nav-submain">
-                	<li class="ui-nav-subitem ui-nav-subitem-current"><a href="###">高端定制</a></li>
-                	<li class="ui-nav-subitem"><a href="###">特别定制</a></li>
+                    <li class="ui-nav-subitem ui-nav-subitem-current"><a href="###">高端定制</a></li>
+                    <li class="ui-nav-subitem"><a href="###">特别定制</a></li>
                 </ul>
             </li>
         </ul>
@@ -215,9 +223,9 @@
             <li class="ui-nav-item"><a href="###">攻略</a></li>
             <li class="ui-nav-item"><a href="###">目的地大全</a>
                 <ul class="ui-nav-submain">
-                	<li class="ui-nav-subitem"><a href="###">亚洲</a></li>
-                	<li class="ui-nav-subitem"><a href="###">欧洲</a></li>
-                	<li class="ui-nav-subitem"><a href="###">东南亚</a></li>
+                    <li class="ui-nav-subitem"><a href="###">亚洲</a></li>
+                    <li class="ui-nav-subitem"><a href="###">欧洲</a></li>
+                    <li class="ui-nav-subitem"><a href="###">东南亚</a></li>
                 </ul>
             </li>
             <li class="ui-nav-item"><a href="###">资讯</a></li>
@@ -226,5 +234,19 @@
     </div>
 </div>
 
+<script src="http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+    function G_hover(box_hover,hover_class){
+        $(box_hover).hover(
+        function(){
+            $(this).addClass(hover_class);
+        },function(){
+            $(this).removeClass(hover_class);
+        })
+    };
+    G_hover("ul>.ui-nav-item","ui-nav-item-hover");
+})
+</script>
 </body>
 </html>

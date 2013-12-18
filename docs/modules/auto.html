@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
-.auto{ margin:0 20px 20px 0; float:left; display:inline}
+.auto{ margin:0 20px 20px 0; display:inline-block; *display:inline;*zoom:1; vertical-align: top;}
 </style>
 </head>
 <body>
@@ -193,6 +193,7 @@
             </div>
         </div><!-- //div .auto -->
         
+        <div class="hr_a"></div>
         
         <div class="auto auto-single auto-key">
             <div class="auto-tip">搜索“<b>上</b>”</div>
@@ -208,6 +209,7 @@
         </div><!-- //.auto-key -->
         
         
+        <span class="ib lh18" style="width: 20px;">精简版</span>
         <div class="auto auto-city" style="width:360px">
             <div class="auto-tip">热门城市(可直接输入城市/城市拼音)</div>
             <div class="auto-box">
@@ -221,12 +223,52 @@
                     </ul>
                 </div>
                 <div class="a-city-list">
-                    <div class="a-citynav clearfix">
-                        <a class="active" href="javascript:;" class="a-city-nit">热门城市</a>
-                        <a href="javascript:;" class="a-city-nit">ABCDEF</a>
-                        <a href="javascript:;" class="a-city-nit">GHJKLM</a>
-                        <a href="javascript:;" class="a-city-nit">NPQRS</a>
-                        <a href="javascript:;" class="a-city-nit">TWXYZ</a>
+                    <h5 class="auto-line">热门城市</h5>
+                    <div class="a-city-item">
+                        <ul class="inline">
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">南京</a></li>
+                            <li><a href="#">苏州</a></li>
+                            <li><a href="#">杭州</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">南京</a></li>
+                            <li><a href="#">苏州</a></li>
+                            <li><a href="#">杭州</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">南京</a></li>
+                            <li><a href="#">苏州</a></li>
+                            <li><a href="#">杭州</a></li>
+                            <li><a href="#">上海</a></li>
+                            <li><a href="#">南京</a></li>
+                            <li><a href="#">苏州</a></li>
+                            <li><a href="#">杭州</a></li>
+                        </ul>
+                    </div><!--//.a-city-item-->
+                </div><!--//.a-city-list-->
+            </div>
+        </div><!--//.auto-city-->
+        
+        <span class="ib lh18" style="width: 20px;">强化版</span>
+        <div class="auto auto-city" style="width:360px">
+            <div class="auto-tip">热门城市(可直接输入中文名/拼音/英文名/三字码)</div>
+            <div class="auto-box">
+                <div class="auto-history">
+                    <h5 class="auto-line">搜索历史</h5>
+                    <ul class="inline">
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">南京</a></li>
+                        <li><a href="#">苏州</a></li>
+                        <li><a href="#">杭州</a></li>
+                    </ul>
+                </div>
+                <div class="a-city-list J_tabbox">
+                    <div class="a-citynav clearfix J_tabnav">
+                        <a class="a-city-tnav active" href="javascript:;">热门</a>
+                        <a class="a-city-tnav" href="javascript:;">ABCDE</a>
+                        <a class="a-city-tnav" href="javascript:;">FGHJ</a>
+                        <a class="a-city-tnav" href="javascript:;">KLMNP</a>
+                        <a class="a-city-tnav" href="javascript:;">QRSTW</a>
+                        <a class="a-city-tnav" href="javascript:;">XYZ</a>
                     </div>
                     <div class="a-city-item">
                         <ul class="inline">
@@ -248,7 +290,7 @@
                             <li><a href="#">杭州</a></li>
                         </ul>
                     </div><!--//.a-city-item-->
-                    <div class="a-city-item">
+                    <div class="a-city-item hide">
                         <dl class="a-city-it">
                             <dt>A</dt>
                             <dd>
@@ -325,6 +367,54 @@
                             </dd>
                         </dl>
                     </div><!--//.a-city-item-->
+                    <div class="a-city-item hide">
+                        <dl class="a-city-it">
+                            <dt>F</dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">恩施</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">鄂尔多斯</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">二连浩特</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div><!--//.a-city-item-->
+                    <div class="a-city-item hide">
+                        <dl class="a-city-it">
+                            <dt>K</dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">恩施</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">鄂尔多斯</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">二连浩特</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div><!--//.a-city-item-->
+                    <div class="a-city-item hide">
+                        <dl class="a-city-it">
+                            <dt>Q</dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">恩施</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">鄂尔多斯</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">二连浩特</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div><!--//.a-city-item-->
+                    <div class="a-city-item hide">
+                        <dl class="a-city-it">
+                            <dt>X</dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">恩施</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">鄂尔多斯</a></li>
+                                    <li><a class="js-hotcitylist" data-country="中国" href="#">二连浩特</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div><!--//.a-city-item-->
                 </div><!--//.a-city-list-->
             </div>
         </div><!--//.auto-city-->
@@ -336,6 +426,21 @@
 
 
 </div>
+<script src="http://pic.lvmama.com/js/new_v/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+    function JS_tab_nav(tab_nav,tab_con,selected,tri_type){
+        $tab_obj=$(tab_nav);
+        $tab_obj.bind(tri_type,function(){
+            var tab_li_index = $(tab_nav).index(this);
+            $(this).addClass(selected).siblings().removeClass(selected);
+            $(tab_con).eq(tab_li_index).show().siblings(tab_con).hide();
+            // return false;
+        });
+    };
+    JS_tab_nav(".J_tabnav>a",".J_tabbox .a-city-item","active","click");
 
+})
+</script>
 </body>
 </html>
