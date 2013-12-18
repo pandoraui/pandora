@@ -12,15 +12,22 @@
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
 .auto{ margin:0 20px 20px 0; display:inline-block; *display:inline;*zoom:1; vertical-align: top;}
+.ui-helper-hidden-accessible{display:none;}
 </style>
 </head>
 <body>
 <div class="wrap">
     <h1>完善统一的自动提醒框</h1>
     <p>描述</p>
-
-
     
+    <h3>自动补全交互</h3>
+    <div class="docs-example">
+        <form class="form-inline">
+            <label for="input-search">自动补全：<input id="input-search" x-webkit-speech class="input-text input-search" type="text" placeholder="输入中文/拼音" autocomplete="on" /><button class="btn btn-pink">搜索</button></label>
+        </form>
+    </div>
+    
+    <h3>自动补全类型列表</h3>
     <div class="docs-example">
         <!-- Autocomplete big -->
         <div class="auto auto-big">
@@ -213,41 +220,35 @@
         <div class="auto auto-city auto-city-simple" style="width:360px">
             <div class="auto-tip">热门城市(可直接输入城市/城市拼音)</div>
             <div class="auto-box">
-                <div class="auto-history">
-                    <h5 class="auto-line">搜索历史</h5>
-                    <ul class="inline">
-                        <li><a href="#">上海</a></li>
-                        <li><a href="#">南京</a></li>
-                        <li><a href="#">苏州</a></li>
-                        <li><a href="#">杭州</a></li>
-                    </ul>
-                </div>
-                <div class="a-city-list">
-                    <h5 class="auto-line">热门城市</h5>
-                    <div class="a-city-item">
-                        <ul class="inline">
-                            <li><a href="#">每项</a></li>
-                            <li><a href="#">最多</a></li>
-                            <li><a href="#">三个字</a></li>
-                            <li><a href="#">上海</a></li>
-                            <li><a href="#">南京</a></li>
-                            <li><a href="#">苏州</a></li>
-                            <li><a href="#">杭州</a></li>
-                            <li><a href="#">上海</a></li>
-                            <li><a href="#">南京</a></li>
-                            <li><a href="#">苏州</a></li>
-                            <li><a href="#">杭州</a></li>
-                            <li><a href="#">上海</a></li>
-                            <li><a href="#">南京</a></li>
-                            <li><a href="#">苏州</a></li>
-                            <li><a href="#">杭州</a></li>
-                            <li><a href="#">上海</a></li>
-                            <li><a href="#">南京</a></li>
-                            <li><a href="#">苏州</a></li>
-                            <li><a href="#">杭州</a></li>
-                        </ul>
-                    </div><!--//.a-city-item-->
-                </div><!--//.a-city-list-->
+                <h5 class="auto-line">搜索历史</h5>
+                <ul class="inline">
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">南京</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                </ul>
+                <h5 class="auto-line">热门城市</h5>
+                <ul class="inline">
+                    <li><a href="#">每项</a></li>
+                    <li><a href="#">最多</a></li>
+                    <li><a href="#">三个字</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">南京</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">南京</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">南京</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">南京</a></li>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">杭州</a></li>
+                </ul>
             </div>
         </div><!--//.auto-city-->
         
@@ -427,8 +428,9 @@
         
     </div>
 <pre class="prettyprint linenums">
-
+    
 </pre>
+
 
 
 </div>
@@ -445,7 +447,8 @@ $(function(){
         });
     };
     JS_tab_nav(".J_tabnav>a",".J_tabbox .a-city-item","active","click");
-
+    
+    
 })
 </script>
 </body>
