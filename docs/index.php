@@ -85,6 +85,7 @@
                 <a class="doing" href="modules/topbar.html">topbar <small>顶部导航</small></a>
                 <a class="doing" href="module.php#breadcrumb">breadcrumb <small>面包屑</small></a>
                 <a class="done" href="modules/paging.html">paging <small>分页</small></a>
+                <a class="done" href="modules/auto.html">autocomplate <small>自动提醒</small></a>
                 
                 <a class="todo" href="###">filter <small>类目过滤</small></a>
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>

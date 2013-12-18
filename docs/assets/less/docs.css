@@ -352,7 +352,7 @@ span.done  { background: #0b0; }
 }
 
 /* Echo out a label for the example */
-.docs-example:after {
+.docs-example:before {
   content: "Example";
   position: absolute;
   top: -1px;
@@ -404,7 +404,7 @@ span.done  { background: #0b0; }
     margin-top: 0;
 }
 
-
+.docs-example:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}.docs-example{zoom:1}
 
 .google-style code{ color: green;}
 
