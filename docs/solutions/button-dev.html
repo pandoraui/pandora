@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../assets/less/docs.css">
 <link rel="stylesheet" href="css/button.css">
 <style>
-.compare{display:inline-block;width:48%;}
+.compare{display:inline-block;width:48%;*display:inline;*zoom:1;}
 .ach-box{ padding:6px 10px 6px 20px;}
 .btnbg{ margin: 0; background:url(img/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
 
@@ -81,12 +81,17 @@
         
         <h4>默认按钮 <small>五种标签的实现 <code>a</code> <code>span</code> <code>button</code></small></h4>
         <div class="ach-box">
-            <a class="btn">按钮</a>
-            <span class="btn">按钮</span>
-            <button class="btn">按钮</button>
-            <input class="btn" type="button" value='按钮' />
-            <input class="btn" type="submit" value='按钮' />
+            <a class="btn btn-blue">按钮</a>
+            <span class="btn btn-blue">按钮</span>
+            <button class="btn btn-blue">按钮</button>
+            <input class="btn btn-blue" type="button" value="按钮">
+            <input class="btn btn-blue" type="submit" value="按钮">
             <a class="btn btn-link">a Link</a>
+            <input class="btn btn-blue" type="reset" value="重置">
+            <span class="btn-file">
+                <button class="btn btn-blue">上传</button>
+                <input type="file" value="上传">
+            </span>
         </div>
         
         <p><strong>注意：</strong>最新实现采用 <code>.btn</code> 默认实现扁平化 metro 风格设计，叠加 <code>.cbtn-</code> 前缀可实现经典渐变色。</p>

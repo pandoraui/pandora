@@ -49,7 +49,7 @@ input {
     *display: inline;
     *zoom: 1;
     *overflow: visible; /* 设置这个属性IE6/7下input,button 的 padding才会生效 */
-    white-space:nowrap; /* 解决ie6折行的问题 */
+    white-space: nowrap; /* 解决ie6折行的问题 */
     
     margin-right: 6px;
     border: 1px solid transparent;
@@ -149,27 +149,24 @@ a.btn:hover {
 }
 */
 
-/* 按钮尺寸 */
-.btn        { /*padding: 4px 10px;*/ height: 28px; line-height: 28px; font-size: 14px; }
-.btn-mini   { /*padding:   0  6px;*/ height: 20px; line-height: 20px; font-weight: normal;}
-.btn-small  { /*padding: 2px 10px;*/ height: 24px; line-height: 24px; font-weight: normal;}
-.btn-middle { /*padding: 4px 12px;*/ height: 28px; line-height: 28px; font-weight: bold;}
-.btn-big    { /*padding: 7px 15px;*/ height: 34px; line-height: 34px; font-weight: bold;}
-.btn-large  { /*padding: 2px 20px;*/ height: 42px; line-height: 42px; font-weight: bold;}
-.btn-mini,
-.btn-small { font-size: 12px;}
-
-/* 实现紧凑 */
-.btn        { padding: 0 10px; }
-.btn-mini   { padding: 0  6px; }
-.btn-small  { padding: 0 10px; }
-.btn-middle { padding: 0 12px; font-size: 14px; }
-.btn-big    { padding: 0 15px; font-size: 16px; }
-.btn-large  { padding: 0 20px; font-size: 18px; }
-.btn-w { padding: 0 20px; }
+/* 按钮尺寸,实现紧凑 */
+.btn        { padding: 0 10px; height: 28px; line-height: 28px; font-size: 14px; }
+.btn-mini   { padding: 0  6px; height: 20px; line-height: 20px; font-weight: normal;}
+.btn-small  { padding: 0 10px; height: 24px; line-height: 24px; font-weight: normal;}
+.btn-middle { padding: 0 12px; height: 28px; line-height: 28px; font-weight: bold;}
+.btn-big    { padding: 0 15px; height: 34px; line-height: 34px; font-weight: bold;}
+.btn-large  { padding: 0 20px; height: 42px; line-height: 42px; font-weight: bold;}
+.btn-w      { padding: 0 20px; }
 .btn-mini.btn-w { padding: 0 10px; }
 
-/* 修复ie7 */
+.btn-mini,
+.btn-small  { font-size: 12px;}
+.btn-middle { font-size: 14px; }
+.btn-big    { font-size: 16px; }
+.btn-large  { font-size: 18px; }
+
+
+/* 修复ie6/7 */
 button.btn,input.btn               { *height: 30px; *padding: 1px 11px; }
 button.btn-mini,input.btn-mini     { *height: 22px; *padding: 1px  7px; }
 button.btn-small,input.btn-small   { *height: 26px; *padding: 1px 11px; }
@@ -178,14 +175,27 @@ button.btn-big,input.btn-big       { *height: 36px; *padding: 1px 16px; }
 button.btn-large,input.btn-large   { *height: 44px; *padding: 1px 21px; }
 button.btn-w,input.btn-w { padding: 1px 21px; }
 
-/* 有待完善的规范
-.btn        { padding: 0 20px; }
-.btn-mini   { padding: 0 10px; }
-.btn-small  { padding: 0 15px; }
-.btn-middle { padding: 0 20px; font-size: 14px; }
-.btn-big    { padding: 0 20px; font-size: 16px; }
-.btn-large  { padding: 0 30px; font-size: 18px; }
- */
+/* 上传按钮 */
+.btn-file {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.btn-file .btn {
+    margin-right:0;
+}
+.btn-file input {
+    position: absolute;
+    top: -30px;
+    right: -2px;
+    width: 100px;
+    height: 100px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: pointer;
+}
 
 /* 扁平化样式 */
 .btn                { color: #333333; background-color: #ffffff; border-color: #cccccc; }
