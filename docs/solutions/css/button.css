@@ -190,7 +190,7 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
     position: absolute;
     top: -30px;
     right: -2px;
-    width: 100px;
+    width: 800px;
     height: 100px;
     filter: alpha(opacity=0);
     opacity: 0;
