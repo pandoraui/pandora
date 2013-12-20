@@ -1,0 +1,15 @@
+
+/* 
+ @名称: modules.css
+ @功能: pandora 模块组件集合
+ */
+
+/* CSS modules */
+@import "modules/button.css";
+@import "modules/form.css";
+@import "modules/paging.css";
+@import "modules/dialog.css";
+@import "modules/form.css";
+@import "modules/table.css";
+@import "modules/tip.css";
+@import "modules/arrow.css";

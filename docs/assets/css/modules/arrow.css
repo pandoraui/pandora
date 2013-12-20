@@ -1,0 +1,114 @@
+
+/*!
+ * arrow.css v1.0
+ * Author Pandora
+**/
+
+/* css 实现arrow */
+.ui-arrow-top,
+.ui-arrow-right,
+.ui-arrow-bottom,
+.ui-arrow-left,
+.active .ui-arrow-top,
+.active .ui-arrow-right,
+.active .ui-arrow-bottom,
+.active .ui-arrow-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: 5px;
+    
+    /* 边框类型必须使用solid + transparent，否则部分电脑firefox下会有问题 */
+    border-style: solid;
+    _border-style: dashed;
+    border-color: transparent;
+}
+
+
+.ui-arrow-top,
+.active .ui-arrow-bottom {
+    _border-bottom-style: solid;
+    border-top-width: 0;
+}
+.ui-arrow-right,
+.active .ui-arrow-left {
+    _border-left-style: solid;
+    border-right-width: 0;
+}
+.ui-arrow-bottom,
+.active .ui-arrow-top {
+    _border-top-style: solid;
+    border-bottom-width: 0;
+}
+.ui-arrow-left,
+.active .ui-arrow-right {
+    _border-right-style: solid;
+    border-left-width: 0;
+}
+
+.active .dark-ui-arrow-bottom, .dark-ui-arrow-top    { border-bottom-color: #333; }
+.active .dark-ui-arrow-left  , .dark-ui-arrow-right  { border-left-color  : #333; }
+.active .dark-ui-arrow-top   , .dark-ui-arrow-bottom { border-top-color   : #333; }
+.active .dark-ui-arrow-right , .dark-ui-arrow-left   { border-right-color : #333; }
+
+.active .gray-ui-arrow-bottom, .gray-ui-arrow-top    { border-bottom-color: gray; }
+.active .gray-ui-arrow-left  , .gray-ui-arrow-right  { border-left-color  : gray; }
+.active .gray-ui-arrow-top   , .gray-ui-arrow-bottom { border-top-color   : gray; }
+.active .gray-ui-arrow-right , .gray-ui-arrow-left   { border-right-color : gray; }
+
+.active .white-ui-arrow-bottom, .white-ui-arrow-top    { border-bottom-color: #fff; }
+.active .white-ui-arrow-left  , .white-ui-arrow-right  { border-left-color  : #fff; }
+.active .white-ui-arrow-top   , .white-ui-arrow-bottom { border-top-color   : #fff; }
+.active .white-ui-arrow-right , .white-ui-arrow-left   { border-right-color : #fff; }
+
+.active .blue-ui-arrow-bottom, .blue-ui-arrow-top    { border-bottom-color: #0183b0; }
+.active .blue-ui-arrow-left  , .blue-ui-arrow-right  { border-left-color  : #0183b0; }
+.active .blue-ui-arrow-top   , .blue-ui-arrow-bottom { border-top-color   : #0183b0; }
+.active .blue-ui-arrow-right , .blue-ui-arrow-left   { border-right-color : #0183b0; }
+
+.active .pink-ui-arrow-bottom, .pink-ui-arrow-top    { border-bottom-color: #e38; }
+.active .pink-ui-arrow-left  , .pink-ui-arrow-right  { border-left-color  : #e38; }
+.active .pink-ui-arrow-top   , .pink-ui-arrow-bottom { border-top-color   : #e38; }
+.active .pink-ui-arrow-right , .pink-ui-arrow-left   { border-right-color : #e38; }
+
+.active .orange-ui-arrow-bottom, .orange-ui-arrow-top    { border-bottom-color: orange; }
+.active .orange-ui-arrow-left  , .orange-ui-arrow-right  { border-left-color  : orange; }
+.active .orange-ui-arrow-top   , .orange-ui-arrow-bottom { border-top-color   : orange; }
+.active .orange-ui-arrow-right , .orange-ui-arrow-left   { border-right-color : orange; }
+
+/* 禁用状态 也可直接使用 gray 箭头 */
+.disabled .ui-arrow-top,
+.disabled .ui-arrow-right,
+.disabled .ui-arrow-bottom,
+.disabled .ui-arrow-left {
+    border-style: solid;
+    _border-style: dashed;
+    border-color: transparent;
+    border-width: 5px;
+}
+
+.disabled .ui-arrow-top {
+    _border-bottom-style: solid;
+    border-top-width: 0;
+}
+.disabled .ui-arrow-right {
+    _border-left-style: solid;
+    border-right-width: 0;
+}
+.disabled .ui-arrow-bottom {
+    _border-top-style: solid;
+    border-bottom-width: 0;
+}
+.disabled .ui-arrow-left {
+    _border-right-style: solid;
+    border-left-width: 0;
+}
+
+.disabled .ui-arrow-top    { border-bottom-color: gray; }
+.disabled .ui-arrow-right  { border-left-color  : gray; }
+.disabled .ui-arrow-bottom { border-top-color   : gray; }
+.disabled .ui-arrow-left   { border-right-color : gray; }
+

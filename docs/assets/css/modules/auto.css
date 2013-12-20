@@ -1,0 +1,285 @@
+
+/**
+ * @name      : Autocomplete Plugin
+ * @explain   : 自动完成插件
+ * @type      : 基类 .auto >> auto-big auto-list auto-city
+ * @dependent : pandora
+ * @author    : Cloudyan
+ * @version   : 1.0
+ * @html      :
+
+**/
+
+ul.inline:after,
+.a-citynav:after,
+.a-city-it:after{
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "\20";
+}
+ul.inline,
+.a-citynav,
+.a-city-it {
+    zoom:1;
+}
+
+ul.inline,
+.auto * {
+    margin: 0;
+    padding: 0;
+}
+
+.auto {
+    font: 12px/22px \5b8b\4f53,tahoma,Geneva,sans-serif;
+    width: 277px; 
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    box-shadow: 2px 2px 2px 0 rgba(102,102,102,0.2);
+}
+
+.auto .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 6px;
+    position: relative;
+    top: 4px;
+}
+
+.auto a {
+    color: #333; 
+    text-decoration: none;
+}
+.auto a:hover { 
+    color: #e08; 
+    text-decoration: underline;
+}
+.auto-line { 
+    margin: 0;
+    color: #888;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+}
+.auto-title {
+    color: #999;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: normal;
+    border-bottom: 1px dotted #dbdbdb
+}
+.auto-box { padding: 5px 10px; }
+.auto-mini .auto-box, .auto-single .auto-box { padding:0; }
+.a2row, .a3row, .a4row, .a5row {
+    overflow: hidden;
+    *zoom: 1;
+    margin-right: -2px;
+    padding-top: 2px;
+    margin-bottom: 10px;
+}
+.auto .inline li,
+.a2row li,
+.a3row li,
+.a4row li,
+.a5row li {
+    float: left;
+    padding: 0;
+    display: inline;
+    *zoom: 1;
+    overflow: hidden;
+}
+.a2row li { width: 49.5% }
+.a3row li { width: 33.25% }
+.a4row li { width: 24.9% }
+.a5row li { width: 19.9% }
+.auto a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.auto-mini a   { padding:   0 10px; }
+.auto-single a { padding: 2px 10px; }
+
+.a2row a, .a3row a {
+    margin-right:10px;
+    text-overflow:ellipsis;
+}
+.auto-mini a,
+.auto-single a {
+    text-overflow:ellipsis;
+    color:#333;
+}
+.auto-mini a:hover,
+.auto-single a:hover {
+    background:#ff9cc0;
+    color:#fff;
+    text-decoration:none
+}
+.auto-mini li,
+.auto-single li {
+    _float:left;
+    clear:both;
+    _width:100%
+}
+.auto-mini a,
+.auto-single a {
+    _float:left;
+    _width:100%;
+}
+.auto-big    { width:355px; }
+.auto-middle { width:277px; }
+.auto-small  { width:235px; }
+.auto-mini   { width:137px; }
+
+.auto-type   { color:#888 }
+.auto-single a:hover .auto-type { color:#fff; }
+
+.auto-channel .auto-type {
+    color: #ee0088;
+    font-weight: bold;
+}
+.auto-channel li {
+    margin-top: 1px;
+    background: #efeceb;
+}
+
+
+
+/* auto city */
+.auto-key a,
+.auto-city a {
+    outline: none;
+    color: #07c;
+}
+.auto-key a:hover,
+.auto-city a:hover {
+    text-decoration: none;
+    color: #e38;
+}
+
+
+.auto-tip {
+    margin-bottom: -3px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    background: #fafafa;
+    color: #666;
+}
+
+.auto-key,
+.auto-city {
+    border-top: 2px solid #f90;
+}
+
+/* auto city */
+
+.auto-city {
+    color: #555;
+}
+.auto-city ul {
+    margin: 0;
+    padding: 0;
+    height: 1%;
+}
+
+.auto-city li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.auto-history {
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+.a-citynav {
+    border-bottom: 1px solid #DDD;
+    zoom: 1;
+    margin-bottom: 3px;
+}
+.a-citynav a.a-city-tnav {
+    position: relative;
+    bottom: -1px;
+    float: left;
+    display: inline;
+    margin-right: 8px;
+    padding: 0 8px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+}
+.a-citynav a.a-city-tnav:hover {
+    text-decoration: none;
+    color: #333;
+}
+.a-citynav a.active {
+    background: #fff;
+    border: 1px solid #dddddd;
+    border-bottom: 1px solid #fff;
+    color: #333;
+}
+
+.a-city-item {
+    display: block;
+}
+
+.a-city-it dt {
+    float: left;
+    display: block;
+    width: 16px;
+    color: #0069CA;
+    height: 25px;
+    line-height: 25px;
+    padding-top: 1px;
+    padding-top: 0\0;
+    font-weight: normal;
+}
+
+.a-citynav,
+.a-city-it dt{
+    font-family: tahoma,Geneva,\5b8b\4f53,sans-serif;
+}
+
+.a-city-it dd {
+    margin-left: 20px;
+    zoom: 1;
+    _margin-left: 0;
+}
+
+.auto-city-simple li {
+    width: 48px;
+}
+
+/* auto keyword */
+
+.auto-key li {
+    _float: left;
+    clear: both;
+    _width: 100%;
+}
+.auto-key li a {
+    text-overflow: ellipsis;
+    color: #333;
+    _float: left;
+    _width: 100%;
+}
+.auto-key li a:hover {
+    background: #fff9f0;
+    color: #e38;
+}
+
+

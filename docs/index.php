@@ -146,7 +146,7 @@
             </div>
             
             
-            <h3>兼容解决方案 <small>更多详见 <a target="_blank" href="http://localhost/cnbootstrap/cnDocs/solution.php">cnBootstrap</a></small></h3>
+            <h3>解决方案 <small>更多详见 <a target="_blank" href="http://localhost/cnbootstrap/cnDocs/solution.php">cnBootstrap</a></small></h3>
             <div class="modules f12">
                 <span class="hide">
                 <a class="doing" target="_blank" href="modules/typo.html">中文排版</a>
@@ -159,7 +159,7 @@
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/text-align-justify.html">文本两端对齐</a>
                 <a class="done" target="_blank" href="/cnbootstrap/cnDocs/solutions/clear-float.html">文本纵向排列</a>
                 </span>
-                <a class="doing" target="_blank" href="solutions/button.html">button</a>
+                <a class="done" target="_blank" href="solutions/button-dev.html">button</a>
                 <a class="doing" target="_blank" href="solutions/css3-UE.html">CSS3-UE</a>
                 
             </div>
@@ -269,7 +269,7 @@ buttons.css |
             
             <p>根据神话，潘多拉出于好奇打开一个「魔盒」（应作坛子，希腊文原作πίθος，πίθοι，英语：pandora's box）释放出人世间的所有邪恶——贪婪、虚无、诽谤、嫉妒、痛苦等等，当她再盖上盒子时，<b>只剩下希望在里面</b>。Pandora 放出了邪恶，却把最大的希望留在了盒子里，如今她为我们所承受的困苦要做一个解决方案，把希望带给大家，并取名 Pandora 项目。</p>
             
-            </p>Pandora 项目第一站——<b>前端解决方案</b>，接下来就让我们看看 <strong>Pandora</strong> 的表现吧！</p>
+            </p>Pandora 第一站——<b>前端解决方案</b>，接下来就让我们看看 <strong>Pandora</strong> 的表现吧！</p>
             
         </section>
         

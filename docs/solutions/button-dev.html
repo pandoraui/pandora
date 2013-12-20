@@ -53,15 +53,16 @@
     <h1>button 实验测试 dev版本</h1>
 
     <p>此页面用于测试新属性或规划使用</p>
-    <p><strong>提醒：</strong>此处只针对以上规划的全兼容性做一研究，全部实现请到模块 buttons.html 中浏览效果。</p>
-    
+    <h3>规划：</h3>
     <ul>
-        <li>使用LESS测试调整样式</li>
-        <li>五种标签实现按钮</li>
+        <li>五种 <strong>不同标签</strong> 实现兼容性按钮，<code>a</code>、<code>span</code>、<code>button</code>、<code>input[type="button"]</code>、<code>input[type="submit"]</code> </li>
+        <li>制定 尺寸5种、样式N种、主题两种、交互状态4种</li>
         <li>实现风格现今最主流的是：扁平化的metro风格为基础，可叠加实现经典渐变色</li>
         <li>可能需要 loading 效果，交互变色应用等</li>
+        <li>使用LESS测试调整样式</li>
+        <li>问题总结，buttons 使用中可能遇到的问题及解决办法</li>
     </ul>
-    <p><strong>注意：</strong>这是一个测试开发项目，<b>目标</b>是实现扁平化设计和经典渐变实现的整合。</p>
+    <p><strong>注意：</strong>这是一个测试开发项目，<b>目标</b>是实现扁平化设计和经典渐变实现的整合。现已对两种风格主题做列表对比展示。</p>
     
     
     <div class="docs-example">
@@ -76,8 +77,6 @@
                 渐变测试全兼容
             </div>
         </div>
-        
-        
         
         <h4>默认按钮 <small>五种标签的实现 <code>a</code> <code>span</code> <code>button</code></small></h4>
         <div class="ach-box">
@@ -525,13 +524,20 @@
             <p>灰色按钮(深浅两种色)都表示禁用按钮，其他按钮有半禁用状态(正在响应中不要继续点击)</p>
         </li>
     </ul>
-    <h3>疑问？</h3>
+    <h3>有疑问？可能遇到的问题：</h3>
     <ul class="textlist">
+        <li><a href="/cnBootstrap/cnDocs/bugs-and-fixed.php">A标签 提交表单IE6下事件冲突</a></li>
         <li>内间距为什么要设置这么小？
             <p>因为小间距可以满足 组合ICON 以及 小尺寸位置 的应用要求，需要大的可以增加 class="btn-w" 或者填充占位空格 &amp;nbsp;</p>
         </li>
         <li>关于交互以及边角
             <p>至少实现三种交互状态，2px的圆角，边框独立且清晰，禁用状态色值要明显（浅色暗色两种），</p>
+        </li>
+        <li>为什么不用图片按钮？
+            <p>图片按钮虽能全兼容，但适应性扩展性都不高</p>
+        </li>
+        <li>此处实现的按钮哪里会用到？
+            <p>用于较独立的位置，区别于弹窗上附带的按钮，但仍让可以组合使用<br>理论上引用组件css的顺序是：小组件先引用如button.css，大组件后引用如dialog.css</p>
         </li>
     </ul>
     <h3>对此你有什么看法：</h3>

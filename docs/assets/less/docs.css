@@ -418,9 +418,12 @@ span.done  { background: #0b0; }
 .ui-poptip{ 
     margin-bottom:10px;
 }
+.textlist li {
+    margin-bottom: 5px;
+}
 .textlist p {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     line-height: 1.5em;
 }
 
