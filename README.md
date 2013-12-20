@@ -14,9 +14,9 @@ Pandora 项目第一站——**前端解决方案**，接下来就让我们看�
 
 > 经验告诉我们，不要重复发明轮子
 
-Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。考究借鉴 twitter Bootstrap 的设计思想，并结合中文排版布局的特点进行设计。
+Pandora 前端框架（以下简称 Pandora）是基于 [cnBootstrap](https://github.com/webcoding/cnBootstrap) 制作的前端开发框架。考究借鉴 twitter Bootstrap 的设计思想，并结合中文排版布局(参照sofish的typo.css)的特点进行设计。
 
-其中 cnBootstrap 集成了 AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
+其中 cnBootstrap 集成了 旧版的AliceUI 兼容解决方案（包括但不限于AliceUI），通过整合各类兼容性解决方案，cnBootstrap已经具备大量的解决方案实例。现转移到pandora中进一步完善...
 
 
 ## 开发规划
