@@ -34,6 +34,13 @@ a {
     color: #245DC1;
     text-decoration: none;
 }
+a:visited {
+    /* 影响范围较大，优先级调整重置比较麻烦，暂时取消使用
+    color: #7759AE;*/
+}
+
+
+
 /*
 a:visited {
     color: #7759AE;
@@ -253,6 +260,7 @@ a.dot_line{margin:0 3px;height:auto;line-height:1.5;display:inline-block;text-in
 
 .sidebar {
     margin-top:20px;
+    border: 1px solid #eff2f9;
     border: 1px solid #ccc;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
@@ -267,6 +275,7 @@ a.dot_line{margin:0 3px;height:auto;line-height:1.5;display:inline-block;text-in
   display: inline;
   /*margin-right: 20px;*/
   line-height: 2;
+  background: #f6f9ff;
   background: #f5f5f5;
 }
 

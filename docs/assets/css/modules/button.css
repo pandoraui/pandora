@@ -125,6 +125,7 @@ a.btn:hover {
     outline: thin dotted #333;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
+    outline: none;
 }
 .btn.active,
 .btn:active {
@@ -210,12 +211,11 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
 .btn-blue:hover  ,.btn-blue:focus   { color: #ffffff; background-color: #2979fe; border-color: #166dfe; }
 
 /* 经典渐变样式 */
-.btn {
+*[class*="cbtn"] {
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        -ms-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-*[class*="cbtn"] {
     -webkit-border-radius: 2px;
        -moz-border-radius: 2px;
         -ms-border-radius: 2px;
@@ -338,20 +338,20 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
     color: #ffffff;
     
     /* 渐变色 */
-    background-color: #54aaee; /* Old browsers */
-    background-image: -moz-linear-gradient(top, #54aaee, #359ade); /* FF3.6+ */
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#359ade), to(#359ade)); /* Chrome,Safari4+ */
-    background-image: -webkit-linear-gradient(top, #54aaee, #359ade); /* Chrome10+,Safari5.1+ */
-    background-image: -o-linear-gradient(top, #54aaee, #359ade); /* Opera 11.10+ */
-    background-image: -ms-linear-gradient(top, #54aaee, #359ade); /* IE10+ */
-    background-image: linear-gradient(to bottom, #54aaee, #359ade); /* W3C */
+    background-color: #4d90fe; /* Old browsers */
+    background-image: -moz-linear-gradient(top, #4d90fe, #2979fe); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2979fe), to(#2979fe)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #4d90fe, #2979fe); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #4d90fe, #2979fe); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #4d90fe, #2979fe); /* IE10+ */
+    background-image: linear-gradient(to bottom, #4d90fe, #2979fe); /* W3C */
     background-repeat: repeat-x;
     
-    border-color: #359ade #359ade #1F90DD;
+    border-color: #2979fe #2979fe #166dfe;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.2);
-    *background-color: #54aaee;
+    *background-color: #4d90fe;
     
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff54aaee', endColorstr='#ff359ade', GradientType=0); 
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4d90fe', endColorstr='#ff2979fe', GradientType=0); 
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .cbtn-blue:hover,
@@ -362,12 +362,12 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
 .cbtn-blue.disabled,
 .cbtn-blue[disabled] {
   color: #ffffff;
-  background-color: #359ade;
-  *background-color: #1F90DD;
+  background-color: #2979fe;
+  *background-color: #166dfe;
 }
 .cbtn-blue:active,
 .cbtn-blue.active {
-  background-color: #359ade \9;
+  background-color: #2979fe \9;
 }
 /*
 .btn-default{ *background-color: #f5f5f5; *border-color: #cccccc; }

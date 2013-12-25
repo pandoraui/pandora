@@ -11,11 +11,11 @@
 <![endif]-->
 <link rel="stylesheet" href="../assets/less/dev-common.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
-<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="../assets/css/modules-dev.css">
 <style>
 .compare{display:inline-block;width:48%;*display:inline;*zoom:1;}
 .ach-box{ padding:6px 10px 6px 20px;}
-.btnbg{ margin: 0; background:url(img/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
+.btnbg{ margin: 0; background:url(../assets/temp/btnbg.png) -8px -12px no-repeat;*background-position:-8px -11px }
 
 .linear-gradient {
     border: 1px solid transparent;
@@ -68,7 +68,7 @@
     <div class="docs-example">
         <p>实现规划：为测试完整的兼容性问题，以下分步实现，首先制作 <code>a</code> 标签按钮，之后为其他标签，依次类推。</p>
         <h4>button <small>默认 font-size: 12px; height: 30px;</small></h4>
-        <p><strong>注意：</strong>使用按钮，首推 <code>a</code> <code>span</code> 标签实现按钮，可使用 <code>button</code> 标签实现，也支持 <code>input</code> 实现，后两者不如 a 与 span 标签更容易控制。</p>
+        <p><strong>注意：</strong>使用按钮，首推 <code>a</code> <code>span</code> 标签实现按钮，可使用 <code>button</code> 标签实现，也支持 <code>input</code> 实现，后两者不如 a 与 span 标签更容易控制，但目前完成无差异实现。</p>
         
         <h4>渐变测试 <small><a href="http://pandoraui.github.io/cssbook/">linear-gradient()</a></small></h4>
         <div class="ach-box">
@@ -92,7 +92,19 @@
                 <input type="file" value="上传">
             </span>
         </div>
-        
+        <div class="ach-box">
+            <a class="btn btn-w btn-blue">按钮</a>
+            <span class="btn btn-w btn-blue">按钮</span>
+            <button class="btn btn-w btn-blue">按钮</button>
+            <input class="btn btn-w btn-blue" type="button" value="按钮">
+            <input class="btn btn-w btn-blue" type="submit" value="按钮">
+            <a class="btn btn-w btn-link">a Link</a>
+            <input class="btn btn-w btn-blue" type="reset" value="重置">
+            <span class="btn-file">
+                <button class="btn btn-w btn-blue">上传</button>
+                <input type="file" value="上传">
+            </span>
+        </div>
         <p><strong>注意：</strong>最新实现采用 <code>.btn</code> 默认实现扁平化 metro 风格设计，叠加 <code>.cbtn-</code> 前缀可实现经典渐变色。</p>
         <ul>
             <li>灰色按钮和禁用按钮并没有渐变，但可以有圆角</li>
@@ -138,7 +150,7 @@
             </div>
         </div>
         
-        <h3>示例</h3>
+        <h3>示例 <small>基类都为 <code>.btn</code></small></h3>
         <div class="compare red">扁平化实现 .btn 如: .btn-blue</div>
         <div class="compare red">经典渐变实现 .cbtn- 如: .cbtn-blue</div>
         
