@@ -173,7 +173,13 @@
 .dialog-default {
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.4);
+    
     filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#66000000, endColorstr=#66000000);
+    /* 以上的滤镜样式会导致IE8-浏览器下定位元素无法超出dialog边界，禁用掉滤镜样式即可
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    padding: 0;
+    border: 5px solid #ddd;
+    */
 }
 .dialog-default .dialog-close {
     width: 34px;
