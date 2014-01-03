@@ -883,7 +883,17 @@
             cancel: cancel ? cancel : true
         });
     };
-
+    
+    $.loading = pandora.loading = function (content, ok, cancel) {
+        return Factory({
+            fixed: true,
+            lock: true,
+            mask: true,
+            wrapClass: "dialog-loading",
+            content: '<p><img src="//pic.lvmama.com/img/common/loading.gif" alt="loading" /></p>' + content
+        });
+    };
+    
     // 调用方式采用 $("").dialog() 和 pandora.dialog() 两种方式
     $.dialog = $.fn.dialog = pandora.dialog = Factory;
     global.pandora = pandora;

@@ -259,3 +259,17 @@
     background: #F5F5F5;
     border: 1px solid #CCC;
 }
+
+/* loading效果 */
+.dialog-loading .dialog-header,
+.dialog-loading .dialog-footer,
+.dialog-loading .dialog-close {
+    display: none;
+}
+.dialog-loading .dialog-content {
+    padding: 20px 0 20px;
+    /*background: url(../img/loading.gif) #fff center 30px no-repeat;*/
+    text-align: center;
+    font-size: 14px;
+}
+

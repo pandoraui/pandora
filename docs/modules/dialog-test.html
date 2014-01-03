@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>dialog test page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/jquery.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-dialog.js"></script>
+<style>
+body{padding:10px;}
+</style>
+</head>
+<body>
+    <p><button class="pbtn" id="demo142">如果在iframe页面中，调用loading状态</button></p>
+<pre>
+// 示例142 iframe子页面调用遮罩住父页面
+$("#demo142").click(function(){
+    parent.pandora.loading("正在保存中...");
+})
+</pre>
+<script>
+$(function(){
+    $("#demo142").click(function(){
+        parent.pandora.loading("正在保存中...");
+    })
+})
+</script>
+</body>
+</html>

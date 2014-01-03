@@ -34,7 +34,11 @@ h5{color:green;}
         </li>
         <li>两种皮肤：默认灰色  dialog-pink玫红  dialog-orange橙色</li>
     </ul>
-    <p><strong>TODO：</strong>dialog实现iframe内容自适应其宽度、高度；</p>
+    <h4>TODO：</h4>
+    <ul>
+        <li>dialog实现iframe内容自适应其宽度、高度；</li>
+        <li>dialog实现页面跳转的loading效果</li>
+    </ul>
     
     <h3>注意事项：</h3>
     <p><strong>依赖</strong>——使用实现模态窗口/弹出框，请确保页面已经引用了如下文件：</p>
@@ -250,7 +254,38 @@ $(function(){
 
 
 </script>
-    
+    <h3>1.4、中间状态 loading 效果 <small>pandora.loading()</small></h3>
+    <div class="docs-example">
+        <h4>页面比较大时，交互或跳转操作时间较长，制作此 loading 效果，作为中间状态反馈给用户进行中的效果。</h4>
+        <p>参数说明 <code>pandora.alert(content, callback)</code> 示例如下：</p>
+        <ul>
+            <li>content 为提醒内容</li>
+            <li>callback 回调函数</li>
+        </ul>
+        
+        <h5>示例141</h5>
+        <p><button class="pbtn" id="demo141">交互时间长，有中间loading状态</button></p>
+        
+        <h5>示例142</h5>
+        <iframe src="dialog-test.html" width="500" height="200"></iframe>
+        
+    </div>
+<pre class="prettyprint linenums">
+// 示例141
+pandora.loading("正在保存中...");
+
+// 示例142 iframe子页面调用遮罩住父页面
+parent.pandora.loading("正在保存中...");
+</pre>
+<script>
+// 示例：loading 状态
+$(function(){
+    // 示例141
+    $("#demo141").click(function () {
+        pandora.loading("正在保存中...");
+    });
+})
+</script>
     
     <h3 id="dialog-standard">通用模态弹出框参数列表 <small>pandora.dialog({N多参数})</small></h3>
     <div class="docs-example">
