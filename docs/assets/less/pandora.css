@@ -51,25 +51,26 @@
 
 /* Components: Nav
 @import "navs.css";
-@import "navbar.css"; */
+@import "navbar.css";
 @import "breadcrumbs.css";
 @import "pagination.css";
 @import "pager.css";
+ */
 @import "paging.css";
 @import "step.css";
-@import "poptip.css";
+/*@import "poptip.css";*/
 @import "bank.css";
 @import "auto.css";
 
 /* Components: Popovers */
 @import "dialog.css";
-@import "tooltip.css";
-@import "popovers.css";
+/*@import "tooltip.css";
+@import "popovers.css";*/
 
 /* Components: Misc */
 @import "misc.css";
-@import "thumbnails.css";
-@import "media.css";
+/*@import "thumbnails.css";
+@import "media.css";*/
 @import "tags.css";
 @import "labels-badges.css";
 /*

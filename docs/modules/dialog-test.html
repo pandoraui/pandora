@@ -23,13 +23,33 @@ body{padding:10px;}
 <pre>
 // 示例142 iframe子页面调用遮罩住父页面
 $("#demo142").click(function(){
-    parent.pandora.loading("正在保存中...");
+    top.pandora.loading("正在保存中...",function(){
+        var that = this;
+        
+        //自定义操作方法
+        $(top.document).find(".overlay").click(function(){
+            
+            //关闭弹窗
+            that.close();
+        })
+        
+    });
 })
 </pre>
 <script>
 $(function(){
     $("#demo142").click(function(){
-        parent.pandora.loading("正在保存中...");
+        top.pandora.loading("正在保存中...",function(){
+            var that = this;
+            
+            //自定义操作方法
+            $(top.document).find(".overlay").click(function(){
+                
+                //关闭弹窗
+                that.close();
+            })
+            
+        });
     })
 })
 </script>

@@ -272,17 +272,30 @@ $(function(){
     </div>
 <pre class="prettyprint linenums">
 // 示例141
-pandora.loading("正在保存中...");
+top.pandora.loading("正在保存中...");
 
-// 示例142 iframe子页面调用遮罩住父页面
-parent.pandora.loading("正在保存中...");
+// 正在调试中...
+// 示例142 iframe子页面调用遮罩，如果存在父页面则遮罩父页面
+top.pandora.loading("正在保存中...",function(){
+    var that = this;
+    
+    //自定义方法中调用 that.close();
+    
+});
 </pre>
 <script>
 // 示例：loading 状态
 $(function(){
     // 示例141
-    $("#demo141").click(function () {
-        pandora.loading("正在保存中...");
+    $("#demo141").live("click",function () {
+        top.pandora.loading("正在保存中...",function(){
+            var that = this;
+            
+            //自定义操作方法
+            $(".overlay").click(function(){
+                that.close();
+            })
+        });
     });
 })
 </script>
@@ -410,7 +423,7 @@ pandora.dialog({
 
 // 示例314
 pandora.dialog({
-    skin: "dialog-bule",
+    skin: "dialog-blue",
     content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
     cancel: true
 });
@@ -465,7 +478,7 @@ $(function(){
     // 示例314
     $("#demo314").click(function () {
         pandora.dialog({
-            skin: "dialog-bule",
+            skin: "dialog-blue",
             content: "显示弹窗按钮，若不指定按钮的回调函数，则默认绑定关闭弹窗函数。",
             cancel: true
         });

@@ -59,7 +59,7 @@
             <p>这里收集那些<strong>优良的前端开发工具</strong>，具备良好使用便捷。</p>
             <ul>
                 <li><a href="http://notepad-plus-plus.org/">Notepad++</a></li>
-                <li><a href="http://www.sublimetext.com/2">Sublime Text2</a></li>
+                <li><a href="wheels/sublime-text.html">Sublime Text</a></li>
                 <li><a href="https://code.google.com/p/zen-coding/">Zen-Coding 插件</a></li>
             </ul>
             <p><strong>注：</strong>如果你也知道一些好的开发工具，也可以给大家推荐一下!</p>

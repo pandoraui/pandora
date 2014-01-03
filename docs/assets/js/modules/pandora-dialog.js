@@ -884,13 +884,14 @@
         });
     };
     
-    $.loading = pandora.loading = function (content, ok, cancel) {
+    $.loading = pandora.loading = function (content, callback) {
         return Factory({
             fixed: true,
             lock: true,
             mask: true,
             wrapClass: "dialog-loading",
-            content: '<p><img src="//pic.lvmama.com/img/common/loading.gif" alt="loading" /></p>' + content
+            content: '<p><img src="//pic.lvmama.com/img/common/loading.gif" alt="loading" /></p>' + content,
+            initialize: callback
         });
     };
     
