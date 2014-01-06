@@ -256,7 +256,7 @@ $(function(){
 </script>
     <h3>1.4、中间状态 loading 效果 <small>pandora.loading()</small></h3>
     <div class="docs-example">
-        <h4>页面比较大时，交互或跳转操作时间较长，制作此 loading 效果，作为中间状态反馈给用户进行中的效果。</h4>
+        <h4>页面比较大时，交互操作或跳转响应时间较长，制作此 loading 效果，作为中间状态反馈给用户进行中的效果。</h4>
         <p>参数说明 <code>pandora.alert(content, callback)</code> 示例如下：</p>
         <ul>
             <li>content 为提醒内容</li>
@@ -264,22 +264,37 @@ $(function(){
         </ul>
         
         <h5>示例141</h5>
-        <p><button class="pbtn" id="demo141">交互时间长，有中间loading状态</button></p>
+        <p>// 当且仅当有明确要求iframe中操作不遮盖父级页面时使用方法一，否则使用方法二 top.pandora.loading()</p>
+        <p><button class="pbtn" id="demo1411" title="遮罩当前页，如在iframe中时，不会遮盖iframe的父页面">loading状态，仅仅遮盖当前页面</button></p>
         
-        <h5>示例142</h5>
+        <p><button class="pbtn" id="demo1412" title="无论有无iframe页面，都会遮盖完整浏览器窗口">loading状态，遮盖完整浏览器窗口</button></p>
+        <h5>在iframe中使用</h5>
         <iframe src="dialog-test.html" width="500" height="200"></iframe>
         
     </div>
 <pre class="prettyprint linenums">
-// 示例141
-top.pandora.loading("正在保存中...");
+// 无特殊要求，请使用方法二 top.pandora.loading();
+// 无论有无iframe页面，使用top调用都是完整遮盖整个浏览器窗口，不使用则遮住当前窗口。
 
-// 正在调试中...
-// 示例142 iframe子页面调用遮罩，如果存在父页面则遮罩父页面
+// 示例141
+// 方法一 遮罩当前页，在iframe中时，不能遮盖iframe的父页面
+pandora.loading("正在保存中...",function(){
+    var that = this;
+    
+    //自定义操作方法，如：
+    $(".overlay").click(function(){
+        that.close();   // 关闭弹窗
+    })
+});
+
+// 方法二 无论有无iframe页面，都会遮盖完整浏览器窗口
 top.pandora.loading("正在保存中...",function(){
     var that = this;
     
-    //自定义方法中调用 that.close();
+    // 自定义方法中调用 that.close(); 例如：
+    $(top.document).find(".overlay").click(function(){
+        that.close();   // 关闭弹窗
+    })
     
 });
 </pre>
@@ -287,12 +302,25 @@ top.pandora.loading("正在保存中...",function(){
 // 示例：loading 状态
 $(function(){
     // 示例141
-    $("#demo141").live("click",function () {
-        top.pandora.loading("正在保存中...",function(){
+    // 方法一
+    $("#demo1411").click(function () {
+        pandora.loading("正在保存中...",function(){
             var that = this;
             
             //自定义操作方法
             $(".overlay").click(function(){
+                that.close();
+            })
+        });
+    });
+    
+    // 方法二
+    $("#demo1412").click(function () {
+        top.pandora.loading("正在保存中...",function(){
+            var that = this;
+            
+            //自定义操作方法
+            $(top.document).find(".overlay").click(function(){
                 that.close();
             })
         });

@@ -19,38 +19,57 @@ body{padding:10px;}
 </style>
 </head>
 <body>
-    <p><button class="pbtn" id="demo142">如果在iframe页面中，调用loading状态</button></p>
+    <p><button class="pbtn" id="demo1411" title="遮罩当前页，如在iframe中时，不会遮盖iframe的父页面">loading状态，仅仅遮盖当前页面</button></p>
+    <p><button class="pbtn" id="demo1412" title="无论有无iframe页面，都会遮盖完整浏览器窗口">loading状态，遮盖完整浏览器窗口</button></p>
 <pre>
-// 示例142 iframe子页面调用遮罩住父页面
-$("#demo142").click(function(){
-    top.pandora.loading("正在保存中...",function(){
-        var that = this;
-        
-        //自定义操作方法
-        $(top.document).find(".overlay").click(function(){
-            
-            //关闭弹窗
-            that.close();
-        })
-        
-    });
-})
+// 示例141
+// 方法一 遮罩当前页，在iframe中时，不能遮盖iframe的父页面
+pandora.loading("正在保存中...",function(){
+    var that = this;
+    
+    //自定义操作方法，如：
+    $(".overlay").click(function(){
+        that.close();   // 关闭弹窗
+    })
+});
+
+// 方法二 无论有无iframe页面，都会遮盖完整浏览器窗口
+top.pandora.loading("正在保存中...",function(){
+    var that = this;
+    
+    // 自定义方法中调用 that.close(); 例如：
+    $(top.document).find(".overlay").click(function(){
+        that.close();   // 关闭弹窗
+    })
+    
+});
 </pre>
 <script>
 $(function(){
-    $("#demo142").click(function(){
+    // 示例141
+    // 方法一
+    $("#demo1411").click(function () {
+        pandora.loading("正在保存中...",function(){
+            var that = this;
+            
+            //自定义操作方法
+            $(".overlay").click(function(){
+                that.close();
+            })
+        });
+    });
+    
+    // 方法二
+    $("#demo1412").click(function () {
         top.pandora.loading("正在保存中...",function(){
             var that = this;
             
             //自定义操作方法
             $(top.document).find(".overlay").click(function(){
-                
-                //关闭弹窗
                 that.close();
             })
-            
         });
-    })
+    });
 })
 </script>
 </body>
