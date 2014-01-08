@@ -270,6 +270,7 @@ span.tiptext {
 .tipbox .tip-title {
     margin: 0 0 5px;
     font-size: 14px;
+    line-height: 1;
     font-weight: bold;
 }
 .tipbox .tip-color-title {
@@ -406,7 +407,7 @@ span.tiptext {
   * @explain   : 点钟方向标记，用于组合显示箭头位置
   * @type      : 基类 .tip-arrow(可独立引用箭头方位)
   * @expand    : 扩展 .tip-arrow-1 ～ .tip-arrow-12
-  * @other     ：英文值方位与点钟的对应，仅用于单行提醒
+  * @other     ： 英文值方位与点钟的对应，仅用于单行提醒
     top    -- 11
     bottom --  7
     right  --  3
