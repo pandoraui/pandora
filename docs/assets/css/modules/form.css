@@ -13,9 +13,7 @@ input {
     /* IE6/7 内间距宽度一致 
     *overflow: visible; 
 }
-
 */
- 
  
 .req {
     display: inline-block;
@@ -26,8 +24,10 @@ input {
 }
 
 /* 表单控件 */
-
-label,
+label {
+    font-size: 12px;
+    font-weight: normal
+}
 input,
 button,
 select,

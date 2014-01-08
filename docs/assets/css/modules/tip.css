@@ -16,7 +16,10 @@
 ***/
 
 /* 一些公共设置 */
-
+/* 字体会影响到垂直居中的问题，当前实现针对Tahoma字体 */
+.tip-line {
+    font-family: Tahoma,Arial,sans-serif;
+}
 
 /* ui-close 关闭 */ 
 .ui-close,
