@@ -59,29 +59,48 @@
 
         <h3>不推广使用以上结构与实现，新版实现探究如下...</h3>
         
-        <p class="pt">基础版</p>
+        <p class="pt">简单模式 <small>只有页码元素</small></p>
         
         <div class="paging">
-            <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray btn-small">确定</button></span>
             <div class="pagebox">
-                <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <span class="prevpage"><i class="larr"></i></span><span class="pagesel">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i></a>
             </div>
         </div>
         
-        <p class="pt">简单模式 <small>只有页码元素</small></p>
-        <div class="paging graystyle">
+        <div class="paging">
             <div class="pagebox">
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i></a><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i></a>
             </div>
         </div>
         
-        <p class="pt">灰色主题</p>
+        <div class="paging">
+            <div class="pagebox">
+                <span class="prevpage"><i class="larr"></i>上一页</span><span class="pagesel">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+            </div>
+        </div>
+        
+        <div class="paging">
+            <div class="pagebox">
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+            </div>
+        </div>
+        
+        
+        <p class="pt">默认 <small>灰色主题</small></p>
         <div class="paging graystyle">
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray btn-small">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+            </div>
+        </div>
+        
+        <p class="pt">蓝色主题</p>
+        <div class="paging bluestyle">
+            <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray btn-small">确定</button></span>
+            <div class="pagebox">
+                <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         
@@ -90,7 +109,7 @@
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray btn-small">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         
@@ -99,14 +118,19 @@
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray btn-small">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         
         <p class="pt">大尺寸 <small>一般只用到页码</small></p>
+        <div class="paging paging-big">
+            <div class="pagebox">
+                <span class="prevpage"><i class="larr"></i></span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i></a>
+            </div>
+        </div>
         <div class="paging paging-big graystyle">
             <div class="pagebox">
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         
@@ -114,21 +138,28 @@
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+            </div>
+        </div>
+        <div class="paging paging-big bluestyle">
+            <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray">确定</button></span>
+            <div class="pagebox">
+                <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         <div class="paging paging-big orangestyle">
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
         <div class="paging paging-big pinkstyle">
             <span class="gopage">到第 <input type="text" class="input-text"> 页 <button type="button" class="btn btn-gray">确定</button></span>
             <div class="pagebox">
                 <span class="pageinfo">共 <b class="num">460</b> 条记录，每页显示 10 条记录</span>
-                <span class="prevpage"><i class="larr"></i>上一页</span><a href="#">1</a><span class="pagesel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="pagemore">...</span><a href="#">20</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
+                <a class="prevpage" href="#"><i class="larr"></i>上一页</a><a href="#">1</a><span class="pagemore">...</span><a href="#">16</a><a href="#">17</a><span class="pagesel">18</span><a href="#">19</a><a href="#">20</a><span class="pagemore">...</span><a href="#">50</a><a class="nextpage" href="#"><i class="rarr"></i>下一页</a>
             </div>
         </div>
     </div>

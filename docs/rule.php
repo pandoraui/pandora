@@ -37,12 +37,36 @@
         <section id="document">
         <h1>文档结构</h1>
 <pre class="prettyprint linenums">
-
+thepro/
+├── static/
+│   ├── css/
+│   │   ├── base/           基础样式
+│   │   ├── modules/        模块样式
+│   │   ├── base.css&amp;modules.css    集成样式
+│   │   └── proname.css     对应项目css
+│   │
+│   ├── js/
+│   │   ├── plugin/         //插件
+│   │   ├── init.js         //js加载器
+│   │   ├── pc.js           //工具公共类
+│   │   └── proname.js      //对应项目js
+│   │
+│   └── img/
+│       ├── combo.png       //公共集成图片
+│       ├── combo8.png
+│       └── proname/        //对应项目图片
+dev
+├── proname.html
+│   ├── temp/               //临时文件夹
+│   │
+│   └── README.md
+│
+└── README.md
 </pre>
 
         <h2>目录、文档结构</h2>
         <ol>
-            <li>文件和目录名只能包含 [a-z\d-]，并以英文字母开头</li>
+            <li>文件和目录名只能包含 (小写字母、数字、以及连接符)[a-z\d-]，并以英文字母开头</li>
             <li>首选合适的英文单词 </li>
             <li>data api 命名为小写并用连字符，如 data-trigger-type</li>
             <li>事件名为驼峰，如 .trigger('itemSelected')</li>
