@@ -28,36 +28,9 @@
     <div class="docs-example">
 
         <h3>分页组件</h3>
-        <p>此分页组件在驴妈妈已开发页码代码基础上优化，实现了两种需求的样式，默认为玫红色</p>
+        <p>此分页组件在驴妈妈已开发页码代码基础上优化，实现了相应需求的样式，现默认为灰色主题</p>
 
-
-        <!-- 分页组件 -->
-        <div class="pages rosestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
-
-        <div class="pages orangestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
-
-        <div class="pages orangestyle"> <a href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="more">...</span><a href="#">20</a><a href="#">下一页</a> </div>
-
-        <h3>升级版</h3>
-        <p>此设置默认为橙色，且页码右对齐(不是右浮动，即可设置左对齐/居中)</p>
-        <div class="pages orangestyle">
-            <div class="Pages"> <span class="PrevPage">上一页</span><span class="PageSel">1</span><span class="NextPage">下一页</span> </div>
-        </div>
-
-        <div class="pages orangestyle">
-            <div class="Pages"> <a class="PrevPage" href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="PageMore">...</span><a href="#">20</a><a class="NextPage" href="#">下一页</a> </div>
-        </div>
-
-
-        <div class="pages rosestyle">
-            <div class="Pages"> <span class="PrevPage">上一页</span><span class="PageSel">1</span><span class="NextPage">下一页</span> </div>
-        </div>
-
-        <div class="pages rosestyle">
-            <div class="Pages"> <a class="PrevPage" href="#">上一页</a><a href="#">1</a><span class="PageSel">2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a><span class="PageMore">...</span><a href="#">20</a><a class="NextPage" href="#">下一页</a> </div>
-        </div>
-
-        <h3>不推广使用以上结构与实现，新版实现探究如下...</h3>
+        <h3>不推广老版结构与实现，新版实现如下...</h3>
         
         <p class="pt">简单模式 <small>只有页码元素</small></p>
         
@@ -164,25 +137,26 @@
         </div>
     </div>
 <pre class="prettyprint linenums">
-&lt;div class="pages rosestyle"&gt;
-    &lt;div class="Pages"&gt;
-        &lt;span class="PrevPage"&gt;上一页&lt;/span&gt;
-        &lt;span class="PageSel"&gt;1&lt;/span&gt;
-        &lt;span class="NextPage"&gt;下一页&lt;/span&gt;
+// 页码源码
+// 当前支持主题 默认灰色、bluestyle、orangestyle、pinkstyle 附加到paging的class上即可
+
+&lt;div class="paging"&gt;
+    &lt;div class="pagebox"&gt;
+        &lt;span class="prevpage"&gt;&lt;i class="larr"&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class="pagesel"&gt;1&lt;/span&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;span class="pagemore"&gt;...&lt;/span&gt;&lt;a href="#"&gt;20&lt;/a&gt;&lt;a class="nextpage" href="#"&gt;&lt;i class="rarr"&gt;&lt;/i&gt;&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="pages orangestyle"&gt;
-    &lt;div class="Pages"&gt;
-        &lt;a class="PrevPage" href="#"&gt;上一页&lt;/a&gt;
-        &lt;a href="#"&gt;1&lt;/agt;&lt;span class="PageSel"&gt;2&lt;/span&gt;
-        &lt;a href="#"&gt;3&lt;/a&gt;
-        &lt;a href="#"&gt;4&lt;/a&gt;
-        &lt;a href="#"&gt;5&lt;/a&gt;
-        &lt;a href="#"&gt;6&lt;/a&gt;
-        &lt;span class="PageMore"&gt;...&lt;/span&gt;
-        &lt;a href="#"&gt;20&lt;/a&gt;
-        &lt;a class="NextPage" href="#"&gt;下一页&lt;/a&gt;
+&lt;div class="paging"&gt;
+    &lt;div class="pagebox"&gt;
+        &lt;a class="prevpage" href="#"&gt;&lt;i class="larr"&gt;&lt;/i&gt;上一页&lt;/a&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;span class="pagemore"&gt;...&lt;/span&gt;&lt;a href="#"&gt;16&lt;/a&gt;&lt;a href="#"&gt;17&lt;/a&gt;&lt;span class="pagesel"&gt;18&lt;/span&gt;&lt;a href="#"&gt;19&lt;/a&gt;&lt;a href="#"&gt;20&lt;/a&gt;&lt;span class="pagemore"&gt;...&lt;/span&gt;&lt;a href="#"&gt;50&lt;/a&gt;&lt;a class="nextpage" href="#"&gt;&lt;i class="rarr"&gt;&lt;/i&gt;下一页&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="paging orangestyle"&gt;
+    &lt;span class="gopage"&gt;到第 &lt;input type="text" class="input-text"&gt; 页 &lt;button type="button" class="btn btn-gray btn-small"&gt;确定&lt;/button&gt;&lt;/span&gt;
+    &lt;div class="pagebox"&gt;
+        &lt;span class="pageinfo"&gt;共 &lt;b class="num"&gt;460&lt;/b&gt; 条记录，每页显示 10 条记录&lt;/span&gt;
+        &lt;a class="prevpage" href="#"&gt;&lt;i class="larr"&gt;&lt;/i&gt;上一页&lt;/a&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;span class="pagemore"&gt;...&lt;/span&gt;&lt;a href="#"&gt;16&lt;/a&gt;&lt;a href="#"&gt;17&lt;/a&gt;&lt;span class="pagesel"&gt;18&lt;/span&gt;&lt;a href="#"&gt;19&lt;/a&gt;&lt;a href="#"&gt;20&lt;/a&gt;&lt;span class="pagemore"&gt;...&lt;/span&gt;&lt;a href="#"&gt;50&lt;/a&gt;&lt;a class="nextpage" href="#"&gt;&lt;i class="rarr"&gt;&lt;/i&gt;下一页&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
