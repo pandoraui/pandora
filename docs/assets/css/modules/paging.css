@@ -121,7 +121,6 @@
     margin-right: 4px;
     _border-right-style: solid;
     border-left-width: 0;
-    border-right-color: #538ed7;
     border-right-color: #999;
 }
 .pagebox .nextpage .rarr {
@@ -129,17 +128,9 @@
     margin-left: 4px;
     _border-left-style: solid;
     border-right-width: 0;
-    border-left-color: #538ed7;
     border-left-color: #999;
 }
-.pagebox .nextpage .rarr {
-    float: right;
-    margin-left: 4px;
-    _border-left-style: solid;
-    border-right-width: 0;
-    border-left-color: #538ed7;
-    border-left-color: #999;
-}
+
 .pagebox a.prevpage:hover .larr {
     border-right-color: #666;
 }
@@ -180,7 +171,7 @@
     color: #333;
 }
 .bluestyle a {
-    color: #538ED7;
+    color: #666;
 }
 .bluestyle a:hover { 
     border-color: #7FB4F5;
