@@ -86,6 +86,10 @@
 .pagebox .prevpage,
 .pagebox .nextpage {
     position: relative;
+    
+    /*修复IE7-下内部右浮动的bug*/
+    *zoom:1;
+    overflow: hidden;
 }
 .pagebox .prevpage {
     text-align: right;
@@ -104,6 +108,7 @@
 
 .pagebox .prevpage .larr,
 .pagebox .nextpage .rarr {
+    display: inline-block;
     position: relative;
     top: 7px;
     width: 0;
@@ -129,6 +134,16 @@
     _border-left-style: solid;
     border-right-width: 0;
     border-left-color: #999;
+}
+/* 修复IE7- 下内部元素float:right引起的bug */
+.pagebox .nextpage {
+    *padding:0 17px 0 10px;
+}
+.pagebox .nextpage .rarr {
+    *margin-left: 0;
+    *float: none;
+    *position: absolute;
+    *right: 10px;
 }
 
 .pagebox a.prevpage:hover .larr {
