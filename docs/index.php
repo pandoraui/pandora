@@ -83,7 +83,7 @@
                 <a class="doing" href="modules/tables.html">table <small>表格</small></a>
                 <a class="done" href="modules/nav.html">nav <small>导航</small></a>
                 <a class="doing" href="modules/topbar.html">topbar <small>顶部导航</small></a>
-                <a class="doing" href="module.php#breadcrumb">breadcrumb <small>面包屑</small></a>
+                <a class="doing" href="modules/crumbs.html">breadcrumb <small>面包屑</small></a>
                 <a class="done" href="modules/paging.html">paging <small>分页</small></a>
                 <a class="done" href="modules/auto.html">autoComplete <small>自动提醒</small></a>
                 
@@ -92,7 +92,7 @@
                 <a class="todo" href="###">media <small>媒体对象</small></a>
                 
                 <a class="done" href="modules/buttons.html">btn <small>按钮/按钮组</small></a>
-                <a class="doing" href="modules/button.html">pbtn <small>新按钮</small></a>
+                <a class="doing" href="solutions/button-dev.html">pbtn <small>新按钮</small></a>
                 <a class="doing" href="modules/forms.html">form <small>表单</small></a>
                 <a class="todo" href="###">search <small>搜索框</small></a>
                 

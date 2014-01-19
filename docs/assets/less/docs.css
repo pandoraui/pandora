@@ -2,7 +2,7 @@
 /*!
  * Pandora's documentation styles
  * Special styles for presenting Pandora's documentation and examples
- */
+**/
 
 body {
   font: 14px/1.5 Tahoma,Arial,\5b8b\4f53,sans-serif; 
@@ -13,7 +13,7 @@ body {
 }
 
 /* 三种字体的对比
- * 宋体表示英文实在太差,既锐利有不好看
+ * 宋体表示英文实在太差,既锐利又不好看
  * Tahoma 表示英文字母间还是太紧凑以至于链接起来了 
    如: cillum 中 ci TI 等字母都连在一起,可读性变差,
    但经过测试奇数字号表现良好,以下可用于测试
@@ -22,13 +22,13 @@ body {
  * 结论,可针对实现英文区域使用 Arial字体样式.en或使用 Tahoma奇数字号
    对 tag标签使用 Arial字体,垂直居中表现很好
    
-   突然发现 Verdana不错,缺点是现实英文占用更多空间,字母稍大间隙稍大
+   突然发现 Verdana不错,缺点是实现英文占用更多空间,字母稍大间隙稍大
  */
 body{font-family: \5b8b\4f53,sans-serif;}
 body{font-family: Arial,sans-serif;}
 body{font-family: Verdana,Tahoma,Arial,sans-serif;}
 body{font-family: Tahoma,Arial,\5b8b\4f53,sans-serif;}
-body .en{font-family:Arial,sans-serif;}
+.en{font-family:Arial,sans-serif;}
 
 a { 
     color: #245DC1;
@@ -90,7 +90,7 @@ a.dot_line{margin:0 3px;height:auto;line-height:1.5;display:inline-block;text-in
     background: -webkit-linear-gradient(top,#FAFAFA,#F5F5F5);
     background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FAFAFA),color-stop(1,#F5F5F5));
     background: linear-gradient(top,#FAFAFA,#F5F5F5);
-    border-bottom: 1px solid #EEE;
+    /*border-bottom: 1px solid #EEE;*/
     color: #444;
     min-height: 44px;
     padding: 14px 15px 13px;
@@ -181,8 +181,9 @@ a.dot_line{margin:0 3px;height:auto;line-height:1.5;display:inline-block;text-in
     margin:0;
 }
 .main-nav li {
-  display: inline;
-  float:left;
+    display: inline;
+    float:left;
+    margin-right: 3px;
 }
 .main-nav a{
     /* 仅仅使用padding在IE6/7下效果不好,结合height与line-height控制更为精准 */
@@ -197,9 +198,58 @@ a.dot_line{margin:0 3px;height:auto;line-height:1.5;display:inline-block;text-in
 }
 .main-nav a { 
     color:#e1e5f2;
+    position:relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .main-nav a:hover { 
     color:#fff;
+    -webkit-transition: all .1s ease-in linear;
+    -moz-transition: all .1s ease-in linear;
+    -o-transition: all .1s ease-in linear;
+    -ms-transition: all .1s ease-in linear;
+    transition: all .1s ease-in linear;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+    transition: .1s ease-in;
+    padding-top: 2px;
+    background-color: #145697;
+    text-decoration: none;
+}
+.main-nav li:hover a:before { 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    content: '';
+    -moz-transform: scale(.9999);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-width: 3px 0 0 3px;
+    z-index: 2;
+    background-color: #F5F5F5;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #4E78C2;
+}
+.main-nav li:hover a:after { 
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    content: '';
+    -moz-transform: scale(.9999);
+    top: 0;
+    right: 0;
+    border-width: 0 0 3px 3px;
+    z-index: 2;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #4E78C2;
 }
 .main-nav .active a { 
     color:#fff;
