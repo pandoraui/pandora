@@ -62,11 +62,7 @@
             
             <h3>CSS 组件</h3>
             <div class="modules">
-                <a class="todo" href="###">layout <small>布局</small></a>
-                <a class="doing" href="module.php#box">box <small>区块盒子</small></a>
-                <a class="todo" href="module.php#list">list <small>列表</small></a>
-                <a class="todo" href="module.php#imglist">imglist <small>图片列表</small></a>
-                <a class="todo" href="module.php#imgtext">imgtext <small>图文混排</small></a>
+                <a class="doing" href="modules/layout.html" title="包含区块盒子、列表、图片排列、图文混排">layout <small>组合、布局</small></a></a>
                 
                 <a class="done" href="modules/tags.html">label/tags <small>标签标记</small></a>
                 <a class="done" href="modules/bank.html">bank <small>银行/支付 ICON</small></a>
@@ -91,8 +87,8 @@
                 <a class="todo" href="###">dropdown <small>下拉菜单</small></a>
                 <a class="todo" href="###">media <small>媒体对象</small></a>
                 
-                <a class="done" href="modules/buttons.html">btn <small>按钮/按钮组</small></a>
-                <a class="doing" href="solutions/button-dev.html">pbtn <small>新按钮</small></a>
+                <a class="done" href="solutions/button-dev.html">btn <small>按钮/按钮组</small></a>
+                <a class="doing hide" href="modules/button.html" title="暂只用在下单页面">pbtn <small>新按钮</small></a>
                 <a class="doing" href="modules/forms.html">form <small>表单</small></a>
                 <a class="todo" href="###">search <small>搜索框</small></a>
                 
@@ -113,7 +109,7 @@
                 <a class="todo hide" href="###">imgzoom <small>缩放及截图</small></a>
                 
                 <a class="todo hide" href="###">appstore <small>应用列表</small></a>
-                <a class="done" href="modules/weather.html">weather <small>天气图标</small></a>
+                <a class="done hide" href="modules/weather.html" title="示例展示可以灵活实现达到最佳展现效果">weather <small>天气图标</small></a>
                 
                 
                 <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>
@@ -270,7 +266,7 @@ buttons.css |
             <p>根据神话，潘多拉出于好奇打开一个「魔盒」（应作坛子，希腊文原作πίθος，πίθοι，英语：pandora's box）释放出人世间的所有邪恶——贪婪、虚无、诽谤、嫉妒、痛苦等等，当她再盖上盒子时，<b>只剩下希望在里面</b>。Pandora 放出了邪恶，却把最大的希望留在了盒子里，如今她为我们所承受的困苦要做一个解决方案，把希望带给大家，并取名 Pandora 项目。</p>
             
             </p>Pandora 第一站——<b>前端解决方案</b>，接下来就让我们看看 <strong>Pandora</strong> 的表现吧！</p>
-            
+            <p class="white">悄悄告诉你，其实我喜欢一劳永逸，所以呢，Pandora多了一个目标，那就是只需开发一次，重复的都是没必要的。</p>
         </section>
         
         <?php include("common/comment.html");?>
