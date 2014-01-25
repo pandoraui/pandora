@@ -71,12 +71,66 @@ body .none {
 }
 
 /* 颜色取值 */
-.red       { color: red;    }
-.orange { color: orange; }
-.pink     { color: #e38;   }
-.gray     { color: gray;   }
-.gray3   { color: #333;   }
-.gray6   { color: #666;   }
+.rose   { color: #ff0080;}
+.white  { color: white;  }
+.red    { color: red;    }
+.green  { color: green;  }
+.blue   { color: blue;   }
+.orange { color: #f60;   }
+.gray   { color: gray;   }
+.pink   { color: #e38;   }
+.cc1    { color: #e38;   }
+.cc2    { color: #f60;   }
+.gray3  { color: #333;   }
+.gray6  { color: #666;   }
+.gray9  { color: #999;   }
+.lightbox{ background:#f8f8f8; }
+
+.muted {
+  color: #999999;
+}
+
+a.muted:hover,
+a.muted:focus {
+  color: #808080;
+}
+
+.text-warning {
+  color: #c09853;
+}
+
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #a47e3c;
+}
+
+.text-error {
+  color: #b94a48;
+}
+
+a.text-error:hover,
+a.text-error:focus {
+  color: #953b39;
+}
+
+.text-info {
+  color: #3a87ad;
+}
+
+a.text-info:hover,
+a.text-info:focus {
+  color: #2d6987;
+}
+
+.text-success {
+  color: #468847;
+}
+
+a.text-success:hover,
+a.text-success:focus {
+  color: #356635;
+}
+
 
 /* 文本大小、行高 */
 .f12 { font-size: 12px; }
@@ -365,61 +419,6 @@ h6 {
 }
 
 
-.rose { color: #ff0080;}
-.white { color: white;}
-.red { color: red;}
-.green { color: green;}
-.blue { color: blue;}
-.orange { color: orange;}
-.gray { color: gray;}
-.cc1{ color: #e38;}
-.cc2{ color: #f60;}
-.lightbox{ background:#f8f8f8; }
-
-.muted {
-  color: #999999;
-}
-
-a.muted:hover,
-a.muted:focus {
-  color: #808080;
-}
-
-.text-warning {
-  color: #c09853;
-}
-
-a.text-warning:hover,
-a.text-warning:focus {
-  color: #a47e3c;
-}
-
-.text-error {
-  color: #b94a48;
-}
-
-a.text-error:hover,
-a.text-error:focus {
-  color: #953b39;
-}
-
-.text-info {
-  color: #3a87ad;
-}
-
-a.text-info:hover,
-a.text-info:focus {
-  color: #2d6987;
-}
-
-.text-success {
-  color: #468847;
-}
-
-a.text-success:hover,
-a.text-success:focus {
-  color: #356635;
-}
 
 /* 等高布局 */
 .equalheight-box {

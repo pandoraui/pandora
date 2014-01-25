@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
 <style>
 .relative{position:relative;border-bottom:1px dashed #888;cursor:default;color:#245DC1;}
+.poptip{margin-right:20px;}
 .poptip-mini{margin-right:10px;}
 .relative .poptip-mini{position:absolute;top:-30px;left:20px;white-space:nowrap;}
 .tip-dense{ margin: -10px 0;}
@@ -25,7 +26,7 @@
 </head>
 <body>
 <div class="topalert">
-    <div class="wrap">您当前的浏览器版本过低，可能导致网站部分功能无法正常使用，建议尽快升级您的浏览器　<a href="browser.html">查看详情</a> <a href="upgrade.html">查看详情</a></div>
+    <div class="wrap">您当前的浏览器版本过低，可能导致网站部分功能无法正常使用，建议尽快升级您的浏览器　<a href="browser.html"></a> <a id="upgrade" href="upgrade.html">马上看看怎么升级？</a></div>
 </div>
 <div class="hide">到 <a href="#" title='Internet Explorer 俗称“IE”'>IE8+</a> <a href="#" title='Chrome又名“谷歌浏览器”'>Chrome</a> </div>
 <div class="wrap">
@@ -41,7 +42,7 @@
     <h2>方案一 <small>精致版的图标集方案（推荐使用）</small></h2>
     <p><strong>依赖</strong>——方案一使用<b>ICON图标集</b>实现 tip 信息提醒框，使用前请确保页面已经引用了如下文件：</p>
     <ul>
-        <li><a href="http://pic.lvmama.com/styles/v4/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/tip.css</a> tip之ICON图标集样式</li>
+        <li><a href="http://pic.lvmama.com/styles/v5/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tip.css</a> tip之ICON图标集样式</li>
     </ul>
     <h3>tip-icon 提示信息状态标识ICON</h3>
     <div class="docs-example">
@@ -105,21 +106,66 @@
 &lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-bottom"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
 &lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-left"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
 &lt;span class="poptip-mini poptip-mini-warning"&gt;&lt;div class="tip-sharp tip-sharp-right"&gt;&lt;/div&gt;立减10元&lt;/span&gt;
-</pre>    
+</pre>
     
     
     <h3>poptip 浮动提示层 <small>功能类似tooltip（暂延后制作）</small></h3>
     <p>简单的提示层展示</p>
     <div class="docs-example">
         <h4>类似tooltip的poptip</h4>
-        <p>poptip中使用点钟方向实现箭头指示的定位，默认10点钟方向。</p>
-        <div class="poptip "><div class="tip-arrow tip-sharp-7"></div></div>
-        
-        
-        
+        <p>poptip中使用点钟方向实现箭头指示的定位，默认11点钟方向。</p>
+        <div class="poptip tip-light">
+            <div class="tip-arrow tip-arrow-11">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-content">
+                <h5 class="tip-title">写体验点评返奖金</h5>
+                <p>预订此产品，游玩后发表体验点评，内容通过审核，即可获得<em class="orange">20元</em>点评奖金返现。</p>
+            </div>
+        </div>
+        <div class="poptip tip-light">
+            <div class="tip-arrow tip-arrow-10">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-content">
+                <h5 class="tip-title">写体验点评返奖金</h5>
+                <p>预订此产品，游玩后发表体验点评，内容通过审核，即可获得<em class="orange">20元</em>点评奖金返现。</p>
+            </div>
+        </div>
+        <hr>
+        <div class="poptip tip-light">
+            <div class="tip-arrow tip-arrow-11">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-content">
+                <p>1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。</p>
+            </div>
+        </div>
+        <div class="poptip tip-light">
+            <div class="tip-arrow tip-arrow-1">
+                <em>◆</em>
+                <i>◆</i>
+            </div>
+            <div class="tip-content">
+                <p>1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。</p>
+            </div>
+        </div>
+        <p><strong>注意：</strong>此功能需要结合js对标签实现定位提醒。</p>
     </div>
 <pre class="prettyprint linenums">
-
+&lt;div class="poptip tip-light"&gt;
+    &lt;div class="tip-arrow tip-arrow-11"&gt;
+        &lt;em&gt;◆&lt;/em&gt;
+        &lt;i&gt;◆&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="tip-content"&gt;
+        &lt;h5 class="tip-title"&gt;提醒标题&lt;/h5&gt;
+        &lt;p&gt;提醒内容&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </pre>
     
     
@@ -129,6 +175,7 @@
         <p><strong>注意：</strong>图标等与文字混排时，导致IE6下line-height失效</p>
         <div class="tiptext"><span class="tip-icon tip-icon-default"></span>缺省消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-default">默认提醒：自行编辑，非系统消息</div>
+        <div class="tiptext tip-light">白色消息框：自行编辑，非系统消息</div>
         <div class="tiptext tip-info">消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-info"><span class="tip-icon tip-icon-info"></span>消息提醒：自行编辑，非系统消息</div>
         <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告提醒：自行编辑，非系统消息</div>
@@ -711,7 +758,7 @@
 &lt;/div&gt;
 </pre>
     
-    <h2 id="plan2">方案二 <small>文字图标集（推荐使用）</small></h2>
+    <h2 id="plan2">方案二 <small>文字图标集（暂不推荐使用）</small></h2>
     <div class="tiptext tip-warning"><span class="tip-icon tip-icon-warning"></span>警告：暂时不使用以下文字图标集方案</div>
     <p><strong>依赖</strong>——方案二使用<b>字体图标集</b>实现 tip 信息提醒框，使用前请确保页面已经引用了如下文件：</p>
     <ul>
@@ -720,6 +767,7 @@
     </ul>
     
     <p>带各类图标的提示文案，可带有提示箭头。以下摘自 AliceUI：</p>
+    <p><strong>提醒：</strong>暂不推荐使用方案二的原因最主要的是因为自定义字体集的加载起效在低版本浏览器中特别缓慢，而且会引起位置的闪动现象。</p>
     
     <div class="docs-example">
         <h3>这个是 poptip <small>提示层</small></h3>

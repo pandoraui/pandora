@@ -240,6 +240,7 @@ console.log(html);
         <section id="animate">
             <h1>CSS3 Animate</h1>
             <p>随着css3的大量普及使用，更多的动画效果展示在页面上，渐进式地提升用户体验。</p>
+            <p>此项目在Dan Eden的fork分支webcoding中<a href="http://webcoding.github.io/animate.css/less.html">仍在探究</a>，主要问题是统一的时间效果设置并不是最佳的，针对不同的应用场景使用最佳参数设置才能体现最好，之后会集成到pandora项目中。</p>
         </section>
         
         
