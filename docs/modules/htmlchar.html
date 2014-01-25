@@ -75,7 +75,7 @@ function showKeyCode(){
         return false;
     }
     var code = document.characterCode.character.value.charCodeAt(0);
-    var msg = "字符  \""+character+"\" 对应的ASCII码值为 &amp#"+code;
+    var msg = "字符  \""+character+"\" 对应的ASCII码值为 <i class='red'>&amp#"+code +"</i>";
     //alert(msg);
     outkeycode.innerHTML = msg;
     return false;

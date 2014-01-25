@@ -62,7 +62,7 @@
             
             <h3>CSS 组件</h3>
             <div class="modules">
-                <a class="doing" href="modules/layout.html" title="包含区块盒子、列表、图片排列、图文混排">layout <small>组合、布局</small></a></a>
+                <a class="doing" href="modules/tpl.html" title="包含区块盒子、列表、图片排列、图文混排">TPL <small>组件模板</small></a></a>
                 
                 <a class="done" href="modules/tags.html">label/tags <small>标签标记</small></a>
                 <a class="done" href="modules/bank.html">bank <small>银行/支付 ICON</small></a>
@@ -79,7 +79,7 @@
                 <a class="doing" href="modules/tables.html">table <small>表格</small></a>
                 <a class="done" href="modules/nav.html">nav <small>导航</small></a>
                 <a class="doing" href="modules/topbar.html">topbar <small>顶部导航</small></a>
-                <a class="doing" href="modules/crumbs.html">breadcrumb <small>面包屑</small></a>
+                <a class="done" href="modules/crumbs.html">crumbs <small>面包屑</small></a>
                 <a class="done" href="modules/paging.html">paging <small>分页</small></a>
                 <a class="done" href="modules/auto.html">autoComplete <small>自动提醒</small></a>
                 
