@@ -1,7 +1,7 @@
-﻿(function (global, $, undefined) {
+﻿(function (global, $,pandora, undefined) {
     "use strict" // 严格模式
 
-    if (global.pandora && global.pandora.dialog) {
+    if (pandora.dialog) {
         return;
     }
 
@@ -849,8 +849,6 @@
                  + '    </div>'
                  + '</div>';
 
-    var pandora = {};
-
     // 扩展一些常用的静态方法
     $.alert = pandora.alert = function (content, callback) {
         return Factory({
@@ -898,4 +896,4 @@
     // 调用方式采用 $("").dialog() 和 pandora.dialog() 两种方式
     $.dialog = $.fn.dialog = pandora.dialog = Factory;
     global.pandora = pandora;
-}(this, jQuery));
+}(this, jQuery, this.pandora || {}));
