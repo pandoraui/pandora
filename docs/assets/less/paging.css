@@ -16,6 +16,11 @@
 
 ***/
 .paging {
+    /* 使用此字体设置(宋体、arial字体)，垂直居中效果比较好 */
+    font-family: \5b8b\4f53,Arial,sans-serif;
+}
+
+.paging {
     clear: both;
     margin: 10px 0;
     height: 26px;
@@ -55,33 +60,44 @@
 .pagebox span {
     display: inline-block;
     margin-left: 5px;
-    padding: 0 9px;
+    padding: 0 10px;
     height: 24px;
     line-height: 24px;
     border: 1px solid #ddd;
     font-size: 12px;
     vertical-align: top;
+    background: #fff;
+    color: #666;
+}
+.pagebox span.pagesel{
+    border-color: transparent;
 }
 .pagebox a:hover {
     text-decoration: none;
+    border-color: #aaa;
+    background: #e3e3e3;
+    color: #333;
 }
 .pagebox .pageinfo,
 .pagebox .pagemore {
     border: none;
+    padding: 0 6px;
 }
 .pagebox .prevpage,
-.pagebox .nextpage { 
+.pagebox .nextpage {
     position: relative;
-    width: 55px; 
-    padding: 0;
+    
+    /*修复IE7-下内部右浮动的bug*/
+    *zoom:1;
+    overflow: hidden;
 }
-.pagebox .prevpage { 
-    text-align: right; 
-    padding-right: 10px;
+.pagebox .prevpage {
+    text-align: right;
+    padding: 0 8px 0 10px;
 }
-.pagebox .nextpage { 
-    text-align: left; 
-    padding-left: 10px;
+.pagebox .nextpage {
+    text-align: left;
+    padding: 0 10px 0 8px;
 }
 .pagebox span.prevpage,
 .pagebox span.nextpage {
@@ -92,7 +108,8 @@
 
 .pagebox .prevpage .larr,
 .pagebox .nextpage .rarr {
-    position: absolute;
+    display: inline-block;
+    position: relative;
     top: 7px;
     width: 0;
     height: 0;
@@ -105,16 +122,35 @@
     border-color: transparent;
 }
 .pagebox .prevpage .larr {
-    left: 7px;
+    float: left;
+    margin-right: 4px;
     _border-right-style: solid;
     border-left-width: 0;
-    border-right-color: #538ed7;
+    border-right-color: #999;
 }
 .pagebox .nextpage .rarr {
-    right: 7px;
+    float: right;
+    margin-left: 4px;
     _border-left-style: solid;
     border-right-width: 0;
-    border-left-color: #538ed7;
+    border-left-color: #999;
+}
+/* 修复IE7- 下内部元素float:right引起的bug */
+.pagebox .nextpage {
+    *padding:0 17px 0 10px;
+}
+.pagebox .nextpage .rarr {
+    *margin-left: 0;
+    *float: none;
+    *position: absolute;
+    *right: 10px;
+}
+
+.pagebox a.prevpage:hover .larr {
+    border-right-color: #666;
+}
+.pagebox a.nextpage:hover .rarr {
+    border-left-color: #666;
 }
 .pagebox span.prevpage .larr {
     border-right-color: #cccccc;
@@ -133,54 +169,36 @@
     margin: 0 2px;
     padding: 4px 6px;
 }
-.paging-big a,
-.paging-big span {
+.paging-big .pagebox a,
+.paging-big .pagebox span {
     padding: 0 12px;
     height: 28px;
     line-height: 28px;
 }
 .paging-big .prevpage .larr,
 .paging-big .nextpage .rarr {
-    top: 10px;
+    top: 9px;
 }
 
-/* 灰色主题 */
-.graystyle .pageinfo,
-.graystyle .pagemore {
-    padding:0 4px;
-}
-.graystyle a {
-    border: 1px solid #ddd;
-    color: #538ed7;
-    background: #fff;
-}
-.graystyle a:hover {
-    
-}
-.graystyle .pagesel {
-    border: none;
-    padding: 0 4px;
+/* 蓝色 */
+.bluestyle .pagesel {
     font-weight: bold;
     color: #333;
-    background: none;
 }
-.graystyle span.prevpage,
-.graystyle span.nextpage {
-    color: #cccccc;
-    border-color: #d6d6d6;
+.bluestyle a {
+    color: #666;
 }
-.graystyle a:hover {
-    border-color: #bbbbbb;
-    background: #e3e3e3;
-    color: #000;
+.bluestyle a:hover { 
+    border-color: #7FB4F5;
+    background: #fff;
+    color: #245DC1;
 }
-.graystyle a:hover .larr {
-    border-right-color: #333333;
+.bluestyle a.prevpage:hover .larr {
+    border-right-color: #538ED7;
 }
-.graystyle a:hover .rarr {
-    border-left-color: #333333;
+.bluestyle a.nextpage:hover .rarr {
+    border-left-color: #538ED7;
 }
-
 
 /* 橙黄色  */
 .orangestyle .pagesel {
@@ -191,12 +209,13 @@
 }
 .orangestyle a:hover { 
     border-color: #f80;
+    background: #fff;
     color: #f80;
 }
-.orangestyle a:hover .larr {
+.orangestyle a.prevpage:hover .larr {
     border-right-color: #f80;
 }
-.orangestyle a:hover .rarr {
+.orangestyle a.nextpage:hover .rarr {
     border-left-color: #f80;
 }
 
@@ -209,11 +228,13 @@
 }
 .pinkstyle a:hover { 
     border-color: #df1a7a;
+    background: #fff;
     color: #df1a7a;
 }
-.pinkstyle a:hover .larr {
+.pinkstyle a.prevpage:hover .larr {
     border-right-color: #DF1A7A;
 }
-.pinkstyle a:hover .rarr {
+.pinkstyle a.nextpage:hover .rarr {
     border-left-color: #DF1A7A;
 }
+

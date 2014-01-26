@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Components Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+#guide{width:300px;padding:10px 15px 10px 10px;background:#eee;border:1px solid #bbb;position:fixed;right:10px;top:18px; z-index:100;}
+#shortcut li{color:#888;padding:2px 0;font:italic 14px/1.4 Courier, 'Courier New';}
+#shortcut a{color:#464646;font-style:normal;text-shadow:1px 1px 2px #fff;}
+#shortcut ul{ padding-left:1.2em}
+.wrap{width:65%;padding-right:30%;}
+.demo{overflow:hidden;padding:;}
+h3,p{margin:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>TPL 组件模板</h1>
+    <p>本页面从<a href="https://github.com/webcoding/cnBootstrap">cnBootstrap</a>中转移而来，之前处理了一部分，仍待完善...</p>
+    <!-- 便捷导航 -->
+    <div id="guide" class="fixed fixed-top fixed-right">
+        <ol id="shortcut">
+            
+        </ol>
+        <a href="#">返回顶部</a>
+    </div><!-- //div #guide -->
+    
+    <pre class="prettyprint linenums">
+<h3 id="link-0">一般列表(.pro-list)</h3>
+
+&lt;!-- 横向列表 --&gt;
+&lt;ul class="hor pro-list"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 竖向列表 --&gt;
+&lt;ul class="ver pro-list"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;列表项&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>下拉菜单(.dropdown）</h3><p>适用于各处下拉菜单，二级或三级导航等</p>
+&lt;div class=&quot;dropdown&quot;&gt;
+    &lt;a class=&quot;brand&quot; href=&quot;#&quot;&gt;下拉菜单&lt;/a&gt;
+    &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;使用LESS&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;编译发布&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;静态资源&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;例子&lt;/a&gt; 
+    &lt;/ul&gt;
+&lt;/div&gt; &lt;!-- .dropdown --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>导航(.navbar)</h3><p>扩展.sidebar .well>.nav+.nav-list，应用于边栏等各处导航</p>
+&lt;div class=&quot;navbar&quot;&gt;
+    &lt;div class=&quot;navbar-inner&quot;&gt;
+        &lt;h2 class=&quot;element-invisible&quot;&gt;导航描述&lt;/h2&gt;
+        &lt;a rel="home" class=&quot;brand&quot; href=&quot;#&quot;&gt;项目名称&lt;/a&gt;
+        &lt;ul class=&quot;nav&quot; role=&quot;navigation&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;概述&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;框架&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;基础CSS&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;组件&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;JavaScript插件&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;定制&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;divider-vertical&quot;&gt;&lt;/li&gt;
+            &lt;li class=&quot;dropdown&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;项目管理&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul class=&quot;dropdown-menu&quot;&gt; 
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;使用LESS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;编译发布&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;静态资源&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;例子&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;dropdown&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;研究探索&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bugs && Fixed&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;项目&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;前端规范&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;解决方案&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;TPL模板&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;更新日志&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt; &lt;!-- //.navbar --&gt;
+
+&lt;nav class=&quot;navbar&quot;&gt;
+    &lt;div class=&quot;navbar-inner&quot;&gt;
+        &lt;h2 class=&quot;element-invisible&quot;&gt;主导航&lt;/h2&gt;
+        &lt;ul class=&quot;nav&quot; role=&quot;navigation&quot;&gt;
+            &lt;li class=&quot;nav-item nav-item-selected&quot;&gt;&lt;a href=&quot;#&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;nav-item nav-item-current&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;前端开发&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul class=&quot;sub-nav&quot;&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;前端bugs汇总&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;HTML/CSS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;设计路上&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;技巧资源&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;名企招聘&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;nav-item&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;分享&lt;i&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul class=&quot;sub-nav&quot;&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;常用代码&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;WordPress&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;nav-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Other&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/nav&gt; &lt;!-- //.navbar --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>标题(.ui-title)</h3>
+&lt;div class="ui-title fn-clear"&gt;
+    &lt;h2 class="ui-title-cnt fn-left"&gt;标题&lt;/h2&gt;
+    &lt;div class="ui-title-subcnt fn-left"&gt;
+        &lt;!-- 标题中的其他内容 --&gt;
+    &lt;/div&gt;
+&lt;/div&gt; &lt;!-- .ui-title --&gt;
+
+&lt;!-- 如果标题没有其他内容，直接这样写 --&gt;
+&lt;h2 class="ui-title"&gt;标题&lt;/h2&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>步骤(.step-box)</h3>
+&lt;div class="step-box"&gt;
+    &lt;ol class="hor"&gt;
+        &lt;li class="step-item step-item-first"&gt;
+            第一步
+        &lt;/li&gt;
+        &lt;li class="step-item"&gt;
+            第二步
+        &lt;/li&gt;
+        &lt;li class="step-item step-item-current"&gt;
+            当前操作
+        &lt;/li&gt;
+        &lt;li class="step-item step-item-last"&gt;
+            最后一步
+        &lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt; &lt;!-- //.step-box --&gt;
+ 
+&lt;div class="step-box step3"&gt;
+&lt;!-- 当前步骤标识 --&gt;
+    &lt;ol class="hor"&gt;
+        &lt;li class="step-item1"&gt;
+            第一步
+        &lt;/li&gt;
+        &lt;li class="step-item2"&gt;
+            第二步
+        &lt;/li&gt;
+        &lt;li class="step-item3"&gt;
+            第三步
+        &lt;/li&gt;
+        &lt;li class="step-item4"&gt;
+            最后一步
+        &lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt; &lt;!-- //.step-box --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>重复元素(.repeater)</h3>
+&lt;ul class="repeater"&gt;
+    &lt;li class="repeater-item repeater-item-current"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="repeater-item"&gt;内容&lt;/li&gt;
+&lt;/ul&gt; &lt;!-- //.repeater --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>分页(.pages)</h3>
+
+&lt;div class=&quot;pages orangestyle&quot;&gt;
+    &lt;div class=&quot;Pages&quot;&gt; 
+    &lt;a class=&quot;PrevPage&quot; href=&quot;#&quot;&gt;上一页&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;
+    &lt;span class=&quot;PageSel&quot;&gt;2&lt;/span&gt;
+    &lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;6&lt;/a&gt;
+    &lt;span class=&quot;PageMore&quot;&gt;...&lt;/span&gt;
+    &lt;a href=&quot;#&quot;&gt;20&lt;/a&gt;
+    &lt;a class=&quot;NextPage&quot; href=&quot;#&quot;&gt;下一页&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt; &lt;!-- //.pages --&gt;
+
+&lt;div class="pages"&gt;
+    &lt;span class="page-item page-item-info"&gt;共41条记录，共5页&lt;/span&gt;
+    &lt;a href="#" class="page-item page-item-first"&gt;首页&lt;/a&gt;
+    &lt;a href="#" class="page-item page-item-prev"&gt;上一页&lt;/a&gt;
+    &lt;span href="#" class="page-item page-item-current"&gt;1&lt;/span&gt;
+    &lt;a href="#" class="page-item"&gt;2&lt;/a&gt;
+    &lt;a href="#" class="page-item"&gt;3&lt;/a&gt;
+    &lt;span class="page-item"&gt;...&lt;/span&gt;
+    &lt;a href="#" class="page-item"&gt;40&lt;/a&gt;
+    &lt;a href="#" class="page-item"&gt;41&lt;/a&gt;
+    &lt;a href="#" class="page-item page-item-next"&gt;下一页&lt;/a&gt;
+    &lt;a href="#" class="page-item page-item-last"&gt;尾页&lt;/a&gt;
+&lt;/div&gt; &lt;!-- //.pages --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>表格(.table)</h3>
+&lt;table class="table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;名称&lt;/th&gt;
+            &lt;th&gt;样式&lt;/th&gt;
+            &lt;th&gt;描述<small>一般表格为.table</small>&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;默认表格&lt;/td&gt;
+            &lt;td&gt;无&lt;/td&gt;
+            &lt;td&gt;没有任何其他样式，仅是行和列，无边框&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;单边表格&lt;/td&gt;
+            &lt;td&gt;.table&lt;/td&gt;
+            &lt;td&gt;仅使用一组横向边线&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;简单信息表&lt;/td&gt;
+            &lt;td&gt;.table-info&lt;/td&gt;
+            &lt;td&gt;存放一般表格信息&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt; &lt;!-- //.table --&gt;
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>按钮(.ui-button)</h3>
+&lt;button class=&quot;btn&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-info&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-success&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-warning&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-danger&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-inverse&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-link&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-large&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-small&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-mini&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn btn-block&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn disabled&quot;&gt;按钮&lt;/button&gt;
+&lt;button class=&quot;btn&quot;&gt;&lt;i class=&quot;icon-*&quot;&gt;/i&gt;按钮&lt;/button&gt;
+</pre>
+
+
+<pre class="prettyprint linenums">
+<h3>表单项(.input .label)</h3>
+&lt;label&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;文字提示&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;password&quot; placeholder=&quot;文字提示&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;radio&quot;&gt; 单选项
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot;&gt; 复选项
+&lt;/label&gt;
+&lt;textarea  rows=&quot;3&quot; class=&quot;textarea&quot;&gt;&lt;/textarea&gt; 多行文本域
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>表单(.form)</h3>
+&lt;form name="" class="form" method="post" action="#"&gt;
+    
+&lt;/form&gt;
+
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>提示信息(.alert|.message)</h3>
+
+</pre>
+
+<pre class="prettyprint linenums">
+<h3>TAB选项卡(.tab)</h3>
+
+
+</pre>
+
+
+
+<pre class="prettyprint linenums">
+<h3>悬浮提醒(.tooltip)</h3>
+&lt;div class=&quot;tooltip&quot;&gt;
+    &lt;div class=&quot;tooltip-outer&quot;&gt;
+        &lt;div class=&quot;tooltip-shadow&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;tooltip-inner&quot;&gt;
+            &lt;div class=&quot;tooltip-title&quot;&gt;提示标题&lt;/div&gt;
+            &lt;div class=&quot;tooltip-content&quot;&gt;提示内容&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;span class=&quot;tooltip-arrow&quot;&gt;&lt;/span&gt;
+&lt;/div&gt; &lt;!-- //.tooltip --&gt;
+</pre>
+
+
+    
+    <h3>问题及注意事项：</h3>
+    <p></p>
+
+</div>
+
+<script>
+(function(){
+    var pre = document.getElementsByTagName('pre'),
+        h3 = document.getElementsByTagName('h3'),
+        ol = document.getElementById('shortcut'),
+        li = '',
+        ilen = h3.length,
+        jlen = pre.length,
+        i, j;
+
+    for(j=0; j < jlen; j++) {
+        pre[j].style.display = 'block'
+    }
+
+    for(i=0; i < ilen; i++) {
+        h3[i].id = 'list-' + (i);
+        link = 'list-' + i;
+        li += '<li><a href="#' + link + '">' + h3[i].innerHTML + '</a></li>';
+    }
+
+    ol.innerHTML = li;
+  
+})();
+</script>
+</body>
+</html>

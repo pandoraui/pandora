@@ -156,7 +156,7 @@ a.btn:hover {
 .btn-small  { padding: 0 10px; height: 24px; line-height: 24px; font-weight: normal;}
 .btn-middle { padding: 0 12px; height: 28px; line-height: 28px; font-weight: bold;}
 .btn-big    { padding: 0 15px; height: 34px; line-height: 34px; font-weight: bold;}
-.btn-large  { padding: 0 20px; height: 42px; line-height: 42px; font-weight: bold;}
+.btn-large  { padding: 0 17px; height: 42px; line-height: 42px; font-weight: bold;}
 .btn-w      { padding: 0 20px; }
 .btn-mini.btn-w { padding: 0 10px; }
 
@@ -164,7 +164,7 @@ a.btn:hover {
 .btn-small  { font-size: 12px;}
 .btn-middle { font-size: 14px; }
 .btn-big    { font-size: 16px; }
-.btn-large  { font-size: 18px; }
+.btn-large  { font-size: 20px; }
 
 
 /* 修复ie6/7 */
@@ -436,21 +436,26 @@ button.btn-w,input.btn-w { padding: 1px 21px; }
     /* 解决IE6 中 line-height失效问题 */
     _display:inline-block;
 }
-.btn .icon {
+.btn .icon,
+.btn .icon-r {
     display: inline-block;
-    margin: 1px 10px 0 0;
+    margin: 1px 4px 0 0;
     width: 14px;
     height: 14px;
-    background: #000;
     vertical-align: text-top;
     _margin-top: 0;
 }
-
+.btn .icon-r {
+    margin: 1px 0 0 4px;
+}
 .btn-big .icon {
     width: 16px;
     height: 16px;
 }
-
+.btn-large .icon {
+    width: 20px;
+    height: 20px;
+}
 /* 紧邻的按钮 */
 .nospace-right {
     margin-right: -1px;
