@@ -73,7 +73,7 @@
     }
 
     function Calendar(options) {
-        this._init(options)
+        this._init(options);
     }
 
     Calendar.prototype = {
@@ -290,10 +290,10 @@
         },
 
         /**
-		 * 计算日期的样式
-		 * @param {Date} date 日期
-		 * @returns {String} 计算得到的Class
-		 */
+         * 计算日期的样式
+         * @param {Date} date 日期
+         * @returns {String} 计算得到的Class
+         */
         getClass: function (date) {
             var options = this.options,
                 fatalism = options.fatalism,
@@ -489,8 +489,8 @@
         },
 
         /**
-		 * 移动事件
-		 */
+         * 移动事件
+         */
         moveEvent: function () {
 
         },
