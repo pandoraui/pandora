@@ -81,13 +81,28 @@ $(document).ready(function () {
 
 */
 
-//第一步 pandora插件
+//pandora插件
 (function (global, $, pandora, undefined) {
     "use strict" // 严格模式
 
     if (pandora.pulgins) {
         return;
     }
+    
+    //一般jQuery插件的结构
+    //(function($) {
+    //    $.fn.pulgins = function(options){
+    //        var defaults = {
+    //            pulginsEvent:"parameter", //参数事件
+    //            customName: true
+    //        }
+    //        var options = $.extend(defaults, options);
+    //        this.each(function(){
+    //            //方法体等
+    //        });
+    //    };
+    //})(jQuery);
+    
     
     //一些工具方法类
     

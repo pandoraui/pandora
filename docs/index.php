@@ -124,6 +124,7 @@
                 <a class="todo" href="###">lazyload <small>延迟加载</small></a>
                 <a class="done" href="modules/countdown.html">countdown <small>倒计时</small></a>
                 <a class="done" href="modules/tooltip.html">tooltip <small>工具提醒</small></a>
+                <a class="done" href="modules/poptip.html">poptip <small>新版tooltip</small></a>
                 <a class="todo" href="###">tips <small>浮层提示</small></a>
                 <a class="todo" href="###">calendar <small>日历</small></a>
                 <a class="doing" href="modules/selectbox.html">selectbox <small>下拉框</small></a>

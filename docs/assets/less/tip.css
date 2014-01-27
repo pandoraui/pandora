@@ -101,9 +101,9 @@
 }
 
 
-/** @name      : poptip 
-  * @explain   : 提示层，不包含close及icon，且为尖锐角
-  * @type      : 基类 .ui-tip .tip-icon
+/** @name      : poptip 实现tooltip功能的poptip
+  * @explain   : 提示层，
+  * @type      : 基类
   * @dependent : pandora
   * @author    : CloudYan
   * @version   : 1.0
@@ -111,8 +111,38 @@
 
 ***/
 .poptip {
+    position: absolute;
+    z-index: 100;
+    display: inline-block;
+    *display: inline;
+    
+    /* 修复IE7 上边框显示不正确 */
+    *zoom: 1;
+    margin: 0;
+    padding: 5px 15px 5px 10px;
+    line-height: 22px;
     font-size: 12px;
+    color: #666;
+    
+    /* 控制长词内容折断 */
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: top;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1)
 }
+.poptip .tip-title {
+    margin: 0.6em 0 0.4em;
+}
+.poptip .tip-content {
+    width: auto;
+    max-width: 240px;
+    min-width: 80px;
+    overflow: hidden;
+}
+.poptip .tip-content em {
+    font-style: normal;
+}
+
 /* poptip-mini类，配合尖锐sharp角 实现小提醒 */
 .poptip-mini {
     position: relative;
@@ -208,7 +238,6 @@
 }
 
 ***/
-.poptip,
 .tiptext {
     position: relative;
     z-index: 10;
@@ -225,7 +254,6 @@
     word-wrap: break-word;
     word-break: break-all;
 }
-
 .tiptext .ui-close {
     top: -1px;
 }
@@ -596,29 +624,4 @@ span.tip-line {
     left: 14px;
 }
 
-/*
- * 实现tooltip功能的poptip
- * 
-**/
-.poptip {
-    margin: 0;
-    padding: 5px 15px 5px 10px;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    vertical-align: top;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1)
-}
-.poptip .tip-title {
-    margin: 0.6em 0 0.4em;
-}
-.poptip .tip-content {
-    width: auto;
-    max-width: 240px;
-    min-width: 80px;
-    overflow: hidden;
-}
-.poptip .tip-content em {
-    font-style: normal;
-}
 
