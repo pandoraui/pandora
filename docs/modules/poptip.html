@@ -21,7 +21,7 @@
 <body>
 <div class="wrap">
     <h1>poptip 冒泡提醒/tooltip提醒</h1>
-    <p>鼠标hover时的提醒</p>
+    <p>作为一种tooltip的工具提醒，达到美化title悬浮提醒的效果，并提供高度自定义实现。<small>（此插件将替换原来的tooltip插件）</small></p>
     <p><strong>依赖：</strong>使用前请确保页面已经引用了如下文件：</p>
     <ul>
         <li><a href="http://pic.lvmama.com/styles/v5/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tip.css</a></li>
@@ -87,7 +87,7 @@
 //调用方法
 $(".tag").poptip();
 
-//所有可配置参数
+//可配置参数
 $(".test").poptip({
     templete : 1,
     skin: "default",    //默认皮肤
@@ -96,7 +96,7 @@ $(".test").poptip({
     offsetX : 0,        //偏移修正
     offsetY : 0, 
     trigger : "mouseenter",     // mouseenter or click
-    bindevent : "live",         // bind or live live
+    bindevent : "live",         // bind or live
     hovershow : 300       // 300 or undefined
 });
 </pre>

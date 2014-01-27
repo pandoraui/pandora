@@ -16,7 +16,7 @@
             offsetX : 0,        //偏移修正
             offsetY : 0, 
             trigger : "mouseenter",     // mouseenter or click
-            bindevent : "live",         // bind or live live
+            bindevent : "live",         // bind or live
             hovershow : 300       // 300 or undefined
         }
         //var opt = $.extend(defaults, options);
@@ -25,7 +25,7 @@
         //    //方法体等
         //});
         
-        //点钟方位转化
+        //点钟方位内部转化
         var reclock = [6,5,10,9,8,1,12,11,4,3,2,7,6];
         function posclock(clock){
             return reclock[clock];
@@ -156,3 +156,99 @@ $('.test').poptip({
     hovershow : 300       // 300 or undefined
 });
 **/
+
+
+/* 后期实现
+(function (global, $, pandora, undefined) {
+
+    "use strict" // 严格模式
+    
+    if (pandora.poptip) {
+        return;
+    }
+    
+    //一般jQuery插件的结构
+    //(function($) {
+    //    $.fn.pulgins = function(options){
+    //        var defaults = {
+    //            pulginsEvent:"parameter", //参数事件
+    //            customName: true
+    //        }
+    //        var options = $.extend(defaults, options);
+    //        this.each(function(){
+    //            //方法体等
+    //        });
+    //    };
+    //})(jQuery);
+    
+    var universe = null,
+        count = 0,
+        expando = "poptip" + (+new Date);
+        
+    function Factory(options, ok, cancel) {
+        var options = options || {},
+            defaults = Factory.defaults,
+            list = [];
+        
+        // 合并默认配置
+        for (var i in defaults) {
+            if (options[i] === undefined) {
+                options[i] = defaults[i];
+            };
+        };
+        
+        options.id = expando + count;
+        count++;
+        
+        return Poptip.list[options.id] = universe ? universe._init(options) : new Poptip(options);
+    }
+    
+    
+    function Poptip(options) {
+        this._init(options);
+    }
+
+    Poptip.prototype = {
+        constructor: Poptip,
+
+        _init: function (options) {
+            var that = this;
+            that.options = options;
+            that.warp = this.warp || $($.trim(this.options.template.warp));
+
+            if (universe === null) {
+                $("body").append(that.wrap);
+            }
+            
+            return that;
+        },
+        
+        
+        
+        // 对外提供可扩展 Dialog 对象属性、方法的接口
+        extend: function (object) {
+            var fn = Dialog.prototype;
+            for (var i in object) {
+                fn[i] = object[i];
+            }
+
+            return this;
+        }
+    };
+
+    Factory.defaults = {
+        theme: "default",   //主题
+        template: "template-default",   //模板
+        skin: "poptip-default",   //皮肤或类型 theme or skin
+        wrapClass: ""   //规格 size
+        zIndex: 100    //层级
+    };
+    
+    
+    
+    // 前端框架 pandora 对象 
+    $.fn.poptip = pandora.poptip = Factory;
+    
+    global.pandora = pandora;
+}(this, this.jQuery || {}, this.pandora || {}));
+*/
