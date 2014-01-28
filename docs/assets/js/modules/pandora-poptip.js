@@ -2,8 +2,10 @@
 /* 
  * poptip 悬浮提醒，tooltip功能
  * 想的太好难实现，目前先实现v0.1版，基于卓磊的tooltip完善
- * TODO：1.自动检测边界，超出边界若对应方位可完全显示，则自动取对应方位
- *       2.使用JS模板实现内容填充，采用替换数据填充位方式，方便维护及扩展新模板
+ * TODO：1.可以使用ajax填充数据内容
+ *       2.自动模式，自动检测边界，超出边界若对面方位可完全显示，则自动取对面方位
+ *         可以以最佳形式展现效果，如：七点钟的提醒框箭头对应标签的中间位置
+ *       3.使用JS模板实现内容填充，采用替换数据填充位方式，方便维护及扩展新模板
 **/
 
 (function($) {
@@ -19,11 +21,7 @@
             bindevent : "live",         // bind or live
             hovershow : 300       // 300 or undefined
         }
-        //var opt = $.extend(defaults, options);
         var opt = $.extend(true, defaults, options || {});
-        //this.each(function(){
-        //    //方法体等
-        //});
         
         //点钟方位内部转化
         var reclock = [6,5,10,9,8,1,12,11,4,3,2,7,6];
@@ -174,7 +172,10 @@ $('.test').poptip({
     //            pulginsEvent:"parameter", //参数事件
     //            customName: true
     //        }
-    //        var options = $.extend(defaults, options);
+    //
+    //        //$.extend 中true参数为深拷贝
+    //        var opt = $.extend(true, defaults, options || {});
+    //
     //        this.each(function(){
     //            //方法体等
     //        });

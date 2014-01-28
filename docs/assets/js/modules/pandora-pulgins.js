@@ -81,6 +81,32 @@ $(document).ready(function () {
 
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //pandora插件
 (function (global, $, pandora, undefined) {
     "use strict" // 严格模式
@@ -96,7 +122,10 @@ $(document).ready(function () {
     //            pulginsEvent:"parameter", //参数事件
     //            customName: true
     //        }
-    //        var options = $.extend(defaults, options);
+    //
+    //        //$.extend 中true参数为深拷贝
+    //        var opt = $.extend(true, defaults, options || {});
+    //
     //        this.each(function(){
     //            //方法体等
     //        });
