@@ -73,6 +73,11 @@
             var left = $(this).offset().left;
             var top = $(this).offset().top;
             var posdiff = 7;
+            
+            //if(left+obj.outerWidth() > $(window).width()){
+            //    opt.place = 5;
+            //}
+            
             switch(opt.place){
                 case 12:
                 case 0:

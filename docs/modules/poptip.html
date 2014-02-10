@@ -27,7 +27,13 @@
         <li><a href="http://pic.lvmama.com/styles/v5/modules/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tip.css</a></li>
         <li><a href="http://pic.lvmama.com/js/v5/modules/pandora-poptip.js">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-poptip.js</a></li>
     </ul>
-    
+    <p><strong>TODO:</strong></p>
+    <ul>
+        <li>扩展支持使用ajax填充数据内容</li>
+        <li>自动模式，自动检测边界，超出边界若对面方位可完全显示，则自动取对面方位，以最佳形式展现效果，如：七点钟的提醒框箭头对应标签的中间位置
+        </li>
+        <li>优化JS模板实现内容填充，采用替换数据填充位方式，适应性更强，方便维护及扩展新模板</li>
+    </ul>
     <div class="docs-example">
         <h4>点钟定位冒泡提醒poptip</h4>
         <p>点击相应的时间，查看poptip冒泡提醒的对应方位。</p>
@@ -49,7 +55,10 @@
             </map>
         </div>
         
+        <p>
+        <span class="tag tagsback fr" tip-content="1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。"><em>返</em><i>101元</i></span>
         <span class="tag tagsback" tip-content="1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。"><em>返</em><i>101元</i></span>
+        </p>
         
         <p><button id="clonebtn" class="btn" type="button">再添加一个标签</button></p>
         <div id="livebox"></div>
