@@ -98,32 +98,8 @@
         
         <p><span class="tagsback tagblue" tip-title="提示标题" tip-content="提示内容"><em>送</em><i>积分100分</i></span></p>
         
-        <h3>简单激活tooltip：</h3>
-        <p><strong>注意：</strong>激活 tooltip 依赖 tooltip 的样式，关于 tooltip ，详情参看 <a target="_blank" href="tooltip.html">tooltip 工具提醒</a></p>
-        <p>依赖：</p>
-        <ul>
-            <li>http://pic.lvmama.com/styles/new_v/ob_common/ui-components.css</li>
-            <li>http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</li>
-            
-        </ul>
-<pre>
-$(function(){
-    // 通用调用写法
-    $('span[class^="tags"]').ui('lvtip',{
-        place: 'bottom'
-    })
-    
-    // 调用2
-    $('.calendar').ui('lvtip',{
-        templete : 2,  // 提示模板2
-        place: 'bottom-left',  //支持八个方位 top right bottom left top-left top-right bottom-left bottom-right
-        offsetX: 0,
-        offsetY: 0,
-        events : "live"  //live方法有问题，后添加元素ui不被调用
-    });
-    
-});
-</pre>
+        <h3>简单激活poptip：<small>原tooltip功能</small></h3>
+        <p><strong>注意：</strong>激活 poptip 功能，依赖 tip 样式，关于 poptip 详情参看 <a target="_blank" href="poptip.html">poptip 冒泡提醒</a></p>
         
         <p>复杂标签测试： <span class="testtags" tip-title="提示标题" tip-content="提示内容"><em>折扣返现</em><i>20元</i></span></p>
     </div>
