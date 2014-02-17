@@ -24,6 +24,12 @@
 <div class="wrap">
     <h1>倒计时插件</h1>
     <p>实现可定制的倒计时</p>
+    
+    <p><strong>依赖：</strong>使用前请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="../assets/js/modules/pandora-poptip.js">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-countdown.js</a></li>
+    </ul>
+    <p><strong>老旧版本依赖：</strong></p>
     <p>依赖：http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
     
     <div class="docs-example">
@@ -31,6 +37,7 @@
         <dl class="dl-horizontal">
             <dt>默认效果：</dt>
             <dd><span class="time">2531275871</span></dd>
+            <dd><span class="time">253222871</span></dd>
             
             <dt>调整时间差：</dt>
             <dd><span class="timediff">2531275871</span></dd>
@@ -63,10 +70,10 @@
 &lt;script&gt;
 $(function(){
     // 默认调用倒计时 
-    $("span.time").ui("countdown");
+    $("span.time").countdown();
     
     // 自定义参数说明
-    $("span.countdown").ui("countdown",{
+    $("span.countdown").countdown({
         format : "dd:hh:mm:ss",   // 时间格式 自定义倒计时类型 现支持 dd:hh:mm:ss(默认) hh:mm:ss dd:hh:mm mm:ss 四种格式
         prezero : true,  // 前导零
         effect : false,  // 支持自定义格式
@@ -81,36 +88,36 @@ $(function(){
 
 </div>
 <script src="http://pic.lvmama.com/js/new_v/jquery-1.7.2.min.js"></script>
-<script src="http://pic.lvmama.com/js/ui/lvmamaUI/lvmamaUI.js"></script>
+<script src="../assets/js/modules/pandora-countdown.js"></script>
 <script>
 $(function(){
     // 调用倒计时
-    $("span.time").ui("countdown");
+    $("span.time").countdown();
     
     // 调整时间差
-    $("span.timediff").ui("countdown",{
+    $("span.timediff").countdown({
         timediff: -86400000
     });
     
     // 调用自定义标签
-    $("span.countdown").ui("countdown",{
+    $("span.countdown").countdown({
         prezero: true,
         effect: true
     });
     
     // 自定义时间格式
-    $("span.time_format").ui("countdown",{
+    $("span.time_format").countdown({
         format: "dd:hh:mm:ss"
     });
     
     // 自适应时间格式
-    $("span.time_auto").ui("countdown",{
+    $("span.time_auto").countdown({
         timeauto: true,
         format: "dd:hh:mm:ss"
     });
     
     // 自定义结束提醒
-    $("span.time_tips").ui("countdown",{
+    $("span.time_tips").countdown({
         format: "mm:ss",
         overtips: "2012世界末日没来？钱用光了？傻了吧！！！"
     });
