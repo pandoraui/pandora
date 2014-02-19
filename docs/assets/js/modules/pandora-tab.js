@@ -27,16 +27,6 @@ $(function($){
         
     };
     
-    $.fn.tab = function(options){
-        
-        this.opts = $.extend({}, $.fn.tab.defaults, options);
-        
-        this._init();   //调用初始化配置方法
-        
-        this.disableArr=[];     //本地私有属性，存储禁用选项
-        
-    };
-    
     
     //类型原型对象
     $.fn.tab.prototype = {

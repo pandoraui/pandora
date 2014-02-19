@@ -52,10 +52,12 @@
 /* Components: Nav
 @import "navs.css";
 @import "navbar.css";
-@import "breadcrumbs.css";
 @import "pagination.css";
 @import "pager.css";
  */
+@import "crumbs.css";
+
+
 @import "paging.css";
 @import "step.css";
 /*@import "poptip.css";*/

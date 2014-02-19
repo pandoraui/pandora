@@ -11,14 +11,7 @@
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
-/*面包屑导航*/
-.crumbs{position:relative;margin-top:10px;margin-bottom: 10px;font-family:\5b8b\4f53,sans-serif; clear:both;}
-.crumbs-link {float:left;display:inline;margin:0;color:#999;}
-.crumbs-link a{color:#666;}
-.crumbs-link a:hover{color:#e38;}
-.crumbs-link a.current{color:#999;text-decoration: none;}
-.crumbs-link .icon-ihome{vertical-align: text-top;position:relative;top:-1px;margin-right:2px;}
-.crumbs .other-info{float:right;display:inline;color:#bbb;}
+.crumbs{font-size:12px;background:#fafafa;}
 </style>
 </head>
 <body>
@@ -32,7 +25,7 @@
         <h3>面包屑导航</h3>
         
         <!--面包屑导航-->
-        <div class="crumbs clearfix">
+        <div class="crumbs crumbs-default clearfix">
             <p class="crumbs-link">
                 <a href="#">驴妈妈首页</a> &gt; 
                 <a href="#">景点门票</a> &gt; 
@@ -41,10 +34,23 @@
             </p>
             <span class="other-info">近一周2376人预订</span>
         </div><!--//.crumbs-->
+        
+        <div class="crumbs crumbs-default clearfix">
+            <p class="crumbs-link">
+                <b>您当前所处的位置：</b>
+                <a href="#">驴妈妈首页</a> &gt; 
+                <a href="#">景点门票</a> &gt; 
+                <a href="#">上海景点门票</a> &gt; 
+                <a class="current">上海长风海洋世界</a>
+            </p>
+            <span class="other-info">近一周2376人预订</span>
+        </div><!--//.crumbs-->
+        
     </div>
 <pre class="prettyprint linenums">
-&lt;div class="crumbs clearfix"&gt;
+&lt;div class="crumbs crumbs-default clearfix"&gt;
     &lt;p class="crumbs-link"&gt;
+        &lt;b&gt;您当前所处的位置：&lt;/b&gt;
         &lt;a href="#"&gt;驴妈妈首页&lt;/a&gt; &amp;gt; 
         &lt;a href="#"&gt;景点门票&lt;/a&gt; &amp;gt; 
         &lt;a href="#"&gt;上海景点门票&lt;/a&gt; &amp;gt; 
