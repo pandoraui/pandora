@@ -90,6 +90,214 @@ $(document).ready(function () {
 
 
 
+/*
+
+// 封装插件 首先定义一个独立域
+(function($)(
+    //自定义插件代码
+))(jQuery);
+
+
+(function($)(
+    $.extend($.fn,{     //jQuery对象方法扩展
+        函数列表
+    })
+))(jQuery);
+
+
+//下列示例举例，如 color 插件
+
+(function($)(
+    $.extend($.fn,{     //jQuery对象方法扩展
+        color : function(options){    //自定义插件名称
+            var options = $.extend({    //参数选项对象处理
+                bcolor: "white",
+                fcolor : "black"
+            },options);
+            
+            //函数体
+            return this.each(function(){    //返回匹配的jQuery对象
+                //$(this).css("color");
+            })
+        }
+    })
+))(jQuery);
+
+
+//开放公共参数
+
+(function($)(
+    $.extend($.fn,{     //jQuery对象方法扩展
+        color : function(options){
+            var options = $.extend({}, $.fn.color.defaults, options);     //覆盖原来参数
+            
+            
+            //函数体
+            return this.each(function(){    //返回匹配的jQuery对象
+                
+                //方法体等
+                $(this).css({"color" : options.fcolor,"backgroundColor" : option.bcolor});
+                
+            })
+        }
+    })
+    
+    //独立设置对象的默认参数值 如：$.fn.color.defaults 
+    $.fn.color.defaults = {
+        bcolor: "white",
+        fcolor : "black"
+    }
+    
+))(jQuery);
+
+
+
+//开放部分功能
+
+(function($)(
+    $.extend($.fn,{     //jQuery对象方法扩展
+        color : function(options){
+            var options = $.extend({}, $.fn.color.defaults, options);     //覆盖原来参数
+            
+            
+            //函数体
+            return this.each(function(){    //返回匹配的jQuery对象
+                
+                //方法体等
+                $(this).css({"color" : options.fcolor,"backgroundColor" : option.bcolor});
+                
+                var _html = $(this).html();
+                _html = $.fn.color.format(_html);
+                $(this).html(_html);
+                
+            })
+        }
+    })
+    
+    //独立设置对象的默认参数值 如：$.fn.color.defaults 
+    $.fn.color.defaults = {
+        bcolor: "white",
+        fcolor : "black"
+    }
+    
+    //开放的功能函数
+    $.fn.color.format = function(str){
+        return str;
+    }
+    
+))(jQuery);
+
+//调用示例
+$(function(){
+    
+    //预设默认前景色和背景色
+    $.fn.color.defaults = {
+        bcolor: "eea",
+        fcolor: "red"
+    }
+    
+    $.fn.color.format = function(str){
+        return "<strong>" + str + "</strong>";
+    }
+    
+    $("h1").color();
+    $("p").color({bcolor:"#fff"});
+    
+})
+
+
+
+
+//优化，保留插件隐私
+
+(function($)(
+    $.extend($.fn,{     //jQuery对象方法扩展
+        color : function(options){
+            if(!filter(options))    //调用隐私方法验证参数，不合法则返回
+                return this;
+            
+            var options = $.extend({}, $.fn.color.defaults, options);     //覆盖原来参数
+            
+            
+            //函数体
+            return this.each(function(){    //返回匹配的jQuery对象
+                
+                //方法体等
+                $(this).css({"color" : options.fcolor,"backgroundColor" : option.bcolor});
+                
+                var _html = $(this).html();
+                _html = $.fn.color.format(_html);
+                $(this).html(_html);
+                
+            })
+        }
+    })
+    
+    //独立设置对象的默认参数值 如：$.fn.color.defaults 
+    $.fn.color.defaults = {
+        bcolor: "white",
+        fcolor : "black"
+    }
+    
+    //开放的功能函数
+    $.fn.color.format = function(str){
+        return str;
+    }
+    
+    //定义隐私函数，外界无法访问
+    function filter(options){
+        
+        //如果参数不存在，或者存在且为对象，则返回true，否则返回false
+        return !options || (options && typeof options === "object")?true : false;
+        
+    }
+    
+    
+))(jQuery);
+
+
+
+
+
+*/
+
+(function($) {
+    /*//方式1
+    $.fn.pslide = function(options){
+        var defaults = {
+            templete : 1,
+            skin: "default",    //默认皮肤
+            tiptitle: "",       //可统一设置标题
+            trigger : "mouseenter",     // mouseenter or click
+            bindevent : "live",         // bind or live
+            hovershow : 300       // 300 or undefined
+        }
+        var opt = $.extend(true, defaults, options || {});
+        
+        
+    };
+    */
+    
+    /*//方式二
+    $.fn.extend({
+        pslide: function(opt){
+            opt = $.extend(true,{
+                templete : 1,
+                skin: "default",    //默认皮肤
+                tiptitle: "",       //可统一设置标题
+                trigger : "mouseenter",     // mouseenter or click
+                bindevent : "live",         // bind or live
+                hovershow : 300       // 300 or undefined
+            },
+            opt || {});
+            
+            
+        }
+    });
+    */
+    
+    
+})(jQuery);
 
 
 
