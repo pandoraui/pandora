@@ -27,7 +27,7 @@
     
     <p><strong>依赖：</strong>使用前请确保页面已经引用了如下文件：</p>
     <ul>
-        <li><a href="../assets/js/modules/pandora-poptip.js">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-countdown.js</a></li>
+        <li><a href="../assets/js/modules/pandora-countdown.js">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-countdown.js</a></li>
     </ul>
     <p><strong>老旧版本依赖：</strong></p>
     <p>依赖：http://pic.lvmama.com/min/index.php?f=/js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js</p>
@@ -81,6 +81,22 @@ $(function(){
         timeauto : false,   // 默认不自适应格式
         timediff : 0   // 调整时间差，单位毫秒
     });
+    
+    //
+    // 老版本调用方法
+    //
+    $("span.time").ui('countdown');
+    
+    
+    $("span.countdown").ui('countdown',{
+        format : "dd:hh:mm:ss",   // 时间格式 自定义倒计时类型 现支持 dd:hh:mm:ss(默认) hh:mm:ss dd:hh:mm mm:ss 四种格式
+        prezero : true,  // 前导零
+        effect : false,  // 支持自定义格式
+        overtips : "已结束",  // 自定义结束提醒
+        timeauto : false,   // 默认不自适应格式
+        timediff : 0   // 调整时间差，单位毫秒
+    });
+    
 });
 &lt;/script&gt;
 </pre>
