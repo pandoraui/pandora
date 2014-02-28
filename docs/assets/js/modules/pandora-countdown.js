@@ -11,6 +11,8 @@
             effect : false,  // 支持自定义格式
             overtips : "已结束",  // 自定义结束提醒
             timeauto : false,   // 默认不自适应格式
+            daytips : false,    //只天数提醒
+            timeday : 3,
             timediff : 0   // 调整时间差，单位毫秒
         }
         var opt = $.extend(true, defaults, options || {});
@@ -25,6 +27,12 @@
             time = parseInt(time/60);
             var h = parseInt(time%24);
             var day = parseInt(time/24);
+            
+            if(opt.daytips && day>opt.timeday-1){
+                obj.innerHTML = opt.timeday+ '天以上';
+                return;
+            }
+            
             var times = 1000;
             var labelleft = "";
             var labelright = "";
@@ -92,10 +100,16 @@
         var all = "";
         
         for(var i = 0, len = this.length; i < len ; i++){
-            all = $(this[i]).html();
+            
+            if($(this).attr('data-time')){
+                all = $(this[i]).attr('data-time');
+            }else{
+                all = $(this[i]).html();
+            }
             
             // 若为非数字，直接返回
             if(!(/(^-?[1-9]\d*$)/.test(all))){
+                this.innerHTML = all;
                 return;
             }
             

@@ -115,6 +115,13 @@
                 <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>
             </div>
             
+            <h3>Seajs方案 <small>初学者入门请看示例</small></h3>
+            <div class="modules">
+                <a target="_blank" class="done" href="http://pandoraui.github.io/learning-javascript/">Seajs <small>示例1</small></a>
+                <a target="_blank" class="done" href="http://pandoraui.github.io/learning-javascript/seajs/ex/">Seajs <small>示例2</small></a><br>
+                <a class="todo" href="###">引用jQuery <small></small></a>
+            </div>
+            
             <h3>JavaScript 组件</h3>
             <div class="modules">
                 <a class="todo" href="###">transition <small>过渡效果</small></a>
