@@ -1,0 +1,72 @@
+
+/*!
+ * crumbs.css 面包屑导航
+ * Author Pandora
+**/
+
+/** @name      : 面包屑导航
+  * @explain   : 实现简单面包屑
+  * @type      : 基类 .crumbs
+  * @dependent : pandora
+  * @author    : CloudYan
+  * @version   : 1.0
+  * @html
+  
+<div class="crumbs crumbs-default clearfix">
+    <p class="crumbs-link">
+        <a href="#">驴妈妈首页</a> &gt; 
+        <a href="#">景点门票</a> &gt; 
+        <a href="#">上海景点门票</a> &gt; 
+        <a class="current">上海长风海洋世界</a>
+    </p>
+    <span class="other-info">中国酒店</span>
+</div>
+
+***/
+
+/*面包屑导航*/
+.crumbs {
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-family: \5b8b\4f53,sans-serif;
+    clear: both;
+}
+.crumbs-link {
+    float: left;
+    display: inline;
+    margin: 0;
+    color: #999;
+}
+.crumbs-link b {
+    font-weight: normal;
+    color: #333;
+}
+.crumbs-link a {
+    color: #07c;
+}
+.crumbs-link a:hover {
+    color:#e38;
+}
+.crumbs-link a.current{
+    color: #999;
+    text-decoration: none;
+}
+.crumbs-link .icon-ihome{
+    position: relative;
+    top: -1px;
+    margin-right: 2px;
+    vertical-align: text-top;
+}
+.crumbs .other-info{
+    float: right;
+    display: inline;
+    color: #bbb;
+}
+
+/* 默认主题 */
+.crumbs-default {
+    
+}
+
+
