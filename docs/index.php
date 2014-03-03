@@ -126,7 +126,8 @@
             <div class="modules">
                 <a class="todo" href="###">transition <small>过渡效果</small></a>
                 <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
-                <a class="todo" href="###">slides <small>图片轮播</small></a>
+                <a class="done" href="modules/promo.html">promo <small>图片幻灯片</small></a>
+                <a class="todo" href="modules/slides.html">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
                 <a class="todo" href="###">lazyload <small>延迟加载</small></a>
                 <a class="done" href="modules/countdown.html">countdown <small>倒计时</small></a>
