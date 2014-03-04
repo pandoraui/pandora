@@ -101,9 +101,9 @@
 }
 
 
-/** @name      : poptip 
-  * @explain   : 提示层，不包含close及icon，且为尖锐角
-  * @type      : 基类 .ui-tip .tip-icon
+/** @name      : poptip 实现tooltip功能的poptip
+  * @explain   : 提示层，
+  * @type      : 基类
   * @dependent : pandora
   * @author    : CloudYan
   * @version   : 1.0
@@ -111,8 +111,38 @@
 
 ***/
 .poptip {
+    position: absolute;
+    z-index: 100;
+    display: inline-block;
+    *display: inline;
+    
+    /* 修复IE7 上边框显示不正确 */
+    *zoom: 1;
+    margin: 0;
+    padding: 5px 15px 5px 10px;
+    line-height: 22px;
     font-size: 12px;
+    color: #666;
+    
+    /* 控制长词内容折断 */
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: top;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1)
 }
+.poptip .tip-title {
+    margin: 0.6em 0 0.4em;
+}
+.poptip .tip-content {
+    width: auto;
+    max-width: 240px;
+    min-width: 80px;
+    overflow: hidden;
+}
+.poptip .tip-content em {
+    font-style: normal;
+}
+
 /* poptip-mini类，配合尖锐sharp角 实现小提醒 */
 .poptip-mini {
     position: relative;
@@ -171,10 +201,28 @@
     border-width: 0 10px 10px 0;
 }
 
+.tipbox:after,
+.tiptext:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.tipbox,
+.tiptext {
+    zoom: 1;
+}
+
+.poptip p,
 .tipbox p,
 .tiptext p { 
     margin: 0;
 }
+
 /** @name      : tiptext 
   * @explain   : 提示文本
   * @type      : 基类 .ui-tip .tip-icon
@@ -206,7 +254,6 @@
     word-wrap: break-word;
     word-break: break-all;
 }
-
 .tiptext .ui-close {
     top: -1px;
 }
@@ -259,11 +306,11 @@ span.tiptext {
     word-wrap: break-word;
     word-break: break-all;
 }
-.tip-content {
+.tipbox .tip-content {
     padding: 10px 10px 5px 76px;
     min-height: 35px;
 }
-.tip-align {
+.tipbox .tip-align {
     padding: 0 10px 0 76px;
 }
 
@@ -319,6 +366,17 @@ span.tiptext {
 .tip-default .tip-arrow i,
 .tip-gray .tip-arrow i {
     color: #f9f9f9;
+}
+
+.tip-light {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.tip-light .tip-arrow em {
+    color: #ccc;
+}
+.tip-light .tip-arrow i {
+    color: #fff;
 }
 
 .tip-info {
@@ -565,3 +623,5 @@ span.tip-line {
 .tip-dense .tip-icon-big {
     left: 14px;
 }
+
+

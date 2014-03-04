@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sublime Text 安装使用、推荐快捷键（附精华插件）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<script type="text/javascript">
+if (/Mac OS X/.test(navigator.userAgent)) document.documentElement.className += ' plat_osx';
+else if (/Linux|FreeBSD/.test(navigator.userAgent)) document.documentElement.className += ' plat_linux';
+else document.documentElement.className += ' plat_win';
+
+if (/WOW64|Win64|x86_64/.test(navigator.userAgent)) document.documentElement.className += ' arch_64';
+else document.documentElement.className += ' arch_32';
+</script>
+<style>
+html.plat_osx .pc { display: none; }
+html.plat_osx .win { display: none; }
+html.plat_osx .linux { display: none; }
+html.plat_linux .win { display: none; }
+html.plat_linux .mac { display: none; }
+html.plat_win .mac { display: none; }
+html.plat_win .linux { display: none; }
+html.arch_64 .show_32 { display: none; }
+html.arch_32 .show_64 { display: none; }
+
+.band {
+    width: 840px;
+    margin: 10px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#anim_shell {
+    width: 816px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+html.plat_win #anim_shell {
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+html.plat_linux #anim_shell {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    -webkit-border-top-left-radius: 7px;
+    -moz-border-radius-topright: 7px;
+    -moz-border-radius-topleft: 7px;
+    width: 800px;
+    height: 479px;
+}
+html.plat_osx #anim_shell {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-topleft: 3px;
+    width: 800px;
+}
+
+html.plat_osx #anim_top {
+    width: 800px; height: 22px; background-image: url('img/sublime/osx_title_bar.png');
+}
+
+html.plat_osx #anim_container {
+    width: 800px; height: 450px; position: relative;
+}
+
+html.plat_osx #anim_overlay {
+    width: 800px; height: 450px; position: absolute; left: 0; top: 0; background-image: url('img/sublime/osx_overlay.png');
+}
+
+html.plat_linux #anim_top {
+    width: 800px; height: 29px; background-image: url('img/sublime/linux_title_bar.png');
+}
+
+html.plat_win #anim_top {
+    width: 816px; height: 50px; background-image: url('img/sublime/win_title_bar.png');
+}
+
+html.plat_win #anim_container {
+    width: 816px; height: 450px; position: relative;
+}
+
+html.plat_win #anim_left {
+    width: 8px; height: 450px; background-image: url('img/sublime/win_left_bar.png');
+}
+
+html.plat_win #anim_right {
+    width: 8px; height: 450px; background-image: url('img/sublime/win_right_bar.png');
+}
+
+html.plat_win #anim_bottom {
+    width: 816px; height: 8px; background-image: url('img/sublime/win_bottom_bar.png');
+}
+
+div.anim_caption {
+    width: 800px;
+    text-align: left;
+    margin-top: 7px;
+    height: 62px;
+    font-size: 15px;
+}
+
+div.anim_caption .controls {
+    float: right;
+    width: 100px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 10px;
+    height: 23px;
+}
+
+a.skip{
+    text-decoration: none;
+    position: relative;
+    top: -1px;
+}
+html.plat_osx a.skip { top: 1px }
+
+a.skip:hover{
+    color: red;
+}
+ul.ul li{margin:10px 0;}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>前端界神器 Sublime Text</h1>
+    
+    <p>Sublime Text 是性感无比的代码编辑器！程序员必备神器！而且还跨平台支持 Win/Mac/Linux。毫不夸张的说，拥有Sublime Text这款神器你就所向披靡，不仅如此，使用Sublime Text还可以让你更年轻更有魅力...</p>
+    <p>喜欢软件工具实在，本人也很实在，说的多没用，直接上例子...... 喜欢的话，就继续往下看吧</p>
+    <div class="band">
+        <div id="anim_shell">
+            <div id="anim_top"></div>
+            <div id="anim_container">
+                <div id="anim_left" style="float:left"></div>
+                <div id="anim_right" style="float:right"></div>
+                <canvas id="target" width="800" height="450">
+                    <div id="fallback" style="width: 800px; height: 450px; position: relative;"></div>
+                </canvas>
+                <div id="anim_overlay"></div>
+            </div>
+            <div id="anim_bottom"></div>
+        </div>
+        <div class="anim_caption">
+            <div class="controls">
+                <a href="javascript:prev()" class="skip">&#9664;</a> &nbsp; <span id="content_index">1 / 6</span> &nbsp; <a href="javascript:next()" class="skip">&#9654;</a>
+            </div>
+            <div id="content">
+                <div id="content1">使用多重选择快速重命名<br>这里用 <span class="pc key">Ctrl+D</span><span class="mac key">&#8984;D</span> 快捷键，重复可增加选择下一相同选中文本。</div>
+
+                <div id="content2" style="display: none;">使用多选批量编辑<br>这里 <span class="pc key">Ctrl+Shift+L</span><span class="mac key">&#8679;&#8984;L</span> 用于拆分选择到行，然后每一行可以同时编辑。</div>
+
+                <div id="content3" style="display: none;">命令面板提供了快速键功能。<br><span class="pc key">Ctrl+Shift+P</span><span class="mac key">&#8679;&#8984;P</span> 用于显示命令面板, "sspy" (设置python语法的简称) 用于设置当前文件匹配python的语法</div>
+
+                <div id="content4" style="display: none;">即使在最大目录集，你也可以迅速导航到任意文件。<br><span class="pc key">Ctrl+P</span><span class="mac key">&#8984;P</span> 即跳转快捷键，你可以输入字符然后过滤文件或目录名。</div>
+
+                <div id="content5" style="display: none;">你可以在一个文件中跳转到任意位置，某函数，某行或某字段<br>键入 @ 之后输入文件名过滤信息。<a href="http://www.sublimetext.com/blog/articles/sublime-text-2-public-alpha">更多...</a></div>
+
+                <div id="content6" style="display: none;">使用正则表达式进行查找和替换。<br>这里将不需要的空白通过正则表达式 " +" 找到空白组，然后再同时选择并进行编辑。</div>
+            </div>
+        </div>
+    </div>
+    
+    <p>上面实现的功能只是其一小部分，虽然Sublime Text是收费软件，但他提供了<b>免费无限制无限期的试用权</b>，只是偶尔在你保存文件时，提醒你木有购买，但功能上没有任何限制，而且可以一直使用。</p>
+
+    <p>Sublime Text 也支持各种主流编程语言的语法高亮，不仅如此，还有丰富的主题可供选择。详细的各种介绍你可以参考：<a target="_blank" href="http://www.iplaysoft.com/sublimetext.html">Sublime Text 2介绍</a>，这里我们主要侧重分享安装和使用等问题，如果你想用Sublime Text，看这个肯定有用。</p>
+    
+    <h2>Sublime Text 安装使用</h2>
+
+    <p>首先下载 <a target="_blank" href="http://www.sublimetext.com/2">Sublime Text 2</a>、<a target="_blank" href="http://www.sublimetext.com/3">Sublime Text 3</a>，可以根据你的系统选择，Sublime Text支持跨平台，Window平台和Mac甚至Linux，你无需为以后变更平台后要改变编辑器操作习惯而头疼。</p>
+    
+    <h3>使用 Package Control</h3>
+
+    <p>Package Control即安装包控制器，有了这个就可以使用丰富的插件包了。安装方法有两种，推荐第一种：</p>
+    
+    <p>1、访问<a target="_blank" href="https://sublime.wbond.net/installation">Package Control站点</a>按照提示复制一段python命令安装Package Control，按Ctrl + ` 调出console控制台，粘贴对应的命令行回车即可。</p>
+    <h4>SUBLIME TEXT 3</h4>
+
+<pre>import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())</pre>
+
+
+    <h4>SUBLIME TEXT 2</h4>
+
+<pre>import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')</pre>
+    
+    <p>重启Sublime Text，如果在 Perferences->package settings 中看到 package control 这一项，则安装成功。</p>
+    <p>如果这种方法不能安装成功，可以使用第二种方法下载编译包手动安装。</p>
+
+    <p>下载<a href="http://sublime.wbond.net/Package%20Control.sublime-package"> Package Control 插件包</a>到插件目录</p>
+    <p>插件目录在菜单中打开 Preference--Browse Packages，没有自己新建一个</p>
+    
+    <h3>使用Package Control安装插件的方法：</h3>
+    <p>1、按下Ctrl+Shift+P(Win) 或 Command+Shift+P(Mac) 调出控制面板</p>
+    <p>2、输入install调出Install Package选项并回车，然后在列表中选中要安装的插件。</p>
+    <p>常用的命令Install Package (安装扩展)、List Packages (列出全部扩展)、Remove Package (移除扩展)、Upgrade Package (升级扩展)</p>
+    
+    <p>方法介绍完毕，下面推荐一些常用插件：</p>
+    
+    <h3>Sublime Text 精华插件</h3>
+    <ul class="ul">
+        <li>
+            <h4>Emmet</h4>
+            <p>
+                就是 Sublime Text 版本的 Zen Coding，改名 Emmet 了。前端开发必备插件，Write less , show more，Tab键触发。还不知道ZenCoding，你要补课了《
+                <a target="_blank" href="http://www.qianduan.net/zen-coding-a-new-way-to-write-html-code.html">Zen Coding: 一种快速编写HTML/CSS代码的方法</a>
+                》
+            </p>
+        </li>
+        <li>
+            <h4>Tag</h4>
+            <p>Html格式化，右键Auto-Format Tags on Ducument。</p>
+        </li>
+        <li>
+            <h4>GBK to UTF8</h4>
+            <p>将文件编码从GBK转黄成UTF8，快捷键Ctrl+Shift+C</p>
+        </li>
+        <li>
+            <h4>Sublime Prefixr</h4>
+            <p>Prefixr，CSS3 私有前缀自动补全插件，Ctrl+Alt+X触发。</p>
+        </li>
+        <li>
+            <h4>JS Format</h4>
+            <p>一个JS代码格式化插件。</p>
+        </li>
+        <li>
+            <h4>SublimeLinter</h4>
+            <p>
+                支持lint语法的插件，可以高亮linter认为有错误的代码行，也支持高亮一些特别的注释，比如“TODO”，这样就可以被快速定位。
+            </p>
+        </li>
+        <li>
+            <h4>Alignment</h4>
+            <p>代码对齐，如写几个变量，选中这几行，Ctrl+Alt+A，就对齐了。注意会和QQ的截图快捷键冲突。</p>
+        </li>
+        <li>
+            <h4>Bracket Highlighter</h4>
+            <p>类似于代码匹配，可以匹配括号，引号等符号内的范围。</p>
+        </li>
+        <li>
+            <h4>Hex to HSL</h4>
+            <p>自动转换颜色值，从16进制到HSL格式，快捷键 Ctrl+Shift+U</p>
+        </li>
+        <li>
+            <h4>Git</h4>
+            <p>基本上实现了git的所有功能。</p>
+        </li>
+        <li>
+            <h4>SFTP</h4>
+            <p>直接编辑 FTP 或 SFTP 服务器上的文件</p>
+        </li>
+        <li>
+            <h4>Clipboard History</h4>
+            <p>剪贴板历史记录，显示更多历史复制，Ctrl+Shift+V触发。</p>
+        </li>
+        <li>
+            <h4>HtmlTidy</h4>
+            <p>清理与排版你的HTML代码</p>
+        </li>
+        <li>
+            <h4>YUI Compressor</h4>
+            <p>压缩JS和CSS文件</p>
+        </li>
+        <li>
+            <h4>Theme *</h4>
+            <p>Soda、Flatland等都是最常用的主题</p>
+        </li>
+        <li>
+            <h4>SideBarEnhancements</h4>
+            <p>侧栏右键功能增强，非常实用</p>
+        </li>
+        <li>
+            <h4>DeleteBlankLines</h4>
+            <p>删除空行</p>
+        </li>
+    </ul>
+    <p>如果打开中文会有乱码，原因是ST2本身只支持UTF-8编码，而遇到的中文文件是GBK或者GB2312等编码时就会出现乱码，解决方法是安装一个 ConvertToUTF8 或者 GBK Encoding Support 插件即可完美解决，这个不是什么大问题。</p>
+    
+    <h4>常用配置</h4>
+    <p>在 在菜单Preferences -> Settings- User 中设置修改。</p>
+
+<pre>
+{
+    "line_numbers": true,      //是否显示行号
+    "gutter": true,             //是否显示边列
+    "auto_indent": true,        //是否自动缩进
+    //"wrap_width": 170,        //换行宽度(单位：字符)
+    "scroll_past_end": true,    //滚动能否超过结尾
+    "font_face": "courier new", //等宽字体
+    "tab_size": 4,              //TAB缩进宽度
+    "translate_tabs_to_spaces": true,   //自动转换TAB为空格
+    "update_check": false,      //是否检测版本升级
+    "use_tab_stops": true,      
+    "auto_match_enabled": true,
+    "draw_white_space": "all",
+    "font_size": 19,
+    "gutter": true,
+    "highlight_line": true,
+    "word_wrap": true          //是否自动换行
+}
+</pre>
+    <h4>注意</h4>
+    <p>带有后缀<b>Default</b>的，为默认设置，每次升级插件都会重置这里的设置。所以尽量不要修改这里，否则升级会丢失你原先的设置。</p>
+    <p>带有后缀<b>User</b>的，为用户自定义设置，你可以把Default里面的设置全部复制一份到这里，然后再修改，这里存在的设置选项会覆盖Default里面的，即User的优先级更高。</p>
+
+    <h2>Sublime Text 推荐快捷键</h2>
+    <p>想要熟练还是要多使用，但作为入门还有个便捷的路，那就是看视频教程，叫别人教你一遍好太多了。</p>
+    <h4>送上大城小胖同学制作的 Sublime Text 2 的介绍视频：</h4> 
+    <p class="tc"><embed src="http://player.youku.com/player.php/sid/XMzU5NzQ5ODgw/v.swf" allowFullScreen="true" quality="high" width="600" height="500" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></p>
+
+    <h4>sublime text 快捷键列表</h4>
+    
+    <p>有了上面的介绍，也入门了，那么剩下的就是熟练快捷键了，有了这些快捷键，你就有了神速高效率。这里我们尽量简单些介绍，方便记忆。下面这些是我最喜欢的高效快捷键。</p>
+    
+    <ul class="ul">
+        <li>Ctrl+G：跳转到第几行</li>
+        <li>Ctrl+R：在html文件里是 id 关键字导航；css中是每条规则导航；js里这是每个function导航</li>
+        <li>Ctrl+Shift+P：打开命令面板</li>
+        <li>Ctrl+P：搜索项目中的文件，这是sublime上面很好用的功能之一。直接输入输入关键字，可以在已打开的项目文件夹中进行快速文件名导航。<br>并且输入:前缀即为(Ctrl+G),加上@就是(Ctrl+R)了</li>
+        <li>Ctrl+`：可以调出命令行模式(view->show console)，主要支持python语法等</li>
+        <li>Ctrl+Z：撤销 Ctrl+Y 恢复撤销</li>
+        <li>Ctrl+D：选择单词，重复按可增加选择下一个相同的单词</li>
+        <li>Ctrl+L：选择整行，重复可依次增加选择下一行</li>
+        <li>Ctrl+X：删除当前行</li>
+        <li>Ctrl+Shift+L：选择多行</li>
+        <li>Ctrl+Shift+V：粘贴并格式化</li>
+        <li>Ctrl+F：是查找，点击 Find All 后，则一下选择本页面的全部相同的文本，然后按键盘替换则全替换</li>
+        <li>Ctrl+H：替换</li>
+        <li>Ctrl+Shift+F：查找并替换 默认是在本项目(用得最多的)．也可能来文件夹里查找，与普通编辑不同的地方是sublime允许添加多个文件夹进行查找(add directory)</li>
+        <li>Ctrl+L：选择整行（按住-继续选择下行，即按住Ctrl不放按一次L则多选一行）</li>
+        <li>Ctrl+Shift+K 删除整行,Ctrl+KK 从光标处删除至行尾</li>
+        <li>Ctrl+/：注释当前行</li>
+        <li>Ctrl+Shift+/：块注释(注释已选择内容)，sublime会自动根据语言选择注释方式</li>
+        <li>Ctrl+Enter 当前行后插入行 Ctrl+Shift+Enter 当前行前插入新行</li>
+        
+        <li>在页面右下角，有快速设置tab转为spaces的菜单，可以指定页面的tab宽度，也可以将页面所有tab转为指定的spaces格数</li>
+        <li>Shift+右键拖动：选择多行，用来更改或插入列内容</li>
+        <li>按Ctrl，依次点击或选取，可需要编辑的多个位置</li>
+        <li>Ctrl+Shift+↑或↓ 上下行互换</li>
+        <li>Ctrl+K Backspace 从光标处删除至行首</li>
+        <li>Ctrl+Shift+D 复制当前行，插入在该行之前</li>
+    </ul>
+    <h4>其他一些快捷键</h4>
+    <p>以下这些我不太常用，也许你会用得到。</p>
+    <ul class="ul">
+        <li>Ctrl+F2：设置/删除标记，然后F2在标记之间切换，Shift+F2 上一个标记。这里不爽的是无法进行鼠标添加标记</li>
+        <li>Ctrl+W：关闭当前打开文件</li>
+        <li>Ctrl+Shift+W：关闭所有打开文件</li>
+        <li>Ctrl+M：跳转到对应括号</li>
+        <li>Ctrl+U：软撤销，撤销光标位置</li>
+        <li>Ctrl+J：选择标签内容</li>
+        <li>Ctrl+H：替换</li>
+        <li>Ctrl+N：新建窗口</li>
+        <li>Ctrl+K+B：开关侧栏</li>
+        <li>Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身</li>
+        <li>Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的</li>
+        <li>Ctrl+Shift+A：选择当前标签前后，修改标签用的</li>
+        <li>F11：全屏</li>
+        <li>Shift+F11：全屏免打扰模式，只编辑当前文件</li>
+        <li>Alt+F3：选择所有相同的词</li>
+        <li>Alt+.：闭合标签</li>
+        <li>Alt+Shift+数字：分屏显示</li>
+        <li>Alt+数字：切换打开第N个文件</li>
+        <li>鼠标的前进后退键可切换Tab文件</li>
+        <li>ctrl+up, ctrl+down可以一行一行的滚动屏幕</li>
+        <li>pageUp pageDown一页一页翻动</li>
+        <li>ctrl+shift+a 可以HTML标签内容，每按一次逐级往上</li>
+        <li>ctrl+shift+space 可以选择js等语言里的块{内容}</li>
+        <li>Ctrl+J 合并行（已选择需要合并的多行时）</li>
+        <li>Ctrl+KU 改为大写</li>
+        <li>Ctrl+KL 改为小写</li>
+        <li>Ctrl+M 光标跳至对应的括号(BracketHighlighter插件做得更好)</li>
+        <li>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）</li>
+        <li>Alt+. 闭合当前标签</li>
+        <li>Ctrl+Shift+A 选择光标位置父标签对儿</li>
+        <li>Ctrl+Shift+[ 折叠代码</li>
+        <li>Ctrl+Shift+] 展开代码</li>
+        <li>Ctrl+KT 折叠属性</li>
+        <li>Ctrl+K0 展开所有</li>
+        <li>Ctrl+U 软撤销</li>
+        <li>Ctrl+T 词互换</li>
+        <li>Tab 缩进 自动完成</li>
+        <li>Shift+Tab 去除缩进</li>
+        <li>在 菜单View-syntax下可以将当前面面以指定的语言进行语法高亮，通常情况下sublime会自动进行判断选择</li>
+        <li>snippets 代码片段插件，在tools-snippets菜单下可以查看当前页面支持的snippets，可以在缩略词后加tab自动补全snippets</li>
+        <li>Build编译，可以进行ruby等代码的编译，我安装了一个yui compressor后，就可以在css js页面里进行压缩，<br>快捷键是ctrl+B，会自动在当前目录下生成xx.min.js、xx.min.css等压缩文件，这个很实用</li>
+        <li>添加智能代码块提示 Tools->new snippet  (mac机下保存后缀要为.sublime-snippet ) content：放代码必须放在CDATA里，$1代表光标位置，方便编辑类名 tabTrigger：快捷键  scope: 响应范围 可以是 html css js文件等 description：代码描述 在输入快捷键的时候 提示框内的介绍描述文字</li>
+    </ul>
+
+    <div class="docs-example">
+        
+        
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+
+
+    <h3>对此你有什么看法：</h3>
+    <div id="uyan_frame"></div>
+    
+
+</div>
+<script>
+var content =
+[
+    document.getElementById("content1"),
+    document.getElementById("content2"),
+    document.getElementById("content3"),
+    document.getElementById("content4"),
+    document.getElementById("content5"),
+    document.getElementById("content6")
+]
+
+var animation_urls =
+[
+    "img/sublime/anim/rename2_packed.png",
+    "img/sublime/anim/days_169_packed.png",
+    "img/sublime/anim/command_palette_packed.png",
+    "img/sublime/anim/goto_anything_packed.png",
+    "img/sublime/anim/goto_anything2_packed.png",
+    "img/sublime/anim/regex_packed.png" 
+]
+
+command_palette_timeline=[{"delay":1811,"blit":[[0,0,800,450,0,0]]},{"delay":48,"blit":[[0,450,400,344,200,36],[66,982,63,15,0,36]]},{"delay":798,"blit":[]},{"delay":137,"blit":[[494,762,186,142,206,43],[239,505,42,111,552,131],[494,904,177,15,206,230],[188,905,172,15,206,250],[494,919,168,15,206,210],[0,931,166,15,206,270],[166,931,159,15,206,190],[494,934,156,15,206,330],[0,850,141,15,206,290],[131,946,129,15,206,350],[260,946,114,15,206,310],[650,935,37,46,559,68],[0,976,225,6,206,370],[129,982,68,13,370,190],[250,920,43,11,551,291],[273,879,33,13,351,290],[771,860,28,10,566,351]]},{"delay":463,"blit":[[680,762,57,173,285,90],[216,794,109,42,214,43],[325,794,71,35,285,310],[763,762,8,286,231,90],[687,935,50,26,285,350],[365,862,35,33,285,270],[771,762,15,48,581,71]]},{"delay":43,"blit":[[778,810,7,50,587,69]]},{"delay":47,"blit":[[771,810,7,50,587,69]]},{"delay":45,"blit":[[793,762,7,50,587,69]]},{"delay":50,"blit":[[786,762,7,50,587,69]]},{"delay":59,"blit":[[152,482,10,51,586,68]]},{"delay":61,"blit":[[737,762,26,232,570,68],[147,794,69,72,285,71],[0,905,188,15,206,290],[0,946,131,15,294,170],[494,472,131,15,286,310],[315,862,50,35,285,230],[494,949,112,15,285,190],[0,961,105,15,285,330],[105,961,102,15,285,150],[225,974,79,15,285,270],[0,982,66,15,285,350],[625,981,58,15,429,170],[197,989,57,13,285,210],[312,897,78,6,285,370],[360,903,30,14,401,190],[785,812,10,17,222,43]]},{"delay":443,"blit":[[400,450,400,312,200,68],[384,829,9,17,231,43]]},{"delay":37,"blit":[]},{"delay":37,"blit":[]},{"delay":38,"blit":[]},{"delay":38,"blit":[]},{"delay":285,"blit":[]},{"delay":102,"blit":[[200,36,400,75,200,36],[0,36,63,15,0,36]]},{"delay":4000,"blit":[[400,762,94,394,706,36],[0,794,147,56,63,233],[216,836,168,26,63,203],[0,866,315,13,63,83],[0,879,273,13,329,203],[0,892,259,13,175,158],[0,920,250,11,259,113],[325,920,67,26,183,98],[207,961,105,13,63,158],[312,961,77,17,224,413],[494,964,112,11,63,113],[687,961,49,25,224,324],[606,949,42,28,63,38],[494,975,49,22,196,297],[494,975,49,22,196,357],[543,977,82,13,238,203],[304,978,77,13,385,83],[259,892,53,13,719,434],[694,961,42,10,231,384],[771,870,21,10,182,128],[694,964,7,5,147,177],[694,964,7,5,175,402]]}]
+days_169_timeline=[{"delay":685,"blit":[[0,0,800,450,0,0]]},{"delay":705,"blit":[[0,450,71,77,0,36],[323,529,152,13,14,434],[798,462,2,10,713,36]]},{"delay":514,"blit":[[675,450,35,91,41,36],[789,493,5,12,711,36]]},{"delay":430,"blit":[[747,450,29,91,48,36],[796,450,4,12,711,36]]},{"delay":642,"blit":[[782,450,6,90,76,36],[788,450,1,90,83,36],[796,462,2,12,715,36]]},{"delay":736,"blit":[[323,514,237,15,90,36],[710,450,37,75,0,51],[560,514,34,71,42,53],[776,450,6,90,78,36],[634,514,39,12,711,36],[799,487,1,15,328,36]]},{"delay":560,"blit":[[594,541,101,13,4,434],[798,472,1,15,90,36],[799,472,1,15,139,36],[796,474,1,15,188,36],[797,474,1,15,237,36],[798,487,1,15,286,36]]},{"delay":398,"blit":[[775,467,8,15,321,36],[25,530,7,10,95,434],[796,489,2,2,748,36]]},{"delay":658,"blit":[[373,498,282,16,41,36],[119,530,119,12,4,434],[475,531,38,2,711,36]]},{"delay":408,"blit":[[71,514,252,16,41,36],[594,514,40,16,294,36],[594,530,40,2,711,36]]},{"delay":504,"blit":[[380,482,295,16,41,36],[0,530,119,12,4,434],[634,530,39,2,711,36]]},{"delay":141,"blit":[[71,498,302,16,41,36],[279,530,41,2,711,36],[46,434,7,10,88,434]]},{"delay":67,"blit":[[373,482,302,16,48,36],[517,529,42,2,711,36],[53,434,7,11,88,434]]},{"delay":240,"blit":[[71,482,302,16,55,36],[475,529,42,2,712,36],[678,541,7,11,88,434]]},{"delay":338,"blit":[[373,466,302,16,62,36],[0,527,42,2,713,36],[789,483,7,10,88,435]]},{"delay":142,"blit":[[71,466,302,16,69,36],[238,530,41,2,714,36],[789,472,7,11,88,434]]},{"delay":79,"blit":[[373,450,302,16,76,36],[634,528,41,2,715,36],[789,461,7,11,88,434]]},{"delay":4000,"blit":[[71,450,302,16,83,36],[634,526,41,2,716,36],[789,450,7,11,88,434]]}]
+goto_anything_timeline=[{"delay":934,"blit":[[0,0,800,450,0,0]]},{"delay":458,"blit":[[0,1138,523,344,211,36],[729,812,42,15,146,36]]},{"delay":50,"blit":[[0,2413,515,41,215,149],[523,1056,180,33,149,2],[523,1231,184,15,229,357],[523,1246,171,15,229,275],[523,1360,147,15,229,234],[523,1375,141,15,229,193],[523,1455,142,12,257,336],[523,1467,139,12,257,295],[699,1151,99,15,229,70],[523,1246,98,15,229,111],[680,1306,98,15,229,316],[679,1414,116,12,257,213],[665,1455,115,12,257,131],[662,1467,115,12,257,254],[683,1479,108,12,257,90],[505,1671,10,40,720,68],[795,557,5,17,219,43]]},{"delay":40,"blit":[[523,450,78,394,722,36],[0,2204,504,43,216,383],[672,450,43,377,167,53],[174,796,70,11,651,383],[703,987,59,13,608,434],[619,844,50,15,160,36],[619,859,53,13,719,434]]},{"delay":79,"blit":[]},{"delay":416,"blit":[[0,1940,515,82,215,149],[323,2670,323,12,257,131],[319,2682,300,12,257,90],[523,927,147,15,224,70],[523,942,147,15,224,111],[664,1375,134,15,224,357],[523,1443,142,12,257,336],[694,1246,106,15,224,316],[665,1443,125,12,271,295],[703,957,89,15,224,275],[9,1945,47,13,224,236],[776,554,10,17,223,43],[690,1198,7,7,290,257]]},{"delay":464,"blit":[[0,2331,515,41,215,67],[0,2372,515,41,215,190],[0,2670,323,12,257,131],[523,1195,244,12,271,295],[523,1219,233,12,257,254],[523,1306,157,15,232,316],[523,1345,151,15,232,357],[523,1390,139,15,232,111],[670,1360,128,15,232,275],[674,1345,126,15,232,152],[691,1177,106,15,232,234],[662,1390,132,12,257,172],[666,1402,132,12,257,336],[786,557,9,17,232,43]]},{"delay":47,"blit":[[793,519,7,38,721,69]]},{"delay":59,"blit":[[793,465,7,38,721,69]]},{"delay":49,"blit":[[786,465,7,38,721,69]]},{"delay":161,"blit":[[776,465,10,40,720,68]]},{"delay":212,"blit":[[0,794,523,344,211,36],[703,972,56,15,146,36]]},{"delay":41,"blit":[]},{"delay":48,"blit":[[523,1479,160,10,322,26]]},{"delay":41,"blit":[[523,1151,176,26,314,10]]},{"delay":40,"blit":[[523,1023,180,33,312,3]]},{"delay":1831,"blit":[[523,1120,180,31,312,4]]},{"delay":1040,"blit":[[0,450,523,344,211,36],[715,812,56,15,146,36]]},{"delay":63,"blit":[[0,2098,515,56,215,70],[0,2289,515,42,215,334],[0,2538,515,21,215,129],[0,2559,515,21,215,211],[0,2580,515,21,215,252],[0,2601,515,21,215,293],[0,2622,515,18,215,173],[523,990,180,33,312,2],[403,2655,386,15,257,234],[415,2640,374,14,257,194],[515,1646,285,14,257,153],[523,1405,143,14,257,317],[681,1291,119,15,257,275],[0,2694,515,2,215,170],[0,2698,515,1,215,67],[766,554,10,17,219,43]]},{"delay":38,"blit":[[601,450,71,394,729,36],[0,2154,512,50,216,380],[715,450,51,163,160,188],[715,613,51,77,160,353],[715,690,44,57,167,36],[715,747,44,39,167,99],[715,786,44,26,167,143],[619,872,50,11,160,173]]},{"delay":139,"blit":[]},{"delay":150,"blit":[[0,1646,515,107,215,43],[0,2247,515,42,215,334],[0,2454,515,21,215,170],[0,2475,515,21,215,211],[0,2496,515,21,215,252],[0,2517,515,21,215,293],[0,2640,415,15,228,234],[0,2655,403,15,228,193],[0,2640,314,15,228,152],[523,1276,169,15,229,316],[0,2655,114,15,228,275]]},{"delay":117,"blit":[[0,1858,515,82,215,67],[672,827,117,130,228,175],[0,2682,319,12,302,336],[523,1261,169,15,229,316],[523,1321,194,12,360,172],[523,1333,191,12,360,213],[523,1419,156,12,397,254],[523,1431,153,12,397,295],[692,1261,103,15,228,152],[673,927,98,15,229,357],[766,531,27,10,621,336],[766,571,7,17,237,43]]},{"delay":184,"blit":[[0,1753,523,105,211,275],[523,844,96,83,232,43],[504,2204,294,12,257,254],[523,1207,235,12,257,172],[523,1291,158,15,228,152],[692,1276,102,15,229,234],[676,1431,123,12,370,131],[759,690,41,14,305,194],[563,871,36,15,272,70],[0,2697,515,1,215,272],[112,1859,10,44,720,68],[766,507,32,12,472,213],[587,891,29,12,296,90],[766,541,18,13,228,195],[532,873,8,12,223,72]]},{"delay":458,"blit":[[0,1482,523,164,211,112],[0,2696,515,1,215,108],[766,450,32,15,277,70],[766,465,10,42,241,43],[766,519,26,12,300,90],[17,1986,18,13,223,72]]},{"delay":38,"blit":[]},{"delay":38,"blit":[]},{"delay":38,"blit":[]},{"delay":39,"blit":[]},{"delay":415,"blit":[]},{"delay":199,"blit":[[0,2022,523,76,211,36],[710,972,49,15,146,36]]},{"delay":38,"blit":[]},{"delay":38,"blit":[[523,1489,154,5,488,31]]},{"delay":43,"blit":[[523,1177,168,18,481,18]]},{"delay":40,"blit":[[523,1089,180,31,475,5]]},{"delay":4000,"blit":[[523,957,180,33,475,3]]}]
+goto_anything2_timeline=[{"delay":878,"blit":[[0,0,800,450,0,0]]},{"delay":1179,"blit":[[0,1210,523,344,211,36],[709,745,42,15,146,36]]},{"delay":59,"blit":[[0,2000,515,41,215,149],[588,877,180,33,149,2],[588,963,184,15,229,357],[588,978,171,15,229,275],[588,1101,147,15,229,234],[588,1116,141,15,229,193],[523,1368,142,12,257,336],[523,1380,139,12,257,295],[523,1404,99,15,229,70],[588,978,98,15,229,111],[622,1410,98,15,229,316],[642,1425,116,12,257,213],[523,1437,115,12,257,131],[638,1437,115,12,257,254],[647,1449,108,12,257,90],[775,544,10,40,720,68],[785,521,5,17,219,43]]},{"delay":39,"blit":[[588,450,78,394,722,36],[0,1875,504,43,216,383],[666,450,43,377,167,53],[709,706,70,11,651,383],[709,717,59,13,608,434],[709,745,50,15,160,36],[709,760,53,13,719,434]]},{"delay":57,"blit":[]},{"delay":69,"blit":[[0,1793,515,82,215,149],[0,2100,323,12,257,131],[306,2112,300,12,257,90],[588,1071,147,15,224,70],[588,1086,147,15,224,111],[666,827,134,15,224,357],[523,1356,142,12,257,336],[665,1371,106,15,224,316],[655,1398,125,12,271,295],[709,680,89,15,224,275],[9,1798,47,13,224,236],[789,695,10,17,223,43],[690,1273,7,7,290,257]]},{"delay":460,"blit":[[0,1918,515,41,215,67],[0,1959,515,41,215,190],[325,2088,323,12,257,131],[523,1270,244,12,271,295],[523,1282,233,12,257,254],[588,1041,157,15,232,316],[588,1056,151,15,232,357],[588,1131,139,15,232,111],[588,1158,128,15,232,275],[588,1173,126,15,232,152],[665,1356,106,15,232,234],[662,1386,132,12,257,172],[523,1392,132,12,257,336],[785,788,9,17,232,43]]},{"delay":41,"blit":[[785,752,7,36,721,69]]},{"delay":42,"blit":[[778,752,7,38,721,69]]},{"delay":40,"blit":[[771,752,7,38,721,69]]},{"delay":41,"blit":[[775,634,7,38,721,69]]},{"delay":207,"blit":[[775,504,10,40,720,68]]},{"delay":467,"blit":[[0,843,588,367,146,63],[69,850,515,80,215,70],[69,969,515,63,215,189],[69,1071,515,16,215,151],[69,1054,515,16,215,253],[69,1033,515,16,215,274],[69,931,515,16,215,291],[709,450,66,95,734,36],[55,844,10,351,201,64],[73,952,170,12,219,172],[709,653,65,27,146,36],[68,513,515,3,215,270],[523,1425,119,12,4,434],[0,2136,515,2,215,168],[0,2138,515,2,215,185],[782,652,13,17,240,43]]},{"delay":54,"blit":[[523,1349,245,7,148,421],[764,752,7,50,791,79]]},{"delay":60,"blit":[[523,1342,245,7,148,421],[789,602,7,50,791,79]]},{"delay":51,"blit":[[523,1335,245,7,148,421],[782,602,7,50,791,79]]},{"delay":67,"blit":[[523,1304,246,10,147,420],[790,501,10,51,790,78]]},{"delay":461,"blit":[[0,450,587,393,147,37],[709,545,66,55,734,180],[709,600,66,53,734,78],[782,669,13,11,4,434]]},{"delay":45,"blit":[[523,1328,245,7,148,421],[775,584,7,50,791,181]]},{"delay":45,"blit":[[523,1321,245,7,148,421],[792,552,7,50,791,181]]},{"delay":44,"blit":[[523,1314,245,7,148,421],[785,552,7,50,791,181]]},{"delay":55,"blit":[[523,1294,246,10,147,420],[790,450,10,51,790,180]]},{"delay":47,"blit":[[0,2041,523,35,211,274],[0,2076,400,12,219,172],[400,2076,351,12,252,189],[0,2088,325,12,241,155],[323,2100,308,12,252,257],[0,2112,306,12,232,104],[0,2124,298,12,240,138],[523,1210,275,12,252,206],[523,1234,263,12,264,240],[588,1029,197,12,240,121],[625,1461,102,12,252,223],[419,585,89,11,566,155],[775,450,15,54,257,43],[709,785,55,12,357,223],[0,2140,515,1,215,271],[760,730,35,11,539,104],[421,704,35,11,539,138],[760,741,35,11,620,172]]},{"delay":1829,"blit":[[504,1875,296,12,308,189],[523,1222,263,12,264,206],[523,1246,253,12,308,172],[523,1258,244,12,290,138],[588,993,201,12,362,155],[588,1005,198,12,240,104],[588,1017,197,12,240,121],[588,1146,164,12,309,257],[588,1188,156,12,252,223],[263,884,117,12,411,223],[523,1449,124,11,294,87],[523,1460,102,12,252,240],[416,585,92,11,564,155],[709,695,80,11,319,70],[709,773,55,12,357,240],[231,500,39,11,536,138],[768,717,28,11,476,257],[785,504,5,17,262,43]]},{"delay":201,"blit":[[0,1554,560,239,201,36],[709,730,51,15,146,226]]},{"delay":40,"blit":[]},{"delay":41,"blit":[[588,1200,156,7,324,29]]},{"delay":39,"blit":[[588,942,170,21,317,15]]},{"delay":40,"blit":[[588,910,180,32,312,4]]},{"delay":4000,"blit":[[588,844,180,33,312,3]]}]
+regex_timeline=[{"delay":644,"blit":[[0,0,800,450,0,0]]},{"delay":738,"blit":[[571,729,42,15,0,51],[711,87,89,5,711,83],[0,665,800,33,0,397]]},{"delay":575,"blit":[[130,720,77,12,714,38],[0,698,30,76,69,51],[0,541,464,91,104,51],[780,698,16,46,594,66],[105,541,16,16,622,111],[684,587,8,15,188,405],[501,587,94,12,4,434]]},{"delay":711,"blit":[[207,720,75,12,715,38],[637,698,16,76,76,51],[53,732,9,46,132,51],[755,698,9,91,174,51],[685,698,16,61,202,51],[746,698,9,91,258,51],[669,698,16,61,342,51],[621,698,16,91,482,51],[796,698,2,91,524,51],[443,541,2,76,552,51],[653,698,16,61,286,66],[710,729,16,31,391,66],[475,720,9,76,447,66],[798,450,2,46,601,66],[701,729,9,61,230,81],[796,450,2,46,363,81],[392,731,9,46,433,81],[623,698,9,16,118,96],[797,450,2,16,167,96],[623,698,9,16,307,96],[797,450,2,16,475,96],[755,758,9,31,146,111],[797,450,2,16,279,111],[797,450,2,16,629,111],[797,450,2,16,111,126],[797,450,2,16,328,126],[797,450,2,16,398,126],[797,450,2,16,559,126],[675,587,9,15,195,405],[339,720,70,11,28,434]]},{"delay":227,"blit":[[588,541,85,22,710,403]]},{"delay":33,"blit":[[478,698,85,22,710,403]]},{"delay":34,"blit":[[393,698,85,22,710,403]]},{"delay":33,"blit":[[308,698,85,22,710,403]]},{"delay":34,"blit":[[223,698,85,22,710,403]]},{"delay":34,"blit":[[138,698,85,22,710,403]]},{"delay":35,"blit":[[53,698,85,22,710,403]]},{"delay":34,"blit":[[715,602,85,22,710,403]]},{"delay":39,"blit":[[501,565,85,22,710,403]]},{"delay":34,"blit":[[588,563,85,22,710,403]]},{"delay":634,"blit":[[588,541,85,22,710,403]]},{"delay":36,"blit":[[501,541,87,24,709,402]]},{"delay":1142,"blit":[[53,720,77,12,714,38],[464,541,37,90,0,51],[673,541,30,46,69,51],[617,465,16,16,125,51],[563,698,58,31,167,51],[589,450,121,91,251,51],[747,511,37,91,426,51],[710,511,37,91,468,51],[784,511,16,91,517,51],[30,698,23,91,545,51],[701,698,30,31,384,66],[764,698,16,46,594,66],[710,450,86,61,104,81],[617,465,16,16,230,81],[711,83,89,5,711,83],[617,465,16,16,202,96],[617,465,16,16,83,111],[784,526,16,31,223,111],[617,465,16,16,622,111],[617,465,16,16,391,126],[0,632,800,33,0,397],[501,615,214,13,4,434]]},{"delay":36,"blit":[[595,587,80,12,714,38],[0,450,589,91,69,51]]},{"delay":959,"blit":[]},{"delay":4000,"blit":[[62,732,8,45,125,51],[798,698,1,90,167,51],[339,731,8,60,188,51],[467,720,8,90,230,51],[377,731,15,30,307,51],[459,720,8,90,405,51],[409,720,50,15,447,51],[0,66,37,75,0,66],[731,698,15,60,76,66],[613,729,8,60,251,66],[362,731,15,30,335,66],[282,720,57,15,426,66],[286,36,1,45,524,66],[708,541,1,15,223,81],[506,720,22,30,272,81],[707,541,1,15,370,81],[703,541,1,45,391,81],[528,729,43,15,447,81],[132,96,36,15,118,96],[401,731,8,45,482,96],[484,720,22,30,139,111],[704,541,1,30,209,111],[706,541,1,15,321,111],[347,731,15,30,426,111],[705,541,1,15,559,111],[799,496,1,15,111,126],[798,496,1,15,293,126],[797,496,1,15,356,126],[796,496,1,15,461,126],[501,602,214,13,4,434]]}]
+rename2_timeline=[{"delay":623,"blit":[[0,0,800,450,0,0]]},{"delay":182,"blit":[[0,450,322,16,182,40],[771,482,23,10,738,96],[720,527,23,16,244,100],[51,526,21,16,729,128],[586,527,20,10,738,196],[156,513,15,28,729,234],[720,527,23,16,181,280],[342,528,35,8,723,316],[720,527,23,16,307,325],[720,527,23,16,237,385],[608,525,112,12,4,434]]},{"delay":194,"blit":[[0,526,51,15,0,100],[777,450,23,16,244,100],[794,488,4,2,738,104],[608,512,112,13,4,434]]},{"delay":184,"blit":[[794,486,4,2,729,128],[105,513,51,15,0,280],[777,450,23,16,181,280],[608,525,7,11,4,434]]},{"delay":192,"blit":[[794,484,4,2,746,134],[720,512,51,15,0,325],[777,450,23,16,307,325],[788,492,7,11,4,434]]},{"delay":854,"blit":[[794,482,4,2,737,142],[720,482,51,15,0,385],[777,450,23,16,237,385],[171,513,7,10,4,435]]},{"delay":166,"blit":[[188,498,9,8,147,16],[300,512,112,16,391,40],[206,528,35,10,738,96],[0,466,224,16,244,100],[412,527,45,16,729,128],[771,512,28,16,181,280],[0,482,202,16,307,325],[771,512,28,16,237,385]]},{"delay":65,"blit":[[510,512,98,15,398,40],[309,528,33,10,739,96],[202,497,210,15,251,100],[543,527,43,16,730,128],[0,498,14,15,188,280],[0,498,188,15,314,325],[0,498,14,15,244,385]]},{"delay":174,"blit":[[188,512,112,16,391,40],[171,528,35,10,738,96],[553,450,224,16,244,100],[51,526,45,16,729,128],[433,466,28,16,181,280],[433,466,202,16,307,325],[433,466,28,16,237,385]]},{"delay":186,"blit":[[635,466,119,16,391,40],[96,528,36,10,738,96],[322,450,231,16,244,100],[754,466,46,16,729,128],[224,466,35,16,181,280],[224,466,209,16,307,325],[224,466,35,16,237,385]]},{"delay":50,"blit":[[412,512,98,15,419,40],[275,528,34,10,741,96],[412,482,210,15,272,100],[500,527,43,16,733,128],[600,497,14,15,209,280],[600,497,188,15,335,325],[600,497,14,15,265,385]]},{"delay":1419,"blit":[[622,482,98,15,426,40],[241,528,34,10,742,96],[202,482,210,15,279,100],[457,527,43,16,734,128],[412,497,14,15,216,280],[412,497,188,15,342,325],[412,497,14,15,272,385]]},{"delay":4000,"blit":[[0,542,343,1,182,55],[0,100,51,15,0,100],[265,100,1,15,286,100],[738,196,20,10,738,196],[729,234,15,28,729,234],[0,280,51,15,0,280],[265,100,1,15,223,280],[723,316,35,8,723,316],[0,325,51,15,0,325],[265,100,1,15,349,325],[0,385,51,15,0,385],[265,100,1,15,279,385],[0,513,105,13,4,434]]}]
+
+var animation_timelines =
+[
+    rename2_timeline,
+    days_169_timeline,
+    command_palette_timeline,
+    goto_anything_timeline,
+    goto_anything2_timeline,
+    regex_timeline
+]
+
+var cur_content = 0
+var auto_cycle_content = true
+
+function next()
+{
+    auto_cycle_content = false
+    auto_next()
+}
+
+function auto_next()
+{
+    cur_content = (cur_content + 1) % content.length
+    update_content()
+}
+
+function prev()
+{
+    auto_cycle_content = false
+    auto_prev()
+}
+
+function auto_prev()
+{
+    --cur_content;
+    if (cur_content < 0) cur_content = content.length - 1
+
+    update_content()
+}
+
+function update_content()
+{
+    for (var i = 0; i < content.length; ++i)
+        content[i].style.display = (i == cur_content) ? "block" : "none"
+
+    ci = document.getElementById('content_index')
+    ci.innerHTML = (cur_content + 1) + " / " + content.length
+
+    set_animation(animation_urls[cur_content], animation_timelines[cur_content],
+        animation_urls[(cur_content + 1) % content.length])
+}
+
+var delay_scale = 0.7
+var timer = null
+
+var animate = function(img, timeline, element)
+{
+    var i = 0
+
+    var run_time = 0
+    for (var j = 0; j < timeline.length - 1; ++j)
+        run_time += timeline[j].delay
+
+    var f = function()
+    {
+        var frame = i++ % timeline.length
+        var delay = timeline[frame].delay * delay_scale
+        var blits = timeline[frame].blit
+
+        var ctx = element.getContext('2d')
+
+        for (j = 0; j < blits.length; ++j)
+        {
+            var blit = blits[j]
+            var sx = blit[0]
+            var sy = blit[1]
+            var w = blit[2]
+            var h = blit[3]
+            var dx = blit[4]
+            var dy = blit[5]
+            ctx.drawImage(img, sx, sy, w, h, dx, dy, w, h)
+        }
+
+        if (i == timeline.length * 2 && auto_cycle_content)
+            timer = window.setTimeout(auto_next, delay)
+        else
+            timer = window.setTimeout(f, delay)
+    }
+
+    if (timer) window.clearTimeout(timer)
+    f()
+}
+
+var animate_fallback = function(img, timeline, element)
+{
+    var i = 0
+
+    var run_time = 0
+    for (var j = 0; j < timeline.length - 1; ++j)
+        run_time += timeline[j].delay
+
+    var f = function()
+    {
+        if (i % timeline.length == 0)
+        {
+            while (element.hasChildNodes())
+                element.removeChild(element.lastChild)
+        }
+
+        var frame = i++ % timeline.length
+        var delay = timeline[frame].delay * delay_scale
+        var blits = timeline[frame].blit
+
+        for (j = 0; j < blits.length; ++j)
+        {
+            var blit = blits[j]
+            var sx = blit[0]
+            var sy = blit[1]
+            var w = blit[2]
+            var h = blit[3]
+            var dx = blit[4]
+            var dy = blit[5]
+
+            var d = document.createElement('div')
+            d.style.position = 'absolute'
+            d.style.left = dx + "px"
+            d.style.top = dy + "px"
+            d.style.width = w + "px"
+            d.style.height = h + "px"
+            d.style.backgroundImage = "url('" + img.src + "')"
+            d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+
+            element.appendChild(d)
+        }
+
+        if (i == timeline.length * 2 && auto_cycle_content)
+            timer = window.setTimeout(auto_next, delay)
+        else
+            timer = window.setTimeout(f, delay)
+    }
+
+    if (timer) window.clearTimeout(timer)
+    f()
+}
+
+function set_animation(img_url, timeline, preload_url)
+{
+    var img = new Image()
+    img.onload = function()
+    {
+        var canvas = document.getElementById('target')
+        if (canvas && canvas.getContext)
+            animate(img, timeline, canvas)
+        else
+            animate_fallback(img, timeline, document.getElementById('fallback'))
+
+        var preload_image = new Image()
+        preload_image.src = preload_url
+    }
+    img.src = img_url
+}
+
+set_animation(animation_urls[0], animation_timelines[0], animation_urls[1])
+
+</script>
+
+<!-- UY BEGIN -->
+<script type="text/javascript">
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</body> 
+</html>

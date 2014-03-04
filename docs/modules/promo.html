@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>幻灯片轮播</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+* { margin:0; padding:0 }
+ul,dt,dd{margin:0;}
+img { vertical-align:top }
+a img { border:0 }
+ul { list-style-type:none }
+.bc { margin-left:auto; margin-right:auto; }
+code { display:block; margin:10px 0; padding:5px; line-height:18px; background:#eee; border-color:#ccc; border-style:solid; border-width:1px 1px 1px 5px; overflow:hidden }
+.white { color:white }
+.por { position:relative }
+.page, .page p { margin:20px auto; width:750px; }
+.page p { line-height:24px; }
+.promo { width:750px; height:300px; }
+.promo .por { width:750px; height:300px; position:relative; z-index:1; overflow:hidden; }
+.bigimg{position:absolute;}
+.promo .bigimg img { display:none; }
+.promo_num_bg { position:absolute; width:750px; height:20px; z-index:9; bottom:0px; left:0; background:#000; opacity:.3; filter:alpha(opacity=30) }
+.promo .arrow { background:url(../assets/temp/btn_arrow.png) no-repeat; position:absolute; top:90px; width:50px; height:76px; z-index:9; cursor:pointer; display:none }
+.promo span.prev { background-position:-150px center; left:0; }
+.promo span.next { background-position:-50px center; right:0; }
+.promo .prev.hover { background-position:-100px center; }
+.promo .next.hover { background-position:0 center; }
+.triggers_num {margin:0; bottom:5px; overflow:hidden; padding-left:19px; position:absolute; right:5px; z-index:10; }
+.triggers_num li { cursor:pointer; display:block; float:left; }
+.triggers_num span { background:#fff; display:block; height:10px; margin-right:4px; overflow:hidden; text-indent:-9999px; width:28px; opacity:.3; filter:alpha(opacity=30) }
+.triggers_num .current span, .triggers_num span:hover { background:#fff; opacity:1; filter:alpha(opacity=100) }
+.promo:hover span.prev, .promo:hover span.next { display:block }
+
+.promo_a { width:750px; height:300px; padding:2px; border:1px solid #ccc; }
+.promo_a .promo_box {margin:0; width:600px; height:300px; overflow:hidden; float:left; }
+.promo_box li{position:absolute;}
+.promo_nav { float:left; width:150px; _overflow:hidden; height:300px; z-index:2 }
+.promo_nav li { width:148px; height:98px; position:relative; padding:1px; opacity:.5; filter:alpha(opacity=50) }
+.promo_nav li img { width:148px; height:98px; }
+.promo_nav li.current { background:url(../assets/temp/promo_nav_bg.gif) left center no-repeat; width:148px; height:96px; padding:2px 2px 2px 9px; left:-8px; opacity:1; filter:alpha(opacity=100) }
+.promo_nav li.current img { width:147px; height:96px; }
+
+.a_box { background:url(../assets/temp/a_slide_bg.jpg) top repeat-x; height:230px; width:220px; overflow:hidden; padding-bottom:8px; }
+.a_box dt { height:25px; line-height:25px; padding-top:5px; text-indent:5px }
+.a_slide { width:220px; height:197px; overflow:hidden; z-index:2 }
+.slide_item { overflow:hidden; width:214px; height:197px; background:#fff }
+.promo_s_num, .promo_s_bg { position:absolute; bottom:-1px; right:3px; margin:0; z-index:9 }
+.promo_s_bg { z-index:8; width:214px; height:19px; background:#000; opacity:.2; filter:alpha(opacity=20); }
+.promo_s_num li { float:left; height:19px; line-height:19px; padding-top:5px; width:22px; text-align:center; cursor:pointer; list-style:none; color:#fff }
+.promo_s_num li.current { background:url(../assets/temp/a_slide_cur_bg.png) no-repeat; }
+</style>
+<script src="../assets/js/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+</head>
+<body>
+<div class="wrap">
+    <h1>幻灯片轮播</h1>
+    <p>方便控制的可自定义幻灯切换-promo支持以下功能:</p>
+    <p>幻灯切换支持自定义—是否自动滚动、是否按钮控制、是否悬浮暂停、是否点击触发、时间自定义 IE6透明效果支持-支持透明背景重定位及平铺</p>
+    <p><strong>依赖：</strong></p>
+    <ul>
+        <li><a href="../assets/js/modules/pandora-promo.js">pandora-promo.js</a></li>
+    </ul>
+    <div class="docs-example">
+        <div class="promo">
+            <div class="por" id="JS_promo">
+                <span class="arrow prev"></span>
+                <span class="arrow next"></span>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic0.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic1.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic2.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic3.jpg" width="750" height="300"></a> 
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic4.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic5.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic6.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic7.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic8.jpg" width="750" height="300"></a>
+                <a href="#" class="bigimg"><img alt="" src="../assets/temp/pic9.jpg" width="750" height="300"></a>
+                <div class="promo_num_bg"></div>
+                <ul class="triggers_num" id="JS_promoTriggers">
+                    <li><span>0</span></li>
+                    <li><span>1</span></li>
+                    <li><span>2</span></li>
+                    <li><span>3</span></li>
+                    <li><span>4</span></li>
+                    <li><span>5</span></li>
+                    <li><span>6</span></li>
+                    <li><span>7</span></li>
+                    <li><span>8</span></li>
+                    <li><span>9</span></li>
+                </ul>
+            </div>
+        </div>
+<script>
+
+</script>
+
+        
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+    <div class="docs-example">
+        <div class="promo_a" id="JS_promo_a">
+            <ul class="promo_box">
+                <li><a href="#" class="bigimg"><img alt="" src="../assets/temp/pic0.jpg" width="600" height="300"></a></li>
+                <li><a href="#" class="bigimg"><img alt="" src="../assets/temp/pic1.jpg" width="600" height="300"></a></li>
+                <li><a href="#" class="bigimg"><img alt="" src="../assets/temp/pic2.jpg" width="600" height="300"></a></li>
+            </ul>
+            <ul class="promo_nav" id="JS_promo_nav">
+                <li class="current"><img alt="" src="../assets/temp/pic0.jpg"></li>
+                <li><img alt="" src="../assets/temp/pic1.jpg"></li>
+                <li><img alt="" src="../assets/temp/pic2.jpg"></li>
+            </ul>
+        </div>
+<script>
+
+</script>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+    <div class="docs-example">
+        <dl class="a_box">
+            <dt class="white"><b>奖品</b></dt>
+            <dd class="a_slide por" id="JS_promo_s"><!--小幻灯-->
+                <div class="slide_item bc">
+                    <a href="#" class="bigimg"><img src="../assets/temp/a_pic1.jpg" width="214" height="197"></a>
+                    <a href="#" class="bigimg"><img src="../assets/temp/a_pic1.jpg" width="214" height="197"></a>
+                    <a href="#" class="bigimg"><img src="../assets/temp/a_pic1.jpg" width="214" height="197"></a>
+                    <a href="#" class="bigimg"><img src="../assets/temp/a_pic1.jpg" width="214" height="197"></a>
+                    <a href="#" class="bigimg"><img src="../assets/temp/a_pic1.jpg" width="214" height="197"></a>
+                </div>
+                <div class="promo_s_bg"></div>
+                <ul class="promo_s_num" id="JS_promo_s_num">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </dd>
+        </dl>
+<script>
+
+</script>
+    </div>
+<pre class="prettyprint linenums">
+
+</pre>
+
+<p>关于修复IE6下的背景透明问题，这有一个PNG的项目，详情请看 <a href="http://www.twinhelix.com/css/iepngfix/demo/" target="_blank">http://www.twinhelix.com/css/iepngfix/demo/</a></p>
+
+
+</div>
+
+<script src="../assets/js/modules/pandora-promo.js"></script>
+<script>
+$(function(){
+    $("#JS_promo img").banner_thaw({
+        thumbObj: "#JS_promoTriggers li",
+        thumbNowClass: "current",
+        botPrev:"span.prev",
+        botNext:"span.next",
+        changeTime: 3000
+    });
+    
+    $("#JS_promo_a .promo_box li").banner_thaw({
+        thumbObj: "#JS_promo_nav li",
+        thumbNowClass: "current",
+        overStop: false,
+        changeTime: 3000
+    });
+    
+    $("#JS_promo_s img").banner_thaw({
+        thumbObj: "#JS_promo_s_num li",
+        thumbNowClass: "current",
+        changeTime:3000,
+        slideTime:1000
+    });
+    
+//  $('.promo').mouseover(function(){
+//   $('.promo span').show();
+//  });
+    
+    $('.promo .arrow').mousedown(
+    function(){
+        $(this).addClass('hover')
+    }).mouseout(
+    function(){
+        $(this).removeClass('hover')
+    })
+    
+//  $('.promo .arrow').live('mousedown',function(){$(this).addClass('hover')});
+//  $('.promo .arrow').live('mouseup',function(){$(this).removeClass('hover')});
+});
+</script>
+</body>
+</html>

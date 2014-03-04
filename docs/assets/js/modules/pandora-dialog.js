@@ -1,4 +1,4 @@
-﻿(function (global, $,pandora, undefined) {
+(function (global, $, pandora, undefined) {
     "use strict" // 严格模式
 
     if (pandora.dialog) {
@@ -896,4 +896,5 @@
     // 调用方式采用 $("").dialog() 和 pandora.dialog() 两种方式
     $.dialog = $.fn.dialog = pandora.dialog = Factory;
     global.pandora = pandora;
+
 }(this, jQuery, this.pandora || {}));

@@ -4,18 +4,20 @@
  * Author Pandora
 **/
 
-/* tagcc,tagback */
+/* 在做tags样式时，使用 字体 Arial,\5b8b\4f53 时，文本的垂直居中表现很好 */
 
+/* tagcc,tagback */
 /* 新的tags标签 tags.css: tagcc,tagback */
 .tagscc,
 .tagsback,
 .tagsgift {
     display: inline-block;
     margin: 0 2px;
+    font-family: Arial,\5b8b\4f53,sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: normal;
-    text-indent:0;
+    text-indent: 0;
     cursor: default;
 }
 
@@ -120,13 +122,15 @@
 .tags109 {
     display: inline-block;
     margin: 0 2px;
+    padding: 0 4px;
+    
+    font-family: Arial,\5b8b\4f53,sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: normal !important;
     text-indent:0;
     cursor: default;
     
-    padding: 0 4px;
     background: #ff9614;
     color: #fff;
     height: 16px;

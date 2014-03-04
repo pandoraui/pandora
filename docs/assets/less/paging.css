@@ -189,15 +189,15 @@
     color: #666;
 }
 .bluestyle a:hover { 
-    border-color: #7FB4F5;
+    border-color: #7fb4f5;
     background: #fff;
-    color: #245DC1;
+    color: #245dc1;
 }
 .bluestyle a.prevpage:hover .larr {
-    border-right-color: #538ED7;
+    border-right-color: #538ed7;
 }
 .bluestyle a.nextpage:hover .rarr {
-    border-left-color: #538ED7;
+    border-left-color: #538ed7;
 }
 
 /* 橙黄色  */
@@ -232,9 +232,9 @@
     color: #df1a7a;
 }
 .pinkstyle a.prevpage:hover .larr {
-    border-right-color: #DF1A7A;
+    border-right-color: #df1a7a;
 }
 .pinkstyle a.nextpage:hover .rarr {
-    border-left-color: #DF1A7A;
+    border-left-color: #df1a7a;
 }
 

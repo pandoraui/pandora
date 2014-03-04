@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.crumbs{font-size:12px;background:#fafafa;}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>面包屑导航</h1>
+    <p>充分利用特殊符号，网页实体符号等实现无图化，加载更加快捷</p>
+    <p><strong>TODO：</strong></p>
+    
+    <div class="docs-example">
+
+        <h3>面包屑导航</h3>
+        
+        <!--面包屑导航-->
+        <div class="crumbs crumbs-default clearfix">
+            <p class="crumbs-link">
+                <a href="#">驴妈妈首页</a> &gt; 
+                <a href="#">景点门票</a> &gt; 
+                <a href="#">上海景点门票</a> &gt; 
+                <a class="current">上海长风海洋世界</a>
+            </p>
+            <span class="other-info">近一周2376人预订</span>
+        </div><!--//.crumbs-->
+        
+        <div class="crumbs crumbs-default clearfix">
+            <p class="crumbs-link">
+                <b>您当前所处的位置：</b>
+                <a href="#">驴妈妈首页</a> &gt; 
+                <a href="#">景点门票</a> &gt; 
+                <a href="#">上海景点门票</a> &gt; 
+                <a class="current">上海长风海洋世界</a>
+            </p>
+            <span class="other-info">近一周2376人预订</span>
+        </div><!--//.crumbs-->
+        
+    </div>
+<pre class="prettyprint linenums">
+&lt;div class="crumbs crumbs-default clearfix"&gt;
+    &lt;p class="crumbs-link"&gt;
+        &lt;b&gt;您当前所处的位置：&lt;/b&gt;
+        &lt;a href="#"&gt;驴妈妈首页&lt;/a&gt; &amp;gt; 
+        &lt;a href="#"&gt;景点门票&lt;/a&gt; &amp;gt; 
+        &lt;a href="#"&gt;上海景点门票&lt;/a&gt; &amp;gt; 
+        &lt;a class="current"&gt;上海长风海洋世界&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;span class="other-info"&gt;近一周2376人预订&lt;/span&gt;
+&lt;/div&gt;&lt;!--//.crumbs--&gt;
+</pre>
+
+
+
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="../assets/js/paging.js"></script> 
+
+</body>
+</html>

@@ -115,15 +115,24 @@
                 <p>包含一些小模块组件，汇总于杂项中，如：加减数字操作，</p>
             </div>
             
+            <h3>Seajs方案 <small>初学者入门请看示例</small></h3>
+            <div class="modules">
+                <a target="_blank" class="done" href="http://pandoraui.github.io/learning-javascript/">Seajs <small>示例1</small></a>
+                <a target="_blank" class="done" href="http://pandoraui.github.io/learning-javascript/seajs/ex/">Seajs <small>示例2</small></a><br>
+                <a class="todo" href="###">引用jQuery <small></small></a>
+            </div>
+            
             <h3>JavaScript 组件</h3>
             <div class="modules">
                 <a class="todo" href="###">transition <small>过渡效果</small></a>
                 <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
-                <a class="todo" href="###">slides <small>图片轮播</small></a>
+                <a class="done" href="modules/promo.html">promo <small>图片幻灯片</small></a>
+                <a class="todo" href="modules/slides.html">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
                 <a class="todo" href="###">lazyload <small>延迟加载</small></a>
                 <a class="done" href="modules/countdown.html">countdown <small>倒计时</small></a>
-                <a class="done" href="modules/tooltip.html">tooltip <small>工具提醒</small></a>
+                <a class="done" href="modules/tooltip.html" title="已不再更新维护，请使用poptip">tooltip <small>工具提醒</small></a>
+                <a class="done" href="modules/poptip.html">poptip <small>新版tooltip</small></a>
                 <a class="todo" href="###">tips <small>浮层提示</small></a>
                 <a class="todo" href="###">calendar <small>日历</small></a>
                 <a class="doing" href="modules/selectbox.html">selectbox <small>下拉框</small></a>

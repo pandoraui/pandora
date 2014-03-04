@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>poptip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<style>
+.clock{position:relative;width:330px;margin:50px auto 100px;background:#fff;padding:10px;border:5px solid #eee;}
+.clock:hover{border-color:#ccc;}
+</style>
+<script src="../assets/js/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-poptip.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <h1>poptip 冒泡提醒/tooltip提醒</h1>
+    <p>作为一种tooltip的工具提醒，达到美化title悬浮提醒的效果，并提供高度自定义实现。<small>（此插件将替换原来的tooltip插件）</small></p>
+    <p><strong>依赖：</strong>使用前请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="../assets/less/tip.css">http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tip.css</a></li>
+        <li><a href="../assets/js/modules/pandora-poptip.js">http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-poptip.js</a></li>
+    </ul>
+    <p><strong>TODO:</strong></p>
+    <ul>
+        <li>扩展支持使用ajax填充数据内容</li>
+        <li>自动模式，自动检测边界，超出边界若对面方位可完全显示，则自动取对面方位，以最佳形式展现效果，如：七点钟的提醒框箭头对应标签的中间位置
+        </li>
+        <li>优化JS模板实现内容填充，采用替换数据填充位方式，适应性更强，方便维护及扩展新模板</li>
+    </ul>
+    <div class="docs-example">
+        <h4>点钟定位冒泡提醒poptip</h4>
+        <p>点击相应的时间，查看poptip冒泡提醒的对应方位。</p>
+        <div class="clock" id="test" tip-content='显示位置相对于设置的标签，使用点钟方向控制方位。'>
+            <img src="../assets/img/clock.jpg" alt="点钟定位" width="330" height="250" border="0" usemap="#map" />
+            <map id="map" name="map">
+                <area href="#11" shape="poly" coords="45,29,140,29,140,69,85,69">
+                <area href="#12" shape="rect" coords="140,30,190,70">
+                <area href="#1"  shape="poly" coords="190,30,285,30,245,70,190,70">
+                <area href="#2"  shape="poly" coords="245,70,285,30,285,100,245,100">
+                <area href="#3"  shape="rect" coords="245,100,285,155">
+                <area href="#4"  shape="poly" coords="245,155,285,155,285,220,245,185">
+                <area href="#5"  shape="poly" coords="190,185,245,185,285,220,190,220">
+                <area href="#6"  shape="rect" coords="140,185,190,220">
+                <area href="#7"  shape="poly" coords="85,185,140,185,140,220,45,220">
+                <area href="#8"  shape="poly" coords="45,155,85,155,87,185,45,220">
+                <area href="#9"  shape="rect" coords="45,100,85,155">
+                <area href="#10" shape="poly" coords="45,30,85,70,85,100,45,100">
+            </map>
+        </div>
+        
+        <p>
+        <span class="tag tagsback fr" tip-content="1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。"><em>返</em><i>101元</i></span>
+        <span class="tag tagsback" tip-content="1.<b>该产品支持奖金抵扣</b><br> 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。<br>2.<b>如何获得奖金</b><br> 游玩后发表体验点评，即可获得返奖金。"><em>返</em><i>101元</i></span>
+        </p>
+        
+        <p><button id="clonebtn" class="btn" type="button">再添加一个标签</button></p>
+        <div id="livebox"></div>
+        
+        <p>一般使用7、2点钟方向，偶尔使用6、3点钟方向，其左右对称位置为自适应变化方位，如2点钟方向时冒泡提醒超出显示区域，则自动变换为对应的10点钟方位显示。</p>
+        <p><strong>注意：</strong>实际需求中并没有4、8点钟方向需求。</p>
+<script>
+    $(function(){
+        $(".tag").poptip({
+            bindevent: "live",
+            place: 7
+        });
+        
+        $("#map>area").click(function(){
+            var clock = parseInt($(this).attr("href").replace("#",""));
+            var tiptitle = "当前为"+clock+"点钟方向";
+            //console.log(clock);
+            $("#test").poptip({
+                tiptitle: tiptitle,
+                trigger : "click",
+                place: clock
+            });
+        });
+        
+        $("#clonebtn").click(function(){
+            var newtags = '<span class="tag tagscc" tip-content="鼠标hover触发的冒泡提醒，已开启ajax内容监听模式">ajax的内容</span>';
+            $("#livebox").append(newtags)
+        })
+    })
+</script>
+
+        
+    </div>
+<pre class="prettyprint linenums">
+//tags标签，悬浮数据存储在自定义属性里，如下：
+&lt;span class="tag tagsback fr" tip-title="自定义标题，可为空" tip-content="1.&lt;b&gt;该产品支持奖金抵扣&lt;/b&gt;&lt;br&gt; 在线支付用户可使用奖金抵扣，订单支付步骤可见奖金抵用金额。&lt;br&gt;2.&lt;b&gt;如何获得奖金&lt;/b&gt;&lt;br&gt; 游玩后发表体验点评，即可获得返奖金。"&gt;&lt;em&gt;返&lt;/em&gt;&lt;i&gt;101元&lt;/i&gt;&lt;/span&gt;
+
+<strong>注意</strong>上面自定义内容的单双引号问题
+
+//调用方法
+$(".tag").poptip();
+
+//可配置参数
+$(".test").poptip({
+    templete : 1,
+    skin: "default",    //默认皮肤
+    tiptitle: "",       //可统一设置标题
+    place : 7,          //点钟方位，默认7点钟方向
+    offsetX : 0,        //偏移修正
+    offsetY : 0, 
+    trigger : "mouseenter",     // mouseenter or click
+    bindevent : "live",         // bind or live
+    hovershow : 300       // 300 or undefined
+});
+</pre>
+
+
+</div>
+
+</body>
+</html>
