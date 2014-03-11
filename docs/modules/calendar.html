@@ -10,7 +10,8 @@
 <![endif]-->
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
-<link rel="stylesheet" href="../assets/less/pa-calendar.css">
+<link rel="stylesheet" href="../assets/less/calendar.css">
+<link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
 <style>
 .pa-calendar .hide { display: none;}
 
@@ -29,14 +30,25 @@
     <h1>日历排版布局</h1>
     <p>日历或作为产品价格表，或作为日期选择框，但总体结构或实现，很多地方都是相似甚至通用，所以我们考虑，一套结构多处使用，可以用作大型的产品列表，可以用于小处的日期选择。根据模块开发思想，js的实现分为两步，第一步是实现日历功能，第二步填充所需的数据，通过选择主题或版式实现大/小日历。</p>
     <p><strong>TODO：</strong></p>
+
+    <h3>注意事项：</h3>
+    <p><strong>依赖</strong>——使用实现模态窗口/弹出框，请确保页面已经引用了如下文件：</p>
+    <ul>
+        <li><a href="http://pic.lvmama.com/styles/v4/modules/calendar.css">http://pic.lvmama.com/min/index.php?f=/styles/v4/modules/calendar.css</a> 日历样式</li>
+        <li><a href="http://pic.lvmama.com/js/v4/modules/pandora-calendar.js">http://pic.lvmama.com/min/index.php?f=/js/v4/modules/pandora-calendar.js</a> 日历交互js</li>
+    </ul>
+    <p>注意，以上 js 实现基于jQuery实现。建议最近新项目使用此calendar效果，老旧项目不能保证是否存在未知的样式等兼容性冲突。</p>
     
     <div class="docs-example">
-        <div class="pa-calendar">
-            <span class="month_prev" title="上一月">&lsaquo;</span>
-            <span class="month_next" title="下一月">&rsaquo;</span>
-            <div class="calwrap clearfix">
+        <h4>默认时间日历，效果如下：</h4>
+        <div class="ui-calendar ui-calendar-mini" style="display: block;"><span title="上一月" style="display:none" class="month-prev">‹</span><span title="下一月" style="display:black" class="month-next">›</span><div class="calwarp clearfix"><div class="calmonth"><div class="caltitle"><span class="mtitle">2014年3月</span></div><div class="calbox"><i class="monthbg">3</i><table cellpadding="0" border="0" cellspacing="0" class="caltable"><thead><tr><th class="sun">日</th><th class="mon">一</th><th class="tue">二</th><th class="wed">三</th><th class="thu">四</th><th class="fri">五</th><th class="sat">六</th></tr></thead><tbody><tr><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td date-map="2014-03-01" week="6"><div class="nodate">1</div></td></tr><tr><td date-map="2014-03-02" week="0"><div class="nodate">2</div></td><td date-map="2014-03-03" week="1"><div class="nodate">3</div></td><td date-map="2014-03-04" week="2"><div class="nodate">4</div></td><td date-map="2014-03-05" week="3"><div class="nodate">5</div></td><td date-map="2014-03-06" week="4"><div class="nodate">6</div></td><td date-map="2014-03-07" week="5"><div class="nodate">7</div></td><td date-map="2014-03-08" week="6"><div class="nodate">8</div></td></tr><tr><td date-map="2014-03-09" week="0"><div class="nodate">9</div></td><td date-map="2014-03-10" week="1"><div class="nodate">10</div></td><td date-map="2014-03-11" week="2"><div class="caldate today calfest">今天</div></td><td date-map="2014-03-12" week="3"><div class="caldate selectDay calfest">明天</div></td><td date-map="2014-03-13" week="4"><div class="caldate calfest">后天</div></td><td date-map="2014-03-14" week="5"><div class="caldate">14</div></td><td date-map="2014-03-15" week="6"><div class="caldate">15</div></td></tr><tr><td date-map="2014-03-16" week="0"><div class="caldate">16</div></td><td date-map="2014-03-17" week="1"><div class="caldate">17</div></td><td date-map="2014-03-18" week="2"><div class="caldate">18</div></td><td date-map="2014-03-19" week="3"><div class="caldate">19</div></td><td date-map="2014-03-20" week="4"><div class="caldate">20</div></td><td date-map="2014-03-21" week="5"><div class="caldate">21</div></td><td date-map="2014-03-22" week="6"><div class="caldate">22</div></td></tr><tr><td date-map="2014-03-23" week="0"><div class="caldate">23</div></td><td date-map="2014-03-24" week="1"><div class="caldate">24</div></td><td date-map="2014-03-25" week="2"><div class="caldate">25</div></td><td date-map="2014-03-26" week="3"><div class="caldate">26</div></td><td date-map="2014-03-27" week="4"><div class="caldate">27</div></td><td date-map="2014-03-28" week="5"><div class="caldate">28</div></td><td date-map="2014-03-29" week="6"><div class="caldate">29</div></td></tr><tr><td date-map="2014-03-30" week="0"><div class="caldate">30</div></td><td date-map="2014-03-31" week="1"><div class="caldate">31</div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td></tr></tbody></table></div></div><div class="calmonth"><div class="caltitle"><span class="mtitle">2014年4月</span></div><div class="calbox"><i class="monthbg">4</i><table cellpadding="0" border="0" cellspacing="0" class="caltable"><thead><tr><th class="sun">日</th><th class="mon">一</th><th class="tue">二</th><th class="wed">三</th><th class="thu">四</th><th class="fri">五</th><th class="sat">六</th></tr></thead><tbody><tr><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td date-map="2014-04-01" week="2"><div class="caldate">1</div></td><td date-map="2014-04-02" week="3"><div class="caldate">2</div></td><td date-map="2014-04-03" week="4"><div class="caldate">3</div></td><td date-map="2014-04-04" week="5"><div class="caldate">4</div></td><td date-map="2014-04-05" week="6"><div class="caldate calfest">清明</div></td></tr><tr><td date-map="2014-04-06" week="0"><div class="caldate">6</div></td><td date-map="2014-04-07" week="1"><div class="caldate">7</div></td><td date-map="2014-04-08" week="2"><div class="caldate">8</div></td><td date-map="2014-04-09" week="3"><div class="caldate">9</div></td><td date-map="2014-04-10" week="4"><div class="caldate">10</div></td><td date-map="2014-04-11" week="5"><div class="caldate">11</div></td><td date-map="2014-04-12" week="6"><div class="caldate">12</div></td></tr><tr><td date-map="2014-04-13" week="0"><div class="caldate">13</div></td><td date-map="2014-04-14" week="1"><div class="caldate">14</div></td><td date-map="2014-04-15" week="2"><div class="caldate">15</div></td><td date-map="2014-04-16" week="3"><div class="caldate">16</div></td><td date-map="2014-04-17" week="4"><div class="caldate">17</div></td><td date-map="2014-04-18" week="5"><div class="caldate">18</div></td><td date-map="2014-04-19" week="6"><div class="caldate">19</div></td></tr><tr><td date-map="2014-04-20" week="0"><div class="caldate">20</div></td><td date-map="2014-04-21" week="1"><div class="caldate">21</div></td><td date-map="2014-04-22" week="2"><div class="caldate">22</div></td><td date-map="2014-04-23" week="3"><div class="caldate">23</div></td><td date-map="2014-04-24" week="4"><div class="caldate">24</div></td><td date-map="2014-04-25" week="5"><div class="caldate">25</div></td><td date-map="2014-04-26" week="6"><div class="caldate">26</div></td></tr><tr><td date-map="2014-04-27" week="0"><div class="caldate">27</div></td><td date-map="2014-04-28" week="1"><div class="caldate">28</div></td><td date-map="2014-04-29" week="2"><div class="caldate">29</div></td><td date-map="2014-04-30" week="3"><div class="caldate">30</div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td></tr><tr><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td><td><div class="nodate"></div></td></tr></tbody></table></div></div></div></div>
+        <h4>默认时间价格表日历，效果如下：</h4>
+        <div class="ui-calendar" style="display:block">
+            <span class="month-prev" title="上一月">&lsaquo;</span>
+            <span class="month-next" title="下一月">&rsaquo;</span>
+            <div class="calwarp clearfix">
                 <div class="calmonth">
-                    <div class="cal-title">
+                    <div class="caltitle">
                         <span class="mtitle">2013年9月</span>
                     </div>
                     <div class="calbox">
@@ -403,21 +415,13 @@
                     </div>
                 </div> <!-- //calmonth -->
                 <div class="calmonth">
-                    <div class="cal-title">
+                    <div class="caltitle">
                         <span class="mtitle">2013年10月</span>
                     </div>
                     <div class="calbox">
                         <i class="monthbg">10</i>
                         <table class="caltable" cellspacing="0" cellpadding="0" border="0">
-                            <tr class="calweek">
-                                <th class="sun">日</th>
-                                <th class="mon">一</th>
-                                <th class="tue">二</th>
-                                <th class="wed">三</th>
-                                <th class="thu">四</th>
-                                <th class="fri">五</th>
-                                <th class="sat">六</th>
-                            </tr>
+                            <thead><tr><th class="sun">日</th><th class="mon">一</th><th class="tue">二</th><th class="wed">三</th><th class="thu">四</th><th class="fri">五</th><th class="sat">六</th></tr></thead>
                             <tr calweek="1">
                                 <td>
                                     <div calday="日" class="caldate sun nodate">
@@ -769,748 +773,139 @@
                         </table>
                     </div>
                 </div> <!-- //calmonth -->
-                <div class="calmonth">
-                    <div class="cal-title">
-                        <span class="mtitle">2013年11月</span>
-                    </div>
-                    <div class="calbox">
-                        <i class="monthbg">11</i>
-                        <table class="caltable" cellspacing="0" cellpadding="0" border="0">
-                            <tr class="calweek">
-                                <th class="sun">日</th>
-                                <th class="mon">一</th>
-                                <th class="tue">二</th>
-                                <th class="wed">三</th>
-                                <th class="thu">四</th>
-                                <th class="fri">五</th>
-                                <th class="sat">六</th>
-                            </tr>
-                            <tr calweek="1">
-                                <td>
-                                    <div calday="日" class="caldate sun nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">1</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">2</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="2">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">3</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">4</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">5</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">6</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">7</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">8</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">9</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="3">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">10</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">11</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">12</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">13</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">14</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">15</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">16</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="4">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">17</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">18</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">19</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">20</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">21</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">22</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">23</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="5">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">24</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">25</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">26</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;5588</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">27</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55886</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">28</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;558866</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">29</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">30</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="6">
-                                <td>
-                                    <div calday="日" class="caldate sun nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> <!-- //calmonth -->
-                <div class="calmonth">
-                    <div class="cal-title">
-                        <span class="mtitle">2013年12月</span>
-                    </div>
-                    <div class="calbox">
-                        <i class="monthbg">12</i>
-                        <table class="caltable" cellspacing="0" cellpadding="0" border="0">
-                            <tr class="calweek">
-                                <th class="sun">日</th>
-                                <th class="mon">一</th>
-                                <th class="tue">二</th>
-                                <th class="wed">三</th>
-                                <th class="thu">四</th>
-                                <th class="fri">五</th>
-                                <th class="sat">六</th>
-                            </tr>
-                            <tr calweek="1">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">1</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">2</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">3</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">4</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">5</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">6</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">7</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="2">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">8</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">9</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday calfest">10</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">11</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">12</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">13</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">14</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="3">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">15</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">16</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">17</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday">18</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">19</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">20</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55886</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">21</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;558866</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="4">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">22</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">23</span>
-                                        <span class="calinfo">充足</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate">
-                                        <span class="calday">24</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate">
-                                        <span class="calday calfest">圣诞节</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate">
-                                        <span class="calday">26</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate">
-                                        <span class="calday">27</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat">
-                                        <span class="calday">28</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="5">
-                                <td>
-                                    <div calday="日" class="caldate sun">
-                                        <span class="calday">29</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate">
-                                        <span class="calday">30</span>
-                                        <span class="calinfo">18</span>
-                                        <span class="calprice"><dfn>&yen;55</dfn></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr calweek="6">
-                                <td>
-                                    <div calday="日" class="caldate sun nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="一" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="二" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="三" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="四" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="五" class="caldate nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div calday="六" class="caldate sat nodate">
-                                        <span class="calday"></span>
-                                        <span class="calinfo"></span>
-                                        <span class="calprice"></span>
-                                        <span class="calactive"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> <!-- //calmonth -->
             </div> <!-- //calwrap -->
         </div> <!-- //pa-calendar -->
         
         
     </div>
-<pre class="prettyprint linenums">
 
+    <h2>调用方式</h2>
+    <p>pandora.calendar，<code>pandora.calendar()</code> 拥有更多的可选项。详情请参看示例：</p>
+
+    <h3 id="dialog-standard">通用日历参数列表 <small>pandora.calendar({N多参数})</small></h3>
+    <div class="docs-example">
+        <h4>标准模式实现通用弹出框</h4>
+        <p>参数说明 <code>pandora.calendar(options)</code> 详情如下：</p>
+        <p>options 参数较多，请直接参看下面的参数配置</p>
+        
+    </div>
+<pre class="prettyprint linenums">
+// 标准模式，默认的参数配置：
+// 调用方式 pandora.calendar({配置修改下面所提供的参数即可});
+
+pandora.calendar.defaults = {
+        date: new Date(),
+        target: $("body"),
+        trigger: ".calendar", //对话框触发点/触发事件对象
+        triggerEvent: "click", // 对话框触事件
+        triggerClass: "calendar",// 对话样式
+        warpClass: "ui-calendar", // 日历最外层样式名称
+        selectDateCallback: null, // 选择日期后回调函数
+        autoRender: false,// 是否第一次就加载渲染日历
+        sourceFn: null, // 数据源
+        tipText: "yyyy-mm-dd", //文本日期格式
+        frequent: false, // 单月显示
+        titleTip: "{{year}}年{{month}}月", // 日历标题格式
+        todayInfos: ["", "", ""],
+        rangeColor: "#F0F5FB",  // 区间
+        hoverColor: "#d9e5f4",  // 鼠标滑过
+        control: true, // 控制翻页按钮是否显示
+        showPrev: false, // 控制上个月翻月按钮
+        showNext: true, // 控制下个月翻月按钮
+        startDelayDays: 0, // 在开始的基础上叠加天数 配合fatalism一起使用
+        fatalism: 0, // 天数
+        mos: 6, //月份
+        isTodayClick: false, // 当天是否可点击
+        weeks: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+        classNames: {
+            week: ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+            caldate: "caldate",
+            nodate: "nodate", // 禁用和空
+            today: "today", // 今天
+            hover: "hover", // 鼠标滑过效果
+            selectDay: "selectDay", // input 
+            interval: "interval", // 区间
+            festival: "calfest", // 节日
+            monthPrev: "month-prev",
+            monthNext: "month-next"
+        },
+        // 级联
+        cascade: {
+            days: 1, // 天数叠加一天
+            trigger: ".calendar",
+            isTodayClick: false
+        },
+       // 日历模板
+        template: {
+            warp: '&lt;div class="ui-calendar"&gt;&lt;/div&gt;',
+            calControl: '&lt;span class="month-prev" {{stylePrev}} title="上一月"&gt;‹&lt;/span&gt;&lt;span class="month-next" {{styleNext}} title="下一月"&gt;›&lt;/span&gt;',
+            calWarp: '&lt;div class="calwarp clearfix"&gt;{{content}}&lt;/div&gt;',
+            calMonth: '&lt;div class="calmonth"&gt;{{content}}&lt;/div&gt;',
+            calTitle: '&lt;div class="caltitle"&gt;&lt;span class="mtitle"&gt;{{month}}&lt;/span>&lt;/div&gt;',
+            calBody: '&lt;div class="calbox"&gt;' +
+                        '&lt;i class="monthbg"&gt;{{month}}&lt;/i&gt;' +
+                        '&lt;table cellspacing="0" cellpadding="0" border="0" class="caltable"&gt;' +
+                            '&lt;thead&gt;' +
+                                '&lt;tr&gt;' +
+                                    '&lt;th class="sun"&gt;日&lt;/th&gt;' +
+                                    '&lt;th class="mon"&gt;一&lt;/th&gt;' +
+                                    '&lt;th class="tue"&gt;二&lt;/th&gt;' +
+                                    '&lt;th class="wed"&gt;三&lt;/th&gt;' +
+                                    '&lt;th class="thu"&gt;四&lt;/th&gt;' +
+                                    '&lt;th class="fri"&gt;五&lt;/th&gt;' +
+                                    '&lt;th class="sat"&gt;六&lt;/th&gt;' +
+                                '&lt;/tr&gt;' +
+                            '&lt;/thead&gt;' +
+                            '&lt;tbody&gt;' +
+                                '{{date}}' +
+                            '&lt;/tbody&gt;' +
+                        '&lt;/table&gt;' +
+                    '&lt;/div&gt;',
+            weekWarp: '&lt;tr&gt;{{week}}&lt;/tr&gt;',
+            day: '&lt;td {{week}} {{dateMap}} &gt;' +
+                    '&lt;div {{className}}&gt;' +
+                        '&lt;span class="calday"&gt;{{day}}&lt;/span&gt;' +
+                        '&lt;span class="calinfo"&gt;&lt;/span&gt;' +
+                        '&lt;span class="calprice"&gt;&lt;/span&gt;' +
+                        '&lt;span class="calactive"&gt;&lt;/span&gt;' +
+                    '&lt;/div&gt;' +
+                 '&lt;/td&gt;'
+        },
+        // 节假日
+        festival: {
+            '2014-01-01': '元旦',
+            '2014-01-30': '除夕',
+            '2014-01-31': '春节',
+            '2014-02-14': '元宵',
+            '2014-04-05': '清明',
+            '2014-05-01': '五一',
+            '2014-06-02': '端午',
+            '2014-09-08': '中秋',
+            '2014-10-01': '国庆'
+        }
+    }
 </pre>
+
+<h2>1、标准模式示例 <small>常用的标准示例 pandora.calendar(options)</small></h2>
+<div class="docs-example">
+    <h4>1 基础示例</h4>
+    <p>参数说明： <code>pandora.calendar(options)</code> 请参考示例实现代码注释：</p>
+    <h5>示例1.1</h5>
+    <p><button class="demo11 pbtn">翻月按钮显示日历</button></p>
+
+    <h5>示例1.2</h5>
+    <p><button class="demo12 pbtn">只显示单月日历</button></p>
+
+    <h5>示例1.3</h5>
+    <p><button class="demo13 pbtn">天数区间日历</button></p>
+
+    <h5>示例1.4 级联</h5>
+    <p>
+        <input type="text" class="J_calendar" value="2013-12-27" name="beginBookTime"  readonly="readonly" autocomplete="off" data-check="checkIn"  />
+        --
+        <input type="text" class="J_calendar" data-range="true" name="endBookTime" value="2013-12-30" readonly="readonly" autocomplete="off" data-check="checkOut" />
+    </p>
+</div>
 
 </div>
 
@@ -1525,15 +920,217 @@
 </div>
 <script src="../assets/js/jquery-1.8.3.min.js"></script>
 <script>window.jQuery || document.write('<script src="../assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-calendar.js"></script>
+
+
 
 <!-- UY BEGIN -->
 <script type="text/javascript">
-$(function(){
-    
-    
-    $(".month_prev").click(function(){
-        $(this).parent().find(".calmonth")
-    })
+
+$(function () {
+
+    // 翻月按钮显示
+    pandora.calendar({
+        trigger: ".demo11",
+        triggerClass: "demo11",
+        control: false,
+        template: {
+            warp: '<div class="ui-calendar ui-calendar-mini"></div>',
+            calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>',
+            calWarp: '<div class="calwarp clearfix">{{content}}</div>',
+            calMonth: '<div class="calmonth">{{content}}</div>',
+            calTitle: '<div class="caltitle"><span class="mtitle">{{month}}</span></div>',
+            calBody: '<div class="calbox">' +
+                        '<i class="monthbg">{{month}}</i>' +
+                        '<table cellspacing="0" cellpadding="0" border="0" class="caltable">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th class="sun">日</th>' +
+                                    '<th class="mon">一</th>' +
+                                    '<th class="tue">二</th>' +
+                                    '<th class="wed">三</th>' +
+                                    '<th class="thu">四</th>' +
+                                    '<th class="fri">五</th>' +
+                                    '<th class="sat">六</th>' +
+                                '</tr>' +
+                            '</thead>' +
+                            '<tbody>' +
+                                '{{date}}' +
+                            '</tbody>' +
+                        '</table>' +
+                    '</div>',
+            weekWarp: '<tr>{{week}}</tr>',
+            day: '<td {{week}} {{dateMap}} >' +
+                    '<div {{className}}>{{day}}</div>' +
+                 '</td>'
+        }
+    });
+
+    // 单月显示
+    pandora.calendar({
+        trigger: ".demo12",
+        triggerClass: "demo12",
+        frequent:true
+    });
+
+    // 天数区间日历
+    pandora.calendar({
+        trigger: ".demo13",
+        triggerClass: "demo13",
+        fatalism: 20,
+        template: {
+            warp: '<div class="ui-calendar ui-calendar-mini"></div>',
+            calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>',
+            calWarp: '<div class="calwarp clearfix">{{content}}</div>',
+            calMonth: '<div class="calmonth">{{content}}</div>',
+            calTitle: '<div class="caltitle"><span class="mtitle">{{month}}</span></div>',
+            calBody: '<div class="calbox">' +
+                        '<i class="monthbg">{{month}}</i>' +
+                        '<table cellspacing="0" cellpadding="0" border="0" class="caltable">' +
+                            '<thead>' +
+                                '<tr>' +
+                                    '<th class="sun">日</th>' +
+                                    '<th class="mon">一</th>' +
+                                    '<th class="tue">二</th>' +
+                                    '<th class="wed">三</th>' +
+                                    '<th class="thu">四</th>' +
+                                    '<th class="fri">五</th>' +
+                                    '<th class="sat">六</th>' +
+                                '</tr>' +
+                            '</thead>' +
+                            '<tbody>' +
+                                '{{date}}' +
+                            '</tbody>' +
+                        '</table>' +
+                    '</div>',
+            weekWarp: '<tr>{{week}}</tr>',
+            day: '<td {{week}} {{dateMap}} >' +
+                    '<div {{className}}>{{day}}</div>' +
+                 '</td>'
+        }
+    });
+
+    // 级联
+    function maxDay() {
+        var d1 = $(".J_calendar").eq(0).val().split('-'),
+            d2 = $(".J_calendar").eq(1).val().split('-'),
+            day = 0;
+
+        d1 = new Date(parseInt(d1[0], 10), parseInt(d1[1], 10) - 1, parseInt(d1[2], 10));
+        d2 = new Date(parseInt(d2[0], 10), parseInt(d2[1], 10) - 1, parseInt(d2[2], 10));
+        day = (d2.getTime() - d1.getTime()) / (1000 * 3600 * 24);
+
+        return (day > 20);
+    }
+ 
+    function selectDateCallback() {
+        var d1 = $(this.options.trigger).eq(0).val().split('-'),
+        d2 = $(this.options.trigger).eq(1).val().split('-'),
+        day = 0,
+        nd = null,
+        offset = null,
+        week = "",
+        d3 = $(this.options.trigger).eq(0).val().split('-'),
+        d4 = $(this.options.trigger).eq(1).val().split('-'),
+        d = {};
+
+        d1 = new Date(parseInt(d1[0], 10), parseInt(d1[1], 10) - 1, parseInt(d1[2], 10));
+        d2 = new Date(parseInt(d2[0], 10), parseInt(d2[1], 10) - 1, parseInt(d2[2], 10));
+        day = (d2.getTime() - d1.getTime()) / (1000 * 3600 * 24);
+        offset = $(this.options.trigger).eq(1).offset();
+
+        // hack 
+        if (this.$trigger.attr("data-check") === "checkIn") {
+
+            if (day <= 0) {
+                nd = this.addDays(d1, 1);
+                week = this.setToday({
+                    year: parseInt(nd.getFullYear(), 10),
+                    month: parseInt(nd.getMonth() + 1, 10),
+                    day: parseInt(nd.getDate(), 10)
+                });
+                // 填充文案
+                if (typeof week === "string") {
+                    $(this.options.trigger).eq(1).siblings("span.date-info").find("i.weekday").html(week);
+                } else {
+                    $(this.options.trigger).eq(1).siblings("span.date-info").find("i.weekday").html(this.options.weeks[this._weekIndex + 1 === 7 ? 0 : this._weekIndex + 1]);
+                }
+                $(this.options.trigger).eq(1).val(nd.getFullYear() + "-" + this.mend(nd.getMonth() + 1) + "-" + this.mend(nd.getDate()));
+            }
+            d = {
+                year: parseInt(d3[0], 10),
+                month: parseInt(d3[1], 10),
+                day: parseInt(d3[2], 10)
+            };
+            week = this.setToday(d);
+
+            // 填充文案
+            if (typeof week === "string") {
+                this.$trigger.siblings("span.date-info").find("i.weekday").html(week);
+            } else {
+                this.$trigger.siblings("span.date-info").find("i.weekday").html(this.options.weeks[this._weekIndex]);
+            }
+
+            $(this.options.trigger).eq(1).click();
+            return false;
+        } else {
+
+            d = {
+                year: parseInt(d4[0], 10),
+                month: parseInt(d4[1], 10),
+                day: parseInt(d4[2], 10)
+            };
+            week = this.setToday(d);
+
+            // 填充文案
+            if (typeof week === "string") {
+                this.$trigger.siblings("span.date-info").find("i.weekday").html(week);
+            } else {
+                this.$trigger.siblings("span.date-info").find("i.weekday").html(this.options.weeks[this._weekIndex]);
+            }
+        }
+    }
+
+    var calendar = pandora.calendar({
+        trigger: ".J_calendar",
+        triggerClass: "J_calendar",
+        selectDateCallback: selectDateCallback,
+        cascade: {
+            days: 1, // 天数叠加一天 
+            trigger: ".J_calendar",
+            isTodayClick: false
+        },
+        template: {
+            warp: '<div class="ui-calendar ui-calendar-mini"></div>',
+            calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>',
+            calWarp: '<div class="calwarp clearfix">{{content}}</div>',
+            calMonth: '<div class="calmonth">{{content}}</div>',
+            calTitle: '<div class="caltitle"><span class="mtitle">{{month}}</span></div>',
+            calBody: '<div class="calbox">' +
+                     '<i class="monthbg">{{month}}</i>' +
+                     '<table cellspacing="0" cellpadding="0" border="0" class="caltable">' +
+                         '<thead>' +
+                             '<tr>' +
+                                 '<th class="sun">日</th>' +
+                                 '<th class="mon">一</th>' +
+                                 '<th class="tue">二</th>' +
+                                 '<th class="wed">三</th>' +
+                                 '<th class="thu">四</th>' +
+                                 '<th class="fri">五</th>' +
+                                 '<th class="sat">六</th>' +
+                             '</tr>' +
+                         '</thead>' +
+                     '<tbody>' +
+                     '{{date}}' +
+                     '</tbody>' +
+                     '</table>' +
+                     '</div>',
+            weekWarp: '<tr>{{week}}</tr>',
+            day: '<td {{week}} {{dateMap}} >' +
+            '<div {{className}}>{{day}}</div>' +
+            '</td>'
+        }
+    });
 })
 
 var uyan_config = {

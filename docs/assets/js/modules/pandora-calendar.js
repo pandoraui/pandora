@@ -24,34 +24,32 @@
     // http://es5.github.com/#x15.4.4.18
     // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/array/forEach
     if (!Array.prototype.forEach) {
-
         Array.prototype.forEach = function (fn, scope) {
             var i, len;
 
             for (i = 0, len = this.length; i < len; ++i) {
-
                 if (i in this) {
                     fn.call(scope, this[i], i, this);
                 }
-
             }
 
         };
-
     }
 
-    function toDate(obj) {
+    function toDate(date) {
+        var d = null;
 
-        if (typeof obj.date === "string") {
-            var date = obj.date.split("-");
+        if (typeof date === "string") {
+            d = date.split("-");
 
-            obj.date = new Date(
-                date[0],
-                date[1] === "12" ? "11" : date[1] - 1,
-                date[2]
+            d = new Date(
+                d[0],
+                d[1] === "12" ? "11" : d[1] - 1,
+                d[2]
             );
         }
-        
+
+        return d;
     }
 
     function Factory(options) {
@@ -67,13 +65,13 @@
 
         };
 
-        toDate(options);
+        toDate(options.date);
 
         return new Calendar(options);
     }
 
     function Calendar(options) {
-        this._init(options);
+        this._init(options)
     }
 
     Calendar.prototype = {
@@ -83,10 +81,9 @@
             this.options = options;
             this.cacheDate = options.date;
             this.warp = this.warp || $($.trim(this.options.template.warp));
-            this.warp.attr("data-render", options.autoRender); // 用于解决页面同时加载的2种模式
+            this.warp.attr("data-render", options.autoRender); // 用于解决页面同时加载2种模式
 
             this.loadCal();
-            this.bindEvent();
         },
 
         /**
@@ -97,16 +94,16 @@
                 that = this;
 
             if (options.autoRender) {
-
-                // 处理 autoRender 和 点击 render模式
-                options.target.html("");
                 options.target.append(this.warp);
                 this.render();
+                this.bindEvent();
             } else {
 
                 $(options.trigger).bind(options.triggerEvent, function () {
                     options.target.append(that.warp);
                     that.$trigger = $(this);
+                    that._isRange = $(this).attr("data-range"); // 是否级联
+
                     var offset = that.offset();
                     
                     if ($(".ui-calendar[data-render=false]").length > 1) {
@@ -122,11 +119,10 @@
 
                     that.render();
                     that.bindEvent();
-                    that.triggerBlur();
                 });
 
+                this.triggerBlur();
             }
-
         },
 
         /**
@@ -163,7 +159,7 @@
             this.warp.append(this.createCalWarp());
 
             if (this.options.frequent) {
-                this.warp.css("width", options.frequentW === "100%" ? options.frequentW : this.warp.find("div.calmonth").width());
+                this.warp.css("width", this.warp.find("div.calmonth").width());
             }
 
             if (typeof options.sourceFn === "function") {
@@ -259,6 +255,40 @@
         },
 
         /**
+		 *计算今明后节假日
+		 @param {Date} date 日期
+		 @returns {String} 今明后HTML
+		 */
+        setToday: function (d) {
+            var nowDate = new Date(
+				    new Date().getFullYear(),
+				    new Date().getMonth(),
+				    new Date().getDate()
+			    ),
+                date = new Date(d.year, d.month - 1, d.day),
+                festival = this.options.festival,
+                index = d.year + "-" +  this.mend(d.month) + "-" + this.mend(d.day),
+                day = 0;
+                
+            day = (date.getTime() - nowDate.getTime()) / (1000 * 3600 * 24);
+            
+            switch (day) {
+                case 0:
+                    return "今天";
+                    break;
+                case 1:
+                    return "明天";
+                    break;
+                case 2:
+                    return "后天";
+                    break;
+                default:
+                    return festival[index] ? festival[index] : d.day;
+            }
+            
+        },
+
+        /**
          * 生成 day html
          */
         createDay: function (month, year) {
@@ -271,12 +301,14 @@
             dates.forEach(function (d) {
 
                 d.forEach(function (d) {
+                    
                     day += that.replaceWith(options.template.day, {
                         week: d === "" ? "" : 'week="' + new Date(d.year, d.month - 1, d.day).getDay() + '"',
                         dateMap: d === "" ? "" : 'date-map="' + d.year + "-" + that.mend(d.month) + "-" + that.mend(d.day) + '"',
-                        day: d === "" ? "" : d.day,
+                        day: d === "" ? "" : that.setToday(d),
                         className: 'class="' + that.getClass(d) + '"'
                     });
+
                 });
 
                 html += that.replaceWith(options.template.weekWarp, {
@@ -290,10 +322,10 @@
         },
 
         /**
-         * 计算日期的样式
-         * @param {Date} date 日期
-         * @returns {String} 计算得到的Class
-         */
+		 * 计算日期的样式
+		 * @param {Date} date 日期
+		 * @returns {String} 计算得到的Class
+		 */
         getClass: function (date) {
             var options = this.options,
                 fatalism = options.fatalism,
@@ -303,15 +335,38 @@
                 startDate = this.addDays(cacheDate, options.startDelayDays),
 
                 // 用于火车票结束时间
-                endDate = this.addDays(new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()), fatalism), 
-                className = [];
+                endDate = this.addDays(new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()), fatalism),
+                className = [],
+                d1 = null,
+                d2 = null,
+                d3 = null,
+                index = 0,
+                val1 = "",
+                val2 = "";
 
             if (date === "") {
                 className.push(options.classNames.nodate);
             } else {
-                
-                var d1 = new Date(date.year, date.month - 1, date.day),
-                    d2 = new Date(cacheDate.getFullYear(), cacheDate.getMonth(), cacheDate.getDate());
+                d1 = new Date(date.year, date.month - 1, date.day);
+                d2 = new Date(cacheDate.getFullYear(), cacheDate.getMonth(), cacheDate.getDate());
+
+                if (this.$trigger !== undefined) {
+                    d3 = toDate(this.$trigger.val())
+                }
+
+                // hack
+                if (this._isRange) {
+                    index = $(options.cascade.trigger).index(this.$trigger);
+                    val1 = $(options.cascade.trigger).eq(index - 1).val().split("-");
+                    val1[2] = (parseInt(val1[2], 10) + options.cascade.days).toString();
+                    val2 = toDate(this.$trigger.val());
+
+                    d2 = new Date(
+                        val1[0],
+                        val1[1] === "12" ? "11" : val1[1] - 1,
+                        val1[2]
+                    );
+                }
 
                 // 过去日期
                 if (fatalism == 0 && (d1 - d2) < 0) {
@@ -320,19 +375,41 @@
                     className.push(options.classNames.caldate);
                 }
 
-                // 当天日期
-                if (cacheDate.getFullYear() == date.year && cacheDate.getMonth() == date.month - 1 && cacheDate.getDate() == date.day) {
-                    className.push(options.classNames.today);
-                }
+                if (this._isRange === "true" && val1 !== "") {
 
-                // 选中的颜色
+                    if (val2 - d2 >= 0) {
+
+                        // 两个日期区间
+                        if (d1 - val2 < 0) {
+                            className.push(options.classNames.interval);
+                        }
+
+                        // input日期的颜色
+                        if (date.year == val2.getFullYear() && date.month - 1 == val2.getMonth() && date.day == val2.getDate()) {
+                            className.push(options.classNames.selectDay);
+                        }
+
+                    }
+
+                } else {
+
+                    // 当天日期
+                    if (cacheDate.getFullYear() == date.year && cacheDate.getMonth() == date.month - 1 && cacheDate.getDate() == date.day) {
+                        className.push(options.classNames.today);
+                    }
+
+                    // input日期的颜色
+                    if (d3 !== null && date.year == d3.getFullYear() && date.month - 1 == d3.getMonth() && date.day == d3.getDate()) {
+                        className.push(options.classNames.selectDay);
+                    }
+                }
 
                 // 火车票逻辑
                 if (fatalism > 0) {
 
                     if (startDate.getFullYear() == date.year && startDate.getMonth() == date.month - 1 && date.day < startDate.getDate()) {
                         className.push(options.classNames.nodate);
-                    } 
+                    }
 
                     var d3 = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
 
@@ -350,8 +427,36 @@
 
                 }
 
-                // 节假日
+                // 节假日 今天 明天 后天
+                var nowDate = new Date(
+				    new Date().getFullYear(),
+				    new Date().getMonth(),
+				    new Date().getDate()
+			    ),
+                d4 = new Date(date.year, date.month - 1, date.day),
+                day = -1,
+                festivalIndex = date.year + "-" + this.mend(date.month) + "-" + this.mend(date.day);
 
+                day = (d4.getTime() - nowDate.getTime()) / (1000 * 3600 * 24);
+
+                if (day >= 0 && day <= 2) {
+                    className.push(options.classNames.festival);
+                } else {
+
+                    if (options.festival[festivalIndex]) {
+                        className.push(options.classNames.festival);
+                    }
+
+                }
+
+                // 当天是否可点击
+                if (options.isTodayClick) {
+
+                    if (cacheDate.getFullYear() == date.year && cacheDate.getMonth() == date.month - 1 && cacheDate.getDate() == date.day) {
+                        className = [options.classNames.nodate];
+                    }
+
+                }
             }
 
             return className.join(" ");
@@ -429,8 +534,8 @@
 
             // 设置换月按钮显示
             if (options.control) {
-                options.showPrev = date.getFullYear() > cacheDate.getFullYear() ?
-                    true : date.getMonth() + op === cacheDate.getMonth() ? false : true;
+                options.showPrev = options.date.getFullYear() > cacheDate.getFullYear() ?
+                    true : options.date.getMonth() === cacheDate.getMonth() ? false : true;
 
                 options.showNext = mos <= 0 ? true : ((date.getFullYear() - cacheDate.getFullYear()) * 12 +
                     date.getMonth() + op - cacheDate.getMonth() + 1) >= mos ? false : true;
@@ -446,7 +551,7 @@
         bindEvent: function () {
             this.monthChangeEvent();
             this.selectDate();
-            //this.moveEvent();
+            this.moveEvent();
         },
 
         /**
@@ -470,7 +575,8 @@
         selectDate: function () {
             var that = this;
 
-            this.warp.find("td div[class=caldate]").click(function () {
+            this.warp.find("td div[class^=caldate]").click(function () {
+                that._weekIndex = parseInt($(this).parent("td").attr("week"));
 
                 // 待优化
                 if (that.options.autoRender) {
@@ -482,15 +588,21 @@
                 } else {
                     that.$trigger.val($(this).parent("td").attr("date-map"));
                     that.warp.detach();
+                    that.$trigger.blur();
+
+                    if (typeof that.options.selectDateCallback === "function") {
+                        return that.options.selectDateCallback.call(that);
+                    }
+                    
                 }
-                
+
             });
 
         },
 
         /**
-         * 移动事件
-         */
+		 * 移动事件
+		 */
         moveEvent: function () {
 
         },
@@ -502,7 +614,7 @@
             var $trigger = this.$trigger,
                 offset = $trigger.offset(),
                 left = offset.left,
-                top = offset.top + $trigger.height() + 1;
+                top = offset.top + $trigger.outerHeight(true);
 
             return { left: left, top: top };
         },
@@ -516,7 +628,7 @@
 
             $(document).click(function (e) {
                 var target = $(e.target);
-
+                
                 if (!target.hasClass(options.triggerClass) && !target.parents().hasClass(options.warpClass) &&
                     !target.hasClass(options.classNames.monthPrev) && !target.hasClass(options.classNames.monthNext)) {
                     that.warp.detach();
@@ -548,19 +660,24 @@
         tipText: "yyyy-mm-dd", //文本日期格式
 
         frequent: false, // 单月显示
-        frequentW:"100%",
         titleTip: "{{year}}年{{month}}月",
 
-        rangeColor: "#F0F5FB",
-        hoverColor: "#d9e5f4",
+        todayInfos: ["", "", ""],
+
+        rangeColor: "#F0F5FB",  // 区间
+        hoverColor: "#d9e5f4",  // 鼠标滑过
 
         control: true, // 控制翻页按钮是否显示
         showPrev: false,
         showNext: true,
 
-        startDelayDays: 0, // 在开始的基础上叠加天数
+        startDelayDays: 0, // 在开始的基础上叠加天数 配合fatalism一起使用
         fatalism: 0, // 天数
         mos: 6, //月份
+
+        isTodayClick: false, // 当天是否可点击
+
+        weeks: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
 
         classNames: {
             week: ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
@@ -568,9 +685,18 @@
             nodate: "nodate", // 禁用和空
             today: "today", // 今天
             hover: "hover", // 鼠标滑过效果
+            selectDay: "selectDay", // input 
+            interval: "interval", // 区间
             festival: "calfest", // 节日
             monthPrev: "month-prev",
             monthNext: "month-next"
+        },
+
+        // 级联
+        cascade: {
+            days: 1, // 天数叠加一天
+            trigger: ".calendar",
+            isTodayClick: false
         },
 
         template: {
@@ -607,6 +733,18 @@
                         '<span class="calactive"></span>' +
                     '</div>' +
                  '</td>'
+        },
+
+        festival: {
+            '2014-01-01': '元旦',
+            '2014-01-30': '除夕',
+            '2014-01-31': '春节',
+            '2014-02-14': '元宵',
+            '2014-04-05': '清明',
+            '2014-05-01': '五一',
+            '2014-06-02': '端午',
+            '2014-09-08': '中秋',
+            '2014-10-01': '国庆'
         }
     };
 

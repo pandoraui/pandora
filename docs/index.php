@@ -99,7 +99,6 @@
                 <a class="todo" href="###">unit <small>组件单元</small></a>
                 <a class="todo" href="###">timeline <small>时光轴</small></a>
                 <a class="todo" href="###">photowall <small>照片墙</small></a>
-                <a class="doing" href="modules/calendar.html">calendar <small>大/小日历</small></a>
                 <a class="todo" href="###">vote <small>投票/调查统计</small></a>
                 <a class="todo" href="###">comments <small>评论/说说</small></a>
                 <a class="todo" href="modules/option.html">option <small>单选/复选模拟</small></a>
@@ -126,6 +125,7 @@
             <div class="modules">
                 <a class="todo" href="###">transition <small>过渡效果</small></a>
                 <a class="done" href="modules/dialog.html">dialog <small>弹出对话框</small></a>
+				<a class="done" href="modules/calendar.html">calendar <small>大/小日历</small></a>
                 <a class="done" href="modules/promo.html">promo <small>图片幻灯片</small></a>
                 <a class="todo" href="modules/slides.html">slides <small>图片轮播</small></a>
                 <a class="todo" href="###">imgscoll <small>图片滚动</small></a>
