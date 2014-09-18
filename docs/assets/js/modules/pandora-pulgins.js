@@ -5,7 +5,7 @@
 
 /*一般jQuery插件实现
 
-//使用闭包
+//封装插件 首先定义一个独立域(使用闭包)
 (function($) {
     // 在插件包中使用$代替jQuery
     // Code goes here
@@ -51,6 +51,8 @@ $.extend($.fn, {
 });
 
 
+
+
 //对象级别(理解为基于对象的拓展)插件开发
 //调用类似 $("#ID").pulgins({});
 (function ($) {
@@ -66,6 +68,19 @@ $.extend($.fn, {
     };
 })(jQuery);
 
+或
+
+$.fn.extend({
+    pulgins : function(xobj,options){
+        var defaults = {
+            pulginsEvent:"parameter", //参数事件
+            customName: false
+        }
+        var thisObj = $(xobj);
+        var options = $.extend(defaults, options);
+        //方法体
+    }
+});
 
 
 //调用方法
@@ -84,10 +99,9 @@ $(document).ready(function () {
 
 
 
-
-
-
-
+//
+// 下面还有一些技巧介绍
+//
 
 
 /*
@@ -272,9 +286,12 @@ $(function(){
             bindevent : "live",         // bind or live
             hovershow : 300       // 300 or undefined
         }
+        //$.extend 中true参数为深拷贝
         var opt = $.extend(true, defaults, options || {});
         
-        
+        this.each(function(){
+            //方法体等
+        });
     };
     */
     
@@ -303,19 +320,10 @@ $(function(){
 
 
 
+//
+// pandora插件开发模式
+//
 
-
-
-
-
-
-
-
-
-
-
-
-//pandora插件
 (function (global, $, pandora, undefined) {
     "use strict" // 严格模式
 
