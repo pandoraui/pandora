@@ -1,0 +1,67 @@
+
+body{font:12px/22px Tahoma,Arial,\5b8b\4f53; color:#333; background:url(../img/bg.jpg) #fff center top no-repeat;}
+
+.element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+}
+
+.wrap{width:980px;}
+
+/* header */
+.header{position:relative;height:50px; background:#000;}
+
+/* hasfixed 
+#hasfixed{margin-top: 71px;}
+#hasfixed .header{position: fixed;top: 0;left: 0;width: 100%;z-index: 999;}
+
+/* logo */
+.brand{ float:left; background:url(../img/logo.png) left center no-repeat; width:140px; height:30px; text-indent:-9999px; border-right:1px solid #444; margin:10px 20px 0 0}
+
+/* nav */
+.main-menu,.quick-menu{ padding:0;text-shadow:1px 1px 1px #33363B;position:relative;z-index:2;}
+.main-menu{float:left;margin:10px 20px 0 0;font-size:14px;}
+.quick-menu{float:right;margin-top:10px;}
+
+.nav li{ list-style-type:none; padding:0;float:left;position:relative;margin:0 1px 0 0}
+.nav li a{color:#ddd;padding:5px 12px 6px;height:20px;line-height:20px;display:block;cursor: pointer;}
+.nav li a:hover {text-decoration: none;}
+
+.nav a:hover,.nav .active a{color:#fff;background-color:#82CC00;}
+
+.nav-pills a,.active a{border-radius:3px}
+.nav li:hover a{background-color:#132e00;color:#fff;}
+.nav .active:hover a{background-color:#82CC00;}
+.dropdown:hover .dropdown-menu {display:block}
+
+.sub-menu{position:absolute;top:28px;left:0;border-radius:0 0 4px 4px;min-width:106px;z-index:10;display:none;padding:4px 0;background-color:#132e00;line-height: 18px;font-size: 12px;}
+.sub-menu li{float:none;margin-right: 0}
+.sub-menu li a{padding:5px 12px;color:#bbb;display: block;}
+.sub-menu li a:hover{background-color:#0f2500;color:#82CC00}
+
+.dropdown i{display:inline-block;margin:0 0 0 3px;position:relative;top:-2px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid #999}
+
+.quick-menu a{padding:5px 10px;}
+
+/* search-form */
+.search-form{float:left;margin-top:10px;}
+.search-form input{float: left;}
+.search-input{border-radius:2px 0 0 2px;border:none;display:block;font-size:13px;height:20px;line-height:20px;padding:4px 8px;background-color:#eee;width:100px;color:#B3B3B3}
+.search-input:focus{color:#444;background-color: #fff;}
+.search-submit{background-color: #8CAC52;border-radius: 0 2px 2px 0;height: 28px;color:#fff;padding:0 10px;border: none;cursor: pointer;}
+.search-submit:hover{background-color: #7BAB2E;}
+
+/* xOne 测试项目
+============================================================ */
+
+/* .navbar
+============================================================ */
+
+.special_menu{padding:10px; font-size:12px;line-height:22px;overflow:hidden}
+.special_menu a{margin-right:10px;color:#333;}
+.special_menu h4{float:left;padding-right:10px;}
+
+
+
+
+
