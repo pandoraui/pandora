@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+<style>
+#backtotop {
+    height: 50px;
+    position: fixed;
+    bottom: 55px;
+    right: -60px;
+    z-index: 9999;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#backtotop.showme {
+    right: 12px;
+    -moz-transform: scale(1) rotate(-360deg) translate(0px);
+    -webkit-transform: scale(1) rotate(-360deg) translate(0px);
+    -o-transform: scale(1) rotate(-360deg) translate(0px);
+    transform: scale(1) rotate(-360deg) translate(0px);
+}
+
+#backtotop .bttbg {
+    width: 50px;
+    height: 50px;
+    background: url(http://www.gbtags.com/gb/networks/themes/img/top_button.png) no-repeat 0 0;
+}
+
+#backtotop .bttbg:hover {
+    background-position: left bottom;
+}
+
+</style>
+</head>
+<body>
+    <div style="height:1000px;"> </div>
+    <div id="footer"></div>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(function() {
+    if ($("#footer").length > 0) {
+        $("body").append('<div id="backtotop" class="showme"><div class="bttbg"></div></div>');
+        initGoToTop();
+    }
+});
+function initGoToTop() {
+    var a = jQuery("#footer").position().top - jQuery(window).height() - 200;
+    jQuery(function() {
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > 100) {
+                jQuery("#backtotop").addClass("showme");
+            } else {
+                jQuery("#backtotop").removeClass("showme");
+            }
+        });
+        jQuery("#backtotop").click(function() {
+            jQuery("body,html").animate({scrollTop: 0}, 400);
+            return false;
+        });
+    });
+    if (jQuery(window).scrollTop() === 0) {
+        jQuery("#backtotop").removeClass("showme");
+    } else {
+        jQuery("#backtotop").addClass("showme");
+    }
+}
+</script>
+</body>
+</html>
