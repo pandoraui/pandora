@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>日历排版布局</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 让IE系列浏览器识别html5标签 -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="../assets/less/pandora.css">
+<link rel="stylesheet" href="../assets/less/docs.css">
+<link rel="stylesheet" href="../assets/less/calendar.css">
+<link rel="stylesheet" href="../assets/js/google-code-prettify/prettify2.css">
+<style>
+.pa-calendar .hide { display: none;}
+
+.calendar-big {
+    width: 1000px;
+}
+.calendar-big .calmonth {
+    width: 500px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="wrap">
+    <h1>日历排版布局</h1>
+    <p>日历或作为产品价格表，或作为日期选择框，但总体结构或实现，很多地方都是相似甚至通用，所以我们考虑，一套结构多处使用，可以用作大型的产品列表，可以用于小处的日期选择。根据模块开发思想，js的实现分为两步，第一步是实现日历功能，第二步填充所需的数据，通过选择主题或版式实现大/小日历。</p>
+    <p><strong>TODO：</strong></p>
+    <div class="docs-example">
+        <h4>日历组件：</h4>
+        <div class="switchMonth">
+            <strong>2014年</strong>
+            <button data-map="2014-01-01" class="btn">1月</button>
+            <button data-map="2014-02-01" class="btn">2月</button>
+            <button data-map="2014-03-01" class="btn">3月</button>
+            <button data-map="2014-04-01" class="btn">4月</button>
+            <button data-map="2014-05-01" class="btn">5月</button>
+            <button data-map="2014-06-01" class="btn">6月</button>
+            <button data-map="2014-07-01" class="btn">7月</button>
+            <button data-map="2014-08-01" class="btn">8月</button>
+            <button data-map="2014-09-01" class="btn">9月</button>
+            <button data-map="2014-10-01" class="btn">10月</button>
+            <button data-map="2014-11-01" class="btn">11月</button>
+            <button data-map="2014-12-01" class="btn">12月</button>
+        </div>
+        <p></p>
+
+        
+        <div class="q-datepicker">
+        <div class="g g2"><div class="c" data-index="0"><div class="h"><span href="#" class="n" style="display:none;" onclick="QDP.change( event , '+1M' );return false;"></span><span href="#" class="p" style="display:none;" onclick="QDP.change( event , '-1M' );return false;"></span><div class="t">2014年6月</div></div><table><thead><tr><th class="w1">一</th><th class="w2">二</th><th class="w3">三</th><th class="w4">四</th><th class="w5">五</th><th class="w6">六</th><th class="w0">日</th></tr></thead><tbody><tr><td class="w1 st st-s" data-info="disable">&nbsp;</td><td class="w2 st st-s" data-info="disable">&nbsp;</td><td class="w3 st st-s" data-info="disable">&nbsp;</td><td class="w4 st st-s" data-info="disable">&nbsp;</td><td class="w5 st st-s" data-info="disable">&nbsp;</td><td class="w6 st st-s" data-info="disable">&nbsp;</td><td class="w0 st st-d" data-info="disable"><span class="">1</span></td></tr><tr><td class="w1 st st-d holi" data-info="disable"><span class="">2</span></td><td class="w2 st st-d" data-info="disable"><span class="">3</span></td><td class="w3 st st-d" data-info="disable"><span class="">4</span></td><td class="w4 st st-d" data-info="disable"><span class="">5</span></td><td class="w5 st st-d" data-info="disable"><span class="">6</span></td><td class="w6 st st-d" data-info="disable"><span class="">7</span></td><td class="w0 st st-d" data-info="disable"><span class="">8</span></td></tr><tr><td class="w1 st st-d" data-info="disable"><span class="">9</span></td><td class="w2 st st-d" data-info="disable"><span class="">10</span></td><td class="w3 st st-d" data-info="disable"><span class="">11</span></td><td class="w4 st st-t" onclick="QDP.select(event,new Date(2014,5,12));return false;" data-sort="0"><span class="">今天</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,5,13));return false;" data-sort="1"><span class="">13</span></td><td class="w6 st st-a" onclick="QDP.select(event,new Date(2014,5,14));return false;" data-sort="2"><span class="">14</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,5,15));return false;" data-sort="3"><span class="">15</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,5,16));return false;" data-sort="4"><span class="">16</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,5,17));return false;" data-sort="5"><span class="">17</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,5,18));return false;" data-sort="6"><span class="">18</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,5,19));return false;" data-sort="7"><span class="">19</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,5,20));return false;" data-sort="8"><span class="">20</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,5,21));return false;" data-sort="9"><span class="">21</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,5,22));return false;" data-sort="10"><span class="">22</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,5,23));return false;" data-sort="11"><span class="">23</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,5,24));return false;" data-sort="12"><span class="">24</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,5,25));return false;" data-sort="13"><span class="">25</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,5,26));return false;" data-sort="14"><span class="">26</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,5,27));return false;" data-sort="15"><span class="">27</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,5,28));return false;" data-sort="16"><span class="">28</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,5,29));return false;" data-sort="17"><span class="">29</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,5,30));return false;" data-sort="18"><span class="">30</span></td><td class="w2 st st-s" onclick="QDP.select(event,new Date(2014,6,1));return false;" data-info="disable">&nbsp;</td><td class="w3 st st-s" onclick="QDP.select(event,new Date(2014,6,2));return false;" data-info="disable">&nbsp;</td><td class="w4 st st-s" onclick="QDP.select(event,new Date(2014,6,3));return false;" data-info="disable">&nbsp;</td><td class="w5 st st-s" onclick="QDP.select(event,new Date(2014,6,4));return false;" data-info="disable">&nbsp;</td><td class="w6 st st-s" onclick="QDP.select(event,new Date(2014,6,5));return false;" data-info="disable">&nbsp;</td><td class="w0 st st-s" onclick="QDP.select(event,new Date(2014,6,6));return false;" data-info="disable">&nbsp;</td></tr></tbody></table><div class="cm_6">6</div></div><div class="c" data-index="1"><div class="h"><span href="#" class="n" onclick="QDP.change( event , '+1M' );return false;"></span><span href="#" class="p" style="display:none;" onclick="QDP.change( event , '-1M' );return false;"></span><div class="t">2014年7月</div></div><table><thead><tr><th class="w1">一</th><th class="w2">二</th><th class="w3">三</th><th class="w4">四</th><th class="w5">五</th><th class="w6">六</th><th class="w0">日</th></tr></thead><tbody><tr><td class="w1 st st-s" onclick="QDP.select(event,new Date(2014,5,30));return false;" data-info="disable">&nbsp;</td><td class="w2 st" onclick="QDP.select(event,new Date(2014,6,1));return false;" data-sort="19"><span class="">1</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,6,2));return false;" data-sort="20"><span class="">2</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,6,3));return false;" data-sort="21"><span class="">3</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,6,4));return false;" data-sort="22"><span class="">4</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,6,5));return false;" data-sort="23"><span class="">5</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,6,6));return false;" data-sort="24"><span class="">6</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,6,7));return false;" data-sort="25"><span class="">7</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,6,8));return false;" data-sort="26"><span class="">8</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,6,9));return false;" data-sort="27"><span class="">9</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,6,10));return false;" data-sort="28"><span class="">10</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,6,11));return false;" data-sort="29"><span class="">11</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,6,12));return false;" data-sort="30"><span class="">12</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,6,13));return false;" data-sort="31"><span class="">13</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,6,14));return false;" data-sort="32"><span class="">14</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,6,15));return false;" data-sort="33"><span class="">15</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,6,16));return false;" data-sort="34"><span class="">16</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,6,17));return false;" data-sort="35"><span class="">17</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,6,18));return false;" data-sort="36"><span class="">18</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,6,19));return false;" data-sort="37"><span class="">19</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,6,20));return false;" data-sort="38"><span class="">20</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,6,21));return false;" data-sort="39"><span class="">21</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,6,22));return false;" data-sort="40"><span class="">22</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,6,23));return false;" data-sort="41"><span class="">23</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,6,24));return false;" data-sort="42"><span class="">24</span></td><td class="w5 st" onclick="QDP.select(event,new Date(2014,6,25));return false;" data-sort="43"><span class="">25</span></td><td class="w6 st" onclick="QDP.select(event,new Date(2014,6,26));return false;" data-sort="44"><span class="">26</span></td><td class="w0 st" onclick="QDP.select(event,new Date(2014,6,27));return false;" data-sort="45"><span class="">27</span></td></tr><tr><td class="w1 st" onclick="QDP.select(event,new Date(2014,6,28));return false;" data-sort="46"><span class="">28</span></td><td class="w2 st" onclick="QDP.select(event,new Date(2014,6,29));return false;" data-sort="47"><span class="">29</span></td><td class="w3 st" onclick="QDP.select(event,new Date(2014,6,30));return false;" data-sort="48"><span class="">30</span></td><td class="w4 st" onclick="QDP.select(event,new Date(2014,6,31));return false;" data-sort="49"><span class="">31</span></td><td class="w5 st st-s" onclick="QDP.select(event,new Date(2014,7,1));return false;" data-info="disable">&nbsp;</td><td class="w6 st st-s" onclick="QDP.select(event,new Date(2014,7,2));return false;" data-info="disable">&nbsp;</td><td class="w0 st st-s" onclick="QDP.select(event,new Date(2014,7,3));return false;" data-info="disable">&nbsp;</td></tr></tbody></table><div class="cm_7">7</div></div></div></div>
+
+
+
+        <div class="ui-calendar" style="display:block;width:430px;">
+            <span class="month-prev" title="上一月">&lsaquo;</span>
+            <span class="month-next" title="下一月">&rsaquo;</span>
+            <div class="calwarp clearfix">
+                <div class="calmonth">
+                    <div class="caltitle">
+                        <span class="mtitle">2013年9月</span>
+                    </div>
+                    <div class="calbox">
+                        <i class="monthbg">9</i>
+                        <table class="caltable" cellspacing="0" cellpadding="0" border="0">
+                            <tr class="calweek">
+                                <th class="sun">日</th>
+                                <th class="mon">一</th>
+                                <th class="tue">二</th>
+                                <th class="wed">三</th>
+                                <th class="thu">四</th>
+                                <th class="fri">五</th>
+                                <th class="sat">六</th>
+                            </tr>
+                            <tr calweek="1">
+                                <td>
+                                    <div calday="日" class="caldate sun nodate">
+                                        <span class="calday">1</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate nodate">
+                                        <span class="calday">2</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate nodate">
+                                        <span class="calday">3</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate nodate">
+                                        <span class="calday">4</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate nodate">
+                                        <span class="calday">5</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate nodate">
+                                        <span class="calday">6</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat nodate">
+                                        <span class="calday">7</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr calweek="2">
+                                <td>
+                                    <div calday="日" class="caldate sun nodate">
+                                        <span class="calday">8</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate nodate">
+                                        <span class="calday">9</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate nodate">
+                                        <span class="calday">10</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate nodate">
+                                        <span class="calday">11</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate today">
+                                        <span class="calday">今天</span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate">
+                                        <span class="calday calfest">明天</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat">
+                                        <span class="calday">14</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr calweek="3">
+                                <td>
+                                    <div calday="日" class="caldate sun">
+                                        <span class="calday">15</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate">
+                                        <span class="calday">16</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate">
+                                        <span class="calday">17</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate">
+                                        <span class="calday">18</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate">
+                                        <span class="calday calfest">中秋</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate">
+                                        <span class="calday">20</span>
+                                        <span class="calinfo">充足</span>
+                                        <span class="calprice"><dfn>&yen;55886</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat">
+                                        <span class="calday">21</span>
+                                        <span class="calinfo">充足</span>
+                                        <span class="calprice"><dfn>&yen;558866</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr calweek="4">
+                                <td>
+                                    <div calday="日" class="caldate sun">
+                                        <span class="calday calfest">22</span>
+                                        <span class="calinfo">充足</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate">
+                                        <span class="calday">23</span>
+                                        <span class="calinfo">充足</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate">
+                                        <span class="calday">24</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate">
+                                        <span class="calday">25</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate">
+                                        <span class="calday">26</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate">
+                                        <span class="calday">27</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat">
+                                        <span class="calday">28</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr calweek="5">
+                                <td>
+                                    <div calday="日" class="caldate sun">
+                                        <span class="calday">29</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate">
+                                        <span class="calday">30</span>
+                                        <span class="calinfo">18</span>
+                                        <span class="calprice"><dfn>&yen;55</dfn></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr calweek="6">
+                                <td>
+                                    <div calday="日" class="caldate sun nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="一" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="二" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="三" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="四" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="五" class="caldate nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div calday="六" class="caldate sat nodate">
+                                        <span class="calday"></span>
+                                        <span class="calinfo"></span>
+                                        <span class="calprice"></span>
+                                        <span class="calactive"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> <!-- //calmonth -->
+            </div> <!-- //calwrap -->
+        </div> <!-- //pa-calendar -->
+        
+
+    </div><!--//.docs-example-->
+
+    <h2>调用方式</h2>
+    <p></p>
+
+<pre class="prettyprint linenums">
+
+</pre>
+
+</div>
+
+<div class="wrap">
+    <h3>您有什么需要完善的么？</h3>
+    <div id="uyan_frame"></div>
+</div>
+<script src="../assets/js/jquery-1.8.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.8.3.min.js"><\/script>')</script>
+<script src="../assets/js/modules/pandora-calendar.js"></script>
+
+
+
+<!-- UY BEGIN -->
+<script type="text/javascript">
+
+$(function () {
+
+})
+
+var uyan_config = {
+    'title':'前端开发框架 #pandora#', 
+    'du':'pandoraui.com'
+};
+</script>
+<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
+<!-- UY END -->
+</body>
+</html>
