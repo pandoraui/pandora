@@ -2,6 +2,8 @@
 //     (c) 2010-2015 Thomas Fuchs
 //     Zepto.js may be freely distributed under the MIT license.
 
+// 我想计划这种组建写成，不再框架中也可以部分引用直接使用
+
 // 这里检测运行环境，
 // 这都可以从navigator对象中拿到，
 
