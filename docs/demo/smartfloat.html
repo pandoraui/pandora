@@ -77,32 +77,42 @@ $("#float").smartFloat();
 <script src="http://pic.lvmama.com/js/jquery-1.7.js"></script>
 <script>
 $.fn.smartFloat = function() {
-    var position = function(element) {
-        var top = element.position().top, pos = element.css("position");
-        $(window).scroll(function() {
-            var scrolls = $(this).scrollTop();
-            if (scrolls > top) {
-                if (window.XMLHttpRequest) {
+    $.fn.smartFloat = function() {
+        var position = function(element) {
+            var top = element.position().top, pos = element.css("position");
+            $(window).scroll(function() {
+                var scrolls = $(this).scrollTop();
+                var tempDiv='<div class="temp-div" style="height:'+element.outerHeight(true)+'px;"></div>';
+                var tempDivSize=$(".temp-div").size();
+                if (scrolls > top) {
+                    if(tempDivSize<1){
+                        $(tempDiv).insertAfter(element);
+                    }
+                    if (window.XMLHttpRequest) {
+                        element.css({
+                            position: "fixed",
+                            top: 0
+                        });
+                    } else {
+                        element.css({
+                            top: scrolls
+                        });
+                    }
+                }else {
+                    if(tempDivSize>0){
+                        $(".temp-div").remove();
+                    }
                     element.css({
-                        position: "fixed",
-                        top: 0
-                    });    
-                } else {
-                    element.css({
-                        top: scrolls
-                    });    
+                        position: pos,
+                        top: top
+                    });
                 }
-            }else {
-                element.css({
-                    position: "absolute",
-                    top: top
-                });    
-            }
+            });
+        };
+        return $(this).each(function() {
+            position($(this));
         });
     };
-    return $(this).each(function() {
-        position($(this));                         
-    });
 };
  
 //绑定
