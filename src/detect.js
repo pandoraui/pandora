@@ -20,6 +20,11 @@
 
 /*
 新的结构划如下：
+
+!!!!!!!!!!!!!!!!!!!!!!!! 注意，不用如此做了，因为已经做好了，npm的一个模块的实现和这个设想非常类似
+https://github.com/hotoo/detector
+但是我仔细看了下面的代码实现，我觉得这是有一定好处的，npm的那个模块包含不全
+
 {
   device: {//android iphone ipad ipod wp
     platform: 'iphone',
