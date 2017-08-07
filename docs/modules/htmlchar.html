@@ -11,1149 +11,1250 @@
 <link rel="stylesheet" href="../assets/less/pandora.css">
 <link rel="stylesheet" href="../assets/less/docs.css">
 <style>
-body { 
-    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;;
+body {
+  font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;;
 }
 .ui-box {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
-
 .ui-box-head {
-    padding: 10px 0;
-    line-height: 1;
-    overflow: hidden;
-    background: -webkit-gradient(linear, left top, left bottom, from(#eaf5fd), to(#c5e2f2));
-    background: -moz-linear-gradient(top,  #eaf5fd,  #c5e2f2);
-    background: -o-linear-gradient(top, #eaf5fd, #c5e2f2);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaf5fd', endColorstr='#c5e2f2');
-    background: linear-gradient(top, #eaf5fd, #c5e2f2);
-    border: 1px solid #9ED6FA;
+  padding: 10px 0;
+  line-height: 1;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaf5fd), to(#c5e2f2));
+  background: -moz-linear-gradient(top,  #eaf5fd,  #c5e2f2);
+  background: -o-linear-gradient(top, #eaf5fd, #c5e2f2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaf5fd', endColorstr='#c5e2f2');
+  background: linear-gradient(top, #eaf5fd, #c5e2f2);
+  border: 1px solid #9ED6FA;
 }
 .ui-box-head .head-title{
-    float: left;
-    margin: 0;
-    padding-left: 10px;
+  float: left;
+  margin: 0;
+  padding-left: 10px;
 }
 .ui-box-head .link-more {
-    float: right;
+  float: right;
 }
 .ui-box-content {
-    border: 1px solid #9ED6FA;
-    border-top: none;
-    padding: 1px 0 20px;
+  border: 1px solid #9ED6FA;
+  border-top: none;
+  padding: 1px 0 20px;
 }
-
 .lightgreen { width: 80%;}
-
 .lightgreen th,
 .lightgreen td {
-    border-color: #dfdfdf;
+  border-color: #dfdfdf;
 }
-
-.lightgreen th { 
-    background: #e9f8e7; 
-    font-weight: normal;
-    text-align: center;
+.lightgreen th {
+  background: #e9f8e7;
+  font-weight: normal;
+  text-align: center;
 }
-.lightgreen td { 
-    background: #f4fbf3;
+.lightgreen td {
+  background: #f4fbf3;
 }
 .charinfo{width:90%;margin:10px auto;}
-
 </style>
 <script>
-//author //www.weste.net/tools/ASCII.asp
-<!-- Begin
+// author //www.weste.net/tools/ASCII.asp
+// <!-- Begin
 function showKeyCode(){
-    var outkeycode = document.getElementById("keycode");
-    var inputchar = document.getElementsByTagName("input")[0];
-    var character = document.characterCode.character.value.substring(0,1);
-    if(inputchar.value == ""){
-        outkeycode.innerHTML ="请先输入待查字符";
-        inputchar.focus();
-        return false;
-    }
-    var code = document.characterCode.character.value.charCodeAt(0);
-    var msg = "字符  \""+character+"\" 对应的ASCII码值为 <i class='red'>&amp#"+code +"</i>";
-    //alert(msg);
-    outkeycode.innerHTML = msg;
+  var outkeycode = document.getElementById("keycode");
+  var inputchar = document.getElementsByTagName("input")[0];
+  var character = document.characterCode.character.value.substring(0,1);
+  if(inputchar.value == ""){
+    outkeycode.innerHTML ="请先输入待查字符";
+    inputchar.focus();
     return false;
+  }
+  var code = document.characterCode.character.value.charCodeAt(0);
+  var msg = "字符  \""+character+"\" 对应的ASCII码值为 <i class='red'>&amp#"+code +"</i>";
+  //alert(msg);
+  outkeycode.innerHTML = msg;
+  return false;
 }
 //  End -->
 </script>
 </head>
 <body>
 <div class="wrap">
-    <h1>HTML特殊符号对照表</h1>
-    <p>这是html特殊符号对照表，建议将最常用的记住！<strong>如：</strong> &amp;nbsp; &amp;lt; &amp;gt; &amp;yen; &amp;bull; &amp;hellip; &amp;rarr; &amp;raquo; &amp;#12288;</p>
-    <p>如果特殊符号里没有列出，请尝试ASCII字符转换：</p>
-    <form name="characterCode">
-    <h3>ASCII码表在线查询(1.0 beta 1)</h3>
-        <p>输入一个待查字符:
-            <input type="text" id="character" name="character" size="10">
-            <input name="Action" type="hidden" id="Action" value="Add">
-            <input name="button" type="button" value="显示该键值" onClick="showKeyCode()">
-            <span id="keycode"></span>
-        </p>
-    </form>
-    <p>页面底部给出了ASCII码对照表，<a href="#ASCII">去看看</a></p>
-<div class="ui-box">
-    <div class="ui-box-head">
-        <h3 class="head-title">HTML特殊字符编码大全 <small></small></h3>
-        <a href="#" class="link-more hide">更多 &raquo;</a>
+  <h1>HTML特殊符号对照表</h1>
+  <p>这是html特殊符号对照表，建议将最常用的记住！<strong>如：</strong> &amp;nbsp; &amp;lt; &amp;gt; &amp;yen; &amp;bull; &amp;hellip; &amp;rarr; &amp;raquo; &amp;#12288;</p>
+  <p>如果特殊符号里没有列出，请尝试ASCII字符转换：</p>
+  <form name="characterCode">
+  <h3>ASCII码表在线查询(1.0 beta 1)</h3>
+    <p>输入一个待查字符:
+      <input type="text" id="character" name="character" size="10">
+      <input name="Action" type="hidden" id="Action" value="Add">
+      <input name="button" type="button" value="显示该键值" onClick="showKeyCode()">
+      <span id="keycode"></span>
+    </p>
+  </form>
+  <p>以下提供：<a href="#ASCII">ASCII码对照表</a>，<a href="#CONTROL">控制键键码值（keyCode）</a>，<a href="#THMLCHAR">HTML特殊符号对照表</a></p>
+<div id="ASCII" class="ui-box">
+  <div class="ui-box-head">
+    <h3 class="head-title">ASCII码对照表</h3>
+    <a href="#" class="link-more hide">更多 &raquo;</a>
+  </div>
+  <div class="ui-box-content">
+
+    <h2 class="tc">下表列出了字符集中的 0 - 127。<small><a href="#">返回顶部</a></small></h2>
+    <div class="charinfo">
+      <p>** 数值 8、9、10 和 13 可以分别转换为退格符、制表符、换行符和回车符。这些字符都没有图形表示，但是对于不同的应用程序，这些字符可能会影响文本的显示效果。 </p>
+      <p>&quot;空&quot; 表示在当前平台上不支持的字符。 </p>
     </div>
-    <div class="ui-box-content">
-        <h2 class="tc">HTML特殊符号对照表</h2>
-        
-        <table class="table-info lightgreen bc">
-            <thead>
-                <tr>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>&</th><td>&amp;amp;</td><td>&amp;#38;</td>
-                    <th> </th><td> </td><td> </td>
-                </tr>
-                <tr>
-                    <th>Α</th><td>&amp;Alpha;</td><td>&amp;#913;</td>
-                    <th>Β</th><td>&amp;Beta;</td><td>&amp;#914;</td>
-                </tr>
-                <tr>
-                    <th>Γ</th><td>&amp;Gamma;</td><td>&amp;#915;</td>
-                    <th>Δ</th><td>&amp;Delta;</td><td>&amp;#916;</td>
-                </tr>
-                <tr>
-                    <th>Ε</th><td>&amp;Epsilon;</td><td>&amp;#917;</td>
-                    <th>Ζ</th><td>&amp;Zeta;</td><td>&amp;#918;</td>
-                </tr>
-                <tr>
-                    <th>Η</th><td>&amp;Eta;</td><td>&amp;#919;</td>
-                    <th>Θ</th><td>&amp;Theta;</td><td>&amp;#920;</td>
-                </tr>
-                <tr>
-                    <th>Ι</th><td>&amp;Iota;</td><td>&amp;#921;</td>
-                    <th>Κ</th><td>&amp;Kappa;</td><td>&amp;#922;</td>
-                </tr>
-                <tr>
-                    <th>Λ</th><td>&amp;Lambda;</td><td>&amp;#923;</td>
-                    <th>Μ</th><td>&amp;Mu;</td><td>&amp;#924;</td>
-                </tr>
-                <tr>
-                    <th>Ν</th><td>&amp;Nu;</td><td>&amp;#925;</td>
-                    <th>Ξ</th><td>&amp;Xi;</td><td>&amp;#926;</td>
-                </tr>
-                <tr>
-                    <th>Ο</th><td>&amp;Omicron;</td><td>&amp;#927;</td>
-                    <th>Π</th><td>&amp;Pi;</td><td>&amp;#928;</td>
-                </tr>
-                <tr>
-                    <th>Ρ</th><td>&amp;Rho;</td><td>&amp;#929;</td>
-                    <th>Σ</th><td>&amp;Sigma;</td><td>&amp;#931;</td>
-                </tr>
-                <tr>
-                    <th>Τ</th><td>&amp;Tau;</td><td>&amp;#932;</td>
-                    <th>Υ</th><td>&amp;Upsilon;</td><td>&amp;#933;</td>
-                </tr>
-                <tr>
-                    <th>Φ</th><td>&amp;Phi;</td><td>&amp;#934;</td>
-                    <th>Χ</th><td>&amp;Chi;</td><td>&amp;#935;</td>
-                </tr>
-                <tr>
-                    <th>Ψ</th><td>&amp;Psi;</td><td>&amp;#936;</td>
-                    <th>Ω</th><td>&amp;Omega;</td><td>&amp;#937;</td>
-                </tr>
-                <tr>
-                    <th>α</th><td>&amp;alpha;</td><td>&amp;#945;</td>
-                    <th>β</th><td>&amp;beta;</td><td>&amp;#946;</td>
-                </tr>
-                <tr>
-                    <th>γ</th><td>&amp;gamma;</td><td>&amp;#947;</td>
-                    <th>δ</th><td>&amp;delta;</td><td>&amp;#948;</td>
-                </tr>
-                <tr>
-                    <th>ε</th><td>&amp;epsilon;</td><td>&amp;#949;</td>
-                    <th>ζ</th><td>&amp;zeta;</td><td>&amp;#950;</td>
-                </tr>
-                <tr>
-                    <th>η</th><td>&amp;eta;</td><td>&amp;#951;</td>
-                    <th>θ</th><td>&amp;theta;</td><td>&amp;#952;</td>
-                </tr>
-                <tr>
-                    <th>ι</th><td>&amp;iota;</td><td>&amp;#953;</td>
-                    <th>κ</th><td>&amp;kappa;</td><td>&amp;#954;</td>
-                </tr>
-                <tr>
-                    <th>λ</th><td>&amp;lambda;</td><td>&amp;#955;</td>
-                    <th>μ</th><td>&amp;mu;</td><td>&amp;#956;</td>
-                </tr>
-                <tr>
-                    <th>ν</th><td>&amp;nu;</td><td>&amp;#957;</td>
-                    <th>ξ</th><td>&amp;xi;</td><td>&amp;#958;</td>
-                </tr>
-                <tr>
-                    <th>ο</th><td>&amp;omicron;</td><td>&amp;#959;</td>
-                    <th>π</th><td>&amp;pi;</td><td>&amp;#960;</td>
-                </tr>
-                <tr>
-                    <th>ρ</th><td>&amp;rho;</td><td>&amp;#961;</td>
-                    <th>ς</th><td>&amp;sigmaf;</td><td>&amp;#962;</td>
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>σ </th><td>&amp;sigma;</td><td>&amp;#963;</td>
-                    <th>τ </th><td>&amp;tau;</td><td>&amp;#964;</td>
-                </tr>
-                <tr> 
-                    <th>υ </th><td>&amp;upsilon;</td><td>&amp;#965;</td>
-                    <th>φ </th><td>&amp;phi;</td><td>&amp;#966;</td>
-                </tr>
-                <tr> 
-                    <th>χ </th><td>&amp;chi;</td><td>&amp;#967;</td>
-                    <th>ψ </th><td>&amp;psi;</td><td>&amp;#968;</td>
-                </tr>
-                <tr> 
-                    <th>ω </th><td>&amp;omega;</td><td>&amp;#969;</td>
-                    <th>ϑ </th><td>&amp;thetasym;</td><td>&amp;#977;</td>
-                </tr>
-                <tr> 
-                    <th>ϒ </th><td>&amp;upsih;</td><td>&amp;#978;</td>
-                    <th>ϖ </th><td>&amp;piv;</td><td>&amp;#982;</td>
-                </tr>
-                <tr> 
-                    <th>• </th><td>&amp;bull;</td><td>&amp;#8226;</td>
-                    <th>… </th><td>&amp;hellip;</td><td>&amp;#8230;</td>
-                </tr>
-                <tr> 
-                    <th>′ </th><td>&amp;prime;</td><td>&amp;#8242;</td>
-                    <th>″ </th><td>&amp;Prime;</td><td>&amp;#8243;</td>
-                </tr>
-                <tr> 
-                    <th>‾ </th><td>&amp;oline;</td><td>&amp;#8254;</td>
-                    <th>⁄ </th><td>&amp;frasl;</td><td>&amp;#8260;</td>
-                </tr>
-                <tr> 
-                    <th>℘ </th><td>&amp;weierp;</td><td>&amp;#8472;</td>
-                    <th>ℑ </th><td>&amp;image;</td><td>&amp;#8465;</td>
-                </tr>
-                <tr> 
-                    <th>ℜ </th><td>&amp;real;</td><td>&amp;#8476;</td>
-                    <th>™ </th><td>&amp;trade;</td><td>&amp;#8482;</td>
-                </tr>
-                <tr> 
-                    <th>ℵ </th><td>&amp;alefsym;</td><td>&amp;#8501;</td>
-                    <th>← </th><td>&amp;larr;</td><td>&amp;#8592;</td>
-                </tr>
-                <tr> 
-                    <th>↑ </th><td>&amp;uarr;</td><td>&amp;#8593;</td>
-                    <th>→ </th><td>&amp;rarr;</td><td>&amp;#8594;</td>
-                </tr>
-                <tr> 
-                    <th>↓ </th><td>&amp;darr;</td><td>&amp;#8595;</td>
-                    <th>↔ </th><td>&amp;harr;</td><td>&amp;#8596;</td>
-                </tr>
-                <tr> 
-                    <th>↵ </th><td>&amp;crarr;</td><td>&amp;#8629;</td>
-                    <th>⇐ </th><td>&amp;lArr;</td><td>&amp;#8656;</td>
-                </tr>
-                <tr> 
-                    <th>⇑ </th><td>&amp;uArr;</td><td>&amp;#8657;</td>
-                    <th>⇒ </th><td>&amp;rArr;</td><td>&amp;#8658;</td>
-                </tr>
-                <tr> 
-                    <th>⇓ </th><td>&amp;dArr;</td><td>&amp;#8659;</td>
-                    <th>⇔ </th><td>&amp;hArr;</td><td>&amp;#8660;</td>
-                </tr>
-                <tr> 
-                    <th>∀ </th><td>&amp;forall;</td><td>&amp;#8704;</td>
-                    <th>∂ </th><td>&amp;part;</td><td>&amp;#8706;</td>
-                </tr>
-                <tr> 
-                    <th>∃ </th><td>&amp;exist;</td><td>&amp;#8707;</td>
-                    <th>∅ </th><td>&amp;empty;</td><td>&amp;#8709;</td>
-                </tr>
-                <tr> 
-                    <th>∇ </th><td>&amp;nabla;</td><td>&amp;#8711;</td>
-                    <th>∈ </th><td>&amp;isin;</td><td>&amp;#8712;</td>
-                </tr>
-                <tr>
-                    <th>∉ </th><td>&amp;notin;</td><td>&amp;#8713;</td>
-                    <th>∋ </th><td>&amp;ni;</td><td>&amp;#8715;</td>
-                </tr>
-                <tr> 
-                    <th>∏ </th><td>&amp;prod;</td><td>&amp;#8719;</td>
-                    <th>∑ </th><td>&amp;sum;</td><td>&amp;#8721;</td>
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>− </th><td>&amp;minus;</td><td>&amp;#8722;</td>
-                    <th>∗ </th><td>&amp;lowast;</td><td>&amp;#8727;</td>
-                </tr>
-                <tr>
-                    <th>√ </th><td>&amp;radic;</td><td>&amp;#8730;</td>
-                    <th>∝ </th><td>&amp;prop;</td><td>&amp;#8733;</td>
-                </tr>
-                <tr>
-                    <th>∞ </th><td>&amp;infin;</td><td>&amp;#8734;</td>
-                    <th>∠ </th><td>&amp;ang;</td><td>&amp;#8736;</td>
-                </tr>
-                <tr>
-                    <th>∧ </th><td>&amp;and;</td><td>&amp;#8869;</td>
-                    <th>∨ </th><td>&amp;or;</td><td>&amp;#8870;</td>
-                </tr>
-                <tr> 
-                    <th>∩ </th><td>&amp;cap;</td><td>&amp;#8745;</td>
-                    <th>∪ </th><td>&amp;cup;</td><td>&amp;#8746;</td>
-                </tr>
-                <tr> 
-                    <th>∫ </th><td>&amp;int;</td><td>&amp;#8747;</td>
-                    <th>∴ </th><td>&amp;there4;</td><td>&amp;#8756;</td>
-                </tr>
-                <tr> 
-                    <th>∼ </th><td>&amp;sim;</td><td>&amp;#8764;</td>
-                    <th>≅ </th><td>&amp;cong;</td><td>&amp;#8773;</td>
-                </tr>
-                <tr> 
-                    <th>≈ </th><td>&amp;asymp;</td><td>&amp;#8773;</td>
-                    <th>≠ </th><td>&amp;ne;</td><td>&amp;#8800;</td>
-                </tr>
-                <tr> 
-                    <th>≡ </th><td>&amp;equiv;</td><td>&amp;#8801;</td>
-                    <th>≤ </th><td>&amp;le;</td><td>&amp;#8804;</td>
-                </tr>
-                <tr> 
-                    <th>≥ </th><td>&amp;ge;</td><td>&amp;#8805;</td>
-                    <th>⊂ </th><td>&amp;sub;</td><td>&amp;#8834;</td>
-                </tr>
-                <tr> 
-                    <th>⊃ </th><td>&amp;sup;</td><td>&amp;#8835;</td>
-                    <th>⊄ </th><td>&amp;nsub;</td><td>&amp;#8836;</td>
-                </tr>
-                <tr> 
-                    <th>⊆ </th><td>&amp;sube;</td><td>&amp;#8838;</td>
-                    <th>⊇ </th><td>&amp;supe;</td><td>&amp;#8839;</td>
-                </tr>
-                <tr> 
-                    <th>⊕ </th><td>&amp;oplus;</td><td>&amp;#8853;</td>
-                    <th>⊗ </th><td>&amp;otimes;</td><td>&amp;#8855;</td>
-                </tr>
-                <tr> 
-                    <th>⊥ </th><td>&amp;perp;</td><td>&amp;#8869;</td>
-                    <th>⋅ </th><td>&amp;sdot;</td><td>&amp;#8901;</td>
-                </tr>
-                <tr> 
-                    <th>⌈ </th><td>&amp;lceil;</td><td>&amp;#8968;</td>
-                    <th>⌉ </th><td>&amp;rceil;</td><td>&amp;#8969;</td>
-                </tr>
-                <tr> 
-                    <th>⌊ </th><td>&amp;lfloor;</td><td>&amp;#8970;</td>
-                    <th>⌋ </th><td>&amp;rfloor;</td><td>&amp;#8971;</td>
-                </tr>
-                <tr> 
-                    <th>◊ </th><td>&amp;loz;</td><td>&amp;#9674;</td>
-                    <th>♠ </th><td>&amp;spades;</td><td>&amp;#9824;</td>
-                </tr>
-                <tr> 
-                    <th>♣ </th><td>&amp;clubs;</td><td>&amp;#9827;</td>
-                    <th>♥ </th><td>&amp;hearts;</td><td>&amp;#9829;</td>
-                </tr>
-                <tr> 
-                    <th>♦ </th><td>&amp;diams;</td><td>&amp;#9830;</td>
-                    <th> </td><td>&amp;nbsp;</td><td>&amp;#160;</td>
-                </tr>
-                <tr> 
-                    <th>¡ </th><td>&amp;iexcl;</td><td>&amp;#161;</td>
-                    <th>¢ </th><td>&amp;cent;</td><td>&amp;#162;</td>
-                </tr>
-                <tr> 
-                    <th>£ </th><td>&amp;pound;</td><td>&amp;#163;</td>
-                    <th>¤ </th><td>&amp;curren;</td><td>&amp;#164;</td>
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                    <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>¥ </th><td>&amp;yen;</td><td>&amp;#165;</td>
-                    <th>¦ </th><td>&amp;brvbar;</td><td>&amp;#166;</td>
-                </tr>
-                <tr> 
-                    <th>§ </th><td>&amp;sect;</td><td>&amp;#167;</td>
-                    <th>¨ </th><td>&amp;uml;</td><td>&amp;#168;</td>
-                </tr>
-                <tr> 
-                    <th>© </th><td>&amp;copy;</td><td>&amp;#169;</td>
-                    <th>ª </th><td>&amp;ordf;</td><td>&amp;#170;</td>
-                </tr>
-                <tr> 
-                    <th>« </th><td>&amp;laquo;</td><td>&amp;#171;</td>
-                    <th>» </th><td>&amp;raquo;</td><td>&amp;#187;</td>
-                </tr>
-                <tr> 
-                    <th>¬ </th><td>&amp;not;</td><td>&amp;#172;</td>
-                    <th>® </th><td>&amp;reg;</td><td>&amp;#174;</td>
-                </tr>
-                <tr> 
-                    <th>¯ </th><td>&amp;macr;</td><td>&amp;#175;</td>
-                    <th>° </th><td>&amp;deg;</td><td>d&amp;#176;</td>
-                </tr>
-                <tr> 
-                    <th>± </th><td>&amp;plusmn;</td><td>&amp;#177;</td>
-                    <th>ˆ </th><td>&amp;circ;</td><td>&amp;#710;</td>
-                </tr>
-                <tr>
-                    <th>² </th><td>&amp;sup2;</td><td>&amp;#178;</td>
-                    <th>³ </th><td>&amp;sup3;</td><td>&amp;#179;</td>
-                </tr>
-                <tr>
-                    <th>´ </th><td>&amp;acute;</td><td>&amp;#180;</td>
-                    <th>· </th><td>&amp;middot;</td><td>&amp;#183;</td>
-                </tr>
-                <tr> 
-                    <th>µ </th><td>&amp;micro;</td><td>&amp;#181;</td>
-                    <th>­ </th><td>&amp;shy;</td><td>&amp;#173;</td>
-                </tr>
-                <tr> 
-                    <th>½ </th><td>&amp;frac12;</td><td>&amp;#189;</td>
-                    <th>¼ </th><td>&amp;frac14;</td><td>&amp;#188;</td>
-                </tr>
-                <tr> 
-                    <th>⅓ </th><td>&amp;frac13;</td><td>&amp;#8531;</td>
-                    <th>¾ </th><td>&amp;frac34;</td><td>&amp;#190;</td>
-                </tr>
-                <tr> 
-                    <th>‘ </th><td>&amp;lsquo;</td><td>&amp;#8216;</td>
-                    <th>’ </th><td>&amp;rsquo;</td><td>&amp;#8217;</td>
-                </tr>
-                <tr> 
-                    <th>“ </th><td>&amp;ldquo;</td><td>&amp;#8220;</td>
-                    <th>” </th><td>&amp;rdquo;</td><td>&amp;#8221;</td>
-                </tr>
-                <tr> 
-                    <th>‹ </th><td>&amp;lsaquo;</td><td>&amp;#8249;</td>
-                    <th>› </th><td>&amp;rsaquo;</td><td>&amp;#8250;</td>
-                </tr>
-                <tr> 
-                    <th>– </th><td>&amp;ndash;</td><td>&amp;#8211;</td>
-                    <th>— </th><td>&amp;mdash;</td><td>&amp;#8212;</td>
-                </tr>
-                <tr> 
-                    <th>† </th><td>&amp;dagger;</td><td>&amp;#8224;</td>
-                    <th>‡ </th><td>&amp;Dagger;</td><td>&amp;#8225;</td>
-                </tr>
-                <tr> 
-                    <th>‰ </th><td>&amp;permil;</td><td>&amp;#8240;</td>
-                    <th>€ </th><td>&amp;euro;</td><td>&amp;#8364;</td>
-                </tr>
-                
-            </tbody>
-        </table>
-        
-        
-    </div>
+    <table class="table-info lightgreen bc">
+      <thead>
+        <tr>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>&nbsp; </td>
+          <td>32</td>
+          <td>[空格]</td>
+          <td>64</td>
+          <td>@</td>
+          <td>96</td>
+          <td>`</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>&nbsp;</td>
+          <td>33</td>
+          <td>!</td>
+          <td>65</td>
+          <td>A</td>
+          <td>97</td>
+          <td>a</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>&nbsp;</td>
+          <td>34</td>
+          <td>"</td>
+          <td>66</td>
+          <td>B</td>
+          <td>98</td>
+          <td>b</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>&nbsp;</td>
+          <td>35</td>
+          <td>#</td>
+          <td>67</td>
+          <td>C</td>
+          <td>99</td>
+          <td>c</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>&nbsp;</td>
+          <td>36</td>
+          <td>$</td>
+          <td>68</td>
+          <td>D</td>
+          <td>100</td>
+          <td>d</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>&nbsp;</td>
+          <td>37</td>
+          <td>%</td>
+          <td>69</td>
+          <td>E</td>
+          <td>101</td>
+          <td>e</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>&nbsp;</td>
+          <td>38</td>
+          <td>&amp;</td>
+          <td>70</td>
+          <td>F</td>
+          <td>102</td>
+          <td>f</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>&nbsp;</td>
+          <td>39</td>
+          <td>'</td>
+          <td>71</td>
+          <td>G</td>
+          <td>103</td>
+          <td>g</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>**</td>
+          <td>40</td>
+          <td>(</td>
+          <td>72</td>
+          <td>H</td>
+          <td>104</td>
+          <td>h</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>**</td>
+          <td>41</td>
+          <td>)</td>
+          <td>73</td>
+          <td>I</td>
+          <td>105</td>
+          <td>i</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>**</td>
+          <td>42</td>
+          <td>*</td>
+          <td>74</td>
+          <td>J</td>
+          <td>106</td>
+          <td>j</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>&nbsp;</td>
+          <td>43</td>
+          <td>+</td>
+          <td>75</td>
+          <td>K</td>
+          <td>107</td>
+          <td>k</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>&nbsp;</td>
+          <td>44</td>
+          <td>,</td>
+          <td>76</td>
+          <td>L</td>
+          <td>108</td>
+          <td>l</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>**</td>
+          <td>45</td>
+          <td>-</td>
+          <td>77</td>
+          <td>M</td>
+          <td>109</td>
+          <td>m</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>&nbsp;</td>
+          <td>46</td>
+          <td>.</td>
+          <td>78</td>
+          <td>N</td>
+          <td>110</td>
+          <td>n</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>&#129;</td>
+          <td>47</td>
+          <td>/</td>
+          <td>79</td>
+          <td>O</td>
+          <td>111</td>
+          <td>o</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>&#129;</td>
+          <td>48</td>
+          <td>0</td>
+          <td>80</td>
+          <td>P</td>
+          <td>112</td>
+          <td>p</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>&#129;</td>
+          <td>49</td>
+          <td>1</td>
+          <td>81</td>
+          <td>Q</td>
+          <td>113</td>
+          <td>q</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>&#129;</td>
+          <td>50</td>
+          <td>2</td>
+          <td>82</td>
+          <td>R</td>
+          <td>114</td>
+          <td>r</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>&#19;</td>
+          <td>51</td>
+          <td>3</td>
+          <td>83</td>
+          <td>S</td>
+          <td>115</td>
+          <td>s</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>&#20;</td>
+          <td>52</td>
+          <td>4</td>
+          <td>84</td>
+          <td>T</td>
+          <td>116</td>
+          <td>t</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>&#21;</td>
+          <td>53</td>
+          <td>5</td>
+          <td>85</td>
+          <td>U</td>
+          <td>117</td>
+          <td>u</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>&#129;</td>
+          <td>54</td>
+          <td>6</td>
+          <td>86</td>
+          <td>V</td>
+          <td>118</td>
+          <td>v</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>&#129;</td>
+          <td>55</td>
+          <td>7</td>
+          <td>87</td>
+          <td>W</td>
+          <td>119</td>
+          <td>w</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>&#129;</td>
+          <td>56</td>
+          <td>8</td>
+          <td>88</td>
+          <td>X</td>
+          <td>120</td>
+          <td>x</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>&#129;</td>
+          <td>57</td>
+          <td>9</td>
+          <td>89</td>
+          <td>Y</td>
+          <td>121</td>
+          <td>y</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>&#129;</td>
+          <td>58</td>
+          <td>:</td>
+          <td>90</td>
+          <td>Z</td>
+          <td>122</td>
+          <td>z</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>&#27;</td>
+          <td>59</td>
+          <td>;</td>
+          <td>91</td>
+          <td>[</td>
+          <td>123</td>
+          <td>{</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>&#129;</td>
+          <td>60</td>
+          <td>&lt;</td>
+          <td>92</td>
+          <td>\</td>
+          <td>124</td>
+          <td>|</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>&#129;</td>
+          <td>61</td>
+          <td>=</td>
+          <td>93</td>
+          <td>]</td>
+          <td>125</td>
+          <td>}</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>-</td>
+          <td>62</td>
+          <td>&gt;</td>
+          <td>94</td>
+          <td>^</td>
+          <td>126</td>
+          <td>~</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td>&nbsp;</td>
+          <td>63</td>
+          <td>?</td>
+          <td>95</td>
+          <td>_</td>
+          <td>127</td>
+          <td>&#129;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="tc">下表列出了字符集中的 128 - 255。<small><a href="#">返回顶部</a></small></h2>
+    <table class="table-info lightgreen bc">
+      <thead>
+        <tr>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+          <th>代码</th><th>字符</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>&#128;</td>
+          <td>160</td>
+          <td>[空格]</td>
+          <td>192</td>
+          <td>&Agrave;</td>
+          <td>224</td>
+          <td>&agrave;</td>
+        </tr>
+        <tr>
+          <td>129</td>
+          <td>&#129;</td>
+          <td>161</td>
+          <td>&iexcl;</td>
+          <td>193</td>
+          <td>&Aacute;</td>
+          <td>225</td>
+          <td>&aacute;</td>
+        </tr>
+        <tr>
+          <td>130</td>
+          <td>&#130;</td>
+          <td>162</td>
+          <td>&cent;</td>
+          <td>194</td>
+          <td>&Acirc;</td>
+          <td>226</td>
+          <td>&acirc;</td>
+        </tr>
+        <tr>
+          <td>131</td>
+          <td>&#131;</td>
+          <td>163</td>
+          <td>&pound;</td>
+          <td>195</td>
+          <td>&Atilde;</td>
+          <td>227</td>
+          <td>&atilde;</td>
+        </tr>
+        <tr>
+          <td>132</td>
+          <td>&#132;</td>
+          <td>164</td>
+          <td>&curren;</td>
+          <td>196</td>
+          <td>&Auml;</td>
+          <td>228</td>
+          <td>&auml;</td>
+        </tr>
+        <tr>
+          <td>133</td>
+          <td>&#133;</td>
+          <td>165</td>
+          <td>&yen;</td>
+          <td>197</td>
+          <td>&Aring;</td>
+          <td>229</td>
+          <td>&aring;</td>
+        </tr>
+        <tr>
+          <td>134</td>
+          <td>&#134;</td>
+          <td>166</td>
+          <td>&brvbar;</td>
+          <td>198</td>
+          <td>&AElig;</td>
+          <td>230</td>
+          <td>&aelig;</td>
+        </tr>
+        <tr>
+          <td>135</td>
+          <td>&#135;</td>
+          <td>167</td>
+          <td>&sect;</td>
+          <td>199</td>
+          <td>&Ccedil;</td>
+          <td>231</td>
+          <td>&ccedil;</td>
+        </tr>
+        <tr>
+          <td>136</td>
+          <td>&#136;</td>
+          <td>168</td>
+          <td>&uml;</td>
+          <td>200</td>
+          <td>&Egrave;</td>
+          <td>231</td>
+          <td>&ccedil;</td>
+        </tr>
+        <tr>
+          <td>137</td>
+          <td>&#137;</td>
+          <td>169</td>
+          <td>&copy;</td>
+          <td>201</td>
+          <td>&Eacute;</td>
+          <td>232</td>
+          <td>&egrave;</td>
+        </tr>
+        <tr>
+          <td>138</td>
+          <td>&#138;</td>
+          <td>170</td>
+          <td>&ordf;</td>
+          <td>202</td>
+          <td>&Ecirc;</td>
+          <td>233</td>
+          <td>&eacute;</td>
+        </tr>
+        <tr>
+          <td>139</td>
+          <td>&#139;</td>
+          <td>171</td>
+          <td>&laquo;</td>
+          <td>203</td>
+          <td>&Euml;</td>
+          <td>234</td>
+          <td>&ecirc;</td>
+        </tr>
+        <tr>
+          <td>140</td>
+          <td>&#140;</td>
+          <td>172</td>
+          <td>&not;</td>
+          <td>204</td>
+          <td>&Igrave;</td>
+          <td>235</td>
+          <td>&euml;</td>
+        </tr>
+        <tr>
+          <td>141</td>
+          <td>&#141;</td>
+          <td>173</td>
+          <td>&shy;</td>
+          <td>205</td>
+          <td>&Iacute;</td>
+          <td>236</td>
+          <td>&igrave;</td>
+        </tr>
+        <tr>
+          <td>142</td>
+          <td>&#142;</td>
+          <td>174</td>
+          <td>&reg;</td>
+          <td>206</td>
+          <td>&Icirc;</td>
+          <td>237</td>
+          <td>&iacute;</td>
+        </tr>
+        <tr>
+          <td>143</td>
+          <td>&#143;</td>
+          <td>175</td>
+          <td>&macr;</td>
+          <td>207</td>
+          <td>&Iuml;</td>
+          <td>238</td>
+          <td>&icirc;</td>
+        </tr>
+        <tr>
+          <td>144</td>
+          <td>&#144;</td>
+          <td>176</td>
+          <td>&deg;</td>
+          <td>208</td>
+          <td>&Eth;</td>
+          <td>239</td>
+          <td>&iuml;</td>
+        </tr>
+        <tr>
+          <td>145</td>
+          <td>&#145;</td>
+          <td>177</td>
+          <td>&plusmn;</td>
+          <td>209</td>
+          <td>&Ntilde;</td>
+          <td>240</td>
+          <td>&eth;</td>
+        </tr>
+        <tr>
+          <td>146</td>
+          <td>&#146;</td>
+          <td>178</td>
+          <td>&sup2;</td>
+          <td>210</td>
+          <td>&Ograve;</td>
+          <td>241</td>
+          <td>&ntilde;</td>
+        </tr>
+        <tr>
+          <td>147</td>
+          <td>&#147;</td>
+          <td>179</td>
+          <td>&sup3;</td>
+          <td>211</td>
+          <td>&Oacute;</td>
+          <td>242</td>
+          <td>&ograve;</td>
+        </tr>
+        <tr>
+          <td>148</td>
+          <td>&#148;</td>
+          <td>180</td>
+          <td>&acute;</td>
+          <td>212</td>
+          <td>&Ocirc;</td>
+          <td>243</td>
+          <td>&oacute;</td>
+        </tr>
+        <tr>
+          <td>149</td>
+          <td>&#149;</td>
+          <td>181</td>
+          <td>&micro;</td>
+          <td>213</td>
+          <td>&Otilde;</td>
+          <td>244</td>
+          <td>&ocirc;</td>
+        </tr>
+        <tr>
+          <td>150</td>
+          <td>&#150;</td>
+          <td>182</td>
+          <td>&para;</td>
+          <td>214</td>
+          <td>&Ouml;</td>
+          <td>245</td>
+          <td>&otilde;</td>
+        </tr>
+        <tr>
+          <td>151</td>
+          <td>&#151;</td>
+          <td>183</td>
+          <td>&middot;</td>
+          <td>215</td>
+          <td>&times;</td>
+          <td>246</td>
+          <td>&ouml;</td>
+        </tr>
+        <tr>
+          <td>152</td>
+          <td>&#152;</td>
+          <td>184</td>
+          <td>&cedil;</td>
+          <td>216</td>
+          <td>&Oslash;</td>
+          <td>247</td>
+          <td>&divide;</td>
+        </tr>
+        <tr>
+          <td>153</td>
+          <td>&#153;</td>
+          <td>185</td>
+          <td>&sup1;</td>
+          <td>217</td>
+          <td>&Ugrave;</td>
+          <td>248</td>
+          <td>&oslash;</td>
+        </tr>
+        <tr>
+          <td>154</td>
+          <td>&#154;</td>
+          <td>186</td>
+          <td>&ordm;</td>
+          <td>218</td>
+          <td>&Uacute;</td>
+          <td>249</td>
+          <td>&ugrave;</td>
+        </tr>
+        <tr>
+          <td>155</td>
+          <td>&#155;</td>
+          <td>187</td>
+          <td>&raquo;</td>
+          <td>219</td>
+          <td>&Ucirc;</td>
+          <td>250</td>
+          <td>&uacute;</td>
+        </tr>
+        <tr>
+          <td>156</td>
+          <td>&#156;</td>
+          <td>188</td>
+          <td>&frac14;</td>
+          <td>220</td>
+          <td>&Uuml;</td>
+          <td>251</td>
+          <td>&ucirc;</td>
+        </tr>
+        <tr>
+          <td>157</td>
+          <td>&#157;</td>
+          <td>189</td>
+          <td>&frac12;</td>
+          <td>221</td>
+          <td>&Yacute;</td>
+          <td>252</td>
+          <td>&uuml;</td>
+        </tr>
+        <tr>
+          <td>158</td>
+          <td>&#158;</td>
+          <td>190</td>
+          <td>&frac34;</td>
+          <td>222</td>
+          <td>&thORN;</td>
+          <td>253</td>
+          <td>&yacute;</td>
+        </tr>
+        <tr>
+          <td>159</td>
+          <td>&#159;</td>
+          <td>191</td>
+          <td>&iquest;</td>
+          <td>223</td>
+          <td>&szlig;</td>
+          <td>254</td>
+          <td>&thorn;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div id="ASCII" class="ui-box">
-    <div class="ui-box-head">
-        <h3 class="head-title">ASCII码对照表</h3>
-        <a href="#" class="link-more hide">更多 &raquo;</a>
-    </div>
-    <div class="ui-box-content">
-        
-        <h2 class="tc">下表列出了字符集中的 0 - 127。<small><a href="#">返回顶部</a></small></h2>
-        <div class="charinfo">
-            <p>** 数值 8、9、10 和 13 可以分别转换为退格符、制表符、换行符和回车符。这些字符都没有图形表示，但是对于不同的应用程序，这些字符可能会影响文本的显示效果。 </p>
-            <p>&quot;空&quot; 表示在当前平台上不支持的字符。 </p>
-        </div>
-        <table class="table-info lightgreen bc">
-            <thead>
-                <tr>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>&nbsp; </td>
-                    <td>32</td>
-                    <td>[空格]</td>
-                    <td>64</td>
-                    <td>@</td>
-                    <td>96</td>
-                    <td>`</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>&nbsp;</td>
-                    <td>33</td>
-                    <td>!</td>
-                    <td>65</td>
-                    <td>A</td>
-                    <td>97</td>
-                    <td>a</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>&nbsp;</td>
-                    <td>34</td>
-                    <td>"</td>
-                    <td>66</td>
-                    <td>B</td>
-                    <td>98</td>
-                    <td>b</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>&nbsp;</td>
-                    <td>35</td>
-                    <td>#</td>
-                    <td>67</td>
-                    <td>C</td>
-                    <td>99</td>
-                    <td>c</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>&nbsp;</td>
-                    <td>36</td>
-                    <td>$</td>
-                    <td>68</td>
-                    <td>D</td>
-                    <td>100</td>
-                    <td>d</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>&nbsp;</td>
-                    <td>37</td>
-                    <td>%</td>
-                    <td>69</td>
-                    <td>E</td>
-                    <td>101</td>
-                    <td>e</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>&nbsp;</td>
-                    <td>38</td>
-                    <td>&amp;</td>
-                    <td>70</td>
-                    <td>F</td>
-                    <td>102</td>
-                    <td>f</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>&nbsp;</td>
-                    <td>39</td>
-                    <td>'</td>
-                    <td>71</td>
-                    <td>G</td>
-                    <td>103</td>
-                    <td>g</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>**</td>
-                    <td>40</td>
-                    <td>(</td>
-                    <td>72</td>
-                    <td>H</td>
-                    <td>104</td>
-                    <td>h</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>**</td>
-                    <td>41</td>
-                    <td>)</td>
-                    <td>73</td>
-                    <td>I</td>
-                    <td>105</td>
-                    <td>i</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>**</td>
-                    <td>42</td>
-                    <td>*</td>
-                    <td>74</td>
-                    <td>J</td>
-                    <td>106</td>
-                    <td>j</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>&nbsp;</td>
-                    <td>43</td>
-                    <td>+</td>
-                    <td>75</td>
-                    <td>K</td>
-                    <td>107</td>
-                    <td>k</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>&nbsp;</td>
-                    <td>44</td>
-                    <td>,</td>
-                    <td>76</td>
-                    <td>L</td>
-                    <td>108</td>
-                    <td>l</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>**</td>
-                    <td>45</td>
-                    <td>-</td>
-                    <td>77</td>
-                    <td>M</td>
-                    <td>109</td>
-                    <td>m</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>&nbsp;</td>
-                    <td>46</td>
-                    <td>.</td>
-                    <td>78</td>
-                    <td>N</td>
-                    <td>110</td>
-                    <td>n</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>&#129;</td>
-                    <td>47</td>
-                    <td>/</td>
-                    <td>79</td>
-                    <td>O</td>
-                    <td>111</td>
-                    <td>o</td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>&#129;</td>
-                    <td>48</td>
-                    <td>0</td>
-                    <td>80</td>
-                    <td>P</td>
-                    <td>112</td>
-                    <td>p</td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td>&#129;</td>
-                    <td>49</td>
-                    <td>1</td>
-                    <td>81</td>
-                    <td>Q</td>
-                    <td>113</td>
-                    <td>q</td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>&#129;</td>
-                    <td>50</td>
-                    <td>2</td>
-                    <td>82</td>
-                    <td>R</td>
-                    <td>114</td>
-                    <td>r</td>
-                </tr>
-                <tr>
-                    <td>19</td>
-                    <td>&#19;</td>
-                    <td>51</td>
-                    <td>3</td>
-                    <td>83</td>
-                    <td>S</td>
-                    <td>115</td>
-                    <td>s</td>
-                </tr>
-                <tr>
-                    <td>20</td>
-                    <td>&#20;</td>
-                    <td>52</td>
-                    <td>4</td>
-                    <td>84</td>
-                    <td>T</td>
-                    <td>116</td>
-                    <td>t</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>&#21;</td>
-                    <td>53</td>
-                    <td>5</td>
-                    <td>85</td>
-                    <td>U</td>
-                    <td>117</td>
-                    <td>u</td>
-                </tr>
-                <tr>
-                    <td>22</td>
-                    <td>&#129;</td>
-                    <td>54</td>
-                    <td>6</td>
-                    <td>86</td>
-                    <td>V</td>
-                    <td>118</td>
-                    <td>v</td>
-                </tr>
-                <tr>
-                    <td>23</td>
-                    <td>&#129;</td>
-                    <td>55</td>
-                    <td>7</td>
-                    <td>87</td>
-                    <td>W</td>
-                    <td>119</td>
-                    <td>w</td>
-                </tr>
-                <tr>
-                    <td>24</td>
-                    <td>&#129;</td>
-                    <td>56</td>
-                    <td>8</td>
-                    <td>88</td>
-                    <td>X</td>
-                    <td>120</td>
-                    <td>x</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>&#129;</td>
-                    <td>57</td>
-                    <td>9</td>
-                    <td>89</td>
-                    <td>Y</td>
-                    <td>121</td>
-                    <td>y</td>
-                </tr>
-                <tr>
-                    <td>26</td>
-                    <td>&#129;</td>
-                    <td>58</td>
-                    <td>:</td>
-                    <td>90</td>
-                    <td>Z</td>
-                    <td>122</td>
-                    <td>z</td>
-                </tr>
-                <tr>
-                    <td>27</td>
-                    <td>&#27;</td>
-                    <td>59</td>
-                    <td>;</td>
-                    <td>91</td>
-                    <td>[</td>
-                    <td>123</td>
-                    <td>{</td>
-                </tr>
-                <tr>
-                    <td>28</td>
-                    <td>&#129;</td>
-                    <td>60</td>
-                    <td>&lt;</td>
-                    <td>92</td>
-                    <td>\</td>
-                    <td>124</td>
-                    <td>|</td>
-                </tr>
-                <tr>
-                    <td>29</td>
-                    <td>&#129;</td>
-                    <td>61</td>
-                    <td>=</td>
-                    <td>93</td>
-                    <td>]</td>
-                    <td>125</td>
-                    <td>}</td>
-                </tr>
-                <tr>
-                    <td>30</td>
-                    <td>-</td>
-                    <td>62</td>
-                    <td>&gt;</td>
-                    <td>94</td>
-                    <td>^</td>
-                    <td>126</td>
-                    <td>~</td>
-                </tr>
-                <tr>
-                    <td>31</td>
-                    <td>&nbsp;</td>
-                    <td>63</td>
-                    <td>?</td>
-                    <td>95</td>
-                    <td>_</td>
-                    <td>127</td>
-                    <td>&#129;</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <h2 class="tc">下表列出了字符集中的 128 - 255。<small><a href="#">返回顶部</a></small></h2>
-        <table class="table-info lightgreen bc">
-            <thead>
-                <tr>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                    <th>代码</th><th>字符</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>128</td>
-                    <td>&#128;</td>
-                    <td>160</td>
-                    <td>[空格]</td>
-                    <td>192</td>
-                    <td>&Agrave;</td>
-                    <td>224</td>
-                    <td>&agrave;</td>
-                </tr>
-                <tr>
-                    <td>129</td>
-                    <td>&#129;</td>
-                    <td>161</td>
-                    <td>&iexcl;</td>
-                    <td>193</td>
-                    <td>&Aacute;</td>
-                    <td>225</td>
-                    <td>&aacute;</td>
-                </tr>
-                <tr>
-                    <td>130</td>
-                    <td>&#130;</td>
-                    <td>162</td>
-                    <td>&cent;</td>
-                    <td>194</td>
-                    <td>&Acirc;</td>
-                    <td>226</td>
-                    <td>&acirc;</td>
-                </tr>
-                <tr>
-                    <td>131</td>
-                    <td>&#131;</td>
-                    <td>163</td>
-                    <td>&pound;</td>
-                    <td>195</td>
-                    <td>&Atilde;</td>
-                    <td>227</td>
-                    <td>&atilde;</td>
-                </tr>
-                <tr>
-                    <td>132</td>
-                    <td>&#132;</td>
-                    <td>164</td>
-                    <td>&curren;</td>
-                    <td>196</td>
-                    <td>&Auml;</td>
-                    <td>228</td>
-                    <td>&auml;</td>
-                </tr>
-                <tr>
-                    <td>133</td>
-                    <td>&#133;</td>
-                    <td>165</td>
-                    <td>&yen;</td>
-                    <td>197</td>
-                    <td>&Aring;</td>
-                    <td>229</td>
-                    <td>&aring;</td>
-                </tr>
-                <tr>
-                    <td>134</td>
-                    <td>&#134;</td>
-                    <td>166</td>
-                    <td>&brvbar;</td>
-                    <td>198</td>
-                    <td>&AElig;</td>
-                    <td>230</td>
-                    <td>&aelig;</td>
-                </tr>
-                <tr>
-                    <td>135</td>
-                    <td>&#135;</td>
-                    <td>167</td>
-                    <td>&sect;</td>
-                    <td>199</td>
-                    <td>&Ccedil;</td>
-                    <td>231</td>
-                    <td>&ccedil;</td>
-                </tr>
-                <tr>
-                    <td>136</td>
-                    <td>&#136;</td>
-                    <td>168</td>
-                    <td>&uml;</td>
-                    <td>200</td>
-                    <td>&Egrave;</td>
-                    <td>231</td>
-                    <td>&ccedil;</td>
-                </tr>
-                <tr>
-                    <td>137</td>
-                    <td>&#137;</td>
-                    <td>169</td>
-                    <td>&copy;</td>
-                    <td>201</td>
-                    <td>&Eacute;</td>
-                    <td>232</td>
-                    <td>&egrave;</td>
-                </tr>
-                <tr>
-                    <td>138</td>
-                    <td>&#138;</td>
-                    <td>170</td>
-                    <td>&ordf;</td>
-                    <td>202</td>
-                    <td>&Ecirc;</td>
-                    <td>233</td>
-                    <td>&eacute;</td>
-                </tr>
-                <tr>
-                    <td>139</td>
-                    <td>&#139;</td>
-                    <td>171</td>
-                    <td>&laquo;</td>
-                    <td>203</td>
-                    <td>&Euml;</td>
-                    <td>234</td>
-                    <td>&ecirc;</td>
-                </tr>
-                <tr>
-                    <td>140</td>
-                    <td>&#140;</td>
-                    <td>172</td>
-                    <td>&not;</td>
-                    <td>204</td>
-                    <td>&Igrave;</td>
-                    <td>235</td>
-                    <td>&euml;</td>
-                </tr>
-                <tr>
-                    <td>141</td>
-                    <td>&#141;</td>
-                    <td>173</td>
-                    <td>&shy;</td>
-                    <td>205</td>
-                    <td>&Iacute;</td>
-                    <td>236</td>
-                    <td>&igrave;</td>
-                </tr>
-                <tr>
-                    <td>142</td>
-                    <td>&#142;</td>
-                    <td>174</td>
-                    <td>&reg;</td>
-                    <td>206</td>
-                    <td>&Icirc;</td>
-                    <td>237</td>
-                    <td>&iacute;</td>
-                </tr>
-                <tr>
-                    <td>143</td>
-                    <td>&#143;</td>
-                    <td>175</td>
-                    <td>&macr;</td>
-                    <td>207</td>
-                    <td>&Iuml;</td>
-                    <td>238</td>
-                    <td>&icirc;</td>
-                </tr>
-                <tr>
-                    <td>144</td>
-                    <td>&#144;</td>
-                    <td>176</td>
-                    <td>&deg;</td>
-                    <td>208</td>
-                    <td>&Eth;</td>
-                    <td>239</td>
-                    <td>&iuml;</td>
-                </tr>
-                <tr>
-                    <td>145</td>
-                    <td>&#145;</td>
-                    <td>177</td>
-                    <td>&plusmn;</td>
-                    <td>209</td>
-                    <td>&Ntilde;</td>
-                    <td>240</td>
-                    <td>&eth;</td>
-                </tr>
-                <tr>
-                    <td>146</td>
-                    <td>&#146;</td>
-                    <td>178</td>
-                    <td>&sup2;</td>
-                    <td>210</td>
-                    <td>&Ograve;</td>
-                    <td>241</td>
-                    <td>&ntilde;</td>
-                </tr>
-                <tr>
-                    <td>147</td>
-                    <td>&#147;</td>
-                    <td>179</td>
-                    <td>&sup3;</td>
-                    <td>211</td>
-                    <td>&Oacute;</td>
-                    <td>242</td>
-                    <td>&ograve;</td>
-                </tr>
-                <tr>
-                    <td>148</td>
-                    <td>&#148;</td>
-                    <td>180</td>
-                    <td>&acute;</td>
-                    <td>212</td>
-                    <td>&Ocirc;</td>
-                    <td>243</td>
-                    <td>&oacute;</td>
-                </tr>
-                <tr>
-                    <td>149</td>
-                    <td>&#149;</td>
-                    <td>181</td>
-                    <td>&micro;</td>
-                    <td>213</td>
-                    <td>&Otilde;</td>
-                    <td>244</td>
-                    <td>&ocirc;</td>
-                </tr>
-                <tr>
-                    <td>150</td>
-                    <td>&#150;</td>
-                    <td>182</td>
-                    <td>&para;</td>
-                    <td>214</td>
-                    <td>&Ouml;</td>
-                    <td>245</td>
-                    <td>&otilde;</td>
-                </tr>
-                <tr>
-                    <td>151</td>
-                    <td>&#151;</td>
-                    <td>183</td>
-                    <td>&middot;</td>
-                    <td>215</td>
-                    <td>&times;</td>
-                    <td>246</td>
-                    <td>&ouml;</td>
-                </tr>
-                <tr>
-                    <td>152</td>
-                    <td>&#152;</td>
-                    <td>184</td>
-                    <td>&cedil;</td>
-                    <td>216</td>
-                    <td>&Oslash;</td>
-                    <td>247</td>
-                    <td>&divide;</td>
-                </tr>
-                <tr>
-                    <td>153</td>
-                    <td>&#153;</td>
-                    <td>185</td>
-                    <td>&sup1;</td>
-                    <td>217</td>
-                    <td>&Ugrave;</td>
-                    <td>248</td>
-                    <td>&oslash;</td>
-                </tr>
-                <tr>
-                    <td>154</td>
-                    <td>&#154;</td>
-                    <td>186</td>
-                    <td>&ordm;</td>
-                    <td>218</td>
-                    <td>&Uacute;</td>
-                    <td>249</td>
-                    <td>&ugrave;</td>
-                </tr>
-                <tr>
-                    <td>155</td>
-                    <td>&#155;</td>
-                    <td>187</td>
-                    <td>&raquo;</td>
-                    <td>219</td>
-                    <td>&Ucirc;</td>
-                    <td>250</td>
-                    <td>&uacute;</td>
-                </tr>
-                <tr>
-                    <td>156</td>
-                    <td>&#156;</td>
-                    <td>188</td>
-                    <td>&frac14;</td>
-                    <td>220</td>
-                    <td>&Uuml;</td>
-                    <td>251</td>
-                    <td>&ucirc;</td>
-                </tr>
-                <tr>
-                    <td>157</td>
-                    <td>&#157;</td>
-                    <td>189</td>
-                    <td>&frac12;</td>
-                    <td>221</td>
-                    <td>&Yacute;</td>
-                    <td>252</td>
-                    <td>&uuml;</td>
-                </tr>
-                <tr>
-                    <td>158</td>
-                    <td>&#158;</td>
-                    <td>190</td>
-                    <td>&frac34;</td>
-                    <td>222</td>
-                    <td>&thORN;</td>
-                    <td>253</td>
-                    <td>&yacute;</td>
-                </tr>
-                <tr>
-                    <td>159</td>
-                    <td>&#159;</td>
-                    <td>191</td>
-                    <td>&iquest;</td>
-                    <td>223</td>
-                    <td>&szlig;</td>
-                    <td>254</td>
-                    <td>&thorn;</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+<div id="CONTROL" class="ui-box">
+  <div class="ui-box-head">
+    <h3 class="head-title">控制键键码值（keyCode）</h3>
+    <a href="#" class="link-more hide">更多 &raquo;</a>
+  </div>
+  <div class="ui-box-content">
+
+    <h2 class="tc">控制键键码值（keyCode）。<small><a href="#">返回顶部</a></small></h2>
+    <table class="table-info lightgreen bc">
+      <thead>
+        <tr>
+          <th>按键</th><th>键码</th>
+          <th>按键</th><th>键码</th>
+          <th>按键</th><th>键码</th>
+          <th>按键</th><th>键码</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BackSpace</td>
+          <td>8</td>
+          <td>Tab</td>
+          <td>9</td>
+          <td>Clear</td>
+          <td>12</td>
+          <td>Enter</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>Control</td>
+          <td>17</td>
+          <td>Alt</td>
+          <td>18</td>
+          <td>Cape Lock</td>
+          <td>20</td>
+          <td>Esc</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td>Spece</td>
+          <td>32</td>
+          <td>Page UP</td>
+          <td>33</td>
+          <td>Page Down</td>
+          <td>34</td>
+          <td>End</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td>Home</td>
+          <td>36</td>
+          <td>Left Arrow</td>
+          <td>37</td>
+          <td>Up Arrow</td>
+          <td>38</td>
+          <td>Right Arrow</td>
+          <td>39</td>
+        </tr>
+        <tr>
+          <td>Down Arrow</td>
+          <td>40</td>
+          <td>Insert</td>
+          <td>45</td>
+          <td>Delete</td>
+          <td>46</td>
+          <td>Num Lock</td>
+          <td>144</td>
+        </tr>
+        <tr>
+          <td>;:</td>
+          <td>186</td>
+          <td>=+</td>
+          <td>187</td>
+          <td>,<</td>
+          <td>188</td>
+          <td>-_</td>
+          <td>189</td>
+        </tr>
+        <tr>
+          <td>.></td>
+          <td>190</td>
+          <td>/?</td>
+          <td>191</td>
+          <td>`~</td>
+          <td>192</td>
+          <td>[{</td>
+          <td>219</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>220</td>
+          <td>]}</td>
+          <td>221</td>
+          <td>'"</td>
+          <td>222</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+
+<div id="THMLCHAR" class="ui-box">
+  <div class="ui-box-head">
+    <h3 class="head-title">HTML特殊字符编码大全 <small><a href="#">返回顶部</a></small></h3>
+    <a href="#" class="link-more hide">更多 &raquo;</a>
+  </div>
+  <div class="ui-box-content">
+    <h2 class="tc">HTML特殊符号对照表</h2>
+
+    <table class="table-info lightgreen bc">
+      <thead>
+        <tr>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>&</th><td>&amp;amp;</td><td>&amp;#38;</td>
+          <th> </th><td> </td><td> </td>
+        </tr>
+        <tr>
+          <th>Α</th><td>&amp;Alpha;</td><td>&amp;#913;</td>
+          <th>Β</th><td>&amp;Beta;</td><td>&amp;#914;</td>
+        </tr>
+        <tr>
+          <th>Γ</th><td>&amp;Gamma;</td><td>&amp;#915;</td>
+          <th>Δ</th><td>&amp;Delta;</td><td>&amp;#916;</td>
+        </tr>
+        <tr>
+          <th>Ε</th><td>&amp;Epsilon;</td><td>&amp;#917;</td>
+          <th>Ζ</th><td>&amp;Zeta;</td><td>&amp;#918;</td>
+        </tr>
+        <tr>
+          <th>Η</th><td>&amp;Eta;</td><td>&amp;#919;</td>
+          <th>Θ</th><td>&amp;Theta;</td><td>&amp;#920;</td>
+        </tr>
+        <tr>
+          <th>Ι</th><td>&amp;Iota;</td><td>&amp;#921;</td>
+          <th>Κ</th><td>&amp;Kappa;</td><td>&amp;#922;</td>
+        </tr>
+        <tr>
+          <th>Λ</th><td>&amp;Lambda;</td><td>&amp;#923;</td>
+          <th>Μ</th><td>&amp;Mu;</td><td>&amp;#924;</td>
+        </tr>
+        <tr>
+          <th>Ν</th><td>&amp;Nu;</td><td>&amp;#925;</td>
+          <th>Ξ</th><td>&amp;Xi;</td><td>&amp;#926;</td>
+        </tr>
+        <tr>
+          <th>Ο</th><td>&amp;Omicron;</td><td>&amp;#927;</td>
+          <th>Π</th><td>&amp;Pi;</td><td>&amp;#928;</td>
+        </tr>
+        <tr>
+          <th>Ρ</th><td>&amp;Rho;</td><td>&amp;#929;</td>
+          <th>Σ</th><td>&amp;Sigma;</td><td>&amp;#931;</td>
+        </tr>
+        <tr>
+          <th>Τ</th><td>&amp;Tau;</td><td>&amp;#932;</td>
+          <th>Υ</th><td>&amp;Upsilon;</td><td>&amp;#933;</td>
+        </tr>
+        <tr>
+          <th>Φ</th><td>&amp;Phi;</td><td>&amp;#934;</td>
+          <th>Χ</th><td>&amp;Chi;</td><td>&amp;#935;</td>
+        </tr>
+        <tr>
+          <th>Ψ</th><td>&amp;Psi;</td><td>&amp;#936;</td>
+          <th>Ω</th><td>&amp;Omega;</td><td>&amp;#937;</td>
+        </tr>
+        <tr>
+          <th>α</th><td>&amp;alpha;</td><td>&amp;#945;</td>
+          <th>β</th><td>&amp;beta;</td><td>&amp;#946;</td>
+        </tr>
+        <tr>
+          <th>γ</th><td>&amp;gamma;</td><td>&amp;#947;</td>
+          <th>δ</th><td>&amp;delta;</td><td>&amp;#948;</td>
+        </tr>
+        <tr>
+          <th>ε</th><td>&amp;epsilon;</td><td>&amp;#949;</td>
+          <th>ζ</th><td>&amp;zeta;</td><td>&amp;#950;</td>
+        </tr>
+        <tr>
+          <th>η</th><td>&amp;eta;</td><td>&amp;#951;</td>
+          <th>θ</th><td>&amp;theta;</td><td>&amp;#952;</td>
+        </tr>
+        <tr>
+          <th>ι</th><td>&amp;iota;</td><td>&amp;#953;</td>
+          <th>κ</th><td>&amp;kappa;</td><td>&amp;#954;</td>
+        </tr>
+        <tr>
+          <th>λ</th><td>&amp;lambda;</td><td>&amp;#955;</td>
+          <th>μ</th><td>&amp;mu;</td><td>&amp;#956;</td>
+        </tr>
+        <tr>
+          <th>ν</th><td>&amp;nu;</td><td>&amp;#957;</td>
+          <th>ξ</th><td>&amp;xi;</td><td>&amp;#958;</td>
+        </tr>
+        <tr>
+          <th>ο</th><td>&amp;omicron;</td><td>&amp;#959;</td>
+          <th>π</th><td>&amp;pi;</td><td>&amp;#960;</td>
+        </tr>
+        <tr>
+          <th>ρ</th><td>&amp;rho;</td><td>&amp;#961;</td>
+          <th>ς</th><td>&amp;sigmaf;</td><td>&amp;#962;</td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>σ </th><td>&amp;sigma;</td><td>&amp;#963;</td>
+          <th>τ </th><td>&amp;tau;</td><td>&amp;#964;</td>
+        </tr>
+        <tr>
+          <th>υ </th><td>&amp;upsilon;</td><td>&amp;#965;</td>
+          <th>φ </th><td>&amp;phi;</td><td>&amp;#966;</td>
+        </tr>
+        <tr>
+          <th>χ </th><td>&amp;chi;</td><td>&amp;#967;</td>
+          <th>ψ </th><td>&amp;psi;</td><td>&amp;#968;</td>
+        </tr>
+        <tr>
+          <th>ω </th><td>&amp;omega;</td><td>&amp;#969;</td>
+          <th>ϑ </th><td>&amp;thetasym;</td><td>&amp;#977;</td>
+        </tr>
+        <tr>
+          <th>ϒ </th><td>&amp;upsih;</td><td>&amp;#978;</td>
+          <th>ϖ </th><td>&amp;piv;</td><td>&amp;#982;</td>
+        </tr>
+        <tr>
+          <th>• </th><td>&amp;bull;</td><td>&amp;#8226;</td>
+          <th>… </th><td>&amp;hellip;</td><td>&amp;#8230;</td>
+        </tr>
+        <tr>
+          <th>′ </th><td>&amp;prime;</td><td>&amp;#8242;</td>
+          <th>″ </th><td>&amp;Prime;</td><td>&amp;#8243;</td>
+        </tr>
+        <tr>
+          <th>‾ </th><td>&amp;oline;</td><td>&amp;#8254;</td>
+          <th>⁄ </th><td>&amp;frasl;</td><td>&amp;#8260;</td>
+        </tr>
+        <tr>
+          <th>℘ </th><td>&amp;weierp;</td><td>&amp;#8472;</td>
+          <th>ℑ </th><td>&amp;image;</td><td>&amp;#8465;</td>
+        </tr>
+        <tr>
+          <th>ℜ </th><td>&amp;real;</td><td>&amp;#8476;</td>
+          <th>™ </th><td>&amp;trade;</td><td>&amp;#8482;</td>
+        </tr>
+        <tr>
+          <th>ℵ </th><td>&amp;alefsym;</td><td>&amp;#8501;</td>
+          <th>← </th><td>&amp;larr;</td><td>&amp;#8592;</td>
+        </tr>
+        <tr>
+          <th>↑ </th><td>&amp;uarr;</td><td>&amp;#8593;</td>
+          <th>→ </th><td>&amp;rarr;</td><td>&amp;#8594;</td>
+        </tr>
+        <tr>
+          <th>↓ </th><td>&amp;darr;</td><td>&amp;#8595;</td>
+          <th>↔ </th><td>&amp;harr;</td><td>&amp;#8596;</td>
+        </tr>
+        <tr>
+          <th>↵ </th><td>&amp;crarr;</td><td>&amp;#8629;</td>
+          <th>⇐ </th><td>&amp;lArr;</td><td>&amp;#8656;</td>
+        </tr>
+        <tr>
+          <th>⇑ </th><td>&amp;uArr;</td><td>&amp;#8657;</td>
+          <th>⇒ </th><td>&amp;rArr;</td><td>&amp;#8658;</td>
+        </tr>
+        <tr>
+          <th>⇓ </th><td>&amp;dArr;</td><td>&amp;#8659;</td>
+          <th>⇔ </th><td>&amp;hArr;</td><td>&amp;#8660;</td>
+        </tr>
+        <tr>
+          <th>∀ </th><td>&amp;forall;</td><td>&amp;#8704;</td>
+          <th>∂ </th><td>&amp;part;</td><td>&amp;#8706;</td>
+        </tr>
+        <tr>
+          <th>∃ </th><td>&amp;exist;</td><td>&amp;#8707;</td>
+          <th>∅ </th><td>&amp;empty;</td><td>&amp;#8709;</td>
+        </tr>
+        <tr>
+          <th>∇ </th><td>&amp;nabla;</td><td>&amp;#8711;</td>
+          <th>∈ </th><td>&amp;isin;</td><td>&amp;#8712;</td>
+        </tr>
+        <tr>
+          <th>∉ </th><td>&amp;notin;</td><td>&amp;#8713;</td>
+          <th>∋ </th><td>&amp;ni;</td><td>&amp;#8715;</td>
+        </tr>
+        <tr>
+          <th>∏ </th><td>&amp;prod;</td><td>&amp;#8719;</td>
+          <th>∑ </th><td>&amp;sum;</td><td>&amp;#8721;</td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>− </th><td>&amp;minus;</td><td>&amp;#8722;</td>
+          <th>∗ </th><td>&amp;lowast;</td><td>&amp;#8727;</td>
+        </tr>
+        <tr>
+          <th>√ </th><td>&amp;radic;</td><td>&amp;#8730;</td>
+          <th>∝ </th><td>&amp;prop;</td><td>&amp;#8733;</td>
+        </tr>
+        <tr>
+          <th>∞ </th><td>&amp;infin;</td><td>&amp;#8734;</td>
+          <th>∠ </th><td>&amp;ang;</td><td>&amp;#8736;</td>
+        </tr>
+        <tr>
+          <th>∧ </th><td>&amp;and;</td><td>&amp;#8869;</td>
+          <th>∨ </th><td>&amp;or;</td><td>&amp;#8870;</td>
+        </tr>
+        <tr>
+          <th>∩ </th><td>&amp;cap;</td><td>&amp;#8745;</td>
+          <th>∪ </th><td>&amp;cup;</td><td>&amp;#8746;</td>
+        </tr>
+        <tr>
+          <th>∫ </th><td>&amp;int;</td><td>&amp;#8747;</td>
+          <th>∴ </th><td>&amp;there4;</td><td>&amp;#8756;</td>
+        </tr>
+        <tr>
+          <th>∼ </th><td>&amp;sim;</td><td>&amp;#8764;</td>
+          <th>≅ </th><td>&amp;cong;</td><td>&amp;#8773;</td>
+        </tr>
+        <tr>
+          <th>≈ </th><td>&amp;asymp;</td><td>&amp;#8773;</td>
+          <th>≠ </th><td>&amp;ne;</td><td>&amp;#8800;</td>
+        </tr>
+        <tr>
+          <th>≡ </th><td>&amp;equiv;</td><td>&amp;#8801;</td>
+          <th>≤ </th><td>&amp;le;</td><td>&amp;#8804;</td>
+        </tr>
+        <tr>
+          <th>≥ </th><td>&amp;ge;</td><td>&amp;#8805;</td>
+          <th>⊂ </th><td>&amp;sub;</td><td>&amp;#8834;</td>
+        </tr>
+        <tr>
+          <th>⊃ </th><td>&amp;sup;</td><td>&amp;#8835;</td>
+          <th>⊄ </th><td>&amp;nsub;</td><td>&amp;#8836;</td>
+        </tr>
+        <tr>
+          <th>⊆ </th><td>&amp;sube;</td><td>&amp;#8838;</td>
+          <th>⊇ </th><td>&amp;supe;</td><td>&amp;#8839;</td>
+        </tr>
+        <tr>
+          <th>⊕ </th><td>&amp;oplus;</td><td>&amp;#8853;</td>
+          <th>⊗ </th><td>&amp;otimes;</td><td>&amp;#8855;</td>
+        </tr>
+        <tr>
+          <th>⊥ </th><td>&amp;perp;</td><td>&amp;#8869;</td>
+          <th>⋅ </th><td>&amp;sdot;</td><td>&amp;#8901;</td>
+        </tr>
+        <tr>
+          <th>⌈ </th><td>&amp;lceil;</td><td>&amp;#8968;</td>
+          <th>⌉ </th><td>&amp;rceil;</td><td>&amp;#8969;</td>
+        </tr>
+        <tr>
+          <th>⌊ </th><td>&amp;lfloor;</td><td>&amp;#8970;</td>
+          <th>⌋ </th><td>&amp;rfloor;</td><td>&amp;#8971;</td>
+        </tr>
+        <tr>
+          <th>◊ </th><td>&amp;loz;</td><td>&amp;#9674;</td>
+          <th>♠ </th><td>&amp;spades;</td><td>&amp;#9824;</td>
+        </tr>
+        <tr>
+          <th>♣ </th><td>&amp;clubs;</td><td>&amp;#9827;</td>
+          <th>♥ </th><td>&amp;hearts;</td><td>&amp;#9829;</td>
+        </tr>
+        <tr>
+          <th>♦ </th><td>&amp;diams;</td><td>&amp;#9830;</td>
+          <th> </td><td>&amp;nbsp;</td><td>&amp;#160;</td>
+        </tr>
+        <tr>
+          <th>¡ </th><td>&amp;iexcl;</td><td>&amp;#161;</td>
+          <th>¢ </th><td>&amp;cent;</td><td>&amp;#162;</td>
+        </tr>
+        <tr>
+          <th>£ </th><td>&amp;pound;</td><td>&amp;#163;</td>
+          <th>¤ </th><td>&amp;curren;</td><td>&amp;#164;</td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+          <th>特殊符号</th><th>命名实体</th><th>十进制编码</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>¥ </th><td>&amp;yen;</td><td>&amp;#165;</td>
+          <th>¦ </th><td>&amp;brvbar;</td><td>&amp;#166;</td>
+        </tr>
+        <tr>
+          <th>§ </th><td>&amp;sect;</td><td>&amp;#167;</td>
+          <th>¨ </th><td>&amp;uml;</td><td>&amp;#168;</td>
+        </tr>
+        <tr>
+          <th>© </th><td>&amp;copy;</td><td>&amp;#169;</td>
+          <th>ª </th><td>&amp;ordf;</td><td>&amp;#170;</td>
+        </tr>
+        <tr>
+          <th>« </th><td>&amp;laquo;</td><td>&amp;#171;</td>
+          <th>» </th><td>&amp;raquo;</td><td>&amp;#187;</td>
+        </tr>
+        <tr>
+          <th>¬ </th><td>&amp;not;</td><td>&amp;#172;</td>
+          <th>® </th><td>&amp;reg;</td><td>&amp;#174;</td>
+        </tr>
+        <tr>
+          <th>¯ </th><td>&amp;macr;</td><td>&amp;#175;</td>
+          <th>° </th><td>&amp;deg;</td><td>d&amp;#176;</td>
+        </tr>
+        <tr>
+          <th>± </th><td>&amp;plusmn;</td><td>&amp;#177;</td>
+          <th>ˆ </th><td>&amp;circ;</td><td>&amp;#710;</td>
+        </tr>
+        <tr>
+          <th>² </th><td>&amp;sup2;</td><td>&amp;#178;</td>
+          <th>³ </th><td>&amp;sup3;</td><td>&amp;#179;</td>
+        </tr>
+        <tr>
+          <th>´ </th><td>&amp;acute;</td><td>&amp;#180;</td>
+          <th>· </th><td>&amp;middot;</td><td>&amp;#183;</td>
+        </tr>
+        <tr>
+          <th>µ </th><td>&amp;micro;</td><td>&amp;#181;</td>
+          <th>­ </th><td>&amp;shy;</td><td>&amp;#173;</td>
+        </tr>
+        <tr>
+          <th>½ </th><td>&amp;frac12;</td><td>&amp;#189;</td>
+          <th>¼ </th><td>&amp;frac14;</td><td>&amp;#188;</td>
+        </tr>
+        <tr>
+          <th>⅓ </th><td>&amp;frac13;</td><td>&amp;#8531;</td>
+          <th>¾ </th><td>&amp;frac34;</td><td>&amp;#190;</td>
+        </tr>
+        <tr>
+          <th>‘ </th><td>&amp;lsquo;</td><td>&amp;#8216;</td>
+          <th>’ </th><td>&amp;rsquo;</td><td>&amp;#8217;</td>
+        </tr>
+        <tr>
+          <th>“ </th><td>&amp;ldquo;</td><td>&amp;#8220;</td>
+          <th>” </th><td>&amp;rdquo;</td><td>&amp;#8221;</td>
+        </tr>
+        <tr>
+          <th>‹ </th><td>&amp;lsaquo;</td><td>&amp;#8249;</td>
+          <th>› </th><td>&amp;rsaquo;</td><td>&amp;#8250;</td>
+        </tr>
+        <tr>
+          <th>– </th><td>&amp;ndash;</td><td>&amp;#8211;</td>
+          <th>— </th><td>&amp;mdash;</td><td>&amp;#8212;</td>
+        </tr>
+        <tr>
+          <th>† </th><td>&amp;dagger;</td><td>&amp;#8224;</td>
+          <th>‡ </th><td>&amp;Dagger;</td><td>&amp;#8225;</td>
+        </tr>
+        <tr>
+          <th>‰ </th><td>&amp;permil;</td><td>&amp;#8240;</td>
+          <th>€ </th><td>&amp;euro;</td><td>&amp;#8364;</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+
 </div>
 </body>
 </html>
